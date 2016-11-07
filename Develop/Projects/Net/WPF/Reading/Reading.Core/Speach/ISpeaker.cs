@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
-namespace Reading.Speach
+namespace Reading.Core.Speach
 {
     public interface ISpeaker : IDisposable
     {
@@ -12,6 +9,8 @@ namespace Reading.Speach
         int Rate { get; set; }
         string Voice { get; set; }
         int Volume { get; set; }
+
+        bool IsEnabled { get; set; }
         void Speak(string text);
 
     }

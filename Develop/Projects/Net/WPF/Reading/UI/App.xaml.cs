@@ -5,6 +5,7 @@ using System.Runtime.InteropServices;
 using System.Windows;
 using System.Windows.Media;
 using Reading.Core;
+using Reading.Core.Speach;
 using Reading.Properties;
 using Reading.Speach;
 using Savchin.Development;
@@ -108,6 +109,7 @@ namespace Reading
                     Speaker.Voice = Settings.Voice;
                 Speaker.Volume = Settings.VoiceVolume;
                 Speaker.Rate = Settings.VoiceRate;
+                Speaker.IsEnabled = Settings.VoiceEnabled;
             }
             catch (Exception ex)
             {

@@ -9,14 +9,14 @@ using Savchin.Wpf.Controls.Localization;
 
 namespace Reading.Models
 {
-   public class LetterModel : SyllablesModelBase
+   public sealed class LetterModel : SyllablesModelBase
     {
-        private SyllablesMode _mode;
+        private SelectionMode _mode;
         /// <summary>
         /// Gets or sets the Operation.
         /// </summary>
         /// <value>The name.</value> 
-        public SyllablesMode Mode
+        public SelectionMode Mode
         {
             get { return _mode; }
             set
@@ -29,7 +29,7 @@ namespace Reading.Models
         }
 
 
-        private LettersTypes _type;
+        private LettersTypes _type= LettersTypes.All;
         /// <summary>
         /// Gets or sets the Type.
         /// </summary>
@@ -56,13 +56,14 @@ namespace Reading.Models
 
         public LetterModel()
         {
-            Modes = TranslationManager.Instance.Translate<SyllablesMode>().ToArray();
+            Modes = TranslationManager.Instance.Translate<SelectionMode>().ToArray();
             Types = TranslationManager.Instance.Translate<LettersTypes>().ToArray();
+            SetSyllable();
         }
 
         protected override void SetSyllable()
         {
-            SelectedItem =new string(_primer.GetLetter( Type,Mode),1); 
+            SelectedItem =new string(_primer.GetLetter( Type,Mode),1).ToUpper(); 
         }
     }
 }

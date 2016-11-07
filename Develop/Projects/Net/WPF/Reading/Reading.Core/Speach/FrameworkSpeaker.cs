@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using System.Speech.Synthesis;
-using System.Text;
+using Reading.Core.Speach;
 
 namespace Reading.Speach
 {
@@ -45,9 +43,12 @@ namespace Reading.Speach
             set { _synthesizer.Volume = value; }
         }
 
+        public bool IsEnabled { get; set; }
+
         public void Speak(string text)
         {
-            _synthesizer.Speak(text);
+            if (IsEnabled)
+                _synthesizer.Speak(text);
         }
     }
 }

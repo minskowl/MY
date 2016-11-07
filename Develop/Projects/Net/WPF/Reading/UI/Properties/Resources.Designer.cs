@@ -88,6 +88,33 @@ namespace Reading.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Все.
+        /// </summary>
+        public static string LettersTypes_All {
+            get {
+                return ResourceManager.GetString("LettersTypes_All", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Согласные.
+        /// </summary>
+        public static string LettersTypes_Consonants {
+            get {
+                return ResourceManager.GetString("LettersTypes_Consonants", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Гласные.
+        /// </summary>
+        public static string LettersTypes_Vowels {
+            get {
+                return ResourceManager.GetString("LettersTypes_Vowels", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Icon, аналогичного (Значок).
         /// </summary>
         public static System.Drawing.Icon logo {

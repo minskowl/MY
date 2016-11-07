@@ -34,23 +34,24 @@
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
-                <ComboBox  Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3"
+                <CheckBox  Content="Включен" IsChecked="{Binding isVoiceEnabled, Mode=TwoWay}" />
+                <ComboBox  Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3"
                    ItemsSource="{Binding Voices}" SelectedValue="{Binding Voice, Mode=TwoWay}"/>
 
-                <Label  Grid.Row="1" Grid.Column="0" Content="Громкость" />
-                <Label  Grid.Row="1" Grid.Column="1" HorizontalContentAlignment="Right"
+                <Label  Grid.Row="2" Grid.Column="0" Content="Громкость" />
+                <Label  Grid.Row="2" Grid.Column="1" HorizontalContentAlignment="Right"
                         Content="{Binding ElementName=sliderVolume, Path=Value}" />
-                <Slider x:Name="sliderVolume"  Grid.Row="1" Grid.Column="2" Maximum="100"
+                <Slider x:Name="sliderVolume"  Grid.Row="2" Grid.Column="2" Maximum="100"
                 Value="{Binding VoiceVolume, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
 
-                <Label  Grid.Row="2" Grid.Column="0" Content="Скорость" />
-                <Label  Grid.Row="2" Grid.Column="1" HorizontalContentAlignment="Right"
+                <Label  Grid.Row="3" Grid.Column="0" Content="Скорость" />
+                <Label  Grid.Row="3" Grid.Column="1" HorizontalContentAlignment="Right"
                         Content="{Binding ElementName=sliderRate, Path=Value}" />
-                <Slider x:Name="sliderRate"  Grid.Row="2" Grid.Column="2" 
+                <Slider x:Name="sliderRate"  Grid.Row="3" Grid.Column="2" 
                         Minimum="-10" Maximum="10"
                 Value="{Binding VoiceRate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
 
-                <Button Grid.Row="3" Grid.Column="2" Content="&gt;"
+                <Button Grid.Row="4" Grid.Column="2" Content="&gt;"
                        ToolTip="Прослушать" Command="{Binding TestSoundCommand}"/>
             </Grid>
         </GroupBox>

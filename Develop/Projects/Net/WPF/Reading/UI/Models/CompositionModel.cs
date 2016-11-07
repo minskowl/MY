@@ -15,13 +15,13 @@ namespace Reading.Models
 
         protected override void SetSyllable()
         {
-            var first = Primer.GetConsonant(SyllablesMode.All);
-            var second = Primer.GetConsonant(SyllablesMode.All);
+            var first = Primer.GetConsonant(SelectionMode.All);
+            var second = Primer.GetConsonant(SelectionMode.All);
             while (first == second)
             {
-                second = Primer.GetConsonant(SyllablesMode.All);
+                second = Primer.GetConsonant(SelectionMode.All);
             }
-            var last = Primer.GetVowel(SyllablesMode.Popular);
+            var last = Primer.GetVowel(SelectionMode.Popular);
 
             SelectedItem = string.Format("{0}{1}{2}", first, second, last);
         }

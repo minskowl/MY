@@ -1,14 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
 using SpeechLib;
 
-namespace Reading.Speach
+namespace Reading.Core.Speach
 {
     public sealed class ComSpeaker : ISpeaker
     {
-        SpVoice instance = new SpVoice();
+        SpVoice _instance = new SpVoice();
         private Dictionary<string, SpObjectToken> _voicesMap;
         private string[] _voices;
 
@@ -20,16 +18,16 @@ namespace Reading.Speach
 
 
 
-            var tokens = instance.GetVoices().Cast<SpObjectToken>().ToArray();
+            var tokens = _instance.GetVoices().Cast<SpObjectToken>().ToArray();
             _voicesMap = tokens.Select(e => new { Name = e.GetDescription(49), Value = e }).ToDictionary(e => e.Name, e => e.Value);
             _voices = _voicesMap.Keys.ToArray();
 
-          
+
         }
 
         public void Dispose()
         {
-            instance = null;
+            _instance = null;
             _voicesMap.Clear();
             _voicesMap = null;
             _voices = null;
@@ -42,25 +40,28 @@ namespace Reading.Speach
 
         public int Rate
         {
-            get { return instance.Rate; }
-            set { instance.Rate = value; }
+            get { return _instance.Rate; }
+            set { _instance.Rate = value; }
         }
 
         public string Voice
         {
-            get { return instance.Voice.GetDescription(49); }
-            set { instance.Voice = _voicesMap[value]; }
+            get { return _instance.Voice.GetDescription(49); }
+            set { _instance.Voice = _voicesMap[value]; }
         }
 
         public int Volume
         {
-            get { return instance.Volume; }
-            set { instance.Volume = value; }
+            get { return _instance.Volume; }
+            set { _instance.Volume = value; }
         }
+
+        public bool IsEnabled { get; set; }
 
         public void Speak(string text)
         {
-            instance.Speak(text);
+            if (IsEnabled)
+                _instance.Speak(text);
         }
     }
 }

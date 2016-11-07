@@ -1,4 +1,5 @@
-﻿using Reading.Speach;
+﻿using Reading.Core.Speach;
+using Reading.Speach;
 using Savchin.Development;
 using Savchin.Logging;
 

@@ -80,5 +80,8 @@
     <Setting Name="FindPairSettings" Type="Reading.Core.Settings.FindPairSettings" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
+    <Setting Name="VoiceEnabled" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

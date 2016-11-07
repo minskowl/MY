@@ -1,5 +1,6 @@
 ﻿using System.Windows.Controls;
 using Reading.Core;
+using Reading.Core.Speach;
 using Reading.Speach;
 
 namespace Reading.Controls

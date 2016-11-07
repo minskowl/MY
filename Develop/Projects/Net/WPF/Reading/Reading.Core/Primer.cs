@@ -7,7 +7,7 @@ using Savchin.Core;
 
 namespace Reading.Core
 {
-    public enum SyllablesMode
+    public enum SelectionMode
     {
         Popular,
         All
@@ -39,12 +39,12 @@ namespace Reading.Core
         /// Gets the forward syllable.
         /// </summary>
         /// <returns></returns>
-        public string GetForwardSyllable(SyllablesMode mode)
+        public string GetForwardSyllable(SelectionMode mode)
         {
             return GetSyllable(mode, GetConsonant, GetVowel);
         }
 
-        public char GetLetter(LettersTypes types, SyllablesMode mode)
+        public char GetLetter(LettersTypes types, SelectionMode mode)
         {
             switch (types)
             {
@@ -62,7 +62,7 @@ namespace Reading.Core
         /// Gets the backward syllable.
         /// </summary>
         /// <returns></returns>
-        public string GetBackwardSyllable(SyllablesMode mode)
+        public string GetBackwardSyllable(SelectionMode mode)
         {
             return GetSyllable(mode, GetVowel, GetConsonant);
         }
@@ -70,7 +70,7 @@ namespace Reading.Core
         /// Gets the syllable.
         /// </summary>
         /// <returns></returns>
-        public string GetSyllable(SyllablesMode mode, SyllablesTypes types)
+        public string GetSyllable(SelectionMode mode, SyllablesTypes types)
         {
             switch (types)
             {
@@ -85,24 +85,24 @@ namespace Reading.Core
         }
         #region Random Syllable
 
-        public static char GetConsonant(SyllablesMode mode)
+        public static char GetConsonant(SelectionMode mode)
         {
-            return mode == SyllablesMode.All ? Randomizer.GetFromArray(Consonants) : Consonants[Randomizer.GetIntegerBetween(0, 13)];
+            return mode == SelectionMode.All ? Randomizer.GetFromArray(Consonants) : Consonants[Randomizer.GetIntegerBetween(0, 13)];
         }
 
-        public static char GetVowel(SyllablesMode mode)
+        public static char GetVowel(SelectionMode mode)
         {
-            return mode == SyllablesMode.All ? Randomizer.GetFromArray(Vowels) : Vowels[Randomizer.GetIntegerBetween(0, 5)];
+            return mode == SelectionMode.All ? Randomizer.GetFromArray(Vowels) : Vowels[Randomizer.GetIntegerBetween(0, 5)];
         }
 
-        private static string GetSyllable(SyllablesMode mode, Func<SyllablesMode, char> firstSource, Func<SyllablesMode, char> secondSource)
+        private static string GetSyllable(SelectionMode mode, Func<SelectionMode, char> firstSource, Func<SelectionMode, char> secondSource)
         {
             char first;
             string result;
             do
             {
                 first = firstSource(mode);
-                result = string.Format("{0}{1}", first, secondSource(mode));
+                result = $"{first}{secondSource(mode)}";
             } while (first == 'ы' || Exepts.Contains(result));
 
             return result;

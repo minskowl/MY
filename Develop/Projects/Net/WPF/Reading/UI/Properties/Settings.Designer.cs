@@ -332,5 +332,17 @@ namespace Reading.Properties {
                 this["FindPairSettings"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool VoiceEnabled {
+            get {
+                return ((bool)(this["VoiceEnabled"]));
+            }
+            set {
+                this["VoiceEnabled"] = value;
+            }
+        }
     }
 }

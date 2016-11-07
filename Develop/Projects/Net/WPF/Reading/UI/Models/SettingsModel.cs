@@ -32,6 +32,8 @@ namespace Reading.Models
         /// The voice volume.
         /// </value>
         public int VoiceVolume { get; set; }
+
+        public bool isVoiceEnabled { get; set; }
         public int VoiceRate { get; set; }
         /// <summary>
         /// Gets or sets the size of the font.
@@ -77,6 +79,7 @@ namespace Reading.Models
         protected override void Initialize(Settings settings)
         {
             base.Initialize(settings);
+            isVoiceEnabled = settings.VoiceEnabled;
             Voice = settings.Voice;
             VoiceVolume = settings.VoiceVolume;
             VoiceRate = settings.VoiceRate;
@@ -93,6 +96,7 @@ namespace Reading.Models
             var rate = Speaker.Rate;
             try
             {
+                Speaker.IsEnabled = isVoiceEnabled;
                 Speaker.Voice = Voice;
                 Speaker.Volume = VoiceVolume;
                 Speaker.Rate = VoiceRate;
@@ -100,6 +104,7 @@ namespace Reading.Models
             }
             finally
             {
+                Speaker.IsEnabled = isVoiceEnabled;
                 Speaker.Voice = voice;
                 Speaker.Volume = volume;
                 Speaker.Rate = rate;
@@ -109,7 +114,7 @@ namespace Reading.Models
         private void OnSaveCommandExecute()
         {
             var settings = Settings.Default;
-
+            settings.VoiceEnabled = isVoiceEnabled;
             settings.Voice = Voice;
             settings.VoiceVolume = VoiceVolume;
             settings.VoiceRate = VoiceRate;

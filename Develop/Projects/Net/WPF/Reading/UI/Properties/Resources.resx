@@ -169,4 +169,13 @@
   <data name="TableSummationMode_Text" xml:space="preserve">
     <value>Текст</value>
   </data>
+  <data name="LettersTypes_All" xml:space="preserve">
+    <value>Все</value>
+  </data>
+  <data name="LettersTypes_Consonants" xml:space="preserve">
+    <value>Согласные</value>
+  </data>
+  <data name="LettersTypes_Vowels" xml:space="preserve">
+    <value>Гласные</value>
+  </data>
 </root>

@@ -17,10 +17,10 @@
         <TextBlock Text="{Binding Title}" Style="{DynamicResource Title}"
                   VerticalAlignment="Top" />
         <Button Grid.Row="1" Content="{Binding SelectedItem}"
-                Command="{Binding NextItemCommand}" Style="{DynamicResource SyllableButton}"/>
+                Command="{Binding NextItemCommand}" Style="{DynamicResource SyllableButton}" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="2"/>
 
         <StackPanel Grid.Row="2" Orientation="Horizontal">
-            <Label Content="Слоги"/>
+            <Label Content="Буквы"/>
             <ComboBox ItemsSource="{Binding Modes}" 
                       SelectedValuePath="Value" DisplayMemberPath="Name"
                       SelectedValue="{Binding Path=Mode, Mode=TwoWay}"/>
