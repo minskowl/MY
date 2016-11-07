@@ -135,6 +135,9 @@ namespace Reading.Pages
         }
 
 
-
+        private void buttonLetters_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new LetterPage());
+        }
     }
 }

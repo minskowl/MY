@@ -22,7 +22,8 @@
         <Image Grid.Row="1" Grid.Column="1" Grid.RowSpan="2" Source="{Binding Logo}"/>
         <TabControl  Grid.Row="1" Background="#FFFFFFAD" >
             <TabItem Header="Чтение" Style="{DynamicResource MenuTab}">
-                <StackPanel>
+                <StackPanel> 
+                    <Button Content="Буквы"  Style="{StaticResource Menu}" Click="buttonLetters_Click"      />
                     <Button Content="Слоги"  Style="{StaticResource Menu}" Click="button1_Click"      />
                     <Button Content="Наборы"  Style="{StaticResource Menu}" Click="button3_Click"      />
                     <Button Content="Слова"  Style="{StaticResource Menu}"  Click="buttonWords_Click" />
