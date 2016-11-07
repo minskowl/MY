@@ -1,0 +1,874 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="..\..\..\JavaDoc.css">
+  </head>
+  <body>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td>
+                <a href="namespace-summary.html">Namespace</a> </td>
+              <td class="nav1sel"> Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV TYPE    NEXT TYPE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+      <tr class="nav2">
+        <td>SUMMARY: INNER | FIELD | <a href="#constructor-summary">CONST</a> | PROP | <a href="#method-summary">METHOD</a> | OP | EVENT</td>
+        <td>DETAIL: FIELD | <a href="#constructor-detail">CONST</a> | PROP | <a href="#method-detail">METHOD</a> | OP | EVENT</td>
+      </tr>
+    </table>
+    <hr>
+    <h2>
+      <span class="namespaceName">NVelocity.Runtime.Visitor</span>
+      <br>
+      <span class="className">Class NodeViewMode</span>
+    </h2>
+    <p> This class is simply a visitor implementation
+            that traverses the AST, produced by the Velocity
+            parsing process, and creates a visual structure
+            of the AST. This is primarily used for
+            debugging, but it useful for documentation
+            as well.
+            *
+            </p>
+    <a name="field-summary">
+    </a>
+    <table class="subtable" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Fields inherited from class NVelocity.Runtime.Visitor.BaseVisitor</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>
+          <a href="">context</a>, <a href="">writer</a></td>
+      </tr>
+    </table>
+    <br>
+    <a name="constructor-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Constructor Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="constructor" valign="top">
+          <a href="#NVelocity.Runtime.Visitor.NodeViewMode.#ctor">NodeViewMode</a>()<br>        Initializes a new instance of the NodeViewMode class.</td>
+      </tr>
+    </table>
+    <br>
+    <a name="property-summary">
+    </a>
+    <table class="subtable" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Properties inherited from class NVelocity.Runtime.Visitor.BaseVisitor</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>
+          <a href="">Context</a>, <a href="">Writer</a></td>
+      </tr>
+    </table>
+    <br>
+    <a name="method-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Method Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="returnType" valign="top">object</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Visitor.NodeViewMode.visit(NVelocity.Runtime.Parser.Node.ASTNotNode,System.Object)">visit</a>(NVelocity.Runtime.Parser.Node.ASTNotNode node, object data)<br>        Display an ASTNotNode ( ! )
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">object</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Visitor.NodeViewMode.visit(NVelocity.Runtime.Parser.Node.ASTModNode,System.Object)">visit</a>(NVelocity.Runtime.Parser.Node.ASTModNode node, object data)<br>        Display an ASTModNode ( % )
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">object</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Visitor.NodeViewMode.visit(NVelocity.Runtime.Parser.Node.ASTDivNode,System.Object)">visit</a>(NVelocity.Runtime.Parser.Node.ASTDivNode node, object data)<br>        Display an ASTDivNode ( / )
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">object</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Visitor.NodeViewMode.visit(NVelocity.Runtime.Parser.Node.ASTMulNode,System.Object)">visit</a>(NVelocity.Runtime.Parser.Node.ASTMulNode node, object data)<br>        Display an ASTMulNode ( * )
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">object</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Visitor.NodeViewMode.visit(NVelocity.Runtime.Parser.Node.ASTSubtractNode,System.Object)">visit</a>(NVelocity.Runtime.Parser.Node.ASTSubtractNode node, object data)<br>        Display an ASTSubtractNode ( - )
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">object</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Visitor.NodeViewMode.visit(NVelocity.Runtime.Parser.Node.ASTAddNode,System.Object)">visit</a>(NVelocity.Runtime.Parser.Node.ASTAddNode node, object data)<br>        Display an ASTAddNode ( + )
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">object</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Visitor.NodeViewMode.visit(NVelocity.Runtime.Parser.Node.ASTGENode,System.Object)">visit</a>(NVelocity.Runtime.Parser.Node.ASTGENode node, object data)<br>        Display an ASTGENode ( &gt;= )
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">object</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Visitor.NodeViewMode.visit(NVelocity.Runtime.Parser.Node.ASTLENode,System.Object)">visit</a>(NVelocity.Runtime.Parser.Node.ASTLENode node, object data)</td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">object</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Visitor.NodeViewMode.visit(NVelocity.Runtime.Parser.Node.ASTGTNode,System.Object)">visit</a>(NVelocity.Runtime.Parser.Node.ASTGTNode node, object data)<br>        Display an ASTGTNode ( &gt; )
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">object</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Visitor.NodeViewMode.visit(NVelocity.Runtime.Parser.Node.ASTLTNode,System.Object)">visit</a>(NVelocity.Runtime.Parser.Node.ASTLTNode node, object data)</td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">object</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Visitor.NodeViewMode.visit(NVelocity.Runtime.Parser.Node.ASTNENode,System.Object)">visit</a>(NVelocity.Runtime.Parser.Node.ASTNENode node, object data)<br>        Display an ASTNENode ( != )
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">object</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Visitor.NodeViewMode.visit(NVelocity.Runtime.Parser.Node.ASTEQNode,System.Object)">visit</a>(NVelocity.Runtime.Parser.Node.ASTEQNode node, object data)<br>        Display an ASTEQNode ( == )
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">object</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Visitor.NodeViewMode.visit(NVelocity.Runtime.Parser.Node.ASTAndNode,System.Object)">visit</a>(NVelocity.Runtime.Parser.Node.ASTAndNode node, object data)</td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">object</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Visitor.NodeViewMode.visit(NVelocity.Runtime.Parser.Node.ASTOrNode,System.Object)">visit</a>(NVelocity.Runtime.Parser.Node.ASTOrNode node, object data)<br>        Display an ASTOrNode ( || )
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">object</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Visitor.NodeViewMode.visit(NVelocity.Runtime.Parser.Node.ASTAssignment,System.Object)">visit</a>(NVelocity.Runtime.Parser.Node.ASTAssignment node, object data)<br>        Display an ASTAssignment node ( = )
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">object</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Visitor.NodeViewMode.visit(NVelocity.Runtime.Parser.Node.ASTExpression,System.Object)">visit</a>(NVelocity.Runtime.Parser.Node.ASTExpression node, object data)<br>        Display an ASTExpression node
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">object</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Visitor.NodeViewMode.visit(NVelocity.Runtime.Parser.Node.ASTSetDirective,System.Object)">visit</a>(NVelocity.Runtime.Parser.Node.ASTSetDirective node, object data)</td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">object</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Visitor.NodeViewMode.visit(NVelocity.Runtime.Parser.Node.ASTElseIfStatement,System.Object)">visit</a>(NVelocity.Runtime.Parser.Node.ASTElseIfStatement node, object data)<br>        Display an ASTElseIfStatement node
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">object</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Visitor.NodeViewMode.visit(NVelocity.Runtime.Parser.Node.ASTElseStatement,System.Object)">visit</a>(NVelocity.Runtime.Parser.Node.ASTElseStatement node, object data)<br>        Display an ASTElseStatement node
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">object</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Visitor.NodeViewMode.visit(NVelocity.Runtime.Parser.Node.ASTIfStatement,System.Object)">visit</a>(NVelocity.Runtime.Parser.Node.ASTIfStatement node, object data)<br>        Display an ASTIfStatement node
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">object</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Visitor.NodeViewMode.visit(NVelocity.Runtime.Parser.Node.ASTText,System.Object)">visit</a>(NVelocity.Runtime.Parser.Node.ASTText node, object data)<br>        Display an ASTText node
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">object</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Visitor.NodeViewMode.visit(NVelocity.Runtime.Parser.Node.ASTFalse,System.Object)">visit</a>(NVelocity.Runtime.Parser.Node.ASTFalse node, object data)<br>        Display an ASTFalse node
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">object</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Visitor.NodeViewMode.visit(NVelocity.Runtime.Parser.Node.ASTTrue,System.Object)">visit</a>(NVelocity.Runtime.Parser.Node.ASTTrue node, object data)<br>        Display an ASTTrue node
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">object</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Visitor.NodeViewMode.visit(NVelocity.Runtime.Parser.Node.ASTReference,System.Object)">visit</a>(NVelocity.Runtime.Parser.Node.ASTReference node, object data)<br>        Display an ASTReference node
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">object</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Visitor.NodeViewMode.visit(NVelocity.Runtime.Parser.Node.ASTMethod,System.Object)">visit</a>(NVelocity.Runtime.Parser.Node.ASTMethod node, object data)<br>        Display an ASTMethod node
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">object</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Visitor.NodeViewMode.visit(NVelocity.Runtime.Parser.Node.ASTObjectArray,System.Object)">visit</a>(NVelocity.Runtime.Parser.Node.ASTObjectArray node, object data)</td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">object</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Visitor.NodeViewMode.visit(NVelocity.Runtime.Parser.Node.ASTBlock,System.Object)">visit</a>(NVelocity.Runtime.Parser.Node.ASTBlock node, object data)<br>        Display an ASTBlock node
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">object</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Visitor.NodeViewMode.visit(NVelocity.Runtime.Parser.Node.ASTDirective,System.Object)">visit</a>(NVelocity.Runtime.Parser.Node.ASTDirective node, object data)</td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">object</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Visitor.NodeViewMode.visit(NVelocity.Runtime.Parser.Node.ASTWord,System.Object)">visit</a>(NVelocity.Runtime.Parser.Node.ASTWord node, object data)</td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">object</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Visitor.NodeViewMode.visit(NVelocity.Runtime.Parser.Node.ASTIdentifier,System.Object)">visit</a>(NVelocity.Runtime.Parser.Node.ASTIdentifier node, object data)<br>        Display an ASTIdentifier node
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">object</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Visitor.NodeViewMode.visit(NVelocity.Runtime.Parser.Node.ASTStringLiteral,System.Object)">visit</a>(NVelocity.Runtime.Parser.Node.ASTStringLiteral node, object data)<br>        Display an ASTStringLiteral node
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">object</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Visitor.NodeViewMode.visit(NVelocity.Runtime.Parser.Node.ASTNumberLiteral,System.Object)">visit</a>(NVelocity.Runtime.Parser.Node.ASTNumberLiteral node, object data)<br>        Display an ASTNumberLiteral node
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">object</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Visitor.NodeViewMode.visit(NVelocity.Runtime.Parser.Node.ASTprocess,System.Object)">visit</a>(NVelocity.Runtime.Parser.Node.ASTprocess node, object data)<br>        Display an ASTprocess node
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">object</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Visitor.NodeViewMode.visit(NVelocity.Runtime.Parser.Node.SimpleNode,System.Object)">visit</a>(NVelocity.Runtime.Parser.Node.SimpleNode node, object data)<br>        Display a SimpleNode
+            </td>
+      </tr>
+    </table>
+    <br>
+    <table class="subtable" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Methods inherited from class NVelocity.Runtime.Visitor.BaseVisitor</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>
+          <a href="..\..\..\NVelocity/Runtime/Visitor/NodeViewMode/visit(NVelocity/Runtime/Parser/Node/ASTComment,System.html#Object)">visit</a>
+        </td>
+      </tr>
+    </table>
+    <br>
+    <table class="subtable" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Methods inherited from class System.Object</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>
+          <a href="..\..\..\NVelocity/Runtime/Visitor/NodeViewMode/Equals(System.html#Object)">Equals</a>, <a href="..\..\..\NVelocity/Runtime/Visitor/NodeViewMode.html#Finalize">Finalize</a>, <a href="..\..\..\NVelocity/Runtime/Visitor/NodeViewMode.html#GetHashCode">GetHashCode</a>, <a href="..\..\..\NVelocity/Runtime/Visitor/NodeViewMode.html#GetType">GetType</a>, <a href="..\..\..\NVelocity/Runtime/Visitor/NodeViewMode.html#MemberwiseClone">MemberwiseClone</a>, <a href="..\..\..\NVelocity/Runtime/Visitor/NodeViewMode.html#ToString">ToString</a></td>
+      </tr>
+    </table>
+    <br>
+    <a name="operator-summary">
+    </a>
+    <a name="event-summary">
+    </a>
+    <br>
+    <a name="field-detail">
+    </a>
+    <a name="constructor-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Constructor Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.Runtime.Visitor.NodeViewMode.#ctor">
+    </a>
+    <h3>NodeViewMode</h3>
+    <pre>public NodeViewMode()</pre>
+    <dl>
+      <dd>
+        <p>Initializes a new instance of the NodeViewMode class.</p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="property-detail">
+    </a>
+    <a name="method-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Method Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.Runtime.Visitor.NodeViewMode.visit(NVelocity.Runtime.Parser.Node.ASTNotNode,System.Object)">
+    </a>
+    <h3>visit</h3>
+    <pre>public object visit(NVelocity.Runtime.Parser.Node.ASTNotNode node,
+                    object data)</pre>
+    <dl>
+      <dd>
+        <p>Display an ASTNotNode ( ! )
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Visitor.NodeViewMode.visit(NVelocity.Runtime.Parser.Node.ASTModNode,System.Object)">
+    </a>
+    <h3>visit</h3>
+    <pre>public object visit(NVelocity.Runtime.Parser.Node.ASTModNode node,
+                    object data)</pre>
+    <dl>
+      <dd>
+        <p>Display an ASTModNode ( % )
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Visitor.NodeViewMode.visit(NVelocity.Runtime.Parser.Node.ASTDivNode,System.Object)">
+    </a>
+    <h3>visit</h3>
+    <pre>public object visit(NVelocity.Runtime.Parser.Node.ASTDivNode node,
+                    object data)</pre>
+    <dl>
+      <dd>
+        <p>Display an ASTDivNode ( / )
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Visitor.NodeViewMode.visit(NVelocity.Runtime.Parser.Node.ASTMulNode,System.Object)">
+    </a>
+    <h3>visit</h3>
+    <pre>public object visit(NVelocity.Runtime.Parser.Node.ASTMulNode node,
+                    object data)</pre>
+    <dl>
+      <dd>
+        <p>Display an ASTMulNode ( * )
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Visitor.NodeViewMode.visit(NVelocity.Runtime.Parser.Node.ASTSubtractNode,System.Object)">
+    </a>
+    <h3>visit</h3>
+    <pre>public object visit(NVelocity.Runtime.Parser.Node.ASTSubtractNode node,
+                    object data)</pre>
+    <dl>
+      <dd>
+        <p>Display an ASTSubtractNode ( - )
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Visitor.NodeViewMode.visit(NVelocity.Runtime.Parser.Node.ASTAddNode,System.Object)">
+    </a>
+    <h3>visit</h3>
+    <pre>public object visit(NVelocity.Runtime.Parser.Node.ASTAddNode node,
+                    object data)</pre>
+    <dl>
+      <dd>
+        <p>Display an ASTAddNode ( + )
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Visitor.NodeViewMode.visit(NVelocity.Runtime.Parser.Node.ASTGENode,System.Object)">
+    </a>
+    <h3>visit</h3>
+    <pre>public object visit(NVelocity.Runtime.Parser.Node.ASTGENode node,
+                    object data)</pre>
+    <dl>
+      <dd>
+        <p>Display an ASTGENode ( &gt;= )
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Visitor.NodeViewMode.visit(NVelocity.Runtime.Parser.Node.ASTLENode,System.Object)">
+    </a>
+    <h3>visit</h3>
+    <pre>public object visit(NVelocity.Runtime.Parser.Node.ASTLENode node,
+                    object data)</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Visitor.NodeViewMode.visit(NVelocity.Runtime.Parser.Node.ASTGTNode,System.Object)">
+    </a>
+    <h3>visit</h3>
+    <pre>public object visit(NVelocity.Runtime.Parser.Node.ASTGTNode node,
+                    object data)</pre>
+    <dl>
+      <dd>
+        <p>Display an ASTGTNode ( &gt; )
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Visitor.NodeViewMode.visit(NVelocity.Runtime.Parser.Node.ASTLTNode,System.Object)">
+    </a>
+    <h3>visit</h3>
+    <pre>public object visit(NVelocity.Runtime.Parser.Node.ASTLTNode node,
+                    object data)</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Visitor.NodeViewMode.visit(NVelocity.Runtime.Parser.Node.ASTNENode,System.Object)">
+    </a>
+    <h3>visit</h3>
+    <pre>public object visit(NVelocity.Runtime.Parser.Node.ASTNENode node,
+                    object data)</pre>
+    <dl>
+      <dd>
+        <p>Display an ASTNENode ( != )
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Visitor.NodeViewMode.visit(NVelocity.Runtime.Parser.Node.ASTEQNode,System.Object)">
+    </a>
+    <h3>visit</h3>
+    <pre>public object visit(NVelocity.Runtime.Parser.Node.ASTEQNode node,
+                    object data)</pre>
+    <dl>
+      <dd>
+        <p>Display an ASTEQNode ( == )
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Visitor.NodeViewMode.visit(NVelocity.Runtime.Parser.Node.ASTAndNode,System.Object)">
+    </a>
+    <h3>visit</h3>
+    <pre>public object visit(NVelocity.Runtime.Parser.Node.ASTAndNode node,
+                    object data)</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Visitor.NodeViewMode.visit(NVelocity.Runtime.Parser.Node.ASTOrNode,System.Object)">
+    </a>
+    <h3>visit</h3>
+    <pre>public object visit(NVelocity.Runtime.Parser.Node.ASTOrNode node,
+                    object data)</pre>
+    <dl>
+      <dd>
+        <p>Display an ASTOrNode ( || )
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Visitor.NodeViewMode.visit(NVelocity.Runtime.Parser.Node.ASTAssignment,System.Object)">
+    </a>
+    <h3>visit</h3>
+    <pre>public object visit(NVelocity.Runtime.Parser.Node.ASTAssignment node,
+                    object data)</pre>
+    <dl>
+      <dd>
+        <p>Display an ASTAssignment node ( = )
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Visitor.NodeViewMode.visit(NVelocity.Runtime.Parser.Node.ASTExpression,System.Object)">
+    </a>
+    <h3>visit</h3>
+    <pre>public object visit(NVelocity.Runtime.Parser.Node.ASTExpression node,
+                    object data)</pre>
+    <dl>
+      <dd>
+        <p>Display an ASTExpression node
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Visitor.NodeViewMode.visit(NVelocity.Runtime.Parser.Node.ASTSetDirective,System.Object)">
+    </a>
+    <h3>visit</h3>
+    <pre>public object visit(NVelocity.Runtime.Parser.Node.ASTSetDirective node,
+                    object data)</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Visitor.NodeViewMode.visit(NVelocity.Runtime.Parser.Node.ASTElseIfStatement,System.Object)">
+    </a>
+    <h3>visit</h3>
+    <pre>public object visit(NVelocity.Runtime.Parser.Node.ASTElseIfStatement node,
+                    object data)</pre>
+    <dl>
+      <dd>
+        <p>Display an ASTElseIfStatement node
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Visitor.NodeViewMode.visit(NVelocity.Runtime.Parser.Node.ASTElseStatement,System.Object)">
+    </a>
+    <h3>visit</h3>
+    <pre>public object visit(NVelocity.Runtime.Parser.Node.ASTElseStatement node,
+                    object data)</pre>
+    <dl>
+      <dd>
+        <p>Display an ASTElseStatement node
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Visitor.NodeViewMode.visit(NVelocity.Runtime.Parser.Node.ASTIfStatement,System.Object)">
+    </a>
+    <h3>visit</h3>
+    <pre>public object visit(NVelocity.Runtime.Parser.Node.ASTIfStatement node,
+                    object data)</pre>
+    <dl>
+      <dd>
+        <p>Display an ASTIfStatement node
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Visitor.NodeViewMode.visit(NVelocity.Runtime.Parser.Node.ASTText,System.Object)">
+    </a>
+    <h3>visit</h3>
+    <pre>public object visit(NVelocity.Runtime.Parser.Node.ASTText node,
+                    object data)</pre>
+    <dl>
+      <dd>
+        <p>Display an ASTText node
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Visitor.NodeViewMode.visit(NVelocity.Runtime.Parser.Node.ASTFalse,System.Object)">
+    </a>
+    <h3>visit</h3>
+    <pre>public object visit(NVelocity.Runtime.Parser.Node.ASTFalse node,
+                    object data)</pre>
+    <dl>
+      <dd>
+        <p>Display an ASTFalse node
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Visitor.NodeViewMode.visit(NVelocity.Runtime.Parser.Node.ASTTrue,System.Object)">
+    </a>
+    <h3>visit</h3>
+    <pre>public object visit(NVelocity.Runtime.Parser.Node.ASTTrue node,
+                    object data)</pre>
+    <dl>
+      <dd>
+        <p>Display an ASTTrue node
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Visitor.NodeViewMode.visit(NVelocity.Runtime.Parser.Node.ASTReference,System.Object)">
+    </a>
+    <h3>visit</h3>
+    <pre>public object visit(NVelocity.Runtime.Parser.Node.ASTReference node,
+                    object data)</pre>
+    <dl>
+      <dd>
+        <p>Display an ASTReference node
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Visitor.NodeViewMode.visit(NVelocity.Runtime.Parser.Node.ASTMethod,System.Object)">
+    </a>
+    <h3>visit</h3>
+    <pre>public object visit(NVelocity.Runtime.Parser.Node.ASTMethod node,
+                    object data)</pre>
+    <dl>
+      <dd>
+        <p>Display an ASTMethod node
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Visitor.NodeViewMode.visit(NVelocity.Runtime.Parser.Node.ASTObjectArray,System.Object)">
+    </a>
+    <h3>visit</h3>
+    <pre>public object visit(NVelocity.Runtime.Parser.Node.ASTObjectArray node,
+                    object data)</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Visitor.NodeViewMode.visit(NVelocity.Runtime.Parser.Node.ASTBlock,System.Object)">
+    </a>
+    <h3>visit</h3>
+    <pre>public object visit(NVelocity.Runtime.Parser.Node.ASTBlock node,
+                    object data)</pre>
+    <dl>
+      <dd>
+        <p>Display an ASTBlock node
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Visitor.NodeViewMode.visit(NVelocity.Runtime.Parser.Node.ASTDirective,System.Object)">
+    </a>
+    <h3>visit</h3>
+    <pre>public object visit(NVelocity.Runtime.Parser.Node.ASTDirective node,
+                    object data)</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Visitor.NodeViewMode.visit(NVelocity.Runtime.Parser.Node.ASTWord,System.Object)">
+    </a>
+    <h3>visit</h3>
+    <pre>public object visit(NVelocity.Runtime.Parser.Node.ASTWord node,
+                    object data)</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Visitor.NodeViewMode.visit(NVelocity.Runtime.Parser.Node.ASTIdentifier,System.Object)">
+    </a>
+    <h3>visit</h3>
+    <pre>public object visit(NVelocity.Runtime.Parser.Node.ASTIdentifier node,
+                    object data)</pre>
+    <dl>
+      <dd>
+        <p>Display an ASTIdentifier node
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Visitor.NodeViewMode.visit(NVelocity.Runtime.Parser.Node.ASTStringLiteral,System.Object)">
+    </a>
+    <h3>visit</h3>
+    <pre>public object visit(NVelocity.Runtime.Parser.Node.ASTStringLiteral node,
+                    object data)</pre>
+    <dl>
+      <dd>
+        <p>Display an ASTStringLiteral node
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Visitor.NodeViewMode.visit(NVelocity.Runtime.Parser.Node.ASTNumberLiteral,System.Object)">
+    </a>
+    <h3>visit</h3>
+    <pre>public object visit(NVelocity.Runtime.Parser.Node.ASTNumberLiteral node,
+                    object data)</pre>
+    <dl>
+      <dd>
+        <p>Display an ASTNumberLiteral node
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Visitor.NodeViewMode.visit(NVelocity.Runtime.Parser.Node.ASTprocess,System.Object)">
+    </a>
+    <h3>visit</h3>
+    <pre>public object visit(NVelocity.Runtime.Parser.Node.ASTprocess node,
+                    object data)</pre>
+    <dl>
+      <dd>
+        <p>Display an ASTprocess node
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Visitor.NodeViewMode.visit(NVelocity.Runtime.Parser.Node.SimpleNode,System.Object)">
+    </a>
+    <h3>visit</h3>
+    <pre>public object visit(NVelocity.Runtime.Parser.Node.SimpleNode node,
+                    object data)</pre>
+    <dl>
+      <dd>
+        <p>Display a SimpleNode
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="operator-detail">
+    </a>
+    <a name="event-detail">
+    </a>
+    <hr>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td>
+                <a href="namespace-summary.html">Namespace</a> </td>
+              <td class="nav1sel"> Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV TYPE    NEXT TYPE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+      <tr class="nav2">
+        <td>SUMMARY: INNER | FIELD | <a href="#constructor-summary">CONST</a> | PROP | <a href="#method-summary">METHOD</a> | OP | EVENT</td>
+        <td>DETAIL: FIELD | <a href="#constructor-detail">CONST</a> | PROP | <a href="#method-detail">METHOD</a> | OP | EVENT</td>
+      </tr>
+    </table>
+  </body>
+</html>

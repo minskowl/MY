@@ -1,0 +1,802 @@
+NAnt 0.86 (Build 0.86.2898.0; beta1; 08.12.2007)
+Copyright (C) 2001-2007 Gerry Shaw
+http://nant.sourceforge.net
+
+Buildfile: file:///D:/MY/Develop/Projects/Net/BotvaSpider/trunk/default.build
+Target framework: Microsoft .NET Framework 3.5
+Target(s) specified: buildAll 
+
+
+buildAll:
+
+
+buildDebug:
+
+
+buildProject:
+
+     [echo] build project: D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider.sln
+  [msbuild] Build started 08.12.2009 9:31:15.
+  [msbuild] Project "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider.sln" on node 0 (Rebuild target(s)).
+  [msbuild]   Building solution configuration "Debug|Any CPU".
+  [msbuild] Project "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider.sln" (1) is building "D:\MY\Develop\Projects\Net\Libs\Savchin.WinApi\Savchin.WinApi.csproj" (2) on node 0 (Rebuild target(s)).
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\Libs\Savchin.WinApi\bin\Debug\Savchin.WinApi.dll".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\Libs\Savchin.WinApi\bin\Debug\Savchin.WinApi.pdb".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\Libs\Savchin.WinApi\obj\Debug\Savchin.WinApi.dll".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\Libs\Savchin.WinApi\obj\Debug\Savchin.WinApi.pdb".
+  [msbuild] EntityClean:
+  [msbuild]   Successfully cleaned the output for 0 EDMX files.
+  [msbuild] EntityDeploy:
+  [msbuild]   Processing 0 EDMX files.
+  [msbuild]   Finished processing 0 EDMX files.
+  [msbuild] CopyFilesToOutputDirectory:
+  [msbuild]   Copying file from "obj\Debug\Savchin.WinApi.dll" to "bin\Debug\Savchin.WinApi.dll".
+  [msbuild]   Savchin.WinApi -> D:\MY\Develop\Projects\Net\Libs\Savchin.WinApi\bin\Debug\Savchin.WinApi.dll
+  [msbuild]   Copying file from "obj\Debug\Savchin.WinApi.pdb" to "bin\Debug\Savchin.WinApi.pdb".
+  [msbuild] Done Building Project "D:\MY\Develop\Projects\Net\Libs\Savchin.WinApi\Savchin.WinApi.csproj" (Rebuild target(s)).
+  [msbuild] Project "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider.sln" (1) is building "D:\MY\Develop\Projects\Net\Libs\Tools\Savchin.Tools.csproj" (3) on node 0 (Rebuild target(s)).
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\Libs\Tools\bin\Debug\Savchin.Tools.dll".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\Libs\Tools\bin\Debug\Savchin.Tools.pdb".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\Libs\Tools\bin\Debug\Newtonsoft.Json.dll".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\Libs\Tools\bin\Debug\Newtonsoft.Json.pdb".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\Libs\Tools\bin\Debug\Newtonsoft.Json.xml".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\Libs\Tools\bin\Debug\ru\Savchin.Tools.resources.dll".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\Libs\Tools\obj\Debug\ResolveAssemblyReference.cache".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\Libs\Tools\obj\Debug\Savchin.Tools.dll".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\Libs\Tools\obj\Debug\Savchin.Tools.pdb".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\Libs\Tools\obj\Debug\Savchin.Validation.Resources.resources".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\Libs\Tools\obj\Debug\Savchin.Validation.Resources.ru.resources".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\Libs\Tools\obj\Debug\Savchin.Tools.csproj.GenerateResource.Cache".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\Libs\Tools\obj\Debug\ru\Savchin.Tools.resources.dll".
+  [msbuild] EntityClean:
+  [msbuild]   Successfully cleaned the output for 0 EDMX files.
+  [msbuild] EntityDeploy:
+  [msbuild]   Processing 0 EDMX files.
+  [msbuild]   Finished processing 0 EDMX files.
+  [msbuild] CoreResGen:
+  [msbuild]   Processing resource file "Validation\Resources.resx" into "obj\Debug\Savchin.Validation.Resources.resources".
+  [msbuild]   Processing resource file "Validation\Resources.ru.resx" into "obj\Debug\Savchin.Validation.Resources.ru.resources".
+  [msbuild] Crypto\Rsa.cs(26,31): warning CS0219: The variable 'par' is assigned but its value is never used
+  [msbuild] Threading\IOCP\ManagedIOCP.cs(642,42): warning CS0420: 'Savchin.Threading.IOCP.ManagedIOCP<T>._activeThreads': a reference to a volatile field will not be treated as volatile
+  [msbuild] Threading\IOCP\ManagedIOCP.cs(657,31): warning CS0420: 'Savchin.Threading.IOCP.ManagedIOCP<T>._activeThreads': a reference to a volatile field will not be treated as volatile
+  [msbuild] Threading\ObjectPool\ObjectPool.cs(93,61): warning CS0420: 'Savchin.Threading.DataStructures.LockFree.PoolableObject.LinkedObject': a reference to a volatile field will not be treated as volatile
+  [msbuild] Threading\ObjectPool\ObjectPool.cs(106,57): warning CS0420: 'Savchin.Threading.DataStructures.LockFree.ObjectPool._tail': a reference to a volatile field will not be treated as volatile
+  [msbuild] Threading\ObjectPool\ObjectPool.cs(114,45): warning CS0420: 'Savchin.Threading.DataStructures.LockFree.ObjectPool._tail': a reference to a volatile field will not be treated as volatile
+  [msbuild] Threading\ObjectPool\ObjectPool.cs(165,61): warning CS0420: 'Savchin.Threading.DataStructures.LockFree.ObjectPool._tail': a reference to a volatile field will not be treated as volatile
+  [msbuild] Threading\ObjectPool\ObjectPool.cs(178,61): warning CS0420: 'Savchin.Threading.DataStructures.LockFree.ObjectPool._head': a reference to a volatile field will not be treated as volatile
+  [msbuild] Threading\IOCP\Queue.cs(66,39): warning CS0420: 'Savchin.Threading.IOCP.Queue<T>._tail': a reference to a volatile field will not be treated as volatile
+  [msbuild] Threading\IOCP\Queue.cs(74,36): warning CS0420: 'Savchin.Threading.IOCP.Queue<T>._tail': a reference to a volatile field will not be treated as volatile
+  [msbuild] Threading\IOCP\Queue.cs(117,40): warning CS0420: 'Savchin.Threading.IOCP.Queue<T>._tail': a reference to a volatile field will not be treated as volatile
+  [msbuild] Threading\IOCP\Queue.cs(127,61): warning CS0420: 'Savchin.Threading.IOCP.Queue<T>._head': a reference to a volatile field will not be treated as volatile
+  [msbuild] Threading\ThreadPool.cs(183,21): warning CS0618: 'System.AppDomain.GetCurrentThreadId()' is obsolete: 'AppDomain.GetCurrentThreadId has been deprecated because it does not provide a stable Id when managed threads are running on fibers (aka lightweight threads). To get a stable identifier for a managed thread, use the ManagedThreadId property on Thread.  http://go.microsoft.com/fwlink/?linkid=14202'
+  [msbuild] _CopyFilesMarkedCopyLocal:
+  [msbuild]   Copying file from "..\..\ThrPartLibs\JSON\Newtonsoft.Json.dll" to "bin\Debug\Newtonsoft.Json.dll".
+  [msbuild]   Copying file from "..\..\ThrPartLibs\JSON\Newtonsoft.Json.pdb" to "bin\Debug\Newtonsoft.Json.pdb".
+  [msbuild]   Copying file from "..\..\ThrPartLibs\JSON\Newtonsoft.Json.xml" to "bin\Debug\Newtonsoft.Json.xml".
+  [msbuild] CopyFilesToOutputDirectory:
+  [msbuild]   Copying file from "obj\Debug\Savchin.Tools.dll" to "bin\Debug\Savchin.Tools.dll".
+  [msbuild]   Savchin.Tools -> D:\MY\Develop\Projects\Net\Libs\Tools\bin\Debug\Savchin.Tools.dll
+  [msbuild]   Copying file from "obj\Debug\Savchin.Tools.pdb" to "bin\Debug\Savchin.Tools.pdb".
+  [msbuild]   Copying file from "obj\Debug\ru\Savchin.Tools.resources.dll" to "bin\Debug\ru\Savchin.Tools.resources.dll".
+  [msbuild] Done Building Project "D:\MY\Develop\Projects\Net\Libs\Tools\Savchin.Tools.csproj" (Rebuild target(s)).
+  [msbuild] Project "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider.sln" (1) is building "D:\MY\Develop\Projects\Net\Libs\Savchin.Forms\Savchin.Forms.csproj" (4) on node 0 (Rebuild target(s)).
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\Libs\Savchin.Forms\bin\Debug\Savchin.Forms.dll".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\Libs\Savchin.Forms\bin\Debug\Savchin.Forms.pdb".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\Libs\Savchin.Forms\bin\Debug\Savchin.Tools.dll".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\Libs\Savchin.Forms\bin\Debug\Newtonsoft.Json.dll".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\Libs\Savchin.Forms\bin\Debug\Savchin.Tools.pdb".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\Libs\Savchin.Forms\bin\Debug\Newtonsoft.Json.pdb".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\Libs\Savchin.Forms\bin\Debug\Newtonsoft.Json.xml".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\Libs\Savchin.Forms\bin\Debug\ru\Savchin.Tools.resources.dll".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\Libs\Savchin.Forms\bin\Debug\Savchin.WinApi.dll".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\Libs\Savchin.Forms\bin\Debug\Savchin.WinApi.pdb".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\Libs\Savchin.Forms\obj\Debug\ResolveAssemblyReference.cache".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\Libs\Savchin.Forms\obj\Debug\Savchin.Forms.ColorPicker.resources".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\Libs\Savchin.Forms\obj\Debug\Savchin.Forms.Comparer.CompareView.resources".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\Libs\Savchin.Forms\obj\Debug\Savchin.Forms.Comparer.FormCompare.resources".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\Libs\Savchin.Forms\obj\Debug\Savchin.Forms.Comparer.FormFilter.resources".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\Libs\Savchin.Forms\obj\Debug\Savchin.Forms.ExceptionForm.resources".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\Libs\Savchin.Forms\obj\Debug\Savchin.Forms.FormObject.resources".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\Libs\Savchin.Forms\obj\Debug\Savchin.Forms.frmSearch.resources".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\Libs\Savchin.Forms\obj\Debug\Savchin.Forms.Wizard.Header.resources".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\Libs\Savchin.Forms\obj\Debug\Savchin.Forms.Wizard.InfoContainer.resources".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\Libs\Savchin.Forms\obj\Debug\Savchin.Forms.Wizard.InfoPage.resources".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\Libs\Savchin.Forms\obj\Debug\Savchin.Forms.Wizard.Wizard.resources".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\Libs\Savchin.Forms\obj\Debug\Savchin.Forms.Wizard.WizardPage.resources".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\Libs\Savchin.Forms\obj\Debug\Savchin.Forms.csproj.GenerateResource.Cache".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\Libs\Savchin.Forms\obj\Debug\Savchin.Forms.Properties.Resources.resources".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\Libs\Savchin.Forms\obj\Debug\Savchin.Forms.dll".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\Libs\Savchin.Forms\obj\Debug\Savchin.Forms.pdb".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\Libs\Savchin.Forms\obj\Debug\Savchin.Forms.DateRangeControl.resources".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\Libs\Savchin.Forms\obj\Debug\Savchin.Forms.Browsers.RegistryStringValueForm.resources".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\Libs\Savchin.Forms\obj\Debug\Savchin.Forms.Browsers.AssemblyBrowser.resources".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\Libs\Savchin.Forms\obj\Debug\Savchin.Forms.Browsers.RegistryBrowser.resources".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\Libs\Savchin.Forms\obj\Debug\Savchin.Forms.Net.CredentialControl.resources".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\Libs\Savchin.Forms\obj\Debug\Savchin.Forms.Net.InternetSettingsControl.resources".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\Libs\Savchin.Forms\obj\Debug\Savchin.Forms.Net.ProxySettingsControl.resources".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\Libs\Savchin.Forms\obj\Debug\Savchin.Forms.Docking.Resources.resources".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\Libs\Savchin.Forms\obj\Debug\Savchin.Forms.Docking.Strings.resources".
+  [msbuild] EntityClean:
+  [msbuild]   Successfully cleaned the output for 0 EDMX files.
+  [msbuild] EntityDeploy:
+  [msbuild]   Processing 0 EDMX files.
+  [msbuild]   Finished processing 0 EDMX files.
+  [msbuild] CoreResGen:
+  [msbuild]   Processing resource file "Browsers\AssemblyBrowser.resx" into "obj\Debug\Savchin.Forms.Browsers.AssemblyBrowser.resources".
+  [msbuild]   Processing resource file "Browsers\RegistryBrowser.resx" into "obj\Debug\Savchin.Forms.Browsers.RegistryBrowser.resources".
+  [msbuild]   Processing resource file "Browsers\RegistryStringValueForm.resx" into "obj\Debug\Savchin.Forms.Browsers.RegistryStringValueForm.resources".
+  [msbuild]   Processing resource file "ColorPicker.resx" into "obj\Debug\Savchin.Forms.ColorPicker.resources".
+  [msbuild]   Processing resource file "Comparer\CompareView.resx" into "obj\Debug\Savchin.Forms.Comparer.CompareView.resources".
+  [msbuild]   Processing resource file "Comparer\FormCompare.resx" into "obj\Debug\Savchin.Forms.Comparer.FormCompare.resources".
+  [msbuild]   Processing resource file "Comparer\FormFilter.resx" into "obj\Debug\Savchin.Forms.Comparer.FormFilter.resources".
+  [msbuild]   Processing resource file "DateRangeControl.resx" into "obj\Debug\Savchin.Forms.DateRangeControl.resources".
+  [msbuild]   Processing resource file "ExceptionForm.resx" into "obj\Debug\Savchin.Forms.ExceptionForm.resources".
+  [msbuild]   Processing resource file "FormObject.resx" into "obj\Debug\Savchin.Forms.FormObject.resources".
+  [msbuild]   Processing resource file "frmSearch.resx" into "obj\Debug\Savchin.Forms.frmSearch.resources".
+  [msbuild]   Processing resource file "Net\CredentialControl.resx" into "obj\Debug\Savchin.Forms.Net.CredentialControl.resources".
+  [msbuild]   Processing resource file "Net\InternetSettingsControl.resx" into "obj\Debug\Savchin.Forms.Net.InternetSettingsControl.resources".
+  [msbuild]   Processing resource file "Net\ProxySettingsControl.resx" into "obj\Debug\Savchin.Forms.Net.ProxySettingsControl.resources".
+  [msbuild]   Processing resource file "Properties\Resources.resx" into "obj\Debug\Savchin.Forms.Properties.Resources.resources".
+  [msbuild]   Processing resource file "Wizard\Header.resx" into "obj\Debug\Savchin.Forms.Wizard.Header.resources".
+  [msbuild]   Processing resource file "Wizard\InfoContainer.resx" into "obj\Debug\Savchin.Forms.Wizard.InfoContainer.resources".
+  [msbuild]   Processing resource file "Wizard\InfoPage.resx" into "obj\Debug\Savchin.Forms.Wizard.InfoPage.resources".
+  [msbuild]   Processing resource file "Wizard\Wizard.resx" into "obj\Debug\Savchin.Forms.Wizard.Wizard.resources".
+  [msbuild]   Processing resource file "Wizard\WizardPage.resx" into "obj\Debug\Savchin.Forms.Wizard.WizardPage.resources".
+  [msbuild]   Processing resource file "Docking\Resources.resx" into "obj\Debug\Savchin.Forms.Docking.Resources.resources".
+  [msbuild]   Processing resource file "Docking\Strings.resx" into "obj\Debug\Savchin.Forms.Docking.Strings.resources".
+  [msbuild] ColorPicker.cs(143,22): warning CS0108: 'Savchin.Forms.ColorPicker.TextChanged(System.Windows.Forms.TextBox, System.Windows.Forms.TrackBar)' hides inherited member 'System.Windows.Forms.UserControl.TextChanged'. Use the new keyword if hiding was intended.
+  [msbuild] _CopyFilesMarkedCopyLocal:
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\Libs\Tools\bin\Debug\Savchin.Tools.dll" to "bin\Debug\Savchin.Tools.dll".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\Libs\Savchin.WinApi\bin\Debug\Savchin.WinApi.dll" to "bin\Debug\Savchin.WinApi.dll".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\Libs\Tools\bin\Debug\Newtonsoft.Json.dll" to "bin\Debug\Newtonsoft.Json.dll".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\Libs\Tools\bin\Debug\Savchin.Tools.pdb" to "bin\Debug\Savchin.Tools.pdb".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\Libs\Savchin.WinApi\bin\Debug\Savchin.WinApi.pdb" to "bin\Debug\Savchin.WinApi.pdb".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\Libs\Tools\bin\Debug\Newtonsoft.Json.pdb" to "bin\Debug\Newtonsoft.Json.pdb".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\Libs\Tools\bin\Debug\Newtonsoft.Json.xml" to "bin\Debug\Newtonsoft.Json.xml".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\Libs\Tools\bin\Debug\ru\Savchin.Tools.resources.dll" to "bin\Debug\ru\Savchin.Tools.resources.dll".
+  [msbuild] CopyFilesToOutputDirectory:
+  [msbuild]   Copying file from "obj\Debug\Savchin.Forms.dll" to "bin\Debug\Savchin.Forms.dll".
+  [msbuild]   Savchin.Forms -> D:\MY\Develop\Projects\Net\Libs\Savchin.Forms\bin\Debug\Savchin.Forms.dll
+  [msbuild]   Copying file from "obj\Debug\Savchin.Forms.pdb" to "bin\Debug\Savchin.Forms.pdb".
+  [msbuild] Done Building Project "D:\MY\Develop\Projects\Net\Libs\Savchin.Forms\Savchin.Forms.csproj" (Rebuild target(s)).
+  [msbuild] Project "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider.sln" (1) is building "D:\MY\Develop\Projects\Net\Libs\Savchin.Web\Savchin.Web.csproj" (5) on node 0 (Rebuild target(s)).
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\Libs\Savchin.Web\bin\Debug\Savchin.Web.dll".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\Libs\Savchin.Web\bin\Debug\Savchin.Web.pdb".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\Libs\Savchin.Web\bin\Debug\Savchin.Tools.dll".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\Libs\Savchin.Web\bin\Debug\Newtonsoft.Json.dll".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\Libs\Savchin.Web\bin\Debug\Savchin.Tools.pdb".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\Libs\Savchin.Web\bin\Debug\Newtonsoft.Json.pdb".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\Libs\Savchin.Web\bin\Debug\Newtonsoft.Json.xml".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\Libs\Savchin.Web\bin\Debug\ru\Savchin.Tools.resources.dll".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\Libs\Savchin.Web\obj\Debug\ResolveAssemblyReference.cache".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\Libs\Savchin.Web\obj\Debug\Savchin.Web.dll".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\Libs\Savchin.Web\obj\Debug\Savchin.Web.pdb".
+  [msbuild] EntityClean:
+  [msbuild]   Successfully cleaned the output for 0 EDMX files.
+  [msbuild] EntityDeploy:
+  [msbuild]   Processing 0 EDMX files.
+  [msbuild]   Finished processing 0 EDMX files.
+  [msbuild] _CopyFilesMarkedCopyLocal:
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\Libs\Tools\bin\Debug\Savchin.Tools.dll" to "bin\Debug\Savchin.Tools.dll".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\Libs\Tools\bin\Debug\Newtonsoft.Json.dll" to "bin\Debug\Newtonsoft.Json.dll".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\Libs\Tools\bin\Debug\Savchin.Tools.pdb" to "bin\Debug\Savchin.Tools.pdb".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\Libs\Tools\bin\Debug\Newtonsoft.Json.pdb" to "bin\Debug\Newtonsoft.Json.pdb".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\Libs\Tools\bin\Debug\Newtonsoft.Json.xml" to "bin\Debug\Newtonsoft.Json.xml".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\Libs\Tools\bin\Debug\ru\Savchin.Tools.resources.dll" to "bin\Debug\ru\Savchin.Tools.resources.dll".
+  [msbuild] CopyFilesToOutputDirectory:
+  [msbuild]   Copying file from "obj\Debug\Savchin.Web.dll" to "bin\Debug\Savchin.Web.dll".
+  [msbuild]   Savchin.Web -> D:\MY\Develop\Projects\Net\Libs\Savchin.Web\bin\Debug\Savchin.Web.dll
+  [msbuild]   Copying file from "obj\Debug\Savchin.Web.pdb" to "bin\Debug\Savchin.Web.pdb".
+  [msbuild] Done Building Project "D:\MY\Develop\Projects\Net\Libs\Savchin.Web\Savchin.Web.csproj" (Rebuild target(s)).
+  [msbuild] Project "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider.sln" (1) is building "D:\MY\Develop\Projects\Net\NUnit\Watin\source\src\Core\Core.csproj" (6) on node 0 (Rebuild target(s)).
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\NUnit\Watin\source\src\Core\bin\WatiN.Core.dll".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\NUnit\Watin\source\src\Core\bin\WatiN.Core.pdb".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\NUnit\Watin\source\src\Core\bin\Interop.SHDocVw.dll".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\NUnit\Watin\source\src\Core\bin\Savchin.WinApi.dll".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\NUnit\Watin\source\src\Core\bin\Savchin.WinApi.pdb".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\NUnit\Watin\source\src\Core\bin\WatiN.Core.XML".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\NUnit\Watin\source\src\Core\obj\Debug\ResolveAssemblyReference.cache".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\NUnit\Watin\source\src\Core\obj\Debug\WatiN.Core.Properties.Resources.resources".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\NUnit\Watin\source\src\Core\obj\Debug\Core.csproj.GenerateResource.Cache".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\NUnit\Watin\source\src\Core\obj\Debug\WatiN.Core.dll".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\NUnit\Watin\source\src\Core\obj\Debug\WatiN.Core.pdb".
+  [msbuild] EntityClean:
+  [msbuild]   Successfully cleaned the output for 0 EDMX files.
+  [msbuild] EntityDeploy:
+  [msbuild]   Processing 0 EDMX files.
+  [msbuild]   Finished processing 0 EDMX files.
+  [msbuild] CoreResGen:
+  [msbuild]   Processing resource file "Properties\Resources.resx" into "obj\Debug\WatiN.Core.Properties.Resources.resources".
+  [msbuild] _CopyFilesMarkedCopyLocal:
+  [msbuild]   Copying file from "..\..\lib\Net\3.5\Interop.SHDocVw.dll" to "bin\Interop.SHDocVw.dll".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\Libs\Savchin.WinApi\bin\Debug\Savchin.WinApi.dll" to "bin\Savchin.WinApi.dll".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\Libs\Savchin.WinApi\bin\Debug\Savchin.WinApi.pdb" to "bin\Savchin.WinApi.pdb".
+  [msbuild] CopyFilesToOutputDirectory:
+  [msbuild]   Copying file from "obj\Debug\WatiN.Core.dll" to "bin\WatiN.Core.dll".
+  [msbuild]   Core -> D:\MY\Develop\Projects\Net\NUnit\Watin\source\src\Core\bin\WatiN.Core.dll
+  [msbuild]   Copying file from "obj\Debug\WatiN.Core.pdb" to "bin\WatiN.Core.pdb".
+  [msbuild] Done Building Project "D:\MY\Develop\Projects\Net\NUnit\Watin\source\src\Core\Core.csproj" (Rebuild target(s)).
+  [msbuild] Project "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider.sln" (1) is building "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\BotvaSpider.csproj" (7) on node 0 (Rebuild target(s)).
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\bin\Debug\BotvaSpider.exe.config".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\bin\Debug\miner.swf".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\bin\Debug\Resources\Coulombs\Coulomb_-1s.jpg".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\bin\Debug\Resources\Coulombs\Coulomb_0.jpg".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\bin\Debug\Resources\Coulombs\Coulomb_0s.jpg".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\bin\Debug\Resources\Coulombs\Coulomb_14s.jpg".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\bin\Debug\Resources\Coulombs\Coulomb_15.jpg".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\bin\Debug\Resources\Coulombs\Coulomb_15s.jpg".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\bin\Debug\Resources\Coulombs\Coulomb_16s.jpg".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\bin\Debug\Resources\Coulombs\Coulomb_17s.jpg".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\bin\Debug\Resources\Coulombs\Coulomb_18.jpg".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\bin\Debug\Resources\Coulombs\Coulomb_18s.jpg".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\bin\Debug\Resources\Coulombs\Coulomb_1s.jpg".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\bin\Debug\Resources\Coulombs\Coulomb_12s.jpg".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\bin\Debug\Resources\Coulombs\Coulomb_20.jpg".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\bin\Debug\Resources\Coulombs\Coulomb_20s.jpg".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\bin\Debug\Resources\Coulombs\Coulomb_22.jpg".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\bin\Debug\Resources\Coulombs\Coulomb_22s.jpg".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\bin\Debug\Resources\Coulombs\Coulomb_27s.jpg".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\bin\Debug\Resources\Coulombs\Coulomb_5s.jpg".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\bin\Debug\main.game.cfg".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\bin\Debug\Spider.cfg".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\bin\Debug\Resources\Coulombs\Coulomb_16.jpg".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\bin\Debug\Resources\Coulombs\Coulomb_17.jpg".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\bin\Debug\Resources\Coulombs\Coulomb_1.jpg".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\bin\Debug\Resources\Coulombs\Coulomb_12.jpg".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\bin\Debug\Resources\Coulombs\Coulomb_13.jpg".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\bin\Debug\Resources\Coulombs\Coulomb_14.jpg".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\bin\Debug\Resources\Coulombs\Coulomb_2.jpg".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\bin\Debug\Resources\Coulombs\Coulomb_27.jpg".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\bin\Debug\Resources\Coulombs\Coulomb_31.jpg".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\bin\Debug\Resources\Coulombs\Coulomb_11.jpg".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\bin\Debug\Resources\Coulombs\Coulomb_5.jpg".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\bin\Debug\BotvaSpider.exe".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\bin\Debug\BotvaSpider.pdb".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\bin\Debug\log4net.dll".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\bin\Debug\Savchin.Tools.dll".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\bin\Debug\WatiN.Core.dll".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\bin\Debug\Interop.SHDocVw.dll".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\bin\Debug\Newtonsoft.Json.dll".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\bin\Debug\Newtonsoft.Json.pdb".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\bin\Debug\Newtonsoft.Json.xml".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\bin\Debug\Savchin.Tools.pdb".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\bin\Debug\WatiN.Core.pdb".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\bin\Debug\WatiN.Core.xml".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\bin\Debug\Interop.ShockwaveFlashObjects.dll".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\bin\Debug\AxInterop.ShockwaveFlashObjects.dll".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\bin\Debug\Savchin.Web.dll".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\bin\Debug\Savchin.WinApi.dll".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\bin\Debug\Savchin.WinApi.pdb".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\bin\Debug\Savchin.Web.pdb".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\bin\Debug\ru\Savchin.Tools.resources.dll".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\bin\Debug\Savchin.Forms.dll".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\bin\Debug\Savchin.Forms.pdb".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\obj\Debug\Interop.ShockwaveFlashObjects.dll".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\obj\Debug\AxInterop.ShockwaveFlashObjects.dll".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\obj\Debug\BotvaSpider.csproj.ResolveComReference.cache".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\obj\Debug\ResolveAssemblyReference.cache".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\obj\Debug\BotvaSpider.Consoles.CowsFarmConsole.resources".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\obj\Debug\BotvaSpider.Consoles.MiningConsole.resources".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\obj\Debug\BotvaSpider.Controls.Configuration.Accountant.AccountantControl.resources".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\obj\Debug\BotvaSpider.Controls.Configuration.AttackSettingsControl.resources".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\obj\Debug\BotvaSpider.Controls.Configuration.FormSettings.resources".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\obj\Debug\BotvaSpider.Consoles.AccountantConsole.resources".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\obj\Debug\BotvaSpider.Consoles.FightingConsole.resources".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\obj\Debug\BotvaSpider.Consoles.CrystalMapConsole.resources".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\obj\Debug\BotvaSpider.Consoles.OutputWindow.resources".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\obj\Debug\BotvaSpider.Consoles.SmithyConsole.resources".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\obj\Debug\BotvaSpider.Consoles.TraderConsole.resources".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\obj\Debug\BotvaSpider.Consoles.TopSearchConsole.resources".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\obj\Debug\BotvaSpider.Controls.LabelValueGrid.resources".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\obj\Debug\BotvaSpider.Controls.BigCrystalMap.resources".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\obj\Debug\BotvaSpider.Controls.Mining.BigCrystalMapResult.resources".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\obj\Debug\BotvaSpider.Controls.Configuration.Accountant.InvestmentStrategiesSelector.resources".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\obj\Debug\BotvaSpider.Controls.Configuration.Accountant.InvestmentStrategyControl.resources".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\obj\Debug\BotvaSpider.Controls.Configuration.MineSettingsControl.resources".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\obj\Debug\BotvaSpider.Controls.Configuration.UserListsControl.resources".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\obj\Debug\BotvaSpider.Controls.Configuration.UserSettings.resources".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\obj\Debug\BotvaSpider.Controls.Configuration.WardrobeSettingsControl.resources".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\obj\Debug\BotvaSpider.Controls.CoulombSelector.resources".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\obj\Debug\BotvaSpider.Controls.Mining.CrystalMapBase.resources".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\obj\Debug\BotvaSpider.Controls.Mining.CrystalMapSelector.resources".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\obj\Debug\BotvaSpider.Controls.FarmControl.resources".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\obj\Debug\BotvaSpider.Controls.FarmStateControlControl.resources".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\obj\Debug\BotvaSpider.Controls.FightListControl.resources".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\obj\Debug\BotvaSpider.Controls.Statistics.BalanceControl.resources".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\obj\Debug\BotvaSpider.Controls.Statistics.FightStatisticsControl.resources".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\obj\Debug\BotvaSpider.Controls.FormContainer.resources".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\obj\Debug\BotvaSpider.Controls.FormErrorReport.resources".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\obj\Debug\BotvaSpider.Controls.FormFileSelect.resources".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\obj\Debug\BotvaSpider.Controls.FormText.resources".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\obj\Debug\BotvaSpider.Controls.FoundryControl.resources".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\obj\Debug\BotvaSpider.Controls.LogViewer.resources".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\obj\Debug\BotvaSpider.Controls.MinerControl.resources".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\obj\Debug\BotvaSpider.Controls.PageControl.resources".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\obj\Debug\BotvaSpider.Controls.SapperControl.resources".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\obj\Debug\BotvaSpider.Controls.Mining.SaveMapControl.resources".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\obj\Debug\BotvaSpider.Controls.ScheduleControl.resources".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\obj\Debug\BotvaSpider.Controls.Mining.ShowVariantsControl.resources".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\obj\Debug\BotvaSpider.Controls.Configuration.Accountant.TradeSearcherControl.resources".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\obj\Debug\BotvaSpider.Controls.Statistics.MineCristalDistributionControl.resources".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\obj\Debug\BotvaSpider.Controls.Statistics.MineTotalStatistics.resources".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\obj\Debug\BotvaSpider.Controls.UserListControl.resources".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\obj\Debug\BotvaSpider.Controls.WormHoleControl.resources".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\obj\Debug\BotvaSpider.FormTest.resources".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\obj\Debug\BotvaSpider.FormAbout.resources".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\obj\Debug\BotvaSpider.MainForm.resources".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\obj\Debug\BotvaSpider.Properties.Resources.resources".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\obj\Debug\BotvaSpider.csproj.GenerateResource.Cache".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\obj\Debug\BotvaSpider.exe".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\obj\Debug\BotvaSpider.pdb".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\obj\Debug\BotvaSpider.Controls.Configuration.TicketActionControl.resources".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\obj\Debug\BotvaSpider.Controls.RangeFilterControl.resources".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\obj\Debug\BotvaSpider.Controls.FormTopSearchUserFilter.resources".
+  [msbuild] EntityClean:
+  [msbuild]   Successfully cleaned the output for 0 EDMX files.
+  [msbuild] EntityDeploy:
+  [msbuild]   Processing 0 EDMX files.
+  [msbuild]   Finished processing 0 EDMX files.
+  [msbuild] CoreResGen:
+  [msbuild]   Processing resource file "Consoles\CowsFarmConsole.resx" into "obj\Debug\BotvaSpider.Consoles.CowsFarmConsole.resources".
+  [msbuild]   Processing resource file "Consoles\MiningConsole.resx" into "obj\Debug\BotvaSpider.Consoles.MiningConsole.resources".
+  [msbuild]   Processing resource file "Controls\Configuration\Accountant\AccountantControl.resx" into "obj\Debug\BotvaSpider.Controls.Configuration.Accountant.AccountantControl.resources".
+  [msbuild]   Processing resource file "Controls\Configuration\AttackSettingsControl.resx" into "obj\Debug\BotvaSpider.Controls.Configuration.AttackSettingsControl.resources".
+  [msbuild]   Processing resource file "Controls\Configuration\FormSettings.resx" into "obj\Debug\BotvaSpider.Controls.Configuration.FormSettings.resources".
+  [msbuild]   Processing resource file "Consoles\AccountantConsole.resx" into "obj\Debug\BotvaSpider.Consoles.AccountantConsole.resources".
+  [msbuild]   Processing resource file "Consoles\FightingConsole.resx" into "obj\Debug\BotvaSpider.Consoles.FightingConsole.resources".
+  [msbuild]   Processing resource file "Consoles\CrystalMapConsole.resx" into "obj\Debug\BotvaSpider.Consoles.CrystalMapConsole.resources".
+  [msbuild]   Processing resource file "Consoles\OutputWindow.resx" into "obj\Debug\BotvaSpider.Consoles.OutputWindow.resources".
+  [msbuild]   Processing resource file "Consoles\SmithyConsole.resx" into "obj\Debug\BotvaSpider.Consoles.SmithyConsole.resources".
+  [msbuild]   Processing resource file "Consoles\TraderConsole.resx" into "obj\Debug\BotvaSpider.Consoles.TraderConsole.resources".
+  [msbuild]   Processing resource file "Consoles\TopSearchConsole.resx" into "obj\Debug\BotvaSpider.Consoles.TopSearchConsole.resources".
+  [msbuild]   Processing resource file "Controls\Configuration\TicketActionControl.resx" into "obj\Debug\BotvaSpider.Controls.Configuration.TicketActionControl.resources".
+  [msbuild]   Processing resource file "Controls\RangeFilterControl.resx" into "obj\Debug\BotvaSpider.Controls.RangeFilterControl.resources".
+  [msbuild]   Processing resource file "Controls\FormTopSearchUserFilter.resx" into "obj\Debug\BotvaSpider.Controls.FormTopSearchUserFilter.resources".
+  [msbuild]   Processing resource file "Controls\LabelValueGrid.resx" into "obj\Debug\BotvaSpider.Controls.LabelValueGrid.resources".
+  [msbuild]   Processing resource file "Controls\Mining\BigCrystalMap.resx" into "obj\Debug\BotvaSpider.Controls.BigCrystalMap.resources".
+  [msbuild]   Processing resource file "Controls\Mining\BigCrystalMapResult.resx" into "obj\Debug\BotvaSpider.Controls.Mining.BigCrystalMapResult.resources".
+  [msbuild]   Processing resource file "Controls\Configuration\Accountant\InvestmentStrategiesSelector.resx" into "obj\Debug\BotvaSpider.Controls.Configuration.Accountant.InvestmentStrategiesSelector.resources".
+  [msbuild]   Processing resource file "Controls\Configuration\Accountant\InvestmentStrategyControl.resx" into "obj\Debug\BotvaSpider.Controls.Configuration.Accountant.InvestmentStrategyControl.resources".
+  [msbuild]   Processing resource file "Controls\Configuration\MineSettingsControl.resx" into "obj\Debug\BotvaSpider.Controls.Configuration.MineSettingsControl.resources".
+  [msbuild]   Processing resource file "Controls\Configuration\UserListsControl.resx" into "obj\Debug\BotvaSpider.Controls.Configuration.UserListsControl.resources".
+  [msbuild]   Processing resource file "Controls\Configuration\UserSettings.resx" into "obj\Debug\BotvaSpider.Controls.Configuration.UserSettings.resources".
+  [msbuild]   Processing resource file "Controls\Configuration\WardrobeSettingsControl.resx" into "obj\Debug\BotvaSpider.Controls.Configuration.WardrobeSettingsControl.resources".
+  [msbuild]   Processing resource file "Controls\CoulombSelector.resx" into "obj\Debug\BotvaSpider.Controls.CoulombSelector.resources".
+  [msbuild]   Processing resource file "Controls\Mining\CrystalMapBase.resx" into "obj\Debug\BotvaSpider.Controls.Mining.CrystalMapBase.resources".
+  [msbuild]   Processing resource file "Controls\Mining\CrystalMapSelector.resx" into "obj\Debug\BotvaSpider.Controls.Mining.CrystalMapSelector.resources".
+  [msbuild]   Processing resource file "Controls\FarmControl.resx" into "obj\Debug\BotvaSpider.Controls.FarmControl.resources".
+  [msbuild]   Processing resource file "Controls\FarmStateControlControl.resx" into "obj\Debug\BotvaSpider.Controls.FarmStateControlControl.resources".
+  [msbuild]   Processing resource file "Controls\FightListControl.resx" into "obj\Debug\BotvaSpider.Controls.FightListControl.resources".
+  [msbuild]   Processing resource file "Controls\Statistics\BalanceControl.resx" into "obj\Debug\BotvaSpider.Controls.Statistics.BalanceControl.resources".
+  [msbuild]   Processing resource file "Controls\Statistics\FightStatisticsControl.resx" into "obj\Debug\BotvaSpider.Controls.Statistics.FightStatisticsControl.resources".
+  [msbuild]   Processing resource file "Controls\FormContainer.resx" into "obj\Debug\BotvaSpider.Controls.FormContainer.resources".
+  [msbuild]   Processing resource file "Controls\FormErrorReport.resx" into "obj\Debug\BotvaSpider.Controls.FormErrorReport.resources".
+  [msbuild]   Processing resource file "Controls\FormFileSelect.resx" into "obj\Debug\BotvaSpider.Controls.FormFileSelect.resources".
+  [msbuild]   Processing resource file "Controls\FormText.resx" into "obj\Debug\BotvaSpider.Controls.FormText.resources".
+  [msbuild]   Processing resource file "Controls\Smith\FoundryControl.resx" into "obj\Debug\BotvaSpider.Controls.FoundryControl.resources".
+  [msbuild]   Processing resource file "Controls\LogViewer.resx" into "obj\Debug\BotvaSpider.Controls.LogViewer.resources".
+  [msbuild]   Processing resource file "Controls\Smith\MinerControl.resx" into "obj\Debug\BotvaSpider.Controls.MinerControl.resources".
+  [msbuild]   Processing resource file "Controls\PageControl.resx" into "obj\Debug\BotvaSpider.Controls.PageControl.resources".
+  [msbuild]   Processing resource file "Controls\SapperControl.resx" into "obj\Debug\BotvaSpider.Controls.SapperControl.resources".
+  [msbuild]   Processing resource file "Controls\Mining\SaveMapControl.resx" into "obj\Debug\BotvaSpider.Controls.Mining.SaveMapControl.resources".
+  [msbuild]   Processing resource file "Controls\ScheduleControl.resx" into "obj\Debug\BotvaSpider.Controls.ScheduleControl.resources".
+  [msbuild]   Processing resource file "Controls\Mining\ShowVariantsControl.resx" into "obj\Debug\BotvaSpider.Controls.Mining.ShowVariantsControl.resources".
+  [msbuild]   Processing resource file "Controls\Configuration\Accountant\TradeSearcherControl.resx" into "obj\Debug\BotvaSpider.Controls.Configuration.Accountant.TradeSearcherControl.resources".
+  [msbuild]   Processing resource file "Controls\Statistics\MineCristalDistributionControl.resx" into "obj\Debug\BotvaSpider.Controls.Statistics.MineCristalDistributionControl.resources".
+  [msbuild]   Processing resource file "Controls\Statistics\MineTotalStatistics.resx" into "obj\Debug\BotvaSpider.Controls.Statistics.MineTotalStatistics.resources".
+  [msbuild]   Processing resource file "Controls\UserListControl.resx" into "obj\Debug\BotvaSpider.Controls.UserListControl.resources".
+  [msbuild]   Processing resource file "Controls\WormHoleControl.resx" into "obj\Debug\BotvaSpider.Controls.WormHoleControl.resources".
+  [msbuild]   Processing resource file "FormTest.resx" into "obj\Debug\BotvaSpider.FormTest.resources".
+  [msbuild]   Processing resource file "FormAbout.resx" into "obj\Debug\BotvaSpider.FormAbout.resources".
+  [msbuild]   Processing resource file "MainForm.resx" into "obj\Debug\BotvaSpider.MainForm.resources".
+  [msbuild]   Processing resource file "Properties\Resources.resx" into "obj\Debug\BotvaSpider.Properties.Resources.resources".
+  [msbuild] Core\GameController.cs(156,24): warning CS0628: 'BotvaSpider.Core.GameController.CreateScreenshot(string)': new protected member declared in sealed class
+  [msbuild] Data\Player.cs(23,26): warning CS0108: 'BotvaSpider.Data.Player.Guild' hides inherited member 'BotvaSpider.Data.User.Guild'. Use the new keyword if hiding was intended.
+  [msbuild] Automation\Fights\FightLoginedState.cs(399,22): warning CS0168: The variable 'sleepTime2' is declared but never used
+  [msbuild] _CopyFilesMarkedCopyLocal:
+  [msbuild]   Copying file from "..\..\..\ThrPartLibs\log4net.dll" to "bin\Debug\log4net.dll".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\Libs\Savchin.Forms\bin\Debug\Savchin.Forms.dll" to "bin\Debug\Savchin.Forms.dll".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\Libs\Tools\bin\Debug\Savchin.Tools.dll" to "bin\Debug\Savchin.Tools.dll".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\Libs\Savchin.Web\bin\Debug\Savchin.Web.dll" to "bin\Debug\Savchin.Web.dll".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\Libs\Savchin.WinApi\bin\Debug\Savchin.WinApi.dll" to "bin\Debug\Savchin.WinApi.dll".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\NUnit\Watin\source\src\Core\bin\WatiN.Core.dll" to "bin\Debug\WatiN.Core.dll".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\NUnit\Watin\source\src\Core\bin\Interop.SHDocVw.dll" to "bin\Debug\Interop.SHDocVw.dll".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\Libs\Tools\bin\Debug\Newtonsoft.Json.dll" to "bin\Debug\Newtonsoft.Json.dll".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\Libs\Savchin.WinApi\bin\Debug\Savchin.WinApi.pdb" to "bin\Debug\Savchin.WinApi.pdb".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\Libs\Tools\bin\Debug\Newtonsoft.Json.pdb" to "bin\Debug\Newtonsoft.Json.pdb".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\Libs\Tools\bin\Debug\Newtonsoft.Json.xml" to "bin\Debug\Newtonsoft.Json.xml".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\Libs\Tools\bin\Debug\Savchin.Tools.pdb" to "bin\Debug\Savchin.Tools.pdb".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\Libs\Savchin.Web\bin\Debug\Savchin.Web.pdb" to "bin\Debug\Savchin.Web.pdb".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\Libs\Savchin.Forms\bin\Debug\Savchin.Forms.pdb" to "bin\Debug\Savchin.Forms.pdb".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\NUnit\Watin\source\src\Core\bin\WatiN.Core.pdb" to "bin\Debug\WatiN.Core.pdb".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\NUnit\Watin\source\src\Core\bin\WatiN.Core.xml" to "bin\Debug\WatiN.Core.xml".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\Libs\Tools\bin\Debug\ru\Savchin.Tools.resources.dll" to "bin\Debug\ru\Savchin.Tools.resources.dll".
+  [msbuild] _CopyOutOfDateSourceItemsToOutputDirectory:
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\miner.swf" to "bin\Debug\miner.swf".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\Resources\Coulombs\Coulomb_-1s.jpg" to "bin\Debug\Resources\Coulombs\Coulomb_-1s.jpg".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\Resources\Coulombs\Coulomb_0.jpg" to "bin\Debug\Resources\Coulombs\Coulomb_0.jpg".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\Resources\Coulombs\Coulomb_0s.jpg" to "bin\Debug\Resources\Coulombs\Coulomb_0s.jpg".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\Resources\Coulombs\Coulomb_14s.jpg" to "bin\Debug\Resources\Coulombs\Coulomb_14s.jpg".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\Resources\Coulombs\Coulomb_15.jpg" to "bin\Debug\Resources\Coulombs\Coulomb_15.jpg".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\Resources\Coulombs\Coulomb_15s.jpg" to "bin\Debug\Resources\Coulombs\Coulomb_15s.jpg".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\Resources\Coulombs\Coulomb_16s.jpg" to "bin\Debug\Resources\Coulombs\Coulomb_16s.jpg".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\Resources\Coulombs\Coulomb_17s.jpg" to "bin\Debug\Resources\Coulombs\Coulomb_17s.jpg".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\Resources\Coulombs\Coulomb_18.jpg" to "bin\Debug\Resources\Coulombs\Coulomb_18.jpg".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\Resources\Coulombs\Coulomb_18s.jpg" to "bin\Debug\Resources\Coulombs\Coulomb_18s.jpg".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\Resources\Coulombs\Coulomb_1s.jpg" to "bin\Debug\Resources\Coulombs\Coulomb_1s.jpg".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\Resources\Coulombs\Coulomb_12s.jpg" to "bin\Debug\Resources\Coulombs\Coulomb_12s.jpg".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\Resources\Coulombs\Coulomb_20.jpg" to "bin\Debug\Resources\Coulombs\Coulomb_20.jpg".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\Resources\Coulombs\Coulomb_20s.jpg" to "bin\Debug\Resources\Coulombs\Coulomb_20s.jpg".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\Resources\Coulombs\Coulomb_22.jpg" to "bin\Debug\Resources\Coulombs\Coulomb_22.jpg".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\Resources\Coulombs\Coulomb_22s.jpg" to "bin\Debug\Resources\Coulombs\Coulomb_22s.jpg".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\Resources\Coulombs\Coulomb_27s.jpg" to "bin\Debug\Resources\Coulombs\Coulomb_27s.jpg".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\Resources\Coulombs\Coulomb_5s.jpg" to "bin\Debug\Resources\Coulombs\Coulomb_5s.jpg".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\main.game.cfg" to "bin\Debug\main.game.cfg".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\Spider.cfg" to "bin\Debug\Spider.cfg".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\Resources\Coulombs\Coulomb_16.jpg" to "bin\Debug\Resources\Coulombs\Coulomb_16.jpg".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\Resources\Coulombs\Coulomb_17.jpg" to "bin\Debug\Resources\Coulombs\Coulomb_17.jpg".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\Resources\Coulombs\Coulomb_1.jpg" to "bin\Debug\Resources\Coulombs\Coulomb_1.jpg".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\Resources\Coulombs\Coulomb_12.jpg" to "bin\Debug\Resources\Coulombs\Coulomb_12.jpg".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\Resources\Coulombs\Coulomb_13.jpg" to "bin\Debug\Resources\Coulombs\Coulomb_13.jpg".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\Resources\Coulombs\Coulomb_14.jpg" to "bin\Debug\Resources\Coulombs\Coulomb_14.jpg".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\Resources\Coulombs\Coulomb_2.jpg" to "bin\Debug\Resources\Coulombs\Coulomb_2.jpg".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\Resources\Coulombs\Coulomb_27.jpg" to "bin\Debug\Resources\Coulombs\Coulomb_27.jpg".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\Resources\Coulombs\Coulomb_31.jpg" to "bin\Debug\Resources\Coulombs\Coulomb_31.jpg".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\Resources\Coulombs\Coulomb_11.jpg" to "bin\Debug\Resources\Coulombs\Coulomb_11.jpg".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\Resources\Coulombs\Coulomb_5.jpg" to "bin\Debug\Resources\Coulombs\Coulomb_5.jpg".
+  [msbuild] _CopyAppConfigFile:
+  [msbuild]   Copying file from "App.config" to "bin\Debug\BotvaSpider.exe.config".
+  [msbuild] CopyFilesToOutputDirectory:
+  [msbuild]   Copying file from "obj\Debug\BotvaSpider.exe" to "bin\Debug\BotvaSpider.exe".
+  [msbuild]   BotvaSpider -> D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\bin\Debug\BotvaSpider.exe
+  [msbuild]   Copying file from "obj\Debug\BotvaSpider.pdb" to "bin\Debug\BotvaSpider.pdb".
+  [msbuild]   Copying file from "obj\Debug\Interop.ShockwaveFlashObjects.dll" to "bin\Debug\Interop.ShockwaveFlashObjects.dll".
+  [msbuild]   Copying file from "obj\Debug\AxInterop.ShockwaveFlashObjects.dll" to "bin\Debug\AxInterop.ShockwaveFlashObjects.dll".
+  [msbuild] Done Building Project "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\BotvaSpider.csproj" (Rebuild target(s)).
+  [msbuild] Project "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider.sln" (1) is building "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpiderTests\BotvaSpiderTests.csproj" (8) on node 0 (Rebuild target(s)).
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpiderTests\bin\Debug\miner.swf".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpiderTests\bin\Debug\Resources\Coulombs\Coulomb_-1s.jpg".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpiderTests\bin\Debug\Resources\Coulombs\Coulomb_0.jpg".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpiderTests\bin\Debug\Resources\Coulombs\Coulomb_0s.jpg".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpiderTests\bin\Debug\Resources\Coulombs\Coulomb_14s.jpg".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpiderTests\bin\Debug\Resources\Coulombs\Coulomb_15.jpg".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpiderTests\bin\Debug\Resources\Coulombs\Coulomb_15s.jpg".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpiderTests\bin\Debug\Resources\Coulombs\Coulomb_16s.jpg".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpiderTests\bin\Debug\Resources\Coulombs\Coulomb_17s.jpg".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpiderTests\bin\Debug\Resources\Coulombs\Coulomb_18.jpg".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpiderTests\bin\Debug\Resources\Coulombs\Coulomb_18s.jpg".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpiderTests\bin\Debug\Resources\Coulombs\Coulomb_1s.jpg".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpiderTests\bin\Debug\Resources\Coulombs\Coulomb_12s.jpg".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpiderTests\bin\Debug\Resources\Coulombs\Coulomb_20.jpg".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpiderTests\bin\Debug\Resources\Coulombs\Coulomb_20s.jpg".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpiderTests\bin\Debug\Resources\Coulombs\Coulomb_22.jpg".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpiderTests\bin\Debug\Resources\Coulombs\Coulomb_22s.jpg".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpiderTests\bin\Debug\Resources\Coulombs\Coulomb_27s.jpg".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpiderTests\bin\Debug\Resources\Coulombs\Coulomb_5s.jpg".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpiderTests\bin\Debug\main.game.cfg".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpiderTests\bin\Debug\Spider.cfg".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpiderTests\bin\Debug\Resources\Coulombs\Coulomb_16.jpg".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpiderTests\bin\Debug\Resources\Coulombs\Coulomb_17.jpg".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpiderTests\bin\Debug\Resources\Coulombs\Coulomb_1.jpg".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpiderTests\bin\Debug\Resources\Coulombs\Coulomb_12.jpg".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpiderTests\bin\Debug\Resources\Coulombs\Coulomb_13.jpg".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpiderTests\bin\Debug\Resources\Coulombs\Coulomb_14.jpg".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpiderTests\bin\Debug\Resources\Coulombs\Coulomb_2.jpg".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpiderTests\bin\Debug\Resources\Coulombs\Coulomb_27.jpg".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpiderTests\bin\Debug\Resources\Coulombs\Coulomb_31.jpg".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpiderTests\bin\Debug\Resources\Coulombs\Coulomb_11.jpg".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpiderTests\bin\Debug\Resources\Coulombs\Coulomb_5.jpg".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpiderTests\bin\Debug\BotvaSpiderTests.dll".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpiderTests\bin\Debug\BotvaSpiderTests.pdb".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpiderTests\bin\Debug\BotvaSpider.exe".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpiderTests\bin\Debug\nunit.framework.dll".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpiderTests\bin\Debug\Savchin.Tools.dll".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpiderTests\bin\Debug\Interop.ShockwaveFlashObjects.dll".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpiderTests\bin\Debug\log4net.dll".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpiderTests\bin\Debug\Interop.SHDocVw.dll".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpiderTests\bin\Debug\Newtonsoft.Json.dll".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpiderTests\bin\Debug\AxInterop.ShockwaveFlashObjects.dll".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpiderTests\bin\Debug\WatiN.Core.dll".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpiderTests\bin\Debug\nunit.framework.xml".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpiderTests\bin\Debug\Newtonsoft.Json.pdb".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpiderTests\bin\Debug\Newtonsoft.Json.xml".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpiderTests\bin\Debug\BotvaSpider.pdb".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpiderTests\bin\Debug\Savchin.Tools.pdb".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpiderTests\bin\Debug\WatiN.Core.pdb".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpiderTests\bin\Debug\WatiN.Core.xml".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpiderTests\bin\Debug\Savchin.WinApi.dll".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpiderTests\bin\Debug\Savchin.Web.dll".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpiderTests\bin\Debug\Savchin.WinApi.pdb".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpiderTests\bin\Debug\Savchin.Web.pdb".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpiderTests\bin\Debug\ru\Savchin.Tools.resources.dll".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpiderTests\bin\Debug\Savchin.Forms.dll".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpiderTests\bin\Debug\Savchin.Forms.pdb".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpiderTests\obj\Debug\ResolveAssemblyReference.cache".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpiderTests\obj\Debug\BotvaSpiderTests.dll".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpiderTests\obj\Debug\BotvaSpiderTests.pdb".
+  [msbuild] EntityClean:
+  [msbuild]   Successfully cleaned the output for 0 EDMX files.
+  [msbuild] EntityDeploy:
+  [msbuild]   Processing 0 EDMX files.
+  [msbuild]   Finished processing 0 EDMX files.
+  [msbuild] _CopyFilesMarkedCopyLocal:
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\bin\Debug\BotvaSpider.exe" to "bin\Debug\BotvaSpider.exe".
+  [msbuild]   Copying file from "D:\Program Files\NUnit 2.5\net-2.0\lib\nunit.framework.dll" to "bin\Debug\nunit.framework.dll".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\Libs\Tools\bin\Debug\Savchin.Tools.dll" to "bin\Debug\Savchin.Tools.dll".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\bin\Debug\Interop.ShockwaveFlashObjects.dll" to "bin\Debug\Interop.ShockwaveFlashObjects.dll".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\bin\Debug\Savchin.WinApi.dll" to "bin\Debug\Savchin.WinApi.dll".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\bin\Debug\log4net.dll" to "bin\Debug\log4net.dll".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\bin\Debug\Savchin.Web.dll" to "bin\Debug\Savchin.Web.dll".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\bin\Debug\Interop.SHDocVw.dll" to "bin\Debug\Interop.SHDocVw.dll".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\Libs\Tools\bin\Debug\Newtonsoft.Json.dll" to "bin\Debug\Newtonsoft.Json.dll".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\bin\Debug\AxInterop.ShockwaveFlashObjects.dll" to "bin\Debug\AxInterop.ShockwaveFlashObjects.dll".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\bin\Debug\Savchin.Forms.dll" to "bin\Debug\Savchin.Forms.dll".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\bin\Debug\WatiN.Core.dll" to "bin\Debug\WatiN.Core.dll".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\bin\Debug\Savchin.WinApi.pdb" to "bin\Debug\Savchin.WinApi.pdb".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\bin\Debug\Savchin.Web.pdb" to "bin\Debug\Savchin.Web.pdb".
+  [msbuild]   Copying file from "D:\Program Files\NUnit 2.5\net-2.0\lib\nunit.framework.xml" to "bin\Debug\nunit.framework.xml".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\Libs\Tools\bin\Debug\Newtonsoft.Json.pdb" to "bin\Debug\Newtonsoft.Json.pdb".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\Libs\Tools\bin\Debug\Newtonsoft.Json.xml" to "bin\Debug\Newtonsoft.Json.xml".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\bin\Debug\BotvaSpider.pdb" to "bin\Debug\BotvaSpider.pdb".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\Libs\Tools\bin\Debug\Savchin.Tools.pdb" to "bin\Debug\Savchin.Tools.pdb".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\bin\Debug\Savchin.Forms.pdb" to "bin\Debug\Savchin.Forms.pdb".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\bin\Debug\WatiN.Core.pdb" to "bin\Debug\WatiN.Core.pdb".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\bin\Debug\WatiN.Core.xml" to "bin\Debug\WatiN.Core.xml".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\Libs\Tools\bin\Debug\ru\Savchin.Tools.resources.dll" to "bin\Debug\ru\Savchin.Tools.resources.dll".
+  [msbuild] _CopyOutOfDateSourceItemsToOutputDirectory:
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\miner.swf" to "bin\Debug\miner.swf".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\Resources\Coulombs\Coulomb_-1s.jpg" to "bin\Debug\Resources\Coulombs\Coulomb_-1s.jpg".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\Resources\Coulombs\Coulomb_0.jpg" to "bin\Debug\Resources\Coulombs\Coulomb_0.jpg".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\Resources\Coulombs\Coulomb_0s.jpg" to "bin\Debug\Resources\Coulombs\Coulomb_0s.jpg".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\Resources\Coulombs\Coulomb_14s.jpg" to "bin\Debug\Resources\Coulombs\Coulomb_14s.jpg".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\Resources\Coulombs\Coulomb_15.jpg" to "bin\Debug\Resources\Coulombs\Coulomb_15.jpg".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\Resources\Coulombs\Coulomb_15s.jpg" to "bin\Debug\Resources\Coulombs\Coulomb_15s.jpg".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\Resources\Coulombs\Coulomb_16s.jpg" to "bin\Debug\Resources\Coulombs\Coulomb_16s.jpg".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\Resources\Coulombs\Coulomb_17s.jpg" to "bin\Debug\Resources\Coulombs\Coulomb_17s.jpg".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\Resources\Coulombs\Coulomb_18.jpg" to "bin\Debug\Resources\Coulombs\Coulomb_18.jpg".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\Resources\Coulombs\Coulomb_18s.jpg" to "bin\Debug\Resources\Coulombs\Coulomb_18s.jpg".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\Resources\Coulombs\Coulomb_1s.jpg" to "bin\Debug\Resources\Coulombs\Coulomb_1s.jpg".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\Resources\Coulombs\Coulomb_12s.jpg" to "bin\Debug\Resources\Coulombs\Coulomb_12s.jpg".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\Resources\Coulombs\Coulomb_20.jpg" to "bin\Debug\Resources\Coulombs\Coulomb_20.jpg".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\Resources\Coulombs\Coulomb_20s.jpg" to "bin\Debug\Resources\Coulombs\Coulomb_20s.jpg".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\Resources\Coulombs\Coulomb_22.jpg" to "bin\Debug\Resources\Coulombs\Coulomb_22.jpg".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\Resources\Coulombs\Coulomb_22s.jpg" to "bin\Debug\Resources\Coulombs\Coulomb_22s.jpg".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\Resources\Coulombs\Coulomb_27s.jpg" to "bin\Debug\Resources\Coulombs\Coulomb_27s.jpg".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\Resources\Coulombs\Coulomb_5s.jpg" to "bin\Debug\Resources\Coulombs\Coulomb_5s.jpg".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\main.game.cfg" to "bin\Debug\main.game.cfg".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\Spider.cfg" to "bin\Debug\Spider.cfg".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\Resources\Coulombs\Coulomb_16.jpg" to "bin\Debug\Resources\Coulombs\Coulomb_16.jpg".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\Resources\Coulombs\Coulomb_17.jpg" to "bin\Debug\Resources\Coulombs\Coulomb_17.jpg".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\Resources\Coulombs\Coulomb_1.jpg" to "bin\Debug\Resources\Coulombs\Coulomb_1.jpg".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\Resources\Coulombs\Coulomb_12.jpg" to "bin\Debug\Resources\Coulombs\Coulomb_12.jpg".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\Resources\Coulombs\Coulomb_13.jpg" to "bin\Debug\Resources\Coulombs\Coulomb_13.jpg".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\Resources\Coulombs\Coulomb_14.jpg" to "bin\Debug\Resources\Coulombs\Coulomb_14.jpg".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\Resources\Coulombs\Coulomb_2.jpg" to "bin\Debug\Resources\Coulombs\Coulomb_2.jpg".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\Resources\Coulombs\Coulomb_27.jpg" to "bin\Debug\Resources\Coulombs\Coulomb_27.jpg".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\Resources\Coulombs\Coulomb_31.jpg" to "bin\Debug\Resources\Coulombs\Coulomb_31.jpg".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\Resources\Coulombs\Coulomb_11.jpg" to "bin\Debug\Resources\Coulombs\Coulomb_11.jpg".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\Resources\Coulombs\Coulomb_5.jpg" to "bin\Debug\Resources\Coulombs\Coulomb_5.jpg".
+  [msbuild] CopyFilesToOutputDirectory:
+  [msbuild]   Copying file from "obj\Debug\BotvaSpiderTests.dll" to "bin\Debug\BotvaSpiderTests.dll".
+  [msbuild]   BotvaSpiderTests -> D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpiderTests\bin\Debug\BotvaSpiderTests.dll
+  [msbuild]   Copying file from "obj\Debug\BotvaSpiderTests.pdb" to "bin\Debug\BotvaSpiderTests.pdb".
+  [msbuild] Done Building Project "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpiderTests\BotvaSpiderTests.csproj" (Rebuild target(s)).
+  [msbuild] Done Building Project "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider.sln" (Rebuild target(s)).
+  [msbuild] 
+  [msbuild] Build succeeded.
+  [msbuild] 
+  [msbuild] "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider.sln" (Rebuild target) (1) ->
+  [msbuild] "D:\MY\Develop\Projects\Net\Libs\Tools\Savchin.Tools.csproj" (Rebuild target) (3) ->
+  [msbuild] (CoreCompile target) -> 
+  [msbuild]   Crypto\Rsa.cs(26,31): warning CS0219: The variable 'par' is assigned but its value is never used
+  [msbuild]   Threading\IOCP\ManagedIOCP.cs(642,42): warning CS0420: 'Savchin.Threading.IOCP.ManagedIOCP<T>._activeThreads': a reference to a volatile field will not be treated as volatile
+  [msbuild]   Threading\IOCP\ManagedIOCP.cs(657,31): warning CS0420: 'Savchin.Threading.IOCP.ManagedIOCP<T>._activeThreads': a reference to a volatile field will not be treated as volatile
+  [msbuild]   Threading\ObjectPool\ObjectPool.cs(93,61): warning CS0420: 'Savchin.Threading.DataStructures.LockFree.PoolableObject.LinkedObject': a reference to a volatile field will not be treated as volatile
+  [msbuild]   Threading\ObjectPool\ObjectPool.cs(106,57): warning CS0420: 'Savchin.Threading.DataStructures.LockFree.ObjectPool._tail': a reference to a volatile field will not be treated as volatile
+  [msbuild]   Threading\ObjectPool\ObjectPool.cs(114,45): warning CS0420: 'Savchin.Threading.DataStructures.LockFree.ObjectPool._tail': a reference to a volatile field will not be treated as volatile
+  [msbuild]   Threading\ObjectPool\ObjectPool.cs(165,61): warning CS0420: 'Savchin.Threading.DataStructures.LockFree.ObjectPool._tail': a reference to a volatile field will not be treated as volatile
+  [msbuild]   Threading\ObjectPool\ObjectPool.cs(178,61): warning CS0420: 'Savchin.Threading.DataStructures.LockFree.ObjectPool._head': a reference to a volatile field will not be treated as volatile
+  [msbuild]   Threading\IOCP\Queue.cs(66,39): warning CS0420: 'Savchin.Threading.IOCP.Queue<T>._tail': a reference to a volatile field will not be treated as volatile
+  [msbuild]   Threading\IOCP\Queue.cs(74,36): warning CS0420: 'Savchin.Threading.IOCP.Queue<T>._tail': a reference to a volatile field will not be treated as volatile
+  [msbuild]   Threading\IOCP\Queue.cs(117,40): warning CS0420: 'Savchin.Threading.IOCP.Queue<T>._tail': a reference to a volatile field will not be treated as volatile
+  [msbuild]   Threading\IOCP\Queue.cs(127,61): warning CS0420: 'Savchin.Threading.IOCP.Queue<T>._head': a reference to a volatile field will not be treated as volatile
+  [msbuild]   Threading\ThreadPool.cs(183,21): warning CS0618: 'System.AppDomain.GetCurrentThreadId()' is obsolete: 'AppDomain.GetCurrentThreadId has been deprecated because it does not provide a stable Id when managed threads are running on fibers (aka lightweight threads). To get a stable identifier for a managed thread, use the ManagedThreadId property on Thread.  http://go.microsoft.com/fwlink/?linkid=14202'
+  [msbuild] 
+  [msbuild] 
+  [msbuild] "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider.sln" (Rebuild target) (1) ->
+  [msbuild] "D:\MY\Develop\Projects\Net\Libs\Savchin.Forms\Savchin.Forms.csproj" (Rebuild target) (4) ->
+  [msbuild]   ColorPicker.cs(143,22): warning CS0108: 'Savchin.Forms.ColorPicker.TextChanged(System.Windows.Forms.TextBox, System.Windows.Forms.TrackBar)' hides inherited member 'System.Windows.Forms.UserControl.TextChanged'. Use the new keyword if hiding was intended.
+  [msbuild] 
+  [msbuild] 
+  [msbuild] "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider.sln" (Rebuild target) (1) ->
+  [msbuild] "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider\BotvaSpider.csproj" (Rebuild target) (7) ->
+  [msbuild]   Core\GameController.cs(156,24): warning CS0628: 'BotvaSpider.Core.GameController.CreateScreenshot(string)': new protected member declared in sealed class
+  [msbuild]   Data\Player.cs(23,26): warning CS0108: 'BotvaSpider.Data.Player.Guild' hides inherited member 'BotvaSpider.Data.User.Guild'. Use the new keyword if hiding was intended.
+  [msbuild]   Automation\Fights\FightLoginedState.cs(399,22): warning CS0168: The variable 'sleepTime2' is declared but never used
+  [msbuild] 
+  [msbuild]     17 Warning(s)
+  [msbuild]     0 Error(s)
+  [msbuild] 
+  [msbuild] Time Elapsed 00:01:32.73
+
+buildRelease:
+
+
+buildProject:
+
+     [echo] build project: D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider.sln
+  [msbuild] Build started 08.12.2009 9:32:53.
+  [msbuild] Project "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider.sln" on node 0 (Rebuild target(s)).
+  [msbuild]   Building solution configuration "Release|Any CPU".
+  [msbuild] Project "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider.sln" (1) is building "D:\MY\Develop\Projects\Net\Libs\Savchin.WinApi\Savchin.WinApi.csproj" (2) on node 0 (Rebuild target(s)).
+  [msbuild]   Creating directory "obj\Release\".
+  [msbuild] EntityClean:
+  [msbuild]   Successfully cleaned the output for 0 EDMX files.
+  [msbuild] EntityDeploy:
+  [msbuild]   Processing 0 EDMX files.
+  [msbuild]   Finished processing 0 EDMX files.
+  [msbuild] PrepareForBuild:
+  [msbuild]   Creating directory "bin\Release\".
+  [msbuild] CopyFilesToOutputDirectory:
+  [msbuild]   Copying file from "obj\Release\Savchin.WinApi.dll" to "bin\Release\Savchin.WinApi.dll".
+  [msbuild]   Savchin.WinApi -> D:\MY\Develop\Projects\Net\Libs\Savchin.WinApi\bin\Release\Savchin.WinApi.dll
+  [msbuild]   Copying file from "obj\Release\Savchin.WinApi.pdb" to "bin\Release\Savchin.WinApi.pdb".
+  [msbuild] Done Building Project "D:\MY\Develop\Projects\Net\Libs\Savchin.WinApi\Savchin.WinApi.csproj" (Rebuild target(s)).
+  [msbuild] Project "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider.sln" (1) is building "D:\MY\Develop\Projects\Net\Libs\Tools\Savchin.Tools.csproj" (3) on node 0 (Rebuild target(s)).
+  [msbuild]   Creating directory "obj\Release\".
+  [msbuild] EntityClean:
+  [msbuild]   Successfully cleaned the output for 0 EDMX files.
+  [msbuild] EntityDeploy:
+  [msbuild]   Processing 0 EDMX files.
+  [msbuild]   Finished processing 0 EDMX files.
+  [msbuild] PrepareForBuild:
+  [msbuild]   Creating directory "bin\Release\".
+  [msbuild] CoreResGen:
+  [msbuild]   Processing resource file "Validation\Resources.resx" into "obj\Release\Savchin.Validation.Resources.resources".
+  [msbuild]   Processing resource file "Validation\Resources.ru.resx" into "obj\Release\Savchin.Validation.Resources.ru.resources".
+  [msbuild] Crypto\Rsa.cs(26,31): warning CS0219: The variable 'par' is assigned but its value is never used
+  [msbuild] Threading\IOCP\ManagedIOCP.cs(642,42): warning CS0420: 'Savchin.Threading.IOCP.ManagedIOCP<T>._activeThreads': a reference to a volatile field will not be treated as volatile
+  [msbuild] Threading\IOCP\ManagedIOCP.cs(657,31): warning CS0420: 'Savchin.Threading.IOCP.ManagedIOCP<T>._activeThreads': a reference to a volatile field will not be treated as volatile
+  [msbuild] Threading\ObjectPool\ObjectPool.cs(93,61): warning CS0420: 'Savchin.Threading.DataStructures.LockFree.PoolableObject.LinkedObject': a reference to a volatile field will not be treated as volatile
+  [msbuild] Threading\ObjectPool\ObjectPool.cs(106,57): warning CS0420: 'Savchin.Threading.DataStructures.LockFree.ObjectPool._tail': a reference to a volatile field will not be treated as volatile
+  [msbuild] Threading\ObjectPool\ObjectPool.cs(114,45): warning CS0420: 'Savchin.Threading.DataStructures.LockFree.ObjectPool._tail': a reference to a volatile field will not be treated as volatile
+  [msbuild] Threading\ObjectPool\ObjectPool.cs(165,61): warning CS0420: 'Savchin.Threading.DataStructures.LockFree.ObjectPool._tail': a reference to a volatile field will not be treated as volatile
+  [msbuild] Threading\ObjectPool\ObjectPool.cs(178,61): warning CS0420: 'Savchin.Threading.DataStructures.LockFree.ObjectPool._head': a reference to a volatile field will not be treated as volatile
+  [msbuild] Threading\IOCP\Queue.cs(66,39): warning CS0420: 'Savchin.Threading.IOCP.Queue<T>._tail': a reference to a volatile field will not be treated as volatile
+  [msbuild] Threading\IOCP\Queue.cs(74,36): warning CS0420: 'Savchin.Threading.IOCP.Queue<T>._tail': a reference to a volatile field will not be treated as volatile
+  [msbuild] Threading\IOCP\Queue.cs(117,40): warning CS0420: 'Savchin.Threading.IOCP.Queue<T>._tail': a reference to a volatile field will not be treated as volatile
+  [msbuild] Threading\IOCP\Queue.cs(127,61): warning CS0420: 'Savchin.Threading.IOCP.Queue<T>._head': a reference to a volatile field will not be treated as volatile
+  [msbuild] Threading\ThreadPool.cs(183,21): warning CS0618: 'System.AppDomain.GetCurrentThreadId()' is obsolete: 'AppDomain.GetCurrentThreadId has been deprecated because it does not provide a stable Id when managed threads are running on fibers (aka lightweight threads). To get a stable identifier for a managed thread, use the ManagedThreadId property on Thread.  http://go.microsoft.com/fwlink/?linkid=14202'
+  [msbuild] GenerateSatelliteAssemblies:
+  [msbuild]   Creating directory "obj\Release\ru".
+  [msbuild] _CopyFilesMarkedCopyLocal:
+  [msbuild]   Copying file from "..\..\ThrPartLibs\JSON\Newtonsoft.Json.dll" to "bin\Release\Newtonsoft.Json.dll".
+  [msbuild]   Copying file from "..\..\ThrPartLibs\JSON\Newtonsoft.Json.pdb" to "bin\Release\Newtonsoft.Json.pdb".
+  [msbuild]   Copying file from "..\..\ThrPartLibs\JSON\Newtonsoft.Json.xml" to "bin\Release\Newtonsoft.Json.xml".
+  [msbuild] CopyFilesToOutputDirectory:
+  [msbuild]   Copying file from "obj\Release\Savchin.Tools.dll" to "bin\Release\Savchin.Tools.dll".
+  [msbuild]   Savchin.Tools -> D:\MY\Develop\Projects\Net\Libs\Tools\bin\Release\Savchin.Tools.dll
+  [msbuild]   Copying file from "obj\Release\Savchin.Tools.pdb" to "bin\Release\Savchin.Tools.pdb".
+  [msbuild]   Creating directory "bin\Release\ru".
+  [msbuild]   Copying file from "obj\Release\ru\Savchin.Tools.resources.dll" to "bin\Release\ru\Savchin.Tools.resources.dll".
+  [msbuild] Done Building Project "D:\MY\Develop\Projects\Net\Libs\Tools\Savchin.Tools.csproj" (Rebuild target(s)).
+  [msbuild] Project "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider.sln" (1) is building "D:\MY\Develop\Projects\Net\Libs\Savchin.Forms\Savchin.Forms.csproj" (4) on node 0 (Rebuild target(s)).
+  [msbuild]   Creating directory "obj\Release\".
+  [msbuild] EntityClean:
+  [msbuild]   Successfully cleaned the output for 0 EDMX files.
+  [msbuild] EntityDeploy:
+  [msbuild]   Processing 0 EDMX files.
+  [msbuild]   Finished processing 0 EDMX files.
+  [msbuild] PrepareForBuild:
+  [msbuild]   Creating directory "bin\Release\".
+  [msbuild] CoreResGen:
+  [msbuild]   Processing resource file "Browsers\AssemblyBrowser.resx" into "obj\Release\Savchin.Forms.Browsers.AssemblyBrowser.resources".
+  [msbuild]   Processing resource file "Browsers\RegistryBrowser.resx" into "obj\Release\Savchin.Forms.Browsers.RegistryBrowser.resources".
+  [msbuild]   Processing resource file "Browsers\RegistryStringValueForm.resx" into "obj\Release\Savchin.Forms.Browsers.RegistryStringValueForm.resources".
+  [msbuild]   Processing resource file "ColorPicker.resx" into "obj\Release\Savchin.Forms.ColorPicker.resources".
+  [msbuild]   Processing resource file "Comparer\CompareView.resx" into "obj\Release\Savchin.Forms.Comparer.CompareView.resources".
+  [msbuild]   Processing resource file "Comparer\FormCompare.resx" into "obj\Release\Savchin.Forms.Comparer.FormCompare.resources".
+  [msbuild]   Processing resource file "Comparer\FormFilter.resx" into "obj\Release\Savchin.Forms.Comparer.FormFilter.resources".
+  [msbuild]   Processing resource file "DateRangeControl.resx" into "obj\Release\Savchin.Forms.DateRangeControl.resources".
+  [msbuild]   Processing resource file "ExceptionForm.resx" into "obj\Release\Savchin.Forms.ExceptionForm.resources".
+  [msbuild]   Processing resource file "FormObject.resx" into "obj\Release\Savchin.Forms.FormObject.resources".
+  [msbuild]   Processing resource file "frmSearch.resx" into "obj\Release\Savchin.Forms.frmSearch.resources".
+  [msbuild]   Processing resource file "Net\CredentialControl.resx" into "obj\Release\Savchin.Forms.Net.CredentialControl.resources".
+  [msbuild]   Processing resource file "Net\InternetSettingsControl.resx" into "obj\Release\Savchin.Forms.Net.InternetSettingsControl.resources".
+  [msbuild]   Processing resource file "Net\ProxySettingsControl.resx" into "obj\Release\Savchin.Forms.Net.ProxySettingsControl.resources".
+  [msbuild]   Processing resource file "Properties\Resources.resx" into "obj\Release\Savchin.Forms.Properties.Resources.resources".
+  [msbuild]   Processing resource file "Wizard\Header.resx" into "obj\Release\Savchin.Forms.Wizard.Header.resources".
+  [msbuild]   Processing resource file "Wizard\InfoContainer.resx" into "obj\Release\Savchin.Forms.Wizard.InfoContainer.resources".
+  [msbuild]   Processing resource file "Wizard\InfoPage.resx" into "obj\Release\Savchin.Forms.Wizard.InfoPage.resources".
+  [msbuild]   Processing resource file "Wizard\Wizard.resx" into "obj\Release\Savchin.Forms.Wizard.Wizard.resources".
+  [msbuild]   Processing resource file "Wizard\WizardPage.resx" into "obj\Release\Savchin.Forms.Wizard.WizardPage.resources".
+  [msbuild]   Processing resource file "Docking\Resources.resx" into "obj\Release\Savchin.Forms.Docking.Resources.resources".
+  [msbuild]   Processing resource file "Docking\Strings.resx" into "obj\Release\Savchin.Forms.Docking.Strings.resources".
+  [msbuild] ListView\Views\ObjectListView.cs(2304,31): error CS0227: Unsafe code may only appear if compiling with /unsafe
+  [msbuild] ListView\Views\ObjectListView.cs(2392,31): error CS0227: Unsafe code may only appear if compiling with /unsafe
+  [msbuild] ListView\HeaderControl.cs(114,31): error CS0227: Unsafe code may only appear if compiling with /unsafe
+  [msbuild] ListView\Views\TreeListView.cs(329,39): error CS0227: Unsafe code may only appear if compiling with /unsafe
+  [msbuild] Done Building Project "D:\MY\Develop\Projects\Net\Libs\Savchin.Forms\Savchin.Forms.csproj" (Rebuild target(s)) -- FAILED.
+  [msbuild] Project "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider.sln" (1) is building "D:\MY\Develop\Projects\Net\Libs\Savchin.Web\Savchin.Web.csproj" (5) on node 0 (Rebuild target(s)).
+  [msbuild]   Creating directory "obj\Release\".
+  [msbuild] EntityClean:
+  [msbuild]   Successfully cleaned the output for 0 EDMX files.
+  [msbuild] EntityDeploy:
+  [msbuild]   Processing 0 EDMX files.
+  [msbuild]   Finished processing 0 EDMX files.
+  [msbuild] PrepareForBuild:
+  [msbuild]   Creating directory "bin\Release\".
+  [msbuild] _CopyFilesMarkedCopyLocal:
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\Libs\Tools\bin\Release\Savchin.Tools.dll" to "bin\Release\Savchin.Tools.dll".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\Libs\Tools\bin\Release\Newtonsoft.Json.dll" to "bin\Release\Newtonsoft.Json.dll".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\Libs\Tools\bin\Release\Savchin.Tools.pdb" to "bin\Release\Savchin.Tools.pdb".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\Libs\Tools\bin\Release\Newtonsoft.Json.pdb" to "bin\Release\Newtonsoft.Json.pdb".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\Libs\Tools\bin\Release\Newtonsoft.Json.xml" to "bin\Release\Newtonsoft.Json.xml".
+  [msbuild]   Creating directory "bin\Release\ru".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\Libs\Tools\bin\Release\ru\Savchin.Tools.resources.dll" to "bin\Release\ru\Savchin.Tools.resources.dll".
+  [msbuild] CopyFilesToOutputDirectory:
+  [msbuild]   Copying file from "obj\Release\Savchin.Web.dll" to "bin\Release\Savchin.Web.dll".
+  [msbuild]   Savchin.Web -> D:\MY\Develop\Projects\Net\Libs\Savchin.Web\bin\Release\Savchin.Web.dll
+  [msbuild]   Copying file from "obj\Release\Savchin.Web.pdb" to "bin\Release\Savchin.Web.pdb".
+  [msbuild] Done Building Project "D:\MY\Develop\Projects\Net\Libs\Savchin.Web\Savchin.Web.csproj" (Rebuild target(s)).
+  [msbuild] Project "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider.sln" (1) is building "D:\MY\Develop\Projects\Net\NUnit\Watin\source\src\Core\Core.csproj" (6) on node 0 (Rebuild target(s)).
+  [msbuild]   Creating directory "obj\Release\".
+  [msbuild] EntityClean:
+  [msbuild]   Successfully cleaned the output for 0 EDMX files.
+  [msbuild] EntityDeploy:
+  [msbuild]   Processing 0 EDMX files.
+  [msbuild]   Finished processing 0 EDMX files.
+  [msbuild] CoreResGen:
+  [msbuild]   Processing resource file "Properties\Resources.resx" into "obj\Release\WatiN.Core.Properties.Resources.resources".
+  [msbuild] _CopyFilesMarkedCopyLocal:
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\Libs\Savchin.WinApi\bin\Release\Savchin.WinApi.dll" to "bin\Savchin.WinApi.dll".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\Libs\Savchin.WinApi\bin\Release\Savchin.WinApi.pdb" to "bin\Savchin.WinApi.pdb".
+  [msbuild] CopyFilesToOutputDirectory:
+  [msbuild]   Copying file from "obj\Release\WatiN.Core.dll" to "bin\WatiN.Core.dll".
+  [msbuild]   Core -> D:\MY\Develop\Projects\Net\NUnit\Watin\source\src\Core\bin\WatiN.Core.dll
+  [msbuild]   Copying file from "obj\Release\WatiN.Core.pdb" to "bin\WatiN.Core.pdb".
+  [msbuild] Done Building Project "D:\MY\Develop\Projects\Net\NUnit\Watin\source\src\Core\Core.csproj" (Rebuild target(s)).
+  [msbuild] Done Building Project "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider.sln" (Rebuild target(s)) -- FAILED.
+  [msbuild] 
+  [msbuild] Build FAILED.
+  [msbuild] 
+  [msbuild] "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider.sln" (Rebuild target) (1) ->
+  [msbuild] "D:\MY\Develop\Projects\Net\Libs\Tools\Savchin.Tools.csproj" (Rebuild target) (3) ->
+  [msbuild] (CoreCompile target) -> 
+  [msbuild]   Crypto\Rsa.cs(26,31): warning CS0219: The variable 'par' is assigned but its value is never used
+  [msbuild]   Threading\IOCP\ManagedIOCP.cs(642,42): warning CS0420: 'Savchin.Threading.IOCP.ManagedIOCP<T>._activeThreads': a reference to a volatile field will not be treated as volatile
+  [msbuild]   Threading\IOCP\ManagedIOCP.cs(657,31): warning CS0420: 'Savchin.Threading.IOCP.ManagedIOCP<T>._activeThreads': a reference to a volatile field will not be treated as volatile
+  [msbuild]   Threading\ObjectPool\ObjectPool.cs(93,61): warning CS0420: 'Savchin.Threading.DataStructures.LockFree.PoolableObject.LinkedObject': a reference to a volatile field will not be treated as volatile
+  [msbuild]   Threading\ObjectPool\ObjectPool.cs(106,57): warning CS0420: 'Savchin.Threading.DataStructures.LockFree.ObjectPool._tail': a reference to a volatile field will not be treated as volatile
+  [msbuild]   Threading\ObjectPool\ObjectPool.cs(114,45): warning CS0420: 'Savchin.Threading.DataStructures.LockFree.ObjectPool._tail': a reference to a volatile field will not be treated as volatile
+  [msbuild]   Threading\ObjectPool\ObjectPool.cs(165,61): warning CS0420: 'Savchin.Threading.DataStructures.LockFree.ObjectPool._tail': a reference to a volatile field will not be treated as volatile
+  [msbuild]   Threading\ObjectPool\ObjectPool.cs(178,61): warning CS0420: 'Savchin.Threading.DataStructures.LockFree.ObjectPool._head': a reference to a volatile field will not be treated as volatile
+  [msbuild]   Threading\IOCP\Queue.cs(66,39): warning CS0420: 'Savchin.Threading.IOCP.Queue<T>._tail': a reference to a volatile field will not be treated as volatile
+  [msbuild]   Threading\IOCP\Queue.cs(74,36): warning CS0420: 'Savchin.Threading.IOCP.Queue<T>._tail': a reference to a volatile field will not be treated as volatile
+  [msbuild]   Threading\IOCP\Queue.cs(117,40): warning CS0420: 'Savchin.Threading.IOCP.Queue<T>._tail': a reference to a volatile field will not be treated as volatile
+  [msbuild]   Threading\IOCP\Queue.cs(127,61): warning CS0420: 'Savchin.Threading.IOCP.Queue<T>._head': a reference to a volatile field will not be treated as volatile
+  [msbuild]   Threading\ThreadPool.cs(183,21): warning CS0618: 'System.AppDomain.GetCurrentThreadId()' is obsolete: 'AppDomain.GetCurrentThreadId has been deprecated because it does not provide a stable Id when managed threads are running on fibers (aka lightweight threads). To get a stable identifier for a managed thread, use the ManagedThreadId property on Thread.  http://go.microsoft.com/fwlink/?linkid=14202'
+  [msbuild] 
+  [msbuild] 
+  [msbuild] "D:\MY\Develop\Projects\Net\BotvaSpider\trunk\BotvaSpider.sln" (Rebuild target) (1) ->
+  [msbuild] "D:\MY\Develop\Projects\Net\Libs\Savchin.Forms\Savchin.Forms.csproj" (Rebuild target) (4) ->
+  [msbuild] (CoreCompile target) -> 
+  [msbuild]   ListView\Views\ObjectListView.cs(2304,31): error CS0227: Unsafe code may only appear if compiling with /unsafe
+  [msbuild]   ListView\Views\ObjectListView.cs(2392,31): error CS0227: Unsafe code may only appear if compiling with /unsafe
+  [msbuild]   ListView\HeaderControl.cs(114,31): error CS0227: Unsafe code may only appear if compiling with /unsafe
+  [msbuild]   ListView\Views\TreeListView.cs(329,39): error CS0227: Unsafe code may only appear if compiling with /unsafe
+  [msbuild] 
+  [msbuild]     13 Warning(s)
+  [msbuild]     4 Error(s)
+  [msbuild] 
+  [msbuild] Time Elapsed 00:00:15.92
+
+BUILD FAILED
+
+D:\MY\Develop\Projects\Net\NAnt\common.build(7,4):
+Failed to start MSBuild.
+    D:\MY\Develop\Projects\Net\NAnt\common.build(7,4):
+    External Program Failed: C:\Windows\Microsoft.NET\Framework\v3.5\msbuild.exe (return code was 1)
+
+Total time: 117.8 seconds.
+

@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>TV Series tracker</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    <script src="Scripts/jquery-1.7.1.js"></script>
+    <script src="Scripts/knockout-2.1.0.js"></script>
+    <script src="Scripts/sammy-latest.min.js"></script>
+    <script src="Scripts/jquery.sha1.js"></script>
+    <script src="Scripts/base64.js"></script>
+    <script src="Scripts/ServerApi.js"></script>    
+
+    <link rel="stylesheet" type="text/css" href="Scripts/Site.css" />
+
+</head>
+<body>
+    <header>
+        <div class="content-wrapper">
+            <div class="float-right">
+                <section id="login">
+                    <span data-bind="text: user" />
+                </section>
+                <nav>
+                    <ul class="folders" data-bind="foreach: folders">
+                        <li data-bind="text: $data, 
+                   css: { selected: $data == $root.chosenFolderId() },
+                   click: $root.goToFolder"></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <div id="body">
+        <!-- Test view -->
+        <section data-bind="with: viewTest">
+            <h3>Search some movie:</h3>
+            <form method="POST" action="http://api.trakt.tv/account/test/5bf9c60ee3094b0745f23c4ea046b974">
+                <input type="hidden" name="username" value="minskowl" />
+                <input type="hidden" name="password" value="4c1f6de62d68cfcb8a774ae44b0a2a51e14712e3" /><br>
+                <input type="submit" value="Send" />
+            </form>
+        </section>
+
+        <!-- Login view -->
+        <section data-bind="with: viewLogin">
+            <h3>Search some movie:</h3>
+            Login
+            <input data-bind="value: loginText" /><br>
+            Password
+            <input data-bind="value: passwordText" type="password" /><br>
+            <button data-bind="click: doLogin">Login</button>
+        </section>
+
+        <!-- List view -->
+        <section data-bind="with: viewLists">
+            <h3>Lists:</h3>
+
+            <table data-bind="visible: results().length > 0">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Type</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody data-bind="foreach: results">
+
+                    <tr>
+                        <td data-bind="text: name" />
+                        <td data-bind="text: description" />
+                        <td data-bind="text: privacy" />
+                    </tr>
+
+
+                </tbody>
+            </table>
+
+            <h4>Add new list</h4>
+            <table>
+                <tr>
+                    <td class="label">Name
+                    </td>
+                    <td>
+                        <input data-bind="value: listName" />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="label">Description
+                    </td>
+                    <td>
+                        <input data-bind="value: listDescription" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label"></td>
+                    <td>
+                        <button data-bind="click: addList">Add</button>
+                    </td>
+                </tr>
+
+            </table>
+            </section>
+
+        <!-- Search view -->
+        <section class="content-wrapper main-content clear-fix" data-bind="with: viewSearch">
+            <h3>Search some movie:</h3>
+            <input data-bind="value: searchText" />
+            <select width="50" data-bind="options: types, value: selectedType"></select>
+            <button data-bind="click: doSearch">Do search</button>
+
+            <table data-bind="visible: results().length > 0">
+                <tbody data-bind="foreach: results">
+
+                    <tr>
+                        <td class="label">Title</td>
+                        <td class="info"><a data-bind="text: title,attr: {href: url}" target="_blank" /></td>
+                        <td rowspan="7">
+                            <img data-bind="attr: {src: poster, alt: title}" width="300" /></td>
+                    </tr>
+                    <tr>
+                        <td class="label">Type</td>
+                        <td class="info" data-bind="text: type"></td>
+                    </tr>
+                    <tr>
+                        <td class="label">Year</td>
+                        <td class="info" data-bind="text: year"></td>
+                    </tr>
+                    <tr>
+                        <td class="label">Rating</td>
+                        <td class="info" data-bind="text: rating"></td>
+                    </tr>
+                    <tr>
+                        <td class="label">Id</td>
+                        <td class="info" data-bind="text: id"></td>
+                    </tr>
+                    <tr></tr>
+                    <tr>
+                        <td class="label">Summary</td>
+                        <td class="info" data-bind="text: plot_simple"></td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+
+
+                </tbody>
+            </table>
+        </section>
+    </div>
+
+    <footer>
+        <div class="content-wrapper">
+            <div class="float-left">
+                <p>&copy;  My ASP.NET MVC Application</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script type="text/javascript" language="jscript">
+        var baseUrl = "http://api.trakt.tv/";
+        var apiKey = "5bf9c60ee3094b0745f23c4ea046b974";
+        var pwd;
+        var usr;
+        var app = new AppViewModel();
+        var api = new ServerApi(baseUrl, apiKey);
+    //    jQuery.support.cors = true;
+
+
+        
+
+        function MovieModel(m) {
+            var self = this;
+            self.title = m.title;
+            self.type = m.genres;
+            self.year = m.year;
+            self.rating = m.rating;
+            self.plot_simple = m.overview;
+            self.url = m.url;
+            self.id = m.imdb_id;
+            self.poster = m.images.poster == undefined ? "http://desertpeace.files.wordpress.com/2012/12/no-photos.jpg" : m.images.poster;
+        }
+
+        function SearchModel() {
+            var self = this;
+
+            self.selectedType = ko.observable("shows");
+            self.searchText = ko.observable("White collar");
+            self.types = ko.observableArray(["movies", "shows", "episodes"]);
+            self.results = ko.observableArray();
+            
+
+            self.addToList = function (movie) {
+
+            }
+            self.doSearch = function () {
+
+                var q = this.searchText().replace(" ", "+");
+                var url = baseUrl + "search/" + this.selectedType() + ".json/" + apiKey + "/" + escape(q);
+
+                $.ajax({
+                    url: url,
+                    type: 'GET',
+                    crossDomain: true,
+                    dataType: 'jsonp',
+                    success: function (data) {
+                        for (i in data) {
+                            self.results.push(new MovieModel(data[i]));
+                        }
+                    },
+                    error: function (jqXHR, textStatus, errorThrown) {
+                        console.log("error " + textStatus);
+                        console.log("incoming Text " + jqXHR.responseText);
+                    }
+                    , beforeSend: function (xhr) {
+                        xhr.setRequestHeader('Accept', 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8');
+                        xhr.setRequestHeader('Accept-Encoding', 'deflate');
+
+                    }
+                });
+
+
+            };
+
+        }
+
+        function ListsModel() {
+            var self = this;
+
+            self.listName = ko.observable("List Name");
+            self.listDescription = ko.observable("Description");
+            self.results = ko.observableArray();
+
+            self.addList = function () {
+                var name = this.listName().trim();
+                var descr = this.listDescription().trim();
+                var url = baseUrl + "user/lists/add/" + apiKey;
+                $.ajax({
+                    url: url,
+                    type: 'POST',
+                    dataType: 'json',
+                    crossDomain: true,
+                    data: { username: usr, password: pwd, name: name, description: descr },
+
+                    success: function (data) {
+
+                        alert(data.message)
+                        getLists();
+                    },
+                    error: function (jqXHR, textStatus, errorThrown) {
+                        alert("error " + textStatus);
+                        alert(errorThrown);
+                    }
+                , beforeSend: function (xhr) {
+                    xhr.setRequestHeader('Accept', 'text/html, application/xhtml+xml, */*');
+                    xhr.setRequestHeader('Accept-Encoding', 'deflate');
+
+                }
+                });
+
+            };
+
+            self.getLists = function () {
+                api.getLists(function (data) {
+                    self.results(data);
+                })
+            };
+
+            this.getLists();
+        }
+
+        function LoginModel() {
+            var self = this;
+
+            self.loginText = ko.observable("minskowl");
+            self.passwordText = ko.observable("kbyercXX2");
+
+            self.doLogin = function () {
+
+                var url = baseUrl + "account/test/" + apiKey;
+                pwd = $.sha1(this.passwordText());
+                usr = this.loginText();
+                
+                api.doLogin(usr, pwd, function (data) {
+                    app.user(usr);
+                    alert(data.message)
+                });
+
+
+
+            };
+
+        }
+
+        function AppViewModel() {
+            var self = this;
+
+
+            self.folders = ['Search', 'Lists', 'Library', 'Login', 'Test'];
+            self.user = ko.observable();
+            self.chosenFolderId = ko.observable();
+            self.viewSearch = ko.observable();
+            self.viewLogin = ko.observable();
+            self.viewTest = ko.observable();
+            self.viewLists = ko.observable();
+
+            // Behaviours    
+            self.goToFolder = function (folder) { location.hash = folder };
+            self.goToMail = function (mail) { location.hash = mail.folder + '/' + mail.id };
+
+
+            Sammy(function () {
+                this.get('#:folder', function () {
+                    var needRoute = false;
+                    self.viewLogin(null);
+                    self.viewSearch(null);
+                    self.viewTest(null);
+                    self.viewLists(null);
+
+                    do {
+                        needRoute = false;
+                        switch (this.params.folder) {
+                            case "Test":
+                                self.viewTest("111");
+                                break;
+                            case "Search":
+                                self.viewSearch(new SearchModel());
+                                break;
+                            case "Lists":
+                                if (self.user() == undefined) {
+                                    this.params.folder = "Login";
+                                    needRoute = true;
+                                }
+                                else {
+                                    self.viewLists(new ListsModel());
+                                }
+
+                                break;
+                            case "Login":
+                                self.viewLogin(new LoginModel());
+                                break;
+                        }
+
+                        self.chosenFolderId(this.params.folder);
+
+                    } while (needRoute);
+
+
+
+                });
+
+                this.get('#:folder/:mailId', function () {
+                    self.chosenFolderId(this.params.folder);
+
+
+                });
+
+                this.get('', function () { this.app.runRoute('get', '#Search') });
+            }).run();
+        }
+
+        // Activates knockout.js
+        ko.applyBindings(app);
+
+        $.ajaxSetup({
+            "error": function (jqXHR, textStatus, errorThrown) {
+                console.log("error " + textStatus);
+                console.log("incoming Text " + jqXHR.responseText);
+            }
+        });
+
+
+    </script>
+</body>
+</html>

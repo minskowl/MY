@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<project name="Build Libs" default="build">
+  <property name="Solution.Path" value="Libs.sln"/>
+  <property name="nant.settings.currentframework" value="net-4.0" />
+  
+  <target name="build" depends="buildDebug,buildRelease" >
+  </target>
+
+  <target name="buildRelease">
+    <property name="Solution.Config" value="Release" />
+    <call target="buildSolution"/>
+  </target>
+
+  <target name="buildDebug">
+    <property name="Solution.Config" value="Debug" />
+    <call target="buildSolution"/>
+  </target>
+
+  <target name="buildSolution1">
+    <echo  message="Start build '${Solution.Path}'" />
+
+
+    <msbuild project="${Solution.Path}">
+      <arg value="/property:Configuration=${Solution.Config}" />
+    </msbuild>
+  </target>
+  
+  <target name="buildSolution">
+    <readregistry property="ide.dir" key="SOFTWARE\Microsoft\VisualStudio\10.0\InstallDir" hive="LocalMachine" />
+    <property name="CommandLine" value='${Solution.Path}  /rebuild ${Solution.Config} /projectconfig  ${Solution.Config} /out c:\build${Solution.Config}.txt '/>
+    <echo message="Exec= ${ide.dir}devenv.exe ${CommandLine}" />
+    <exec program="devenv.exe" workingdir="${path::get-directory-name(Solution.Path)}"  basedir="${ide.dir}" commandline="${CommandLine}"  />
+  </target>
+  
+  <target name="publish">
+    <delete dir="${destination}" if="${directory::exists(destination)}"  />
+
+    <property name="libs" value="${path::combine(destination, 'Libs')}"  />
+    
+    <copy todir="${libs}"  >
+      <fileset basedir=".">
+        <include name="**/*.cs"/>
+        <include name="**/*.aspx"/>
+        <include name="**/*.ascx"/>
+        <include name="**/*.asax"/>  
+        <include name="**/*.csproj"/>                
+      </fileset>
+      <filterchain>
+        <replacestring from="Savchin." to="${namespace}" />
+      </filterchain>
+    </copy>
+    
+    <copy todir="${libs}"  >
+      <fileset basedir=".">
+        <include name="**/*" />
+        <exclude name="**/bin"/>
+        <exclude name="**/bin/**"/>
+        <exclude name="**/obj"/>
+        <exclude name="**/obj/**"/>
+        
+        <exclude name="**/*.cs"/>
+        <exclude name="**/*.aspx"/>
+        <exclude name="**/*.ascx"/>
+        <exclude name="**/*.asax"/>  
+        <exclude name="**/*.csproj"/>                   
+      </fileset>
+    </copy>
+
+    <copy todir="${path::combine(destination, 'ThrPartLibs')}"  >
+      <fileset basedir="../ThrPartLibs">
+        <include name="**/*" />
+      </fileset>
+    </copy>
+
+    <copy todir="${path::combine(destination, 'Other')}"  >
+      <fileset basedir="../Other">
+        <include name="**/*" />
+      </fileset>
+    </copy>
+       
+    <property  name="Solution.Path" value="${path::combine(libs, 'Libs.sln')}"/>
+
+    <call target="build" />
+  </target>
+</project>

@@ -1,0 +1,23 @@
+﻿<Window x:Class="KnowledgeBase.Desktop.Windows.EditCategoryWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+        xmlns:cn="clr-namespace:KnowledgeBase.Desktop.Controls"
+        xmlns:Controls="clr-namespace:KnowledgeBase.Controls;assembly=KnowledgeBase.Controls" Title="Edit Category" Height="300" Width="300"
+        WindowStartupLocation="CenterOwner">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="25"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0">
+            <Controls:ErrorLabel Text="Name" />
+            <TextBox Name="boxName"/>
+
+            <cn:CategorySelector x:Name="listCategories" Title="Parent Category"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button  Content="OK" Click="ButtonOk_Click" IsDefault="True"  Style="{StaticResource Default}" />
+            <Button  Content="Cancel" IsCancel="True" Click="ButtonCancel_Click"  Style="{StaticResource Default}" />
+        </StackPanel>
+    </Grid>
+</Window>

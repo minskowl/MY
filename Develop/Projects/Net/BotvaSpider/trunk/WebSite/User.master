@@ -1,0 +1,50 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="User.master.cs" Inherits="UserMasterpage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form2" runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server">
+    </asp:ScriptManager>
+    <div id="wrapper">
+        <div id="nav">
+            <ul>
+                <li> <asp:HyperLink runat="server" NavigateUrl="~/Default.aspx" >О боте</asp:HyperLink></li>
+                <li><asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/UserArea/Licenses.aspx" >Лицензии</asp:HyperLink></li>
+                <li><a href="http://www.freewebsitetemplates.com">gallery</a></li>
+                <li><a href="http://www.freewebsitetemplates.com">community</a></li>
+                <li class="lastchild"><a href="http://www.freewebsitetemplates.com">contact</a></li>
+            </ul>
+        </div>
+        <!-- end nav -->
+        <div id="body" style="height: 550px;">
+            <div id="current" >
+                <a href="/">
+                    <bot:ImageEx runat="server" ImageUrl="~/images/logo1.png" alt="logo" /></a>
+            </div>
+            <div id="content">
+                <br />
+                <br />
+                <asp:ContentPlaceHolder ID="content" runat="server">
+                </asp:ContentPlaceHolder>
+                <!-- end content -->
+                <div class="clear">
+                </div>
+            </div>
+        </div>
+        <!-- end body -->
+        <div id="footer" class="clear">
+            <div id="copyright">
+                &copy; copyright information goes here</div>
+        </div>
+        <!-- end footer -->
+    </div>
+    <!-- end wrapper -->
+    </form>
+</body>
+</html>

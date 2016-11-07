@@ -1,0 +1,482 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="..\..\..\JavaDoc.css">
+  </head>
+  <body>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td>
+                <a href="namespace-summary.html">Namespace</a> </td>
+              <td class="nav1sel"> Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV TYPE    NEXT TYPE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+      <tr class="nav2">
+        <td>SUMMARY: INNER | <a href="#field-summary">FIELD</a> | <a href="#constructor-summary">CONST</a> | PROP | <a href="#method-summary">METHOD</a> | OP | EVENT</td>
+        <td>DETAIL: <a href="#field-detail">FIELD</a> | <a href="#constructor-detail">CONST</a> | PROP | <a href="#method-detail">METHOD</a> | OP | EVENT</td>
+      </tr>
+    </table>
+    <hr>
+    <h2>
+      <span class="namespaceName">NVelocity.Http.Tool</span>
+      <br>
+      <span class="className">Class XMLToolboxManager</span>
+    </h2>
+    <p>
+            A ToolboxManager for loading a toolbox from xml.
+            
+            A toolbox manager is responsible for automatically filling the Velocity
+            context with a set of view tools. This class provides the following
+            features:configurable through an XML-based configuration fileassembles a set of view tools (the toolbox) on requestsupports any class with a public constructor without parameters
+            to be used as a view toolsupports adding primitive data values to the context(String,Number,Boolean)ConfigurationThe toolbox manager is configured through an XML-based configuration
+            file. The configuration file is passed to the {@link #load(java.io.InputStream input)}
+            method. The required format is shown in the following example:
+            &lt;?xml version="1.0"?&gt;
+            
+            &lt;toolbox&gt;
+            &lt;tool&gt;
+            &lt;key&gt;toolLoader&lt;/key&gt;
+            &lt;class&gt;org.apache.velocity.tools.tools.ToolLoader&lt;/class&gt;
+            &lt;/tool&gt;
+            &lt;tool&gt;
+            &lt;key&gt;math&lt;/key&gt;
+            &lt;class&gt;org.apache.velocity.tools.tools.MathTool&lt;/class&gt;
+            &lt;/tool&gt;
+            &lt;data type="Number"&gt;
+            &lt;key&gt;luckynumber&lt;/key&gt;
+            &lt;value&gt;1.37&lt;/class&gt;
+            &lt;/data&gt;
+            &lt;data type="String"&gt;
+            &lt;key&gt;greeting&lt;/key&gt;
+            &lt;value&gt;Hello World!&lt;/class&gt;
+            &lt;/data&gt;
+            &lt;/toolbox&gt;
+            </p>
+    <a name="field-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Field Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="fieldType" valign="top">string</td>
+        <td class="field">
+          <a href="#NVelocity.Http.Tool.XMLToolboxManager.ATTRIBUTE_TYPE">ATTRIBUTE_TYPE</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="fieldType" valign="top">string</td>
+        <td class="field">
+          <a href="#NVelocity.Http.Tool.XMLToolboxManager.BASE_NODE">BASE_NODE</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="fieldType" valign="top">string</td>
+        <td class="field">
+          <a href="#NVelocity.Http.Tool.XMLToolboxManager.ELEMENT_CLASS">ELEMENT_CLASS</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="fieldType" valign="top">string</td>
+        <td class="field">
+          <a href="#NVelocity.Http.Tool.XMLToolboxManager.ELEMENT_DATA">ELEMENT_DATA</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="fieldType" valign="top">string</td>
+        <td class="field">
+          <a href="#NVelocity.Http.Tool.XMLToolboxManager.ELEMENT_KEY">ELEMENT_KEY</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="fieldType" valign="top">string</td>
+        <td class="field">
+          <a href="#NVelocity.Http.Tool.XMLToolboxManager.ELEMENT_TOOL">ELEMENT_TOOL</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="fieldType" valign="top">string</td>
+        <td class="field">
+          <a href="#NVelocity.Http.Tool.XMLToolboxManager.ELEMENT_VALUE">ELEMENT_VALUE</a>
+        </td>
+      </tr>
+    </table>
+    <br>
+    <a name="constructor-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Constructor Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="constructor" valign="top">
+          <a href="#NVelocity.Http.Tool.XMLToolboxManager.#ctor">XMLToolboxManager</a>()<br>        
+            Default constructor
+            </td>
+      </tr>
+    </table>
+    <br>
+    <a name="property-summary">
+    </a>
+    <a name="method-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Method Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.Http.Tool.XMLToolboxManager.AddTool(NVelocity.Tool.IToolInfo)">AddTool</a>(NVelocity.Tool.IToolInfo info)</td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">NVelocity.Http.Context.ToolboxContext</td>
+        <td class="method">
+          <a href="#NVelocity.Http.Tool.XMLToolboxManager.getToolboxContext(System.Object)">getToolboxContext</a>(object initData)</td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.Http.Tool.XMLToolboxManager.load(System.IO.Stream)">load</a>(System.IO.Stream input)<br>        
+            Reads an XML document from an {@link InputStream}
+            using dom4j and
+            sets up the toolbox from that.
+            
+            The DTD for toolbox schema is:
+            
+            &lt;?xml version="1.0"?&gt;
+            &lt;!ELEMENT toolbox (tool*,data*)&gt;
+            &lt;!ELEMENT tool    (key,class,#PCDATA)&gt;
+            &lt;!ELEMENT data    (key,value)&gt;
+            &lt;!ATTLIST data type (string|number|boolean) "string"&gt;
+            &lt;!ELEMENT key     (#CDATA)&gt;
+            &lt;!ELEMENT class   (#CDATA)&gt;
+            &lt;!ELEMENT value   (#CDATA)&gt;
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.Http.Tool.XMLToolboxManager.log(System.String)">log</a>(string s)<br>        
+            Default implementation logs messages to system out.
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">NVelocity.Tool.IToolInfo</td>
+        <td class="method">
+          <a href="#NVelocity.Http.Tool.XMLToolboxManager.readDataInfo(System.Xml.XmlElement)">readDataInfo</a>(System.Xml.XmlElement e)</td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">NVelocity.Tool.IToolInfo</td>
+        <td class="method">
+          <a href="#NVelocity.Http.Tool.XMLToolboxManager.readToolInfo(System.Xml.XmlElement)">readToolInfo</a>(System.Xml.XmlElement e)</td>
+      </tr>
+    </table>
+    <br>
+    <table class="subtable" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Methods inherited from class System.Object</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>
+          <a href="..\..\..\NVelocity/Http/Tool/XMLToolboxManager/Equals(System.html#Object)">Equals</a>, <a href="..\..\..\NVelocity/Http/Tool/XMLToolboxManager.html#Finalize">Finalize</a>, <a href="..\..\..\NVelocity/Http/Tool/XMLToolboxManager.html#GetHashCode">GetHashCode</a>, <a href="..\..\..\NVelocity/Http/Tool/XMLToolboxManager.html#GetType">GetType</a>, <a href="..\..\..\NVelocity/Http/Tool/XMLToolboxManager.html#MemberwiseClone">MemberwiseClone</a>, <a href="..\..\..\NVelocity/Http/Tool/XMLToolboxManager.html#ToString">ToString</a></td>
+      </tr>
+    </table>
+    <br>
+    <a name="operator-summary">
+    </a>
+    <a name="event-summary">
+    </a>
+    <br>
+    <a name="field-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Field Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.Http.Tool.XMLToolboxManager.ATTRIBUTE_TYPE">
+    </a>
+    <h3>ATTRIBUTE_TYPE</h3>
+    <pre>public string <b>ATTRIBUTE_TYPE</b></pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Http.Tool.XMLToolboxManager.BASE_NODE">
+    </a>
+    <h3>BASE_NODE</h3>
+    <pre>public string <b>BASE_NODE</b></pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Http.Tool.XMLToolboxManager.ELEMENT_CLASS">
+    </a>
+    <h3>ELEMENT_CLASS</h3>
+    <pre>public string <b>ELEMENT_CLASS</b></pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Http.Tool.XMLToolboxManager.ELEMENT_DATA">
+    </a>
+    <h3>ELEMENT_DATA</h3>
+    <pre>public string <b>ELEMENT_DATA</b></pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Http.Tool.XMLToolboxManager.ELEMENT_KEY">
+    </a>
+    <h3>ELEMENT_KEY</h3>
+    <pre>public string <b>ELEMENT_KEY</b></pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Http.Tool.XMLToolboxManager.ELEMENT_TOOL">
+    </a>
+    <h3>ELEMENT_TOOL</h3>
+    <pre>public string <b>ELEMENT_TOOL</b></pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Http.Tool.XMLToolboxManager.ELEMENT_VALUE">
+    </a>
+    <h3>ELEMENT_VALUE</h3>
+    <pre>public string <b>ELEMENT_VALUE</b></pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="constructor-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Constructor Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.Http.Tool.XMLToolboxManager.#ctor">
+    </a>
+    <h3>XMLToolboxManager</h3>
+    <pre>public XMLToolboxManager()</pre>
+    <dl>
+      <dd>
+        <p>
+            Default constructor
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="property-detail">
+    </a>
+    <a name="method-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Method Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.Http.Tool.XMLToolboxManager.AddTool(NVelocity.Tool.IToolInfo)">
+    </a>
+    <h3>AddTool</h3>
+    <pre>public void AddTool(NVelocity.Tool.IToolInfo info)</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Http.Tool.XMLToolboxManager.getToolboxContext(System.Object)">
+    </a>
+    <h3>getToolboxContext</h3>
+    <pre>public NVelocity.Http.Context.ToolboxContext getToolboxContext(object initData)</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Http.Tool.XMLToolboxManager.load(System.IO.Stream)">
+    </a>
+    <h3>load</h3>
+    <pre>public void load(System.IO.Stream input)</pre>
+    <dl>
+      <dd>
+        <p>
+            Reads an XML document from an {@link InputStream}
+            using dom4j and
+            sets up the toolbox from that.
+            
+            The DTD for toolbox schema is:
+            
+            &lt;?xml version="1.0"?&gt;
+            &lt;!ELEMENT toolbox (tool*,data*)&gt;
+            &lt;!ELEMENT tool    (key,class,#PCDATA)&gt;
+            &lt;!ELEMENT data    (key,value)&gt;
+            &lt;!ATTLIST data type (string|number|boolean) "string"&gt;
+            &lt;!ELEMENT key     (#CDATA)&gt;
+            &lt;!ELEMENT class   (#CDATA)&gt;
+            &lt;!ELEMENT value   (#CDATA)&gt;
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>input</code> - the InputStream to read from</dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Http.Tool.XMLToolboxManager.log(System.String)">
+    </a>
+    <h3>log</h3>
+    <pre>protected internal void log(string s)</pre>
+    <dl>
+      <dd>
+        <p>
+            Default implementation logs messages to system out.
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Http.Tool.XMLToolboxManager.readDataInfo(System.Xml.XmlElement)">
+    </a>
+    <h3>readDataInfo</h3>
+    <pre>protected internal NVelocity.Tool.IToolInfo readDataInfo(System.Xml.XmlElement e)</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Http.Tool.XMLToolboxManager.readToolInfo(System.Xml.XmlElement)">
+    </a>
+    <h3>readToolInfo</h3>
+    <pre>protected internal NVelocity.Tool.IToolInfo readToolInfo(System.Xml.XmlElement e)</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="operator-detail">
+    </a>
+    <a name="event-detail">
+    </a>
+    <hr>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td>
+                <a href="namespace-summary.html">Namespace</a> </td>
+              <td class="nav1sel"> Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV TYPE    NEXT TYPE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+      <tr class="nav2">
+        <td>SUMMARY: INNER | <a href="#field-summary">FIELD</a> | <a href="#constructor-summary">CONST</a> | PROP | <a href="#method-summary">METHOD</a> | OP | EVENT</td>
+        <td>DETAIL: <a href="#field-detail">FIELD</a> | <a href="#constructor-detail">CONST</a> | PROP | <a href="#method-detail">METHOD</a> | OP | EVENT</td>
+      </tr>
+    </table>
+  </body>
+</html>

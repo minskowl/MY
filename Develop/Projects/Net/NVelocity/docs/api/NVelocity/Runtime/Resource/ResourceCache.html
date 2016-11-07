@@ -1,0 +1,270 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="..\..\..\JavaDoc.css">
+  </head>
+  <body>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td>
+                <a href="namespace-summary.html">Namespace</a> </td>
+              <td class="nav1sel"> Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV TYPE    NEXT TYPE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+      <tr class="nav2">
+        <td>SUMMARY: INNER | FIELD | CONST | PROP | <a href="#method-summary">METHOD</a> | OP | EVENT</td>
+        <td>DETAIL: FIELD | CONST | PROP | <a href="#method-detail">METHOD</a> | OP | EVENT</td>
+      </tr>
+    </table>
+    <hr>
+    <h2>
+      <span class="namespaceName">NVelocity.Runtime.Resource</span>
+      <br>
+      <span class="className">Interface ResourceCache</span>
+    </h2>
+    <p> Interface that defines the shape of a pluggable resource cache
+            for the included ResourceManager
+            *
+            </p>
+    <a name="field-summary">
+    </a>
+    <a name="constructor-summary">
+    </a>
+    <a name="property-summary">
+    </a>
+    <a name="method-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Method Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="returnType" valign="top">System.Collections.IEnumerator</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Resource.ResourceCache.enumerateKeys">enumerateKeys</a>()<br>          returns an Iterator of Keys in the cache
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">NVelocity.Runtime.Resource.Resource</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Resource.ResourceCache.get(System.Object)">get</a>(object resourceKey)<br>          retrieves a Resource from the
+            cache
+            *
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Resource.ResourceCache.initialize(NVelocity.Runtime.RuntimeServices)">initialize</a>(NVelocity.Runtime.RuntimeServices rs)<br>          initializes the ResourceCache.  Will be
+            called before any utilization
+            *
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">NVelocity.Runtime.Resource.Resource</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Resource.ResourceCache.put(System.Object,NVelocity.Runtime.Resource.Resource)">put</a>(object resourceKey, NVelocity.Runtime.Resource.Resource resource)<br>          stores a Resource in the cache
+            *
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">NVelocity.Runtime.Resource.Resource</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Resource.ResourceCache.remove(System.Object)">remove</a>(object resourceKey)<br>          removes a Resource from the cache
+            *
+            </td>
+      </tr>
+    </table>
+    <br>
+    <a name="operator-summary">
+    </a>
+    <a name="event-summary">
+    </a>
+    <br>
+    <a name="field-detail">
+    </a>
+    <a name="constructor-detail">
+    </a>
+    <a name="property-detail">
+    </a>
+    <a name="method-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Method Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.Runtime.Resource.ResourceCache.enumerateKeys">
+    </a>
+    <h3>enumerateKeys</h3>
+    <pre>public System.Collections.IEnumerator enumerateKeys()</pre>
+    <dl>
+      <dd>
+        <p>  returns an Iterator of Keys in the cache
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Resource.ResourceCache.get(System.Object)">
+    </a>
+    <h3>get</h3>
+    <pre>public NVelocity.Runtime.Resource.Resource get(object resourceKey)</pre>
+    <dl>
+      <dd>
+        <p>  retrieves a Resource from the
+            cache
+            *
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>resourceKey</code> - key for Resource to be retrieved
+            </dd>
+        </dl>
+        <b>Returns:</b>
+        <dl>
+          <dd>Resource specified or null if not found
+            
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Resource.ResourceCache.initialize(NVelocity.Runtime.RuntimeServices)">
+    </a>
+    <h3>initialize</h3>
+    <pre>public void initialize(NVelocity.Runtime.RuntimeServices rs)</pre>
+    <dl>
+      <dd>
+        <p>  initializes the ResourceCache.  Will be
+            called before any utilization
+            *
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>rs</code> - RuntimeServices to use for logging, etc
+            
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Resource.ResourceCache.put(System.Object,NVelocity.Runtime.Resource.Resource)">
+    </a>
+    <h3>put</h3>
+    <pre>public NVelocity.Runtime.Resource.Resource put(object resourceKey,
+                                               NVelocity.Runtime.Resource.Resource resource)</pre>
+    <dl>
+      <dd>
+        <p>  stores a Resource in the cache
+            *
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>resourceKey</code> - key to associate with the Resource
+            </dd>
+          <dd>
+            <code>resource</code> - Resource to be stored
+            </dd>
+        </dl>
+        <b>Returns:</b>
+        <dl>
+          <dd>existing Resource stored under this key, or null if none
+            
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Resource.ResourceCache.remove(System.Object)">
+    </a>
+    <h3>remove</h3>
+    <pre>public NVelocity.Runtime.Resource.Resource remove(object resourceKey)</pre>
+    <dl>
+      <dd>
+        <p>  removes a Resource from the cache
+            *
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>resourceKey</code> - resource to be removed
+            </dd>
+          <dd>
+            <code>Resource</code> - stored under key
+            
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <a name="operator-detail">
+    </a>
+    <a name="event-detail">
+    </a>
+    <hr>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td>
+                <a href="namespace-summary.html">Namespace</a> </td>
+              <td class="nav1sel"> Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV TYPE    NEXT TYPE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+      <tr class="nav2">
+        <td>SUMMARY: INNER | FIELD | CONST | PROP | <a href="#method-summary">METHOD</a> | OP | EVENT</td>
+        <td>DETAIL: FIELD | CONST | PROP | <a href="#method-detail">METHOD</a> | OP | EVENT</td>
+      </tr>
+    </table>
+  </body>
+</html>

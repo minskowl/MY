@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<project name="Build Libs" default="build">
+  <target name="build" depends="buildNantRunnerRelease,buildNantRunnerDebug" >
+  </target>
+  <target name="buildNantRunnerRelease">
+    <msbuild project="NantRunner.sln">
+      <arg value="/property:Configuration=Release" />
+    </msbuild>
+  </target>
+  <target name="buildNantRunnerDebug">
+    <msbuild project="NantRunner.sln">
+      <arg value="/property:Configuration=Debug" />
+    </msbuild>
+  </target>
+</project>

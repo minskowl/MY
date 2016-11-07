@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Примеры. Режим редактирования для многоугольника.</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="http://api-maps.yandex.ru/1.1/index.xml?key=ANpUFEkBAAAAf7jmJwMAHGZHrcKNDsbEqEVjEUtCmufxQMwAAAAAAAAAAAAvVrubVT4btztbduoIgTLAeFILaQ=="
+        type="text/javascript"></script>
+    <script type="text/javascript">
+
+        var polygon;
+
+        function IsInRegion(lng, lat) {
+            return polygon.contains(new YMaps.GeoPoint(lng, lat));
+        }
+
+        function Init(w, h, points) {
+            var div = YMaps.jQuery("#YMapsID");
+            div.width(w);
+            div.height(h);
+
+            // Создание экземпляра карты и его привязка к созданному контейнеру
+
+            var map = new YMaps.Map(div[0]);
+            // Установка для карты ее центра и масштаба
+
+            map.setCenter(new YMaps.GeoPoint(27.56, 53.88), 12);
+            map.addControl(new YMaps.TypeControl());
+            map.addControl(new YMaps.ToolBar());
+            map.addControl(new YMaps.Zoom());
+            map.addControl(new YMaps.MiniMap());
+            map.addControl(new YMaps.ScaleLine());
+
+            var myEventListener = YMaps.Events.observe(map, map.Events.Click, function (map, mEvent) {
+                var point = mEvent.getGeoPoint();
+
+                alert(polygon.contains(point));
+
+            }, this);
+
+            var style = new YMaps.Style("default#greenPoint");
+
+            style.polygonStyle = new YMaps.PolygonStyle();
+            style.polygonStyle.fill = 1;
+            style.polygonStyle.outline = 1;
+            style.polygonStyle.strokeWidth = 10;
+            style.polygonStyle.strokeColor = "ffff0088";
+            style.polygonStyle.fillColor = "ff000055";
+
+            YMaps.Styles.add("polygon#Example", style);
+
+            var path = null;
+            if (points != null && points.length > 0)
+                eval("path=[" + points + "];");
+
+            if (path == null || path.length == 0) 
+            {
+                path = [new YMaps.GeoPoint(27.467354, 53.847849), new YMaps.GeoPoint(27.430281, 53.859776), new YMaps.GeoPoint(27.408305, 53.908808),
+                    new YMaps.GeoPoint(27.461866, 53.965121), new YMaps.GeoPoint(27.518167, 53.971975), new YMaps.GeoPoint(27.588206, 53.968558), new YMaps.GeoPoint(27.670602, 53.941719),
+                    new YMaps.GeoPoint(27.704932, 53.872169), new YMaps.GeoPoint(27.667855, 53.8423), new YMaps.GeoPoint(27.58203, 53.831199)];
+                trace("Регион по умолчанию");
+            }
+            else {
+                trace("Регион загружен");
+            }
+
+
+
+            polygon = new YMaps.Polygon(path,
+          {
+              style: "polygon#Example",
+              hasHint: 0,
+              hasBalloon: 0
+          });
+
+            map.addOverlay(polygon);
+            polygon.startEditing();
+
+    
+
+        }
+
+        function getPoints() {
+            var tmp = "";
+            var points = polygon.getPoints();
+            for (var i = 0; i < points.length; i++) {
+                tmp = tmp + "new YMaps.GeoPoint(" + points[i] + "),";
+            }
+            return tmp.substring(0, tmp.length - 1);
+        }
+
+        function trace(text) {
+            YMaps.jQuery("#output").text(text);
+        }
+        function showPoligon() {
+            var text = getPoints();
+            trace(text);
+        }
+		
+    </script>
+</head>
+<body style="margin: 0; padding: 0;">
+    <div id="YMapsID" style="width: 800px; height: 500px">
+    </div>
+    <div id="output">
+    </div>
+    <button onclick="showPoligon();">
+        Test</button>
+    <button onclick="Init(2000,1000);">
+        Init</button>
+</body>
+</html>

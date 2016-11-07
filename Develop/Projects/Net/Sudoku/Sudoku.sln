@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sudoku", "Sudoku\Sudoku.csproj", "{D500E3E3-2CCF-4310-B6F1-17C04B2F4453}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Savchin.Tools", "..\Libs\Tools\Savchin.Tools.csproj", "{2F1807E4-39A2-4F38-ADFC-6310A8443D90}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D500E3E3-2CCF-4310-B6F1-17C04B2F4453}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D500E3E3-2CCF-4310-B6F1-17C04B2F4453}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D500E3E3-2CCF-4310-B6F1-17C04B2F4453}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D500E3E3-2CCF-4310-B6F1-17C04B2F4453}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F1807E4-39A2-4F38-ADFC-6310A8443D90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F1807E4-39A2-4F38-ADFC-6310A8443D90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F1807E4-39A2-4F38-ADFC-6310A8443D90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F1807E4-39A2-4F38-ADFC-6310A8443D90}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

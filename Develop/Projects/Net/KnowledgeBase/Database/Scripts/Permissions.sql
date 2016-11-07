@@ -1,0 +1,4 @@
+﻿
+GRANT CONNECT TO [kbUser]
+
+GO

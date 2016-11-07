@@ -1,0 +1,313 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="..\JavaDoc.css">
+  </head>
+  <body>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\overview-summary.html"> Overview </a>
+              </td>
+              <td>
+                <a href="namespace-summary.html">Namespace</a> </td>
+              <td class="nav1sel"> Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV TYPE    NEXT TYPE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+      <tr class="nav2">
+        <td>SUMMARY: INNER | FIELD | <a href="#constructor-summary">CONST</a> | PROP | <a href="#method-summary">METHOD</a> | OP | EVENT</td>
+        <td>DETAIL: FIELD | <a href="#constructor-detail">CONST</a> | PROP | <a href="#method-detail">METHOD</a> | OP | EVENT</td>
+      </tr>
+    </table>
+    <hr>
+    <h2>
+      <span class="namespaceName">NVelocity</span>
+      <br>
+      <span class="className">Class Template</span>
+    </h2>
+    <p> This class is used for controlling all template
+            operations. This class uses a parser created
+            by JavaCC to create an AST that is subsequently
+            traversed by a Visitor.
+            *
+            
+            Template template = Velocity.getTemplate("test.wm");
+            Context context = new VelocityContext();
+            *
+            context.put("foo", "bar");
+            context.put("customer", new Customer());
+            *
+            template.merge(context, writer);
+            
+            *
+            </p>
+    <a name="field-summary">
+    </a>
+    <table class="subtable" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Fields inherited from class NVelocity.Runtime.Resource.Resource</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>
+          <a href="">data</a>, <a href="">encoding</a>, <a href="">lastModified</a>, <a href="">modificationCheckInterval</a>, <a href="">name</a>, <a href="">nextCheck</a>, <a href="">resourceLoader</a>, <a href="">rsvc</a></td>
+      </tr>
+    </table>
+    <br>
+    <a name="constructor-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Constructor Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="constructor" valign="top">
+          <a href="#NVelocity.Template.#ctor">Template</a>()<br>        Default constructor
+            </td>
+      </tr>
+    </table>
+    <br>
+    <a name="property-summary">
+    </a>
+    <table class="subtable" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Properties inherited from class NVelocity.Runtime.Resource.Resource</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>
+          <a href="">Data</a>, <a href="">Encoding</a>, <a href="">LastModified</a>, <a href="">ModificationCheckInterval</a>, <a href="">Name</a>, <a href="">ResourceLoader</a>, <a href="">RuntimeServices</a></td>
+      </tr>
+    </table>
+    <br>
+    <a name="method-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Method Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.Template.InitDocument">InitDocument</a>()<br>          initializes the document.  init() is not longer
+            dependant upon context, but we need to let the
+            init() carry the template name down throught for VM
+            namespace features
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.Template.Merge(NVelocity.Context.IContext,System.IO.TextWriter)">Merge</a>(NVelocity.Context.IContext context, System.IO.TextWriter writer)<br>         The AST node structure is merged with the
+            context to produce the final output.
+            *
+            Throws IOException if failure is due to a file related
+            issue, and Exception otherwise
+            *
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">bool</td>
+        <td class="method">
+          <a href="#NVelocity.Template.Process">Process</a>()<br>          gets the named resource as a stream, parses and inits
+            *
+            </td>
+      </tr>
+    </table>
+    <br>
+    <table class="subtable" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Methods inherited from class NVelocity.Runtime.Resource.Resource</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>
+          <a href="..\NVelocity/Template.html#IsSourceModified">IsSourceModified</a>, <a href="..\NVelocity/Template.html#RequiresChecking">RequiresChecking</a>, <a href="..\NVelocity/Template.html#Touch">Touch</a></td>
+      </tr>
+    </table>
+    <br>
+    <table class="subtable" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Methods inherited from class System.Object</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>
+          <a href="..\NVelocity/Template/Equals(System.html#Object)">Equals</a>, <a href="..\NVelocity/Template.html#Finalize">Finalize</a>, <a href="..\NVelocity/Template.html#GetHashCode">GetHashCode</a>, <a href="..\NVelocity/Template.html#GetType">GetType</a>, <a href="..\NVelocity/Template.html#MemberwiseClone">MemberwiseClone</a>, <a href="..\NVelocity/Template.html#ToString">ToString</a></td>
+      </tr>
+    </table>
+    <br>
+    <a name="operator-summary">
+    </a>
+    <a name="event-summary">
+    </a>
+    <br>
+    <a name="field-detail">
+    </a>
+    <a name="constructor-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Constructor Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.Template.#ctor">
+    </a>
+    <h3>Template</h3>
+    <pre>public Template()</pre>
+    <dl>
+      <dd>
+        <p>Default constructor
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="property-detail">
+    </a>
+    <a name="method-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Method Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.Template.InitDocument">
+    </a>
+    <h3>InitDocument</h3>
+    <pre>public void InitDocument()</pre>
+    <dl>
+      <dd>
+        <p>  initializes the document.  init() is not longer
+            dependant upon context, but we need to let the
+            init() carry the template name down throught for VM
+            namespace features
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Template.Merge(NVelocity.Context.IContext,System.IO.TextWriter)">
+    </a>
+    <h3>Merge</h3>
+    <pre>public void Merge(NVelocity.Context.IContext context,
+                  System.IO.TextWriter writer)</pre>
+    <dl>
+      <dd>
+        <p> The AST node structure is merged with the
+            context to produce the final output.
+            *
+            Throws IOException if failure is due to a file related
+            issue, and Exception otherwise
+            *
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>context</code> - Conext with data elements accessed by template
+            </dd>
+          <dd>
+            <code>writer</code> - output writer for rendered template
+            @throws ResourceNotFoundException if template not found
+            from any available source.
+            @throws ParseErrorException if template cannot be parsed due
+            to syntax (or other) error.
+            @throws  Exception  anything else.
+            
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Template.Process">
+    </a>
+    <h3>Process</h3>
+    <pre>public bool Process()</pre>
+    <dl>
+      <dd>
+        <p>  gets the named resource as a stream, parses and inits
+            *
+            </p>
+        <p>
+        </p>
+        <b>Returns:</b>
+        <dl>
+          <dd>true if successful
+            @throws ResourceNotFoundException if template not found
+            from any available source.
+            @throws ParseErrorException if template cannot be parsed due
+            to syntax (or other) error.
+            @throws Exception some other problem, should only be from
+            initialization of the template AST.
+            
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <a name="operator-detail">
+    </a>
+    <a name="event-detail">
+    </a>
+    <hr>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\overview-summary.html"> Overview </a>
+              </td>
+              <td>
+                <a href="namespace-summary.html">Namespace</a> </td>
+              <td class="nav1sel"> Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV TYPE    NEXT TYPE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+      <tr class="nav2">
+        <td>SUMMARY: INNER | FIELD | <a href="#constructor-summary">CONST</a> | PROP | <a href="#method-summary">METHOD</a> | OP | EVENT</td>
+        <td>DETAIL: FIELD | <a href="#constructor-detail">CONST</a> | PROP | <a href="#method-detail">METHOD</a> | OP | EVENT</td>
+      </tr>
+    </table>
+  </body>
+</html>

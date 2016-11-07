@@ -1,0 +1,226 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="..\..\..\JavaDoc.css">
+  </head>
+  <body>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td class="nav1sel"> Namespace </td>
+              <td>Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV NAMESPACE    NEXT NAMESPACE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+    </table>
+    <hr>
+    <h2 class="title">NVelocity.Runtime.Directive Namespace Summary</h2>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Interface Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="name">
+          <a href="DirectiveConstants.html">DirectiveConstants</a>
+        </td>
+        <td class="type"> </td>
+      </tr>
+    </table>
+    <br>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Class Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="name">
+          <a href="Directive.html">Directive</a>
+        </td>
+        <td class="type"> Base class for all directives used in Velocity.
+            *
+            </td>
+      </tr>
+      <tr>
+        <td class="name">
+          <a href="Foreach.html">Foreach</a>
+        </td>
+        <td class="type">
+            Foreach directive used for moving through arrays,
+            or objects that provide an Iterator.
+            </td>
+      </tr>
+      <tr>
+        <td class="name">
+          <a href="Include.html">Include</a>
+        </td>
+        <td class="type"> Pluggable directive that handles the #include() statement in VTL.
+            This #include() can take multiple arguments of either
+            StringLiteral or Reference.
+            *
+            Notes:
+            -----
+            1) The included source material can only come from somewhere in
+            the TemplateRoot tree for security reasons. There is no way
+            around this.  If you want to include content from elsewhere on
+            your disk, use a link from somwhere under Template Root to that
+            content.
+            *
+            2) By default, there is no output to the render stream in the event of
+            a problem.  You can override this behavior with two property values :
+            include.output.errormsg.start
+            include.output.errormsg.end
+            If both are defined in velocity.properties, they will be used to
+            in the render output to bracket the arg string that caused the
+            problem.
+            Ex. : if you are working in html then
+            include.output.errormsg.start=
+            might be an excellent way to start...
+            *
+            3) As noted above, #include() can take multiple arguments.
+            Ex : #include( "foo.vm" "bar.vm" $foo )
+            will simply include all three if valid to output w/o any
+            special separator.
+            *
+            </td>
+      </tr>
+      <tr>
+        <td class="name">
+          <a href="Literal.html">Literal</a>
+        </td>
+        <td class="type"> A very simple directive that leverages the Node.literal()
+            to grab the literal rendition of a node. We basically
+            grab the literal value on init(), then repeatedly use
+            that during render().
+            *
+            </td>
+      </tr>
+      <tr>
+        <td class="name">
+          <a href="Macro.html">Macro</a>
+        </td>
+        <td class="type">
+            Macro.java
+            
+            Macro implements the macro definition directive of VTL.
+            
+            example :
+            
+            #macro( isnull $i )
+            #if( $i )
+            $i
+            #end
+            #end
+            
+            This object is used at parse time to mainly process and register the
+            macro.  It is used inline in the parser when processing a directive.
+            
+            </td>
+      </tr>
+      <tr>
+        <td class="name">
+          <a href="Parse.html">Parse</a>
+        </td>
+        <td class="type"> Pluggable directive that handles the #parse() statement in VTL.
+            *
+            Notes:
+            -----
+            1) The parsed source material can only come from somewhere in
+            the TemplateRoot tree for security reasons. There is no way
+            around this.  If you want to include content from elsewhere on
+            your disk, use a link from somwhere under Template Root to that
+            content.
+            *
+            2) There is a limited parse depth.  It is set as a property
+            "parse_directive.maxdepth = 10"  for example.  There is a 20 iteration
+            safety in the event that the parameter isn't set.
+            *
+            </td>
+      </tr>
+      <tr>
+        <td class="name">
+          <a href="ParseDirectiveException.html">ParseDirectiveException</a>
+        </td>
+        <td class="type"> Exception for #parse() problems
+            *
+            </td>
+      </tr>
+      <tr>
+        <td class="name">
+          <a href="VelocimacroProxy.html">VelocimacroProxy</a>
+        </td>
+        <td class="type">
+            VelocimacroProxy.java
+            a proxy Directive-derived object to fit with the current directive system
+            </td>
+      </tr>
+      <tr>
+        <td class="name">
+          <a href="VMProxyArg.html">VMProxyArg</a>
+        </td>
+        <td class="type"> </td>
+      </tr>
+    </table>
+    <br>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Structure Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="name">
+          <a href="DirectiveConstants_Fields.html">DirectiveConstants_Fields</a>
+        </td>
+        <td class="type">  Base class for all directives used in Velocity.
+            *
+            </td>
+      </tr>
+    </table>
+    <br>
+    <hr>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td class="nav1sel"> Namespace </td>
+              <td>Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV NAMESPACE    NEXT NAMESPACE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+    </table>
+  </body>
+</html>

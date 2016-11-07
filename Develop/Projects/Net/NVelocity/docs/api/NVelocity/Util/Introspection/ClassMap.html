@@ -1,0 +1,309 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="..\..\..\JavaDoc.css">
+  </head>
+  <body>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td>
+                <a href="namespace-summary.html">Namespace</a> </td>
+              <td class="nav1sel"> Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV TYPE    NEXT TYPE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+      <tr class="nav2">
+        <td>SUMMARY: INNER | FIELD | <a href="#constructor-summary">CONST</a> | PROP | <a href="#method-summary">METHOD</a> | OP | EVENT</td>
+        <td>DETAIL: FIELD | <a href="#constructor-detail">CONST</a> | PROP | <a href="#method-detail">METHOD</a> | OP | EVENT</td>
+      </tr>
+    </table>
+    <hr>
+    <h2>
+      <span class="namespaceName">NVelocity.Util.Introspection</span>
+      <br>
+      <span class="className">Class ClassMap</span>
+    </h2>
+    <p> A cache of introspection information for a specific class instance.
+            Keys {@link java.lang.Method} objects by a concatenation of the
+            method name and the names of classes that make up the parameters.
+            </p>
+    <a name="field-summary">
+    </a>
+    <a name="constructor-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Constructor Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="constructor" valign="top">
+          <a href="#NVelocity.Util.Introspection.ClassMap.#ctor(System.Type)">ClassMap</a>(System.Type clazz)<br>         Standard constructor
+            </td>
+      </tr>
+      <tr>
+        <td class="constructor" valign="top">
+          <a href="#NVelocity.Util.Introspection.ClassMap.#ctor">ClassMap</a>()<br>        Initializes a new instance of the ClassMap class.</td>
+      </tr>
+    </table>
+    <br>
+    <a name="property-summary">
+    </a>
+    <a name="method-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Method Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="returnType" valign="top">System.Reflection.MethodInfo</td>
+        <td class="method">
+          <a href="#NVelocity.Util.Introspection.ClassMap.findMethod(System.String,System.Object[])">findMethod</a>(string name, object[] params_Renamed)<br>         Find a Method using the methodKey
+            provided.
+            
+            Look in the methodMap for an entry.  If found,
+            it'll either be a CACHE_MISS, in which case we
+            simply give up, or it'll be a Method, in which
+            case, we return it.
+            
+            If nothing is found, then we must actually go
+            and introspect the method from the MethodMap.
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">System.Reflection.PropertyInfo</td>
+        <td class="method">
+          <a href="#NVelocity.Util.Introspection.ClassMap.findProperty(System.String)">findProperty</a>(string name)<br>         Find a Method using the methodKey
+            provided.
+            
+            Look in the methodMap for an entry.  If found,
+            it'll either be a CACHE_MISS, in which case we
+            simply give up, or it'll be a Method, in which
+            case, we return it.
+            
+            If nothing is found, then we must actually go
+            and introspect the method from the MethodMap.
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">System.Reflection.MethodInfo</td>
+        <td class="method">
+          <a href="#NVelocity.Util.Introspection.ClassMap.getPublicMethod(System.Reflection.MethodInfo)">getPublicMethod</a>(System.Reflection.MethodInfo method)<br>          For a given method, retrieves its publicly accessible counterpart.
+            This method will look for a method with same name
+            and signature declared in a public superclass or implemented interface of this
+            method's declaring class. This counterpart method is publicly callable.
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">System.Reflection.PropertyInfo</td>
+        <td class="method">
+          <a href="#NVelocity.Util.Introspection.ClassMap.getPublicProperty(System.Reflection.PropertyInfo)">getPublicProperty</a>(System.Reflection.PropertyInfo property)</td>
+      </tr>
+    </table>
+    <br>
+    <table class="subtable" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Methods inherited from class System.Object</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>
+          <a href="..\..\..\NVelocity/Util/Introspection/ClassMap/Equals(System.html#Object)">Equals</a>, <a href="..\..\..\NVelocity/Util/Introspection/ClassMap.html#Finalize">Finalize</a>, <a href="..\..\..\NVelocity/Util/Introspection/ClassMap.html#GetHashCode">GetHashCode</a>, <a href="..\..\..\NVelocity/Util/Introspection/ClassMap.html#GetType">GetType</a>, <a href="..\..\..\NVelocity/Util/Introspection/ClassMap.html#MemberwiseClone">MemberwiseClone</a>, <a href="..\..\..\NVelocity/Util/Introspection/ClassMap.html#ToString">ToString</a></td>
+      </tr>
+    </table>
+    <br>
+    <a name="operator-summary">
+    </a>
+    <a name="event-summary">
+    </a>
+    <br>
+    <a name="field-detail">
+    </a>
+    <a name="constructor-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Constructor Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.Util.Introspection.ClassMap.#ctor(System.Type)">
+    </a>
+    <h3>ClassMap</h3>
+    <pre>public ClassMap(System.Type clazz)</pre>
+    <dl>
+      <dd>
+        <p> Standard constructor
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Util.Introspection.ClassMap.#ctor">
+    </a>
+    <h3>ClassMap</h3>
+    <pre>public ClassMap()</pre>
+    <dl>
+      <dd>
+        <p>Initializes a new instance of the ClassMap class.</p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="property-detail">
+    </a>
+    <a name="method-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Method Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.Util.Introspection.ClassMap.findMethod(System.String,System.Object[])">
+    </a>
+    <h3>findMethod</h3>
+    <pre>public System.Reflection.MethodInfo findMethod(string name,
+                                               object[] params_Renamed)</pre>
+    <dl>
+      <dd>
+        <p> Find a Method using the methodKey
+            provided.
+            
+            Look in the methodMap for an entry.  If found,
+            it'll either be a CACHE_MISS, in which case we
+            simply give up, or it'll be a Method, in which
+            case, we return it.
+            
+            If nothing is found, then we must actually go
+            and introspect the method from the MethodMap.
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Util.Introspection.ClassMap.findProperty(System.String)">
+    </a>
+    <h3>findProperty</h3>
+    <pre>public System.Reflection.PropertyInfo findProperty(string name)</pre>
+    <dl>
+      <dd>
+        <p> Find a Method using the methodKey
+            provided.
+            
+            Look in the methodMap for an entry.  If found,
+            it'll either be a CACHE_MISS, in which case we
+            simply give up, or it'll be a Method, in which
+            case, we return it.
+            
+            If nothing is found, then we must actually go
+            and introspect the method from the MethodMap.
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Util.Introspection.ClassMap.getPublicMethod(System.Reflection.MethodInfo)">
+    </a>
+    <h3>getPublicMethod</h3>
+    <pre>public System.Reflection.MethodInfo getPublicMethod(System.Reflection.MethodInfo method)</pre>
+    <dl>
+      <dd>
+        <p>  For a given method, retrieves its publicly accessible counterpart.
+            This method will look for a method with same name
+            and signature declared in a public superclass or implemented interface of this
+            method's declaring class. This counterpart method is publicly callable.
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>method</code> - a method whose publicly callable counterpart is requested.
+            </dd>
+        </dl>
+        <b>Returns:</b>
+        <dl>
+          <dd>the publicly callable counterpart method. Note that if the parameter
+            method is itself declared by a public class, this method is an identity
+            function.
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Util.Introspection.ClassMap.getPublicProperty(System.Reflection.PropertyInfo)">
+    </a>
+    <h3>getPublicProperty</h3>
+    <pre>public System.Reflection.PropertyInfo getPublicProperty(System.Reflection.PropertyInfo property)</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="operator-detail">
+    </a>
+    <a name="event-detail">
+    </a>
+    <hr>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td>
+                <a href="namespace-summary.html">Namespace</a> </td>
+              <td class="nav1sel"> Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV TYPE    NEXT TYPE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+      <tr class="nav2">
+        <td>SUMMARY: INNER | FIELD | <a href="#constructor-summary">CONST</a> | PROP | <a href="#method-summary">METHOD</a> | OP | EVENT</td>
+        <td>DETAIL: FIELD | <a href="#constructor-detail">CONST</a> | PROP | <a href="#method-detail">METHOD</a> | OP | EVENT</td>
+      </tr>
+    </table>
+  </body>
+</html>

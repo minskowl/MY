@@ -1,0 +1,466 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="..\..\..\..\JavaDoc.css">
+  </head>
+  <body>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td>
+                <a href="namespace-summary.html">Namespace</a> </td>
+              <td class="nav1sel"> Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV TYPE    NEXT TYPE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+      <tr class="nav2">
+        <td>SUMMARY: INNER | <a href="#field-summary">FIELD</a> | <a href="#constructor-summary">CONST</a> | <a href="#property-summary">PROP</a> | <a href="#method-summary">METHOD</a> | OP | EVENT</td>
+        <td>DETAIL: <a href="#field-detail">FIELD</a> | <a href="#constructor-detail">CONST</a> | <a href="#property-detail">PROP</a> | <a href="#method-detail">METHOD</a> | OP | EVENT</td>
+      </tr>
+    </table>
+    <hr>
+    <h2>
+      <span class="namespaceName">NVelocity.Runtime.Resource.Loader</span>
+      <br>
+      <span class="className">Class ResourceLoader</span>
+    </h2>
+    <p>
+            This is abstract class the all text resource loaders should extend.
+            </p>
+    <a name="field-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Field Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="fieldType" valign="top">string</td>
+        <td class="field">
+          <a href="#NVelocity.Runtime.Resource.Loader.ResourceLoader.className">className</a>
+          <br>         Class name for this loader, for logging/debuggin
+            purposes.
+            </td>
+      </tr>
+      <tr>
+        <td class="fieldType" valign="top">bool</td>
+        <td class="field">
+          <a href="#NVelocity.Runtime.Resource.Loader.ResourceLoader.isCachingOn_Renamed_Field">isCachingOn_Renamed_Field</a>
+          <br>         Does this loader want templates produced with it
+            cached in the Runtime.
+            </td>
+      </tr>
+      <tr>
+        <td class="fieldType" valign="top">long</td>
+        <td class="field">
+          <a href="#NVelocity.Runtime.Resource.Loader.ResourceLoader.modificationCheckInterval">modificationCheckInterval</a>
+          <br>         This property will be passed on to the templates
+            that are created with this loader.
+            </td>
+      </tr>
+      <tr>
+        <td class="fieldType" valign="top">NVelocity.Runtime.RuntimeServices</td>
+        <td class="field">
+          <a href="#NVelocity.Runtime.Resource.Loader.ResourceLoader.rsvc">rsvc</a>
+        </td>
+      </tr>
+    </table>
+    <br>
+    <a name="constructor-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Constructor Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="constructor" valign="top">
+          <a href="#NVelocity.Runtime.Resource.Loader.ResourceLoader.#ctor">ResourceLoader</a>()<br>        Initializes a new instance of the ResourceLoader class.</td>
+      </tr>
+    </table>
+    <br>
+    <a name="property-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Property Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="propertyType" valign="top">bool</td>
+        <td class="property">
+          <a href="#NVelocity.Runtime.Resource.Loader.ResourceLoader.CachingOn">CachingOn</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="propertyType" valign="top">string</td>
+        <td class="property">
+          <a href="#NVelocity.Runtime.Resource.Loader.ResourceLoader.ClassName">ClassName</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="propertyType" valign="top">long</td>
+        <td class="property">
+          <a href="#NVelocity.Runtime.Resource.Loader.ResourceLoader.ModificationCheckInterval">ModificationCheckInterval</a>
+        </td>
+      </tr>
+    </table>
+    <br>
+    <a name="method-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Method Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Resource.Loader.ResourceLoader.commonInit(NVelocity.Runtime.RuntimeServices,Commons.Collections.ExtendedProperties)">commonInit</a>(NVelocity.Runtime.RuntimeServices rs, Commons.Collections.ExtendedProperties configuration)<br>         This initialization is used by all resource
+            loaders and must be called to set up common
+            properties shared by all resource loaders
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">long</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Resource.Loader.ResourceLoader.getLastModified(NVelocity.Runtime.Resource.Resource)">getLastModified</a>(NVelocity.Runtime.Resource.Resource resource)<br>         Get the last modified time of the InputStream source
+            that was used to create the template. We need the template
+            here because we have to extract the name of the template
+            in order to locate the InputStream source.
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">System.IO.Stream</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Resource.Loader.ResourceLoader.getResourceStream(System.String)">getResourceStream</a>(string source)<br>         Get the InputStream that the Runtime will parse
+            to create a template.
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Resource.Loader.ResourceLoader.init(Commons.Collections.ExtendedProperties)">init</a>(Commons.Collections.ExtendedProperties configuration)<br>         Initialize the template loader with a
+            a resources class.
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">bool</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Resource.Loader.ResourceLoader.isCachingOn">isCachingOn</a>()<br>         The Runtime uses this to find out whether this
+            template loader wants the Runtime to cache
+            templates created with InputStreams provided
+            by this loader.
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">bool</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Resource.Loader.ResourceLoader.isSourceModified(NVelocity.Runtime.Resource.Resource)">isSourceModified</a>(NVelocity.Runtime.Resource.Resource resource)<br>         Given a template, check to see if the source of InputStream
+            has been modified.
+            </td>
+      </tr>
+    </table>
+    <br>
+    <table class="subtable" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Methods inherited from class System.Object</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>
+          <a href="..\..\..\..\NVelocity/Runtime/Resource/Loader/ResourceLoader/Equals(System.html#Object)">Equals</a>, <a href="..\..\..\..\NVelocity/Runtime/Resource/Loader/ResourceLoader.html#Finalize">Finalize</a>, <a href="..\..\..\..\NVelocity/Runtime/Resource/Loader/ResourceLoader.html#GetHashCode">GetHashCode</a>, <a href="..\..\..\..\NVelocity/Runtime/Resource/Loader/ResourceLoader.html#GetType">GetType</a>, <a href="..\..\..\..\NVelocity/Runtime/Resource/Loader/ResourceLoader.html#MemberwiseClone">MemberwiseClone</a>, <a href="..\..\..\..\NVelocity/Runtime/Resource/Loader/ResourceLoader.html#ToString">ToString</a></td>
+      </tr>
+    </table>
+    <br>
+    <a name="operator-summary">
+    </a>
+    <a name="event-summary">
+    </a>
+    <br>
+    <a name="field-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Field Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.Runtime.Resource.Loader.ResourceLoader.className">
+    </a>
+    <h3>className</h3>
+    <pre>protected internal string <b>className</b></pre>
+    <dl>
+      <dd>
+        <p> Class name for this loader, for logging/debuggin
+            purposes.
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Resource.Loader.ResourceLoader.isCachingOn_Renamed_Field">
+    </a>
+    <h3>isCachingOn_Renamed_Field</h3>
+    <pre>protected internal bool <b>isCachingOn_Renamed_Field</b></pre>
+    <dl>
+      <dd>
+        <p> Does this loader want templates produced with it
+            cached in the Runtime.
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Resource.Loader.ResourceLoader.modificationCheckInterval">
+    </a>
+    <h3>modificationCheckInterval</h3>
+    <pre>protected internal long <b>modificationCheckInterval</b></pre>
+    <dl>
+      <dd>
+        <p> This property will be passed on to the templates
+            that are created with this loader.
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Resource.Loader.ResourceLoader.rsvc">
+    </a>
+    <h3>rsvc</h3>
+    <pre>protected internal NVelocity.Runtime.RuntimeServices <b>rsvc</b></pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="constructor-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Constructor Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.Runtime.Resource.Loader.ResourceLoader.#ctor">
+    </a>
+    <h3>ResourceLoader</h3>
+    <pre>protected ResourceLoader()</pre>
+    <dl>
+      <dd>
+        <p>Initializes a new instance of the ResourceLoader class.</p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="property-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Property Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.Runtime.Resource.Loader.ResourceLoader.CachingOn">
+    </a>
+    <h3>CachingOn</h3>
+    <pre>public bool CachingOn</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Resource.Loader.ResourceLoader.ClassName">
+    </a>
+    <h3>ClassName</h3>
+    <pre>public string ClassName</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Resource.Loader.ResourceLoader.ModificationCheckInterval">
+    </a>
+    <h3>ModificationCheckInterval</h3>
+    <pre>public long ModificationCheckInterval</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="method-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Method Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.Runtime.Resource.Loader.ResourceLoader.commonInit(NVelocity.Runtime.RuntimeServices,Commons.Collections.ExtendedProperties)">
+    </a>
+    <h3>commonInit</h3>
+    <pre>public void commonInit(NVelocity.Runtime.RuntimeServices rs,
+                       Commons.Collections.ExtendedProperties configuration)</pre>
+    <dl>
+      <dd>
+        <p> This initialization is used by all resource
+            loaders and must be called to set up common
+            properties shared by all resource loaders
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Resource.Loader.ResourceLoader.getLastModified(NVelocity.Runtime.Resource.Resource)">
+    </a>
+    <h3>getLastModified</h3>
+    <pre>public long getLastModified(NVelocity.Runtime.Resource.Resource resource)</pre>
+    <dl>
+      <dd>
+        <p> Get the last modified time of the InputStream source
+            that was used to create the template. We need the template
+            here because we have to extract the name of the template
+            in order to locate the InputStream source.
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Resource.Loader.ResourceLoader.getResourceStream(System.String)">
+    </a>
+    <h3>getResourceStream</h3>
+    <pre>public System.IO.Stream getResourceStream(string source)</pre>
+    <dl>
+      <dd>
+        <p> Get the InputStream that the Runtime will parse
+            to create a template.
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Resource.Loader.ResourceLoader.init(Commons.Collections.ExtendedProperties)">
+    </a>
+    <h3>init</h3>
+    <pre>public void init(Commons.Collections.ExtendedProperties configuration)</pre>
+    <dl>
+      <dd>
+        <p> Initialize the template loader with a
+            a resources class.
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Resource.Loader.ResourceLoader.isCachingOn">
+    </a>
+    <h3>isCachingOn</h3>
+    <pre>public bool isCachingOn()</pre>
+    <dl>
+      <dd>
+        <p> The Runtime uses this to find out whether this
+            template loader wants the Runtime to cache
+            templates created with InputStreams provided
+            by this loader.
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Resource.Loader.ResourceLoader.isSourceModified(NVelocity.Runtime.Resource.Resource)">
+    </a>
+    <h3>isSourceModified</h3>
+    <pre>public bool isSourceModified(NVelocity.Runtime.Resource.Resource resource)</pre>
+    <dl>
+      <dd>
+        <p> Given a template, check to see if the source of InputStream
+            has been modified.
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="operator-detail">
+    </a>
+    <a name="event-detail">
+    </a>
+    <hr>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td>
+                <a href="namespace-summary.html">Namespace</a> </td>
+              <td class="nav1sel"> Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV TYPE    NEXT TYPE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+      <tr class="nav2">
+        <td>SUMMARY: INNER | <a href="#field-summary">FIELD</a> | <a href="#constructor-summary">CONST</a> | <a href="#property-summary">PROP</a> | <a href="#method-summary">METHOD</a> | OP | EVENT</td>
+        <td>DETAIL: <a href="#field-detail">FIELD</a> | <a href="#constructor-detail">CONST</a> | <a href="#property-detail">PROP</a> | <a href="#method-detail">METHOD</a> | OP | EVENT</td>
+      </tr>
+    </table>
+  </body>
+</html>

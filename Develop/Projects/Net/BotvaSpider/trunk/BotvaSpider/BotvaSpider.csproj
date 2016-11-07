@@ -1,0 +1,613 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A0EE401A-2B3E-4C6A-A128-B6DCF100C078}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BotvaSpider</RootNamespace>
+    <AssemblyName>BotvaSpider</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ApplicationIcon>Resources\logo.ico</ApplicationIcon>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\ThrPartLibs\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Design" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controls\Configuration\RivalSourcesControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Configuration\RivalSourcesControl.Designer.cs">
+      <DependentUpon>RivalSourcesControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Commands\ShowBalanceStatisticsCommand.cs" />
+    <Compile Include="Commands\GetRandomNumbersCommand.cs" />
+    <Compile Include="Commands\SettingsEditCommand.cs" />
+    <Compile Include="Controls\Configuration\Accountant\AccountantControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Configuration\Accountant\AccountantControl.Designer.cs">
+      <DependentUpon>AccountantControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Configuration\AttackSettingsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Configuration\AttackSettingsControl.Designer.cs">
+      <DependentUpon>AttackSettingsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Configuration\FormSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\Configuration\FormSettings.Designer.cs">
+      <DependentUpon>FormSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Configuration\MineSettingsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Configuration\MineSettingsControl.Designer.cs">
+      <DependentUpon>MineSettingsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Configuration\TicketActionControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Configuration\TicketActionControl.Designer.cs">
+      <DependentUpon>TicketActionControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Configuration\UserListsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Configuration\UserListsControl.Designer.cs">
+      <DependentUpon>UserListsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Configuration\UserSettings.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Configuration\UserSettings.Designer.cs">
+      <DependentUpon>UserSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Configuration\WardrobeSettingsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Configuration\WardrobeSettingsControl.Designer.cs">
+      <DependentUpon>WardrobeSettingsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Statistics\BalanceControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Statistics\BalanceControl.Designer.cs">
+      <DependentUpon>BalanceControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FormErrorReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\FormErrorReport.designer.cs">
+      <DependentUpon>FormErrorReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FormFileSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\FormFileSelect.Designer.cs">
+      <DependentUpon>FormFileSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\LogViewer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\LogViewer.Designer.cs">
+      <DependentUpon>LogViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ScheduleControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ScheduleControl.Designer.cs">
+      <DependentUpon>ScheduleControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consoles\CrystalMapConsole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consoles\CrystalMapConsole.Designer.cs">
+      <DependentUpon>CrystalMapConsole.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consoles\OutputWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consoles\OutputWindow.designer.cs">
+      <DependentUpon>OutputWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consoles\SmithyConsole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consoles\SmithyConsole.Designer.cs">
+      <DependentUpon>SmithyConsole.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Mining\BigCrystalMap.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Mining\BigCrystalMap.Designer.cs">
+      <DependentUpon>BigCrystalMap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Mining\BigCrystalMapResult.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Mining\BigCrystalMapResult.Designer.cs">
+      <DependentUpon>BigCrystalMapResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Configuration\Accountant\InvestmentStrategyControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Configuration\Accountant\InvestmentStrategyControl.Designer.cs">
+      <DependentUpon>InvestmentStrategyControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CoulombCombo.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\CoulombSelector.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\CoulombSelector.Designer.cs">
+      <DependentUpon>CoulombSelector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Mining\CrystalButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Mining\CrystalMapBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Mining\CrystalMapSelector.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Mining\CrystalMapSelector.Designer.cs">
+      <DependentUpon>CrystalMapSelector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FightListControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\FightListControl.Designer.cs">
+      <DependentUpon>FightListControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Smith\FoundryControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Smith\FoundryControl.Designer.cs">
+      <DependentUpon>FoundryControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\InvestmentStrategiesCombo.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Smith\MinerControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Smith\MinerControl.Designer.cs">
+      <DependentUpon>MinerControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PageControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\PageControl.Designer.cs">
+      <DependentUpon>PageControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SapperButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\SapperControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\SapperControl.Designer.cs">
+      <DependentUpon>SapperControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Mining\SaveMapControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Mining\SaveMapControl.Designer.cs">
+      <DependentUpon>SaveMapControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Mining\ShowVariantsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Mining\ShowVariantsControl.Designer.cs">
+      <DependentUpon>ShowVariantsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SkillCombo.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\WormHoleControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\WormHoleControl.Designer.cs">
+      <DependentUpon>WormHoleControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\DataDownloader.cs" />
+    <Compile Include="Core\DownloadRequestCompleteEventArgs.cs" />
+    <Compile Include="Core\Attributes.cs" />
+    <Compile Include="FormTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTest.Designer.cs">
+      <DependentUpon>FormTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAbout.Designer.cs">
+      <DependentUpon>FormAbout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Controls\Configuration\Accountant\AccountantControl.resx">
+      <DependentUpon>AccountantControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Configuration\AttackSettingsControl.resx">
+      <DependentUpon>AttackSettingsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Configuration\FormSettings.resx">
+      <DependentUpon>FormSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consoles\CrystalMapConsole.resx">
+      <DependentUpon>CrystalMapConsole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consoles\OutputWindow.resx">
+      <DependentUpon>OutputWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consoles\SmithyConsole.resx">
+      <DependentUpon>SmithyConsole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Configuration\RivalSourcesControl.resx">
+      <DependentUpon>RivalSourcesControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Configuration\TicketActionControl.resx">
+      <DependentUpon>TicketActionControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Mining\BigCrystalMap.resx">
+      <DependentUpon>BigCrystalMap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Mining\BigCrystalMapResult.resx">
+      <DependentUpon>BigCrystalMapResult.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Configuration\Accountant\InvestmentStrategyControl.resx">
+      <DependentUpon>InvestmentStrategyControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Configuration\MineSettingsControl.resx">
+      <DependentUpon>MineSettingsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Configuration\UserListsControl.resx">
+      <DependentUpon>UserListsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Configuration\UserSettings.resx">
+      <DependentUpon>UserSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Configuration\WardrobeSettingsControl.resx">
+      <DependentUpon>WardrobeSettingsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\CoulombSelector.resx">
+      <DependentUpon>CoulombSelector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Mining\CrystalMapBase.resx">
+      <DependentUpon>CrystalMapBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Mining\CrystalMapSelector.resx">
+      <DependentUpon>CrystalMapSelector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\FightListControl.resx">
+      <DependentUpon>FightListControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Statistics\BalanceControl.resx">
+      <DependentUpon>BalanceControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\FormErrorReport.resx">
+      <DependentUpon>FormErrorReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\FormFileSelect.resx">
+      <DependentUpon>FormFileSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Smith\FoundryControl.resx">
+      <DependentUpon>FoundryControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\LogViewer.resx">
+      <DependentUpon>LogViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Smith\MinerControl.resx">
+      <DependentUpon>MinerControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\PageControl.resx">
+      <DependentUpon>PageControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\SapperControl.resx">
+      <DependentUpon>SapperControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Mining\SaveMapControl.resx">
+      <DependentUpon>SaveMapControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ScheduleControl.resx">
+      <DependentUpon>ScheduleControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Mining\ShowVariantsControl.resx">
+      <DependentUpon>ShowVariantsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\WormHoleControl.resx">
+      <DependentUpon>WormHoleControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTest.resx">
+      <DependentUpon>FormTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAbout.resx">
+      <DependentUpon>FormAbout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Libs\Savchin.Forms\Savchin.Forms.csproj">
+      <Project>{9405075A-BD64-4B54-9689-2DD716D6F92A}</Project>
+      <Name>Savchin.Forms</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libs\Savchin.Web\Savchin.Web.csproj">
+      <Project>{BFF8B5DA-97CA-401F-8BDC-D9B3B50FD8EB}</Project>
+      <Name>Savchin.Web</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libs\Savchin.WinApi\Savchin.WinApi.csproj">
+      <Project>{DD712413-B47A-4707-A45D-84F786E47BAF}</Project>
+      <Name>Savchin.WinApi</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libs\Tools\Savchin.Tools.csproj">
+      <Project>{2F1807E4-39A2-4F38-ADFC-6310A8443D90}</Project>
+      <Name>Savchin.Tools</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\NUnit\Watin\source\src\Core\WatiN.Core.csproj">
+      <Project>{217E2D34-F6DF-431B-AC5A-B368F481A530}</Project>
+      <Name>WatiN.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Core\BotvaSpider.Core.csproj">
+      <Project>{BB0A3D9C-F98F-454F-93D9-CBA1BEF661C7}</Project>
+      <Name>BotvaSpider.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="main.game.cfg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Spider.cfg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxShockwaveFlashObjects">
+      <Guid>{D27CDB6B-AE6D-11CF-96B8-444553540000}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="ShockwaveFlashObjects">
+      <Guid>{D27CDB6B-AE6D-11CF-96B8-444553540000}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Botva.mdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="miner.swf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Coulombs\Coulomb_-1s.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Coulombs\Coulomb_0.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Coulombs\Coulomb_0s.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Coulombs\Coulomb_11s.jpg" />
+    <Content Include="Resources\Coulombs\Coulomb_14s.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Coulombs\Coulomb_15.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Coulombs\Coulomb_15s.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Coulombs\Coulomb_16s.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Coulombs\Coulomb_17s.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Coulombs\Coulomb_18.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Coulombs\Coulomb_18s.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Coulombs\Coulomb_1s.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Coulombs\Coulomb_12s.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Coulombs\Coulomb_20.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Coulombs\Coulomb_20s.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Coulombs\Coulomb_22.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Coulombs\Coulomb_22s.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Coulombs\Coulomb_27s.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Coulombs\Coulomb_36s.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Coulombs\Coulomb_5s.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Coulombs\Coulomb_8.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Coulombs\Coulomb_8s.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Coulombs\Coulomb_9.jpg" />
+    <Content Include="Resources\Coulombs\Coulomb_9s.jpg" />
+    <None Include="Resources\tada.wav" />
+    <None Include="Resources\logo.ico" />
+    <None Include="Resources\logoBig.png" />
+    <None Include="Resources\Warning.ico" />
+    <None Include="Resources\Rounded Help.ico" />
+    <None Include="Resources\Rounded Car.ico" />
+    <None Include="Resources\Glossy Sound.ico" />
+    <None Include="Resources\Gradient Cancel.ico" />
+    <None Include="Resources\Gradient Ok.ico" />
+    <None Include="Resources\Coulombs\Coulomb_16.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Coulombs\Coulomb_17.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Coulombs\Coulomb_1.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Coulombs\Coulomb_12.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Coulombs\Coulomb_13.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Coulombs\Coulomb_14.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Coulombs\Coulomb_2.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Coulombs\Coulomb_27.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Coulombs\Coulomb_31.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Coulombs\Coulomb_11.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Coulombs\Coulomb_5.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

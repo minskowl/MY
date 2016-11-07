@@ -1,0 +1,1044 @@
+﻿<Project DefaultTargets="Build" ToolsVersion="3.5" InitialTargets="ValidateSolutionConfiguration;ValidateToolsVersions" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_SolutionProjectConfiguration>Release|Mixed Platforms</_SolutionProjectConfiguration>
+    <_SolutionProjectToolsVersion>3.5</_SolutionProjectToolsVersion>
+    <_SolutionProjectCacheVersion>3.5</_SolutionProjectCacheVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <_SolutionProjectProjects Include="CodeParser\CodeParsing.csproj" />
+    <_SolutionProjectProjects Include="Controls\Common\Savchin.Controls.Common.csproj" />
+    <_SolutionProjectProjects Include="Controls\FileBrowser\FileBrowser.vbproj" />
+    <_SolutionProjectProjects Include="Controls\PDModelBrowser\PDModelBrowser.csproj" />
+    <_SolutionProjectProjects Include="ControlTest\ControlTest.csproj" />
+    <_SolutionProjectProjects Include="Data\Data.csproj" />
+    <_SolutionProjectProjects Include="ToolsTest\ToolsTest.csproj" />
+    <_SolutionProjectProjects Include="Tools\Savchin.Tools.csproj" />
+    <_SolutionProjectProjects Include="WebControls\WebControls.csproj" />
+  </ItemGroup>
+  <ItemGroup Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == '.NET') ">
+    <SkipLevel1 Include="Data" />
+    <SkipLevel1 Include="Savchin.Controls.Common" />
+    <SkipLevel1 Include="ToolsTest" />
+    <SkipLevel1 Include="WebControls" />
+    <SkipLevel2 Include="ControlTest" />
+    <SkipLevel2 Include="PDModelBrowser" />
+    <SkipLevel0 Include="CodeParsing" />
+    <SkipLevel0 Include="FileBrowser" />
+    <SkipLevel0 Include="Savchin.Tools" />
+  </ItemGroup>
+  <ItemGroup Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') ">
+    <BuildLevel1 Include="Controls\Common\Savchin.Controls.Common.csproj">
+      <Configuration>Debug</Configuration>
+      <Platform>AnyCPU</Platform>
+    </BuildLevel1>
+    <BuildLevel1 Include="Data\Data.csproj">
+      <Configuration>Debug</Configuration>
+      <Platform>AnyCPU</Platform>
+    </BuildLevel1>
+    <BuildLevel1 Include="ToolsTest\ToolsTest.csproj">
+      <Configuration>Debug</Configuration>
+      <Platform>AnyCPU</Platform>
+    </BuildLevel1>
+    <BuildLevel1 Include="WebControls\WebControls.csproj">
+      <Configuration>Debug</Configuration>
+      <Platform>AnyCPU</Platform>
+    </BuildLevel1>
+    <BuildLevel2 Include="Controls\PDModelBrowser\PDModelBrowser.csproj">
+      <Configuration>Debug</Configuration>
+      <Platform>AnyCPU</Platform>
+    </BuildLevel2>
+    <BuildLevel2 Include="ControlTest\ControlTest.csproj">
+      <Configuration>Debug</Configuration>
+      <Platform>AnyCPU</Platform>
+    </BuildLevel2>
+    <BuildLevel0 Include="CodeParser\CodeParsing.csproj">
+      <Configuration>Debug</Configuration>
+      <Platform>AnyCPU</Platform>
+    </BuildLevel0>
+    <BuildLevel0 Include="Controls\FileBrowser\FileBrowser.vbproj">
+      <Configuration>Debug</Configuration>
+      <Platform>AnyCPU</Platform>
+    </BuildLevel0>
+    <BuildLevel0 Include="Tools\Savchin.Tools.csproj">
+      <Configuration>Debug</Configuration>
+      <Platform>AnyCPU</Platform>
+    </BuildLevel0>
+  </ItemGroup>
+  <ItemGroup Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Mixed Platforms') ">
+    <BuildLevel1 Include="Controls\Common\Savchin.Controls.Common.csproj">
+      <Configuration>Debug</Configuration>
+      <Platform>AnyCPU</Platform>
+    </BuildLevel1>
+    <BuildLevel1 Include="Data\Data.csproj">
+      <Configuration>Debug</Configuration>
+      <Platform>AnyCPU</Platform>
+    </BuildLevel1>
+    <BuildLevel1 Include="ToolsTest\ToolsTest.csproj">
+      <Configuration>Debug</Configuration>
+      <Platform>AnyCPU</Platform>
+    </BuildLevel1>
+    <BuildLevel1 Include="WebControls\WebControls.csproj">
+      <Configuration>Debug</Configuration>
+      <Platform>AnyCPU</Platform>
+    </BuildLevel1>
+    <BuildLevel2 Include="Controls\PDModelBrowser\PDModelBrowser.csproj">
+      <Configuration>Debug</Configuration>
+      <Platform>AnyCPU</Platform>
+    </BuildLevel2>
+    <BuildLevel2 Include="ControlTest\ControlTest.csproj">
+      <Configuration>Debug</Configuration>
+      <Platform>AnyCPU</Platform>
+    </BuildLevel2>
+    <BuildLevel0 Include="CodeParser\CodeParsing.csproj">
+      <Configuration>Debug</Configuration>
+      <Platform>AnyCPU</Platform>
+    </BuildLevel0>
+    <BuildLevel0 Include="Controls\FileBrowser\FileBrowser.vbproj">
+      <Configuration>Debug</Configuration>
+      <Platform>AnyCPU</Platform>
+    </BuildLevel0>
+    <BuildLevel0 Include="Tools\Savchin.Tools.csproj">
+      <Configuration>Debug</Configuration>
+      <Platform>AnyCPU</Platform>
+    </BuildLevel0>
+  </ItemGroup>
+  <ItemGroup Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == '.NET') ">
+    <SkipLevel1 Include="Data" />
+    <SkipLevel1 Include="Savchin.Controls.Common" />
+    <SkipLevel1 Include="ToolsTest" />
+    <SkipLevel1 Include="WebControls" />
+    <SkipLevel2 Include="ControlTest" />
+    <SkipLevel2 Include="PDModelBrowser" />
+    <SkipLevel0 Include="CodeParsing" />
+    <SkipLevel0 Include="FileBrowser" />
+    <SkipLevel0 Include="Savchin.Tools" />
+  </ItemGroup>
+  <ItemGroup Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') ">
+    <BuildLevel1 Include="Controls\Common\Savchin.Controls.Common.csproj">
+      <Configuration>Release</Configuration>
+      <Platform>AnyCPU</Platform>
+    </BuildLevel1>
+    <BuildLevel1 Include="Data\Data.csproj">
+      <Configuration>Release</Configuration>
+      <Platform>AnyCPU</Platform>
+    </BuildLevel1>
+    <BuildLevel1 Include="ToolsTest\ToolsTest.csproj">
+      <Configuration>Release</Configuration>
+      <Platform>AnyCPU</Platform>
+    </BuildLevel1>
+    <BuildLevel1 Include="WebControls\WebControls.csproj">
+      <Configuration>Release</Configuration>
+      <Platform>AnyCPU</Platform>
+    </BuildLevel1>
+    <BuildLevel2 Include="Controls\PDModelBrowser\PDModelBrowser.csproj">
+      <Configuration>Release</Configuration>
+      <Platform>AnyCPU</Platform>
+    </BuildLevel2>
+    <BuildLevel2 Include="ControlTest\ControlTest.csproj">
+      <Configuration>Release</Configuration>
+      <Platform>AnyCPU</Platform>
+    </BuildLevel2>
+    <BuildLevel0 Include="CodeParser\CodeParsing.csproj">
+      <Configuration>Release</Configuration>
+      <Platform>AnyCPU</Platform>
+    </BuildLevel0>
+    <BuildLevel0 Include="Controls\FileBrowser\FileBrowser.vbproj">
+      <Configuration>Release</Configuration>
+      <Platform>AnyCPU</Platform>
+    </BuildLevel0>
+    <BuildLevel0 Include="Tools\Savchin.Tools.csproj">
+      <Configuration>Release</Configuration>
+      <Platform>AnyCPU</Platform>
+    </BuildLevel0>
+  </ItemGroup>
+  <ItemGroup Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Mixed Platforms') ">
+    <BuildLevel1 Include="Controls\Common\Savchin.Controls.Common.csproj">
+      <Configuration>Release</Configuration>
+      <Platform>AnyCPU</Platform>
+    </BuildLevel1>
+    <BuildLevel1 Include="Data\Data.csproj">
+      <Configuration>Release</Configuration>
+      <Platform>AnyCPU</Platform>
+    </BuildLevel1>
+    <BuildLevel1 Include="ToolsTest\ToolsTest.csproj">
+      <Configuration>Release</Configuration>
+      <Platform>AnyCPU</Platform>
+    </BuildLevel1>
+    <BuildLevel1 Include="WebControls\WebControls.csproj">
+      <Configuration>Release</Configuration>
+      <Platform>AnyCPU</Platform>
+    </BuildLevel1>
+    <BuildLevel2 Include="Controls\PDModelBrowser\PDModelBrowser.csproj">
+      <Configuration>Release</Configuration>
+      <Platform>AnyCPU</Platform>
+    </BuildLevel2>
+    <BuildLevel2 Include="ControlTest\ControlTest.csproj">
+      <Configuration>Release</Configuration>
+      <Platform>AnyCPU</Platform>
+    </BuildLevel2>
+    <BuildLevel0 Include="CodeParser\CodeParsing.csproj">
+      <Configuration>Release</Configuration>
+      <Platform>AnyCPU</Platform>
+    </BuildLevel0>
+    <BuildLevel0 Include="Controls\FileBrowser\FileBrowser.vbproj">
+      <Configuration>Release</Configuration>
+      <Platform>AnyCPU</Platform>
+    </BuildLevel0>
+    <BuildLevel0 Include="Tools\Savchin.Tools.csproj">
+      <Configuration>Release</Configuration>
+      <Platform>AnyCPU</Platform>
+    </BuildLevel0>
+  </ItemGroup>
+  <UsingTask TaskName="Microsoft.Build.Tasks.CreateTemporaryVCProject" AssemblyName="Microsoft.Build.Tasks.v3.5, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <UsingTask TaskName="Microsoft.Build.Tasks.ResolveVCProjectOutput" AssemblyName="Microsoft.Build.Tasks.v3.5, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <PropertyGroup Condition=" '$(Configuration)' == '' ">
+    <Configuration>Debug</Configuration>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == '' ">
+    <Platform>Mixed Platforms</Platform>
+  </PropertyGroup>
+  <PropertyGroup Condition=" ('$(AspNetConfiguration)' == '') ">
+    <AspNetConfiguration>$(Configuration)</AspNetConfiguration>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SolutionDir>S:\Develop\Projects\Net\Libs\</SolutionDir>
+    <SolutionExt>.sln</SolutionExt>
+    <SolutionFileName>Libs.sln</SolutionFileName>
+    <SolutionName>Libs</SolutionName>
+    <SolutionPath>S:\Develop\Projects\Net\Libs\Libs.sln</SolutionPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetFrameworkVersion Condition="'$(TargetFrameworkVersion)' == '' and '$(MSBuildToolsVersion)' == '2.0'">v2.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion Condition="'$(TargetFrameworkVersion)' == '' and '$(MSBuildToolsVersion)' != '2.0'">v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == '.NET') ">
+    <CurrentSolutionConfigurationContents>
+      <SolutionConfiguration xmlns="">
+        <ProjectConfiguration Project="{25AB3B90-41A8-4BD4-88B6-4607D1633D4C}">Debug|AnyCPU</ProjectConfiguration>
+        <ProjectConfiguration Project="{4C5C3472-9124-4781-A8E4-50B16AFADCD3}">Debug|AnyCPU</ProjectConfiguration>
+        <ProjectConfiguration Project="{C351163F-5730-4DF2-97B5-952730608A0F}">Debug|.NET</ProjectConfiguration>
+        <ProjectConfiguration Project="{7E30DBBF-F9C2-408A-9098-23185570E810}">Debug|AnyCPU</ProjectConfiguration>
+        <ProjectConfiguration Project="{AAEE081B-3D1E-4D11-8D4A-160715EB01D1}">Debug|AnyCPU</ProjectConfiguration>
+        <ProjectConfiguration Project="{2F1807E4-39A2-4F38-ADFC-6310A8443D90}">Debug|AnyCPU</ProjectConfiguration>
+        <ProjectConfiguration Project="{A852E8EF-7FCA-44B0-AB22-92F3380357C5}">Debug|AnyCPU</ProjectConfiguration>
+        <ProjectConfiguration Project="{BA6303D3-C692-418A-B948-3C6B5AB146BD}">Debug|AnyCPU</ProjectConfiguration>
+        <ProjectConfiguration Project="{B7DB4BF1-6B6F-4512-87A1-D471D182A5C6}">Debug|AnyCPU</ProjectConfiguration>
+        <ProjectConfiguration Project="{4BC2B3AC-7081-4B95-8FA9-E3EE75A60DF0}">Debug|AnyCPU</ProjectConfiguration>
+      </SolutionConfiguration>
+    </CurrentSolutionConfigurationContents>
+  </PropertyGroup>
+  <PropertyGroup Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') ">
+    <CurrentSolutionConfigurationContents>
+      <SolutionConfiguration xmlns="">
+        <ProjectConfiguration Project="{25AB3B90-41A8-4BD4-88B6-4607D1633D4C}">Debug|AnyCPU</ProjectConfiguration>
+        <ProjectConfiguration Project="{4C5C3472-9124-4781-A8E4-50B16AFADCD3}">Debug|AnyCPU</ProjectConfiguration>
+        <ProjectConfiguration Project="{C351163F-5730-4DF2-97B5-952730608A0F}">Debug|.NET</ProjectConfiguration>
+        <ProjectConfiguration Project="{7E30DBBF-F9C2-408A-9098-23185570E810}">Debug|AnyCPU</ProjectConfiguration>
+        <ProjectConfiguration Project="{AAEE081B-3D1E-4D11-8D4A-160715EB01D1}">Debug|AnyCPU</ProjectConfiguration>
+        <ProjectConfiguration Project="{2F1807E4-39A2-4F38-ADFC-6310A8443D90}">Debug|AnyCPU</ProjectConfiguration>
+        <ProjectConfiguration Project="{A852E8EF-7FCA-44B0-AB22-92F3380357C5}">Debug|AnyCPU</ProjectConfiguration>
+        <ProjectConfiguration Project="{BA6303D3-C692-418A-B948-3C6B5AB146BD}">Debug|AnyCPU</ProjectConfiguration>
+        <ProjectConfiguration Project="{B7DB4BF1-6B6F-4512-87A1-D471D182A5C6}">Debug|AnyCPU</ProjectConfiguration>
+        <ProjectConfiguration Project="{4BC2B3AC-7081-4B95-8FA9-E3EE75A60DF0}">Debug|AnyCPU</ProjectConfiguration>
+      </SolutionConfiguration>
+    </CurrentSolutionConfigurationContents>
+  </PropertyGroup>
+  <PropertyGroup Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Mixed Platforms') ">
+    <CurrentSolutionConfigurationContents>
+      <SolutionConfiguration xmlns="">
+        <ProjectConfiguration Project="{25AB3B90-41A8-4BD4-88B6-4607D1633D4C}">Debug|AnyCPU</ProjectConfiguration>
+        <ProjectConfiguration Project="{4C5C3472-9124-4781-A8E4-50B16AFADCD3}">Debug|AnyCPU</ProjectConfiguration>
+        <ProjectConfiguration Project="{C351163F-5730-4DF2-97B5-952730608A0F}">Debug|.NET</ProjectConfiguration>
+        <ProjectConfiguration Project="{7E30DBBF-F9C2-408A-9098-23185570E810}">Debug|AnyCPU</ProjectConfiguration>
+        <ProjectConfiguration Project="{AAEE081B-3D1E-4D11-8D4A-160715EB01D1}">Debug|AnyCPU</ProjectConfiguration>
+        <ProjectConfiguration Project="{2F1807E4-39A2-4F38-ADFC-6310A8443D90}">Debug|AnyCPU</ProjectConfiguration>
+        <ProjectConfiguration Project="{A852E8EF-7FCA-44B0-AB22-92F3380357C5}">Debug|AnyCPU</ProjectConfiguration>
+        <ProjectConfiguration Project="{BA6303D3-C692-418A-B948-3C6B5AB146BD}">Debug|AnyCPU</ProjectConfiguration>
+        <ProjectConfiguration Project="{B7DB4BF1-6B6F-4512-87A1-D471D182A5C6}">Debug|AnyCPU</ProjectConfiguration>
+        <ProjectConfiguration Project="{4BC2B3AC-7081-4B95-8FA9-E3EE75A60DF0}">Debug|AnyCPU</ProjectConfiguration>
+      </SolutionConfiguration>
+    </CurrentSolutionConfigurationContents>
+  </PropertyGroup>
+  <PropertyGroup Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == '.NET') ">
+    <CurrentSolutionConfigurationContents>
+      <SolutionConfiguration xmlns="">
+        <ProjectConfiguration Project="{25AB3B90-41A8-4BD4-88B6-4607D1633D4C}">Release|AnyCPU</ProjectConfiguration>
+        <ProjectConfiguration Project="{4C5C3472-9124-4781-A8E4-50B16AFADCD3}">Release|AnyCPU</ProjectConfiguration>
+        <ProjectConfiguration Project="{C351163F-5730-4DF2-97B5-952730608A0F}">Debug|.NET</ProjectConfiguration>
+        <ProjectConfiguration Project="{7E30DBBF-F9C2-408A-9098-23185570E810}">Release|AnyCPU</ProjectConfiguration>
+        <ProjectConfiguration Project="{AAEE081B-3D1E-4D11-8D4A-160715EB01D1}">Release|AnyCPU</ProjectConfiguration>
+        <ProjectConfiguration Project="{2F1807E4-39A2-4F38-ADFC-6310A8443D90}">Release|AnyCPU</ProjectConfiguration>
+        <ProjectConfiguration Project="{A852E8EF-7FCA-44B0-AB22-92F3380357C5}">Release|AnyCPU</ProjectConfiguration>
+        <ProjectConfiguration Project="{BA6303D3-C692-418A-B948-3C6B5AB146BD}">Release|AnyCPU</ProjectConfiguration>
+        <ProjectConfiguration Project="{B7DB4BF1-6B6F-4512-87A1-D471D182A5C6}">Release|AnyCPU</ProjectConfiguration>
+        <ProjectConfiguration Project="{4BC2B3AC-7081-4B95-8FA9-E3EE75A60DF0}">Release|AnyCPU</ProjectConfiguration>
+      </SolutionConfiguration>
+    </CurrentSolutionConfigurationContents>
+  </PropertyGroup>
+  <PropertyGroup Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') ">
+    <CurrentSolutionConfigurationContents>
+      <SolutionConfiguration xmlns="">
+        <ProjectConfiguration Project="{25AB3B90-41A8-4BD4-88B6-4607D1633D4C}">Release|AnyCPU</ProjectConfiguration>
+        <ProjectConfiguration Project="{4C5C3472-9124-4781-A8E4-50B16AFADCD3}">Release|AnyCPU</ProjectConfiguration>
+        <ProjectConfiguration Project="{C351163F-5730-4DF2-97B5-952730608A0F}">Debug|.NET</ProjectConfiguration>
+        <ProjectConfiguration Project="{7E30DBBF-F9C2-408A-9098-23185570E810}">Release|AnyCPU</ProjectConfiguration>
+        <ProjectConfiguration Project="{AAEE081B-3D1E-4D11-8D4A-160715EB01D1}">Release|AnyCPU</ProjectConfiguration>
+        <ProjectConfiguration Project="{2F1807E4-39A2-4F38-ADFC-6310A8443D90}">Release|AnyCPU</ProjectConfiguration>
+        <ProjectConfiguration Project="{A852E8EF-7FCA-44B0-AB22-92F3380357C5}">Release|AnyCPU</ProjectConfiguration>
+        <ProjectConfiguration Project="{BA6303D3-C692-418A-B948-3C6B5AB146BD}">Release|AnyCPU</ProjectConfiguration>
+        <ProjectConfiguration Project="{B7DB4BF1-6B6F-4512-87A1-D471D182A5C6}">Release|AnyCPU</ProjectConfiguration>
+        <ProjectConfiguration Project="{4BC2B3AC-7081-4B95-8FA9-E3EE75A60DF0}">Release|AnyCPU</ProjectConfiguration>
+      </SolutionConfiguration>
+    </CurrentSolutionConfigurationContents>
+  </PropertyGroup>
+  <PropertyGroup Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Mixed Platforms') ">
+    <CurrentSolutionConfigurationContents>
+      <SolutionConfiguration xmlns="">
+        <ProjectConfiguration Project="{25AB3B90-41A8-4BD4-88B6-4607D1633D4C}">Release|AnyCPU</ProjectConfiguration>
+        <ProjectConfiguration Project="{4C5C3472-9124-4781-A8E4-50B16AFADCD3}">Release|AnyCPU</ProjectConfiguration>
+        <ProjectConfiguration Project="{C351163F-5730-4DF2-97B5-952730608A0F}">Debug|.NET</ProjectConfiguration>
+        <ProjectConfiguration Project="{7E30DBBF-F9C2-408A-9098-23185570E810}">Release|AnyCPU</ProjectConfiguration>
+        <ProjectConfiguration Project="{AAEE081B-3D1E-4D11-8D4A-160715EB01D1}">Release|AnyCPU</ProjectConfiguration>
+        <ProjectConfiguration Project="{2F1807E4-39A2-4F38-ADFC-6310A8443D90}">Release|AnyCPU</ProjectConfiguration>
+        <ProjectConfiguration Project="{A852E8EF-7FCA-44B0-AB22-92F3380357C5}">Release|AnyCPU</ProjectConfiguration>
+        <ProjectConfiguration Project="{BA6303D3-C692-418A-B948-3C6B5AB146BD}">Release|AnyCPU</ProjectConfiguration>
+        <ProjectConfiguration Project="{B7DB4BF1-6B6F-4512-87A1-D471D182A5C6}">Release|AnyCPU</ProjectConfiguration>
+        <ProjectConfiguration Project="{4BC2B3AC-7081-4B95-8FA9-E3EE75A60DF0}">Release|AnyCPU</ProjectConfiguration>
+      </SolutionConfiguration>
+    </CurrentSolutionConfigurationContents>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(AspNetConfiguration)' == 'Debug' ">
+    <Project_C351163F-5730-4DF2-97B5-952730608A0F_AspNetVirtualPath>/WebControlsTest</Project_C351163F-5730-4DF2-97B5-952730608A0F_AspNetVirtualPath>
+    <Project_C351163F-5730-4DF2-97B5-952730608A0F_AspNetPhysicalPath>WebControlsTest\</Project_C351163F-5730-4DF2-97B5-952730608A0F_AspNetPhysicalPath>
+    <Project_C351163F-5730-4DF2-97B5-952730608A0F_AspNetTargetPath>PrecompiledWeb\WebControlsTest\</Project_C351163F-5730-4DF2-97B5-952730608A0F_AspNetTargetPath>
+    <Project_C351163F-5730-4DF2-97B5-952730608A0F_AspNetForce>true</Project_C351163F-5730-4DF2-97B5-952730608A0F_AspNetForce>
+    <Project_C351163F-5730-4DF2-97B5-952730608A0F_AspNetUpdateable>true</Project_C351163F-5730-4DF2-97B5-952730608A0F_AspNetUpdateable>
+    <Project_C351163F-5730-4DF2-97B5-952730608A0F_AspNetDebug>True</Project_C351163F-5730-4DF2-97B5-952730608A0F_AspNetDebug>
+    <Project_C351163F-5730-4DF2-97B5-952730608A0F_AspNetKeyFile>
+    </Project_C351163F-5730-4DF2-97B5-952730608A0F_AspNetKeyFile>
+    <Project_C351163F-5730-4DF2-97B5-952730608A0F_AspNetKeyContainer>
+    </Project_C351163F-5730-4DF2-97B5-952730608A0F_AspNetKeyContainer>
+    <Project_C351163F-5730-4DF2-97B5-952730608A0F_AspNetDelaySign>
+    </Project_C351163F-5730-4DF2-97B5-952730608A0F_AspNetDelaySign>
+    <Project_C351163F-5730-4DF2-97B5-952730608A0F_AspNetAPTCA>
+    </Project_C351163F-5730-4DF2-97B5-952730608A0F_AspNetAPTCA>
+    <Project_C351163F-5730-4DF2-97B5-952730608A0F_AspNetFixedNames>false</Project_C351163F-5730-4DF2-97B5-952730608A0F_AspNetFixedNames>
+    <Project_C351163F-5730-4DF2-97B5-952730608A0F_AspNetTargetPath Condition=" '$(OutDir)' != '' ">$(OutDir)_PublishedWebsites\WebControlsTest\</Project_C351163F-5730-4DF2-97B5-952730608A0F_AspNetTargetPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(AspNetConfiguration)' == 'Release' ">
+    <Project_C351163F-5730-4DF2-97B5-952730608A0F_AspNetVirtualPath>/WebControlsTest</Project_C351163F-5730-4DF2-97B5-952730608A0F_AspNetVirtualPath>
+    <Project_C351163F-5730-4DF2-97B5-952730608A0F_AspNetPhysicalPath>WebControlsTest\</Project_C351163F-5730-4DF2-97B5-952730608A0F_AspNetPhysicalPath>
+    <Project_C351163F-5730-4DF2-97B5-952730608A0F_AspNetTargetPath>PrecompiledWeb\WebControlsTest\</Project_C351163F-5730-4DF2-97B5-952730608A0F_AspNetTargetPath>
+    <Project_C351163F-5730-4DF2-97B5-952730608A0F_AspNetForce>true</Project_C351163F-5730-4DF2-97B5-952730608A0F_AspNetForce>
+    <Project_C351163F-5730-4DF2-97B5-952730608A0F_AspNetUpdateable>true</Project_C351163F-5730-4DF2-97B5-952730608A0F_AspNetUpdateable>
+    <Project_C351163F-5730-4DF2-97B5-952730608A0F_AspNetDebug>False</Project_C351163F-5730-4DF2-97B5-952730608A0F_AspNetDebug>
+    <Project_C351163F-5730-4DF2-97B5-952730608A0F_AspNetKeyFile>
+    </Project_C351163F-5730-4DF2-97B5-952730608A0F_AspNetKeyFile>
+    <Project_C351163F-5730-4DF2-97B5-952730608A0F_AspNetKeyContainer>
+    </Project_C351163F-5730-4DF2-97B5-952730608A0F_AspNetKeyContainer>
+    <Project_C351163F-5730-4DF2-97B5-952730608A0F_AspNetDelaySign>
+    </Project_C351163F-5730-4DF2-97B5-952730608A0F_AspNetDelaySign>
+    <Project_C351163F-5730-4DF2-97B5-952730608A0F_AspNetAPTCA>
+    </Project_C351163F-5730-4DF2-97B5-952730608A0F_AspNetAPTCA>
+    <Project_C351163F-5730-4DF2-97B5-952730608A0F_AspNetFixedNames>false</Project_C351163F-5730-4DF2-97B5-952730608A0F_AspNetFixedNames>
+    <Project_C351163F-5730-4DF2-97B5-952730608A0F_AspNetTargetPath Condition=" '$(OutDir)' != '' ">$(OutDir)_PublishedWebsites\WebControlsTest\</Project_C351163F-5730-4DF2-97B5-952730608A0F_AspNetTargetPath>
+  </PropertyGroup>
+  <Target Name="ValidateSolutionConfiguration">
+    <Error Text="The specified solution configuration &quot;$(Configuration)|$(Platform)&quot; is invalid. Please specify a valid solution configuration using the Configuration and Platform properties (e.g. MSBuild.exe Solution.sln /p:Configuration=Debug /p:Platform=&quot;Any CPU&quot;) or leave those properties blank to use the default solution configuration." Code="MSB4126" HelpKeyword="MSBuild.SolutionInvalidSolutionConfiguration" Condition="('$(CurrentSolutionConfigurationContents)' == '') and ('$(SkipInvalidConfigurations)' != 'true')" />
+    <Warning Text="The specified solution configuration &quot;$(Configuration)|$(Platform)&quot; is invalid. Please specify a valid solution configuration using the Configuration and Platform properties (e.g. MSBuild.exe Solution.sln /p:Configuration=Debug /p:Platform=&quot;Any CPU&quot;) or leave those properties blank to use the default solution configuration." Code="MSB4126" HelpKeyword="MSBuild.SolutionInvalidSolutionConfiguration" Condition="('$(CurrentSolutionConfigurationContents)' == '') and ('$(SkipInvalidConfigurations)' == 'true')" />
+    <Message Text="Building solution configuration &quot;$(Configuration)|$(Platform)&quot;." Condition="'$(CurrentSolutionConfigurationContents)' != ''" />
+  </Target>
+  <Target Name="ValidateToolsVersions">
+    <Error Text="The tools version &quot;$(MSBuildToolsVersion)&quot; of the solution does not support building projects with a different tools version." Code="MSB4149" HelpKeyword="MSBuild.SolutionToolsVersionDoesNotSupportProjectToolsVersion" Condition="'$(MSBuildToolsVersion)' == '2.0' and ('$(ProjectToolsVersion)' != '2.0' and '$(ProjectToolsVersion)' != '')" />
+  </Target>
+  <Target Name="Data" DependsOnTargets="Savchin_Tools" Condition="'$(CurrentSolutionConfigurationContents)' != ''" Outputs="@(DataBuildOutput)">
+    <Message Text="The project &quot;Data&quot; is not selected for building in solution configuration &quot;Debug|.NET&quot;." Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == '.NET') " />
+    <MSBuild Projects="Data\Data.csproj" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') ">
+      <Output TaskParameter="TargetOutputs" ItemName="DataBuildOutput" />
+    </MSBuild>
+    <MSBuild Projects="Data\Data.csproj" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Mixed Platforms') ">
+      <Output TaskParameter="TargetOutputs" ItemName="DataBuildOutput" />
+    </MSBuild>
+    <Message Text="The project &quot;Data&quot; is not selected for building in solution configuration &quot;Release|.NET&quot;." Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == '.NET') " />
+    <MSBuild Projects="Data\Data.csproj" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') ">
+      <Output TaskParameter="TargetOutputs" ItemName="DataBuildOutput" />
+    </MSBuild>
+    <MSBuild Projects="Data\Data.csproj" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Mixed Platforms') ">
+      <Output TaskParameter="TargetOutputs" ItemName="DataBuildOutput" />
+    </MSBuild>
+  </Target>
+  <Target Name="Data:Clean" DependsOnTargets="Savchin_Tools:Clean" Condition="'$(CurrentSolutionConfigurationContents)' != ''">
+    <Message Text="The project &quot;Data&quot; is not selected for building in solution configuration &quot;Debug|.NET&quot;." Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == '.NET') " />
+    <MSBuild Projects="Data\Data.csproj" Targets="Clean" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') " />
+    <MSBuild Projects="Data\Data.csproj" Targets="Clean" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Mixed Platforms') " />
+    <Message Text="The project &quot;Data&quot; is not selected for building in solution configuration &quot;Release|.NET&quot;." Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == '.NET') " />
+    <MSBuild Projects="Data\Data.csproj" Targets="Clean" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') " />
+    <MSBuild Projects="Data\Data.csproj" Targets="Clean" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Mixed Platforms') " />
+  </Target>
+  <Target Name="Data:Rebuild" DependsOnTargets="Savchin_Tools:Rebuild" Condition="'$(CurrentSolutionConfigurationContents)' != ''" Outputs="@(DataBuildOutput)">
+    <Message Text="The project &quot;Data&quot; is not selected for building in solution configuration &quot;Debug|.NET&quot;." Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == '.NET') " />
+    <MSBuild Projects="Data\Data.csproj" Targets="Rebuild" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') ">
+      <Output TaskParameter="TargetOutputs" ItemName="DataBuildOutput" />
+    </MSBuild>
+    <MSBuild Projects="Data\Data.csproj" Targets="Rebuild" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Mixed Platforms') ">
+      <Output TaskParameter="TargetOutputs" ItemName="DataBuildOutput" />
+    </MSBuild>
+    <Message Text="The project &quot;Data&quot; is not selected for building in solution configuration &quot;Release|.NET&quot;." Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == '.NET') " />
+    <MSBuild Projects="Data\Data.csproj" Targets="Rebuild" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') ">
+      <Output TaskParameter="TargetOutputs" ItemName="DataBuildOutput" />
+    </MSBuild>
+    <MSBuild Projects="Data\Data.csproj" Targets="Rebuild" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Mixed Platforms') ">
+      <Output TaskParameter="TargetOutputs" ItemName="DataBuildOutput" />
+    </MSBuild>
+  </Target>
+  <Target Name="Data:Publish" DependsOnTargets="Savchin_Tools:Publish" Condition="'$(CurrentSolutionConfigurationContents)' != ''">
+    <Message Text="The project &quot;Data&quot; is not selected for building in solution configuration &quot;Debug|.NET&quot;." Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == '.NET') " />
+    <MSBuild Projects="Data\Data.csproj" Targets="Publish" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') " />
+    <MSBuild Projects="Data\Data.csproj" Targets="Publish" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Mixed Platforms') " />
+    <Message Text="The project &quot;Data&quot; is not selected for building in solution configuration &quot;Release|.NET&quot;." Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == '.NET') " />
+    <MSBuild Projects="Data\Data.csproj" Targets="Publish" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') " />
+    <MSBuild Projects="Data\Data.csproj" Targets="Publish" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Mixed Platforms') " />
+  </Target>
+  <Target Name="ControlTest" DependsOnTargets="Savchin_Controls_Common;Savchin_Tools" Condition="'$(CurrentSolutionConfigurationContents)' != ''" Outputs="@(ControlTestBuildOutput)">
+    <Message Text="The project &quot;ControlTest&quot; is not selected for building in solution configuration &quot;Debug|.NET&quot;." Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == '.NET') " />
+    <MSBuild Projects="ControlTest\ControlTest.csproj" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') ">
+      <Output TaskParameter="TargetOutputs" ItemName="ControlTestBuildOutput" />
+    </MSBuild>
+    <MSBuild Projects="ControlTest\ControlTest.csproj" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Mixed Platforms') ">
+      <Output TaskParameter="TargetOutputs" ItemName="ControlTestBuildOutput" />
+    </MSBuild>
+    <Message Text="The project &quot;ControlTest&quot; is not selected for building in solution configuration &quot;Release|.NET&quot;." Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == '.NET') " />
+    <MSBuild Projects="ControlTest\ControlTest.csproj" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') ">
+      <Output TaskParameter="TargetOutputs" ItemName="ControlTestBuildOutput" />
+    </MSBuild>
+    <MSBuild Projects="ControlTest\ControlTest.csproj" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Mixed Platforms') ">
+      <Output TaskParameter="TargetOutputs" ItemName="ControlTestBuildOutput" />
+    </MSBuild>
+  </Target>
+  <Target Name="ControlTest:Clean" DependsOnTargets="Savchin_Controls_Common:Clean;Savchin_Tools:Clean" Condition="'$(CurrentSolutionConfigurationContents)' != ''">
+    <Message Text="The project &quot;ControlTest&quot; is not selected for building in solution configuration &quot;Debug|.NET&quot;." Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == '.NET') " />
+    <MSBuild Projects="ControlTest\ControlTest.csproj" Targets="Clean" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') " />
+    <MSBuild Projects="ControlTest\ControlTest.csproj" Targets="Clean" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Mixed Platforms') " />
+    <Message Text="The project &quot;ControlTest&quot; is not selected for building in solution configuration &quot;Release|.NET&quot;." Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == '.NET') " />
+    <MSBuild Projects="ControlTest\ControlTest.csproj" Targets="Clean" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') " />
+    <MSBuild Projects="ControlTest\ControlTest.csproj" Targets="Clean" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Mixed Platforms') " />
+  </Target>
+  <Target Name="ControlTest:Rebuild" DependsOnTargets="Savchin_Controls_Common:Rebuild;Savchin_Tools:Rebuild" Condition="'$(CurrentSolutionConfigurationContents)' != ''" Outputs="@(ControlTestBuildOutput)">
+    <Message Text="The project &quot;ControlTest&quot; is not selected for building in solution configuration &quot;Debug|.NET&quot;." Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == '.NET') " />
+    <MSBuild Projects="ControlTest\ControlTest.csproj" Targets="Rebuild" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') ">
+      <Output TaskParameter="TargetOutputs" ItemName="ControlTestBuildOutput" />
+    </MSBuild>
+    <MSBuild Projects="ControlTest\ControlTest.csproj" Targets="Rebuild" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Mixed Platforms') ">
+      <Output TaskParameter="TargetOutputs" ItemName="ControlTestBuildOutput" />
+    </MSBuild>
+    <Message Text="The project &quot;ControlTest&quot; is not selected for building in solution configuration &quot;Release|.NET&quot;." Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == '.NET') " />
+    <MSBuild Projects="ControlTest\ControlTest.csproj" Targets="Rebuild" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') ">
+      <Output TaskParameter="TargetOutputs" ItemName="ControlTestBuildOutput" />
+    </MSBuild>
+    <MSBuild Projects="ControlTest\ControlTest.csproj" Targets="Rebuild" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Mixed Platforms') ">
+      <Output TaskParameter="TargetOutputs" ItemName="ControlTestBuildOutput" />
+    </MSBuild>
+  </Target>
+  <Target Name="ControlTest:Publish" DependsOnTargets="Savchin_Controls_Common:Publish;Savchin_Tools:Publish" Condition="'$(CurrentSolutionConfigurationContents)' != ''">
+    <Message Text="The project &quot;ControlTest&quot; is not selected for building in solution configuration &quot;Debug|.NET&quot;." Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == '.NET') " />
+    <MSBuild Projects="ControlTest\ControlTest.csproj" Targets="Publish" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') " />
+    <MSBuild Projects="ControlTest\ControlTest.csproj" Targets="Publish" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Mixed Platforms') " />
+    <Message Text="The project &quot;ControlTest&quot; is not selected for building in solution configuration &quot;Release|.NET&quot;." Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == '.NET') " />
+    <MSBuild Projects="ControlTest\ControlTest.csproj" Targets="Publish" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') " />
+    <MSBuild Projects="ControlTest\ControlTest.csproj" Targets="Publish" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Mixed Platforms') " />
+  </Target>
+  <Target Name="GetFrameworkPathAndRedistList">
+    <GetFrameworkPath>
+      <Output TaskParameter="Path" ItemName="_CombinedTargetFrameworkDirectoriesItem" Condition="'$(MSBuildToolsVersion)' == '2.0'" />
+      <Output TaskParameter="FrameworkVersion35Path" ItemName="_CombinedTargetFrameworkDirectoriesItem" Condition=" '$(TargetFrameworkVersion)' == 'v3.5' and '$(MSBuildToolsVersion)' != '2.0'" />
+      <Output TaskParameter="FrameworkVersion30Path" ItemName="_CombinedTargetFrameworkDirectoriesItem" Condition=" ('$(TargetFrameworkVersion)' == 'v3.0' or '$(TargetFrameworkVersion)' == 'v3.5') and '$(MSBuildToolsVersion)' != '2.0'" />
+      <Output TaskParameter="FrameworkVersion20Path" ItemName="_CombinedTargetFrameworkDirectoriesItem" Condition=" ('$(TargetFrameworkVersion)' == 'v2.0' or '$(TargetFrameworkVersion)' == 'v3.0' or '$(TargetFrameworkVersion)' == 'v3.5') and '$(MSBuildToolsVersion)' != '2.0'" />
+    </GetFrameworkPath>
+    <CreateItem Include="@(_CombinedTargetFrameworkDirectoriesItem->'%(Identity)\RedistList\*.xml')">
+      <Output TaskParameter="Include" ItemName="InstalledAssemblyTables" />
+    </CreateItem>
+  </Target>
+  <Target Name="WebControlsTest" DependsOnTargets="WebControls;Savchin_Tools;GetFrameworkPathAndRedistList" Condition=" ('$(CurrentSolutionConfigurationContents)' != '') and (false or ( ('$(Configuration)' == 'Debug') and ('$(Platform)' == '.NET') ) or ( ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Mixed Platforms') ) or ( ('$(Configuration)' == 'Release') and ('$(Platform)' == '.NET') ) or ( ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Mixed Platforms') )) ">
+    <MSBuild Projects="WebControls\WebControls.csproj" Targets="GetTargetPath" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == '.NET') ">
+      <Output TaskParameter="TargetOutputs" ItemName="Project_C351163F-5730-4DF2-97B5-952730608A0F_References_0" />
+    </MSBuild>
+    <CreateItem Include="@(Project_C351163F-5730-4DF2-97B5-952730608A0F_References_0)" AdditionalMetadata="Guid={BA6303D3-C692-418A-B948-3C6B5AB146BD}">
+      <Output TaskParameter="Include" ItemName="Project_C351163F-5730-4DF2-97B5-952730608A0F_References" />
+    </CreateItem>
+    <MSBuild Projects="Tools\Savchin.Tools.csproj" Targets="GetTargetPath" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == '.NET') ">
+      <Output TaskParameter="TargetOutputs" ItemName="Project_C351163F-5730-4DF2-97B5-952730608A0F_References_1" />
+    </MSBuild>
+    <CreateItem Include="@(Project_C351163F-5730-4DF2-97B5-952730608A0F_References_1)" AdditionalMetadata="Guid={2F1807E4-39A2-4F38-ADFC-6310A8443D90}">
+      <Output TaskParameter="Include" ItemName="Project_C351163F-5730-4DF2-97B5-952730608A0F_References" />
+    </CreateItem>
+    <MSBuild Projects="WebControls\WebControls.csproj" Targets="GetTargetPath" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') ">
+      <Output TaskParameter="TargetOutputs" ItemName="Project_C351163F-5730-4DF2-97B5-952730608A0F_References_0" />
+    </MSBuild>
+    <CreateItem Include="@(Project_C351163F-5730-4DF2-97B5-952730608A0F_References_0)" AdditionalMetadata="Guid={BA6303D3-C692-418A-B948-3C6B5AB146BD}">
+      <Output TaskParameter="Include" ItemName="Project_C351163F-5730-4DF2-97B5-952730608A0F_References" />
+    </CreateItem>
+    <MSBuild Projects="Tools\Savchin.Tools.csproj" Targets="GetTargetPath" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') ">
+      <Output TaskParameter="TargetOutputs" ItemName="Project_C351163F-5730-4DF2-97B5-952730608A0F_References_1" />
+    </MSBuild>
+    <CreateItem Include="@(Project_C351163F-5730-4DF2-97B5-952730608A0F_References_1)" AdditionalMetadata="Guid={2F1807E4-39A2-4F38-ADFC-6310A8443D90}">
+      <Output TaskParameter="Include" ItemName="Project_C351163F-5730-4DF2-97B5-952730608A0F_References" />
+    </CreateItem>
+    <MSBuild Projects="WebControls\WebControls.csproj" Targets="GetTargetPath" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Mixed Platforms') ">
+      <Output TaskParameter="TargetOutputs" ItemName="Project_C351163F-5730-4DF2-97B5-952730608A0F_References_0" />
+    </MSBuild>
+    <CreateItem Include="@(Project_C351163F-5730-4DF2-97B5-952730608A0F_References_0)" AdditionalMetadata="Guid={BA6303D3-C692-418A-B948-3C6B5AB146BD}">
+      <Output TaskParameter="Include" ItemName="Project_C351163F-5730-4DF2-97B5-952730608A0F_References" />
+    </CreateItem>
+    <MSBuild Projects="Tools\Savchin.Tools.csproj" Targets="GetTargetPath" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Mixed Platforms') ">
+      <Output TaskParameter="TargetOutputs" ItemName="Project_C351163F-5730-4DF2-97B5-952730608A0F_References_1" />
+    </MSBuild>
+    <CreateItem Include="@(Project_C351163F-5730-4DF2-97B5-952730608A0F_References_1)" AdditionalMetadata="Guid={2F1807E4-39A2-4F38-ADFC-6310A8443D90}">
+      <Output TaskParameter="Include" ItemName="Project_C351163F-5730-4DF2-97B5-952730608A0F_References" />
+    </CreateItem>
+    <MSBuild Projects="WebControls\WebControls.csproj" Targets="GetTargetPath" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == '.NET') ">
+      <Output TaskParameter="TargetOutputs" ItemName="Project_C351163F-5730-4DF2-97B5-952730608A0F_References_0" />
+    </MSBuild>
+    <CreateItem Include="@(Project_C351163F-5730-4DF2-97B5-952730608A0F_References_0)" AdditionalMetadata="Guid={BA6303D3-C692-418A-B948-3C6B5AB146BD}">
+      <Output TaskParameter="Include" ItemName="Project_C351163F-5730-4DF2-97B5-952730608A0F_References" />
+    </CreateItem>
+    <MSBuild Projects="Tools\Savchin.Tools.csproj" Targets="GetTargetPath" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == '.NET') ">
+      <Output TaskParameter="TargetOutputs" ItemName="Project_C351163F-5730-4DF2-97B5-952730608A0F_References_1" />
+    </MSBuild>
+    <CreateItem Include="@(Project_C351163F-5730-4DF2-97B5-952730608A0F_References_1)" AdditionalMetadata="Guid={2F1807E4-39A2-4F38-ADFC-6310A8443D90}">
+      <Output TaskParameter="Include" ItemName="Project_C351163F-5730-4DF2-97B5-952730608A0F_References" />
+    </CreateItem>
+    <MSBuild Projects="WebControls\WebControls.csproj" Targets="GetTargetPath" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') ">
+      <Output TaskParameter="TargetOutputs" ItemName="Project_C351163F-5730-4DF2-97B5-952730608A0F_References_0" />
+    </MSBuild>
+    <CreateItem Include="@(Project_C351163F-5730-4DF2-97B5-952730608A0F_References_0)" AdditionalMetadata="Guid={BA6303D3-C692-418A-B948-3C6B5AB146BD}">
+      <Output TaskParameter="Include" ItemName="Project_C351163F-5730-4DF2-97B5-952730608A0F_References" />
+    </CreateItem>
+    <MSBuild Projects="Tools\Savchin.Tools.csproj" Targets="GetTargetPath" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') ">
+      <Output TaskParameter="TargetOutputs" ItemName="Project_C351163F-5730-4DF2-97B5-952730608A0F_References_1" />
+    </MSBuild>
+    <CreateItem Include="@(Project_C351163F-5730-4DF2-97B5-952730608A0F_References_1)" AdditionalMetadata="Guid={2F1807E4-39A2-4F38-ADFC-6310A8443D90}">
+      <Output TaskParameter="Include" ItemName="Project_C351163F-5730-4DF2-97B5-952730608A0F_References" />
+    </CreateItem>
+    <MSBuild Projects="WebControls\WebControls.csproj" Targets="GetTargetPath" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Mixed Platforms') ">
+      <Output TaskParameter="TargetOutputs" ItemName="Project_C351163F-5730-4DF2-97B5-952730608A0F_References_0" />
+    </MSBuild>
+    <CreateItem Include="@(Project_C351163F-5730-4DF2-97B5-952730608A0F_References_0)" AdditionalMetadata="Guid={BA6303D3-C692-418A-B948-3C6B5AB146BD}">
+      <Output TaskParameter="Include" ItemName="Project_C351163F-5730-4DF2-97B5-952730608A0F_References" />
+    </CreateItem>
+    <MSBuild Projects="Tools\Savchin.Tools.csproj" Targets="GetTargetPath" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Mixed Platforms') ">
+      <Output TaskParameter="TargetOutputs" ItemName="Project_C351163F-5730-4DF2-97B5-952730608A0F_References_1" />
+    </MSBuild>
+    <CreateItem Include="@(Project_C351163F-5730-4DF2-97B5-952730608A0F_References_1)" AdditionalMetadata="Guid={2F1807E4-39A2-4F38-ADFC-6310A8443D90}">
+      <Output TaskParameter="Include" ItemName="Project_C351163F-5730-4DF2-97B5-952730608A0F_References" />
+    </CreateItem>
+    <CreateItem Include="$(Project_C351163F-5730-4DF2-97B5-952730608A0F_AspNetPhysicalPath)\Bin\*.refresh">
+      <Output TaskParameter="Include" ItemName="Project_C351163F-5730-4DF2-97B5-952730608A0F_References_RefreshFile" />
+    </CreateItem>
+    <ReadLinesFromFile File="%(Project_C351163F-5730-4DF2-97B5-952730608A0F_References_RefreshFile.Identity)" Condition=" '%(Project_C351163F-5730-4DF2-97B5-952730608A0F_References_RefreshFile.Identity)' != '' ">
+      <Output TaskParameter="Lines" ItemName="Project_C351163F-5730-4DF2-97B5-952730608A0F_References_ReferenceRelPath" />
+    </ReadLinesFromFile>
+    <CombinePath BasePath="$(Project_C351163F-5730-4DF2-97B5-952730608A0F_AspNetPhysicalPath)" Paths="@(Project_C351163F-5730-4DF2-97B5-952730608A0F_References_ReferenceRelPath)">
+      <Output TaskParameter="CombinedPaths" ItemName="Project_C351163F-5730-4DF2-97B5-952730608A0F_References" />
+    </CombinePath>
+    <Copy SourceFiles="@(Project_C351163F-5730-4DF2-97B5-952730608A0F_References->'%(FullPath)')" DestinationFolder="$(Project_C351163F-5730-4DF2-97B5-952730608A0F_AspNetPhysicalPath)\Bin\" Condition="!Exists('%(Project_C351163F-5730-4DF2-97B5-952730608A0F_References.Identity)')" ContinueOnError="true" />
+    <ResolveAssemblyReference Assemblies="@(Project_C351163F-5730-4DF2-97B5-952730608A0F_References->'%(FullPath)')" TargetFrameworkDirectories="@(_CombinedTargetFrameworkDirectoriesItem)" InstalledAssemblyTables="@(InstalledAssemblyTables)" SearchPaths="{RawFileName};{TargetFrameworkDirectory};{GAC}" FindDependencies="true" FindSatellites="true" FindSerializationAssemblies="true" FindRelatedFiles="true" Condition="Exists('%(Project_C351163F-5730-4DF2-97B5-952730608A0F_References.Identity)')">
+      <Output TaskParameter="CopyLocalFiles" ItemName="Project_C351163F-5730-4DF2-97B5-952730608A0F_References_CopyLocalFiles" />
+    </ResolveAssemblyReference>
+    <Copy SourceFiles="@(Project_C351163F-5730-4DF2-97B5-952730608A0F_References_CopyLocalFiles)" DestinationFiles="@(Project_C351163F-5730-4DF2-97B5-952730608A0F_References_CopyLocalFiles->'$(Project_C351163F-5730-4DF2-97B5-952730608A0F_AspNetPhysicalPath)\Bin\%(DestinationSubDirectory)%(Filename)%(Extension)')" Condition="(false) or ('$(AspNetConfiguration)' == 'Debug') or ('$(AspNetConfiguration)' == 'Release')" />
+    <AspNetCompiler VirtualPath="$(Project_C351163F-5730-4DF2-97B5-952730608A0F_AspNetVirtualPath)" PhysicalPath="$(Project_C351163F-5730-4DF2-97B5-952730608A0F_AspNetPhysicalPath)" TargetPath="$(Project_C351163F-5730-4DF2-97B5-952730608A0F_AspNetTargetPath)" Force="$(Project_C351163F-5730-4DF2-97B5-952730608A0F_AspNetForce)" Updateable="$(Project_C351163F-5730-4DF2-97B5-952730608A0F_AspNetUpdateable)" Debug="$(Project_C351163F-5730-4DF2-97B5-952730608A0F_AspNetDebug)" KeyFile="$(Project_C351163F-5730-4DF2-97B5-952730608A0F_AspNetKeyFile)" KeyContainer="$(Project_C351163F-5730-4DF2-97B5-952730608A0F_AspNetKeyContainer)" DelaySign="$(Project_C351163F-5730-4DF2-97B5-952730608A0F_AspNetDelaySign)" AllowPartiallyTrustedCallers="$(Project_C351163F-5730-4DF2-97B5-952730608A0F_AspNetAPTCA)" FixedNames="$(Project_C351163F-5730-4DF2-97B5-952730608A0F_AspNetFixedNames)" Condition="(false) or ('$(AspNetConfiguration)' == 'Debug') or ('$(AspNetConfiguration)' == 'Release')" />
+    <Message Text="Skipping because the &quot;$(AspNetConfiguration)&quot; configuration is not supported for this web project.  You can use the AspNetConfiguration property to override the configuration used for building web projects, by adding /p:AspNetConfiguration=&lt;value&gt; to the command line. Currently web projects only support Debug and Release configurations." Condition="!((false) or ('$(AspNetConfiguration)' == 'Debug') or ('$(AspNetConfiguration)' == 'Release'))" />
+  </Target>
+  <Target Name="WebControlsTest:Clean" DependsOnTargets="WebControls:Clean;Savchin_Tools:Clean;GetFrameworkPathAndRedistList">
+    <Message Text="Web projects do not support the &quot;Clean&quot; target.  Continuing with remaining projects ..." />
+  </Target>
+  <Target Name="WebControlsTest:Rebuild" DependsOnTargets="WebControls:Rebuild;Savchin_Tools:Rebuild;GetFrameworkPathAndRedistList" Condition=" ('$(CurrentSolutionConfigurationContents)' != '') and (false or ( ('$(Configuration)' == 'Debug') and ('$(Platform)' == '.NET') ) or ( ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Mixed Platforms') ) or ( ('$(Configuration)' == 'Release') and ('$(Platform)' == '.NET') ) or ( ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Mixed Platforms') )) ">
+    <MSBuild Projects="WebControls\WebControls.csproj" Targets="GetTargetPath" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == '.NET') ">
+      <Output TaskParameter="TargetOutputs" ItemName="Project_C351163F-5730-4DF2-97B5-952730608A0F_References_Rebuild_0" />
+    </MSBuild>
+    <CreateItem Include="@(Project_C351163F-5730-4DF2-97B5-952730608A0F_References_Rebuild_0)" AdditionalMetadata="Guid={BA6303D3-C692-418A-B948-3C6B5AB146BD}">
+      <Output TaskParameter="Include" ItemName="Project_C351163F-5730-4DF2-97B5-952730608A0F_References_Rebuild" />
+    </CreateItem>
+    <MSBuild Projects="Tools\Savchin.Tools.csproj" Targets="GetTargetPath" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == '.NET') ">
+      <Output TaskParameter="TargetOutputs" ItemName="Project_C351163F-5730-4DF2-97B5-952730608A0F_References_Rebuild_1" />
+    </MSBuild>
+    <CreateItem Include="@(Project_C351163F-5730-4DF2-97B5-952730608A0F_References_Rebuild_1)" AdditionalMetadata="Guid={2F1807E4-39A2-4F38-ADFC-6310A8443D90}">
+      <Output TaskParameter="Include" ItemName="Project_C351163F-5730-4DF2-97B5-952730608A0F_References_Rebuild" />
+    </CreateItem>
+    <MSBuild Projects="WebControls\WebControls.csproj" Targets="GetTargetPath" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') ">
+      <Output TaskParameter="TargetOutputs" ItemName="Project_C351163F-5730-4DF2-97B5-952730608A0F_References_Rebuild_0" />
+    </MSBuild>
+    <CreateItem Include="@(Project_C351163F-5730-4DF2-97B5-952730608A0F_References_Rebuild_0)" AdditionalMetadata="Guid={BA6303D3-C692-418A-B948-3C6B5AB146BD}">
+      <Output TaskParameter="Include" ItemName="Project_C351163F-5730-4DF2-97B5-952730608A0F_References_Rebuild" />
+    </CreateItem>
+    <MSBuild Projects="Tools\Savchin.Tools.csproj" Targets="GetTargetPath" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') ">
+      <Output TaskParameter="TargetOutputs" ItemName="Project_C351163F-5730-4DF2-97B5-952730608A0F_References_Rebuild_1" />
+    </MSBuild>
+    <CreateItem Include="@(Project_C351163F-5730-4DF2-97B5-952730608A0F_References_Rebuild_1)" AdditionalMetadata="Guid={2F1807E4-39A2-4F38-ADFC-6310A8443D90}">
+      <Output TaskParameter="Include" ItemName="Project_C351163F-5730-4DF2-97B5-952730608A0F_References_Rebuild" />
+    </CreateItem>
+    <MSBuild Projects="WebControls\WebControls.csproj" Targets="GetTargetPath" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Mixed Platforms') ">
+      <Output TaskParameter="TargetOutputs" ItemName="Project_C351163F-5730-4DF2-97B5-952730608A0F_References_Rebuild_0" />
+    </MSBuild>
+    <CreateItem Include="@(Project_C351163F-5730-4DF2-97B5-952730608A0F_References_Rebuild_0)" AdditionalMetadata="Guid={BA6303D3-C692-418A-B948-3C6B5AB146BD}">
+      <Output TaskParameter="Include" ItemName="Project_C351163F-5730-4DF2-97B5-952730608A0F_References_Rebuild" />
+    </CreateItem>
+    <MSBuild Projects="Tools\Savchin.Tools.csproj" Targets="GetTargetPath" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Mixed Platforms') ">
+      <Output TaskParameter="TargetOutputs" ItemName="Project_C351163F-5730-4DF2-97B5-952730608A0F_References_Rebuild_1" />
+    </MSBuild>
+    <CreateItem Include="@(Project_C351163F-5730-4DF2-97B5-952730608A0F_References_Rebuild_1)" AdditionalMetadata="Guid={2F1807E4-39A2-4F38-ADFC-6310A8443D90}">
+      <Output TaskParameter="Include" ItemName="Project_C351163F-5730-4DF2-97B5-952730608A0F_References_Rebuild" />
+    </CreateItem>
+    <MSBuild Projects="WebControls\WebControls.csproj" Targets="GetTargetPath" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == '.NET') ">
+      <Output TaskParameter="TargetOutputs" ItemName="Project_C351163F-5730-4DF2-97B5-952730608A0F_References_Rebuild_0" />
+    </MSBuild>
+    <CreateItem Include="@(Project_C351163F-5730-4DF2-97B5-952730608A0F_References_Rebuild_0)" AdditionalMetadata="Guid={BA6303D3-C692-418A-B948-3C6B5AB146BD}">
+      <Output TaskParameter="Include" ItemName="Project_C351163F-5730-4DF2-97B5-952730608A0F_References_Rebuild" />
+    </CreateItem>
+    <MSBuild Projects="Tools\Savchin.Tools.csproj" Targets="GetTargetPath" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == '.NET') ">
+      <Output TaskParameter="TargetOutputs" ItemName="Project_C351163F-5730-4DF2-97B5-952730608A0F_References_Rebuild_1" />
+    </MSBuild>
+    <CreateItem Include="@(Project_C351163F-5730-4DF2-97B5-952730608A0F_References_Rebuild_1)" AdditionalMetadata="Guid={2F1807E4-39A2-4F38-ADFC-6310A8443D90}">
+      <Output TaskParameter="Include" ItemName="Project_C351163F-5730-4DF2-97B5-952730608A0F_References_Rebuild" />
+    </CreateItem>
+    <MSBuild Projects="WebControls\WebControls.csproj" Targets="GetTargetPath" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') ">
+      <Output TaskParameter="TargetOutputs" ItemName="Project_C351163F-5730-4DF2-97B5-952730608A0F_References_Rebuild_0" />
+    </MSBuild>
+    <CreateItem Include="@(Project_C351163F-5730-4DF2-97B5-952730608A0F_References_Rebuild_0)" AdditionalMetadata="Guid={BA6303D3-C692-418A-B948-3C6B5AB146BD}">
+      <Output TaskParameter="Include" ItemName="Project_C351163F-5730-4DF2-97B5-952730608A0F_References_Rebuild" />
+    </CreateItem>
+    <MSBuild Projects="Tools\Savchin.Tools.csproj" Targets="GetTargetPath" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') ">
+      <Output TaskParameter="TargetOutputs" ItemName="Project_C351163F-5730-4DF2-97B5-952730608A0F_References_Rebuild_1" />
+    </MSBuild>
+    <CreateItem Include="@(Project_C351163F-5730-4DF2-97B5-952730608A0F_References_Rebuild_1)" AdditionalMetadata="Guid={2F1807E4-39A2-4F38-ADFC-6310A8443D90}">
+      <Output TaskParameter="Include" ItemName="Project_C351163F-5730-4DF2-97B5-952730608A0F_References_Rebuild" />
+    </CreateItem>
+    <MSBuild Projects="WebControls\WebControls.csproj" Targets="GetTargetPath" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Mixed Platforms') ">
+      <Output TaskParameter="TargetOutputs" ItemName="Project_C351163F-5730-4DF2-97B5-952730608A0F_References_Rebuild_0" />
+    </MSBuild>
+    <CreateItem Include="@(Project_C351163F-5730-4DF2-97B5-952730608A0F_References_Rebuild_0)" AdditionalMetadata="Guid={BA6303D3-C692-418A-B948-3C6B5AB146BD}">
+      <Output TaskParameter="Include" ItemName="Project_C351163F-5730-4DF2-97B5-952730608A0F_References_Rebuild" />
+    </CreateItem>
+    <MSBuild Projects="Tools\Savchin.Tools.csproj" Targets="GetTargetPath" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Mixed Platforms') ">
+      <Output TaskParameter="TargetOutputs" ItemName="Project_C351163F-5730-4DF2-97B5-952730608A0F_References_Rebuild_1" />
+    </MSBuild>
+    <CreateItem Include="@(Project_C351163F-5730-4DF2-97B5-952730608A0F_References_Rebuild_1)" AdditionalMetadata="Guid={2F1807E4-39A2-4F38-ADFC-6310A8443D90}">
+      <Output TaskParameter="Include" ItemName="Project_C351163F-5730-4DF2-97B5-952730608A0F_References_Rebuild" />
+    </CreateItem>
+    <CreateItem Include="$(Project_C351163F-5730-4DF2-97B5-952730608A0F_AspNetPhysicalPath)\Bin\*.refresh">
+      <Output TaskParameter="Include" ItemName="Project_C351163F-5730-4DF2-97B5-952730608A0F_References_Rebuild_RefreshFile" />
+    </CreateItem>
+    <ReadLinesFromFile File="%(Project_C351163F-5730-4DF2-97B5-952730608A0F_References_Rebuild_RefreshFile.Identity)" Condition=" '%(Project_C351163F-5730-4DF2-97B5-952730608A0F_References_Rebuild_RefreshFile.Identity)' != '' ">
+      <Output TaskParameter="Lines" ItemName="Project_C351163F-5730-4DF2-97B5-952730608A0F_References_Rebuild_ReferenceRelPath" />
+    </ReadLinesFromFile>
+    <CombinePath BasePath="$(Project_C351163F-5730-4DF2-97B5-952730608A0F_AspNetPhysicalPath)" Paths="@(Project_C351163F-5730-4DF2-97B5-952730608A0F_References_Rebuild_ReferenceRelPath)">
+      <Output TaskParameter="CombinedPaths" ItemName="Project_C351163F-5730-4DF2-97B5-952730608A0F_References_Rebuild" />
+    </CombinePath>
+    <Copy SourceFiles="@(Project_C351163F-5730-4DF2-97B5-952730608A0F_References_Rebuild->'%(FullPath)')" DestinationFolder="$(Project_C351163F-5730-4DF2-97B5-952730608A0F_AspNetPhysicalPath)\Bin\" Condition="!Exists('%(Project_C351163F-5730-4DF2-97B5-952730608A0F_References_Rebuild.Identity)')" ContinueOnError="true" />
+    <ResolveAssemblyReference Assemblies="@(Project_C351163F-5730-4DF2-97B5-952730608A0F_References_Rebuild->'%(FullPath)')" TargetFrameworkDirectories="@(_CombinedTargetFrameworkDirectoriesItem)" InstalledAssemblyTables="@(InstalledAssemblyTables)" SearchPaths="{RawFileName};{TargetFrameworkDirectory};{GAC}" FindDependencies="true" FindSatellites="true" FindSerializationAssemblies="true" FindRelatedFiles="true" Condition="Exists('%(Project_C351163F-5730-4DF2-97B5-952730608A0F_References_Rebuild.Identity)')">
+      <Output TaskParameter="CopyLocalFiles" ItemName="Project_C351163F-5730-4DF2-97B5-952730608A0F_References_Rebuild_CopyLocalFiles" />
+    </ResolveAssemblyReference>
+    <Copy SourceFiles="@(Project_C351163F-5730-4DF2-97B5-952730608A0F_References_Rebuild_CopyLocalFiles)" DestinationFiles="@(Project_C351163F-5730-4DF2-97B5-952730608A0F_References_Rebuild_CopyLocalFiles->'$(Project_C351163F-5730-4DF2-97B5-952730608A0F_AspNetPhysicalPath)\Bin\%(DestinationSubDirectory)%(Filename)%(Extension)')" Condition="(false) or ('$(AspNetConfiguration)' == 'Debug') or ('$(AspNetConfiguration)' == 'Release')" />
+    <AspNetCompiler VirtualPath="$(Project_C351163F-5730-4DF2-97B5-952730608A0F_AspNetVirtualPath)" PhysicalPath="$(Project_C351163F-5730-4DF2-97B5-952730608A0F_AspNetPhysicalPath)" TargetPath="$(Project_C351163F-5730-4DF2-97B5-952730608A0F_AspNetTargetPath)" Force="$(Project_C351163F-5730-4DF2-97B5-952730608A0F_AspNetForce)" Updateable="$(Project_C351163F-5730-4DF2-97B5-952730608A0F_AspNetUpdateable)" Debug="$(Project_C351163F-5730-4DF2-97B5-952730608A0F_AspNetDebug)" KeyFile="$(Project_C351163F-5730-4DF2-97B5-952730608A0F_AspNetKeyFile)" KeyContainer="$(Project_C351163F-5730-4DF2-97B5-952730608A0F_AspNetKeyContainer)" DelaySign="$(Project_C351163F-5730-4DF2-97B5-952730608A0F_AspNetDelaySign)" AllowPartiallyTrustedCallers="$(Project_C351163F-5730-4DF2-97B5-952730608A0F_AspNetAPTCA)" FixedNames="$(Project_C351163F-5730-4DF2-97B5-952730608A0F_AspNetFixedNames)" Condition="(false) or ('$(AspNetConfiguration)' == 'Debug') or ('$(AspNetConfiguration)' == 'Release')" />
+    <Message Text="Skipping because the &quot;$(AspNetConfiguration)&quot; configuration is not supported for this web project.  You can use the AspNetConfiguration property to override the configuration used for building web projects, by adding /p:AspNetConfiguration=&lt;value&gt; to the command line. Currently web projects only support Debug and Release configurations." Condition="!((false) or ('$(AspNetConfiguration)' == 'Debug') or ('$(AspNetConfiguration)' == 'Release'))" />
+  </Target>
+  <Target Name="WebControlsTest:Publish" DependsOnTargets="WebControls:Publish;Savchin_Tools:Publish;GetFrameworkPathAndRedistList">
+    <Message Text="Web projects do not support the &quot;Publish&quot; target.  Continuing with remaining projects ..." />
+  </Target>
+  <Target Name="Tests\ToolsTest" DependsOnTargets="CodeParsing;Savchin_Tools" Condition="'$(CurrentSolutionConfigurationContents)' != ''" Outputs="@(ToolsTestBuildOutput)">
+    <Message Text="The project &quot;ToolsTest&quot; is not selected for building in solution configuration &quot;Debug|.NET&quot;." Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == '.NET') " />
+    <MSBuild Projects="ToolsTest\ToolsTest.csproj" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') ">
+      <Output TaskParameter="TargetOutputs" ItemName="ToolsTestBuildOutput" />
+    </MSBuild>
+    <MSBuild Projects="ToolsTest\ToolsTest.csproj" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Mixed Platforms') ">
+      <Output TaskParameter="TargetOutputs" ItemName="ToolsTestBuildOutput" />
+    </MSBuild>
+    <Message Text="The project &quot;ToolsTest&quot; is not selected for building in solution configuration &quot;Release|.NET&quot;." Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == '.NET') " />
+    <MSBuild Projects="ToolsTest\ToolsTest.csproj" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') ">
+      <Output TaskParameter="TargetOutputs" ItemName="ToolsTestBuildOutput" />
+    </MSBuild>
+    <MSBuild Projects="ToolsTest\ToolsTest.csproj" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Mixed Platforms') ">
+      <Output TaskParameter="TargetOutputs" ItemName="ToolsTestBuildOutput" />
+    </MSBuild>
+  </Target>
+  <Target Name="Tests\ToolsTest:Clean" DependsOnTargets="CodeParsing:Clean;Savchin_Tools:Clean" Condition="'$(CurrentSolutionConfigurationContents)' != ''">
+    <Message Text="The project &quot;ToolsTest&quot; is not selected for building in solution configuration &quot;Debug|.NET&quot;." Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == '.NET') " />
+    <MSBuild Projects="ToolsTest\ToolsTest.csproj" Targets="Clean" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') " />
+    <MSBuild Projects="ToolsTest\ToolsTest.csproj" Targets="Clean" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Mixed Platforms') " />
+    <Message Text="The project &quot;ToolsTest&quot; is not selected for building in solution configuration &quot;Release|.NET&quot;." Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == '.NET') " />
+    <MSBuild Projects="ToolsTest\ToolsTest.csproj" Targets="Clean" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') " />
+    <MSBuild Projects="ToolsTest\ToolsTest.csproj" Targets="Clean" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Mixed Platforms') " />
+  </Target>
+  <Target Name="Tests\ToolsTest:Rebuild" DependsOnTargets="CodeParsing:Rebuild;Savchin_Tools:Rebuild" Condition="'$(CurrentSolutionConfigurationContents)' != ''" Outputs="@(ToolsTestBuildOutput)">
+    <Message Text="The project &quot;ToolsTest&quot; is not selected for building in solution configuration &quot;Debug|.NET&quot;." Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == '.NET') " />
+    <MSBuild Projects="ToolsTest\ToolsTest.csproj" Targets="Rebuild" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') ">
+      <Output TaskParameter="TargetOutputs" ItemName="ToolsTestBuildOutput" />
+    </MSBuild>
+    <MSBuild Projects="ToolsTest\ToolsTest.csproj" Targets="Rebuild" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Mixed Platforms') ">
+      <Output TaskParameter="TargetOutputs" ItemName="ToolsTestBuildOutput" />
+    </MSBuild>
+    <Message Text="The project &quot;ToolsTest&quot; is not selected for building in solution configuration &quot;Release|.NET&quot;." Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == '.NET') " />
+    <MSBuild Projects="ToolsTest\ToolsTest.csproj" Targets="Rebuild" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') ">
+      <Output TaskParameter="TargetOutputs" ItemName="ToolsTestBuildOutput" />
+    </MSBuild>
+    <MSBuild Projects="ToolsTest\ToolsTest.csproj" Targets="Rebuild" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Mixed Platforms') ">
+      <Output TaskParameter="TargetOutputs" ItemName="ToolsTestBuildOutput" />
+    </MSBuild>
+  </Target>
+  <Target Name="Tests\ToolsTest:Publish" DependsOnTargets="CodeParsing:Publish;Savchin_Tools:Publish" Condition="'$(CurrentSolutionConfigurationContents)' != ''">
+    <Message Text="The project &quot;ToolsTest&quot; is not selected for building in solution configuration &quot;Debug|.NET&quot;." Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == '.NET') " />
+    <MSBuild Projects="ToolsTest\ToolsTest.csproj" Targets="Publish" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') " />
+    <MSBuild Projects="ToolsTest\ToolsTest.csproj" Targets="Publish" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Mixed Platforms') " />
+    <Message Text="The project &quot;ToolsTest&quot; is not selected for building in solution configuration &quot;Release|.NET&quot;." Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == '.NET') " />
+    <MSBuild Projects="ToolsTest\ToolsTest.csproj" Targets="Publish" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') " />
+    <MSBuild Projects="ToolsTest\ToolsTest.csproj" Targets="Publish" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Mixed Platforms') " />
+  </Target>
+  <Target Name="CodeParsing" Condition="'$(CurrentSolutionConfigurationContents)' != ''" Outputs="@(CodeParsingBuildOutput)">
+    <Message Text="The project &quot;CodeParsing&quot; is not selected for building in solution configuration &quot;Debug|.NET&quot;." Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == '.NET') " />
+    <MSBuild Projects="CodeParser\CodeParsing.csproj" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') ">
+      <Output TaskParameter="TargetOutputs" ItemName="CodeParsingBuildOutput" />
+    </MSBuild>
+    <MSBuild Projects="CodeParser\CodeParsing.csproj" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Mixed Platforms') ">
+      <Output TaskParameter="TargetOutputs" ItemName="CodeParsingBuildOutput" />
+    </MSBuild>
+    <Message Text="The project &quot;CodeParsing&quot; is not selected for building in solution configuration &quot;Release|.NET&quot;." Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == '.NET') " />
+    <MSBuild Projects="CodeParser\CodeParsing.csproj" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') ">
+      <Output TaskParameter="TargetOutputs" ItemName="CodeParsingBuildOutput" />
+    </MSBuild>
+    <MSBuild Projects="CodeParser\CodeParsing.csproj" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Mixed Platforms') ">
+      <Output TaskParameter="TargetOutputs" ItemName="CodeParsingBuildOutput" />
+    </MSBuild>
+  </Target>
+  <Target Name="CodeParsing:Clean" Condition="'$(CurrentSolutionConfigurationContents)' != ''">
+    <Message Text="The project &quot;CodeParsing&quot; is not selected for building in solution configuration &quot;Debug|.NET&quot;." Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == '.NET') " />
+    <MSBuild Projects="CodeParser\CodeParsing.csproj" Targets="Clean" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') " />
+    <MSBuild Projects="CodeParser\CodeParsing.csproj" Targets="Clean" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Mixed Platforms') " />
+    <Message Text="The project &quot;CodeParsing&quot; is not selected for building in solution configuration &quot;Release|.NET&quot;." Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == '.NET') " />
+    <MSBuild Projects="CodeParser\CodeParsing.csproj" Targets="Clean" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') " />
+    <MSBuild Projects="CodeParser\CodeParsing.csproj" Targets="Clean" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Mixed Platforms') " />
+  </Target>
+  <Target Name="CodeParsing:Rebuild" Condition="'$(CurrentSolutionConfigurationContents)' != ''" Outputs="@(CodeParsingBuildOutput)">
+    <Message Text="The project &quot;CodeParsing&quot; is not selected for building in solution configuration &quot;Debug|.NET&quot;." Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == '.NET') " />
+    <MSBuild Projects="CodeParser\CodeParsing.csproj" Targets="Rebuild" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') ">
+      <Output TaskParameter="TargetOutputs" ItemName="CodeParsingBuildOutput" />
+    </MSBuild>
+    <MSBuild Projects="CodeParser\CodeParsing.csproj" Targets="Rebuild" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Mixed Platforms') ">
+      <Output TaskParameter="TargetOutputs" ItemName="CodeParsingBuildOutput" />
+    </MSBuild>
+    <Message Text="The project &quot;CodeParsing&quot; is not selected for building in solution configuration &quot;Release|.NET&quot;." Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == '.NET') " />
+    <MSBuild Projects="CodeParser\CodeParsing.csproj" Targets="Rebuild" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') ">
+      <Output TaskParameter="TargetOutputs" ItemName="CodeParsingBuildOutput" />
+    </MSBuild>
+    <MSBuild Projects="CodeParser\CodeParsing.csproj" Targets="Rebuild" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Mixed Platforms') ">
+      <Output TaskParameter="TargetOutputs" ItemName="CodeParsingBuildOutput" />
+    </MSBuild>
+  </Target>
+  <Target Name="CodeParsing:Publish" Condition="'$(CurrentSolutionConfigurationContents)' != ''">
+    <Message Text="The project &quot;CodeParsing&quot; is not selected for building in solution configuration &quot;Debug|.NET&quot;." Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == '.NET') " />
+    <MSBuild Projects="CodeParser\CodeParsing.csproj" Targets="Publish" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') " />
+    <MSBuild Projects="CodeParser\CodeParsing.csproj" Targets="Publish" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Mixed Platforms') " />
+    <Message Text="The project &quot;CodeParsing&quot; is not selected for building in solution configuration &quot;Release|.NET&quot;." Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == '.NET') " />
+    <MSBuild Projects="CodeParser\CodeParsing.csproj" Targets="Publish" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') " />
+    <MSBuild Projects="CodeParser\CodeParsing.csproj" Targets="Publish" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Mixed Platforms') " />
+  </Target>
+  <Target Name="Savchin_Tools" Condition="'$(CurrentSolutionConfigurationContents)' != ''" Outputs="@(Savchin_ToolsBuildOutput)">
+    <Message Text="The project &quot;Savchin.Tools&quot; is not selected for building in solution configuration &quot;Debug|.NET&quot;." Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == '.NET') " />
+    <MSBuild Projects="Tools\Savchin.Tools.csproj" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') ">
+      <Output TaskParameter="TargetOutputs" ItemName="Savchin_ToolsBuildOutput" />
+    </MSBuild>
+    <MSBuild Projects="Tools\Savchin.Tools.csproj" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Mixed Platforms') ">
+      <Output TaskParameter="TargetOutputs" ItemName="Savchin_ToolsBuildOutput" />
+    </MSBuild>
+    <Message Text="The project &quot;Savchin.Tools&quot; is not selected for building in solution configuration &quot;Release|.NET&quot;." Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == '.NET') " />
+    <MSBuild Projects="Tools\Savchin.Tools.csproj" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') ">
+      <Output TaskParameter="TargetOutputs" ItemName="Savchin_ToolsBuildOutput" />
+    </MSBuild>
+    <MSBuild Projects="Tools\Savchin.Tools.csproj" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Mixed Platforms') ">
+      <Output TaskParameter="TargetOutputs" ItemName="Savchin_ToolsBuildOutput" />
+    </MSBuild>
+  </Target>
+  <Target Name="Savchin_Tools:Clean" Condition="'$(CurrentSolutionConfigurationContents)' != ''">
+    <Message Text="The project &quot;Savchin.Tools&quot; is not selected for building in solution configuration &quot;Debug|.NET&quot;." Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == '.NET') " />
+    <MSBuild Projects="Tools\Savchin.Tools.csproj" Targets="Clean" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') " />
+    <MSBuild Projects="Tools\Savchin.Tools.csproj" Targets="Clean" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Mixed Platforms') " />
+    <Message Text="The project &quot;Savchin.Tools&quot; is not selected for building in solution configuration &quot;Release|.NET&quot;." Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == '.NET') " />
+    <MSBuild Projects="Tools\Savchin.Tools.csproj" Targets="Clean" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') " />
+    <MSBuild Projects="Tools\Savchin.Tools.csproj" Targets="Clean" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Mixed Platforms') " />
+  </Target>
+  <Target Name="Savchin_Tools:Rebuild" Condition="'$(CurrentSolutionConfigurationContents)' != ''" Outputs="@(Savchin_ToolsBuildOutput)">
+    <Message Text="The project &quot;Savchin.Tools&quot; is not selected for building in solution configuration &quot;Debug|.NET&quot;." Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == '.NET') " />
+    <MSBuild Projects="Tools\Savchin.Tools.csproj" Targets="Rebuild" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') ">
+      <Output TaskParameter="TargetOutputs" ItemName="Savchin_ToolsBuildOutput" />
+    </MSBuild>
+    <MSBuild Projects="Tools\Savchin.Tools.csproj" Targets="Rebuild" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Mixed Platforms') ">
+      <Output TaskParameter="TargetOutputs" ItemName="Savchin_ToolsBuildOutput" />
+    </MSBuild>
+    <Message Text="The project &quot;Savchin.Tools&quot; is not selected for building in solution configuration &quot;Release|.NET&quot;." Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == '.NET') " />
+    <MSBuild Projects="Tools\Savchin.Tools.csproj" Targets="Rebuild" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') ">
+      <Output TaskParameter="TargetOutputs" ItemName="Savchin_ToolsBuildOutput" />
+    </MSBuild>
+    <MSBuild Projects="Tools\Savchin.Tools.csproj" Targets="Rebuild" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Mixed Platforms') ">
+      <Output TaskParameter="TargetOutputs" ItemName="Savchin_ToolsBuildOutput" />
+    </MSBuild>
+  </Target>
+  <Target Name="Savchin_Tools:Publish" Condition="'$(CurrentSolutionConfigurationContents)' != ''">
+    <Message Text="The project &quot;Savchin.Tools&quot; is not selected for building in solution configuration &quot;Debug|.NET&quot;." Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == '.NET') " />
+    <MSBuild Projects="Tools\Savchin.Tools.csproj" Targets="Publish" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') " />
+    <MSBuild Projects="Tools\Savchin.Tools.csproj" Targets="Publish" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Mixed Platforms') " />
+    <Message Text="The project &quot;Savchin.Tools&quot; is not selected for building in solution configuration &quot;Release|.NET&quot;." Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == '.NET') " />
+    <MSBuild Projects="Tools\Savchin.Tools.csproj" Targets="Publish" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') " />
+    <MSBuild Projects="Tools\Savchin.Tools.csproj" Targets="Publish" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Mixed Platforms') " />
+  </Target>
+  <Target Name="Savchin_Controls_Common" DependsOnTargets="Savchin_Tools" Condition="'$(CurrentSolutionConfigurationContents)' != ''" Outputs="@(Savchin_Controls_CommonBuildOutput)">
+    <Message Text="The project &quot;Savchin.Controls.Common&quot; is not selected for building in solution configuration &quot;Debug|.NET&quot;." Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == '.NET') " />
+    <MSBuild Projects="Controls\Common\Savchin.Controls.Common.csproj" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') ">
+      <Output TaskParameter="TargetOutputs" ItemName="Savchin_Controls_CommonBuildOutput" />
+    </MSBuild>
+    <MSBuild Projects="Controls\Common\Savchin.Controls.Common.csproj" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Mixed Platforms') ">
+      <Output TaskParameter="TargetOutputs" ItemName="Savchin_Controls_CommonBuildOutput" />
+    </MSBuild>
+    <Message Text="The project &quot;Savchin.Controls.Common&quot; is not selected for building in solution configuration &quot;Release|.NET&quot;." Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == '.NET') " />
+    <MSBuild Projects="Controls\Common\Savchin.Controls.Common.csproj" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') ">
+      <Output TaskParameter="TargetOutputs" ItemName="Savchin_Controls_CommonBuildOutput" />
+    </MSBuild>
+    <MSBuild Projects="Controls\Common\Savchin.Controls.Common.csproj" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Mixed Platforms') ">
+      <Output TaskParameter="TargetOutputs" ItemName="Savchin_Controls_CommonBuildOutput" />
+    </MSBuild>
+  </Target>
+  <Target Name="Savchin_Controls_Common:Clean" DependsOnTargets="Savchin_Tools:Clean" Condition="'$(CurrentSolutionConfigurationContents)' != ''">
+    <Message Text="The project &quot;Savchin.Controls.Common&quot; is not selected for building in solution configuration &quot;Debug|.NET&quot;." Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == '.NET') " />
+    <MSBuild Projects="Controls\Common\Savchin.Controls.Common.csproj" Targets="Clean" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') " />
+    <MSBuild Projects="Controls\Common\Savchin.Controls.Common.csproj" Targets="Clean" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Mixed Platforms') " />
+    <Message Text="The project &quot;Savchin.Controls.Common&quot; is not selected for building in solution configuration &quot;Release|.NET&quot;." Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == '.NET') " />
+    <MSBuild Projects="Controls\Common\Savchin.Controls.Common.csproj" Targets="Clean" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') " />
+    <MSBuild Projects="Controls\Common\Savchin.Controls.Common.csproj" Targets="Clean" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Mixed Platforms') " />
+  </Target>
+  <Target Name="Savchin_Controls_Common:Rebuild" DependsOnTargets="Savchin_Tools:Rebuild" Condition="'$(CurrentSolutionConfigurationContents)' != ''" Outputs="@(Savchin_Controls_CommonBuildOutput)">
+    <Message Text="The project &quot;Savchin.Controls.Common&quot; is not selected for building in solution configuration &quot;Debug|.NET&quot;." Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == '.NET') " />
+    <MSBuild Projects="Controls\Common\Savchin.Controls.Common.csproj" Targets="Rebuild" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') ">
+      <Output TaskParameter="TargetOutputs" ItemName="Savchin_Controls_CommonBuildOutput" />
+    </MSBuild>
+    <MSBuild Projects="Controls\Common\Savchin.Controls.Common.csproj" Targets="Rebuild" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Mixed Platforms') ">
+      <Output TaskParameter="TargetOutputs" ItemName="Savchin_Controls_CommonBuildOutput" />
+    </MSBuild>
+    <Message Text="The project &quot;Savchin.Controls.Common&quot; is not selected for building in solution configuration &quot;Release|.NET&quot;." Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == '.NET') " />
+    <MSBuild Projects="Controls\Common\Savchin.Controls.Common.csproj" Targets="Rebuild" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') ">
+      <Output TaskParameter="TargetOutputs" ItemName="Savchin_Controls_CommonBuildOutput" />
+    </MSBuild>
+    <MSBuild Projects="Controls\Common\Savchin.Controls.Common.csproj" Targets="Rebuild" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Mixed Platforms') ">
+      <Output TaskParameter="TargetOutputs" ItemName="Savchin_Controls_CommonBuildOutput" />
+    </MSBuild>
+  </Target>
+  <Target Name="Savchin_Controls_Common:Publish" DependsOnTargets="Savchin_Tools:Publish" Condition="'$(CurrentSolutionConfigurationContents)' != ''">
+    <Message Text="The project &quot;Savchin.Controls.Common&quot; is not selected for building in solution configuration &quot;Debug|.NET&quot;." Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == '.NET') " />
+    <MSBuild Projects="Controls\Common\Savchin.Controls.Common.csproj" Targets="Publish" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') " />
+    <MSBuild Projects="Controls\Common\Savchin.Controls.Common.csproj" Targets="Publish" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Mixed Platforms') " />
+    <Message Text="The project &quot;Savchin.Controls.Common&quot; is not selected for building in solution configuration &quot;Release|.NET&quot;." Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == '.NET') " />
+    <MSBuild Projects="Controls\Common\Savchin.Controls.Common.csproj" Targets="Publish" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') " />
+    <MSBuild Projects="Controls\Common\Savchin.Controls.Common.csproj" Targets="Publish" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Mixed Platforms') " />
+  </Target>
+  <Target Name="WebControls" DependsOnTargets="Savchin_Tools" Condition="'$(CurrentSolutionConfigurationContents)' != ''" Outputs="@(WebControlsBuildOutput)">
+    <Message Text="The project &quot;WebControls&quot; is not selected for building in solution configuration &quot;Debug|.NET&quot;." Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == '.NET') " />
+    <MSBuild Projects="WebControls\WebControls.csproj" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') ">
+      <Output TaskParameter="TargetOutputs" ItemName="WebControlsBuildOutput" />
+    </MSBuild>
+    <MSBuild Projects="WebControls\WebControls.csproj" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Mixed Platforms') ">
+      <Output TaskParameter="TargetOutputs" ItemName="WebControlsBuildOutput" />
+    </MSBuild>
+    <Message Text="The project &quot;WebControls&quot; is not selected for building in solution configuration &quot;Release|.NET&quot;." Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == '.NET') " />
+    <MSBuild Projects="WebControls\WebControls.csproj" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') ">
+      <Output TaskParameter="TargetOutputs" ItemName="WebControlsBuildOutput" />
+    </MSBuild>
+    <MSBuild Projects="WebControls\WebControls.csproj" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Mixed Platforms') ">
+      <Output TaskParameter="TargetOutputs" ItemName="WebControlsBuildOutput" />
+    </MSBuild>
+  </Target>
+  <Target Name="WebControls:Clean" DependsOnTargets="Savchin_Tools:Clean" Condition="'$(CurrentSolutionConfigurationContents)' != ''">
+    <Message Text="The project &quot;WebControls&quot; is not selected for building in solution configuration &quot;Debug|.NET&quot;." Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == '.NET') " />
+    <MSBuild Projects="WebControls\WebControls.csproj" Targets="Clean" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') " />
+    <MSBuild Projects="WebControls\WebControls.csproj" Targets="Clean" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Mixed Platforms') " />
+    <Message Text="The project &quot;WebControls&quot; is not selected for building in solution configuration &quot;Release|.NET&quot;." Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == '.NET') " />
+    <MSBuild Projects="WebControls\WebControls.csproj" Targets="Clean" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') " />
+    <MSBuild Projects="WebControls\WebControls.csproj" Targets="Clean" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Mixed Platforms') " />
+  </Target>
+  <Target Name="WebControls:Rebuild" DependsOnTargets="Savchin_Tools:Rebuild" Condition="'$(CurrentSolutionConfigurationContents)' != ''" Outputs="@(WebControlsBuildOutput)">
+    <Message Text="The project &quot;WebControls&quot; is not selected for building in solution configuration &quot;Debug|.NET&quot;." Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == '.NET') " />
+    <MSBuild Projects="WebControls\WebControls.csproj" Targets="Rebuild" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') ">
+      <Output TaskParameter="TargetOutputs" ItemName="WebControlsBuildOutput" />
+    </MSBuild>
+    <MSBuild Projects="WebControls\WebControls.csproj" Targets="Rebuild" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Mixed Platforms') ">
+      <Output TaskParameter="TargetOutputs" ItemName="WebControlsBuildOutput" />
+    </MSBuild>
+    <Message Text="The project &quot;WebControls&quot; is not selected for building in solution configuration &quot;Release|.NET&quot;." Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == '.NET') " />
+    <MSBuild Projects="WebControls\WebControls.csproj" Targets="Rebuild" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') ">
+      <Output TaskParameter="TargetOutputs" ItemName="WebControlsBuildOutput" />
+    </MSBuild>
+    <MSBuild Projects="WebControls\WebControls.csproj" Targets="Rebuild" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Mixed Platforms') ">
+      <Output TaskParameter="TargetOutputs" ItemName="WebControlsBuildOutput" />
+    </MSBuild>
+  </Target>
+  <Target Name="WebControls:Publish" DependsOnTargets="Savchin_Tools:Publish" Condition="'$(CurrentSolutionConfigurationContents)' != ''">
+    <Message Text="The project &quot;WebControls&quot; is not selected for building in solution configuration &quot;Debug|.NET&quot;." Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == '.NET') " />
+    <MSBuild Projects="WebControls\WebControls.csproj" Targets="Publish" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') " />
+    <MSBuild Projects="WebControls\WebControls.csproj" Targets="Publish" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Mixed Platforms') " />
+    <Message Text="The project &quot;WebControls&quot; is not selected for building in solution configuration &quot;Release|.NET&quot;." Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == '.NET') " />
+    <MSBuild Projects="WebControls\WebControls.csproj" Targets="Publish" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') " />
+    <MSBuild Projects="WebControls\WebControls.csproj" Targets="Publish" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Mixed Platforms') " />
+  </Target>
+  <Target Name="PDModelBrowser" DependsOnTargets="Savchin_Controls_Common" Condition="'$(CurrentSolutionConfigurationContents)' != ''" Outputs="@(PDModelBrowserBuildOutput)">
+    <Message Text="The project &quot;PDModelBrowser&quot; is not selected for building in solution configuration &quot;Debug|.NET&quot;." Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == '.NET') " />
+    <MSBuild Projects="Controls\PDModelBrowser\PDModelBrowser.csproj" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') ">
+      <Output TaskParameter="TargetOutputs" ItemName="PDModelBrowserBuildOutput" />
+    </MSBuild>
+    <MSBuild Projects="Controls\PDModelBrowser\PDModelBrowser.csproj" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Mixed Platforms') ">
+      <Output TaskParameter="TargetOutputs" ItemName="PDModelBrowserBuildOutput" />
+    </MSBuild>
+    <Message Text="The project &quot;PDModelBrowser&quot; is not selected for building in solution configuration &quot;Release|.NET&quot;." Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == '.NET') " />
+    <MSBuild Projects="Controls\PDModelBrowser\PDModelBrowser.csproj" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') ">
+      <Output TaskParameter="TargetOutputs" ItemName="PDModelBrowserBuildOutput" />
+    </MSBuild>
+    <MSBuild Projects="Controls\PDModelBrowser\PDModelBrowser.csproj" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Mixed Platforms') ">
+      <Output TaskParameter="TargetOutputs" ItemName="PDModelBrowserBuildOutput" />
+    </MSBuild>
+  </Target>
+  <Target Name="PDModelBrowser:Clean" DependsOnTargets="Savchin_Controls_Common:Clean" Condition="'$(CurrentSolutionConfigurationContents)' != ''">
+    <Message Text="The project &quot;PDModelBrowser&quot; is not selected for building in solution configuration &quot;Debug|.NET&quot;." Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == '.NET') " />
+    <MSBuild Projects="Controls\PDModelBrowser\PDModelBrowser.csproj" Targets="Clean" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') " />
+    <MSBuild Projects="Controls\PDModelBrowser\PDModelBrowser.csproj" Targets="Clean" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Mixed Platforms') " />
+    <Message Text="The project &quot;PDModelBrowser&quot; is not selected for building in solution configuration &quot;Release|.NET&quot;." Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == '.NET') " />
+    <MSBuild Projects="Controls\PDModelBrowser\PDModelBrowser.csproj" Targets="Clean" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') " />
+    <MSBuild Projects="Controls\PDModelBrowser\PDModelBrowser.csproj" Targets="Clean" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Mixed Platforms') " />
+  </Target>
+  <Target Name="PDModelBrowser:Rebuild" DependsOnTargets="Savchin_Controls_Common:Rebuild" Condition="'$(CurrentSolutionConfigurationContents)' != ''" Outputs="@(PDModelBrowserBuildOutput)">
+    <Message Text="The project &quot;PDModelBrowser&quot; is not selected for building in solution configuration &quot;Debug|.NET&quot;." Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == '.NET') " />
+    <MSBuild Projects="Controls\PDModelBrowser\PDModelBrowser.csproj" Targets="Rebuild" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') ">
+      <Output TaskParameter="TargetOutputs" ItemName="PDModelBrowserBuildOutput" />
+    </MSBuild>
+    <MSBuild Projects="Controls\PDModelBrowser\PDModelBrowser.csproj" Targets="Rebuild" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Mixed Platforms') ">
+      <Output TaskParameter="TargetOutputs" ItemName="PDModelBrowserBuildOutput" />
+    </MSBuild>
+    <Message Text="The project &quot;PDModelBrowser&quot; is not selected for building in solution configuration &quot;Release|.NET&quot;." Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == '.NET') " />
+    <MSBuild Projects="Controls\PDModelBrowser\PDModelBrowser.csproj" Targets="Rebuild" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') ">
+      <Output TaskParameter="TargetOutputs" ItemName="PDModelBrowserBuildOutput" />
+    </MSBuild>
+    <MSBuild Projects="Controls\PDModelBrowser\PDModelBrowser.csproj" Targets="Rebuild" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Mixed Platforms') ">
+      <Output TaskParameter="TargetOutputs" ItemName="PDModelBrowserBuildOutput" />
+    </MSBuild>
+  </Target>
+  <Target Name="PDModelBrowser:Publish" DependsOnTargets="Savchin_Controls_Common:Publish" Condition="'$(CurrentSolutionConfigurationContents)' != ''">
+    <Message Text="The project &quot;PDModelBrowser&quot; is not selected for building in solution configuration &quot;Debug|.NET&quot;." Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == '.NET') " />
+    <MSBuild Projects="Controls\PDModelBrowser\PDModelBrowser.csproj" Targets="Publish" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') " />
+    <MSBuild Projects="Controls\PDModelBrowser\PDModelBrowser.csproj" Targets="Publish" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Mixed Platforms') " />
+    <Message Text="The project &quot;PDModelBrowser&quot; is not selected for building in solution configuration &quot;Release|.NET&quot;." Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == '.NET') " />
+    <MSBuild Projects="Controls\PDModelBrowser\PDModelBrowser.csproj" Targets="Publish" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') " />
+    <MSBuild Projects="Controls\PDModelBrowser\PDModelBrowser.csproj" Targets="Publish" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Mixed Platforms') " />
+  </Target>
+  <Target Name="FileBrowser" Condition="'$(CurrentSolutionConfigurationContents)' != ''" Outputs="@(FileBrowserBuildOutput)">
+    <Message Text="The project &quot;FileBrowser&quot; is not selected for building in solution configuration &quot;Debug|.NET&quot;." Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == '.NET') " />
+    <MSBuild Projects="Controls\FileBrowser\FileBrowser.vbproj" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') ">
+      <Output TaskParameter="TargetOutputs" ItemName="FileBrowserBuildOutput" />
+    </MSBuild>
+    <MSBuild Projects="Controls\FileBrowser\FileBrowser.vbproj" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Mixed Platforms') ">
+      <Output TaskParameter="TargetOutputs" ItemName="FileBrowserBuildOutput" />
+    </MSBuild>
+    <Message Text="The project &quot;FileBrowser&quot; is not selected for building in solution configuration &quot;Release|.NET&quot;." Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == '.NET') " />
+    <MSBuild Projects="Controls\FileBrowser\FileBrowser.vbproj" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') ">
+      <Output TaskParameter="TargetOutputs" ItemName="FileBrowserBuildOutput" />
+    </MSBuild>
+    <MSBuild Projects="Controls\FileBrowser\FileBrowser.vbproj" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Mixed Platforms') ">
+      <Output TaskParameter="TargetOutputs" ItemName="FileBrowserBuildOutput" />
+    </MSBuild>
+  </Target>
+  <Target Name="FileBrowser:Clean" Condition="'$(CurrentSolutionConfigurationContents)' != ''">
+    <Message Text="The project &quot;FileBrowser&quot; is not selected for building in solution configuration &quot;Debug|.NET&quot;." Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == '.NET') " />
+    <MSBuild Projects="Controls\FileBrowser\FileBrowser.vbproj" Targets="Clean" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') " />
+    <MSBuild Projects="Controls\FileBrowser\FileBrowser.vbproj" Targets="Clean" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Mixed Platforms') " />
+    <Message Text="The project &quot;FileBrowser&quot; is not selected for building in solution configuration &quot;Release|.NET&quot;." Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == '.NET') " />
+    <MSBuild Projects="Controls\FileBrowser\FileBrowser.vbproj" Targets="Clean" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') " />
+    <MSBuild Projects="Controls\FileBrowser\FileBrowser.vbproj" Targets="Clean" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Mixed Platforms') " />
+  </Target>
+  <Target Name="FileBrowser:Rebuild" Condition="'$(CurrentSolutionConfigurationContents)' != ''" Outputs="@(FileBrowserBuildOutput)">
+    <Message Text="The project &quot;FileBrowser&quot; is not selected for building in solution configuration &quot;Debug|.NET&quot;." Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == '.NET') " />
+    <MSBuild Projects="Controls\FileBrowser\FileBrowser.vbproj" Targets="Rebuild" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') ">
+      <Output TaskParameter="TargetOutputs" ItemName="FileBrowserBuildOutput" />
+    </MSBuild>
+    <MSBuild Projects="Controls\FileBrowser\FileBrowser.vbproj" Targets="Rebuild" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Mixed Platforms') ">
+      <Output TaskParameter="TargetOutputs" ItemName="FileBrowserBuildOutput" />
+    </MSBuild>
+    <Message Text="The project &quot;FileBrowser&quot; is not selected for building in solution configuration &quot;Release|.NET&quot;." Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == '.NET') " />
+    <MSBuild Projects="Controls\FileBrowser\FileBrowser.vbproj" Targets="Rebuild" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') ">
+      <Output TaskParameter="TargetOutputs" ItemName="FileBrowserBuildOutput" />
+    </MSBuild>
+    <MSBuild Projects="Controls\FileBrowser\FileBrowser.vbproj" Targets="Rebuild" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Mixed Platforms') ">
+      <Output TaskParameter="TargetOutputs" ItemName="FileBrowserBuildOutput" />
+    </MSBuild>
+  </Target>
+  <Target Name="FileBrowser:Publish" Condition="'$(CurrentSolutionConfigurationContents)' != ''">
+    <Message Text="The project &quot;FileBrowser&quot; is not selected for building in solution configuration &quot;Debug|.NET&quot;." Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == '.NET') " />
+    <MSBuild Projects="Controls\FileBrowser\FileBrowser.vbproj" Targets="Publish" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') " />
+    <MSBuild Projects="Controls\FileBrowser\FileBrowser.vbproj" Targets="Publish" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Mixed Platforms') " />
+    <Message Text="The project &quot;FileBrowser&quot; is not selected for building in solution configuration &quot;Release|.NET&quot;." Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == '.NET') " />
+    <MSBuild Projects="Controls\FileBrowser\FileBrowser.vbproj" Targets="Publish" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') " />
+    <MSBuild Projects="Controls\FileBrowser\FileBrowser.vbproj" Targets="Publish" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Mixed Platforms') " />
+  </Target>
+  <Target Name="Build" Condition="'$(CurrentSolutionConfigurationContents)' != ''" Outputs="@(CollectedBuildOutput)">
+    <MSBuild Condition="@(BuildLevel0) != ''" Projects="@(BuildLevel0)" Properties="Configuration=%(Configuration); Platform=%(Platform); BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" BuildInParallel="true" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)">
+      <Output TaskParameter="TargetOutputs" ItemName="CollectedBuildOutput" />
+    </MSBuild>
+    <Message Text="The project &quot;%(SkipLevel0.Identity)&quot; is not selected for building in solution configuration &quot;$(Configuration)|$(Platform)&quot;." Condition="@(SkipLevel0) != ''" />
+    <Warning Text="The project configuration for project &quot;%(MissingConfigLevel0.Identity)&quot; was not specified in the solution file for the solution configuration &quot;$(Configuration)|$(Platform)&quot;." Code="MSB4121" HelpKeyword="MSBuild.SolutionProjectConfigurationMissing" Condition="@(MissingConfigLevel0) != ''" />
+    <MSBuild Condition="@(BuildLevel1) != ''" Projects="@(BuildLevel1)" Properties="Configuration=%(Configuration); Platform=%(Platform); BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" BuildInParallel="true" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)">
+      <Output TaskParameter="TargetOutputs" ItemName="CollectedBuildOutput" />
+    </MSBuild>
+    <Message Text="The project &quot;%(SkipLevel1.Identity)&quot; is not selected for building in solution configuration &quot;$(Configuration)|$(Platform)&quot;." Condition="@(SkipLevel1) != ''" />
+    <Warning Text="The project configuration for project &quot;%(MissingConfigLevel1.Identity)&quot; was not specified in the solution file for the solution configuration &quot;$(Configuration)|$(Platform)&quot;." Code="MSB4121" HelpKeyword="MSBuild.SolutionProjectConfigurationMissing" Condition="@(MissingConfigLevel1) != ''" />
+    <MSBuild Condition="@(BuildLevel2) != ''" Projects="@(BuildLevel2)" Properties="Configuration=%(Configuration); Platform=%(Platform); BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" BuildInParallel="true" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)">
+      <Output TaskParameter="TargetOutputs" ItemName="CollectedBuildOutput" />
+    </MSBuild>
+    <Message Text="The project &quot;%(SkipLevel2.Identity)&quot; is not selected for building in solution configuration &quot;$(Configuration)|$(Platform)&quot;." Condition="@(SkipLevel2) != ''" />
+    <Warning Text="The project configuration for project &quot;%(MissingConfigLevel2.Identity)&quot; was not specified in the solution file for the solution configuration &quot;$(Configuration)|$(Platform)&quot;." Code="MSB4121" HelpKeyword="MSBuild.SolutionProjectConfigurationMissing" Condition="@(MissingConfigLevel2) != ''" />
+    <CallTarget Targets="WebControlsTest" RunEachTargetSeparately="true" />
+  </Target>
+  <Target Name="Clean" Condition="'$(CurrentSolutionConfigurationContents)' != ''">
+    <MSBuild Condition="@(BuildLevel0) != ''" Projects="@(BuildLevel0)" Properties="Configuration=%(Configuration); Platform=%(Platform); BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" Targets="Clean" ToolsVersion="$(ProjectToolsVersion)" BuildInParallel="true" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" />
+    <Message Text="The project &quot;%(SkipLevel0.Identity)&quot; is not selected for building in solution configuration &quot;$(Configuration)|$(Platform)&quot;." Condition="@(SkipLevel0) != ''" />
+    <Warning Text="The project configuration for project &quot;%(MissingConfigLevel0.Identity)&quot; was not specified in the solution file for the solution configuration &quot;$(Configuration)|$(Platform)&quot;." Code="MSB4121" HelpKeyword="MSBuild.SolutionProjectConfigurationMissing" Condition="@(MissingConfigLevel0) != ''" />
+    <MSBuild Condition="@(BuildLevel1) != ''" Projects="@(BuildLevel1)" Properties="Configuration=%(Configuration); Platform=%(Platform); BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" Targets="Clean" ToolsVersion="$(ProjectToolsVersion)" BuildInParallel="true" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" />
+    <Message Text="The project &quot;%(SkipLevel1.Identity)&quot; is not selected for building in solution configuration &quot;$(Configuration)|$(Platform)&quot;." Condition="@(SkipLevel1) != ''" />
+    <Warning Text="The project configuration for project &quot;%(MissingConfigLevel1.Identity)&quot; was not specified in the solution file for the solution configuration &quot;$(Configuration)|$(Platform)&quot;." Code="MSB4121" HelpKeyword="MSBuild.SolutionProjectConfigurationMissing" Condition="@(MissingConfigLevel1) != ''" />
+    <MSBuild Condition="@(BuildLevel2) != ''" Projects="@(BuildLevel2)" Properties="Configuration=%(Configuration); Platform=%(Platform); BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" Targets="Clean" ToolsVersion="$(ProjectToolsVersion)" BuildInParallel="true" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" />
+    <Message Text="The project &quot;%(SkipLevel2.Identity)&quot; is not selected for building in solution configuration &quot;$(Configuration)|$(Platform)&quot;." Condition="@(SkipLevel2) != ''" />
+    <Warning Text="The project configuration for project &quot;%(MissingConfigLevel2.Identity)&quot; was not specified in the solution file for the solution configuration &quot;$(Configuration)|$(Platform)&quot;." Code="MSB4121" HelpKeyword="MSBuild.SolutionProjectConfigurationMissing" Condition="@(MissingConfigLevel2) != ''" />
+    <CallTarget Targets="WebControlsTest:Clean" RunEachTargetSeparately="true" />
+    <Delete Files="Libs.sln.cache" />
+  </Target>
+  <Target Name="Rebuild" Condition="'$(CurrentSolutionConfigurationContents)' != ''" Outputs="@(CollectedBuildOutput)">
+    <MSBuild Condition="@(BuildLevel0) != ''" Projects="@(BuildLevel0)" Properties="Configuration=%(Configuration); Platform=%(Platform); BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" Targets="Rebuild" ToolsVersion="$(ProjectToolsVersion)" BuildInParallel="true" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)">
+      <Output TaskParameter="TargetOutputs" ItemName="CollectedBuildOutput" />
+    </MSBuild>
+    <Message Text="The project &quot;%(SkipLevel0.Identity)&quot; is not selected for building in solution configuration &quot;$(Configuration)|$(Platform)&quot;." Condition="@(SkipLevel0) != ''" />
+    <Warning Text="The project configuration for project &quot;%(MissingConfigLevel0.Identity)&quot; was not specified in the solution file for the solution configuration &quot;$(Configuration)|$(Platform)&quot;." Code="MSB4121" HelpKeyword="MSBuild.SolutionProjectConfigurationMissing" Condition="@(MissingConfigLevel0) != ''" />
+    <MSBuild Condition="@(BuildLevel1) != ''" Projects="@(BuildLevel1)" Properties="Configuration=%(Configuration); Platform=%(Platform); BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" Targets="Rebuild" ToolsVersion="$(ProjectToolsVersion)" BuildInParallel="true" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)">
+      <Output TaskParameter="TargetOutputs" ItemName="CollectedBuildOutput" />
+    </MSBuild>
+    <Message Text="The project &quot;%(SkipLevel1.Identity)&quot; is not selected for building in solution configuration &quot;$(Configuration)|$(Platform)&quot;." Condition="@(SkipLevel1) != ''" />
+    <Warning Text="The project configuration for project &quot;%(MissingConfigLevel1.Identity)&quot; was not specified in the solution file for the solution configuration &quot;$(Configuration)|$(Platform)&quot;." Code="MSB4121" HelpKeyword="MSBuild.SolutionProjectConfigurationMissing" Condition="@(MissingConfigLevel1) != ''" />
+    <MSBuild Condition="@(BuildLevel2) != ''" Projects="@(BuildLevel2)" Properties="Configuration=%(Configuration); Platform=%(Platform); BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" Targets="Rebuild" ToolsVersion="$(ProjectToolsVersion)" BuildInParallel="true" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)">
+      <Output TaskParameter="TargetOutputs" ItemName="CollectedBuildOutput" />
+    </MSBuild>
+    <Message Text="The project &quot;%(SkipLevel2.Identity)&quot; is not selected for building in solution configuration &quot;$(Configuration)|$(Platform)&quot;." Condition="@(SkipLevel2) != ''" />
+    <Warning Text="The project configuration for project &quot;%(MissingConfigLevel2.Identity)&quot; was not specified in the solution file for the solution configuration &quot;$(Configuration)|$(Platform)&quot;." Code="MSB4121" HelpKeyword="MSBuild.SolutionProjectConfigurationMissing" Condition="@(MissingConfigLevel2) != ''" />
+    <CallTarget Targets="WebControlsTest:Rebuild" RunEachTargetSeparately="true" />
+  </Target>
+  <Target Name="Publish" Condition="'$(CurrentSolutionConfigurationContents)' != ''">
+    <MSBuild Condition="@(BuildLevel0) != ''" Projects="@(BuildLevel0)" Properties="Configuration=%(Configuration); Platform=%(Platform); BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" Targets="Publish" ToolsVersion="$(ProjectToolsVersion)" BuildInParallel="true" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" />
+    <Message Text="The project &quot;%(SkipLevel0.Identity)&quot; is not selected for building in solution configuration &quot;$(Configuration)|$(Platform)&quot;." Condition="@(SkipLevel0) != ''" />
+    <Warning Text="The project configuration for project &quot;%(MissingConfigLevel0.Identity)&quot; was not specified in the solution file for the solution configuration &quot;$(Configuration)|$(Platform)&quot;." Code="MSB4121" HelpKeyword="MSBuild.SolutionProjectConfigurationMissing" Condition="@(MissingConfigLevel0) != ''" />
+    <MSBuild Condition="@(BuildLevel1) != ''" Projects="@(BuildLevel1)" Properties="Configuration=%(Configuration); Platform=%(Platform); BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" Targets="Publish" ToolsVersion="$(ProjectToolsVersion)" BuildInParallel="true" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" />
+    <Message Text="The project &quot;%(SkipLevel1.Identity)&quot; is not selected for building in solution configuration &quot;$(Configuration)|$(Platform)&quot;." Condition="@(SkipLevel1) != ''" />
+    <Warning Text="The project configuration for project &quot;%(MissingConfigLevel1.Identity)&quot; was not specified in the solution file for the solution configuration &quot;$(Configuration)|$(Platform)&quot;." Code="MSB4121" HelpKeyword="MSBuild.SolutionProjectConfigurationMissing" Condition="@(MissingConfigLevel1) != ''" />
+    <MSBuild Condition="@(BuildLevel2) != ''" Projects="@(BuildLevel2)" Properties="Configuration=%(Configuration); Platform=%(Platform); BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" Targets="Publish" ToolsVersion="$(ProjectToolsVersion)" BuildInParallel="true" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" />
+    <Message Text="The project &quot;%(SkipLevel2.Identity)&quot; is not selected for building in solution configuration &quot;$(Configuration)|$(Platform)&quot;." Condition="@(SkipLevel2) != ''" />
+    <Warning Text="The project configuration for project &quot;%(MissingConfigLevel2.Identity)&quot; was not specified in the solution file for the solution configuration &quot;$(Configuration)|$(Platform)&quot;." Code="MSB4121" HelpKeyword="MSBuild.SolutionProjectConfigurationMissing" Condition="@(MissingConfigLevel2) != ''" />
+    <CallTarget Targets="WebControlsTest:Publish" RunEachTargetSeparately="true" />
+  </Target>
+</Project>

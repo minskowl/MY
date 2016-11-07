@@ -1,0 +1,226 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="..\..\JavaDoc.css">
+  </head>
+  <body>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td>
+                <a href="namespace-summary.html">Namespace</a> </td>
+              <td class="nav1sel"> Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV TYPE    NEXT TYPE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+      <tr class="nav2">
+        <td>SUMMARY: INNER | FIELD | <a href="#constructor-summary">CONST</a> | PROP | <a href="#method-summary">METHOD</a> | OP | EVENT</td>
+        <td>DETAIL: FIELD | <a href="#constructor-detail">CONST</a> | PROP | <a href="#method-detail">METHOD</a> | OP | EVENT</td>
+      </tr>
+    </table>
+    <hr>
+    <h2>
+      <span class="namespaceName">NVelocity.Http</span>
+      <br>
+      <span class="className">Class NVelocityHandlerFactory</span>
+    </h2>
+    <p>
+            Factory class that creates a handler object based on a request
+            for either abc.aspx or xyz.aspx as specified in the Web.config file.
+            </p>
+    <a name="field-summary">
+    </a>
+    <a name="constructor-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Constructor Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="constructor" valign="top">
+          <a href="#NVelocity.Http.NVelocityHandlerFactory.#ctor">NVelocityHandlerFactory</a>()<br>        Initializes a new instance of the NVelocityHandlerFactory class.</td>
+      </tr>
+    </table>
+    <br>
+    <a name="property-summary">
+    </a>
+    <a name="method-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Method Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="returnType" valign="top">System.Web.IHttpHandler</td>
+        <td class="method">
+          <a href="#NVelocity.Http.NVelocityHandlerFactory.GetHandler(System.Web.HttpContext,System.String,System.String,System.String)">GetHandler</a>(System.Web.HttpContext context, string requestType, string url, string pathTranslated)<br>        
+            IHttpHandlerFactory method to
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.Http.NVelocityHandlerFactory.ReleaseHandler(System.Web.IHttpHandler)">ReleaseHandler</a>(System.Web.IHttpHandler handler)<br>        
+            IHttpHandlerFactory must override method
+            </td>
+      </tr>
+    </table>
+    <br>
+    <table class="subtable" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Methods inherited from class System.Object</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>
+          <a href="..\..\NVelocity/Http/NVelocityHandlerFactory/Equals(System.html#Object)">Equals</a>, <a href="..\..\NVelocity/Http/NVelocityHandlerFactory.html#Finalize">Finalize</a>, <a href="..\..\NVelocity/Http/NVelocityHandlerFactory.html#GetHashCode">GetHashCode</a>, <a href="..\..\NVelocity/Http/NVelocityHandlerFactory.html#GetType">GetType</a>, <a href="..\..\NVelocity/Http/NVelocityHandlerFactory.html#MemberwiseClone">MemberwiseClone</a>, <a href="..\..\NVelocity/Http/NVelocityHandlerFactory.html#ToString">ToString</a></td>
+      </tr>
+    </table>
+    <br>
+    <a name="operator-summary">
+    </a>
+    <a name="event-summary">
+    </a>
+    <br>
+    <a name="field-detail">
+    </a>
+    <a name="constructor-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Constructor Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.Http.NVelocityHandlerFactory.#ctor">
+    </a>
+    <h3>NVelocityHandlerFactory</h3>
+    <pre>public NVelocityHandlerFactory()</pre>
+    <dl>
+      <dd>
+        <p>Initializes a new instance of the NVelocityHandlerFactory class.</p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="property-detail">
+    </a>
+    <a name="method-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Method Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.Http.NVelocityHandlerFactory.GetHandler(System.Web.HttpContext,System.String,System.String,System.String)">
+    </a>
+    <h3>GetHandler</h3>
+    <pre>public System.Web.IHttpHandler GetHandler(System.Web.HttpContext context,
+                                          string requestType,
+                                          string url,
+                                          string pathTranslated)</pre>
+    <dl>
+      <dd>
+        <p>
+            IHttpHandlerFactory method to
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>context</code> - </dd>
+          <dd>
+            <code>requestType</code> - </dd>
+          <dd>
+            <code>url</code> - </dd>
+          <dd>
+            <code>pathTranslated</code> - </dd>
+        </dl>
+        <b>Returns:</b>
+        <dl>
+          <dd>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Http.NVelocityHandlerFactory.ReleaseHandler(System.Web.IHttpHandler)">
+    </a>
+    <h3>ReleaseHandler</h3>
+    <pre>public void ReleaseHandler(System.Web.IHttpHandler handler)</pre>
+    <dl>
+      <dd>
+        <p>
+            IHttpHandlerFactory must override method
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>handler</code> - </dd>
+        </dl>
+      </dd>
+    </dl>
+    <a name="operator-detail">
+    </a>
+    <a name="event-detail">
+    </a>
+    <hr>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td>
+                <a href="namespace-summary.html">Namespace</a> </td>
+              <td class="nav1sel"> Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV TYPE    NEXT TYPE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+      <tr class="nav2">
+        <td>SUMMARY: INNER | FIELD | <a href="#constructor-summary">CONST</a> | PROP | <a href="#method-summary">METHOD</a> | OP | EVENT</td>
+        <td>DETAIL: FIELD | <a href="#constructor-detail">CONST</a> | PROP | <a href="#method-detail">METHOD</a> | OP | EVENT</td>
+      </tr>
+    </table>
+  </body>
+</html>

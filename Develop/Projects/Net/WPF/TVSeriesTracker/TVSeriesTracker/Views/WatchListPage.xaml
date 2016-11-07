@@ -1,0 +1,134 @@
+﻿<Controls1:PageEx x:Class="TVSeriesTracker.Views.WatchListPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:Controls="clr-namespace:Savchin.Wpf.Controls;assembly=Savchin.Wpf.Controls"
+      xmlns:loc="clr-namespace:Savchin.Wpf.Controls.Localization;assembly=Savchin.Wpf.Controls"
+      xmlns:Converters="clr-namespace:TVSeriesTracker.Converters"
+      xmlns:Controls1="clr-namespace:TVSeriesTracker.Controls"
+                  
+                  mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+	Title="WatchListPage" Style="{StaticResource PageStyle}">
+    <Page.Resources>
+        <Converters:SummaryWidthConverter Delta="240" x:Key="SummaryWidthConverter"/>
+        <Converters:HasWatchedConverter x:Key="HasWatchedConverter"/>
+
+
+        <DataTemplate x:Key="PersonandStatusTemplate">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{Binding }" Margin="0 0 10 0" />
+                <TextBlock Style="{StaticResource ViewSymbolStyle}"
+                           Visibility="{Binding IsLastWatched, Converter={StaticResource BoolToVisibilityConverter}}"/>
+                <StackPanel.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem Header="Mark as watched"
+                                  Command="{Binding MarkWatchedCommand}"
+                                  CommandParameter="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ContextMenu}}, Path=PlacementTarget.DataContext}"/>
+                    </ContextMenu>
+                </StackPanel.ContextMenu>
+            </StackPanel>
+        </DataTemplate>
+
+
+        <HierarchicalDataTemplate x:Key="seasonTemplate" ItemsSource="{Binding Path=Items}" ItemTemplate="{StaticResource PersonandStatusTemplate}">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{Binding Path=Name}" FontWeight="Bold" Margin="0,0,5,0"/>
+                <TextBlock Text="N" Style="{StaticResource SymbolStyle}"
+                           Visibility="{Binding Items, Converter={StaticResource HasWatchedConverter}}"/>
+            </StackPanel>
+        </HierarchicalDataTemplate>
+    </Page.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0"  >
+                <TextBlock Style="{StaticResource Title}">
+                  <TextBlock Text="{loc:Translate WatchList}"/>
+                <Hyperlink NavigateUri="SearchPage.xaml"><TextBlock Text="{loc:Translate Search}"/></Hyperlink>
+                <Hyperlink NavigateUri="SettingsPage.xaml"><TextBlock Text="{loc:Translate Settings}"/></Hyperlink>
+                </TextBlock>
+            </StackPanel>
+
+            <ComboBox Grid.Column="2" ItemsSource="{Binding Modes}" SelectedItem="{Binding SelectedMode, Mode=TwoWay}"/>
+        </Grid>
+
+
+        <ListBox Grid.Row="1"  ItemsSource="{Binding Path=Items}" ScrollViewer.CanContentScroll="False">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="200"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Grid.Row="0"  Grid.Column="0" Text="{loc:Translate Title}"/>
+
+                        <TextBlock Grid.Row="0"  Grid.Column="1" >
+                            <Controls:HyperlinkEx NavigateUri="{Binding Imdb_url}" IsExternal="True">
+                                <TextBlock Text="{Binding Title}"/>
+                            </Controls:HyperlinkEx>
+                        </TextBlock>
+
+                        <Image Grid.Row="0"  Grid.Column="2" Grid.RowSpan="10"  VerticalAlignment="Top"
+                               Source="{Binding Poster}" Margin="5 0 0 0"/>
+
+
+                        <TextBlock Grid.Row="1"  Grid.Column="0" Text="{loc:Translate Rating}"/>
+                        <TextBlock Grid.Row="1"  Grid.Column="1" Text="{Binding Rating}"/>
+
+                        <TextBlock Grid.Row="2"  Grid.Column="0" Text="{loc:Translate  Year}"/>
+                        <TextBlock Grid.Row="2"  Grid.Column="1" Text="{Binding Year}"/>
+
+                        <TextBlock Grid.Row="3"  Grid.Column="0" Text="{loc:Translate Type}"/>
+                        <TextBlock Grid.Row="3"  Grid.Column="1" Text="{Binding Type}"/>
+
+                        <TextBlock Grid.Row="4"  Grid.Column="0" Text="{loc:Translate Genres}"/>
+                        <TextBlock Grid.Row="4"  Grid.Column="1" Text="{Binding Genres}"/>
+
+                        <TextBlock Grid.Row="5"  Grid.Column="0">Id</TextBlock>
+                        <TextBlock Grid.Row="5"  Grid.Column="1" Text="{Binding Imdb_id}"/>
+
+                        <TextBlock Grid.Row="6"  Grid.Column="0" Text="{loc:Translate  Summary}"/>
+                        <TextBlock Grid.Row="7"  Grid.Column="0" Grid.ColumnSpan="2" Text="{Binding Plot_simple}" TextWrapping="Wrap"
+                                   Width="{Binding Path=ActualWidth,  RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type ListBox}},Converter={StaticResource SummaryWidthConverter}}"/>
+
+                        <Expander Grid.Row="8"  Grid.Column="0" Grid.ColumnSpan="2"
+                                  Visibility="{Binding EpisodesView,Converter={StaticResource NullToColapsedConverter}}">
+                            <Expander.Header>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{loc:Translate Episodes}" Margin="5"/>
+                                    <TextBlock Margin="5" Style="{StaticResource EpisodeSymbolStyle}" Visibility="{Binding HasNewEpisodes,Converter={StaticResource BoolToVisibilityConverter}}"/>
+                                </StackPanel>
+                            </Expander.Header>
+                            <Controls:TreeViewEx Grid.Row="8"  Grid.Column="1" 
+                                                 ItemTemplate="{StaticResource seasonTemplate}"  ItemsSource="{Binding EpisodesView.Groups}" />
+                        </Expander>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
+</Controls1:PageEx>

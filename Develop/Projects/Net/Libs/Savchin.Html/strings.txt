@@ -1,0 +1,16 @@
+badAttr=Unknown attribute
+noTagName=Unnamed HTML tag
+etHasSpaces=Spaces in a closing tag
+orphanET=Ending tag cannot be a closed (stand-alone)
+tagMismatch=Unmatched HTML tag {0} at line {1}
+outOfRange=Specified argument was out of the range of valid values.
+htwDisposed=HtmlTextWriter instance has been disposed
+readOnlyCollection=This is a read-only collection and can not be modified
+collModified=Collection was modified; enumeration operation may not execute.
+tagUnknown=Undefined HTML token type
+orphanAttr=Cannot write attribute outside of tag
+attrOOR=Attribute index is out of bounds
+badEntity=Unknown HTML entity
+htrDisposed=HtmlTextReader instanse has been disposed
+noItem=Cannot remove the specified item because it was not found in the specified collection
+noRoom=Destination array was not long enough

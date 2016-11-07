@@ -1,0 +1,115 @@
+using System;
+
+namespace Savchin.Forms.Docking.Win32
+{
+
+
+
+	internal enum WindowStyles : uint
+	{
+		WS_OVERLAPPED       = 0x00000000,
+		WS_POPUP            = 0x80000000,
+		WS_CHILD            = 0x40000000,
+		WS_MINIMIZE         = 0x20000000,
+		WS_VISIBLE          = 0x10000000,
+		WS_DISABLED         = 0x08000000,
+		WS_CLIPSIBLINGS     = 0x04000000,
+		WS_CLIPCHILDREN     = 0x02000000,
+		WS_MAXIMIZE         = 0x01000000,
+		WS_CAPTION          = 0x00C00000,
+		WS_BORDER           = 0x00800000,
+		WS_DLGFRAME         = 0x00400000,
+		WS_VSCROLL          = 0x00200000,
+		WS_HSCROLL          = 0x00100000,
+		WS_SYSMENU          = 0x00080000,
+		WS_THICKFRAME       = 0x00040000,
+		WS_GROUP            = 0x00020000,
+		WS_TABSTOP          = 0x00010000,
+		WS_MINIMIZEBOX      = 0x00020000,
+		WS_MAXIMIZEBOX      = 0x00010000,
+		WS_TILED            = 0x00000000,
+		WS_ICONIC           = 0x20000000,
+		WS_SIZEBOX          = 0x00040000,
+		WS_POPUPWINDOW      = 0x80880000,
+		WS_OVERLAPPEDWINDOW = 0x00CF0000,
+		WS_TILEDWINDOW      = 0x00CF0000,
+		WS_CHILDWINDOW      = 0x40000000
+	}
+
+	internal enum WindowExStyles
+	{
+		WS_EX_DLGMODALFRAME     = 0x00000001,
+		WS_EX_NOPARENTNOTIFY    = 0x00000004,
+		WS_EX_TOPMOST           = 0x00000008,
+		WS_EX_ACCEPTFILES       = 0x00000010,
+		WS_EX_TRANSPARENT       = 0x00000020,
+		WS_EX_MDICHILD          = 0x00000040,
+		WS_EX_TOOLWINDOW        = 0x00000080,
+		WS_EX_WINDOWEDGE        = 0x00000100,
+		WS_EX_CLIENTEDGE        = 0x00000200,
+		WS_EX_CONTEXTHELP       = 0x00000400,
+		WS_EX_RIGHT             = 0x00001000,
+		WS_EX_LEFT              = 0x00000000,
+		WS_EX_RTLREADING        = 0x00002000,
+		WS_EX_LTRREADING        = 0x00000000,
+		WS_EX_LEFTSCROLLBAR     = 0x00004000,
+		WS_EX_RIGHTSCROLLBAR    = 0x00000000,
+		WS_EX_CONTROLPARENT     = 0x00010000,
+		WS_EX_STATICEDGE        = 0x00020000,
+		WS_EX_APPWINDOW         = 0x00040000,
+		WS_EX_OVERLAPPEDWINDOW  = 0x00000300,
+		WS_EX_PALETTEWINDOW     = 0x00000188,
+		WS_EX_LAYERED			= 0x00080000
+	}
+
+
+
+	internal enum HitTest
+	{
+		HTERROR			= -2,
+		HTTRANSPARENT   = -1,
+		HTNOWHERE		= 0,
+		HTCLIENT		= 1,
+		HTCAPTION		= 2,
+		HTSYSMENU		= 3,
+		HTGROWBOX		= 4,
+		HTSIZE			= 4,
+		HTMENU			= 5,
+		HTHSCROLL		= 6,
+		HTVSCROLL		= 7,
+		HTMINBUTTON		= 8,
+		HTMAXBUTTON		= 9,
+		HTLEFT			= 10,
+		HTRIGHT			= 11,
+		HTTOP			= 12,
+		HTTOPLEFT		= 13,
+		HTTOPRIGHT		= 14,
+		HTBOTTOM		= 15,
+		HTBOTTOMLEFT	= 16,
+		HTBOTTOMRIGHT	= 17,
+		HTBORDER		= 18,
+		HTREDUCE		= 8,
+		HTZOOM			= 9 ,
+		HTSIZEFIRST		= 10,
+		HTSIZELAST		= 17,
+		HTOBJECT		= 19,
+		HTCLOSE			= 20,
+		HTHELP			= 21
+	}
+
+	internal enum ScrollBars : uint
+	{
+		SB_HORZ = 0,
+		SB_VERT = 1,
+		SB_CTL = 2,
+		SB_BOTH = 3
+	}
+
+	internal enum GetWindowLongIndex : int
+	{
+		GWL_STYLE = -16,
+		GWL_EXSTYLE = -20
+	}
+
+
+}

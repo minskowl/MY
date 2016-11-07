@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PDGenerateProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <OutputPath>E:\tmp\</OutputPath>
+  <Properties>
+    <Property Name="namespace" Value="MarketResearch" />
+  </Properties>
+  <TemplatePath>E:\Projects\Net\BussinesFramework\Resorces\Templates</TemplatePath>
+  <Generations>
+    <Generation TemplateFile="entitydaotest.tcs" DestinationFile="{0}DaoTests.cs" toOutput="false" DestinationDirectory="..\..\MarketResearchLibraryTest\Dao\" SolutionPath="MarketResearchSoftware\Bussiness Framework\MarketResearchLibraryTest\Dao" />
+    <Generation TemplateFile="abstractdao.tcs" DestinationFile="Abstract{0}DAO.cs" toOutput="false" DestinationDirectory="..\..\DAO\DAO\" SolutionPath="MarketResearchSoftware\Bussiness Framework\DAO\DAO" />
+    <Generation TemplateFile="entitydao.tcs" DestinationFile="{0}Dao.cs" toOutput="false" DestinationDirectory="..\..\MarketResearchLibrary\Dao\" SolutionPath="MarketResearchSoftware\Bussiness Framework\MarketResearchLibrary\Dao" />
+    <Generation TemplateFile="ientity.tcs" DestinationFile="I{0}.cs" toOutput="false" DestinationDirectory="..\..\mrsExceptions\Interfaces\Entities\" SolutionPath="MarketResearchSoftware\Bussiness Framework\mrsShared\Interfaces\Entities" />
+    <Generation TemplateFile="entity.tcs" DestinationFile="{0}.cs" toOutput="false" DestinationDirectory="..\..\MarketResearchLibrary\Entities\" SolutionPath="MarketResearchSoftware\Bussiness Framework\MarketResearchLibrary\Entities" />
+    <Generation TemplateFile="entitybase.tcs" DestinationFile="{0}Base.cs" toOutput="true" DestinationDirectory="..\..\DAO\Entities\" SolutionPath="MarketResearchSoftware\Bussiness Framework\DAO\Entities" />
+    <Generation TemplateFile="entitymock.tcs" DestinationFile="Mock{0}.cs" toOutput="false" DestinationDirectory="..\..\MarketResearchLibraryTest\Dao\MockEntities\" SolutionPath="MarketResearchSoftware\Bussiness Framework\MarketResearchLibraryTest\Dao\MockEntities" />
+    <Generation TemplateFile="entitypool.tcs" DestinationFile="{0}Pool.cs" toOutput="false" DestinationDirectory="..\..\MarketResearchLibrary\Pool\" SolutionPath="MarketResearchSoftware\Bussiness Framework\MarketResearchLibrary\Pool" />
+    <Generation TemplateFile="entitycollection.tcs" DestinationFile="{0}Collection.cs" toOutput="false" DestinationDirectory="..\..\MarketResearchLibrary\Collection\" SolutionPath="MarketResearchSoftware\Bussiness Framework\MarketResearchLibrary\Collection" />
+    <Generation TemplateFile="ientitycollection.tcs" DestinationFile="I{0}Collection.cs" toOutput="false" DestinationDirectory="..\..\mrsExceptions\Interfaces\Collections\" SolutionPath="MarketResearchSoftware\Bussiness Framework\mrsShared\Interfaces\Collections" />
+    <Generation TemplateFile="entitycollectiontests.tcs" DestinationFile="{0}CollectionTests.cs" toOutput="false" DestinationDirectory="..\..\MarketResearchLibraryTest\BusinessLogic\DbTests" SolutionPath="MarketResearchSoftware\Bussiness Framework\MarketResearchLibraryTest\BusinessLogic\DbTests" />
+  </Generations>
+  <PDModelFile />
+  <SolutionFile>D:\work\MRS\MarketResearchSoftware\MarketResearchSoftware.sln</SolutionFile>
+</PDGenerateProject>

@@ -1,0 +1,30 @@
+﻿<Window x:Class="TVSeriesTracker.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:NotifyIcon="clr-namespace:Savchin.Wpf.Controls.NotifyIcon;assembly=Savchin.Wpf.Controls"
+        xmlns:loc="clr-namespace:Savchin.Wpf.Controls.Localization;assembly=Savchin.Wpf.Controls"
+        xmlns:Converters="clr-namespace:Savchin.Wpf.Converters;assembly=Savchin.WPF.Tools"
+        Title="TV Series Tracker" Height="650" Width="725" WindowStartupLocation="CenterScreen" Style="{StaticResource WindowStyle}" Icon="Project.ico"
+        Visibility="{Binding Visibility, Mode=TwoWay}">
+    <Control.Resources>
+        <Converters:InvertedVisibilityConverter x:Key="InvertedVisibilityConverter"/>
+    </Control.Resources>
+    <Grid>
+        <Frame  Source="{Binding DisplayPage}"/>
+        <NotifyIcon:TaskbarIcon x:Name="NotifyIcon" IconSource="Project.ico" 
+                                Visibility="{Binding Visibility,Converter={StaticResource InvertedVisibilityConverter}}"
+                                DoubleClickCommand="{Binding ShowCommand}">
+            <NotifyIcon:TaskbarIcon.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="{loc:Translate Show}" Command="{Binding ShowCommand}"/>
+                    <MenuItem Header="{loc:Translate Settings}" Command="{Binding SettingsCommand}"/>
+                    <MenuItem Header="{loc:Translate CheckNewSeries}" Command="{Binding CheckNewSeriesCommand}"/>
+                    <Separator/>
+                    <MenuItem Header="{loc:Translate Exit}" Command="{Binding ExitCommand}" />
+                   
+                </ContextMenu>
+            </NotifyIcon:TaskbarIcon.ContextMenu>
+        </NotifyIcon:TaskbarIcon>
+
+    </Grid>
+</Window>

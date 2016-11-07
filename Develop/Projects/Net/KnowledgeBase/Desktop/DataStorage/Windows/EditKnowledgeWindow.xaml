@@ -1,0 +1,50 @@
+﻿<Window x:Class="KnowledgeBase.Desktop.Windows.EditKnowledgeWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+
+        xmlns:cn="clr-namespace:KnowledgeBase.Desktop.Controls"
+        xmlns:Controls="clr-namespace:KnowledgeBase.Controls;assembly=KnowledgeBase.Controls"
+        Title="EditKnowledgeWindow" Height="600" Width="750" MinWidth="600"
+        WindowStartupLocation="CenterOwner"
+        DataContextChanged="OnDataContextChanged"
+        >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="25"/>
+        </Grid.RowDefinitions>
+        <TabControl Grid.Row="0" >
+            <TabItem Header="General">
+                <StackPanel Grid.Row="0">
+                    <Controls:ErrorLabel Text="Title" />
+                    <TextBox Name="boxTitle" Text="{Binding Entity.Title, Mode=TwoWay, UpdateSourceTrigger=Explicit}"/>
+                    <cn:CategorySelector Value="{Binding Entity.CategoryID, Mode=TwoWay, UpdateSourceTrigger=Explicit}"/>
+
+                    <Controls:ErrorLabel Text="Keywords"  />
+                    <cn:KeywordSelector  Height="200" DataContext="{Binding Keywords}"/>
+                    <StackPanel Orientation="Horizontal">
+                        <Controls:ErrorLabel Text="Type" PropertyName="KnowledgeType" />
+                        <ComboBox  MinWidth="100" ItemsSource="{Binding Types}" SelectedItem="{Binding Entity.KnowledgeType}" />
+                        <Controls:ErrorLabel Text="Status" PropertyName="KnowledgeStatus" />
+                        <ComboBox  MinWidth="100" ItemsSource="{Binding Statuses}" SelectedItem="{Binding Entity.KnowledgeStatus}"/>
+                    </StackPanel>
+                </StackPanel>
+            </TabItem>
+            <TabItem x:Name="tabSummary" Header="Summary" >
+                
+            </TabItem>
+            <TabItem Header="Knowledge Files">
+                <cn:FileListControl DataContext="{Binding Files}"/>
+            </TabItem>
+            <TabItem Header="User Files">
+                <cn:FileListControl x:Name="listUserFiles" />
+            </TabItem>
+        </TabControl>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button  Content="OK"  IsDefault="True"  Style="{StaticResource Default}" Command="{Binding SaveCommand}" />
+            <Button  Content="Cancel" IsCancel="True" Click="ButtonCancel_Click"  Style="{StaticResource Default}" />
+        </StackPanel>
+
+    </Grid>
+</Window>

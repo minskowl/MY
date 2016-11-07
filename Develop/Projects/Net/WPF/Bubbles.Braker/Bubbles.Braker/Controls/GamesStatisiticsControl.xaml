@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="Savchin.Bubbles.Controls.GamesStatisiticsControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:ListViewLayout="clr-namespace:Savchin.Wpf.Controls.ListViewLayout;assembly=Savchin.Wpf.Controls"
+    Height="300" Width="300">
+    <Grid>
+        <ListView x:Name="grid" ListViewLayout:ListViewLayoutManager.Enabled="True">
+            <ListView.View>
+                <GridView>
+                    <GridView.Columns>
+                        <GridViewColumn Header="Shift"  DisplayMemberBinding="{Binding Path=Shift}" 
+                                        ListViewLayout:SortedColumn.SortExpression="Shift"  Width="100"  />
+                         <GridViewColumn Header="Games"  DisplayMemberBinding="{Binding Path=Games}" 
+                                         ListViewLayout:SortedColumn.SortExpression="Games" Width="50" />
+                        <GridViewColumn Header="Hi"  DisplayMemberBinding="{Binding Path=Hi}" 
+                                        ListViewLayout:SortedColumn.SortExpression="Hi" Width="50"   />
+                        <GridViewColumn Header="Average"  DisplayMemberBinding="{Binding Path=Average}" 
+                                        ListViewLayout:SortedColumn.SortExpression="Average" Width="50"   />
+                    </GridView.Columns>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</UserControl>

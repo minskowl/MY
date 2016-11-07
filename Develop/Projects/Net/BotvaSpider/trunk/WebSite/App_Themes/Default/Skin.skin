@@ -1,0 +1,48 @@
+
+<bot:HelpTip   runat="server"  ImageUrl="images/help_14.gif"/>
+
+
+<bot:GridViewEx runat="server" SkinId="View" AllowSorting="True" AutoGenerateColumns="False" 
+GridLines="None" CellPadding="4" CssClass="grdBody"  
+SortAscImageUrl="~/App_Themes/images/arrow-up.png" SortDescImageUrl="~/App_Themes/images/arrow-down.png"
+>
+        <PagerStyle  ForeColor="Black"  CssClass="grdPager"  />
+        <RowStyle CssClass="grdRow" />
+        <EditRowStyle CssClass="grdEditRow"  />
+        <SelectedRowStyle CssClass="grdSelRow" />
+        <AlternatingRowStyle CssClass="grdAltRow" />  
+        <HeaderStyle  CssClass="grdHeader" ForeColor="Black"  />
+        <FooterStyle  CssClass="grdFooter" />
+</bot:GridViewEx>
+
+<asp:Button runat="server" Width="85px" />
+<bot:CancelButton runat="server" Mode="Button" Text="Cancel" AlternateText="Cancel"  ImageUrl = "/images/cancel_16.png"  />
+
+
+
+<bot:SaveButton  runat="server" Mode="Button" Text="Save" AlternateText="Save" Width="70px" />
+    
+
+<bot:HeaderPage  runat="server" CssClass="HeaderPage"/>
+<bot:headerparagraph  runat="server" CssClass="HeaderParagraph" SkinId="Header" />
+<bot:headerparagraph  runat="server" CssClass="TodayHeader" SkinId="Today" />
+<bot:HeaderItem  runat="server" CssClass="HeaderItem" />
+
+
+<asp:TextBox  runat="server" Width="200px"/>
+<asp:TextBox  SkinId="Wide" runat="server" Width="400px" />
+<asp:TextBox  SkinId="Full" runat="server" Width="100%" />
+<asp:TextBox  SkinId="Multi" runat="server"  Width="250px"/>
+<asp:TextBox  SkinId="Custom" runat="server"/>
+
+<bot:TextBoxEx  runat="server" Width="200px"/>
+<bot:TextBoxEx  SkinId="Wide" runat="server" Width="400px" />
+<bot:TextBoxEx  SkinId="Full" runat="server" Width="100%" />
+<bot:TextBoxEx  SkinId="Multi" runat="server"  Width="250px"/>
+<bot:TextBoxEx  SkinId="Custom" runat="server"/>
+
+<asp:DropDownList runat="server" Width="200px"/>
+<asp:DropDownList runat="server" SkinId="Custom" />
+
+<bot:DropPanelButton runat="server" PanelBorderColor="#FFBD99"  />
+

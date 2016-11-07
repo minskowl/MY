@@ -1,0 +1,270 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B7FFCE97-BAF9-4E30-A475-63A5E2865186}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Savchin</RootNamespace>
+    <AssemblyName>CodeEditor</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ICSharpCode.AvalonEdit">
+      <HintPath>..\Libs\ICSharpCode.AvalonEdit.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.Core">
+      <HintPath>..\Libs\ICSharpCode.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.NRefactory">
+      <HintPath>..\Libs\ICSharpCode.NRefactory.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpDevelop.Dom">
+      <HintPath>..\Libs\ICSharpCode.SharpDevelop.Dom.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Build" />
+    <Reference Include="Microsoft.Build.Framework" />
+    <Reference Include="Mono.Cecil">
+      <HintPath>..\Libs\Mono.Cecil.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CodeEditor\CSharpBinding\CSharpProjectBinding.cs" />
+    <Compile Include="CodeEditor\CSharpBinding\Parser.cs" />
+    <Compile Include="CodeEditor\EditorControlService.cs" />
+    <Compile Include="CodeEditor\GUI\SdStatusBar.cs" />
+    <Compile Include="CodeEditor\Services\IStatusBarService.cs" />
+    <Compile Include="CodeEditor\Services\Parse\Doozer\ParserDescriptor.cs" />
+    <Compile Include="CodeEditor\Services\Parse\Doozer\ParserDoozer.cs" />
+    <Compile Include="CodeEditor\Services\ProjectBinding\IProjectBinding.cs" />
+    <Compile Include="CodeEditor\Services\ProjectBinding\ProjectBindingDescriptor.cs" />
+    <Compile Include="CodeEditor\Services\ProjectBinding\ProjectBindingDoozer.cs" />
+    <Compile Include="CodeEditor\Services\ProjectBinding\ProjectBindingService.cs" />
+    <Compile Include="CodeEditor\Services\Project\SolutionFolderEventArgs.cs" />
+    <Compile Include="Project\Behaviors\DotNetStartBehavior.cs" />
+    <Compile Include="Project\Behaviors\ProjectBehaviorService.cs" />
+    <Compile Include="Project\CompilableProject.cs" />
+    <Compile Include="Project\CompilerVersion.cs" />
+    <Compile Include="Project\DefaultProjectBehavior.cs" />
+    <Compile Include="Project\IBuildFeedbackSink.cs" />
+    <Compile Include="Project\Items\ComReferenceProjectItem.cs" />
+    <Compile Include="Project\MissingProject.cs" />
+    <Compile Include="Project\MSBuildFileProject.cs" />
+    <Compile Include="Project\ProjectLoadException.cs" />
+    <Compile Include="Project\ProjectPropertyChangedEventArgs.cs" />
+    <Compile Include="Project\ProjectStartException.cs" />
+    <Compile Include="Project\UnknownProject.cs" />
+    <Compile Include="Project\UnknownProjectItem.cs" />
+    <Compile Include="Utils\DotnetDetection.cs" />
+    <Compile Include="Utils\FakeProject.cs" />
+    <Compile Include="Utils\FakeXmlViewContent.cs" />
+    <Page Include="CodeEditor\CodeCompletion\SharpDevelopCompletionWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="CodeEditor\AvaloEdit\IndentationStrategyAdapter.cs" />
+    <Compile Include="CodeEditor\AvaloEdit\AvalonEditDocumentAdapter.cs" />
+    <Compile Include="CodeEditor\AvaloEdit\AvalonEditTextEditorAdapter.cs" />
+    <Compile Include="CodeEditor\AvaloEdit\AvalonEditTextSourceAdapter.cs" />
+    <Compile Include="CodeEditor\CaretAdapter.cs" />
+    <Compile Include="CodeEditor\CodeCompletionEditorAdapter.cs" />
+    <Compile Include="CodeEditor\CodeCompletion\CodeCompletionBinding.cs" />
+    <Compile Include="CodeEditor\CodeCompletion\CodeCompletionDataUsageCache.cs" />
+    <Compile Include="CodeEditor\CodeCompletion\CodeCompletionItemProvider.cs" />
+    <Compile Include="CodeEditor\CodeCompletion\CodeCompletionOptions.cs" />
+    <Compile Include="CodeEditor\CodeCompletion\CommentCompletionItemProvider.cs" />
+    <Compile Include="CodeEditor\CodeCompletion\CompletionContext.cs" />
+    <Compile Include="CodeEditor\CSharpBinding\CSharpCompletionBinding.cs" />
+    <Compile Include="CodeEditor\CodeCompletion\CtrlSpaceCompletionItemProvider.cs" />
+    <Compile Include="CodeEditor\CodeCompletion\ICompletionItem.cs" />
+    <Compile Include="CodeEditor\CodeCompletion\ICompletionItemHandler.cs" />
+    <Compile Include="CodeEditor\CodeCompletion\ICompletionItemList.cs" />
+    <Compile Include="CodeEditor\CodeCompletion\ICompletionWindow.cs" />
+    <Compile Include="CodeEditor\CodeCompletion\IInsightWindow.cs" />
+    <Compile Include="CodeEditor\CodeCompletion\IInsightWindowHandler.cs" />
+    <Compile Include="CodeEditor\CodeCompletion\IndexerInsightProvider.cs" />
+    <Compile Include="CodeEditor\CodeCompletion\MethodInsightItem.cs" />
+    <Compile Include="CodeEditor\CodeCompletion\MethodInsightProvider.cs" />
+    <Compile Include="CodeEditor\CodeCompletion\MyCompletionData.cs" />
+    <Compile Include="CodeEditor\CodeCompletion\NRefactoryCodeCompletionBinding.cs" />
+    <Compile Include="CodeEditor\CodeCompletion\NRefactoryCompletionItemList.cs" />
+    <Compile Include="CodeEditor\CodeCompletion\NRefactoryInsightWindowHandler.cs" />
+    <Compile Include="CodeEditor\CodeCompletion\OverrideCompletionItem.cs" />
+    <Compile Include="CodeEditor\CodeCompletion\OverrideCompletionItemProvider.cs" />
+    <Compile Include="CodeEditor\CodeCompletion\SharpDevelopCompletionWindow.cs" />
+    <Compile Include="CodeEditor\CodeCompletion\SharpDevelopInsightWindow.cs" />
+    <Compile Include="CodeEditor\CodeEditorOptions.cs" />
+    <Compile Include="CodeEditor\Core\DocumentUtilitites.cs" />
+    <Compile Include="CodeEditor\Core\ExtensionMethods.cs" />
+    <Compile Include="CodeEditor\Core\GenericConverter.cs" />
+    <Compile Include="CodeEditor\Core\IImage.cs" />
+    <Compile Include="CodeEditor\Core\ReadOnlyCollectionWrapper.cs" />
+    <Compile Include="CodeEditor\Core\ReadOnlyDocument.cs" />
+    <Compile Include="CodeEditor\Core\WpfSynchronizeInvoke.cs" />
+    <Compile Include="CodeEditor\CSharpBinding\EventHandlerCompletionItemProvider.cs" />
+    <Compile Include="CodeEditor\CustomCommands.cs" />
+    <Compile Include="CodeEditor\CodeCompletion\ICompletionListWindow.cs" />
+    <Compile Include="CodeEditor\GUI\AsynchronousWaitDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CodeEditor\GUI\AsynchronousWaitDialog.designer.cs">
+      <DependentUpon>AsynchronousWaitDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CodeEditor\GUI\BooleanTypeConverter.cs" />
+    <Compile Include="CodeEditor\GUI\ICanBeDirty.cs" />
+    <Compile Include="CodeEditor\GUI\IProgressMonitor.cs" />
+    <Compile Include="CodeEditor\GUI\IViewContent.cs" />
+    <Compile Include="CodeEditor\GUI\IWorkbench.cs" />
+    <Compile Include="CodeEditor\GUI\IWorkbenchWindow.cs" />
+    <Compile Include="CodeEditor\GUI\Localization\LocalizedObject.cs" />
+    <Compile Include="CodeEditor\GUI\Localization\LocalizedPropertyAttribute.cs" />
+    <Compile Include="CodeEditor\GUI\Localization\LocalizedPropertyDescriptor.cs" />
+    <Compile Include="CodeEditor\Core\NativeMethods.cs" />
+    <Compile Include="CodeEditor\GUI\PresentationResourceService.cs" />
+    <Compile Include="CodeEditor\GUI\ProgressCollector.cs" />
+    <Compile Include="CodeEditor\GUI\StringToVisibilityConverter.cs" />
+    <Compile Include="CodeEditor\GUI\WinFormsResourceService.cs" />
+    <Compile Include="CodeEditor\GUI\WorkbenchSingleton.cs" />
+    <Compile Include="CodeEditor\IBracketSearcher.cs" />
+    <Compile Include="CodeEditor\IDocument.cs" />
+    <Compile Include="CodeEditor\IDocumentLine.cs" />
+    <Compile Include="CodeEditor\IFileDocumentProvider.cs" />
+    <Compile Include="CodeEditor\IFormattingStrategy.cs" />
+    <Compile Include="CodeEditor\ITextAnchor.cs" />
+    <Compile Include="CodeEditor\ITextBuffer.cs" />
+    <Compile Include="CodeEditor\ITextEditor.cs" />
+    <Compile Include="CodeEditor\Services\Ambience\AmbienceService.cs" />
+    <Compile Include="CodeEditor\Services\Ambience\CodeDOMGeneratorUtility.cs" />
+    <Compile Include="CodeEditor\Services\Ambience\NetAmbience.cs" />
+    <Compile Include="CodeEditor\Services\ClassBrowserIconService.cs" />
+    <Compile Include="CodeEditor\Services\DisplayBinding\IDisplayBinding.cs" />
+    <Compile Include="CodeEditor\Services\File\FileChangeWatcher.cs" />
+    <Compile Include="CodeEditor\Services\File\FileEventArgs.cs" />
+    <Compile Include="CodeEditor\Services\File\FileRenameEventArgs.cs" />
+    <Compile Include="CodeEditor\Services\File\FileService.cs" />
+    <Compile Include="CodeEditor\Services\File\OpenedFile.cs" />
+    <Compile Include="CodeEditor\Services\File\RecentOpen.cs" />
+    <Compile Include="CodeEditor\Services\LanguageBinding\AggregatedLanguageBinding.cs" />
+    <Compile Include="CodeEditor\Services\LanguageBinding\ILanguageBinding.cs" />
+    <Compile Include="CodeEditor\Services\Parse\AssemblyParserService.cs" />
+    <Compile Include="CodeEditor\Services\Parse\Doozer\ProjectContentRegistryDescriptor.cs" />
+    <Compile Include="CodeEditor\Services\Parse\IParser.cs" />
+    <Compile Include="CodeEditor\Services\Parse\LoadSolutionProjects.cs" />
+    <Compile Include="CodeEditor\Services\Parse\ParseInformationEventArgs.cs" />
+    <Compile Include="CodeEditor\Services\Parse\ParseProjectContent.cs" />
+    <Compile Include="CodeEditor\Services\Parse\ParserService.cs" />
+    <Compile Include="CodeEditor\Services\Project\Items\ProjectReferenceProjectItem.cs" />
+    <Compile Include="CodeEditor\Services\Project\ParseableFileContentFinder.cs" />
+    <Compile Include="CodeEditor\Services\Project\ProjectItemEventArgs.cs" />
+    <Compile Include="CodeEditor\Services\Project\SolutionConfigurationEventArgs.cs" />
+    <Compile Include="CodeEditor\SharpDevelopTextEditor.cs" />
+    <Compile Include="CodeEditor\Workbench.cs" />
+    <Compile Include="Project\AbstractProject.cs" />
+    <Compile Include="Project\Behaviors\DefaultProjectBehavior.cs" />
+    <Compile Include="Project\BuildError.cs" />
+    <Compile Include="Project\BuildOptions.cs" />
+    <Compile Include="Project\BuildResults.cs" />
+    <Compile Include="Project\BuildTarget.cs" />
+    <Compile Include="Project\CSharpProject.cs" />
+    <Compile Include="Project\Enums.cs" />
+    <Compile Include="Project\IProject.cs" />
+    <Compile Include="CodeEditor\Services\Project\IProjectItemBackendStore.cs" />
+    <Compile Include="Project\IProjectChangeWatcher.cs" />
+    <Compile Include="Project\ISolutionFolder.cs" />
+    <Compile Include="CodeEditor\Services\Project\Items\FileProjectItem.cs" />
+    <Compile Include="CodeEditor\Services\Project\Items\ItemType.cs" />
+    <Compile Include="CodeEditor\Services\Project\Items\ProjectItem.cs" />
+    <Compile Include="CodeEditor\Services\Project\ProjectEventHandler.cs" />
+    <Compile Include="CodeEditor\Services\Project\ProjectService.cs" />
+    <Compile Include="CodeEditor\Services\Project\SolutionEventHandler.cs" />
+    <Compile Include="CodeEditor\Services\ServiceNotFoundException.cs" />
+    <Compile Include="CodeEditor\TextChangeEventArgs.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Project\AbstractSolutionFolder.cs" />
+    <Compile Include="Project\ISolutionFolderContainer.cs" />
+    <Compile Include="Project\MSBuildBasedProject.cs" />
+    <Compile Include="Project\MSBuildInternals.cs" />
+    <Compile Include="Project\MSBuildItemWrapper.cs" />
+    <Compile Include="Project\ProjectBehavior.cs" />
+    <Compile Include="Project\ProjectChangeWatcher.cs" />
+    <Compile Include="Project\ProjectCreateInformation.cs" />
+    <Compile Include="Project\ProjectLoadInformation.cs" />
+    <Compile Include="Project\ProjectSection.cs" />
+    <Compile Include="Project\ReferenceProjectItem.cs" />
+    <Compile Include="Project\Solution.cs" />
+    <Compile Include="Project\SolutionFolder.cs" />
+    <Compile Include="Project\SolutionItem.cs" />
+    <Compile Include="Project\SolutionPreferences.cs" />
+    <Compile Include="Project\TargetFramework.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="CodeEditor\Services\Text\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\BitmapResources.resources" />
+    <EmbeddedResource Include="Resources\StringResources.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CSharpBinding.addin">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

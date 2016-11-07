@@ -1,0 +1,236 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="..\..\..\..\JavaDoc.css">
+  </head>
+  <body>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td>
+                <a href="namespace-summary.html">Namespace</a> </td>
+              <td class="nav1sel"> Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV TYPE    NEXT TYPE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+      <tr class="nav2">
+        <td>SUMMARY: INNER | FIELD | <a href="#constructor-summary">CONST</a> | PROP | <a href="#method-summary">METHOD</a> | OP | EVENT</td>
+        <td>DETAIL: FIELD | <a href="#constructor-detail">CONST</a> | PROP | <a href="#method-detail">METHOD</a> | OP | EVENT</td>
+      </tr>
+    </table>
+    <hr>
+    <h2>
+      <span class="namespaceName">NVelocity.Runtime.Parser.Node</span>
+      <br>
+      <span class="className">Class NodeUtils</span>
+    </h2>
+    <p> Utilities for dealing with the AST node structure.
+            *
+            </p>
+    <a name="field-summary">
+    </a>
+    <a name="constructor-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Constructor Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="constructor" valign="top">
+          <a href="#NVelocity.Runtime.Parser.Node.NodeUtils.#ctor">NodeUtils</a>()<br>        Initializes a new instance of the NodeUtils class.</td>
+      </tr>
+    </table>
+    <br>
+    <a name="property-summary">
+    </a>
+    <a name="method-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Method Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="returnType" valign="top">string</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Parser.Node.NodeUtils.interpolate(System.String,NVelocity.Context.IContext)">interpolate</a>(string argStr, NVelocity.Context.IContext vars)<br>         Utility method to interpolate context variables
+            into string literals. So that the following will
+            work:
+            *
+            #set $name = "candy"
+            $image.getURI("${name}.jpg")
+            *
+            And the string literal argument will
+            be transformed into "candy.jpg" before
+            the method is executed.
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">string</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Parser.Node.NodeUtils.specialText(NVelocity.Runtime.Parser.Token)">specialText</a>(NVelocity.Runtime.Parser.Token t)</td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">string</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Parser.Node.NodeUtils.tokenLiteral(NVelocity.Runtime.Parser.Token)">tokenLiteral</a>(NVelocity.Runtime.Parser.Token t)<br>          complete node literal
+            *
+            </td>
+      </tr>
+    </table>
+    <br>
+    <table class="subtable" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Methods inherited from class System.Object</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>
+          <a href="..\..\..\..\NVelocity/Runtime/Parser/Node/NodeUtils/Equals(System.html#Object)">Equals</a>, <a href="..\..\..\..\NVelocity/Runtime/Parser/Node/NodeUtils.html#Finalize">Finalize</a>, <a href="..\..\..\..\NVelocity/Runtime/Parser/Node/NodeUtils.html#GetHashCode">GetHashCode</a>, <a href="..\..\..\..\NVelocity/Runtime/Parser/Node/NodeUtils.html#GetType">GetType</a>, <a href="..\..\..\..\NVelocity/Runtime/Parser/Node/NodeUtils.html#MemberwiseClone">MemberwiseClone</a>, <a href="..\..\..\..\NVelocity/Runtime/Parser/Node/NodeUtils.html#ToString">ToString</a></td>
+      </tr>
+    </table>
+    <br>
+    <a name="operator-summary">
+    </a>
+    <a name="event-summary">
+    </a>
+    <br>
+    <a name="field-detail">
+    </a>
+    <a name="constructor-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Constructor Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.Runtime.Parser.Node.NodeUtils.#ctor">
+    </a>
+    <h3>NodeUtils</h3>
+    <pre>public NodeUtils()</pre>
+    <dl>
+      <dd>
+        <p>Initializes a new instance of the NodeUtils class.</p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="property-detail">
+    </a>
+    <a name="method-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Method Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.Runtime.Parser.Node.NodeUtils.interpolate(System.String,NVelocity.Context.IContext)">
+    </a>
+    <h3>interpolate</h3>
+    <pre>public string interpolate(string argStr,
+                          NVelocity.Context.IContext vars)</pre>
+    <dl>
+      <dd>
+        <p> Utility method to interpolate context variables
+            into string literals. So that the following will
+            work:
+            *
+            #set $name = "candy"
+            $image.getURI("${name}.jpg")
+            *
+            And the string literal argument will
+            be transformed into "candy.jpg" before
+            the method is executed.
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Parser.Node.NodeUtils.specialText(NVelocity.Runtime.Parser.Token)">
+    </a>
+    <h3>specialText</h3>
+    <pre>public string specialText(NVelocity.Runtime.Parser.Token t)</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Parser.Node.NodeUtils.tokenLiteral(NVelocity.Runtime.Parser.Token)">
+    </a>
+    <h3>tokenLiteral</h3>
+    <pre>public string tokenLiteral(NVelocity.Runtime.Parser.Token t)</pre>
+    <dl>
+      <dd>
+        <p>  complete node literal
+            *
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="operator-detail">
+    </a>
+    <a name="event-detail">
+    </a>
+    <hr>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td>
+                <a href="namespace-summary.html">Namespace</a> </td>
+              <td class="nav1sel"> Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV TYPE    NEXT TYPE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+      <tr class="nav2">
+        <td>SUMMARY: INNER | FIELD | <a href="#constructor-summary">CONST</a> | PROP | <a href="#method-summary">METHOD</a> | OP | EVENT</td>
+        <td>DETAIL: FIELD | <a href="#constructor-detail">CONST</a> | PROP | <a href="#method-detail">METHOD</a> | OP | EVENT</td>
+      </tr>
+    </table>
+  </body>
+</html>

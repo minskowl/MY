@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DataBase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Logins />
+  <Advertisements />
+  <WheelsManufaturers >
+    <WheelsManufaturer>Alpine</WheelsManufaturer>
+    <WheelsManufaturer>Michelin</WheelsManufaturer>
+    <WheelsManufaturer>Fulda</WheelsManufaturer>
+    <WheelsManufaturer>Continetal</WheelsManufaturer>
+  </WheelsManufaturers>
+  <Phones >
+    <Phone>12345445</Phone>
+    <Phone>12345445</Phone>
+    <Phone>12345445</Phone>
+    <Phone>12345445</Phone>
+  </Phones>
+</DataBase>

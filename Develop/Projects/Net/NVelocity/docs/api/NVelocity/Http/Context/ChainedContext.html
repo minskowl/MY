@@ -1,0 +1,454 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="..\..\..\JavaDoc.css">
+  </head>
+  <body>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td>
+                <a href="namespace-summary.html">Namespace</a> </td>
+              <td class="nav1sel"> Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV TYPE    NEXT TYPE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+      <tr class="nav2">
+        <td>SUMMARY: INNER | <a href="#field-summary">FIELD</a> | <a href="#constructor-summary">CONST</a> | <a href="#property-summary">PROP</a> | <a href="#method-summary">METHOD</a> | OP | EVENT</td>
+        <td>DETAIL: <a href="#field-detail">FIELD</a> | <a href="#constructor-detail">CONST</a> | <a href="#property-detail">PROP</a> | <a href="#method-detail">METHOD</a> | OP | EVENT</td>
+      </tr>
+    </table>
+    <hr>
+    <h2>
+      <span class="namespaceName">NVelocity.Http.Context</span>
+      <br>
+      <span class="className">Class ChainedContext</span>
+    </h2>
+    <p>Velocity context implementation specific to the Servlet environment.It provides the following special features:puts the request, response, session, and servlet context objects
+            into the Velocity context for direct access, and keeps them
+            read-onlysupports a read-only toolbox of view toolsauto-searches servlet request attributes, session attributes and
+            servlet context attribues for objectsThe {@link #internalGet(String key)} method implements the following search order
+            for objects:servlet request, servlet response, servlet session, servlet contexttoolboxlocal hashtable of objects (traditional use)servlet request attribues, servlet session attribute, servlet context
+            attributesThe purpose of this class is to make it easy for web designer to work
+            with Java servlet based web applications. They do not need to be concerned
+            with the concepts of request, session or application attributes and the
+            live time of objects in these scopes.Note that the put() method always puts objects into the local hashtable.
+            </p>
+    <a name="field-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Field Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="fieldType" valign="top">string</td>
+        <td class="field">
+          <a href="#NVelocity.Http.Context.ChainedContext.APPLICATION">APPLICATION</a>
+          <br>        
+            Key to the HttpContext application object.
+            </td>
+      </tr>
+      <tr>
+        <td class="fieldType" valign="top">string</td>
+        <td class="field">
+          <a href="#NVelocity.Http.Context.ChainedContext.CONTEXT">CONTEXT</a>
+          <br>        
+            Key to the HttpContext object.
+            </td>
+      </tr>
+      <tr>
+        <td class="fieldType" valign="top">string</td>
+        <td class="field">
+          <a href="#NVelocity.Http.Context.ChainedContext.REQUEST">REQUEST</a>
+          <br>        
+            Key to the HTTP request object.
+            </td>
+      </tr>
+      <tr>
+        <td class="fieldType" valign="top">string</td>
+        <td class="field">
+          <a href="#NVelocity.Http.Context.ChainedContext.RESPONSE">RESPONSE</a>
+          <br>        
+            Key to the HTTP response object.
+            </td>
+      </tr>
+      <tr>
+        <td class="fieldType" valign="top">string</td>
+        <td class="field">
+          <a href="#NVelocity.Http.Context.ChainedContext.SESSION">SESSION</a>
+          <br>        
+            Key to the HTTP session object.
+            </td>
+      </tr>
+    </table>
+    <br>
+    <a name="constructor-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Constructor Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="constructor" valign="top">
+          <a href="#NVelocity.Http.Context.ChainedContext.#ctor(NVelocity.Context.IContext,System.Web.HttpContext)">ChainedContext</a>(NVelocity.Context.IContext ctx, System.Web.HttpContext httpContext)<br>        
+            Default constructor.
+            </td>
+      </tr>
+    </table>
+    <br>
+    <a name="property-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Property Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="propertyType" valign="top">System.Web.HttpContext</td>
+        <td class="property">
+          <a href="#NVelocity.Http.Context.ChainedContext.HttpContext">HttpContext</a>
+          <br>        Returns the servlet context.</td>
+      </tr>
+      <tr>
+        <td class="propertyType" valign="top">NVelocity.Http.Context.ToolboxContext</td>
+        <td class="property">
+          <a href="#NVelocity.Http.Context.ChainedContext.Toolbox">Toolbox</a>
+          <br>        Sets the toolbox of view tools.</td>
+      </tr>
+      <tr>
+        <td class="propertyType" valign="top">NVelocity.Context.IContext</td>
+        <td class="property">
+          <a href="#NVelocity.Http.Context.ChainedContext.VelocityContext">VelocityContext</a>
+          <br>        Returns a reference to the Velocity context (this object).</td>
+      </tr>
+    </table>
+    <br>
+    <table class="subtable" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Properties inherited from class NVelocity.Context.AbstractContext</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>
+          <a href="">ChainedContext</a>, <a href="">Keys</a></td>
+      </tr>
+    </table>
+    <br>
+    <table class="subtable" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Properties inherited from class NVelocity.Context.InternalContextBase</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>
+          <a href="">CurrentResource</a>, <a href="">CurrentTemplateName</a>, <a href="">EventCartridge</a>, <a href="">TemplateNameStack</a></td>
+      </tr>
+    </table>
+    <br>
+    <a name="method-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Method Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="returnType" valign="top">object</td>
+        <td class="method">
+          <a href="#NVelocity.Http.Context.ChainedContext.InternalGet(System.String)">InternalGet</a>(string key)<br>        Looks up and returns the object with the specified key.See the class documentation for more details.</td>
+      </tr>
+    </table>
+    <br>
+    <table class="subtable" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Methods inherited from class NVelocity.VelocityContext</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>
+          <a href="..\..\..\NVelocity/Http/Context/ChainedContext.html#Clone">Clone</a>, <a href="..\..\..\NVelocity/Http/Context/ChainedContext/InternalContainsKey(System.html#Object)">InternalContainsKey</a>, <a href="..\..\..\NVelocity/Http/Context/ChainedContext.html#InternalGetKeys">InternalGetKeys</a>, <a href="..\..\..\NVelocity/Http/Context/ChainedContext/InternalPut(System/String,System.html#Object)">InternalPut</a>, <a href="..\..\..\NVelocity/Http/Context/ChainedContext/InternalRemove(System.html#Object)">InternalRemove</a></td>
+      </tr>
+    </table>
+    <br>
+    <table class="subtable" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Methods inherited from class NVelocity.Context.AbstractContext</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>
+          <a href="..\..\..\NVelocity/Http/Context/ChainedContext/ContainsKey(System.html#Object)">ContainsKey</a>, <a href="..\..\..\NVelocity/Http/Context/ChainedContext/Get(System.html#String)">Get</a>, <a href="..\..\..\NVelocity/Http/Context/ChainedContext/Put(System/String,System.html#Object)">Put</a>, <a href="..\..\..\NVelocity/Http/Context/ChainedContext/Remove(System.html#Object)">Remove</a></td>
+      </tr>
+    </table>
+    <br>
+    <table class="subtable" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Methods inherited from class NVelocity.Context.InternalContextBase</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>
+          <a href="..\..\..\NVelocity/Http/Context/ChainedContext/AttachEventCartridge(NVelocity/App/Events.html#EventCartridge)">AttachEventCartridge</a>, <a href="..\..\..\NVelocity/Http/Context/ChainedContext/ICacheGet(System.html#Object)">ICacheGet</a>, <a href="..\..\..\NVelocity/Http/Context/ChainedContext/ICachePut(System/Object,NVelocity/Util/Introspection.html#IntrospectionCacheData)">ICachePut</a>, <a href="..\..\..\NVelocity/Http/Context/ChainedContext.html#PopCurrentTemplateName">PopCurrentTemplateName</a>, <a href="..\..\..\NVelocity/Http/Context/ChainedContext/PushCurrentTemplateName(System.html#String)">PushCurrentTemplateName</a></td>
+      </tr>
+    </table>
+    <br>
+    <table class="subtable" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Methods inherited from class System.Object</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>
+          <a href="..\..\..\NVelocity/Http/Context/ChainedContext/Equals(System.html#Object)">Equals</a>, <a href="..\..\..\NVelocity/Http/Context/ChainedContext.html#Finalize">Finalize</a>, <a href="..\..\..\NVelocity/Http/Context/ChainedContext.html#GetHashCode">GetHashCode</a>, <a href="..\..\..\NVelocity/Http/Context/ChainedContext.html#GetType">GetType</a>, <a href="..\..\..\NVelocity/Http/Context/ChainedContext.html#MemberwiseClone">MemberwiseClone</a>, <a href="..\..\..\NVelocity/Http/Context/ChainedContext.html#ToString">ToString</a></td>
+      </tr>
+    </table>
+    <br>
+    <a name="operator-summary">
+    </a>
+    <a name="event-summary">
+    </a>
+    <br>
+    <a name="field-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Field Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.Http.Context.ChainedContext.APPLICATION">
+    </a>
+    <h3>APPLICATION</h3>
+    <pre>public string <b>APPLICATION</b></pre>
+    <dl>
+      <dd>
+        <p>
+            Key to the HttpContext application object.
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Http.Context.ChainedContext.CONTEXT">
+    </a>
+    <h3>CONTEXT</h3>
+    <pre>public string <b>CONTEXT</b></pre>
+    <dl>
+      <dd>
+        <p>
+            Key to the HttpContext object.
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Http.Context.ChainedContext.REQUEST">
+    </a>
+    <h3>REQUEST</h3>
+    <pre>public string <b>REQUEST</b></pre>
+    <dl>
+      <dd>
+        <p>
+            Key to the HTTP request object.
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Http.Context.ChainedContext.RESPONSE">
+    </a>
+    <h3>RESPONSE</h3>
+    <pre>public string <b>RESPONSE</b></pre>
+    <dl>
+      <dd>
+        <p>
+            Key to the HTTP response object.
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Http.Context.ChainedContext.SESSION">
+    </a>
+    <h3>SESSION</h3>
+    <pre>public string <b>SESSION</b></pre>
+    <dl>
+      <dd>
+        <p>
+            Key to the HTTP session object.
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="constructor-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Constructor Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.Http.Context.ChainedContext.#ctor(NVelocity.Context.IContext,System.Web.HttpContext)">
+    </a>
+    <h3>ChainedContext</h3>
+    <pre>public ChainedContext(NVelocity.Context.IContext ctx,
+                      System.Web.HttpContext httpContext)</pre>
+    <dl>
+      <dd>
+        <p>
+            Default constructor.
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="property-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Property Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.Http.Context.ChainedContext.HttpContext">
+    </a>
+    <h3>HttpContext</h3>
+    <pre>public System.Web.HttpContext HttpContext</pre>
+    <dl>
+      <dd>
+        <p>Returns the servlet context.</p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Http.Context.ChainedContext.Toolbox">
+    </a>
+    <h3>Toolbox</h3>
+    <pre>public NVelocity.Http.Context.ToolboxContext Toolbox</pre>
+    <dl>
+      <dd>
+        <p>Sets the toolbox of view tools.</p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>box</code> - toolbox of view tools</dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Http.Context.ChainedContext.VelocityContext">
+    </a>
+    <h3>VelocityContext</h3>
+    <pre>public NVelocity.Context.IContext VelocityContext</pre>
+    <dl>
+      <dd>
+        <p>Returns a reference to the Velocity context (this object).</p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="method-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Method Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.Http.Context.ChainedContext.InternalGet(System.String)">
+    </a>
+    <h3>InternalGet</h3>
+    <pre>public object InternalGet(string key)</pre>
+    <dl>
+      <dd>
+        <p>Looks up and returns the object with the specified key.See the class documentation for more details.</p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>key</code> - the key of the object requested</dd>
+        </dl>
+        <b>Returns:</b>
+        <dl>
+          <dd>the requested object or null if not found</dd>
+        </dl>
+      </dd>
+    </dl>
+    <a name="operator-detail">
+    </a>
+    <a name="event-detail">
+    </a>
+    <hr>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td>
+                <a href="namespace-summary.html">Namespace</a> </td>
+              <td class="nav1sel"> Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV TYPE    NEXT TYPE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+      <tr class="nav2">
+        <td>SUMMARY: INNER | <a href="#field-summary">FIELD</a> | <a href="#constructor-summary">CONST</a> | <a href="#property-summary">PROP</a> | <a href="#method-summary">METHOD</a> | OP | EVENT</td>
+        <td>DETAIL: <a href="#field-detail">FIELD</a> | <a href="#constructor-detail">CONST</a> | <a href="#property-detail">PROP</a> | <a href="#method-detail">METHOD</a> | OP | EVENT</td>
+      </tr>
+    </table>
+  </body>
+</html>

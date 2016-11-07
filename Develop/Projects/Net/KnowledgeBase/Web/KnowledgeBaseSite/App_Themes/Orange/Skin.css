@@ -1,0 +1,161 @@
+﻿
+body.site
+{
+	background-color: #FFBE9B;
+}
+.bg1
+{
+	background-color: #FFEED7;
+}
+a
+{
+	color: #FFBE9B;
+}
+.code
+{
+	 background: #faf0e6;
+	 padding: 10px;
+	 border: solid 1px black;
+}
+.HeaderItem
+{
+	color: #FFBE9B;
+}
+
+.DropPanelButton
+{
+	background-color: #FFFFFF;
+	border: solid 2px #FFBD99;
+	padding: 5px;
+}
+
+.toolBar
+{
+	background-image: url(images/button.gif);
+	border: black 1px solid;
+}
+
+/*  list layout */
+TABLE.lstBody
+{
+	background-color: #FFFFFF;
+	border-top: solid 1px #FFBD99;
+	border-left: solid 1px #FFBD99;
+	width: 100%;
+}
+TD.lstHeaderCell
+{
+	background-image: url(images/button.gif);
+	text-align: left;
+	height: 18px;
+	border-right: solid 1px #FFBD99;
+	border-bottom: solid 1px #FFBD99;
+	color: #000000;
+	font: bold;
+	padding: 1px;
+}
+
+TR.lstRow
+{
+	background-color: white;
+}
+TR.lstAltRow
+{
+	background-color: #FFF7F3;
+}
+
+TD.lstCell
+{
+	border-bottom: solid 1px #FFBD99;
+	border-right: solid 1px #FFBD99;
+	padding: 4px;
+	vertical-align: top; /* Don't set  width!!!! Set Width cell in page */
+}
+
+/* end list layout */
+
+/*  grid layout */
+.grdBody
+{
+	border-color: #FFBD99;
+	border-width: 1px;
+	border-style: Solid;
+	width: 100%;
+}
+.grdHeader
+{
+	background-image: url(images/button.gif);
+	background-repeat: repeat-x;
+	font-weight: bold;
+	font-size: 7pt;
+	color: #000000;
+	height: 18px;
+	padding: 1px;
+}
+.grdHeaderColumn
+{
+	background-image: url(images/button.gif);
+	background-repeat: repeat-x;
+	border-color: #FFBD99;
+	border-width: 1px;
+	border-style: solid;
+	font-size: 11px;
+	horizontal-align: left;
+}
+.grdFooter
+{
+	height: 18px;
+	background-color: #EDF1F5;
+	font-weight: bold;
+	color: #ffffff;
+}
+.grdPager
+{
+	height: 18px;
+	background-color: #EDF1F5;
+	font-weight: bold;
+	color: Black;
+	background-image: url(images/button.gif);
+}
+
+
+.grdAltRow
+{
+	background-color: #FFF7F3;
+}
+.grdSelRow
+{
+	background-color: #B2C3D5;
+	font-weight: bold;
+	color: #333333;
+}
+.grdSelRow TD
+{
+	padding: 1px;
+	font-size: 11px;
+}
+.grdCell
+{
+	border-right: #FFBD99 1px solid;
+	border-left: #FFBD99 1px solid;
+	font-size: 11px;
+}
+
+/* end grid layout */
+
+
+/* Headers */
+.HeaderParagraph
+{
+	font-size: 14px;
+	font-weight: bold;
+	font-family: Arial;
+}
+
+.TodayHeader
+{
+	font-size: 14px;
+	font-weight: bold;
+	font-family: Arial;
+	color: Navy;
+}

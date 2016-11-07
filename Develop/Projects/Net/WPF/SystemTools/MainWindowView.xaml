@@ -1,0 +1,35 @@
+﻿<Window x:Class="Savchin.WPF.SystemTools.MainWindowView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Core="clr-namespace:Savchin.Wpf.Controls.Core;assembly=Savchin.Wpf.Controls"
+        
+    Title="System Info" Height="300" Width="300">
+    <Control.Resources>
+        <DataTemplate x:Key="MoveMenu">
+            <MenuItem Header="{Binding}" 
+                      Command="{Binding Path=PlacementTarget.DataContext.MoveToCommand, RelativeSource={RelativeSource AncestorType={x:Type ContextMenu}}}" 
+                      CommandParameter="{Binding}"/>
+        </DataTemplate>
+        </Control.Resources>
+        
+    <Grid>
+        <TabControl>
+            <TabItem Header="Colors">
+                <Core:ListBoxSystemColor IsSelectable="True"/>
+            </TabItem>
+            <TabItem Header="Process">
+                <ListBox SelectedItem="{Binding SelectedItem}" ItemsSource="{Binding Processes}" DisplayMemberPath="ProcessName">
+                    <ListBox.ContextMenu>
+                        <ContextMenu >
+                            <MenuItem Header="Set border" Command="{Binding SetBorderCommand}"
+                                      CommandParameter="{Binding Path=PlacementTarget.SelectedItem, RelativeSource={RelativeSource AncestorType={x:Type ContextMenu}}}"/>
+
+                            <MenuItem Header="Move to screen" ItemsSource="{Binding Screens}" ItemTemplate="{StaticResource MoveMenu}"
+                                      />
+                        </ContextMenu>
+                    </ListBox.ContextMenu>
+                </ListBox>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

@@ -1,0 +1,10 @@
+﻿<Window x:Class="Savchin.Bubbles.WindowGamesStatistics"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Controls="clr-namespace:Savchin.Bubbles.Controls"
+    Title="Games Statistics" WindowStartupLocation="CenterOwner"
+        Height="300" Width="300" MinHeight="200" MinWidth="250"         >
+    <Grid>
+        <Controls:GamesStatisiticsControl x:Name="controlStatistics" />
+    </Grid>
+</Window>

@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{43F21755-8007-46B4-843A-544779DB9E90}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Savchin.Extensions</RootNamespace>
+    <AssemblyName>Savchin.Extensions</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Savchin.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Win32Resource>
+    </Win32Resource>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ContextMenus\AllFileContextMenuExtension.cs" />
+    <Compile Include="ContextMenus\SlnFileContextMenuExtension.cs" />
+    <Compile Include="Core\VisualStudio.cs" />
+    <Compile Include="DescriptionControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DescriptionControl.Designer.cs">
+      <DependentUpon>DescriptionControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ContextMenus\ExeFileContextMenuExtension.cs" />
+    <Compile Include="FilePropertySet.cs" />
+    <Compile Include="Core\Instalator.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestControl1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TestControl1.Designer.cs">
+      <DependentUpon>TestControl1.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DescriptionControl.resx">
+      <DependentUpon>DescriptionControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TestControl1.resx">
+      <DependentUpon>TestControl1.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Libs\Savchin.Forms.RichText\Savchin.Forms.RichText.csproj">
+      <Project>{6D4454D8-2EB1-43C9-A8B7-35EC6D41499A}</Project>
+      <Name>Savchin.Forms.RichText</Name>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libs\Savchin.WinApi\Savchin.WinApi.csproj">
+      <Project>{DD712413-B47A-4707-A45D-84F786E47BAF}</Project>
+      <Name>Savchin.WinApi</Name>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libs\Tools\Savchin.Tools.csproj">
+      <Project>{2F1807E4-39A2-4F38-ADFC-6310A8443D90}</Project>
+      <Name>Savchin.Tools</Name>
+      <Private>True</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="register.bat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Savchin.snk" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>"c:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\NETFX 4.0 Tools\"gacutil /i $(TargetPath)</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

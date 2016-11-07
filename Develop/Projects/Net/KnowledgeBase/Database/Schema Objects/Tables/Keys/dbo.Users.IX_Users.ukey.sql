@@ -1,0 +1,3 @@
+﻿ALTER TABLE [dbo].[Users] ADD CONSTRAINT [IX_Users] UNIQUE NONCLUSTERED  ([Login]) ON [PRIMARY]
+
+

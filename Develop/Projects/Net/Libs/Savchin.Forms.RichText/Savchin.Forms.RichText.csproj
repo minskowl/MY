@@ -1,0 +1,221 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6D4454D8-2EB1-43C9-A8B7-35EC6D41499A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Savchin.Forms.RichText</RootNamespace>
+    <AssemblyName>Savchin.Forms.RichText</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Savchin.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup>
+    <RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Editor\Commands\EditorCommand.cs" />
+    <Compile Include="Editor\Commands\InsertImageCommand.cs" />
+    <Compile Include="Editor\Commands\NewFileCommand.cs" />
+    <Compile Include="Editor\Commands\OpenFileCommand.cs" />
+    <Compile Include="Editor\Commands\SaveAsCommand.cs" />
+    <Compile Include="Editor\Commands\SaveCommand.cs" />
+    <Compile Include="Editor\frmFind.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editor\frmFind.designer.cs">
+      <DependentUpon>frmFind.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editor\frmReplace.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editor\frmReplace.designer.cs">
+      <DependentUpon>frmReplace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editor\EditorControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Editor\RichTextEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Editor\RichTextEditor.designer.cs">
+      <DependentUpon>RichTextEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Editor\frmFind.resx">
+      <DependentUpon>frmFind.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editor\frmReplace.resx">
+      <DependentUpon>frmReplace.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editor\RichTextEditor.resx">
+      <DependentUpon>RichTextEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Savchin.Forms\Savchin.Forms.csproj">
+      <Project>{9405075A-BD64-4B54-9689-2DD716D6F92A}</Project>
+      <Name>Savchin.Forms</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\binoc.ico" />
+    <None Include="Savchin.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bold.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\centre.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\copy.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cut.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\find_dc2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\find_doc.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\font.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\font_big.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\font_sml.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\font_wid.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\help.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\help_ptr.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\italic.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\justify.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\left.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lst2icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mail.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mail2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\new.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\open.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\paste.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\print.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\print2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\redo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\right.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\toupper.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\underlne.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\undo.ico" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>"c:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\NETFX 4.0 Tools\"gacutil.exe  /i $(TargetPath)</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

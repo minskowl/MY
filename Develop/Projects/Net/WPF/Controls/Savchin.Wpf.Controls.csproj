@@ -1,0 +1,276 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{94FAF521-458A-4A1B-BEE6-42A5A738F6AB}</ProjectGuid>
+    <OutputType>library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Savchin.Wpf.Controls</RootNamespace>
+    <AssemblyName>Savchin.Wpf.Controls</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationFramework.Aero" />
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationEx.cs" />
+    <Compile Include="ButtonEx.cs" />
+    <Compile Include="Core\ExceptionHelper.cs" />
+    <Compile Include="Localization\ITranslationProvider.cs" />
+    <Compile Include="Localization\LanguageChangedEventManager.cs" />
+    <Compile Include="Localization\ResxTranslationProvider.cs" />
+    <Compile Include="Localization\TranslateExtension.cs" />
+    <Compile Include="Localization\TranslationData.cs" />
+    <Compile Include="Localization\TranslationManager.cs" />
+    <Compile Include="NotifyIcon\BalloonIcon.cs" />
+    <Compile Include="NotifyIcon\Interop\BalloonFlags.cs" />
+    <Compile Include="NotifyIcon\Interop\IconDataMembers.cs" />
+    <Compile Include="NotifyIcon\Interop\IconState.cs" />
+    <Compile Include="NotifyIcon\Interop\MouseEvent.cs" />
+    <Compile Include="NotifyIcon\Interop\NotifyCommand.cs" />
+    <Compile Include="NotifyIcon\Interop\NotifyIconData.cs" />
+    <Compile Include="NotifyIcon\Interop\NotifyIconVersion.cs" />
+    <Compile Include="NotifyIcon\Interop\Point.cs" />
+    <Compile Include="NotifyIcon\Interop\TrayInfo.cs" />
+    <Compile Include="NotifyIcon\Interop\WinApi.cs" />
+    <Compile Include="NotifyIcon\Interop\WindowClass.cs" />
+    <Compile Include="NotifyIcon\Interop\WindowMessageSink.cs" />
+    <Compile Include="NotifyIcon\PopupActivationMode.cs" />
+    <Compile Include="NotifyIcon\RoutedEventHelper.cs" />
+    <Compile Include="NotifyIcon\TaskbarIcon.cs" />
+    <Compile Include="NotifyIcon\TaskbarIcon.Declarations.cs" />
+    <Compile Include="NotifyIcon\Util.cs" />
+    <Compile Include="TreeViewEx.cs" />
+    <Compile Include="Windows\TextWindow.xaml.cs">
+      <DependentUpon>TextWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\WindowHelper.cs" />
+    <Compile Include="Windows\WindowStateBack.cs" />
+    <Compile Include="WpfMessageBox.xaml.cs">
+      <DependentUpon>WpfMessageBox.xaml</DependentUpon>
+    </Compile>
+    <Page Include="ColorPicker\colorpickerdialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Core\ErrorForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Core\ValidationMessage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DataGrid\Filtering\Generic.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Editor\RichTextEditor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Fonts\FontChooser.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="Core\ErrorForm.xaml.cs">
+      <DependentUpon>ErrorForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Core\ValidationMessage.xaml.cs">
+      <DependentUpon>ValidationMessage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DataGrid\Filtering\Core\BooleanToHeightConverter.cs" />
+    <Compile Include="DataGrid\Filtering\Core\CheckBoxValueConverter.cs" />
+    <Compile Include="DataGrid\Filtering\Core\ClearFilterButtonVisibilityConverter.cs" />
+    <Compile Include="DataGrid\Filtering\Core\ComboBoxToQueryStringConverter.cs" />
+    <Compile Include="DataGrid\Filtering\Core\DatePickerToQueryStringConverter.cs" />
+    <Compile Include="DataGrid\Filtering\Core\DelayTextBox.cs" />
+    <Compile Include="DataGrid\Filtering\Core\DisplayStringAttribute.cs" />
+    <Compile Include="DataGrid\Filtering\Core\EnumDisplayer.cs" />
+    <Compile Include="DataGrid\Filtering\Core\FilterData.cs" />
+    <Compile Include="DataGrid\Filtering\Core\FilterOperator.cs" />
+    <Compile Include="DataGrid\Filtering\Core\FilterType.cs" />
+    <Compile Include="DataGrid\Filtering\Core\FontSizeToHeightConverter.cs" />
+    <Compile Include="DataGrid\Filtering\Core\MyBooleanToVisibilityConverter.cs" />
+    <Compile Include="DataGrid\Filtering\Core\Querying\FilteringEventArgs.cs" />
+    <Compile Include="DataGrid\Filtering\Core\Querying\ParameterCounter.cs" />
+    <Compile Include="DataGrid\Filtering\Core\Querying\Query.cs" />
+    <Compile Include="DataGrid\Filtering\Core\Querying\QueryController.cs" />
+    <Compile Include="DataGrid\Filtering\Core\Querying\QueryControllerFactory.cs" />
+    <Compile Include="DataGrid\Filtering\Core\Querying\QueryCreator.cs" />
+    <Compile Include="DataGrid\Filtering\Core\Querying\StringFilterExpressionCreator.cs" />
+    <Compile Include="DataGrid\Filtering\Core\VisibilityToWidthConverter.cs" />
+    <Compile Include="DataGrid\Filtering\DataGridColumnExtensions.cs" />
+    <Compile Include="DataGrid\Filtering\DataGridColumnFilter.cs" />
+    <Compile Include="DataGrid\Filtering\DataGridComboBoxColumnWithBindingHack.cs" />
+    <Compile Include="DataGrid\Filtering\DataGridComboBoxExtensions.cs" />
+    <Compile Include="DataGrid\Filtering\DataGridExtensions.cs" />
+    <Compile Include="DataGrid\Filtering\DataGridFilterCommand.cs" />
+    <Compile Include="DataGrid\Filtering\DataGridHeaderFilterControl.cs" />
+    <Compile Include="Editor\RichTextEditor.xaml.cs">
+      <DependentUpon>RichTextEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Fonts\FontChooser.xaml.cs">
+      <DependentUpon>FontChooser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Fonts\FontFamilyListItem.cs" />
+    <Compile Include="Fonts\FontSizeListItem.cs" />
+    <Compile Include="Fonts\NameDictionaryHelper.cs" />
+    <Compile Include="Fonts\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Fonts\TypefaceListItem.cs" />
+    <Compile Include="Fonts\TypographicFeatureListItem.cs" />
+    <Compile Include="TextBoxEx.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Windows\TextWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WpfMessageBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ColorPicker\colorpicker.cs" />
+    <Compile Include="ColorPicker\colorpickerdialog.xaml.cs">
+      <DependentUpon>colorpickerdialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ColorPicker\supportingclasses.cs" />
+    <Compile Include="Core\ListBoxSystemColor.cs" />
+    <Compile Include="HyperlinkEx.cs" />
+    <Compile Include="ListViewLayout\ConverterGridViewColumn.cs" />
+    <Compile Include="ListViewLayout\FixedColumn.cs" />
+    <Compile Include="ListViewLayout\ImageGridViewColumn.cs" />
+    <Compile Include="ListViewLayout\LayoutColumn.cs" />
+    <Compile Include="ListViewLayout\ListViewLayoutManager.cs" />
+    <Compile Include="ListViewLayout\ProportionalColumn.cs" />
+    <Compile Include="ListViewLayout\RangeColumn.cs" />
+    <Compile Include="ListViewLayout\SortedColumn.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Fonts\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Libs\Savchin.WinApi\Savchin.WinApi.csproj">
+      <Project>{dd712413-b47a-4707-a45d-84f786e47baf}</Project>
+      <Name>Savchin.WinApi</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libs\Tools\Savchin.Tools.csproj">
+      <Project>{2F1807E4-39A2-4F38-ADFC-6310A8443D90}</Project>
+      <Name>Savchin.Tools</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WPF.Tools\WPF.Tools.csproj">
+      <Project>{DF7E8E9F-5B87-4561-AD02-38AE103C3DE6}</Project>
+      <Name>WPF.Tools</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Editor\Images\charactergrowfont.png" />
+    <Resource Include="Editor\Images\charactershrinkfont.png" />
+    <Resource Include="Editor\Images\editcopy.png" />
+    <Resource Include="Editor\Images\editcut.png" />
+    <Resource Include="Editor\Images\editpaste.png" />
+    <Resource Include="Editor\Images\editredo.png" />
+    <Resource Include="Editor\Images\editundo.png" />
+    <Resource Include="Editor\Images\fileopen.png" />
+    <Resource Include="Editor\Images\filesave.png" />
+    <Resource Include="Editor\Images\listbullets.png" />
+    <Resource Include="Editor\Images\listnumbering.png" />
+    <Resource Include="Editor\Images\paragraphcenterjustify.png" />
+    <Resource Include="Editor\Images\paragraphdecreaseindentation.png" />
+    <Resource Include="Editor\Images\paragraphfulljustify.png" />
+    <Resource Include="Editor\Images\paragraphincreaseindentation.png" />
+    <Resource Include="Editor\Images\paragraphleftjustify.png" />
+    <Resource Include="Editor\Images\paragraphrightjustify.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="NotifyIcon\DefaultTrayIcon.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

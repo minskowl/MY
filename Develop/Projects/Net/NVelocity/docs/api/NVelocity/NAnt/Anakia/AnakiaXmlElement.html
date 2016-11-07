@@ -1,0 +1,464 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="..\..\..\JavaDoc.css">
+  </head>
+  <body>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td>
+                <a href="namespace-summary.html">Namespace</a> </td>
+              <td class="nav1sel"> Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV TYPE    NEXT TYPE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+      <tr class="nav2">
+        <td>SUMMARY: INNER | FIELD | CONST | PROP | <a href="#method-summary">METHOD</a> | OP | EVENT</td>
+        <td>DETAIL: FIELD | CONST | PROP | <a href="#method-detail">METHOD</a> | OP | EVENT</td>
+      </tr>
+    </table>
+    <hr>
+    <h2>
+      <span class="namespaceName">NVelocity.NAnt.Anakia</span>
+      <br>
+      <span class="className">Class AnakiaXmlElement</span>
+    </h2>
+    <p>
+            A JDOM {@link Element} that is tailored for Anakia needs. It has
+            {@link #selectNodes(String)} method as well as a {@link #toString()} that
+            outputs the XML serialized form of the element. This way it acts in much the
+            same way as a single-element {@link NodeList} would.
+            </p>
+    <a name="field-summary">
+    </a>
+    <a name="constructor-summary">
+    </a>
+    <a name="property-summary">
+    </a>
+    <table class="subtable" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Properties inherited from class System.Xml.XmlElement</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>
+          <a href="">Attributes</a>, <a href="">HasAttributes</a>, <a href="">InnerText</a>, <a href="">InnerXml</a>, <a href="">IsEmpty</a>, <a href="">LocalName</a>, <a href="">Name</a>, <a href="">NamespaceURI</a>, <a href="">NextSibling</a>, <a href="">NodeType</a>, <a href="">OwnerDocument</a>, <a href="">Prefix</a></td>
+      </tr>
+    </table>
+    <br>
+    <table class="subtable" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Properties inherited from class System.Xml.XmlLinkedNode</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>
+          <a href="">PreviousSibling</a>
+        </td>
+      </tr>
+    </table>
+    <br>
+    <table class="subtable" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Properties inherited from class System.Xml.XmlNode</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>
+          <a href="">BaseURI</a>, <a href="">ChildNodes</a>, <a href="">FirstChild</a>, <a href="">HasChildNodes</a>, <a href="">IsReadOnly</a>, <a href="">Item</a>, <a href="">Item</a>, <a href="">LastChild</a>, <a href="">OuterXml</a>, <a href="">ParentNode</a>, <a href="">Value</a></td>
+      </tr>
+    </table>
+    <br>
+    <a name="method-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Method Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="returnType" valign="top">System.Collections.IList</td>
+        <td class="method">
+          <a href="#NVelocity.NAnt.Anakia.AnakiaXmlElement.GetAttributes">GetAttributes</a>()<br>        
+            This returns the complete set of attributes for this element, as a
+            <pre class="code">NodeList</pre> of <pre class="code">Attribute</pre> objects in no particular
+            order, or an empty list if there are none.
+            The returned list is "live" and changes to it affect the
+            element's actual attributes.
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">System.Xml.XmlNode</td>
+        <td class="method">
+          <a href="#NVelocity.NAnt.Anakia.AnakiaXmlElement.GetChild(System.String)">GetChild</a>(string xpath)</td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">System.Collections.IList</td>
+        <td class="method">
+          <a href="#NVelocity.NAnt.Anakia.AnakiaXmlElement.GetChildren(System.String,System.String)">GetChildren</a>(string name, string ns)<br>        
+            This returns a <pre class="code">NodeList</pre> of all the child elements
+            nested directly (one level deep) within this element with the given
+            local name and belonging to the given Namespace, returned as
+            <pre class="code">Element</pre> objects.  If this target element has no nested
+            elements with the given name in the given Namespace, an empty List
+            is returned.  The returned list is "live" in document order
+            and changes to it affect the element's actual contents.
+            
+            Please see the notes for <pre class="code">{@link #getChildren}</pre>
+            for a code example.
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">System.Collections.IList</td>
+        <td class="method">
+          <a href="#NVelocity.NAnt.Anakia.AnakiaXmlElement.GetChildren(System.String)">GetChildren</a>(string name)<br>        
+            This returns a <pre class="code">NodeList</pre> of all the child elements
+            nested directly (one level deep) within this element with the given
+            local name and belonging to no namespace, returned as
+            <pre class="code">Element</pre> objects.  If this target element has no nested
+            elements with the given name outside a namespace, an empty List
+            is returned.  The returned list is "live" in document order
+            and changes to it affect the element's actual contents.
+            
+            Please see the notes for <pre class="code">{@link #getChildren}</pre>
+            for a code example.
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">System.Collections.IList</td>
+        <td class="method">
+          <a href="#NVelocity.NAnt.Anakia.AnakiaXmlElement.GetChildren">GetChildren</a>()<br>        
+            This returns a <pre class="code">NodeList</pre> of all the child elements
+            nested directly (one level deep) within this element, as
+            <pre class="code">Element</pre> objects.  If this target element has no nested
+            elements, an empty List is returned.  The returned list is "live"
+            in document order and changes to it affect the element's actual
+            contents.
+            
+            This performs no recursion, so elements nested two levels
+            deep would have to be obtained with:
+            <pre class="code">
+            Iterator itr = currentElement.getChildren().iterator();
+            while (itr.hasNext()) {
+            Element oneLevelDeep = (Element)nestedElements.next();
+            List twoLevelsDeep = oneLevelDeep.getChildren();
+            // Do something with these children
+            }
+            </pre></td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">System.Collections.IList</td>
+        <td class="method">
+          <a href="#NVelocity.NAnt.Anakia.AnakiaXmlElement.GetContent">GetContent</a>()<br>        
+            This returns the full content of the element as a NodeList which
+            may contain objects of type <pre class="code">String</pre>, <pre class="code">Element</pre>,
+            <pre class="code">Comment</pre>, <pre class="code">ProcessingInstruction</pre>,
+            <pre class="code">CDATA</pre>, and <pre class="code">EntityRef</pre>.
+            The List returned is "live" in document order and modifications
+            to it affect the element's actual contents.  Whitespace content is
+            returned in its entirety.
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">string</td>
+        <td class="method">
+          <a href="#NVelocity.NAnt.Anakia.AnakiaXmlElement.ToString">ToString</a>()<br>        
+            Returns the XML serialized form of this element, as produced by the default
+            {@link XMLOutputter}.
+            </td>
+      </tr>
+    </table>
+    <br>
+    <table class="subtable" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Methods inherited from class System.Xml.XmlElement</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>
+          <a href="..\..\..\NVelocity/NAnt/Anakia/AnakiaXmlElement/CloneNode(System.html#Boolean)">CloneNode</a>, <a href="..\..\..\NVelocity/NAnt/Anakia/AnakiaXmlElement/GetAttribute(System/String,System.html#String)">GetAttribute</a>, <a href="..\..\..\NVelocity/NAnt/Anakia/AnakiaXmlElement/GetAttribute(System.html#String)">GetAttribute</a>, <a href="..\..\..\NVelocity/NAnt/Anakia/AnakiaXmlElement/GetAttributeNode(System/String,System.html#String)">GetAttributeNode</a>, <a href="..\..\..\NVelocity/NAnt/Anakia/AnakiaXmlElement/GetAttributeNode(System.html#String)">GetAttributeNode</a>, <a href="..\..\..\NVelocity/NAnt/Anakia/AnakiaXmlElement/GetElementsByTagName(System/String,System.html#String)">GetElementsByTagName</a>, <a href="..\..\..\NVelocity/NAnt/Anakia/AnakiaXmlElement/GetElementsByTagName(System.html#String)">GetElementsByTagName</a>, <a href="..\..\..\NVelocity/NAnt/Anakia/AnakiaXmlElement/HasAttribute(System/String,System.html#String)">HasAttribute</a>, <a href="..\..\..\NVelocity/NAnt/Anakia/AnakiaXmlElement/HasAttribute(System.html#String)">HasAttribute</a>, <a href="..\..\..\NVelocity/NAnt/Anakia/AnakiaXmlElement.html#RemoveAll">RemoveAll</a>, <a href="..\..\..\NVelocity/NAnt/Anakia/AnakiaXmlElement.html#RemoveAllAttributes">RemoveAllAttributes</a>, <a href="..\..\..\NVelocity/NAnt/Anakia/AnakiaXmlElement/RemoveAttribute(System/String,System.html#String)">RemoveAttribute</a>, <a href="..\..\..\NVelocity/NAnt/Anakia/AnakiaXmlElement/RemoveAttribute(System.html#String)">RemoveAttribute</a>, <a href="..\..\..\NVelocity/NAnt/Anakia/AnakiaXmlElement/RemoveAttributeAt(System.html#Int32)">RemoveAttributeAt</a>, <a href="..\..\..\NVelocity/NAnt/Anakia/AnakiaXmlElement/RemoveAttributeNode(System/String,System.html#String)">RemoveAttributeNode</a>, <a href="..\..\..\NVelocity/NAnt/Anakia/AnakiaXmlElement/RemoveAttributeNode(System/Xml.html#XmlAttribute)">RemoveAttributeNode</a>, <a href="..\..\..\NVelocity/NAnt/Anakia/AnakiaXmlElement/SetAttribute(System/String,System/String,System.html#String)">SetAttribute</a>, <a href="..\..\..\NVelocity/NAnt/Anakia/AnakiaXmlElement/SetAttribute(System/String,System.html#String)">SetAttribute</a>, <a href="..\..\..\NVelocity/NAnt/Anakia/AnakiaXmlElement/SetAttributeNode(System/String,System.html#String)">SetAttributeNode</a>, <a href="..\..\..\NVelocity/NAnt/Anakia/AnakiaXmlElement/SetAttributeNode(System/Xml.html#XmlAttribute)">SetAttributeNode</a>, <a href="..\..\..\NVelocity/NAnt/Anakia/AnakiaXmlElement/WriteContentTo(System/Xml.html#XmlWriter)">WriteContentTo</a>, <a href="..\..\..\NVelocity/NAnt/Anakia/AnakiaXmlElement/WriteTo(System/Xml.html#XmlWriter)">WriteTo</a></td>
+      </tr>
+    </table>
+    <br>
+    <table class="subtable" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Methods inherited from class System.Xml.XmlNode</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>
+          <a href="..\..\..\NVelocity/NAnt/Anakia/AnakiaXmlElement/AppendChild(System/Xml.html#XmlNode)">AppendChild</a>, <a href="..\..\..\NVelocity/NAnt/Anakia/AnakiaXmlElement.html#Clone">Clone</a>, <a href="..\..\..\NVelocity/NAnt/Anakia/AnakiaXmlElement.html#CreateNavigator">CreateNavigator</a>, <a href="..\..\..\NVelocity/NAnt/Anakia/AnakiaXmlElement.html#GetEnumerator">GetEnumerator</a>, <a href="..\..\..\NVelocity/NAnt/Anakia/AnakiaXmlElement/GetNamespaceOfPrefix(System.html#String)">GetNamespaceOfPrefix</a>, <a href="..\..\..\NVelocity/NAnt/Anakia/AnakiaXmlElement/GetPrefixOfNamespace(System.html#String)">GetPrefixOfNamespace</a>, <a href="..\..\..\NVelocity/NAnt/Anakia/AnakiaXmlElement.html#System#ICloneable#Clone">ICloneable.Clone</a>, <a href="..\..\..\NVelocity/NAnt/Anakia/AnakiaXmlElement.html#System#Collections#IEnumerable#GetEnumerator">IEnumerable.GetEnumerator</a>, <a href="..\..\..\NVelocity/NAnt/Anakia/AnakiaXmlElement/InsertAfter(System/Xml/XmlNode,System/Xml.html#XmlNode)">InsertAfter</a>, <a href="..\..\..\NVelocity/NAnt/Anakia/AnakiaXmlElement/InsertBefore(System/Xml/XmlNode,System/Xml.html#XmlNode)">InsertBefore</a>, <a href="..\..\..\NVelocity/NAnt/Anakia/AnakiaXmlElement.html#Normalize">Normalize</a>, <a href="..\..\..\NVelocity/NAnt/Anakia/AnakiaXmlElement/PrependChild(System/Xml.html#XmlNode)">PrependChild</a>, <a href="..\..\..\NVelocity/NAnt/Anakia/AnakiaXmlElement/RemoveChild(System/Xml.html#XmlNode)">RemoveChild</a>, <a href="..\..\..\NVelocity/NAnt/Anakia/AnakiaXmlElement/ReplaceChild(System/Xml/XmlNode,System/Xml.html#XmlNode)">ReplaceChild</a>, <a href="..\..\..\NVelocity/NAnt/Anakia/AnakiaXmlElement/SelectNodes(System.html#String)">SelectNodes</a>, <a href="..\..\..\NVelocity/NAnt/Anakia/AnakiaXmlElement/SelectNodes(System/String,System/Xml.html#XmlNamespaceManager)">SelectNodes</a>, <a href="..\..\..\NVelocity/NAnt/Anakia/AnakiaXmlElement/SelectSingleNode(System.html#String)">SelectSingleNode</a>, <a href="..\..\..\NVelocity/NAnt/Anakia/AnakiaXmlElement/SelectSingleNode(System/String,System/Xml.html#XmlNamespaceManager)">SelectSingleNode</a>, <a href="..\..\..\NVelocity/NAnt/Anakia/AnakiaXmlElement/Supports(System/String,System.html#String)">Supports</a></td>
+      </tr>
+    </table>
+    <br>
+    <table class="subtable" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Methods inherited from class System.Object</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>
+          <a href="..\..\..\NVelocity/NAnt/Anakia/AnakiaXmlElement/Equals(System.html#Object)">Equals</a>, <a href="..\..\..\NVelocity/NAnt/Anakia/AnakiaXmlElement.html#Finalize">Finalize</a>, <a href="..\..\..\NVelocity/NAnt/Anakia/AnakiaXmlElement.html#GetHashCode">GetHashCode</a>, <a href="..\..\..\NVelocity/NAnt/Anakia/AnakiaXmlElement.html#GetType">GetType</a>, <a href="..\..\..\NVelocity/NAnt/Anakia/AnakiaXmlElement.html#MemberwiseClone">MemberwiseClone</a></td>
+      </tr>
+    </table>
+    <br>
+    <a name="operator-summary">
+    </a>
+    <a name="event-summary">
+    </a>
+    <br>
+    <a name="field-detail">
+    </a>
+    <a name="constructor-detail">
+    </a>
+    <a name="property-detail">
+    </a>
+    <a name="method-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Method Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.NAnt.Anakia.AnakiaXmlElement.GetAttributes">
+    </a>
+    <h3>GetAttributes</h3>
+    <pre>public System.Collections.IList GetAttributes()</pre>
+    <dl>
+      <dd>
+        <p>
+            This returns the complete set of attributes for this element, as a
+            <pre class="code">NodeList</pre> of <pre class="code">Attribute</pre> objects in no particular
+            order, or an empty list if there are none.
+            The returned list is "live" and changes to it affect the
+            element's actual attributes.
+            </p>
+        <p>
+        </p>
+        <b>Returns:</b>
+        <dl>
+          <dd>attributes for the element</dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.NAnt.Anakia.AnakiaXmlElement.GetChild(System.String)">
+    </a>
+    <h3>GetChild</h3>
+    <pre>public System.Xml.XmlNode GetChild(string xpath)</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.NAnt.Anakia.AnakiaXmlElement.GetChildren(System.String,System.String)">
+    </a>
+    <h3>GetChildren</h3>
+    <pre>public System.Collections.IList GetChildren(string name,
+                                            string ns)</pre>
+    <dl>
+      <dd>
+        <p>
+            This returns a <pre class="code">NodeList</pre> of all the child elements
+            nested directly (one level deep) within this element with the given
+            local name and belonging to the given Namespace, returned as
+            <pre class="code">Element</pre> objects.  If this target element has no nested
+            elements with the given name in the given Namespace, an empty List
+            is returned.  The returned list is "live" in document order
+            and changes to it affect the element's actual contents.
+            
+            Please see the notes for <pre class="code">{@link #getChildren}</pre>
+            for a code example.
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>name</code> - local name for the children to match</dd>
+          <dd>
+            <code>ns</code> - <pre class="code">Namespace</pre> to search within</dd>
+        </dl>
+        <b>Returns:</b>
+        <dl>
+          <dd>all matching child elements</dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.NAnt.Anakia.AnakiaXmlElement.GetChildren(System.String)">
+    </a>
+    <h3>GetChildren</h3>
+    <pre>public System.Collections.IList GetChildren(string name)</pre>
+    <dl>
+      <dd>
+        <p>
+            This returns a <pre class="code">NodeList</pre> of all the child elements
+            nested directly (one level deep) within this element with the given
+            local name and belonging to no namespace, returned as
+            <pre class="code">Element</pre> objects.  If this target element has no nested
+            elements with the given name outside a namespace, an empty List
+            is returned.  The returned list is "live" in document order
+            and changes to it affect the element's actual contents.
+            
+            Please see the notes for <pre class="code">{@link #getChildren}</pre>
+            for a code example.
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>name</code> - local name for the children to match</dd>
+        </dl>
+        <b>Returns:</b>
+        <dl>
+          <dd>all matching child elements</dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.NAnt.Anakia.AnakiaXmlElement.GetChildren">
+    </a>
+    <h3>GetChildren</h3>
+    <pre>public System.Collections.IList GetChildren()</pre>
+    <dl>
+      <dd>
+        <p>
+            This returns a <pre class="code">NodeList</pre> of all the child elements
+            nested directly (one level deep) within this element, as
+            <pre class="code">Element</pre> objects.  If this target element has no nested
+            elements, an empty List is returned.  The returned list is "live"
+            in document order and changes to it affect the element's actual
+            contents.
+            
+            This performs no recursion, so elements nested two levels
+            deep would have to be obtained with:
+            <pre class="code">
+            Iterator itr = currentElement.getChildren().iterator();
+            while (itr.hasNext()) {
+            Element oneLevelDeep = (Element)nestedElements.next();
+            List twoLevelsDeep = oneLevelDeep.getChildren();
+            // Do something with these children
+            }
+            </pre></p>
+        <p>
+        </p>
+        <b>Returns:</b>
+        <dl>
+          <dd>list of child <pre class="code">Element</pre> objects for this element</dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.NAnt.Anakia.AnakiaXmlElement.GetContent">
+    </a>
+    <h3>GetContent</h3>
+    <pre>public System.Collections.IList GetContent()</pre>
+    <dl>
+      <dd>
+        <p>
+            This returns the full content of the element as a NodeList which
+            may contain objects of type <pre class="code">String</pre>, <pre class="code">Element</pre>,
+            <pre class="code">Comment</pre>, <pre class="code">ProcessingInstruction</pre>,
+            <pre class="code">CDATA</pre>, and <pre class="code">EntityRef</pre>.
+            The List returned is "live" in document order and modifications
+            to it affect the element's actual contents.  Whitespace content is
+            returned in its entirety.
+            </p>
+        <p>
+        </p>
+        <b>Returns:</b>
+        <dl>
+          <dd>a <pre class="code">List</pre> containing the mixed content of the
+            element: may contain <pre class="code">String</pre>,
+            <pre class="code">{@link Element}</pre>, <pre class="code">{@link Comment}</pre>,
+            <pre class="code">{@link ProcessingInstruction}</pre>,
+            <pre class="code">{@link CDATA}</pre>, and
+            <pre class="code">{@link EntityRef}</pre> objects.
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.NAnt.Anakia.AnakiaXmlElement.ToString">
+    </a>
+    <h3>ToString</h3>
+    <pre>public string ToString()</pre>
+    <dl>
+      <dd>
+        <p>
+            Returns the XML serialized form of this element, as produced by the default
+            {@link XMLOutputter}.
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="operator-detail">
+    </a>
+    <a name="event-detail">
+    </a>
+    <hr>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td>
+                <a href="namespace-summary.html">Namespace</a> </td>
+              <td class="nav1sel"> Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV TYPE    NEXT TYPE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+      <tr class="nav2">
+        <td>SUMMARY: INNER | FIELD | CONST | PROP | <a href="#method-summary">METHOD</a> | OP | EVENT</td>
+        <td>DETAIL: FIELD | CONST | PROP | <a href="#method-detail">METHOD</a> | OP | EVENT</td>
+      </tr>
+    </table>
+  </body>
+</html>

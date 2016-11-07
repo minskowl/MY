@@ -1,0 +1,541 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>7.10.3077</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{10AE9F9A-C23F-44D0-9E78-B4C125597ECE}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon />
+    <AssemblyKeyContainerName />
+    <AssemblyName>NVelocity</AssemblyName>
+    <AssemblyOriginatorKeyFile />
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Flow</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>NVelocity</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject />
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>0.0</OldToolsVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>..\build\nvelocity\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile />
+    <DefineConstants />
+    <DocumentationFile>NVelocity.xml</DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn />
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>0</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>..\..\ThrPartLibs\NVelocity\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile />
+    <DefineConstants />
+    <DocumentationFile />
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn />
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>1</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="Commons.csproj">
+      <Name>Commons</Name>
+      <Project>{2A71607F-DF74-4FC4-BD9B-BF3837883172}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <Reference Include="log4net">
+      <HintPath>..\..\ThrPartLibs\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="mscorlib">
+      <Name>mscorlib</Name>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App\Events\EventCartridge.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="App\Events\EventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="App\Events\MethodExceptionEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="App\Events\NullSetEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="App\Events\ReferenceInsertionEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="App\FieldMethodizer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="App\Tools\VelocityFormatter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="App\Velocity.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="App\VelocityEngine.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AssemblyVersionInfo.cs" />
+    <Compile Include="Context\AbstractContext.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Context\IContext.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Context\InternalContextAdapter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Context\InternalContextAdapterImpl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Context\InternalContextBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Context\InternalEventContext.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Context\InternalHousekeepingContext.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Context\InternalWrapperContext.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Context\VMContext.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dvsl\Directive\MatchDirective.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dvsl\Directive\NameDirective.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dvsl\Dvsl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dvsl\DvslContext.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dvsl\DvslNode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dvsl\DvslNodeContext.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dvsl\DvslNodeImpl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dvsl\TemplateHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dvsl\Transformer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dvsl\TransformTool.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Exception\MethodInvocationException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Exception\ParseErrorException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Exception\ResourceNotFoundException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Exception\VelocityException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IO\VelocityWriter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Directive\Directive.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Directive\DirectiveConstants.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Directive\Foreach.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Directive\Include.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Directive\Literal.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Directive\Macro.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Directive\Parse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Directive\ParseDirectiveException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Directive\VelocimacroProxy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Directive\VMProxyArg.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Exception\NodeException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Exception\ReferenceException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Log\Log4NetExtensionLogSystem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Log\LogManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Log\LogSystem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Log\NullLogSystem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Log\PrimordialLogSystem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Log\SimpleLog4NetLogSystem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Parser\CharStream.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Parser\JJTParserState.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Parser\Node\AbstractExecutor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Parser\Node\ASTAddNode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Parser\Node\ASTAndNode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Parser\Node\ASTAssignment.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Parser\Node\ASTBlock.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Parser\Node\ASTComment.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Parser\Node\ASTDirective.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Parser\Node\ASTDivNode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Parser\Node\ASTElseIfStatement.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Parser\Node\ASTElseStatement.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Parser\Node\ASTEQNode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Parser\Node\ASTEscape.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Parser\Node\ASTEscapedDirective.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Parser\Node\ASTExpression.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Parser\Node\ASTFalse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Parser\Node\ASTGENode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Parser\Node\ASTGTNode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Parser\Node\ASTIdentifier.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Parser\Node\ASTIfStatement.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Parser\Node\ASTIncludeStatement.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Parser\Node\ASTIntegerRange.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Parser\Node\ASTLENode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Parser\Node\ASTLTNode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Parser\Node\ASTMethod.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Parser\Node\ASTModNode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Parser\Node\ASTMulNode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Parser\Node\ASTNENode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Parser\Node\ASTNotNode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Parser\Node\ASTNumberLiteral.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Parser\Node\ASTObjectArray.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Parser\Node\ASTOrNode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Parser\Node\ASTParameters.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Parser\Node\ASTprocess.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Parser\Node\ASTReference.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Parser\Node\ASTSetDirective.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Parser\Node\ASTStringLiteral.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Parser\Node\ASTSubtractNode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Parser\Node\ASTText.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Parser\Node\ASTTrue.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Parser\Node\ASTVariable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Parser\Node\ASTWord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Parser\Node\BooleanPropertyExecutor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Parser\Node\GetExecutor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Parser\Node\INode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Parser\Node\NodeUtils.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Parser\Node\ParserVisitor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Parser\Node\PropertyExecutor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Parser\Node\SimpleNode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Parser\ParseException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Parser\Parser.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Parser\ParserConstants.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Parser\ParserTokenManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Parser\ParserTreeConstants.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Parser\Token.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Parser\TokenMgrError.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Parser\VelocityCharStream.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Resource\ContentResource.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Resource\Loader\FileResourceLoader.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Resource\Loader\ResourceLoader.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Resource\Loader\ResourceLoaderFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Resource\Loader\ResourceLocator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Resource\Resource.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Resource\ResourceCache.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Resource\ResourceCacheImpl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Resource\ResourceFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Resource\ResourceManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Resource\ResourceManagerImpl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\RuntimeConstants.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\RuntimeInstance.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\RuntimeServices.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\RuntimeSingleton.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\VelocimacroFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\VelocimacroManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Visitor\BaseVisitor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Visitor\NodeViewMode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Runtime\Visitor\VMReferenceMungeVisitor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SupportClass.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Template.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tool\DataInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tool\IToolInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tool\ToolLoader.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Introspection\AmbiguousException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Introspection\ClassMap.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Introspection\IntrospectionCacheData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Introspection\Introspector.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Introspection\IntrospectorBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Introspection\MethodMap.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Introspection\Twonk.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Iterator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\SimplePool.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\StringUtils.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VelocityContext.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <EmbeddedResource Include="Dvsl\Resource\defaultroot.dvsl" />
+    <EmbeddedResource Include="Runtime\Defaults\directive.properties" />
+    <EmbeddedResource Include="Runtime\Defaults\nvelocity.properties" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent />
+    <PostBuildEvent />
+  </PropertyGroup>
+</Project>

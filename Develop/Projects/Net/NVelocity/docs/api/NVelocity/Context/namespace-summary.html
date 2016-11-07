@@ -1,0 +1,180 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="..\..\JavaDoc.css">
+  </head>
+  <body>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td class="nav1sel"> Namespace </td>
+              <td>Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV NAMESPACE    NEXT NAMESPACE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+    </table>
+    <hr>
+    <h2 class="title">NVelocity.Context Namespace Summary</h2>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Interface Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="name">
+          <a href="IContext.html">IContext</a>
+        </td>
+        <td class="type">
+            Interface describing the application data context.  This set of
+            routines is used by the application to set and remove 'named' data
+            object to pass them to the template engine to use when rendering
+            a template.
+            
+            This is the same set of methods supported by the original Context
+            class
+            </td>
+      </tr>
+      <tr>
+        <td class="name">
+          <a href="InternalContextAdapter.html">InternalContextAdapter</a>
+        </td>
+        <td class="type">  interface to bring all necessary internal and user contexts together.
+            this is what the AST expects to deal with.  If anything new comes
+            along, add it here.
+            *
+            I will rename soon :)
+            *
+            </td>
+      </tr>
+      <tr>
+        <td class="name">
+          <a href="InternalEventContext.html">InternalEventContext</a>
+        </td>
+        <td class="type">
+            Interface for event support.  Note that this is a public internal
+            interface, as it is something that will be accessed from outside
+            of the .context package.
+            </td>
+      </tr>
+      <tr>
+        <td class="name">
+          <a href="InternalHousekeepingContext.html">InternalHousekeepingContext</a>
+        </td>
+        <td class="type">
+            interface to encapsulate the 'stuff' for internal operation of velocity.
+            We use the context as a thread-safe storage : we take advantage of the
+            fact that it's a visitor  of sorts  to all nodes (that matter) of the
+            AST during init() and render().
+            
+            Currently, it carries the template name for namespace
+            support, as well as node-local context data introspection caching.
+            </td>
+      </tr>
+      <tr>
+        <td class="name">
+          <a href="InternalWrapperContext.html">InternalWrapperContext</a>
+        </td>
+        <td class="type">
+            interface for internal context wrapping functionality
+            </td>
+      </tr>
+    </table>
+    <br>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Class Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="name">
+          <a href="AbstractContext.html">AbstractContext</a>
+        </td>
+        <td class="type"> </td>
+      </tr>
+      <tr>
+        <td class="name">
+          <a href="InternalContextAdapterImpl.html">InternalContextAdapterImpl</a>
+        </td>
+        <td class="type"> </td>
+      </tr>
+      <tr>
+        <td class="name">
+          <a href="InternalContextBase.html">InternalContextBase</a>
+        </td>
+        <td class="type">  class to encapsulate the 'stuff' for internal operation of velocity.
+            We use the context as a thread-safe storage : we take advantage of the
+            fact that it's a visitor  of sorts  to all nodes (that matter) of the
+            AST during init() and render().
+            Currently, it carries the template name for namespace
+            support, as well as node-local context data introspection caching.
+            *
+            Note that this is not a public class.  It is for package access only to
+            keep application code from accessing the internals, as AbstractContext
+            is derived from this.
+            *
+            </td>
+      </tr>
+      <tr>
+        <td class="name">
+          <a href="VMContext.html">VMContext</a>
+        </td>
+        <td class="type">  This is a special, internal-use-only context implementation to be
+            used for the new Velocimacro implementation.
+            *
+            The main distinguishing feature is the management of the VMProxyArg objects
+            in the put() and get() methods.
+            *
+            Further, this context also supports the 'VM local context' mode, where
+            any get() or put() of references that aren't args to the VM are considered
+            local to the vm, protecting the global context.
+            
+            </td>
+      </tr>
+    </table>
+    <br>
+    <hr>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td class="nav1sel"> Namespace </td>
+              <td>Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV NAMESPACE    NEXT NAMESPACE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+    </table>
+  </body>
+</html>

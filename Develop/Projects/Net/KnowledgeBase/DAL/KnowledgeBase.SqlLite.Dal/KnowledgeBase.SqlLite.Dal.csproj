@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{08A1D88F-1068-4CBC-B744-753789CE806F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>KnowledgeBase.SqlLite.Dal</RootNamespace>
+    <AssemblyName>KnowledgeBase.SqlLite.Dal</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite">
+      <HintPath>..\..\..\ThrPartLibs\System.Data.SQLite.DLL</HintPath>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\DBConvertor.cs" />
+    <Compile Include="Core\ExceptionConverter.cs" />
+    <Compile Include="Factories\CategoriesFactory.Gen.cs" />
+    <Compile Include="Factories\CategoryFactory.cs" />
+    <Compile Include="Factories\DataReaderHelper.cs" />
+    <Compile Include="Factories\FileIncludeFactory.cs" />
+    <Compile Include="Factories\FileIncludesFactory.Gen.cs" />
+    <Compile Include="Factories\KeywordFactory.cs" />
+    <Compile Include="Factories\KeywordsFactory.Gen.cs" />
+    <Compile Include="Factories\KnowledgeFactory.cs" />
+    <Compile Include="Factories\KnowledgesFactory.Gen.cs" />
+    <Compile Include="Core\SqlLiteFactory.cs" />
+    <Compile Include="Factories\UserFileFactory.cs" />
+    <Compile Include="Factories\UserFilesFactory.Gen.cs" />
+    <Compile Include="Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SqlLiteFactoryProvider.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Libs\Data\Savchin.Data.csproj">
+      <Project>{25AB3B90-41A8-4BD4-88B6-4607D1633D4C}</Project>
+      <Name>Savchin.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libs\Tools\Savchin.Tools.csproj">
+      <Project>{2F1807E4-39A2-4F38-ADFC-6310A8443D90}</Project>
+      <Name>Savchin.Tools</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KnowledgeBase.Dal\KnowledgeBase.Dal.csproj">
+      <Project>{100BEE5D-A096-441D-8629-32AC1C7CF36B}</Project>
+      <Name>KnowledgeBase.Dal</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Database.s3db">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Database.sql" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ApplicationFunctionality xmlns="http://tempuri.org/ApplicationFunctionality.xsd">
+	<Preset name="Current">
+		<Unit name="Library">
+			<SubUnit name="Template">
+				<Feature name="CreateByDuplicate" enabled="true" />
+				<Feature name="CreateByPaste" enabled="true" />
+				<Feature name="CreateByDrop" enabled="true" />
+				<Feature name="CreateCustomElement" enabled="true" />
+				<Feature name="Edit" enabled="true" />
+				<Feature name="AssignInstanceType" enabled="true" />
+				<Feature name="Delete" enabled="true" />
+				<Feature name="AddToLibrary" enabled="true" />
+				<Feature name="RemoveFromLibrary" enabled="true" />
+				<Feature name="Drag" enabled="true" />
+				<Feature name="Copy" enabled="true" />
+				<Feature name="ContextMenu" enabled="true" />
+			</SubUnit>
+			<SubUnit name="Library">
+				<Feature name="Create" enabled="true" />
+				<Feature name="Edit" enabled="true" />
+				<Feature name="Delete" enabled="true" />
+				<Feature name="Export" enabled="true" />
+				<Feature name="Import" enabled="true" />
+				<Feature name="ContextMenu" enabled="true" />
+			</SubUnit>
+		</Unit>
+		<Unit name="Diagram">
+			<SubUnit name="DiagramIO">
+				<Feature name="Create" enabled="true" />
+				<Feature name="Open" enabled="true" />
+				<Feature name="Save" enabled="true" />
+				<Feature name="SaveAs" enabled="true" />
+			</SubUnit>
+			<SubUnit name="Document">
+				<Feature name="Edit" enabled="true" />
+				<Feature name="Script" enabled="true" />
+			</SubUnit>
+			<SubUnit name="Page">
+				<Feature name="Add" enabled="true" />
+				<Feature name="Edit" enabled="true" />
+				<Feature name="Delete" enabled="true" />
+				<Feature name="Reorder" enabled="true" />
+				<Feature name="Script" enabled="true" />
+				<Feature name="ContextMenu" enabled="true" />
+			</SubUnit>
+			<SubUnit name="Layer">
+				<Feature name="Add" enabled="true" />
+				<Feature name="Edit" enabled="true" />
+				<Feature name="Delete" enabled="true" />
+				<Feature name="Script" enabled="true" />
+				<Feature name="AddElement" enabled="true" />
+				<Feature name="RemoveElement" enabled="true" />
+			</SubUnit>
+			<SubUnit name="Element">
+				<Feature name="Add" enabled="true" />
+				<Feature name="CreateWithTools" enabled="true" />
+				<Feature name="DropTemplate" enabled="true" />
+				<Feature name="PasteTemplate" enabled="true" />
+				<Feature name="PasteElement" enabled="true" />
+				<Feature name="Select" enabled="true" />
+				<Feature name="Copy" enabled="true" />
+				<Feature name="Edit" enabled="true" />
+				<Feature name="Convert" enabled="true" />
+				<Feature name="Delete" enabled="true" />
+				<Feature name="Move" enabled="true" />
+				<Feature name="Rotate" enabled="false" />
+				<Feature name="Flip" enabled="false" />
+				<Feature name="Size" enabled="true" />
+				<Feature name="Reorder" enabled="true" />
+				<Feature name="Align" enabled="true" />
+				<Feature name="Layout" enabled="true" />
+				<Feature name="Script" enabled="true" />
+				<Feature name="ContextMenu" enabled="true" />
+				<Feature name="ModifyStyle" enabled="true" />
+			</SubUnit>
+			<SubUnit name="Group">
+				<Feature name="Create" enabled="true" />
+				<Feature name="Ungroup" enabled="true" />
+			</SubUnit>
+			<SubUnit name="Shape">
+				<Feature name="Create" enabled="true" />
+				<Feature name="Decompose" enabled="true" />
+			</SubUnit>
+		</Unit>
+		<Unit name="Explorer">
+			<SubUnit name="DocumentNode">
+				<Feature name="ContextMenu" enabled="true" />
+			</SubUnit>
+			<SubUnit name="PageNode">
+				<Feature name="ContextMenu" enabled="true" />
+				<Feature name="Drag" enabled="true" />
+			</SubUnit>
+			<SubUnit name="PageElementsNode">
+				<Feature name="ContextMenu" enabled="true" />
+			</SubUnit>
+			<SubUnit name="PageLayersNode">
+				<Feature name="ContextMenu" enabled="true" />
+			</SubUnit>
+			<SubUnit name="ElementNode">
+				<Feature name="ContextMenu" enabled="true" />
+				<Feature name="Drag" enabled="true" />
+			</SubUnit>
+			<SubUnit name="LayerNode">
+				<Feature name="ContextMenu" enabled="true" />
+				<Feature name="Drag" enabled="true" />
+			</SubUnit>
+			<SubUnit name="LayerElementNode">
+				<Feature name="ContextMenu" enabled="true" />
+				<Feature name="Drag" enabled="true" />
+			</SubUnit>
+			<SubUnit name="TemplateNode">
+				<Feature name="ContextMenu" enabled="true" />
+			</SubUnit>
+		</Unit>
+	</Preset>
+	<Preset name="Editor">
+		<Unit name="Library">
+			<SubUnit name="Template">
+				<Feature name="CreateByDuplicate" enabled="true" />
+				<Feature name="CreateByPaste" enabled="true" />
+				<Feature name="CreateByDrop" enabled="true" />
+				<Feature name="CreateCustomElement" enabled="true" />
+				<Feature name="Edit" enabled="true" />
+				<Feature name="AssignInstanceType" enabled="true" />
+				<Feature name="Delete" enabled="true" />
+				<Feature name="AddToLibrary" enabled="true" />
+				<Feature name="RemoveFromLibrary" enabled="true" />
+				<Feature name="Drag" enabled="true" />
+				<Feature name="Copy" enabled="true" />
+				<Feature name="ContextMenu" enabled="true" />
+			</SubUnit>
+			<SubUnit name="Library">
+				<Feature name="Create" enabled="true" />
+				<Feature name="Edit" enabled="true" />
+				<Feature name="Delete" enabled="true" />
+				<Feature name="Export" enabled="true" />
+				<Feature name="Import" enabled="true" />
+				<Feature name="ContextMenu" enabled="true" />
+			</SubUnit>
+		</Unit>
+		<Unit name="Diagram">
+			<SubUnit name="DiagramIO">
+				<Feature name="Create" enabled="true" />
+				<Feature name="Open" enabled="true" />
+				<Feature name="Save" enabled="true" />
+				<Feature name="SaveAs" enabled="true" />
+			</SubUnit>
+			<SubUnit name="Document">
+				<Feature name="Edit" enabled="true" />
+				<Feature name="Script" enabled="true" />
+			</SubUnit>
+			<SubUnit name="Page">
+				<Feature name="Add" enabled="true" />
+				<Feature name="Edit" enabled="true" />
+				<Feature name="Delete" enabled="true" />
+				<Feature name="Reorder" enabled="true" />
+				<Feature name="Script" enabled="true" />
+				<Feature name="ContextMenu" enabled="true" />
+			</SubUnit>
+			<SubUnit name="Layer">
+				<Feature name="Add" enabled="true" />
+				<Feature name="Edit" enabled="true" />
+				<Feature name="Delete" enabled="true" />
+				<Feature name="Script" enabled="true" />
+				<Feature name="AddElement" enabled="true" />
+				<Feature name="RemoveElement" enabled="true" />
+			</SubUnit>
+			<SubUnit name="Element">
+				<Feature name="Add" enabled="true" />
+				<Feature name="CreateWithTools" enabled="true" />
+				<Feature name="DropTemplate" enabled="true" />
+				<Feature name="PasteTemplate" enabled="true" />
+				<Feature name="PasteElement" enabled="true" />
+				<Feature name="Select" enabled="true" />
+				<Feature name="Copy" enabled="true" />
+				<Feature name="Edit" enabled="true" />
+				<Feature name="Convert" enabled="true" />
+				<Feature name="Delete" enabled="true" />
+				<Feature name="Move" enabled="true" />
+				<Feature name="Rotate" enabled="false" />
+				<Feature name="Flip" enabled="true" />
+				<Feature name="Size" enabled="true" />
+				<Feature name="Reorder" enabled="true" />
+				<Feature name="Align" enabled="true" />
+				<Feature name="Layout" enabled="true" />
+				<Feature name="Script" enabled="true" />
+				<Feature name="ContextMenu" enabled="true" />
+				<Feature name="ModifyStyle" enabled="true" />
+			</SubUnit>
+			<SubUnit name="Group">
+				<Feature name="Create" enabled="true" />
+				<Feature name="Ungroup" enabled="true" />
+			</SubUnit>
+			<SubUnit name="Shape">
+				<Feature name="Create" enabled="true" />
+				<Feature name="Decompose" enabled="true" />
+			</SubUnit>
+		</Unit>
+		<Unit name="Explorer">
+			<SubUnit name="DocumentNode">
+				<Feature name="ContextMenu" enabled="true" />
+			</SubUnit>
+			<SubUnit name="PageNode">
+				<Feature name="ContextMenu" enabled="true" />
+				<Feature name="Drag" enabled="true" />
+			</SubUnit>
+			<SubUnit name="PageElementsNode">
+				<Feature name="ContextMenu" enabled="true" />
+			</SubUnit>
+			<SubUnit name="PageLayersNode">
+				<Feature name="ContextMenu" enabled="true" />
+			</SubUnit>
+			<SubUnit name="ElementNode">
+				<Feature name="ContextMenu" enabled="true" />
+				<Feature name="Drag" enabled="true" />
+			</SubUnit>
+			<SubUnit name="LayerNode">
+				<Feature name="ContextMenu" enabled="true" />
+				<Feature name="Drag" enabled="true" />
+			</SubUnit>
+			<SubUnit name="LayerElementNode">
+				<Feature name="ContextMenu" enabled="true" />
+				<Feature name="Drag" enabled="true" />
+			</SubUnit>
+			<SubUnit name="TemplateNode">
+				<Feature name="ContextMenu" enabled="true" />
+			</SubUnit>
+		</Unit>
+	</Preset>
+	<Preset name="Viewer">
+		<Unit name="Library">
+			<SubUnit name="Template">
+				<Feature name="CreateByDuplicate" enabled="false" />
+				<Feature name="CreateByPaste" enabled="false" />
+				<Feature name="CreateByDrop" enabled="false" />
+				<Feature name="CreateCustomElement" enabled="false" />
+				<Feature name="Edit" enabled="false" />
+				<Feature name="AssignInstanceType" enabled="false" />
+				<Feature name="Delete" enabled="false" />
+				<Feature name="AddToLibrary" enabled="false" />
+				<Feature name="RemoveFromLibrary" enabled="false" />
+				<Feature name="Drag" enabled="false" />
+				<Feature name="Copy" enabled="false" />
+				<Feature name="ContextMenu" enabled="false" />
+			</SubUnit>
+			<SubUnit name="Library">
+				<Feature name="Create" enabled="false" />
+				<Feature name="Edit" enabled="false" />
+				<Feature name="Delete" enabled="false" />
+				<Feature name="Export" enabled="false" />
+				<Feature name="Import" enabled="false" />
+				<Feature name="ContextMenu" enabled="false" />
+			</SubUnit>
+		</Unit>
+		<Unit name="Diagram">
+			<SubUnit name="DiagramIO">
+				<Feature name="Create" enabled="false" />
+				<Feature name="Open" enabled="true" />
+				<Feature name="Save" enabled="false" />
+				<Feature name="SaveAs" enabled="false" />
+			</SubUnit>
+			<SubUnit name="Document">
+				<Feature name="Edit" enabled="false" />
+				<Feature name="Script" enabled="false" />
+			</SubUnit>
+			<SubUnit name="Page">
+				<Feature name="Add" enabled="false" />
+				<Feature name="Edit" enabled="false" />
+				<Feature name="Delete" enabled="false" />
+				<Feature name="Reorder" enabled="false" />
+				<Feature name="Script" enabled="false" />
+				<Feature name="ContextMenu" enabled="false" />
+			</SubUnit>
+			<SubUnit name="Layer">
+				<Feature name="Add" enabled="false" />
+				<Feature name="Edit" enabled="false" />
+				<Feature name="Delete" enabled="false" />
+				<Feature name="Script" enabled="false" />
+				<Feature name="AddElement" enabled="false" />
+				<Feature name="RemoveElement" enabled="false" />
+			</SubUnit>
+			<SubUnit name="Element">
+				<Feature name="Add" enabled="false" />
+				<Feature name="CreateWithTools" enabled="false" />
+				<Feature name="DropTemplate" enabled="false" />
+				<Feature name="PasteTemplate" enabled="false" />
+				<Feature name="PasteElement" enabled="false" />
+				<Feature name="Select" enabled="false" />
+				<Feature name="Copy" enabled="false" />
+				<Feature name="Edit" enabled="false" />
+				<Feature name="Convert" enabled="false" />
+				<Feature name="Delete" enabled="false" />
+				<Feature name="Move" enabled="false" />
+				<Feature name="Rotate" enabled="false" />
+				<Feature name="Flip" enabled="false" />
+				<Feature name="Size" enabled="false" />
+				<Feature name="Reorder" enabled="false" />
+				<Feature name="Align" enabled="false" />
+				<Feature name="Layout" enabled="false" />
+				<Feature name="Script" enabled="false" />
+				<Feature name="ContextMenu" enabled="false" />
+				<Feature name="ModifyStyle" enabled="false" />
+			</SubUnit>
+			<SubUnit name="Group">
+				<Feature name="Create" enabled="false" />
+				<Feature name="Ungroup" enabled="false" />
+			</SubUnit>
+			<SubUnit name="Shape">
+				<Feature name="Create" enabled="false" />
+				<Feature name="Decompose" enabled="false" />
+			</SubUnit>
+		</Unit>
+		<Unit name="Explorer">
+			<SubUnit name="DocumentNode">
+				<Feature name="ContextMenu" enabled="false" />
+			</SubUnit>
+			<SubUnit name="PageNode">
+				<Feature name="ContextMenu" enabled="false" />
+				<Feature name="Drag" enabled="false" />
+			</SubUnit>
+			<SubUnit name="PageElementsNode">
+				<Feature name="ContextMenu" enabled="false" />
+			</SubUnit>
+			<SubUnit name="PageLayersNode">
+				<Feature name="ContextMenu" enabled="false" />
+			</SubUnit>
+			<SubUnit name="ElementNode">
+				<Feature name="ContextMenu" enabled="false" />
+				<Feature name="Drag" enabled="false" />
+			</SubUnit>
+			<SubUnit name="LayerNode">
+				<Feature name="ContextMenu" enabled="false" />
+				<Feature name="Drag" enabled="false" />
+			</SubUnit>
+			<SubUnit name="LayerElementNode">
+				<Feature name="ContextMenu" enabled="false" />
+				<Feature name="Drag" enabled="false" />
+			</SubUnit>
+			<SubUnit name="TemplateNode">
+				<Feature name="ContextMenu" enabled="false" />
+			</SubUnit>
+		</Unit>
+	</Preset>
+</ApplicationFunctionality>

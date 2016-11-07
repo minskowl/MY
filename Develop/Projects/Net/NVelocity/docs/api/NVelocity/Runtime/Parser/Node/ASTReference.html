@@ -1,0 +1,494 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="..\..\..\..\JavaDoc.css">
+  </head>
+  <body>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td>
+                <a href="namespace-summary.html">Namespace</a> </td>
+              <td class="nav1sel"> Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV TYPE    NEXT TYPE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+      <tr class="nav2">
+        <td>SUMMARY: INNER | FIELD | <a href="#constructor-summary">CONST</a> | <a href="#property-summary">PROP</a> | <a href="#method-summary">METHOD</a> | OP | EVENT</td>
+        <td>DETAIL: FIELD | <a href="#constructor-detail">CONST</a> | <a href="#property-detail">PROP</a> | <a href="#method-detail">METHOD</a> | OP | EVENT</td>
+      </tr>
+    </table>
+    <hr>
+    <h2>
+      <span class="namespaceName">NVelocity.Runtime.Parser.Node</span>
+      <br>
+      <span class="className">Class ASTReference</span>
+    </h2>
+    <a name="field-summary">
+    </a>
+    <table class="subtable" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Fields inherited from class NVelocity.Runtime.Parser.Node.SimpleNode</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>
+          <a href="">children</a>, <a href="">first</a>, <a href="">id</a>, <a href="">info</a>, <a href="">invalid</a>, <a href="">last</a>, <a href="">parent</a>, <a href="">parser</a>, <a href="">rsvc</a>, <a href="">state</a></td>
+      </tr>
+    </table>
+    <br>
+    <a name="constructor-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Constructor Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="constructor" valign="top">
+          <a href="#NVelocity.Runtime.Parser.Node.ASTReference.#ctor(System.Int32)">ASTReference</a>(int id)</td>
+      </tr>
+      <tr>
+        <td class="constructor" valign="top">
+          <a href="#NVelocity.Runtime.Parser.Node.ASTReference.#ctor(NVelocity.Runtime.Parser.Parser,System.Int32)">ASTReference</a>(NVelocity.Runtime.Parser.Parser p, int id)</td>
+      </tr>
+    </table>
+    <br>
+    <a name="property-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Property Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="propertyType" valign="top">string</td>
+        <td class="property">
+          <a href="#NVelocity.Runtime.Parser.Node.ASTReference.Literal">Literal</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="propertyType" valign="top">string</td>
+        <td class="property">
+          <a href="#NVelocity.Runtime.Parser.Node.ASTReference.RootString">RootString</a>
+        </td>
+      </tr>
+    </table>
+    <br>
+    <table class="subtable" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Properties inherited from class NVelocity.Runtime.Parser.Node.SimpleNode</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>
+          <a href="">Column</a>, <a href="">FirstToken</a>, <a href="">Info</a>, <a href="">LastToken</a>, <a href="">Line</a>, <a href="">Type</a></td>
+      </tr>
+    </table>
+    <br>
+    <a name="method-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Method Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="returnType" valign="top">bool</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Parser.Node.ASTReference.evaluate(NVelocity.Context.InternalContextAdapter)">evaluate</a>(NVelocity.Context.InternalContextAdapter context)<br>           Computes boolean value of this reference
+            Returns the actual value of reference return type
+            boolean, and 'true' if value is not null
+            *
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">object</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Parser.Node.ASTReference.execute(System.Object,NVelocity.Context.InternalContextAdapter)">execute</a>(object o, NVelocity.Context.InternalContextAdapter context)<br>           gets an Object that 'is' the value of the reference
+            *
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">object</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Parser.Node.ASTReference.getVariableValue(NVelocity.Context.IContext,System.String)">getVariableValue</a>(NVelocity.Context.IContext context, string variable)</td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">object</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Parser.Node.ASTReference.init(NVelocity.Context.InternalContextAdapter,System.Object)">init</a>(NVelocity.Context.InternalContextAdapter context, object data)</td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">object</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Parser.Node.ASTReference.jjtAccept(NVelocity.Runtime.Parser.Node.ParserVisitor,System.Object)">jjtAccept</a>(NVelocity.Runtime.Parser.Node.ParserVisitor visitor, object data)<br>        Accept the visitor.
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">string</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Parser.Node.ASTReference.literal">literal</a>()</td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">bool</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Parser.Node.ASTReference.render(NVelocity.Context.InternalContextAdapter,System.IO.TextWriter)">render</a>(NVelocity.Context.InternalContextAdapter context, System.IO.TextWriter writer)<br>          gets the value of the reference and outputs it to the
+            writer.
+            *
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">bool</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Parser.Node.ASTReference.setValue(NVelocity.Context.InternalContextAdapter,System.Object)">setValue</a>(NVelocity.Context.InternalContextAdapter context, object value_Renamed)<br>          Sets the value of a complex reference (something like $foo.bar)
+            Currently used by ASTSetReference()
+            *
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">object</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Parser.Node.ASTReference.value_Renamed(NVelocity.Context.InternalContextAdapter)">value_Renamed</a>(NVelocity.Context.InternalContextAdapter context)</td>
+      </tr>
+    </table>
+    <br>
+    <table class="subtable" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Methods inherited from class NVelocity.Runtime.Parser.Node.SimpleNode</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>
+          <a href="..\..\..\..\NVelocity/Runtime/Parser/Node/ASTReference/childrenAccept(NVelocity/Runtime/Parser/Node/ParserVisitor,System.html#Object)">childrenAccept</a>, <a href="..\..\..\..\NVelocity/Runtime/Parser/Node/ASTReference/dump(System.html#String)">dump</a>, <a href="..\..\..\..\NVelocity/Runtime/Parser/Node/ASTReference.html#isInvalid">isInvalid</a>, <a href="..\..\..\..\NVelocity/Runtime/Parser/Node/ASTReference/jjtAddChild(NVelocity/Runtime/Parser/Node/INode,System.html#Int32)">jjtAddChild</a>, <a href="..\..\..\..\NVelocity/Runtime/Parser/Node/ASTReference.html#jjtClose">jjtClose</a>, <a href="..\..\..\..\NVelocity/Runtime/Parser/Node/ASTReference/jjtGetChild(System.html#Int32)">jjtGetChild</a>, <a href="..\..\..\..\NVelocity/Runtime/Parser/Node/ASTReference.html#jjtGetNumChildren">jjtGetNumChildren</a>, <a href="..\..\..\..\NVelocity/Runtime/Parser/Node/ASTReference.html#jjtGetParent">jjtGetParent</a>, <a href="..\..\..\..\NVelocity/Runtime/Parser/Node/ASTReference.html#jjtOpen">jjtOpen</a>, <a href="..\..\..\..\NVelocity/Runtime/Parser/Node/ASTReference/jjtSetParent(NVelocity/Runtime/Parser/Node.html#INode)">jjtSetParent</a>, <a href="..\..\..\..\NVelocity/Runtime/Parser/Node/ASTReference.html#setInvalid">setInvalid</a>, <a href="..\..\..\..\NVelocity/Runtime/Parser/Node/ASTReference/toString(System.html#String)">toString</a></td>
+      </tr>
+    </table>
+    <br>
+    <table class="subtable" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Methods inherited from class System.Object</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>
+          <a href="..\..\..\..\NVelocity/Runtime/Parser/Node/ASTReference/Equals(System.html#Object)">Equals</a>, <a href="..\..\..\..\NVelocity/Runtime/Parser/Node/ASTReference.html#Finalize">Finalize</a>, <a href="..\..\..\..\NVelocity/Runtime/Parser/Node/ASTReference.html#GetHashCode">GetHashCode</a>, <a href="..\..\..\..\NVelocity/Runtime/Parser/Node/ASTReference.html#GetType">GetType</a>, <a href="..\..\..\..\NVelocity/Runtime/Parser/Node/ASTReference.html#MemberwiseClone">MemberwiseClone</a>, <a href="..\..\..\..\NVelocity/Runtime/Parser/Node/ASTReference.html#ToString">ToString</a></td>
+      </tr>
+    </table>
+    <br>
+    <a name="operator-summary">
+    </a>
+    <a name="event-summary">
+    </a>
+    <br>
+    <a name="field-detail">
+    </a>
+    <a name="constructor-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Constructor Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.Runtime.Parser.Node.ASTReference.#ctor(System.Int32)">
+    </a>
+    <h3>ASTReference</h3>
+    <pre>public ASTReference(int id)</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Parser.Node.ASTReference.#ctor(NVelocity.Runtime.Parser.Parser,System.Int32)">
+    </a>
+    <h3>ASTReference</h3>
+    <pre>public ASTReference(NVelocity.Runtime.Parser.Parser p,
+                    int id)</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="property-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Property Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.Runtime.Parser.Node.ASTReference.Literal">
+    </a>
+    <h3>Literal</h3>
+    <pre>public string Literal</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Parser.Node.ASTReference.RootString">
+    </a>
+    <h3>RootString</h3>
+    <pre>public string RootString</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="method-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Method Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.Runtime.Parser.Node.ASTReference.evaluate(NVelocity.Context.InternalContextAdapter)">
+    </a>
+    <h3>evaluate</h3>
+    <pre>public bool evaluate(NVelocity.Context.InternalContextAdapter context)</pre>
+    <dl>
+      <dd>
+        <p>   Computes boolean value of this reference
+            Returns the actual value of reference return type
+            boolean, and 'true' if value is not null
+            *
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>context</code> - context to compute value with
+            
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Parser.Node.ASTReference.execute(System.Object,NVelocity.Context.InternalContextAdapter)">
+    </a>
+    <h3>execute</h3>
+    <pre>public object execute(object o,
+                      NVelocity.Context.InternalContextAdapter context)</pre>
+    <dl>
+      <dd>
+        <p>   gets an Object that 'is' the value of the reference
+            *
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>o</code> -   unused Object parameter
+            </dd>
+          <dd>
+            <code>context</code> - context used to generate value
+            
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Parser.Node.ASTReference.getVariableValue(NVelocity.Context.IContext,System.String)">
+    </a>
+    <h3>getVariableValue</h3>
+    <pre>public object getVariableValue(NVelocity.Context.IContext context,
+                               string variable)</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Parser.Node.ASTReference.init(NVelocity.Context.InternalContextAdapter,System.Object)">
+    </a>
+    <h3>init</h3>
+    <pre>public object init(NVelocity.Context.InternalContextAdapter context,
+                   object data)</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Parser.Node.ASTReference.jjtAccept(NVelocity.Runtime.Parser.Node.ParserVisitor,System.Object)">
+    </a>
+    <h3>jjtAccept</h3>
+    <pre>public object jjtAccept(NVelocity.Runtime.Parser.Node.ParserVisitor visitor,
+                        object data)</pre>
+    <dl>
+      <dd>
+        <p>Accept the visitor.
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Parser.Node.ASTReference.literal">
+    </a>
+    <h3>literal</h3>
+    <pre>public string literal()</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Parser.Node.ASTReference.render(NVelocity.Context.InternalContextAdapter,System.IO.TextWriter)">
+    </a>
+    <h3>render</h3>
+    <pre>public bool render(NVelocity.Context.InternalContextAdapter context,
+                   System.IO.TextWriter writer)</pre>
+    <dl>
+      <dd>
+        <p>  gets the value of the reference and outputs it to the
+            writer.
+            *
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>context</code> -  context of data to use in getting value
+            </dd>
+          <dd>
+            <code>writer</code> -   writer to render to
+            
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Parser.Node.ASTReference.setValue(NVelocity.Context.InternalContextAdapter,System.Object)">
+    </a>
+    <h3>setValue</h3>
+    <pre>public bool setValue(NVelocity.Context.InternalContextAdapter context,
+                     object value_Renamed)</pre>
+    <dl>
+      <dd>
+        <p>  Sets the value of a complex reference (something like $foo.bar)
+            Currently used by ASTSetReference()
+            *
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>context</code> - context object containing this reference
+            </dd>
+          <dd>
+            <code>value</code> - Object to set as value
+            </dd>
+        </dl>
+        <b>Returns:</b>
+        <dl>
+          <dd>true if successful, false otherwise
+            
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Parser.Node.ASTReference.value_Renamed(NVelocity.Context.InternalContextAdapter)">
+    </a>
+    <h3>value_Renamed</h3>
+    <pre>public object value_Renamed(NVelocity.Context.InternalContextAdapter context)</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="operator-detail">
+    </a>
+    <a name="event-detail">
+    </a>
+    <hr>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td>
+                <a href="namespace-summary.html">Namespace</a> </td>
+              <td class="nav1sel"> Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV TYPE    NEXT TYPE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+      <tr class="nav2">
+        <td>SUMMARY: INNER | FIELD | <a href="#constructor-summary">CONST</a> | <a href="#property-summary">PROP</a> | <a href="#method-summary">METHOD</a> | OP | EVENT</td>
+        <td>DETAIL: FIELD | <a href="#constructor-detail">CONST</a> | <a href="#property-detail">PROP</a> | <a href="#method-detail">METHOD</a> | OP | EVENT</td>
+      </tr>
+    </table>
+  </body>
+</html>

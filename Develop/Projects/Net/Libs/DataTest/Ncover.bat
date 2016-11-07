@@ -1,0 +1,1 @@
+"C:\Program Files\NCover\NCover.Console.exe" //w "E:\Projects\Net\Libs\DataTest\bin\Debug" //a DataTest "D:\Program Files\NUnit-Net-2.0 2.2.8\bin\nunit-console.exe"

@@ -1,0 +1,55 @@
+#set( $entity="${tools.getSingularName($table.Alias)}")
+#set( $nameList="")
+#set( $whereList="")
+#set( $paramList="")
+#set( $paramList1="")
+#foreach($column in $table.Columns)
+ #if($column.IsSelected)
+   #set( $nameList="${nameList}By${column.Name}")
+   #set($whereList="${whereList}[${column.Name}]=@${column.Name} AND ")
+   #set($paramList="${paramList}@${column.Name} ${column.DataTypeFull},")
+   #set($paramList1="${paramList1} ${column.NetType} ${column.Name},")
+ #end
+#end
+#set( $whereList=$tools.cutString($whereList,4))
+#set( $paramList=$tools.cutString($paramList,1))
+#set( $paramList1=$tools.cutString($paramList1,1))
+-- =============================================
+-- Author:		Savchin Inc. 
+-- Create date: $datetimenow
+-- Description:	Generated CodeRocket
+-- =============================================
+CREATE PROCEDURE _${entity}_Get${nameList}(${paramList})
+AS
+BEGIN
+	SELECT * FROM [${table.Name}]
+	WHERE ${whereList}
+END
+GO
+
+
+public ${entity}Value Get${nameList}(${paramList1})
+{
+    IDbCommand command = database.CreateSPCommand("_${entity}_Get${nameList}");
+    #foreach($column in $table.Columns)
+    #if($column.IsSelected)
+    DBConnection.AddInputParameterToCommand(command, "@${column.Name}", ${column.DbDataType}, ${column.Name});
+    #end
+    #end
+
+    return SelectSingle(command);
+
+}
+
+public List<${entity}Value> Get${nameList}(${paramList1})
+{
+    IDbCommand command = database.CreateSPCommand("_${entity}_Get${nameList}");
+    #foreach($column in $table.Columns)
+    #if($column.IsSelected)
+    DBConnection.AddInputParameterToCommand(command, "@${column.Name}", ${column.DbDataType}, ${column.Name});
+    #end
+    #end
+
+    return Select(command);
+
+}

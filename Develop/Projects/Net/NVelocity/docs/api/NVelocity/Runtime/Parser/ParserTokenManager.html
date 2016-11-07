@@ -1,0 +1,501 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="..\..\..\JavaDoc.css">
+  </head>
+  <body>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td>
+                <a href="namespace-summary.html">Namespace</a> </td>
+              <td class="nav1sel"> Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV TYPE    NEXT TYPE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+      <tr class="nav2">
+        <td>SUMMARY: INNER | <a href="#field-summary">FIELD</a> | <a href="#constructor-summary">CONST</a> | <a href="#property-summary">PROP</a> | <a href="#method-summary">METHOD</a> | OP | EVENT</td>
+        <td>DETAIL: <a href="#field-detail">FIELD</a> | <a href="#constructor-detail">CONST</a> | <a href="#property-detail">PROP</a> | <a href="#method-detail">METHOD</a> | OP | EVENT</td>
+      </tr>
+    </table>
+    <hr>
+    <h2>
+      <span class="namespaceName">NVelocity.Runtime.Parser</span>
+      <br>
+      <span class="className">Class ParserTokenManager</span>
+    </h2>
+    <a name="field-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Field Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="fieldType" valign="top">char</td>
+        <td class="field">
+          <a href="#NVelocity.Runtime.Parser.ParserTokenManager.curChar">curChar</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="fieldType" valign="top">bool</td>
+        <td class="field">
+          <a href="#NVelocity.Runtime.Parser.ParserTokenManager.debugPrint">debugPrint</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="fieldType" valign="top">System.IO.TextWriter</td>
+        <td class="field">
+          <a href="#NVelocity.Runtime.Parser.ParserTokenManager.debugStream">debugStream</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="fieldType" valign="top">bool</td>
+        <td class="field">
+          <a href="#NVelocity.Runtime.Parser.ParserTokenManager.inDirective">inDirective</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="fieldType" valign="top">bool</td>
+        <td class="field">
+          <a href="#NVelocity.Runtime.Parser.ParserTokenManager.inSet">inSet</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="fieldType" valign="top">int[]</td>
+        <td class="field">
+          <a href="#NVelocity.Runtime.Parser.ParserTokenManager.jjnewLexState">jjnewLexState</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="fieldType" valign="top">string[]</td>
+        <td class="field">
+          <a href="#NVelocity.Runtime.Parser.ParserTokenManager.jjstrLiteralImages">jjstrLiteralImages</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="fieldType" valign="top">string[]</td>
+        <td class="field">
+          <a href="#NVelocity.Runtime.Parser.ParserTokenManager.lexStateNames">lexStateNames</a>
+        </td>
+      </tr>
+    </table>
+    <br>
+    <a name="constructor-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Constructor Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="constructor" valign="top">
+          <a href="#NVelocity.Runtime.Parser.ParserTokenManager.#ctor(NVelocity.Runtime.Parser.CharStream)">ParserTokenManager</a>(NVelocity.Runtime.Parser.CharStream stream)</td>
+      </tr>
+      <tr>
+        <td class="constructor" valign="top">
+          <a href="#NVelocity.Runtime.Parser.ParserTokenManager.#ctor(NVelocity.Runtime.Parser.CharStream,System.Int32)">ParserTokenManager</a>(NVelocity.Runtime.Parser.CharStream stream, int lexState)</td>
+      </tr>
+    </table>
+    <br>
+    <a name="property-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Property Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="propertyType" valign="top">NVelocity.Runtime.Parser.Token</td>
+        <td class="property">
+          <a href="#NVelocity.Runtime.Parser.ParserTokenManager.NextToken">NextToken</a>
+        </td>
+      </tr>
+    </table>
+    <br>
+    <a name="method-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Method Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Parser.ParserTokenManager.clearStateVars">clearStateVars</a>()</td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Parser.ParserTokenManager.ReInit(NVelocity.Runtime.Parser.CharStream)">ReInit</a>(NVelocity.Runtime.Parser.CharStream stream)</td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Parser.ParserTokenManager.ReInit(NVelocity.Runtime.Parser.CharStream,System.Int32)">ReInit</a>(NVelocity.Runtime.Parser.CharStream stream, int lexState)</td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Parser.ParserTokenManager.setDebugStream(System.IO.StreamWriter)">setDebugStream</a>(System.IO.StreamWriter ds)</td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">bool</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Parser.ParserTokenManager.stateStackPop">stateStackPop</a>()</td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">bool</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Parser.ParserTokenManager.stateStackPush">stateStackPush</a>()</td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Parser.ParserTokenManager.SwitchTo(System.Int32)">SwitchTo</a>(int lexState)</td>
+      </tr>
+    </table>
+    <br>
+    <table class="subtable" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Methods inherited from class System.Object</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>
+          <a href="..\..\..\NVelocity/Runtime/Parser/ParserTokenManager/Equals(System.html#Object)">Equals</a>, <a href="..\..\..\NVelocity/Runtime/Parser/ParserTokenManager.html#Finalize">Finalize</a>, <a href="..\..\..\NVelocity/Runtime/Parser/ParserTokenManager.html#GetHashCode">GetHashCode</a>, <a href="..\..\..\NVelocity/Runtime/Parser/ParserTokenManager.html#GetType">GetType</a>, <a href="..\..\..\NVelocity/Runtime/Parser/ParserTokenManager.html#MemberwiseClone">MemberwiseClone</a>, <a href="..\..\..\NVelocity/Runtime/Parser/ParserTokenManager.html#ToString">ToString</a></td>
+      </tr>
+    </table>
+    <br>
+    <a name="operator-summary">
+    </a>
+    <a name="event-summary">
+    </a>
+    <br>
+    <a name="field-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Field Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.Runtime.Parser.ParserTokenManager.curChar">
+    </a>
+    <h3>curChar</h3>
+    <pre>protected char <b>curChar</b></pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Parser.ParserTokenManager.debugPrint">
+    </a>
+    <h3>debugPrint</h3>
+    <pre>public bool <b>debugPrint</b></pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Parser.ParserTokenManager.debugStream">
+    </a>
+    <h3>debugStream</h3>
+    <pre>public System.IO.TextWriter <b>debugStream</b></pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Parser.ParserTokenManager.inDirective">
+    </a>
+    <h3>inDirective</h3>
+    <pre>public bool <b>inDirective</b></pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Parser.ParserTokenManager.inSet">
+    </a>
+    <h3>inSet</h3>
+    <pre>public bool <b>inSet</b></pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Parser.ParserTokenManager.jjnewLexState">
+    </a>
+    <h3>jjnewLexState</h3>
+    <pre>public int[] <b>jjnewLexState</b></pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Parser.ParserTokenManager.jjstrLiteralImages">
+    </a>
+    <h3>jjstrLiteralImages</h3>
+    <pre>public string[] <b>jjstrLiteralImages</b></pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Parser.ParserTokenManager.lexStateNames">
+    </a>
+    <h3>lexStateNames</h3>
+    <pre>public string[] <b>lexStateNames</b></pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="constructor-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Constructor Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.Runtime.Parser.ParserTokenManager.#ctor(NVelocity.Runtime.Parser.CharStream)">
+    </a>
+    <h3>ParserTokenManager</h3>
+    <pre>public ParserTokenManager(NVelocity.Runtime.Parser.CharStream stream)</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Parser.ParserTokenManager.#ctor(NVelocity.Runtime.Parser.CharStream,System.Int32)">
+    </a>
+    <h3>ParserTokenManager</h3>
+    <pre>public ParserTokenManager(NVelocity.Runtime.Parser.CharStream stream,
+                          int lexState)</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="property-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Property Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.Runtime.Parser.ParserTokenManager.NextToken">
+    </a>
+    <h3>NextToken</h3>
+    <pre>public NVelocity.Runtime.Parser.Token NextToken</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="method-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Method Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.Runtime.Parser.ParserTokenManager.clearStateVars">
+    </a>
+    <h3>clearStateVars</h3>
+    <pre>public void clearStateVars()</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Parser.ParserTokenManager.ReInit(NVelocity.Runtime.Parser.CharStream)">
+    </a>
+    <h3>ReInit</h3>
+    <pre>public void ReInit(NVelocity.Runtime.Parser.CharStream stream)</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Parser.ParserTokenManager.ReInit(NVelocity.Runtime.Parser.CharStream,System.Int32)">
+    </a>
+    <h3>ReInit</h3>
+    <pre>public void ReInit(NVelocity.Runtime.Parser.CharStream stream,
+                   int lexState)</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Parser.ParserTokenManager.setDebugStream(System.IO.StreamWriter)">
+    </a>
+    <h3>setDebugStream</h3>
+    <pre>public void setDebugStream(System.IO.StreamWriter ds)</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Parser.ParserTokenManager.stateStackPop">
+    </a>
+    <h3>stateStackPop</h3>
+    <pre>public bool stateStackPop()</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Parser.ParserTokenManager.stateStackPush">
+    </a>
+    <h3>stateStackPush</h3>
+    <pre>public bool stateStackPush()</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Parser.ParserTokenManager.SwitchTo(System.Int32)">
+    </a>
+    <h3>SwitchTo</h3>
+    <pre>public void SwitchTo(int lexState)</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="operator-detail">
+    </a>
+    <a name="event-detail">
+    </a>
+    <hr>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td>
+                <a href="namespace-summary.html">Namespace</a> </td>
+              <td class="nav1sel"> Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV TYPE    NEXT TYPE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+      <tr class="nav2">
+        <td>SUMMARY: INNER | <a href="#field-summary">FIELD</a> | <a href="#constructor-summary">CONST</a> | <a href="#property-summary">PROP</a> | <a href="#method-summary">METHOD</a> | OP | EVENT</td>
+        <td>DETAIL: <a href="#field-detail">FIELD</a> | <a href="#constructor-detail">CONST</a> | <a href="#property-detail">PROP</a> | <a href="#method-detail">METHOD</a> | OP | EVENT</td>
+      </tr>
+    </table>
+  </body>
+</html>

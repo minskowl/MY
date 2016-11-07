@@ -1,0 +1,407 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="..\..\..\JavaDoc.css">
+  </head>
+  <body>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td>
+                <a href="namespace-summary.html">Namespace</a> </td>
+              <td class="nav1sel"> Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV TYPE    NEXT TYPE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+      <tr class="nav2">
+        <td>SUMMARY: INNER | FIELD | <a href="#constructor-summary">CONST</a> | PROP | <a href="#method-summary">METHOD</a> | OP | EVENT</td>
+        <td>DETAIL: FIELD | <a href="#constructor-detail">CONST</a> | PROP | <a href="#method-detail">METHOD</a> | OP | EVENT</td>
+      </tr>
+    </table>
+    <hr>
+    <h2>
+      <span class="namespaceName">NVelocity.App.Events</span>
+      <br>
+      <span class="className">Class EventCartridge</span>
+    </h2>
+    <p>  'Package' of event handlers...
+            *
+            </p>
+    <a name="field-summary">
+    </a>
+    <a name="constructor-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Constructor Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="constructor" valign="top">
+          <a href="#NVelocity.App.Events.EventCartridge.#ctor">EventCartridge</a>()<br>        Initializes a new instance of the EventCartridge class.</td>
+      </tr>
+    </table>
+    <br>
+    <a name="property-summary">
+    </a>
+    <a name="method-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Method Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="returnType" valign="top">bool</td>
+        <td class="method">
+          <a href="#NVelocity.App.Events.EventCartridge.addEventHandler(NVelocity.App.Events.EventHandler)">addEventHandler</a>(NVelocity.App.Events.EventHandler ev)<br>          Adds an event handler(s) to the Cartridge.  This method
+            will find all possible event handler interfaces supported
+            by the passed in object.
+            *
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">bool</td>
+        <td class="method">
+          <a href="#NVelocity.App.Events.EventCartridge.attachToContext(NVelocity.Context.IContext)">attachToContext</a>(NVelocity.Context.IContext context)<br>          Attached the EventCartridge to the context
+            *
+            Final because not something one should mess with lightly :)
+            *
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">object</td>
+        <td class="method">
+          <a href="#NVelocity.App.Events.EventCartridge.methodException(System.Type,System.String,System.Exception)">methodException</a>(System.Type claz, string method, System.Exception e)<br>          Implementation of MethodExceptionEventHandler  method
+            <pre class="code">methodException()</pre>.
+            *
+            Called during Velocity merge if a reference is null
+            *
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">object</td>
+        <td class="method">
+          <a href="#NVelocity.App.Events.EventCartridge.referenceInsert(System.String,System.Object)">referenceInsert</a>(string reference, object value_Renamed)<br>          Implementation of ReferenceInsertionEventHandler method
+            <pre class="code">referenceInsert()</pre>.
+            *
+            Called during Velocity merge before a reference value will
+            be inserted into the output stream.
+            *
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">bool</td>
+        <td class="method">
+          <a href="#NVelocity.App.Events.EventCartridge.removeEventHandler(NVelocity.App.Events.EventHandler)">removeEventHandler</a>(NVelocity.App.Events.EventHandler ev)<br>          Removes an event handler(s) from the Cartridge.  This method
+            will find all possible event handler interfaces supported
+            by the passed in object and remove them.
+            *
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">bool</td>
+        <td class="method">
+          <a href="#NVelocity.App.Events.EventCartridge.shouldLogOnNullSet(System.String,System.String)">shouldLogOnNullSet</a>(string lhs, string rhs)<br>          Implementation of NullSetEventHandler method
+            <pre class="code">shouldLogOnNullSet()</pre>.
+            *
+            Called during Velocity merge to determine if when
+            a #set() results in a null assignment, a warning
+            is logged.
+            *
+            </td>
+      </tr>
+    </table>
+    <br>
+    <table class="subtable" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Methods inherited from class System.Object</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>
+          <a href="..\..\..\NVelocity/App/Events/EventCartridge/Equals(System.html#Object)">Equals</a>, <a href="..\..\..\NVelocity/App/Events/EventCartridge.html#Finalize">Finalize</a>, <a href="..\..\..\NVelocity/App/Events/EventCartridge.html#GetHashCode">GetHashCode</a>, <a href="..\..\..\NVelocity/App/Events/EventCartridge.html#GetType">GetType</a>, <a href="..\..\..\NVelocity/App/Events/EventCartridge.html#MemberwiseClone">MemberwiseClone</a>, <a href="..\..\..\NVelocity/App/Events/EventCartridge.html#ToString">ToString</a></td>
+      </tr>
+    </table>
+    <br>
+    <a name="operator-summary">
+    </a>
+    <a name="event-summary">
+    </a>
+    <br>
+    <a name="field-detail">
+    </a>
+    <a name="constructor-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Constructor Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.App.Events.EventCartridge.#ctor">
+    </a>
+    <h3>EventCartridge</h3>
+    <pre>public EventCartridge()</pre>
+    <dl>
+      <dd>
+        <p>Initializes a new instance of the EventCartridge class.</p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="property-detail">
+    </a>
+    <a name="method-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Method Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.App.Events.EventCartridge.addEventHandler(NVelocity.App.Events.EventHandler)">
+    </a>
+    <h3>addEventHandler</h3>
+    <pre>public bool addEventHandler(NVelocity.App.Events.EventHandler ev)</pre>
+    <dl>
+      <dd>
+        <p>  Adds an event handler(s) to the Cartridge.  This method
+            will find all possible event handler interfaces supported
+            by the passed in object.
+            *
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>ev</code> - object impementing a valid EventHandler-derived interface
+            </dd>
+        </dl>
+        <b>Returns:</b>
+        <dl>
+          <dd>true if a supported interface, false otherwise or if null
+            
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.App.Events.EventCartridge.attachToContext(NVelocity.Context.IContext)">
+    </a>
+    <h3>attachToContext</h3>
+    <pre>public bool attachToContext(NVelocity.Context.IContext context)</pre>
+    <dl>
+      <dd>
+        <p>  Attached the EventCartridge to the context
+            *
+            Final because not something one should mess with lightly :)
+            *
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>context</code> - context to attach to
+            </dd>
+        </dl>
+        <b>Returns:</b>
+        <dl>
+          <dd>true if successful, false otherwise
+            
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.App.Events.EventCartridge.methodException(System.Type,System.String,System.Exception)">
+    </a>
+    <h3>methodException</h3>
+    <pre>public object methodException(System.Type claz,
+                              string method,
+                              System.Exception e)</pre>
+    <dl>
+      <dd>
+        <p>  Implementation of MethodExceptionEventHandler  method
+            <pre class="code">methodException()</pre>.
+            *
+            Called during Velocity merge if a reference is null
+            *
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>claz</code> -  Class that is causing the exception
+            </dd>
+          <dd>
+            <code>method</code> - method called that causes the exception
+            </dd>
+          <dd>
+            <code>e</code> - Exception thrown by the method
+            </dd>
+        </dl>
+        <b>Returns:</b>
+        <dl>
+          <dd>Object to return as method result
+            @throws exception to be wrapped and propogated to app
+            
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.App.Events.EventCartridge.referenceInsert(System.String,System.Object)">
+    </a>
+    <h3>referenceInsert</h3>
+    <pre>public object referenceInsert(string reference,
+                              object value_Renamed)</pre>
+    <dl>
+      <dd>
+        <p>  Implementation of ReferenceInsertionEventHandler method
+            <pre class="code">referenceInsert()</pre>.
+            *
+            Called during Velocity merge before a reference value will
+            be inserted into the output stream.
+            *
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>reference</code> - reference from template about to be inserted
+            </dd>
+          <dd>
+            <code>value</code> -  value about to be inserted (after toString() )
+            </dd>
+        </dl>
+        <b>Returns:</b>
+        <dl>
+          <dd>Object on which toString() should be called for output.
+            
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.App.Events.EventCartridge.removeEventHandler(NVelocity.App.Events.EventHandler)">
+    </a>
+    <h3>removeEventHandler</h3>
+    <pre>public bool removeEventHandler(NVelocity.App.Events.EventHandler ev)</pre>
+    <dl>
+      <dd>
+        <p>  Removes an event handler(s) from the Cartridge.  This method
+            will find all possible event handler interfaces supported
+            by the passed in object and remove them.
+            *
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>ev</code> - object impementing a valid EventHandler-derived interface
+            </dd>
+        </dl>
+        <b>Returns:</b>
+        <dl>
+          <dd>true if a supported interface, false otherwise or if null
+            
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.App.Events.EventCartridge.shouldLogOnNullSet(System.String,System.String)">
+    </a>
+    <h3>shouldLogOnNullSet</h3>
+    <pre>public bool shouldLogOnNullSet(string lhs,
+                               string rhs)</pre>
+    <dl>
+      <dd>
+        <p>  Implementation of NullSetEventHandler method
+            <pre class="code">shouldLogOnNullSet()</pre>.
+            *
+            Called during Velocity merge to determine if when
+            a #set() results in a null assignment, a warning
+            is logged.
+            *
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>reference</code> - reference from template about to be inserted
+            </dd>
+        </dl>
+        <b>Returns:</b>
+        <dl>
+          <dd>true if to be logged, false otherwise
+            
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <a name="operator-detail">
+    </a>
+    <a name="event-detail">
+    </a>
+    <hr>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td>
+                <a href="namespace-summary.html">Namespace</a> </td>
+              <td class="nav1sel"> Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV TYPE    NEXT TYPE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+      <tr class="nav2">
+        <td>SUMMARY: INNER | FIELD | <a href="#constructor-summary">CONST</a> | PROP | <a href="#method-summary">METHOD</a> | OP | EVENT</td>
+        <td>DETAIL: FIELD | <a href="#constructor-detail">CONST</a> | PROP | <a href="#method-detail">METHOD</a> | OP | EVENT</td>
+      </tr>
+    </table>
+  </body>
+</html>

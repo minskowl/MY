@@ -1,0 +1,25 @@
+
+
+<KB:TabControl
+    runat="server"
+    TabControlCssClass="tabTable"
+    HeaderCssClass="headerRow"
+    ButtonSeparatorCssClass="tabButtonSeparator"
+    
+    ButtonACssClass="tabButtonLeftSide"
+    ButtonBCssClass="tabButtonCenter"
+    ButtonCCssClass="tabButtonRightSide"
+    
+    SelButtonACssClass="tabSelButtonLeftSide"
+    SelButtonBCssClass="tabSelButtonCenter"
+    SelButtonCCssClass="tabSelButtonRightSide"
+
+    HotButtonACssClass="tabHotButtonLeftSide"
+    HotButtonBCssClass="tabHotButtonCenter"
+    HotButtonCCssClass="tabHotButtonRightSide"
+/>
+
+ <KB:TabPanel 
+    runat="server"
+    CssClass="tabContainer"
+        />

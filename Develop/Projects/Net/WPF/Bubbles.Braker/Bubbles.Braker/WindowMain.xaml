@@ -1,0 +1,76 @@
+<Window x:Class="Savchin.Bubbles.WindowMain"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Controls="clr-namespace:Savchin.Bubbles.Controls"
+    xmlns:Core="clr-namespace:Savchin.Bubbles.Core"
+        
+    Title="Bubbles" Background="#FFE9E9E9" 
+        Height="320"   MinHeight="320" Width="400" MinWidth="400" 
+        Icon="/Bubbles;component/Resources/Smile.ico"  >
+    <Window.CommandBindings>
+        <CommandBinding Command="Core:AppCommands.UndoCommand" CanExecute="UndoCommand_CanExecute" Executed="UndoCommand_Executed"/>
+        <CommandBinding Command="Core:AppCommands.RedoCommand" CanExecute="RedoCommand_CanExecute" Executed="RedoCommand_Executed"/>
+    </Window.CommandBindings>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Menu Grid.Row="0">
+            <MenuItem Header="Game">
+                <MenuItem x:Name="menuItemGameNew" Header="New" Click="MenuItemGameNew_OnClick"/>
+                <MenuItem x:Name="menuShift" Header="Shift" />
+                <MenuItem x:Name="menuUndo" DataContext="{Binding RelativeSource={RelativeSource Self }, Path= Command}" Header="{Binding Path =Text}"  Command="Core:AppCommands.UndoCommand"/>
+                <MenuItem x:Name="menuRedo" DataContext="{Binding RelativeSource={RelativeSource Self }, Path= Command}" Header="{Binding Path =Text}"  Command="Core:AppCommands.RedoCommand"/>
+            </MenuItem>
+            <MenuItem Header="Test">
+                <MenuItem Header="Shift Again" x:Name="menuItemShiftAgain" Click="menuItemShiftAgain_Click"/>
+                <MenuItem Header="Show Nulls" x:Name="menuItemShowNulls" Click="MenuItemShowNulls_OnClick"/>
+                <MenuItem Header="Clear Labels" x:Name="menuItemClearLabels" Click="MenuItemClearLabels_OnClick"/>
+                <MenuItem Header="IsValid" x:Name="menuItemIsValid" Click="menuItemIsValid_Click"/>
+            </MenuItem>
+            <MenuItem Header="Help">
+                              <MenuItem  x:Name="menuItemStatistics" Header="Statistics" Click="MenuItemStatistics_OnClick" />
+                <MenuItem  x:Name="menuItemAbout" Header="About" Click="menuItemAbout_Click" />
+            </MenuItem>
+        </Menu>
+        <DockPanel Grid.Row="1" Margin="5">
+            <Controls:StatisticsColorPanel x:Name="panelColorStatisics" DockPanel.Dock="Right" Width="80" />
+
+            <Controls:FieldControl  x:Name="boxField" FieldChanged="boxField_FieldChanged" Size="11" />
+
+        </DockPanel>
+
+        <StatusBar Grid.Row="2">
+            <StatusBarItem>
+                <TextBlock>Strategy:</TextBlock>
+            </StatusBarItem>
+            <StatusBarItem>
+                <TextBlock x:Name="labelStrategy">Standart</TextBlock>
+            </StatusBarItem>
+            <StatusBarItem>
+                <Separator/>
+            </StatusBarItem>
+            <StatusBarItem>
+                <TextBlock>Score:</TextBlock>
+            </StatusBarItem>
+            <StatusBarItem>
+                <TextBlock x:Name="labelScore">0</TextBlock>
+            </StatusBarItem>
+            <StatusBarItem>
+                <Separator/>
+            </StatusBarItem>
+            <StatusBarItem>
+                <TextBlock>Selected:</TextBlock>
+            </StatusBarItem>
+            <StatusBarItem>
+                <TextBlock x:Name="labelSelectedScore">0</TextBlock>
+            </StatusBarItem>
+            <StatusBarItem HorizontalContentAlignment="Right">
+                <ResizeGrip/>
+
+            </StatusBarItem>
+        </StatusBar>
+    </Grid>
+</Window>

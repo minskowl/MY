@@ -1,0 +1,416 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="..\..\JavaDoc.css">
+  </head>
+  <body>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td>
+                <a href="namespace-summary.html">Namespace</a> </td>
+              <td class="nav1sel"> Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV TYPE    NEXT TYPE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+      <tr class="nav2">
+        <td>SUMMARY: INNER | FIELD | CONST | <a href="#property-summary">PROP</a> | <a href="#method-summary">METHOD</a> | OP | EVENT</td>
+        <td>DETAIL: FIELD | CONST | <a href="#property-detail">PROP</a> | <a href="#method-detail">METHOD</a> | OP | EVENT</td>
+      </tr>
+    </table>
+    <hr>
+    <h2>
+      <span class="namespaceName">NVelocity.Dvsl</span>
+      <br>
+      <span class="className">Interface DvslNode</span>
+    </h2>
+    <p>
+            wrapper interface for nodes exposed in the
+            template.  Isolates the in-VSL DOM from that
+            of the underlying implementation
+            </p>
+    <a name="field-summary">
+    </a>
+    <a name="constructor-summary">
+    </a>
+    <a name="property-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Property Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="propertyType" valign="top">System.Collections.Hashtable</td>
+        <td class="property">
+          <a href="#NVelocity.Dvsl.DvslNode.AttribMap">AttribMap</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="propertyType" valign="top">string</td>
+        <td class="property">
+          <a href="#NVelocity.Dvsl.DvslNode.Name">Name</a>
+          <br>        
+            returns the name of the node
+            </td>
+      </tr>
+      <tr>
+        <td class="propertyType" valign="top">object</td>
+        <td class="property">
+          <a href="#NVelocity.Dvsl.DvslNode.NodeImpl">NodeImpl</a>
+          <br>        
+            returns the object corresponding to the node
+            in the implementaion that we are using.
+            use only with the greatest of care
+            </td>
+      </tr>
+      <tr>
+        <td class="propertyType" valign="top">string</td>
+        <td class="property">
+          <a href="#NVelocity.Dvsl.DvslNode.Value">Value</a>
+          <br>        
+            returns the 'value' of the node
+            </td>
+      </tr>
+    </table>
+    <br>
+    <a name="method-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Method Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="returnType" valign="top">string</td>
+        <td class="method">
+          <a href="#NVelocity.Dvsl.DvslNode.Attrib(System.String)">Attrib</a>(string attribute)<br>        
+            returns attribute
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">System.Collections.IList</td>
+        <td class="method">
+          <a href="#NVelocity.Dvsl.DvslNode.Children">Children</a>()<br>        
+            returns a list of all children of the current node
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">string</td>
+        <td class="method">
+          <a href="#NVelocity.Dvsl.DvslNode.Copy(System.Collections.IList)">Copy</a>(System.Collections.IList nodeList)<br>        
+            renders a deep copy of the nodes in
+            the list ot the output
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">string</td>
+        <td class="method">
+          <a href="#NVelocity.Dvsl.DvslNode.Copy">Copy</a>()<br>        
+            renders a deep copy of the XML tree
+            below the current node to the output
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">NVelocity.Dvsl.DvslNode</td>
+        <td class="method">
+          <a href="#NVelocity.Dvsl.DvslNode.Get(System.String)">Get</a>(string xpath)</td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">System.Collections.IList</td>
+        <td class="method">
+          <a href="#NVelocity.Dvsl.DvslNode.SelectNodes(System.String)">SelectNodes</a>(string xpath)<br>        
+            returns a list of nodes that satisfy
+            the xpath
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">NVelocity.Dvsl.DvslNode</td>
+        <td class="method">
+          <a href="#NVelocity.Dvsl.DvslNode.SelectSingleNode(System.String)">SelectSingleNode</a>(string xpath)<br>          returns a single node that satisfies
+            the xpath
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">string</td>
+        <td class="method">
+          <a href="#NVelocity.Dvsl.DvslNode.ToString">ToString</a>()<br>        
+            returns the 'value' of the node
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">object</td>
+        <td class="method">
+          <a href="#NVelocity.Dvsl.DvslNode.ValueOf(System.String)">ValueOf</a>(string xpath)<br>        
+            returns the value of the XPath
+            expression
+            </td>
+      </tr>
+    </table>
+    <br>
+    <a name="operator-summary">
+    </a>
+    <a name="event-summary">
+    </a>
+    <br>
+    <a name="field-detail">
+    </a>
+    <a name="constructor-detail">
+    </a>
+    <a name="property-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Property Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.Dvsl.DvslNode.AttribMap">
+    </a>
+    <h3>AttribMap</h3>
+    <pre>public System.Collections.Hashtable AttribMap</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Dvsl.DvslNode.Name">
+    </a>
+    <h3>Name</h3>
+    <pre>public string Name</pre>
+    <dl>
+      <dd>
+        <p>
+            returns the name of the node
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Dvsl.DvslNode.NodeImpl">
+    </a>
+    <h3>NodeImpl</h3>
+    <pre>public object NodeImpl</pre>
+    <dl>
+      <dd>
+        <p>
+            returns the object corresponding to the node
+            in the implementaion that we are using.
+            use only with the greatest of care
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Dvsl.DvslNode.Value">
+    </a>
+    <h3>Value</h3>
+    <pre>public string Value</pre>
+    <dl>
+      <dd>
+        <p>
+            returns the 'value' of the node
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="method-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Method Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.Dvsl.DvslNode.Attrib(System.String)">
+    </a>
+    <h3>Attrib</h3>
+    <pre>public string Attrib(string attribute)</pre>
+    <dl>
+      <dd>
+        <p>
+            returns attribute
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Dvsl.DvslNode.Children">
+    </a>
+    <h3>Children</h3>
+    <pre>public System.Collections.IList Children()</pre>
+    <dl>
+      <dd>
+        <p>
+            returns a list of all children of the current node
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Dvsl.DvslNode.Copy(System.Collections.IList)">
+    </a>
+    <h3>Copy</h3>
+    <pre>public string Copy(System.Collections.IList nodeList)</pre>
+    <dl>
+      <dd>
+        <p>
+            renders a deep copy of the nodes in
+            the list ot the output
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Dvsl.DvslNode.Copy">
+    </a>
+    <h3>Copy</h3>
+    <pre>public string Copy()</pre>
+    <dl>
+      <dd>
+        <p>
+            renders a deep copy of the XML tree
+            below the current node to the output
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Dvsl.DvslNode.Get(System.String)">
+    </a>
+    <h3>Get</h3>
+    <pre>public NVelocity.Dvsl.DvslNode Get(string xpath)</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Dvsl.DvslNode.SelectNodes(System.String)">
+    </a>
+    <h3>SelectNodes</h3>
+    <pre>public System.Collections.IList SelectNodes(string xpath)</pre>
+    <dl>
+      <dd>
+        <p>
+            returns a list of nodes that satisfy
+            the xpath
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Dvsl.DvslNode.SelectSingleNode(System.String)">
+    </a>
+    <h3>SelectSingleNode</h3>
+    <pre>public NVelocity.Dvsl.DvslNode SelectSingleNode(string xpath)</pre>
+    <dl>
+      <dd>
+        <p>  returns a single node that satisfies
+            the xpath
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Dvsl.DvslNode.ToString">
+    </a>
+    <h3>ToString</h3>
+    <pre>public string ToString()</pre>
+    <dl>
+      <dd>
+        <p>
+            returns the 'value' of the node
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Dvsl.DvslNode.ValueOf(System.String)">
+    </a>
+    <h3>ValueOf</h3>
+    <pre>public object ValueOf(string xpath)</pre>
+    <dl>
+      <dd>
+        <p>
+            returns the value of the XPath
+            expression
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="operator-detail">
+    </a>
+    <a name="event-detail">
+    </a>
+    <hr>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td>
+                <a href="namespace-summary.html">Namespace</a> </td>
+              <td class="nav1sel"> Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV TYPE    NEXT TYPE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+      <tr class="nav2">
+        <td>SUMMARY: INNER | FIELD | CONST | <a href="#property-summary">PROP</a> | <a href="#method-summary">METHOD</a> | OP | EVENT</td>
+        <td>DETAIL: FIELD | CONST | <a href="#property-detail">PROP</a> | <a href="#method-detail">METHOD</a> | OP | EVENT</td>
+      </tr>
+    </table>
+  </body>
+</html>

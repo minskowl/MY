@@ -1,0 +1,43 @@
+##parse("vLib.vm")
+#set( $method=$node.Tag)
+#set( $assembly=$method.DeclaringType.Assembly)
+#set( $assemblyName=$assembly.GetName().Name)
+#set( $methodName=$node.Text)
+#set( $name =$methodName.substring(6))
+#set( $interfaceName=$node.Parent.Text)
+
+#set( $ent=$assembly.GetType("${assemblyName}.Tbl${name}Entity"))
+#set( $interface=$assembly.GetType("${assemblyName}.I${name}"))
+
+[Test]
+public void CreateAndDelete()
+{
+			DB.checkDaoIsClear(dao);
+
+			DateTime n = DateTime.Now;
+			
+			Mock.MockI${name} mock = new cmTSATdao.Mock.MockI${name}();
+			Tbl${name}Entity ent=DB.puser.${interfaceName}.${methodName}(mock);
+			
+			Assert.IsNotNull(ent,"Created entitty is null");
+
+			DB.checkDaoHasOneRecord(dao);
+			
+			Tbl${name}Entity readEnt= (Tbl${name}Entity)dao.SelectById(ent.${name}ID );
+			
+			Assert.IsNotNull(readEnt,"Entity not readed");
+			
+			// compare properties
+			#PrintAssertForType($tools $interface $ent)
+		
+
+			DB.checkCreatedObject(readEnt,n);
+			
+			// Delete
+			
+			//Assert.IsTrue(DB.puser.${interfaceName}.${name}Delete(ent.${name}ID),"${name} not Deleted");
+			dao.Delete(ent.${name}ID);
+			DB.checkDaoIsClear(dao);
+
+			Assert.IsNull(dao.SelectById(ent.${name}ID),"Entity exists");
+}

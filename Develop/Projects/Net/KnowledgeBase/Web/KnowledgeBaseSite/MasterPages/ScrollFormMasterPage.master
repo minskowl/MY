@@ -1,0 +1,31 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="ScrollFormMasterPage.master.cs"
+    Inherits="ScrollFormMasterPage" MasterPageFile="~/MasterPages/MainMasterPage.master" %>
+
+<asp:Content ID="ScrollFormContent" ContentPlaceHolderID="Content" runat="Server">
+    <table cellpadding="0" cellspacing="0" border="0" width="100%" style="height:100%;">
+        <tr>
+            <td valign="top" style="margin:0px; padding: 0px;">
+                <div class="pageScroll" id="formScrollArea">
+                    <asp:ValidationSummary ID="ValidationSummary" runat="server" />
+                    <asp:ContentPlaceHolder ID="FormContentPlaceHolder" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td valign="top" style="height: 25px;" align="right">
+                <asp:ContentPlaceHolder ID="ButtonContentPlaceHolder" runat="server">
+                </asp:ContentPlaceHolder>
+            </td>
+        </tr>
+    </table>
+    <script type="text/javascript" language="javascript">
+
+     var obj=document.getElementById("formScrollArea");
+     if(obj!= null && document.body.clientHeight> 130) 
+       { 
+         obj.style.height=document.body.clientHeight -80;  
+         //WAMUserSettings.SetFormScrollAreaHeight(obj.style.height);
+        }
+    </script>
+</asp:Content>

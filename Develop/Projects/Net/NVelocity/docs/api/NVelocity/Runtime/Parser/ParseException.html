@@ -1,0 +1,387 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="..\..\..\JavaDoc.css">
+  </head>
+  <body>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td>
+                <a href="namespace-summary.html">Namespace</a> </td>
+              <td class="nav1sel"> Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV TYPE    NEXT TYPE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+      <tr class="nav2">
+        <td>SUMMARY: INNER | <a href="#field-summary">FIELD</a> | <a href="#constructor-summary">CONST</a> | <a href="#property-summary">PROP</a> | METHOD | OP | EVENT</td>
+        <td>DETAIL: <a href="#field-detail">FIELD</a> | <a href="#constructor-detail">CONST</a> | <a href="#property-detail">PROP</a> | METHOD | OP | EVENT</td>
+      </tr>
+    </table>
+    <hr>
+    <h2>
+      <span class="namespaceName">NVelocity.Runtime.Parser</span>
+      <br>
+      <span class="className">Class ParseException</span>
+    </h2>
+    <p> This exception is thrown when parse errors are encountered.
+            You can explicitly create objects of this exception type by
+            calling the method generateParseException in the generated
+            parser.
+            *
+            You can modify this class to customize your error reporting
+            mechanisms so long as you retain the public fields.
+            </p>
+    <a name="field-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Field Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="fieldType" valign="top">NVelocity.Runtime.Parser.Token</td>
+        <td class="field">
+          <a href="#NVelocity.Runtime.Parser.ParseException.currentToken">currentToken</a>
+          <br>         This is the last token that has been consumed successfully.  If
+            this object has been created due to a parse error, the token
+            followng this token will (therefore) be the first error token.
+            </td>
+      </tr>
+      <tr>
+        <td class="fieldType" valign="top">string</td>
+        <td class="field">
+          <a href="#NVelocity.Runtime.Parser.ParseException.eol">eol</a>
+          <br>         The end of line string for this machine.
+            </td>
+      </tr>
+      <tr>
+        <td class="fieldType" valign="top">int[]</td>
+        <td class="field">
+          <a href="#NVelocity.Runtime.Parser.ParseException.expectedTokenSequences">expectedTokenSequences</a>
+          <br>         Each entry in this array is an array of integers.  Each array
+            of integers represents a sequence of tokens (by their ordinal
+            values) that is expected at this point of the parse.
+            </td>
+      </tr>
+      <tr>
+        <td class="fieldType" valign="top">bool</td>
+        <td class="field">
+          <a href="#NVelocity.Runtime.Parser.ParseException.specialConstructor">specialConstructor</a>
+          <br>         This variable determines which constructor was used to create
+            this object and thereby affects the semantics of the
+            "getMessage" method (see below).
+            </td>
+      </tr>
+      <tr>
+        <td class="fieldType" valign="top">string[]</td>
+        <td class="field">
+          <a href="#NVelocity.Runtime.Parser.ParseException.tokenImage">tokenImage</a>
+          <br>         This is a reference to the "tokenImage" array of the generated
+            parser within which the parse error occurred.  This array is
+            defined in the generated ...Constants interface.
+            </td>
+      </tr>
+    </table>
+    <br>
+    <a name="constructor-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Constructor Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="constructor" valign="top">
+          <a href="#NVelocity.Runtime.Parser.ParseException.#ctor(NVelocity.Runtime.Parser.Token,System.Int32[][],System.String[])">ParseException</a>(NVelocity.Runtime.Parser.Token currentTokenVal, int[] expectedTokenSequencesVal, string[] tokenImageVal)</td>
+      </tr>
+      <tr>
+        <td class="constructor" valign="top">
+          <a href="#NVelocity.Runtime.Parser.ParseException.#ctor">ParseException</a>()<br>         The following constructors are for use by you for whatever
+            purpose you can think of.  Constructing the exception in this
+            manner makes the exception behave in the normal way - i.e., as
+            documented in the class "Throwable".  The fields "errorToken",
+            "expectedTokenSequences", and "tokenImage" do not contain
+            relevant information.  The JavaCC generated code does not use
+            these constructors.
+            </td>
+      </tr>
+      <tr>
+        <td class="constructor" valign="top">
+          <a href="#NVelocity.Runtime.Parser.ParseException.#ctor(System.String)">ParseException</a>(string message)</td>
+      </tr>
+    </table>
+    <br>
+    <a name="property-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Property Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="propertyType" valign="top">string</td>
+        <td class="property">
+          <a href="#NVelocity.Runtime.Parser.ParseException.Message">Message</a>
+        </td>
+      </tr>
+    </table>
+    <br>
+    <table class="subtable" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Properties inherited from class System.Exception</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>
+          <a href="">HelpLink</a>, <a href="">HResult</a>, <a href="">InnerException</a>, <a href="">Source</a>, <a href="">StackTrace</a>, <a href="">TargetSite</a></td>
+      </tr>
+    </table>
+    <br>
+    <a name="method-summary">
+    </a>
+    <table class="subtable" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Methods inherited from class System.Exception</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>
+          <a href="..\..\..\NVelocity/Runtime/Parser/ParseException.html#GetBaseException">GetBaseException</a>, <a href="..\..\..\NVelocity/Runtime/Parser/ParseException/GetObjectData(System/Runtime/Serialization/SerializationInfo,System/Runtime/Serialization.html#StreamingContext)">GetObjectData</a>, <a href="..\..\..\NVelocity/Runtime/Parser/ParseException.html#ToString">ToString</a></td>
+      </tr>
+    </table>
+    <br>
+    <table class="subtable" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Methods inherited from class System.Object</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>
+          <a href="..\..\..\NVelocity/Runtime/Parser/ParseException/Equals(System.html#Object)">Equals</a>, <a href="..\..\..\NVelocity/Runtime/Parser/ParseException.html#Finalize">Finalize</a>, <a href="..\..\..\NVelocity/Runtime/Parser/ParseException.html#GetHashCode">GetHashCode</a>, <a href="..\..\..\NVelocity/Runtime/Parser/ParseException.html#GetType">GetType</a>, <a href="..\..\..\NVelocity/Runtime/Parser/ParseException.html#MemberwiseClone">MemberwiseClone</a></td>
+      </tr>
+    </table>
+    <br>
+    <a name="operator-summary">
+    </a>
+    <a name="event-summary">
+    </a>
+    <br>
+    <a name="field-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Field Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.Runtime.Parser.ParseException.currentToken">
+    </a>
+    <h3>currentToken</h3>
+    <pre>public NVelocity.Runtime.Parser.Token <b>currentToken</b></pre>
+    <dl>
+      <dd>
+        <p> This is the last token that has been consumed successfully.  If
+            this object has been created due to a parse error, the token
+            followng this token will (therefore) be the first error token.
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Parser.ParseException.eol">
+    </a>
+    <h3>eol</h3>
+    <pre>protected internal string <b>eol</b></pre>
+    <dl>
+      <dd>
+        <p> The end of line string for this machine.
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Parser.ParseException.expectedTokenSequences">
+    </a>
+    <h3>expectedTokenSequences</h3>
+    <pre>public int[] <b>expectedTokenSequences</b></pre>
+    <dl>
+      <dd>
+        <p> Each entry in this array is an array of integers.  Each array
+            of integers represents a sequence of tokens (by their ordinal
+            values) that is expected at this point of the parse.
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Parser.ParseException.specialConstructor">
+    </a>
+    <h3>specialConstructor</h3>
+    <pre>protected internal bool <b>specialConstructor</b></pre>
+    <dl>
+      <dd>
+        <p> This variable determines which constructor was used to create
+            this object and thereby affects the semantics of the
+            "getMessage" method (see below).
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Parser.ParseException.tokenImage">
+    </a>
+    <h3>tokenImage</h3>
+    <pre>public string[] <b>tokenImage</b></pre>
+    <dl>
+      <dd>
+        <p> This is a reference to the "tokenImage" array of the generated
+            parser within which the parse error occurred.  This array is
+            defined in the generated ...Constants interface.
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="constructor-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Constructor Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.Runtime.Parser.ParseException.#ctor(NVelocity.Runtime.Parser.Token,System.Int32[][],System.String[])">
+    </a>
+    <h3>ParseException</h3>
+    <pre>public ParseException(NVelocity.Runtime.Parser.Token currentTokenVal,
+                      int[] expectedTokenSequencesVal,
+                      string[] tokenImageVal)</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Parser.ParseException.#ctor">
+    </a>
+    <h3>ParseException</h3>
+    <pre>public ParseException()</pre>
+    <dl>
+      <dd>
+        <p> The following constructors are for use by you for whatever
+            purpose you can think of.  Constructing the exception in this
+            manner makes the exception behave in the normal way - i.e., as
+            documented in the class "Throwable".  The fields "errorToken",
+            "expectedTokenSequences", and "tokenImage" do not contain
+            relevant information.  The JavaCC generated code does not use
+            these constructors.
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Parser.ParseException.#ctor(System.String)">
+    </a>
+    <h3>ParseException</h3>
+    <pre>public ParseException(string message)</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="property-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Property Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.Runtime.Parser.ParseException.Message">
+    </a>
+    <h3>Message</h3>
+    <pre>public string Message</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="method-detail">
+    </a>
+    <a name="operator-detail">
+    </a>
+    <a name="event-detail">
+    </a>
+    <hr>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td>
+                <a href="namespace-summary.html">Namespace</a> </td>
+              <td class="nav1sel"> Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV TYPE    NEXT TYPE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+      <tr class="nav2">
+        <td>SUMMARY: INNER | <a href="#field-summary">FIELD</a> | <a href="#constructor-summary">CONST</a> | <a href="#property-summary">PROP</a> | METHOD | OP | EVENT</td>
+        <td>DETAIL: <a href="#field-detail">FIELD</a> | <a href="#constructor-detail">CONST</a> | <a href="#property-detail">PROP</a> | METHOD | OP | EVENT</td>
+      </tr>
+    </table>
+  </body>
+</html>

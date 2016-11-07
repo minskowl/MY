@@ -1,0 +1,62 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelDesigner", "ModelDesigner\ModelDesigner.csproj", "{CEB8D742-90C8-4745-B4F6-5D3B9585C8CE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchemaEditor", "SchemaEditor\SchemaEditor.csproj", "{CD14A323-39F1-4F5C-9CE9-8477EE1E85FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataSchema", "DataSchema\DataSchema.csproj", "{709EF347-C049-42A5-AA99-0029AAB56C95}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "..\..\Libs\Data\Data.csproj", "{25AB3B90-41A8-4BD4-88B6-4607D1633D4C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Savchin.Controls.Common", "..\..\Libs\Controls\Common\Savchin.Controls.Common.csproj", "{A852E8EF-7FCA-44B0-AB22-92F3380357C5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Savchin.Tools", "..\..\Libs\Tools\Savchin.Tools.csproj", "{2F1807E4-39A2-4F38-ADFC-6310A8443D90}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libs", "Libs", "{3B9163DE-B222-4416-907D-C6917C4064D2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataSchemaTests", "DataSchemaTests\DataSchemaTests.csproj", "{0D0ECC5A-B271-440F-96B4-7CBC3E248BAF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CEB8D742-90C8-4745-B4F6-5D3B9585C8CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEB8D742-90C8-4745-B4F6-5D3B9585C8CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEB8D742-90C8-4745-B4F6-5D3B9585C8CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD14A323-39F1-4F5C-9CE9-8477EE1E85FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD14A323-39F1-4F5C-9CE9-8477EE1E85FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD14A323-39F1-4F5C-9CE9-8477EE1E85FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD14A323-39F1-4F5C-9CE9-8477EE1E85FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{709EF347-C049-42A5-AA99-0029AAB56C95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{709EF347-C049-42A5-AA99-0029AAB56C95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{709EF347-C049-42A5-AA99-0029AAB56C95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{709EF347-C049-42A5-AA99-0029AAB56C95}.Release|Any CPU.Build.0 = Release|Any CPU
+		{25AB3B90-41A8-4BD4-88B6-4607D1633D4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25AB3B90-41A8-4BD4-88B6-4607D1633D4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25AB3B90-41A8-4BD4-88B6-4607D1633D4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25AB3B90-41A8-4BD4-88B6-4607D1633D4C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A852E8EF-7FCA-44B0-AB22-92F3380357C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A852E8EF-7FCA-44B0-AB22-92F3380357C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A852E8EF-7FCA-44B0-AB22-92F3380357C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A852E8EF-7FCA-44B0-AB22-92F3380357C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F1807E4-39A2-4F38-ADFC-6310A8443D90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F1807E4-39A2-4F38-ADFC-6310A8443D90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F1807E4-39A2-4F38-ADFC-6310A8443D90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F1807E4-39A2-4F38-ADFC-6310A8443D90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D0ECC5A-B271-440F-96B4-7CBC3E248BAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D0ECC5A-B271-440F-96B4-7CBC3E248BAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D0ECC5A-B271-440F-96B4-7CBC3E248BAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D0ECC5A-B271-440F-96B4-7CBC3E248BAF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A852E8EF-7FCA-44B0-AB22-92F3380357C5} = {3B9163DE-B222-4416-907D-C6917C4064D2}
+		{2F1807E4-39A2-4F38-ADFC-6310A8443D90} = {3B9163DE-B222-4416-907D-C6917C4064D2}
+		{25AB3B90-41A8-4BD4-88B6-4607D1633D4C} = {3B9163DE-B222-4416-907D-C6917C4064D2}
+	EndGlobalSection
+EndGlobal

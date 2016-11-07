@@ -1,0 +1,25 @@
+.dhtmlgoodies_window .dhtmlgoodies_window_top
+{
+	background-color:#FFBD99;
+
+}
+
+.dhtmlgoodies_windowMiddle
+{
+	border-left: 3px solid #FFBD99;
+
+}
+.dhtmlgoodies_windowContent
+{
+	border-right: 3px solid #FFBD99;
+	background-color: #FFF;
+
+}
+.dhtmlgoodies_window_bottom
+{
+	border-left: 3px solid #FFBD99;
+	border-right: 3px solid #FFBD99;
+	border-bottom: 3px solid #FFBD99;
+
+
+}

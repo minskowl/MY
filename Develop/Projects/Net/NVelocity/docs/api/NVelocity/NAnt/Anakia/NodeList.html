@@ -1,0 +1,797 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="..\..\..\JavaDoc.css">
+  </head>
+  <body>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td>
+                <a href="namespace-summary.html">Namespace</a> </td>
+              <td class="nav1sel"> Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV TYPE    NEXT TYPE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+      <tr class="nav2">
+        <td>SUMMARY: INNER | FIELD | <a href="#constructor-summary">CONST</a> | <a href="#property-summary">PROP</a> | <a href="#method-summary">METHOD</a> | OP | EVENT</td>
+        <td>DETAIL: FIELD | <a href="#constructor-detail">CONST</a> | <a href="#property-detail">PROP</a> | <a href="#method-detail">METHOD</a> | OP | EVENT</td>
+      </tr>
+    </table>
+    <hr>
+    <h2>
+      <span class="namespaceName">NVelocity.NAnt.Anakia</span>
+      <br>
+      <span class="className">Class NodeList</span>
+    </h2>
+    <p>
+            Provides a class for wrapping a list of JDOM objects primarily for use in template
+            engines and other kinds of text transformation tools.
+            It has a {@link #toString()} method that will output the XML serialized form of the
+            nodes it contains - again focusing on template engine usage, as well as the
+            {@link #selectNodes(String)} method that helps selecting a different set of nodes
+            starting from the nodes in this list. The class also implements the {@link java.util.List}
+            interface by simply delegating calls to the contained list (the {@link #subList(int, int)}
+            method is implemented by delegating to the contained list and wrapping the returned
+            sublist into a <pre class="code">NodeList</pre>).
+            </p>
+    <a name="field-summary">
+    </a>
+    <a name="constructor-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Constructor Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="constructor" valign="top">
+          <a href="#NVelocity.NAnt.Anakia.NodeList.#ctor">NodeList</a>()<br>        
+            Creates an empty node list.
+            </td>
+      </tr>
+      <tr>
+        <td class="constructor" valign="top">
+          <a href="#NVelocity.NAnt.Anakia.NodeList.#ctor(System.Xml.XmlDocument)">NodeList</a>(System.Xml.XmlDocument document)<br>        
+            Creates a node list that holds a single {@link Document} node.
+            </td>
+      </tr>
+      <tr>
+        <td class="constructor" valign="top">
+          <a href="#NVelocity.NAnt.Anakia.NodeList.#ctor(System.Xml.XmlElement)">NodeList</a>(System.Xml.XmlElement element)<br>        
+            Creates a node list that holds a single {@link Element} node.
+            </td>
+      </tr>
+      <tr>
+        <td class="constructor" valign="top">
+          <a href="#NVelocity.NAnt.Anakia.NodeList.#ctor(System.Object)">NodeList</a>(object object_Renamed)</td>
+      </tr>
+      <tr>
+        <td class="constructor" valign="top">
+          <a href="#NVelocity.NAnt.Anakia.NodeList.#ctor(System.Collections.IList)">NodeList</a>(System.Collections.IList nodes)<br>        
+            Creates a node list that holds a list of nodes.
+            </td>
+      </tr>
+      <tr>
+        <td class="constructor" valign="top">
+          <a href="#NVelocity.NAnt.Anakia.NodeList.#ctor(System.Collections.IList,System.Boolean)">NodeList</a>(System.Collections.IList nodes, bool copy)<br>        
+            Creates a node list that holds a list of nodes.
+            </td>
+      </tr>
+      <tr>
+        <td class="constructor" valign="top">
+          <a href="#NVelocity.NAnt.Anakia.NodeList.#ctor(System.Xml.XmlNodeList,System.Boolean)">NodeList</a>(System.Xml.XmlNodeList list, bool copy)</td>
+      </tr>
+      <tr>
+        <td class="constructor" valign="top">
+          <a href="#NVelocity.NAnt.Anakia.NodeList.#ctor(System.Xml.XmlAttributeCollection)">NodeList</a>(System.Xml.XmlAttributeCollection attributes)</td>
+      </tr>
+    </table>
+    <br>
+    <a name="property-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Property Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="propertyType" valign="top">int</td>
+        <td class="property">
+          <a href="#NVelocity.NAnt.Anakia.NodeList.Count">Count</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="propertyType" valign="top">bool</td>
+        <td class="property">
+          <a href="#NVelocity.NAnt.Anakia.NodeList.IsFixedSize">IsFixedSize</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="propertyType" valign="top">bool</td>
+        <td class="property">
+          <a href="#NVelocity.NAnt.Anakia.NodeList.IsReadOnly">IsReadOnly</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="propertyType" valign="top">bool</td>
+        <td class="property">
+          <a href="#NVelocity.NAnt.Anakia.NodeList.IsSynchronized">IsSynchronized</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="propertyType" valign="top">object</td>
+        <td class="property">
+          <a href="#NVelocity.NAnt.Anakia.NodeList.Item(System.Int32)">Item</a>[int index]</td>
+      </tr>
+      <tr>
+        <td class="propertyType" valign="top">System.Collections.IList</td>
+        <td class="property">
+          <a href="#NVelocity.NAnt.Anakia.NodeList.List">List</a>
+          <br>        
+            Retrieves the underlying list used to store the nodes. Note however, that
+            you can fully use the underlying list through the <pre class="code">List</pre> interface
+            of this class itself. You would probably access the underlying list only for
+            synchronization purposes.
+            </td>
+      </tr>
+      <tr>
+        <td class="propertyType" valign="top">object</td>
+        <td class="property">
+          <a href="#NVelocity.NAnt.Anakia.NodeList.SyncRoot">SyncRoot</a>
+        </td>
+      </tr>
+    </table>
+    <br>
+    <a name="method-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Method Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="returnType" valign="top">int</td>
+        <td class="method">
+          <a href="#NVelocity.NAnt.Anakia.NodeList.Add(System.Object)">Add</a>(object o)</td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.NAnt.Anakia.NodeList.Clear">Clear</a>()</td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">object</td>
+        <td class="method">
+          <a href="#NVelocity.NAnt.Anakia.NodeList.Clone">Clone</a>()<br>        
+            Returns a NodeList that contains the same nodes as this node list.
+            @throws CloneNotSupportedException if the contained list's class does
+            not have an accessible no-arg constructor.
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">bool</td>
+        <td class="method">
+          <a href="#NVelocity.NAnt.Anakia.NodeList.Contains(System.Object)">Contains</a>(object value)</td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.NAnt.Anakia.NodeList.CopyTo(System.Array,System.Int32)">CopyTo</a>(System.Array array, int index)</td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">bool</td>
+        <td class="method">
+          <a href="#NVelocity.NAnt.Anakia.NodeList.Equals(System.Object)">Equals</a>(object o)<br>         Tests for equality with another object.
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">System.Collections.IEnumerator</td>
+        <td class="method">
+          <a href="#NVelocity.NAnt.Anakia.NodeList.GetEnumerator">GetEnumerator</a>()</td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">int</td>
+        <td class="method">
+          <a href="#NVelocity.NAnt.Anakia.NodeList.GetHashCode">GetHashCode</a>()<br>         Returns the hash code of the contained list.
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">int</td>
+        <td class="method">
+          <a href="#NVelocity.NAnt.Anakia.NodeList.IndexOf(System.Object)">IndexOf</a>(object value)</td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.NAnt.Anakia.NodeList.Insert(System.Int32,System.Object)">Insert</a>(int index, object value)</td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.NAnt.Anakia.NodeList.Remove(System.Object)">Remove</a>(object value)</td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.NAnt.Anakia.NodeList.RemoveAt(System.Int32)">RemoveAt</a>(int index)</td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">NVelocity.NAnt.Anakia.NodeList</td>
+        <td class="method">
+          <a href="#NVelocity.NAnt.Anakia.NodeList.selectNodes(System.String)">selectNodes</a>(string xpathString)<br>        
+            Applies an XPath expression to the node list and returns the resulting
+            node list. In order for this method to work, your application must have
+            access to werken.xpath library
+            classes. The implementation does cache the parsed format of XPath
+            expressions in a weak hash map, keyed by the string representation of
+            the XPath expression. As the string object passed as the argument is
+            usually kept in the parsed template, this ensures that each XPath
+            expression is parsed only once during the lifetime of the template that
+            first invoked it.
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">string</td>
+        <td class="method">
+          <a href="#NVelocity.NAnt.Anakia.NodeList.ToString">ToString</a>()<br>        
+            This method returns the string resulting from concatenation of string
+            representations of its nodes. Each node is rendered using its XML
+            serialization format. This greatly simplifies creating XML-transformation
+            templates, as to output a node contained in variable x as XML fragment,
+            you simply write ${x} in the template (or whatever your template engine
+            uses as its expression syntax).
+            </td>
+      </tr>
+    </table>
+    <br>
+    <table class="subtable" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Methods inherited from class System.Object</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>
+          <a href="..\..\..\NVelocity/NAnt/Anakia/NodeList.html#Finalize">Finalize</a>, <a href="..\..\..\NVelocity/NAnt/Anakia/NodeList.html#GetType">GetType</a>, <a href="..\..\..\NVelocity/NAnt/Anakia/NodeList.html#MemberwiseClone">MemberwiseClone</a></td>
+      </tr>
+    </table>
+    <br>
+    <a name="operator-summary">
+    </a>
+    <a name="event-summary">
+    </a>
+    <br>
+    <a name="field-detail">
+    </a>
+    <a name="constructor-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Constructor Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.NAnt.Anakia.NodeList.#ctor">
+    </a>
+    <h3>NodeList</h3>
+    <pre>public NodeList()</pre>
+    <dl>
+      <dd>
+        <p>
+            Creates an empty node list.
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.NAnt.Anakia.NodeList.#ctor(System.Xml.XmlDocument)">
+    </a>
+    <h3>NodeList</h3>
+    <pre>public NodeList(System.Xml.XmlDocument document)</pre>
+    <dl>
+      <dd>
+        <p>
+            Creates a node list that holds a single {@link Document} node.
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.NAnt.Anakia.NodeList.#ctor(System.Xml.XmlElement)">
+    </a>
+    <h3>NodeList</h3>
+    <pre>public NodeList(System.Xml.XmlElement element)</pre>
+    <dl>
+      <dd>
+        <p>
+            Creates a node list that holds a single {@link Element} node.
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.NAnt.Anakia.NodeList.#ctor(System.Object)">
+    </a>
+    <h3>NodeList</h3>
+    <pre>public NodeList(object object_Renamed)</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.NAnt.Anakia.NodeList.#ctor(System.Collections.IList)">
+    </a>
+    <h3>NodeList</h3>
+    <pre>public NodeList(System.Collections.IList nodes)</pre>
+    <dl>
+      <dd>
+        <p>
+            Creates a node list that holds a list of nodes.
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>nodes</code> - the list of nodes this template should hold. The created
+            template will copy the passed nodes list, so changes to the passed list
+            will not affect the model.
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.NAnt.Anakia.NodeList.#ctor(System.Collections.IList,System.Boolean)">
+    </a>
+    <h3>NodeList</h3>
+    <pre>public NodeList(System.Collections.IList nodes,
+                bool copy)</pre>
+    <dl>
+      <dd>
+        <p>
+            Creates a node list that holds a list of nodes.
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>nodes</code> - the list of nodes this template should hold.</dd>
+          <dd>
+            <code>copy</code> - if true, the created template will copy the passed nodes
+            list, so changes to the passed list will not affect the model. If false,
+            the model will reference the passed list and will sense changes in it,
+            altough no operations on the list will be synchronized.
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.NAnt.Anakia.NodeList.#ctor(System.Xml.XmlNodeList,System.Boolean)">
+    </a>
+    <h3>NodeList</h3>
+    <pre>public NodeList(System.Xml.XmlNodeList list,
+                bool copy)</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.NAnt.Anakia.NodeList.#ctor(System.Xml.XmlAttributeCollection)">
+    </a>
+    <h3>NodeList</h3>
+    <pre>public NodeList(System.Xml.XmlAttributeCollection attributes)</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="property-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Property Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.NAnt.Anakia.NodeList.Count">
+    </a>
+    <h3>Count</h3>
+    <pre>public int Count</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.NAnt.Anakia.NodeList.IsFixedSize">
+    </a>
+    <h3>IsFixedSize</h3>
+    <pre>public bool IsFixedSize</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.NAnt.Anakia.NodeList.IsReadOnly">
+    </a>
+    <h3>IsReadOnly</h3>
+    <pre>public bool IsReadOnly</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.NAnt.Anakia.NodeList.IsSynchronized">
+    </a>
+    <h3>IsSynchronized</h3>
+    <pre>public bool IsSynchronized</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.NAnt.Anakia.NodeList.Item(System.Int32)">
+    </a>
+    <h3>Item</h3>
+    <pre>public object this[int index]</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.NAnt.Anakia.NodeList.List">
+    </a>
+    <h3>List</h3>
+    <pre>public System.Collections.IList List</pre>
+    <dl>
+      <dd>
+        <p>
+            Retrieves the underlying list used to store the nodes. Note however, that
+            you can fully use the underlying list through the <pre class="code">List</pre> interface
+            of this class itself. You would probably access the underlying list only for
+            synchronization purposes.
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.NAnt.Anakia.NodeList.SyncRoot">
+    </a>
+    <h3>SyncRoot</h3>
+    <pre>public object SyncRoot</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="method-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Method Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.NAnt.Anakia.NodeList.Add(System.Object)">
+    </a>
+    <h3>Add</h3>
+    <pre>public int Add(object o)</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.NAnt.Anakia.NodeList.Clear">
+    </a>
+    <h3>Clear</h3>
+    <pre>public void Clear()</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.NAnt.Anakia.NodeList.Clone">
+    </a>
+    <h3>Clone</h3>
+    <pre>public object Clone()</pre>
+    <dl>
+      <dd>
+        <p>
+            Returns a NodeList that contains the same nodes as this node list.
+            @throws CloneNotSupportedException if the contained list's class does
+            not have an accessible no-arg constructor.
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.NAnt.Anakia.NodeList.Contains(System.Object)">
+    </a>
+    <h3>Contains</h3>
+    <pre>public bool Contains(object value)</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.NAnt.Anakia.NodeList.CopyTo(System.Array,System.Int32)">
+    </a>
+    <h3>CopyTo</h3>
+    <pre>public void CopyTo(System.Array array,
+                   int index)</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.NAnt.Anakia.NodeList.Equals(System.Object)">
+    </a>
+    <h3>Equals</h3>
+    <pre>public bool Equals(object o)</pre>
+    <dl>
+      <dd>
+        <p> Tests for equality with another object.
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>o</code> - the object to test for equality
+            </dd>
+        </dl>
+        <b>Returns:</b>
+        <dl>
+          <dd>true if the other object is also a NodeList and their contained
+            {@link List} objects evaluate as equals.
+            
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.NAnt.Anakia.NodeList.GetEnumerator">
+    </a>
+    <h3>GetEnumerator</h3>
+    <pre>public System.Collections.IEnumerator GetEnumerator()</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.NAnt.Anakia.NodeList.GetHashCode">
+    </a>
+    <h3>GetHashCode</h3>
+    <pre>public int GetHashCode()</pre>
+    <dl>
+      <dd>
+        <p> Returns the hash code of the contained list.
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.NAnt.Anakia.NodeList.IndexOf(System.Object)">
+    </a>
+    <h3>IndexOf</h3>
+    <pre>public int IndexOf(object value)</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.NAnt.Anakia.NodeList.Insert(System.Int32,System.Object)">
+    </a>
+    <h3>Insert</h3>
+    <pre>public void Insert(int index,
+                   object value)</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.NAnt.Anakia.NodeList.Remove(System.Object)">
+    </a>
+    <h3>Remove</h3>
+    <pre>public void Remove(object value)</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.NAnt.Anakia.NodeList.RemoveAt(System.Int32)">
+    </a>
+    <h3>RemoveAt</h3>
+    <pre>public void RemoveAt(int index)</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.NAnt.Anakia.NodeList.selectNodes(System.String)">
+    </a>
+    <h3>selectNodes</h3>
+    <pre>public NVelocity.NAnt.Anakia.NodeList selectNodes(string xpathString)</pre>
+    <dl>
+      <dd>
+        <p>
+            Applies an XPath expression to the node list and returns the resulting
+            node list. In order for this method to work, your application must have
+            access to werken.xpath library
+            classes. The implementation does cache the parsed format of XPath
+            expressions in a weak hash map, keyed by the string representation of
+            the XPath expression. As the string object passed as the argument is
+            usually kept in the parsed template, this ensures that each XPath
+            expression is parsed only once during the lifetime of the template that
+            first invoked it.
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>xpathExpression</code> - the XPath expression you wish to apply</dd>
+        </dl>
+        <b>Returns:</b>
+        <dl>
+          <dd>a NodeList representing the nodes that are the result of
+            application of the XPath to the current node list. It can be empty.
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.NAnt.Anakia.NodeList.ToString">
+    </a>
+    <h3>ToString</h3>
+    <pre>public string ToString()</pre>
+    <dl>
+      <dd>
+        <p>
+            This method returns the string resulting from concatenation of string
+            representations of its nodes. Each node is rendered using its XML
+            serialization format. This greatly simplifies creating XML-transformation
+            templates, as to output a node contained in variable x as XML fragment,
+            you simply write ${x} in the template (or whatever your template engine
+            uses as its expression syntax).
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="operator-detail">
+    </a>
+    <a name="event-detail">
+    </a>
+    <hr>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td>
+                <a href="namespace-summary.html">Namespace</a> </td>
+              <td class="nav1sel"> Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV TYPE    NEXT TYPE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+      <tr class="nav2">
+        <td>SUMMARY: INNER | FIELD | <a href="#constructor-summary">CONST</a> | <a href="#property-summary">PROP</a> | <a href="#method-summary">METHOD</a> | OP | EVENT</td>
+        <td>DETAIL: FIELD | <a href="#constructor-detail">CONST</a> | <a href="#property-detail">PROP</a> | <a href="#method-detail">METHOD</a> | OP | EVENT</td>
+      </tr>
+    </table>
+  </body>
+</html>

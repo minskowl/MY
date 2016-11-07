@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Class="DataClassesDataContext" AccessModifier="Internal" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Table Name="GameScores">
+    <Type Name="GameScore">
+      <Column Name="Shift" Type="Savchin.Bubbles.Core.ShiftStrategy" CanBeNull="false" />
+      <Column Name="Score" Storage="_Property1" Type="int" CanBeNull="false" />
+      <Column Name="FieldSize" Type="int" CanBeNull="false" />
+      <Column Name="GameScoreD" Member="GameScoreID" Storage="_GameScoreD" AutoSync="Never" Type="int" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>

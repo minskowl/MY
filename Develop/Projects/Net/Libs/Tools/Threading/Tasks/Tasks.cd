@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Savchin.Threading.Tasks.AsyncDelegateTask" Collapsed="true">
+    <Position X="4.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAEAQIBAAAAAIAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Threading\Tasks\AsyncDelegateTask.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Savchin.Threading.Tasks.GenericTask" Collapsed="true">
+    <Position X="4.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Threading\Tasks\GenericTask.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Savchin.Threading.Tasks.Task" Collapsed="true">
+    <Position X="5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABCAAAAAAAAAAQAAAFAAAAAAAAAAAAgAAAQAACAAAA=</HashCode>
+      <FileName>Threading\Tasks\Task.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Savchin.Threading.Tasks.WaitableAsyncDelegateTask" Collapsed="true">
+    <Position X="1.5" Y="3.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAEAQIBAAAAAIAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Threading\Tasks\WaitableAsyncDelegateTask.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Savchin.Threading.Tasks.WaitableGenericTask" Collapsed="true">
+    <Position X="1.75" Y="2.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Threading\Tasks\WaitableGenericTask.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="Savchin.Threading.ITask" Collapsed="true">
+    <Position X="7" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAAQAAAAAAAAAAAAAAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>Threading\ITask.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>

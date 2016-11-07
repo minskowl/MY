@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<project name="Build Libs" default="buildAll">
+	<include buildfile="..\..\NAnt\common.build" />
+	<target name="buildAll">
+		<call target="buildCodeRocket" />
+		<call target="buildSchemaEditor" />
+	</target>
+	<target name="buildRelease">
+		<property name="Project.Config" value="Release" />
+		<call target="buildProject" />
+	</target>
+	<target name="buildDebug">
+		<property name="Project.Config" value="Debug" />
+		<call target="buildProject" />
+	</target>
+	<target name="buildCodeRocket">
+		<property name="Project.Folder" value="${path::get-full-path('.')}" />
+		<property name="Project.File" value="CodeRocket.sln" />
+		<call target="buildDebug" />
+		<call target="buildRelease" />
+	</target>
+	<target name="buildSchemaEditor">
+		<property name="Project.Folder" value="${path::get-full-path('.')}" />
+		<property name="Project.File" value="SchemaEditor.sln" />
+		<call target="buildDebug" />
+		<call target="buildRelease" />
+	</target>	
+</project>

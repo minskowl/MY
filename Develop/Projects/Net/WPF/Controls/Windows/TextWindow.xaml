@@ -1,0 +1,16 @@
+﻿<Window x:Class="Savchin.Wpf.Controls.Windows.TextWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:Controls="clr-namespace:Savchin.Wpf.Controls"
+        Title="TextWindow" Height="120" Width="250" WindowStartupLocation="CenterScreen">
+    <Grid FocusManager.FocusedElement="{Binding txtText}">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TextBox Name="txtText" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" FontSize="20" />
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button IsDefault="True"  MinWidth="60" Margin="6" Controls:ButtonEx.DialogResult="true">Ok</Button>
+            <Button IsCancel="True" Name="btnCancel" MinWidth="60" Margin="6" Controls:ButtonEx.DialogResult="false">Cancel</Button>
+        </StackPanel>
+    </Grid>
+</Window>

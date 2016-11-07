@@ -1,0 +1,3 @@
+﻿ALTER TABLE [dbo].[Keywords] ADD CONSTRAINT [IX_Keywords] UNIQUE NONCLUSTERED  ([Name]) ON [PRIMARY]
+
+

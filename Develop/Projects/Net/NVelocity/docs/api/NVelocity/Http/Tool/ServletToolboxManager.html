@@ -1,0 +1,324 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="..\..\..\JavaDoc.css">
+  </head>
+  <body>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td>
+                <a href="namespace-summary.html">Namespace</a> </td>
+              <td class="nav1sel"> Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV TYPE    NEXT TYPE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+      <tr class="nav2">
+        <td>SUMMARY: INNER | <a href="#field-summary">FIELD</a> | <a href="#constructor-summary">CONST</a> | PROP | <a href="#method-summary">METHOD</a> | OP | EVENT</td>
+        <td>DETAIL: <a href="#field-detail">FIELD</a> | <a href="#constructor-detail">CONST</a> | PROP | <a href="#method-detail">METHOD</a> | OP | EVENT</td>
+      </tr>
+    </table>
+    <hr>
+    <h2>
+      <span class="namespaceName">NVelocity.Http.Tool</span>
+      <br>
+      <span class="className">Class ServletToolboxManager</span>
+    </h2>
+    <a name="field-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Field Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="fieldType" valign="top">string</td>
+        <td class="field">
+          <a href="#NVelocity.Http.Tool.ServletToolboxManager.ELEMENT_SCOPE">ELEMENT_SCOPE</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="fieldType" valign="top">string</td>
+        <td class="field">
+          <a href="#NVelocity.Http.Tool.ServletToolboxManager.SESSION_TOOLS_KEY">SESSION_TOOLS_KEY</a>
+        </td>
+      </tr>
+    </table>
+    <br>
+    <a name="constructor-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Constructor Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="constructor" valign="top">
+          <a href="#NVelocity.Http.Tool.ServletToolboxManager.#ctor(System.Web.HttpContext)">ServletToolboxManager</a>(System.Web.HttpContext httpContext)<br>        
+            Default constructor
+            </td>
+      </tr>
+    </table>
+    <br>
+    <a name="property-summary">
+    </a>
+    <a name="method-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Method Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.Http.Tool.ServletToolboxManager.AddTool(NVelocity.Tool.IToolInfo)">AddTool</a>(NVelocity.Tool.IToolInfo info)<br>        
+            Overrides XMLToolboxManager to separate tools by scope.
+            For this to work, we obviously override getToolboxContext as well.
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">NVelocity.Http.Context.ToolboxContext</td>
+        <td class="method">
+          <a href="#NVelocity.Http.Tool.ServletToolboxManager.getToolboxContext(System.Object)">getToolboxContext</a>(object initData)<br>        
+            Overrides XMLToolboxManager to handle the separate
+            scopes.
+            
+            Application scope tools were initialized when the toolbox was loaded.
+            Session scope tools are initialized once per session and stored in a
+            map in the session attributes.
+            Request scope tools are initialized on every request.
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.Http.Tool.ServletToolboxManager.log(System.String)">log</a>(string s)<br>        
+            Overrides XMLToolboxManager to log to the servlet context
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">NVelocity.Tool.IToolInfo</td>
+        <td class="method">
+          <a href="#NVelocity.Http.Tool.ServletToolboxManager.readToolInfo(System.Xml.XmlElement)">readToolInfo</a>(System.Xml.XmlElement e)<br>        
+            Overrides XMLToolboxManager to read a {@link ServletToolInfo}
+            instead of a {@link org.apache.velocity.tools.view.ViewToolInfo}.
+            </td>
+      </tr>
+    </table>
+    <br>
+    <table class="subtable" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Methods inherited from class NVelocity.Http.Tool.XMLToolboxManager</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>
+          <a href="..\..\..\NVelocity/Http/Tool/ServletToolboxManager/load(System/IO.html#Stream)">load</a>, <a href="..\..\..\NVelocity/Http/Tool/ServletToolboxManager/readDataInfo(System/Xml.html#XmlElement)">readDataInfo</a></td>
+      </tr>
+    </table>
+    <br>
+    <table class="subtable" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Methods inherited from class System.Object</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>
+          <a href="..\..\..\NVelocity/Http/Tool/ServletToolboxManager/Equals(System.html#Object)">Equals</a>, <a href="..\..\..\NVelocity/Http/Tool/ServletToolboxManager.html#Finalize">Finalize</a>, <a href="..\..\..\NVelocity/Http/Tool/ServletToolboxManager.html#GetHashCode">GetHashCode</a>, <a href="..\..\..\NVelocity/Http/Tool/ServletToolboxManager.html#GetType">GetType</a>, <a href="..\..\..\NVelocity/Http/Tool/ServletToolboxManager.html#MemberwiseClone">MemberwiseClone</a>, <a href="..\..\..\NVelocity/Http/Tool/ServletToolboxManager.html#ToString">ToString</a></td>
+      </tr>
+    </table>
+    <br>
+    <a name="operator-summary">
+    </a>
+    <a name="event-summary">
+    </a>
+    <br>
+    <a name="field-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Field Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.Http.Tool.ServletToolboxManager.ELEMENT_SCOPE">
+    </a>
+    <h3>ELEMENT_SCOPE</h3>
+    <pre>public string <b>ELEMENT_SCOPE</b></pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Http.Tool.ServletToolboxManager.SESSION_TOOLS_KEY">
+    </a>
+    <h3>SESSION_TOOLS_KEY</h3>
+    <pre>public string <b>SESSION_TOOLS_KEY</b></pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="constructor-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Constructor Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.Http.Tool.ServletToolboxManager.#ctor(System.Web.HttpContext)">
+    </a>
+    <h3>ServletToolboxManager</h3>
+    <pre>public ServletToolboxManager(System.Web.HttpContext httpContext)</pre>
+    <dl>
+      <dd>
+        <p>
+            Default constructor
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="property-detail">
+    </a>
+    <a name="method-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Method Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.Http.Tool.ServletToolboxManager.AddTool(NVelocity.Tool.IToolInfo)">
+    </a>
+    <h3>AddTool</h3>
+    <pre>public void AddTool(NVelocity.Tool.IToolInfo info)</pre>
+    <dl>
+      <dd>
+        <p>
+            Overrides XMLToolboxManager to separate tools by scope.
+            For this to work, we obviously override getToolboxContext as well.
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Http.Tool.ServletToolboxManager.getToolboxContext(System.Object)">
+    </a>
+    <h3>getToolboxContext</h3>
+    <pre>public NVelocity.Http.Context.ToolboxContext getToolboxContext(object initData)</pre>
+    <dl>
+      <dd>
+        <p>
+            Overrides XMLToolboxManager to handle the separate
+            scopes.
+            
+            Application scope tools were initialized when the toolbox was loaded.
+            Session scope tools are initialized once per session and stored in a
+            map in the session attributes.
+            Request scope tools are initialized on every request.
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Http.Tool.ServletToolboxManager.log(System.String)">
+    </a>
+    <h3>log</h3>
+    <pre>protected internal void log(string s)</pre>
+    <dl>
+      <dd>
+        <p>
+            Overrides XMLToolboxManager to log to the servlet context
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Http.Tool.ServletToolboxManager.readToolInfo(System.Xml.XmlElement)">
+    </a>
+    <h3>readToolInfo</h3>
+    <pre>protected internal NVelocity.Tool.IToolInfo readToolInfo(System.Xml.XmlElement e)</pre>
+    <dl>
+      <dd>
+        <p>
+            Overrides XMLToolboxManager to read a {@link ServletToolInfo}
+            instead of a {@link org.apache.velocity.tools.view.ViewToolInfo}.
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="operator-detail">
+    </a>
+    <a name="event-detail">
+    </a>
+    <hr>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td>
+                <a href="namespace-summary.html">Namespace</a> </td>
+              <td class="nav1sel"> Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV TYPE    NEXT TYPE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+      <tr class="nav2">
+        <td>SUMMARY: INNER | <a href="#field-summary">FIELD</a> | <a href="#constructor-summary">CONST</a> | PROP | <a href="#method-summary">METHOD</a> | OP | EVENT</td>
+        <td>DETAIL: <a href="#field-detail">FIELD</a> | <a href="#constructor-detail">CONST</a> | PROP | <a href="#method-detail">METHOD</a> | OP | EVENT</td>
+      </tr>
+    </table>
+  </body>
+</html>

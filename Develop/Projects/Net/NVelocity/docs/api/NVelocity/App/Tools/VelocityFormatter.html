@@ -1,0 +1,725 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="..\..\..\JavaDoc.css">
+  </head>
+  <body>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td>
+                <a href="namespace-summary.html">Namespace</a> </td>
+              <td class="nav1sel"> Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV TYPE    NEXT TYPE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+      <tr class="nav2">
+        <td>SUMMARY: INNER | FIELD | <a href="#constructor-summary">CONST</a> | PROP | <a href="#method-summary">METHOD</a> | OP | EVENT</td>
+        <td>DETAIL: FIELD | <a href="#constructor-detail">CONST</a> | PROP | <a href="#method-detail">METHOD</a> | OP | EVENT</td>
+      </tr>
+    </table>
+    <hr>
+    <h2>
+      <span class="namespaceName">NVelocity.App.Tools</span>
+      <br>
+      <span class="className">Class VelocityFormatter</span>
+    </h2>
+    <a name="field-summary">
+    </a>
+    <a name="constructor-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Constructor Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="constructor" valign="top">
+          <a href="#NVelocity.App.Tools.VelocityFormatter.#ctor(NVelocity.Context.IContext)">VelocityFormatter</a>(NVelocity.Context.IContext context)<br>         Constructor needs a backpointer to the context.
+            *
+            </td>
+      </tr>
+    </table>
+    <br>
+    <a name="property-summary">
+    </a>
+    <a name="method-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Method Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="returnType" valign="top">string</td>
+        <td class="method">
+          <a href="#NVelocity.App.Tools.VelocityFormatter.formatArray(System.Object,System.String,System.String)">formatArray</a>(object array, string delim, string finaldelim)<br>         Formats an array into the form
+            "A&lt;delim&gt;B&lt;finaldelim&gt;C".
+            *
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">string</td>
+        <td class="method">
+          <a href="#NVelocity.App.Tools.VelocityFormatter.formatArray(System.Object,System.String)">formatArray</a>(object array, string delim)<br>         Formats an array into the form
+            "A&lt;delim&gt;B&lt;delim&gt;C".
+            *
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">string</td>
+        <td class="method">
+          <a href="#NVelocity.App.Tools.VelocityFormatter.formatArray(System.Object)">formatArray</a>(object array)<br>         Formats an array into the form "A, B and C".
+            *
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">string</td>
+        <td class="method">
+          <a href="#NVelocity.App.Tools.VelocityFormatter.formatLongDate(System.DateTime)">formatLongDate</a>(System.DateTime date)<br>         Formats a date in 'long' style.
+            *
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">string</td>
+        <td class="method">
+          <a href="#NVelocity.App.Tools.VelocityFormatter.formatLongDateTime(System.DateTime)">formatLongDateTime</a>(System.DateTime date)<br>         Formats a date/time in 'long' style.
+            *
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">string</td>
+        <td class="method">
+          <a href="#NVelocity.App.Tools.VelocityFormatter.formatShortDate(System.DateTime)">formatShortDate</a>(System.DateTime date)<br>         Formats a date in 'short' style.
+            *
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">string</td>
+        <td class="method">
+          <a href="#NVelocity.App.Tools.VelocityFormatter.formatShortDateTime(System.DateTime)">formatShortDateTime</a>(System.DateTime date)<br>         Formats a date/time in 'short' style.
+            *
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">string</td>
+        <td class="method">
+          <a href="#NVelocity.App.Tools.VelocityFormatter.formatVector(System.Collections.ArrayList,System.String,System.String)">formatVector</a>(System.Collections.ArrayList vector, string delim, string finaldelim)<br>         Formats a vector into the form
+            "Adelim&gt;B&lt;finaldelim&gt;C".
+            *
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">string</td>
+        <td class="method">
+          <a href="#NVelocity.App.Tools.VelocityFormatter.formatVector(System.Collections.ArrayList,System.String)">formatVector</a>(System.Collections.ArrayList vector, string delim)<br>         Formats a vector into the form "A&lt;delim&gt;B&lt;delim&gt;C".
+            *
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">string</td>
+        <td class="method">
+          <a href="#NVelocity.App.Tools.VelocityFormatter.formatVector(System.Collections.ArrayList)">formatVector</a>(System.Collections.ArrayList vector)<br>         Formats a vector into the form "A, B and C".
+            *
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">object</td>
+        <td class="method">
+          <a href="#NVelocity.App.Tools.VelocityFormatter.isNull(System.Object,System.Object)">isNull</a>(object o, object dflt)<br>         Returns a default value if the object passed is null.
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">string</td>
+        <td class="method">
+          <a href="#NVelocity.App.Tools.VelocityFormatter.limitLen(System.Int32,System.String,System.String)">limitLen</a>(int maxlen, string string_Renamed, string suffix)<br>         Limits 'string' to 'maxlen' character.  If the string gets
+            curtailed, 'suffix' is appended to it.
+            *
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">string</td>
+        <td class="method">
+          <a href="#NVelocity.App.Tools.VelocityFormatter.limitLen(System.Int32,System.String)">limitLen</a>(int maxlen, string string_Renamed)<br>         Limits 'string' to 'maxlen' characters.  If the string gets
+            curtailed, "..." is appended to it.
+            *
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">string</td>
+        <td class="method">
+          <a href="#NVelocity.App.Tools.VelocityFormatter.makeAlternator(System.String,System.String,System.String,System.String,System.String)">makeAlternator</a>(string name, string alt1, string alt2, string alt3, string alt4)<br>         Makes an alternator object that alternates between four values.
+            *
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">string</td>
+        <td class="method">
+          <a href="#NVelocity.App.Tools.VelocityFormatter.makeAlternator(System.String,System.String,System.String,System.String)">makeAlternator</a>(string name, string alt1, string alt2, string alt3)<br>         Makes an alternator object that alternates between three
+            values.
+            *
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">string</td>
+        <td class="method">
+          <a href="#NVelocity.App.Tools.VelocityFormatter.makeAlternator(System.String,System.String,System.String)">makeAlternator</a>(string name, string alt1, string alt2)</td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">string</td>
+        <td class="method">
+          <a href="#NVelocity.App.Tools.VelocityFormatter.makeAutoAlternator(System.String,System.String,System.String)">makeAutoAlternator</a>(string name, string alt1, string alt2)<br>         Makes an alternator object that alternates between two values
+            automatically.
+            *
+            </td>
+      </tr>
+    </table>
+    <br>
+    <table class="subtable" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Methods inherited from class System.Object</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>
+          <a href="..\..\..\NVelocity/App/Tools/VelocityFormatter/Equals(System.html#Object)">Equals</a>, <a href="..\..\..\NVelocity/App/Tools/VelocityFormatter.html#Finalize">Finalize</a>, <a href="..\..\..\NVelocity/App/Tools/VelocityFormatter.html#GetHashCode">GetHashCode</a>, <a href="..\..\..\NVelocity/App/Tools/VelocityFormatter.html#GetType">GetType</a>, <a href="..\..\..\NVelocity/App/Tools/VelocityFormatter.html#MemberwiseClone">MemberwiseClone</a>, <a href="..\..\..\NVelocity/App/Tools/VelocityFormatter.html#ToString">ToString</a></td>
+      </tr>
+    </table>
+    <br>
+    <a name="operator-summary">
+    </a>
+    <a name="event-summary">
+    </a>
+    <br>
+    <a name="field-detail">
+    </a>
+    <a name="constructor-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Constructor Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.App.Tools.VelocityFormatter.#ctor(NVelocity.Context.IContext)">
+    </a>
+    <h3>VelocityFormatter</h3>
+    <pre>public VelocityFormatter(NVelocity.Context.IContext context)</pre>
+    <dl>
+      <dd>
+        <p> Constructor needs a backpointer to the context.
+            *
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>context</code> - A Context.
+            
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <a name="property-detail">
+    </a>
+    <a name="method-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Method Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.App.Tools.VelocityFormatter.formatArray(System.Object,System.String,System.String)">
+    </a>
+    <h3>formatArray</h3>
+    <pre>public string formatArray(object array,
+                          string delim,
+                          string finaldelim)</pre>
+    <dl>
+      <dd>
+        <p> Formats an array into the form
+            "A&lt;delim&gt;B&lt;finaldelim&gt;C".
+            *
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>array</code> - An Object.
+            </dd>
+          <dd>
+            <code>delim</code> - A String.
+            </dd>
+          <dd>
+            <code>finalDelim</code> - A String.
+            </dd>
+        </dl>
+        <b>Returns:</b>
+        <dl>
+          <dd>A String.
+            
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.App.Tools.VelocityFormatter.formatArray(System.Object,System.String)">
+    </a>
+    <h3>formatArray</h3>
+    <pre>public string formatArray(object array,
+                          string delim)</pre>
+    <dl>
+      <dd>
+        <p> Formats an array into the form
+            "A&lt;delim&gt;B&lt;delim&gt;C".
+            *
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>array</code> - An Object.
+            </dd>
+          <dd>
+            <code>delim</code> - A String.
+            </dd>
+        </dl>
+        <b>Returns:</b>
+        <dl>
+          <dd>A String.
+            
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.App.Tools.VelocityFormatter.formatArray(System.Object)">
+    </a>
+    <h3>formatArray</h3>
+    <pre>public string formatArray(object array)</pre>
+    <dl>
+      <dd>
+        <p> Formats an array into the form "A, B and C".
+            *
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>array</code> - An Object.
+            </dd>
+        </dl>
+        <b>Returns:</b>
+        <dl>
+          <dd>A String.
+            
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.App.Tools.VelocityFormatter.formatLongDate(System.DateTime)">
+    </a>
+    <h3>formatLongDate</h3>
+    <pre>public string formatLongDate(System.DateTime date)</pre>
+    <dl>
+      <dd>
+        <p> Formats a date in 'long' style.
+            *
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>date</code> - A Date.
+            </dd>
+        </dl>
+        <b>Returns:</b>
+        <dl>
+          <dd>A String.
+            
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.App.Tools.VelocityFormatter.formatLongDateTime(System.DateTime)">
+    </a>
+    <h3>formatLongDateTime</h3>
+    <pre>public string formatLongDateTime(System.DateTime date)</pre>
+    <dl>
+      <dd>
+        <p> Formats a date/time in 'long' style.
+            *
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>date</code> - A Date.
+            </dd>
+        </dl>
+        <b>Returns:</b>
+        <dl>
+          <dd>A String.
+            
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.App.Tools.VelocityFormatter.formatShortDate(System.DateTime)">
+    </a>
+    <h3>formatShortDate</h3>
+    <pre>public string formatShortDate(System.DateTime date)</pre>
+    <dl>
+      <dd>
+        <p> Formats a date in 'short' style.
+            *
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>date</code> - A Date.
+            </dd>
+        </dl>
+        <b>Returns:</b>
+        <dl>
+          <dd>A String.
+            
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.App.Tools.VelocityFormatter.formatShortDateTime(System.DateTime)">
+    </a>
+    <h3>formatShortDateTime</h3>
+    <pre>public string formatShortDateTime(System.DateTime date)</pre>
+    <dl>
+      <dd>
+        <p> Formats a date/time in 'short' style.
+            *
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>date</code> - A Date.
+            </dd>
+        </dl>
+        <b>Returns:</b>
+        <dl>
+          <dd>A String.
+            
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.App.Tools.VelocityFormatter.formatVector(System.Collections.ArrayList,System.String,System.String)">
+    </a>
+    <h3>formatVector</h3>
+    <pre>public string formatVector(System.Collections.ArrayList vector,
+                           string delim,
+                           string finaldelim)</pre>
+    <dl>
+      <dd>
+        <p> Formats a vector into the form
+            "Adelim&gt;B&lt;finaldelim&gt;C".
+            *
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>vector</code> - A Vector.
+            </dd>
+          <dd>
+            <code>delim</code> - A String.
+            </dd>
+          <dd>
+            <code>finalDelim</code> - A String.
+            </dd>
+        </dl>
+        <b>Returns:</b>
+        <dl>
+          <dd>A String.
+            
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.App.Tools.VelocityFormatter.formatVector(System.Collections.ArrayList,System.String)">
+    </a>
+    <h3>formatVector</h3>
+    <pre>public string formatVector(System.Collections.ArrayList vector,
+                           string delim)</pre>
+    <dl>
+      <dd>
+        <p> Formats a vector into the form "A&lt;delim&gt;B&lt;delim&gt;C".
+            *
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>vector</code> - A Vector.
+            </dd>
+          <dd>
+            <code>delim</code> - A String.
+            </dd>
+        </dl>
+        <b>Returns:</b>
+        <dl>
+          <dd>A String.
+            
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.App.Tools.VelocityFormatter.formatVector(System.Collections.ArrayList)">
+    </a>
+    <h3>formatVector</h3>
+    <pre>public string formatVector(System.Collections.ArrayList vector)</pre>
+    <dl>
+      <dd>
+        <p> Formats a vector into the form "A, B and C".
+            *
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>vector</code> - A Vector.
+            </dd>
+        </dl>
+        <b>Returns:</b>
+        <dl>
+          <dd>A String.
+            
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.App.Tools.VelocityFormatter.isNull(System.Object,System.Object)">
+    </a>
+    <h3>isNull</h3>
+    <pre>public object isNull(object o,
+                     object dflt)</pre>
+    <dl>
+      <dd>
+        <p> Returns a default value if the object passed is null.
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.App.Tools.VelocityFormatter.limitLen(System.Int32,System.String,System.String)">
+    </a>
+    <h3>limitLen</h3>
+    <pre>public string limitLen(int maxlen,
+                       string string_Renamed,
+                       string suffix)</pre>
+    <dl>
+      <dd>
+        <p> Limits 'string' to 'maxlen' character.  If the string gets
+            curtailed, 'suffix' is appended to it.
+            *
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>maxlen</code> - An int with the maximum length.
+            </dd>
+          <dd>
+            <code>string</code> - A String.
+            </dd>
+          <dd>
+            <code>suffix</code> - A String.
+            </dd>
+        </dl>
+        <b>Returns:</b>
+        <dl>
+          <dd>A String.
+            
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.App.Tools.VelocityFormatter.limitLen(System.Int32,System.String)">
+    </a>
+    <h3>limitLen</h3>
+    <pre>public string limitLen(int maxlen,
+                       string string_Renamed)</pre>
+    <dl>
+      <dd>
+        <p> Limits 'string' to 'maxlen' characters.  If the string gets
+            curtailed, "..." is appended to it.
+            *
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>maxlen</code> - An int with the maximum length.
+            </dd>
+          <dd>
+            <code>string</code> - A String.
+            </dd>
+        </dl>
+        <b>Returns:</b>
+        <dl>
+          <dd>A String.
+            
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.App.Tools.VelocityFormatter.makeAlternator(System.String,System.String,System.String,System.String,System.String)">
+    </a>
+    <h3>makeAlternator</h3>
+    <pre>public string makeAlternator(string name,
+                             string alt1,
+                             string alt2,
+                             string alt3,
+                             string alt4)</pre>
+    <dl>
+      <dd>
+        <p> Makes an alternator object that alternates between four values.
+            *
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.App.Tools.VelocityFormatter.makeAlternator(System.String,System.String,System.String,System.String)">
+    </a>
+    <h3>makeAlternator</h3>
+    <pre>public string makeAlternator(string name,
+                             string alt1,
+                             string alt2,
+                             string alt3)</pre>
+    <dl>
+      <dd>
+        <p> Makes an alternator object that alternates between three
+            values.
+            *
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.App.Tools.VelocityFormatter.makeAlternator(System.String,System.String,System.String)">
+    </a>
+    <h3>makeAlternator</h3>
+    <pre>public string makeAlternator(string name,
+                             string alt1,
+                             string alt2)</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.App.Tools.VelocityFormatter.makeAutoAlternator(System.String,System.String,System.String)">
+    </a>
+    <h3>makeAutoAlternator</h3>
+    <pre>public string makeAutoAlternator(string name,
+                                 string alt1,
+                                 string alt2)</pre>
+    <dl>
+      <dd>
+        <p> Makes an alternator object that alternates between two values
+            automatically.
+            *
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="operator-detail">
+    </a>
+    <a name="event-detail">
+    </a>
+    <hr>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td>
+                <a href="namespace-summary.html">Namespace</a> </td>
+              <td class="nav1sel"> Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV TYPE    NEXT TYPE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+      <tr class="nav2">
+        <td>SUMMARY: INNER | FIELD | <a href="#constructor-summary">CONST</a> | PROP | <a href="#method-summary">METHOD</a> | OP | EVENT</td>
+        <td>DETAIL: FIELD | <a href="#constructor-detail">CONST</a> | PROP | <a href="#method-detail">METHOD</a> | OP | EVENT</td>
+      </tr>
+    </table>
+  </body>
+</html>

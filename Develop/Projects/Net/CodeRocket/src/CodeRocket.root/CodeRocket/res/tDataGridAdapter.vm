@@ -1,0 +1,56 @@
+#macro( GenerateProperty $node )
+	#set( $typeString=$tools.getTypeName($node.Tag))
+	#set( $propertyName =$tools.getNameFromNode($node))
+	Private _$propertyName  As $typeString
+	Public ReadOnly Property $propertyName () As $typeString 
+	Get
+		Return _$propertyName 
+	End Get 
+  End Property 
+#end
+
+#macro( GenerateSetProperty $node $entName)
+	#set( $typeString=$tools.getTypeName($node.Tag))
+	#set( $propertyName =$tools.getNameFromNode($node))
+	#set( $propertyNameSeparate =$tools.getNameFromNodeSeparate($node))	
+	                        ._${propertyName} = ${entName}${propertyNameSeparate} 
+#end
+
+
+#set( $type=$node.Tag)
+#set( $FullName=$type.Name)
+#set( $name =$tools.getShortname($FullName))
+#set( $props= $tools.getLastCheckedNodes($node))
+
+Imports cmTSATdao
+Imports cmTSATdao.Collections
+Namespace DataGridRows
+<Serializable()> Friend Structure $name
+#Region " properties " 
+ 
+#foreach( $subNode in $props )
+    	#GenerateProperty( $subNode)
+#end
+
+#End Region 
+Public Shared Function GetRows(ByRef ${name}s As ${FullName}Collection) As ArrayList 
+                   If  ${name}s Is Nothing Then Exit Function 
+
+            Dim data As New ArrayList 
+            Dim row As $name 
+            For Each $name  As ${FullName}  In ${name}s 
+                  With row 
+                  
+#foreach( $subNode in $props )
+   	#GenerateSetProperty( $subNode $name )
+#end                          
+                  
+                  End With 
+                      data.Add(row) 
+            Next 
+            Return data 
+        End Function 
+   End Structure 
+End Namespace
+
+

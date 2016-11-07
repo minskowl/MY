@@ -1,0 +1,60 @@
+##parse("vLib.vm")
+#set( $method = $node.Tag)
+#set( $methodName = $node.Text)
+#set( $len= $methodName.Length - 6)
+#set( $name = $methodName.substring(0,$len))
+#set( $interfaceName = $node.Parent.Text)
+#set( $assembly=$method.DeclaringType.Assembly)
+#set( $assemblyName=$assembly.GetName().Name)
+#set( $interfaceName=$node.Parent.Text)
+
+#set( $interface=$assembly.GetType("${assemblyName}.I${name}"))
+#set( $ent=$assembly.GetType("${assemblyName}.Tbl${name}Entity"))
+
+#set( $postfixUpdate="Update")
+
+[Test]
+public void Update()
+{
+	#foreach( $prop in $tools.getPropertiesFromInterface($interface) )
+	  #set( $entProp=$ent.GetProperty($prop.Name))
+	  #if( $entProp.Name == $prop.Name && $prop.CanWrite() && $entProp.CanWrite() )
+	     ${prop.PropertyType.Name} ${name}${prop.Name}${postfixUpdate} = ${tools.getRandomValue($prop.PropertyType)};
+	  #end
+	#end	
+	
+			DB.checkDaoIsClear(dao);
+			
+			Tbl${name}Entity ent=CreateEntity();
+			
+			
+			DateTime n = DateTime.Now;
+			
+			Mock.MockI${name} mock = new cmTSATdao.Mock.MockI${name}();
+			
+			//set new values
+	#foreach( $prop in $tools.getPropertiesFromInterface($interface) )
+	  #set( $entProp=$ent.GetProperty($prop.Name))
+	  #if( $entProp.Name == $prop.Name && $prop.CanWrite() && $entProp.CanWrite() )
+	  		 mock.${prop.Name}=${name}${prop.Name}${postfixUpdate};
+	  #end
+	#end	
+	
+			Tbl${name}Entity entUpdate=DB.puser.${interfaceName}.${methodName}(ent.${name}ID, mock);
+			
+			Assert.IsNotNull(entUpdate,"Updated entity is null");
+			
+			Tbl${name}Entity readEnt= (Tbl${name}Entity)dao.SelectById(ent.${name}ID );
+
+			DB.checkDaoHasOneRecord(dao);
+			
+			// compare properties
+			#PrintAssertForType($tools $interface $ent)	
+
+			DB.checkModifiedObject(entUpdate,n);
+			
+			dao.Delete(ent.${name}ID);
+			DB.checkDaoIsClear(dao);
+
+			Assert.IsNull(dao.SelectById(ent.${name}ID),"Entity exists");
+}

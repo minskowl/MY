@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>7.10.3077</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AFFB9410-9280-40D8-BD99-75C13B1D79FD}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon />
+    <AssemblyKeyContainerName />
+    <AssemblyName>NVelocity.Http</AssemblyName>
+    <AssemblyOriginatorKeyFile />
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>NVelocity.Http</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject />
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>0.0</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>..\build\http\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile />
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>NVelocity.Http.xml</DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn />
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>0</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile />
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile />
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn />
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="Commons.csproj">
+      <Name>Commons</Name>
+      <Project>{2A71607F-DF74-4FC4-BD9B-BF3837883172}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="NVelocity.csproj">
+      <Name>NVelocity</Name>
+      <Project>{10AE9F9A-C23F-44D0-9E78-B4C125597ECE}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <Reference Include="log4net">
+      <Name>log4net</Name>
+      <HintPath>..\lib\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Web">
+      <Name>System.Web</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyVersionInfo.cs" />
+    <Compile Include="Http\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Http\Context\ChainedContext.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Http\Context\IViewContext.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Http\Context\ToolboxContext.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Http\HandlerSkeleton.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Http\NVelocityHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Http\NVelocityHandlerFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Http\NVelocityViewHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Http\Resource\Loader\IWebappLoaderAppContext.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Http\Resource\Loader\WebappLoadAppContext.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Http\Resource\Loader\WebappLoader.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Http\Tool\IToolboxManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Http\Tool\IViewTool.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Http\Tool\MultiViewsTool.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Http\Tool\ServletToolboxManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Http\Tool\ServletToolInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Http\Tool\ViewToolInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Http\Tool\XMLToolboxManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent />
+    <PostBuildEvent />
+  </PropertyGroup>
+</Project>

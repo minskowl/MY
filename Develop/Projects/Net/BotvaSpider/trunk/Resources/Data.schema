@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DatabaseSchema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Botva" ConnectionString="Provider=SQLOLEDB;Data Source=.;Integrated Security=SSPI;Initial Catalog=Botva" ProviderType="OleDb">
+  <Tables>
+    <TableSchema Name="Licenses" Alias="Licenses" IsActive="true" TableType="TABLE">
+      <Columns>
+        <ColumnSchema Name="Count" Alias="Count" NetType="System.Int32" DataTypeFull="[int]" DbDataType="Int32" DataType="int" Length="4" Precision="10" Scale="0" IsActive="true" IsReadOnly="false" Ordinal="7" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="56" DefaultValue="" />
+        <ColumnSchema Name="CreationDate" Alias="CreationDate" NetType="System.DateTime" DataTypeFull="[datetime]" DbDataType="DateTime" DataType="datetime" Length="8" Precision="23" Scale="3" IsActive="true" IsReadOnly="false" Ordinal="5" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="61" DefaultValue="" />
+        <ColumnSchema Name="LicenseID" Alias="LicenseID" NetType="System.Int32" DataTypeFull="[int]" DbDataType="Int32" DataType="int" Length="4" Precision="10" Scale="0" IsActive="true" IsReadOnly="false" Ordinal="1" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="true" IsForeignKey="false" DataTypeId="56" DefaultValue="" />
+        <ColumnSchema Name="ProductID" Alias="ProductID" NetType="System.Int32" DataTypeFull="[int]" DbDataType="Int32" DataType="int" Length="4" Precision="10" Scale="0" IsActive="true" IsReadOnly="false" Ordinal="4" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="56" DefaultValue="" />
+        <ColumnSchema Name="PublicKey" Alias="PublicKey" NetType="System.Guid" DataTypeFull="[uniqueidentifier]" DbDataType="Guid" DataType="uniqueidentifier" Length="16" Precision="0" Scale="0" IsActive="true" IsReadOnly="false" Ordinal="2" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="36" DefaultValue="" />
+        <ColumnSchema Name="UserID" Alias="UserID" NetType="System.Int32" DataTypeFull="[int]" DbDataType="Int32" DataType="int" Length="4" Precision="10" Scale="0" IsActive="true" IsReadOnly="false" Ordinal="3" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="56" DefaultValue="" />
+        <ColumnSchema Name="Version" Alias="Version" NetType="System.String" DataTypeFull="[varchar]" DbDataType="String" DataType="varchar" Length="50" Precision="0" Scale="0" IsActive="true" IsReadOnly="false" Ordinal="8" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="167" DefaultValue="" />
+        <ColumnSchema Name="WmTransferID" Alias="WmTransferID" NetType="System.Int32" DataTypeFull="[int]" DbDataType="Int32" DataType="int" Length="4" Precision="10" Scale="0" IsActive="true" IsReadOnly="false" Ordinal="6" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="56" DefaultValue="" />
+      </Columns>
+    </TableSchema>
+    <TableSchema Name="MachineLicencse" Alias="MachineLicencse" IsActive="true" TableType="TABLE">
+      <Columns>
+        <ColumnSchema Name="CreationDate" Alias="CreationDate" NetType="System.DateTime" DataTypeFull="[datetime]" DbDataType="DateTime" DataType="datetime" Length="8" Precision="23" Scale="3" IsActive="true" IsReadOnly="false" Ordinal="3" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="61" DefaultValue="" />
+        <ColumnSchema Name="LicensePublicKey" Alias="LicensePublicKey" NetType="System.Guid" DataTypeFull="[uniqueidentifier]" DbDataType="Guid" DataType="uniqueidentifier" Length="16" Precision="0" Scale="0" IsActive="true" IsReadOnly="false" Ordinal="2" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="true" IsForeignKey="false" DataTypeId="36" DefaultValue="" />
+        <ColumnSchema Name="MachineKey" Alias="MachineKey" NetType="System.Guid" DataTypeFull="[uniqueidentifier]" DbDataType="Guid" DataType="uniqueidentifier" Length="16" Precision="0" Scale="0" IsActive="true" IsReadOnly="false" Ordinal="1" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="true" IsForeignKey="false" DataTypeId="36" DefaultValue="" />
+      </Columns>
+    </TableSchema>
+    <TableSchema Name="Products" Alias="Products" IsActive="true" TableType="TABLE">
+      <Columns>
+        <ColumnSchema Name="CreationDate" Alias="CreationDate" NetType="System.DateTime" DataTypeFull="[datetime]" DbDataType="DateTime" DataType="datetime" Length="8" Precision="23" Scale="3" IsActive="true" IsReadOnly="false" Ordinal="5" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="61" DefaultValue="" />
+        <ColumnSchema Name="Name" Alias="Name" NetType="System.String" DataTypeFull="[nvarchar](100)" DbDataType="String" DataType="nvarchar" Length="100" Precision="0" Scale="0" IsActive="true" IsReadOnly="false" Ordinal="2" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="231" DefaultValue="" />
+        <ColumnSchema Name="PrivateKey" Alias="PrivateKey" NetType="System.Byte[]" DataTypeFull="[varbinary]" DbDataType="Binary" DataType="varbinary" Length="50" Precision="0" Scale="0" IsActive="true" IsReadOnly="false" Ordinal="4" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="165" DefaultValue="" />
+        <ColumnSchema Name="ProductID" Alias="ProductID" NetType="System.Int32" DataTypeFull="[int]" DbDataType="Int32" DataType="int" Length="4" Precision="10" Scale="0" IsActive="true" IsReadOnly="false" Ordinal="1" AllowNulls="false" IsUnique="false" IsAutoIncrement="true" IsPrimaryKey="true" IsForeignKey="false" DataTypeId="56" DefaultValue="" />
+        <ColumnSchema Name="PublicKey" Alias="PublicKey" NetType="System.Byte[]" DataTypeFull="[varbinary]" DbDataType="Binary" DataType="varbinary" Length="50" Precision="0" Scale="0" IsActive="true" IsReadOnly="false" Ordinal="3" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="165" DefaultValue="" />
+      </Columns>
+    </TableSchema>
+    <TableSchema Name="Users" Alias="Users" IsActive="true" TableType="TABLE">
+      <Columns>
+        <ColumnSchema Name="CreationDate" Alias="CreationDate" NetType="System.DateTime" DataTypeFull="[datetime]" DbDataType="DateTime" DataType="datetime" Length="8" Precision="23" Scale="3" IsActive="true" IsReadOnly="false" Ordinal="10" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="61" DefaultValue="" />
+        <ColumnSchema Name="Email" Alias="Email" NetType="System.String" DataTypeFull="[nvarchar](150)" DbDataType="String" DataType="nvarchar" Length="150" Precision="0" Scale="0" IsActive="true" IsReadOnly="false" Ordinal="6" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="231" DefaultValue="" />
+        <ColumnSchema Name="FirstName" Alias="FirstName" NetType="System.String" DataTypeFull="[nvarchar](50)" DbDataType="String" DataType="nvarchar" Length="50" Precision="0" Scale="0" IsActive="true" IsReadOnly="false" Ordinal="4" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="231" DefaultValue="" />
+        <ColumnSchema Name="IsAdmin" Alias="IsAdmin" NetType="System.Boolean" DataTypeFull="[bit]" DbDataType="Boolean" DataType="bit" Length="1" Precision="1" Scale="0" IsActive="true" IsReadOnly="false" Ordinal="9" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="104" DefaultValue="" />
+        <ColumnSchema Name="LastName" Alias="LastName" NetType="System.String" DataTypeFull="[nvarchar](50)" DbDataType="String" DataType="nvarchar" Length="50" Precision="0" Scale="0" IsActive="true" IsReadOnly="false" Ordinal="5" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="231" DefaultValue="" />
+        <ColumnSchema Name="Login" Alias="Login" NetType="System.String" DataTypeFull="[nvarchar](50)" DbDataType="String" DataType="nvarchar" Length="50" Precision="0" Scale="0" IsActive="true" IsReadOnly="false" Ordinal="2" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="231" DefaultValue="" />
+        <ColumnSchema Name="Password" Alias="Password" NetType="System.String" DataTypeFull="[nvarchar](50)" DbDataType="String" DataType="nvarchar" Length="50" Precision="0" Scale="0" IsActive="true" IsReadOnly="false" Ordinal="3" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="231" DefaultValue="" />
+        <ColumnSchema Name="SecurityAnswer" Alias="SecurityAnswer" NetType="System.String" DataTypeFull="[nvarchar](50)" DbDataType="String" DataType="nvarchar" Length="50" Precision="0" Scale="0" IsActive="true" IsReadOnly="false" Ordinal="8" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="231" DefaultValue="" />
+        <ColumnSchema Name="SecurityQuestion" Alias="SecurityQuestion" NetType="System.String" DataTypeFull="[nvarchar](50)" DbDataType="String" DataType="nvarchar" Length="50" Precision="0" Scale="0" IsActive="true" IsReadOnly="false" Ordinal="7" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="231" DefaultValue="" />
+        <ColumnSchema Name="UserID" Alias="UserID" NetType="System.Int32" DataTypeFull="[int]" DbDataType="Int32" DataType="int" Length="4" Precision="10" Scale="0" IsActive="true" IsReadOnly="false" Ordinal="1" AllowNulls="false" IsUnique="false" IsAutoIncrement="true" IsPrimaryKey="true" IsForeignKey="false" DataTypeId="56" DefaultValue="" />
+      </Columns>
+    </TableSchema>
+    <TableSchema Name="WM.Transfers" Alias="Transfers" IsActive="true" TableType="TABLE">
+      <Columns>
+        <ColumnSchema Name="Ammount" Alias="Ammount" NetType="System.Decimal" DataTypeFull="[decimal](18,2)" DbDataType="Decimal" DataType="decimal" Length="9" Precision="18" Scale="2" IsActive="true" IsReadOnly="false" Ordinal="5" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="106" DefaultValue="" />
+        <ColumnSchema Name="Date" Alias="Date" NetType="System.DateTime" DataTypeFull="[datetime]" DbDataType="DateTime" DataType="datetime" Length="8" Precision="23" Scale="3" IsActive="true" IsReadOnly="false" Ordinal="7" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="61" DefaultValue="" />
+        <ColumnSchema Name="Description" Alias="Description" NetType="System.String" DataTypeFull="[nvarchar](0)" DbDataType="String" DataType="nvarchar" Length="0" Precision="0" Scale="0" IsActive="true" IsReadOnly="false" Ordinal="6" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="231" DefaultValue="" />
+        <ColumnSchema Name="ID" Alias="ID" NetType="System.Int32" DataTypeFull="[int]" DbDataType="Int32" DataType="int" Length="4" Precision="10" Scale="0" IsActive="true" IsReadOnly="false" Ordinal="1" AllowNulls="false" IsUnique="false" IsAutoIncrement="true" IsPrimaryKey="true" IsForeignKey="false" DataTypeId="56" DefaultValue="" />
+        <ColumnSchema Name="InvoiceId" Alias="InvoiceId" NetType="System.Int32" DataTypeFull="[int]" DbDataType="Int32" DataType="int" Length="4" Precision="10" Scale="0" IsActive="true" IsReadOnly="false" Ordinal="2" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="56" DefaultValue="" />
+        <ColumnSchema Name="Purse" Alias="Purse" NetType="System.String" DataTypeFull="[varchar]" DbDataType="String" DataType="varchar" Length="150" Precision="0" Scale="0" IsActive="true" IsReadOnly="false" Ordinal="4" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="167" DefaultValue="" />
+        <ColumnSchema Name="TransferId" Alias="TransferId" NetType="System.Int32" DataTypeFull="[int]" DbDataType="Int32" DataType="int" Length="4" Precision="10" Scale="0" IsActive="true" IsReadOnly="false" Ordinal="3" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="56" DefaultValue="" />
+      </Columns>
+    </TableSchema>
+  </Tables>
+  <ForeignKeys>
+    <ForeignKeySchema Name="FK_Licenses_Peoducts" ForeignTableName="Licenses" PrimaryTableName="Products">
+      <Associations>
+        <ForeignKeyAssociation ForeignColumnName="ProductID" PrimaryColumnName="ProductID" />
+      </Associations>
+    </ForeignKeySchema>
+    <ForeignKeySchema Name="FK_Licenses_Users" ForeignTableName="Licenses" PrimaryTableName="Users">
+      <Associations>
+        <ForeignKeyAssociation ForeignColumnName="UserID" PrimaryColumnName="UserID" />
+      </Associations>
+    </ForeignKeySchema>
+    <ForeignKeySchema Name="FK_Licenses_WM.Transfers" ForeignTableName="Licenses" PrimaryTableName="WM.Transfers">
+      <Associations>
+        <ForeignKeyAssociation ForeignColumnName="WmTransferID" PrimaryColumnName="ID" />
+      </Associations>
+    </ForeignKeySchema>
+    <ForeignKeySchema Name="FK_MachineLicencse_Licenses" ForeignTableName="MachineLicencse" PrimaryTableName="Licenses">
+      <Associations>
+        <ForeignKeyAssociation ForeignColumnName="LicenseID" PrimaryColumnName="LicenseID" />
+      </Associations>
+    </ForeignKeySchema>
+  </ForeignKeys>
+</DatabaseSchema>

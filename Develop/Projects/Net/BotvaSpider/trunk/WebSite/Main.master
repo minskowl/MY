@@ -1,0 +1,57 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Main.master.cs" Inherits="Main" %>
+
+<%@ Register Src="UserControls/LoginControl.ascx" TagName="LoginControl" TagPrefix="uc1" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form2" runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server">
+    </asp:ScriptManager>
+    <div id="wrapper">
+        <div id="nav">
+            <ul>
+                <li><a href="Default.aspx">О Боте</a></li>
+                <li><a href="#">Форум</a></li>
+                <li><a href="http://www.freewebsitetemplates.com">gallery</a></li>
+                <li><a href="http://www.freewebsitetemplates.com">community</a></li>
+                <li class="lastchild"><a href="http://www.freewebsitetemplates.com">contact</a></li>
+            </ul>
+        </div>
+        <!-- end nav -->
+       
+        <div id="body">
+            <div id="current">
+                <a href="/">
+                    <img src="images/logo.jpg" width="235" height="396" alt="logo" /></a>
+                <div class="nav">
+                    <uc1:LoginControl ID="LoginControl1" runat="server" />
+                </div>
+                <!-- end .nav -->
+            </div>
+            <!-- end current -->
+            <div id="content">
+                <br />
+                <br />
+                <asp:ContentPlaceHolder ID="content" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+            <!-- end content -->
+            <div class="clear">
+            </div>
+        </div>
+        <!-- end body -->
+        <div id="footer" class="clear">
+            <div id="copyright">
+                &copy; copyright information goes here</div>
+        </div>
+        <!-- end footer -->
+    </div>
+    <!-- end wrapper -->
+    </form>
+</body>
+</html>

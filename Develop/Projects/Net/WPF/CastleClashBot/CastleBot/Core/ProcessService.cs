@@ -1,0 +1,27 @@
+﻿using System.Collections.Generic;
+using Castle.Core;
+using CastleBot.Core;
+using ChristianMoser.WpfInspector.Services;
+
+namespace CastleController.Core
+{
+    public class ProcessService : IProcessService
+    {
+        #region IProcessService Members
+
+        public List<ManagedApplicationInfo> GetProcessInfos()
+        {
+            var applicationsService = ServiceLocator.Resolve<ManagedApplicationsService>();
+            var processes = new List<ManagedApplicationInfo>();
+            processes.AddRange(applicationsService.GetManagedApplications());
+            return processes;
+        }
+
+        public string Inspect(ManagedApplicationInfo applicationInfo)
+        {
+            return ServiceLocator.Resolve<InspectionService>().Inspect(applicationInfo);
+        }
+
+        #endregion
+    }
+}

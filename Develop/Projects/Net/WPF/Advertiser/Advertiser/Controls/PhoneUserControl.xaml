@@ -1,0 +1,54 @@
+﻿<UserControl x:Class="Advertiser.Controls.PhoneUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:Data="clr-namespace:Savchin.Wpf.Data;assembly=Savchin.WPF.Tools" mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <Data:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+    </UserControl.Resources>
+    <Grid Visibility="{Binding CanEdit, Converter={StaticResource BoolToVisibilityConverter}}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row="0" Grid.Column="0" Content="#"/>
+        <TextBox Grid.Row="0" Grid.Column="1" DataContext="{Binding SelectedItem}" Text="{Binding Id}"  IsReadOnly="True"/>
+
+        <Label Grid.Row="1" Grid.Column="0" Content="Страна"/>
+        <ComboBox Grid.Row="1" Grid.Column="1" ItemsSource="{Binding Countries}" SelectedValue="{Binding SelectedItem.CountryCode}" SelectedValuePath="Value" />
+
+        <Label Grid.Row="3" Grid.Column="0" Content="Код"/>
+        <TextBox  Grid.Row="3" Grid.Column="1" Text="{Binding SelectedItem.Code}"  />
+
+        <Label Grid.Row="4" Grid.Column="0" Content="Номер"/>
+        <TextBox  Grid.Row="4" Grid.Column="1" Text="{Binding SelectedItem.Number}"  />
+
+        <Label Grid.Row="5" Grid.Column="0" Content="Оператор"/>
+        <ComboBox Grid.Row="5" Grid.Column="1" ItemsSource="{Binding Operators}" SelectedValue="{Binding SelectedItem.Operator}" SelectedValuePath="Value" />
+
+        <Label Grid.Row="6" Grid.Column="0" Content="Звонить"/>
+        <StackPanel Grid.Row="6" Grid.Column="1" Orientation="Horizontal">
+            <Label Content="От"/>
+            <ComboBox  ItemsSource="{Binding Hours}" SelectedValue="{Binding SelectedItem.From}" SelectedValuePath="Value" Style="{StaticResource thin}" />
+            <Label Content="До"/>
+            <ComboBox ItemsSource="{Binding Hours}" SelectedValue="{Binding SelectedItem.To}" SelectedValuePath="Value" Style="{StaticResource thin}" />
+        </StackPanel>
+
+        <Button Grid.Row="7" Grid.Column="1" Content="Сохранить" Command="{Binding SaveItemCommand}" HorizontalAlignment="Right"/>
+    </Grid>
+</UserControl>

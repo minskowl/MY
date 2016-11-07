@@ -1,0 +1,46 @@
+<UserControl x:Class="KnowledgeBase.Desktop.Controls.CategoryTreeControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:Core="clr-namespace:KnowledgeBase.Desktop.Core" xmlns:dw="clr-namespace:KnowledgeBase.Desktop.Controls"
+             xmlns:Controls="clr-namespace:KnowledgeBase.Controls;assembly=KnowledgeBase.Controls" mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300" Name="rootControl" >
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <!-- Load this specific theme because the Aero theme for CheckBox has issues. -->
+
+            <Style x:Key="TreeViewItemStyle" TargetType="TreeViewItem">
+                <Setter Property="IsSelected" Value="{Binding Path=IsSelected}"/>
+                <Setter Property="IsExpanded" Value="{Binding Path=IsExpanded}"/>
+                <Setter Property="Visibility" Value="{Binding Path=IsVisible, Converter={StaticResource convVisibility}}"/>
+                <Setter Property="KeyboardNavigation.AcceptsReturn" Value="True" />
+                <Setter Property="Controls:VirtualToggleButton.IsVirtualToggleButton" Value="True" />
+                <Setter Property="Controls:VirtualToggleButton.IsChecked" Value="{Binding IsChecked}" />
+            </Style>
+            <HierarchicalDataTemplate DataType="{x:Type Core:TreeNode}" ItemsSource="{Binding Path=Childrens}" >
+                <StackPanel Orientation="Horizontal">
+                    <CheckBox 
+                    Visibility="{Binding ElementName=rootControl, Path=ShowCheckboxes, Converter={StaticResource convVisibility}}" 
+                    Tag="{Binding Path=Id}"
+                    Focusable="False" 
+                    IsChecked="{Binding IsChecked}" />
+                    <Image Source="/IdeaProvider;component/Resources/TreeView/folder_16.png" Height="16" Width="16"  Margin="0,0,2,0"/>
+                    <TextBlock Text="{Binding Path=Text}" />
+                </StackPanel>
+            </HierarchicalDataTemplate>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <TreeView Name="treeView1" 
+            SelectedItemChanged="TreeView1SelectedItemChanged" 
+             ItemContainerStyle="{StaticResource TreeViewItemStyle}">
+        <TreeView.ContextMenu>
+            <ContextMenu>
+                <MenuItem x:Name="itemRefresh" Header="Refresh" Click="ItemRefresh_OnClick"  />
+                <MenuItem x:Name="itemExport" Header="Export"  
+                          Command="{Binding Source={x:Static Core:AppCommands.Export }}" 
+                          CommandParameter="{Binding Path=CategoryParams}" />
+            </ContextMenu>
+        </TreeView.ContextMenu>
+    </TreeView>
+</UserControl>

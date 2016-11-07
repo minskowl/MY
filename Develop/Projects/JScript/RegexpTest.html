@@ -1,0 +1,129 @@
+<html>
+<head>
+<script LANGUAGE="JavaScript" type="text/javascript" >
+function TestRegexp()
+{
+ var regExpOptions="";
+ 
+ if(document.getElementById('multyLine').checked)
+  regExpOptions+="m";
+ if(document.getElementById('ignoreCase').checked)
+  regExpOptions+="i";  
+ if(document.getElementById('globalSearch').checked)
+  regExpOptions+="g";    
+ 
+printScript(regExpOptions);
+ 
+ var reg = new RegExp(document.getElementById('pattern').value,regExpOptions);
+ if(document.getElementById('regType').value=="Match")
+	{ 
+		var res=document.getElementById('inputText').value.match(reg);
+	  document.getElementById('output').value= res;
+	  printMatches();
+		}
+ else
+  {
+  	  document.getElementById('output').value= inputText.value.replace(reg,document.getElementById('repllaceWith').value);
+  }
+ 
+}
+
+function printScript(regExpOptions)
+{
+  var esc= new RegExp("(\",\\\\)");	
+ var resScript=" new RegExp(\"" + document.getElementById('pattern').value.replace(esc,"\\\\$1") + "\",\"" + regExpOptions + "\");";
+ document.getElementById('resultScript').value=resScript; 
+}
+function printMatches()
+{
+	var matches=document.getElementById('matches');
+  while(matches.options.length>0)
+   { matches.options.remove(0);}
+   
+  var i=1;
+  var matcher=null;
+
+while(true)
+ {
+ 	  var strMatcher="RegExp.$"+i;
+    matcher=eval(strMatcher);
+    if(matcher==null)
+	   return;
+	   
+ 	var oOption = document.createElement("OPTION");
+	oOption.text=strMatcher +" = "+matcher;
+	oOption.value=matcher;
+	matches.options.add(oOption);   
+	matcher=null;
+	i++;
+ }
+
+}
+</script>
+</head>
+<body>
+
+<table width="200" border="0">
+  <tr>
+    <td>Regexp</td>
+    <td>&nbsp;</td>
+    <td><textarea name="pattern" cols="100" rows="5" id="pattern"></textarea></td>
+  </tr>
+  <tr>
+    <td>Input</td>
+    <td>&nbsp;</td>
+    <td><textarea name="inputText" cols="100" rows="5" id="inputText"></textarea></td>
+  </tr>
+  <tr>
+    <td>Replace</td>
+    <td>&nbsp;</td>
+    <td><input name="repllaceWith" type="text" id="repllaceWith" size="100"></td>
+  </tr>
+  <tr>
+    <td>Result</td>
+    <td>&nbsp;</td>
+    <td><textarea name="output" cols="100" rows="5" id="output"></textarea></td>
+  </tr>
+  <tr>
+    <td>Matches</td>
+    <td>&nbsp;</td>
+    <td><label>
+      <select name="matches" size="5" id="matches">
+      </select>
+    </label></td>
+  </tr>
+  <tr>
+    <td>JScript</td>
+    <td>&nbsp;</td>
+    <td><textarea name="resultScript" cols="100" rows="2" id="resultScript"></textarea></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><label></label></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>
+    <label>
+      <input type="checkbox" name="checkbox" id="multyLine" value="multyLine">
+    Multy Line</label>     <input type="checkbox" name="checkbox" id="ignoreCase" value="ignoreCase">
+    Ignore Case</label>     <input type="checkbox" name="checkbox" id="globalSearch" value="globalSearch">
+    Global Search</label>
+    <label>
+    <select name="regType" id="regType">
+      <option value="Match" selected>Match</option>
+      <option value="Replace">Replace</option>
+    </select>
+    </label></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><input type="button" name="Button" value="Test Expression" onClick="TestRegexp();"></td>
+  </tr>
+</table>
+</body>
+
+</html>

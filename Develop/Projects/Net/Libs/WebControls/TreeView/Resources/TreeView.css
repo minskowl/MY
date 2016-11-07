@@ -1,0 +1,171 @@
+﻿.odcTreeView
+{
+    clear: both;
+    vertical-align: top;
+    padding: 2px;
+}
+
+.odcTreeView .ul
+{
+    list-style-type: none;
+    list-style-image: none;
+    list-style-position: outside;
+    padding: 0px 0px 0px 20px;
+    margin: 0px;
+}
+
+
+.odcTreeView .Ln
+{
+    background-image: url('<%=WebResource("Senia.BBKing.WebConstrols.TreeView.Resources.line.gif")%>');
+    background-repeat: repeat-y;
+    background-position: 0px 0px;
+}
+
+
+/* first or middle node: */
+.odcTreeView .Mid
+{
+    display: block;
+    background-image: url('<%=WebResource("Senia.BBKing.WebConstrols.TreeView.Resources.mid.gif")%>');
+    background-position: left top;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+    margin: 0px;
+    list-style-type: none;
+}
+
+
+
+
+/* last node: */
+.odcTreeView .Last
+{
+    display: block;
+    background-position: left top;
+    background-image: url('<%=WebResource("Senia.BBKing.WebConstrols.TreeView.Resources.last.gif")%>');
+    background-repeat: no-repeat;
+    vertical-align: middle;
+    margin: 0px;
+    list-style-type: none;
+}
+
+/* root node: */
+.odcTreeView .Root
+{
+    display: block;
+    background-position: left top;
+    background-image: url('<%=WebResource("Senia.BBKing.WebConstrols.TreeView.Resources.top.gif")%>');
+    background-repeat: no-repeat;
+    vertical-align: middle;
+    list-style-type: none;
+    margin: 0px;
+}
+
+.odcTreeView .span
+{
+    background-image: none;
+    display: inline-block;
+    border: 1px solid transparent;
+    margin: 0px;
+    padding: 0px 4px 0px 4px;
+    cursor: default;
+    vertical-align: middle;
+}
+
+.odcTreeView .spanedit
+{
+    background-image: none;
+    display: inline-block;
+    border: 1px none transparent;
+    margin: 0px;
+    padding: 0px 4px 0px 4px;
+    cursor: default;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.odcTreeView .span:hover
+{
+    border: 1px solid #BCBCBC;
+    background-color: #EEEEEE;
+}
+
+/* selected node: */
+.odcTreeView .Sel
+{
+    border: 1px solid Highlight;
+    background-color: Highlight;
+    color: HighlightText;
+}
+
+.odcTreeView .Sel:hover
+{
+    background-color: Highlight;
+    color: HighlightText;
+    border: 1px solid #999999;
+}
+
+
+.odcTreeView .Expand
+{
+    vertical-align: top;
+    display: inline-block;
+    width: 16px;
+    min-height: 16px;
+    cursor: pointer;
+    margin: 2px 4px 0px -20px;
+    background-image: url('<%=WebResource("Senia.BBKing.WebConstrols.TreeView.Resources.plus.png")%>');
+    background-position: left top;
+    background-repeat: no-repeat;
+}
+
+.odcTreeView .Collapse
+{
+    vertical-align: top;
+    display: inline-block;
+    width: 16px;
+    min-height: 16px;
+    cursor: pointer;
+    margin: 2px 4px 0px -20px;
+    background-image: url('<%=WebResource("Senia.BBKing.WebConstrols.TreeView.Resources.minus.png")%>');
+    background-position: left top;
+    background-repeat: no-repeat;
+}
+
+
+.odcTreeView .div
+{
+    padding: 0px 0px 0px 20px;
+    display: inline-block;
+}
+
+.odcContextMenu
+{
+    padding: 2px;
+    border: 1px solid #A0A0A0;
+    background-color: #F4F4F4;
+}
+
+
+.odcTreeView .edit
+{
+    display: inline-block;
+    margin: 0px;
+    padding: 0px;
+    vertical-align: middle;
+    border: 1px solid #C0C0C0;
+}
+
+.odcTreeView .cnt
+{
+    vertical-align: middle;
+}
+
+.odcTreeView .myClass
+{
+    border: 1px solid Red;
+    background-color: Yellow;
+    color: HighlightText;
+}
+

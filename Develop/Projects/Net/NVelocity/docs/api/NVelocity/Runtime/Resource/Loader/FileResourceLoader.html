@@ -1,0 +1,351 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="..\..\..\..\JavaDoc.css">
+  </head>
+  <body>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td>
+                <a href="namespace-summary.html">Namespace</a> </td>
+              <td class="nav1sel"> Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV TYPE    NEXT TYPE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+      <tr class="nav2">
+        <td>SUMMARY: INNER | <a href="#field-summary">FIELD</a> | <a href="#constructor-summary">CONST</a> | PROP | <a href="#method-summary">METHOD</a> | OP | EVENT</td>
+        <td>DETAIL: <a href="#field-detail">FIELD</a> | <a href="#constructor-detail">CONST</a> | PROP | <a href="#method-detail">METHOD</a> | OP | EVENT</td>
+      </tr>
+    </table>
+    <hr>
+    <h2>
+      <span class="namespaceName">NVelocity.Runtime.Resource.Loader</span>
+      <br>
+      <span class="className">Class FileResourceLoader</span>
+    </h2>
+    <p>
+            A loader for templates stored on the file system.
+            </p>
+    <a name="field-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Field Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="fieldType" valign="top">System.Collections.ArrayList</td>
+        <td class="field">
+          <a href="#NVelocity.Runtime.Resource.Loader.FileResourceLoader.paths">paths</a>
+          <br>        
+            The paths to search for templates.
+            </td>
+      </tr>
+      <tr>
+        <td class="fieldType" valign="top">System.Collections.Hashtable</td>
+        <td class="field">
+          <a href="#NVelocity.Runtime.Resource.Loader.FileResourceLoader.templatePaths">templatePaths</a>
+          <br>        
+            Used to map the path that a template was found on
+            so that we can properly check the modification
+            times of the files.
+            </td>
+      </tr>
+    </table>
+    <br>
+    <table class="subtable" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Fields inherited from class NVelocity.Runtime.Resource.Loader.ResourceLoader</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>
+          <a href="">className</a>, <a href="">isCachingOn_Renamed_Field</a>, <a href="">modificationCheckInterval</a>, <a href="">rsvc</a></td>
+      </tr>
+    </table>
+    <br>
+    <a name="constructor-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Constructor Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="constructor" valign="top">
+          <a href="#NVelocity.Runtime.Resource.Loader.FileResourceLoader.#ctor">FileResourceLoader</a>()<br>        Initializes a new instance of the FileResourceLoader class.</td>
+      </tr>
+    </table>
+    <br>
+    <a name="property-summary">
+    </a>
+    <table class="subtable" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Properties inherited from class NVelocity.Runtime.Resource.Loader.ResourceLoader</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>
+          <a href="">CachingOn</a>, <a href="">ClassName</a>, <a href="">ModificationCheckInterval</a></td>
+      </tr>
+    </table>
+    <br>
+    <a name="method-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Method Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="returnType" valign="top">long</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Resource.Loader.FileResourceLoader.getLastModified(NVelocity.Runtime.Resource.Resource)">getLastModified</a>(NVelocity.Runtime.Resource.Resource resource)</td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">System.IO.Stream</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Resource.Loader.FileResourceLoader.getResourceStream(System.String)">getResourceStream</a>(string templateName)<br>        
+            Get an InputStream so that the Runtime can build a
+            template with it.
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Resource.Loader.FileResourceLoader.init(Commons.Collections.ExtendedProperties)">init</a>(Commons.Collections.ExtendedProperties configuration)</td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">bool</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Resource.Loader.FileResourceLoader.isSourceModified(NVelocity.Runtime.Resource.Resource)">isSourceModified</a>(NVelocity.Runtime.Resource.Resource resource)<br>        
+            How to keep track of all the modified times
+            across the paths.
+            </td>
+      </tr>
+    </table>
+    <br>
+    <table class="subtable" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Methods inherited from class NVelocity.Runtime.Resource.Loader.ResourceLoader</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>
+          <a href="..\..\..\..\NVelocity/Runtime/Resource/Loader/FileResourceLoader/commonInit(NVelocity/Runtime/RuntimeServices,Commons/Collections.html#ExtendedProperties)">commonInit</a>, <a href="..\..\..\..\NVelocity/Runtime/Resource/Loader/FileResourceLoader.html#isCachingOn">isCachingOn</a></td>
+      </tr>
+    </table>
+    <br>
+    <table class="subtable" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Methods inherited from class System.Object</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>
+          <a href="..\..\..\..\NVelocity/Runtime/Resource/Loader/FileResourceLoader/Equals(System.html#Object)">Equals</a>, <a href="..\..\..\..\NVelocity/Runtime/Resource/Loader/FileResourceLoader.html#Finalize">Finalize</a>, <a href="..\..\..\..\NVelocity/Runtime/Resource/Loader/FileResourceLoader.html#GetHashCode">GetHashCode</a>, <a href="..\..\..\..\NVelocity/Runtime/Resource/Loader/FileResourceLoader.html#GetType">GetType</a>, <a href="..\..\..\..\NVelocity/Runtime/Resource/Loader/FileResourceLoader.html#MemberwiseClone">MemberwiseClone</a>, <a href="..\..\..\..\NVelocity/Runtime/Resource/Loader/FileResourceLoader.html#ToString">ToString</a></td>
+      </tr>
+    </table>
+    <br>
+    <a name="operator-summary">
+    </a>
+    <a name="event-summary">
+    </a>
+    <br>
+    <a name="field-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Field Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.Runtime.Resource.Loader.FileResourceLoader.paths">
+    </a>
+    <h3>paths</h3>
+    <pre>protected System.Collections.ArrayList <b>paths</b></pre>
+    <dl>
+      <dd>
+        <p>
+            The paths to search for templates.
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Resource.Loader.FileResourceLoader.templatePaths">
+    </a>
+    <h3>templatePaths</h3>
+    <pre>protected System.Collections.Hashtable <b>templatePaths</b></pre>
+    <dl>
+      <dd>
+        <p>
+            Used to map the path that a template was found on
+            so that we can properly check the modification
+            times of the files.
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="constructor-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Constructor Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.Runtime.Resource.Loader.FileResourceLoader.#ctor">
+    </a>
+    <h3>FileResourceLoader</h3>
+    <pre>public FileResourceLoader()</pre>
+    <dl>
+      <dd>
+        <p>Initializes a new instance of the FileResourceLoader class.</p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="property-detail">
+    </a>
+    <a name="method-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Method Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.Runtime.Resource.Loader.FileResourceLoader.getLastModified(NVelocity.Runtime.Resource.Resource)">
+    </a>
+    <h3>getLastModified</h3>
+    <pre>public long getLastModified(NVelocity.Runtime.Resource.Resource resource)</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Resource.Loader.FileResourceLoader.getResourceStream(System.String)">
+    </a>
+    <h3>getResourceStream</h3>
+    <pre>public System.IO.Stream getResourceStream(string templateName)</pre>
+    <dl>
+      <dd>
+        <p>
+            Get an InputStream so that the Runtime can build a
+            template with it.
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>name</code> - name of template to get</dd>
+        </dl>
+        <b>Returns:</b>
+        <dl>
+          <dd>InputStream containing the template
+            @throws ResourceNotFoundException if template not found
+            in the file template path.
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Resource.Loader.FileResourceLoader.init(Commons.Collections.ExtendedProperties)">
+    </a>
+    <h3>init</h3>
+    <pre>public void init(Commons.Collections.ExtendedProperties configuration)</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Resource.Loader.FileResourceLoader.isSourceModified(NVelocity.Runtime.Resource.Resource)">
+    </a>
+    <h3>isSourceModified</h3>
+    <pre>public bool isSourceModified(NVelocity.Runtime.Resource.Resource resource)</pre>
+    <dl>
+      <dd>
+        <p>
+            How to keep track of all the modified times
+            across the paths.
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="operator-detail">
+    </a>
+    <a name="event-detail">
+    </a>
+    <hr>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td>
+                <a href="namespace-summary.html">Namespace</a> </td>
+              <td class="nav1sel"> Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV TYPE    NEXT TYPE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+      <tr class="nav2">
+        <td>SUMMARY: INNER | <a href="#field-summary">FIELD</a> | <a href="#constructor-summary">CONST</a> | PROP | <a href="#method-summary">METHOD</a> | OP | EVENT</td>
+        <td>DETAIL: <a href="#field-detail">FIELD</a> | <a href="#constructor-detail">CONST</a> | PROP | <a href="#method-detail">METHOD</a> | OP | EVENT</td>
+      </tr>
+    </table>
+  </body>
+</html>

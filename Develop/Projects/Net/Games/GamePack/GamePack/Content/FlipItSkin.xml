@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<skin
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../Nuclex Framework/Sources/framework/Nuclex.UserInterface/Resources/skin.xsd"
+  name="Suave"
+>
+
+  <!--
+    Resources used to draw GUI elements using this skin
+  -->
+  <resources>
+    <bitmap name="FlipIt" contentPath="FlipIt" />
+  </resources>
+
+  <!--
+    Frames that are used as building blocks for GUI elements
+  -->
+  <frames>
+ 
+    <!-- Tiles-->
+    <frame name="tile.wright">
+      <region source="FlipIt" hplacement="left" vplacement="top" x="0" y="0" w="50" h="50" />
+      <text font="default" color="#000000" hplacement="left" vplacement="center" xoffset="4" yoffset="13" />
+    </frame>
+   
+    <frame name= "tile.wrongth">
+      <region source="FlipIt" hplacement="left" vplacement="top" x="51" y="0" w="50" h="50" />
+      <text font="default" color="#000000" hplacement="left" vplacement="center" xoffset="4" yoffset="13" />
+    </frame>
+  </frames>
+
+</skin>

@@ -1,0 +1,145 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <AssemblyName>ModelDesigner</AssemblyName>
+    <RootNamespace>ModelDesigner</RootNamespace>
+    <ApplicationIcon>App.ico</ApplicationIcon>
+    <ProjectGuid>{CEB8D742-90C8-4745-B4F6-5D3B9585C8CE}</ProjectGuid>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <PublishUrl>http://localhost/ModelDesigner/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dundas.Diagramming.DesktopHost, Version=2.0.0.0, Culture=neutral, PublicKeyToken=602573064707d1f8, processorArchitecture=MSIL" />
+    <Reference Include="Dundas.Diagramming.Dom, Version=2.0.0.0, Culture=neutral, PublicKeyToken=568729d7a1b9869e, processorArchitecture=MSIL" />
+    <Reference Include="Dundas.Diagramming.EditorBase, Version=2.0.0.0, Culture=neutral, PublicKeyToken=5bbb586b6edc9392, processorArchitecture=MSIL" />
+    <Reference Include="Dundas.Diagramming.EditorComponents, Version=2.0.0.0, Culture=neutral, PublicKeyToken=fe749cb2d421aa6f, processorArchitecture=MSIL" />
+    <Reference Include="Dundas.Diagramming.Registrar, Version=2.0.0.0, Culture=neutral, PublicKeyToken=568729d7a1b9869e, processorArchitecture=MSIL" />
+    <Reference Include="Dundas.Diagramming.Rendering, Version=2.0.0.0, Culture=neutral, PublicKeyToken=1fbe5b18d4059f52, processorArchitecture=MSIL" />
+    <Reference Include="Dundas.Diagramming.Rendering.Svg, Version=2.0.0.0, Culture=neutral, PublicKeyToken=fccddc89fcbf4adf, processorArchitecture=MSIL" />
+    <Reference Include="Dundas.Diagramming.Serialization, Version=2.0.0.0, Culture=neutral, PublicKeyToken=568729d7a1b9869e, processorArchitecture=MSIL" />
+    <Reference Include="Dundas.Diagramming.Toolbox, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b42649233f58946, processorArchitecture=MSIL" />
+    <Reference Include="Dundas.Diagramming.Utility, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7ec8855ca7c76752, processorArchitecture=MSIL" />
+    <Reference Include="Dundas.Toolbox.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7dfc856e57a4a197, processorArchitecture=MSIL" />
+    <Reference Include="Dundas.Toolbox.CSharpScriptLanguage, Version=2.0.0.0, Culture=neutral, PublicKeyToken=c0e354af29768bad, processorArchitecture=MSIL" />
+    <Reference Include="Dundas.Toolbox.VisualBasicScriptLanguage, Version=2.0.0.0, Culture=neutral, PublicKeyToken=c41df97131a3a31c, processorArchitecture=MSIL" />
+    <Reference Include="Savchin.Controls.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Libs\Controls\Common\bin\Debug\Savchin.Controls.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="App.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="EditorForm.cs">
+    </Compile>
+    <Compile Include="ForeignKeyElement.cs" />
+    <Compile Include="SchemaEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TableElement.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="EditorForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>EditorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Images\Splash.png" />
+    <EmbeddedResource Include="SchemaEditor.resx">
+      <DependentUpon>SchemaEditor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Content Include="ApplicationFunctionality.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CommandInstances.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="test.schema">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="test1.schema" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataSchema\DataSchema.csproj">
+      <Project>{709EF347-C049-42A5-AA99-0029AAB56C95}</Project>
+      <Name>DataSchema</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

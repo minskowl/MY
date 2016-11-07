@@ -1,0 +1,3 @@
+﻿ALTER TABLE [dbo].[Keywords] ADD CONSTRAINT [PK_Keywords] PRIMARY KEY CLUSTERED  ([KeywordID]) ON [PRIMARY]
+
+

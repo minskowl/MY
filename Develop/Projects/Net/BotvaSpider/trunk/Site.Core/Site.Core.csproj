@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3B075380-25C1-44B9-AF4B-76990450C01A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Site</RootNamespace>
+    <AssemblyName>Site.Core</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\ThrPartLibs\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WebMoney.Cryptography, Version=3.1.0.0, Culture=neutral, PublicKeyToken=26e72e8ce007dad9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\ThrPartLibs\WebMoney\WebMoney.Cryptography.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMoney.XmlInterfaces, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\ThrPartLibs\WebMoney\WebMoney.XmlInterfaces.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Bl\Entities\Licenses.cs" />
+    <Compile Include="Bl\Managers\LicensesManager.cs" />
+    <Compile Include="Bl\Resource.ru.Designer.cs">
+      <DependentUpon>Resource.ru.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Bl\Entities\Products.cs" />
+    <Compile Include="Bl\Entities\Transfer.cs" />
+    <Compile Include="Bl\Entities\Users.cs" />
+    <Compile Include="Bl\Managers\ProductsManager.cs" />
+    <Compile Include="Bl\Managers\TransferManager.cs" />
+    <Compile Include="Bl\Managers\UsersManager.cs" />
+    <Compile Include="Bl\Resource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Bl\SiteManagers.cs" />
+    <Compile Include="Core\AppSettings.cs" />
+    <Compile Include="Core\EntityBase.cs" />
+    <Compile Include="Core\FactoryEntityBase.cs" />
+    <Compile Include="Core\Identifier.cs" />
+    <Compile Include="Core\Log.cs" />
+    <Compile Include="Core\ManagerBase.cs" />
+    <Compile Include="Core\ManagerFactory.cs" />
+    <Compile Include="Core\Redirector.cs" />
+    <Compile Include="Core\SiteContext.cs" />
+    <Compile Include="Cotrols\Buttons\AddButton.cs" />
+    <Compile Include="Cotrols\Buttons\CancelButton.cs" />
+    <Compile Include="Cotrols\Buttons\DeleteButton.cs" />
+    <Compile Include="Cotrols\Buttons\SaveButton.cs" />
+    <Compile Include="Cotrols\Lists\ProductList.cs" />
+    <Compile Include="Cotrols\SitePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dal\Custom\LicenseFactory.cs" />
+    <Compile Include="Dal\Custom\TransferFactory.cs" />
+    <Compile Include="Dal\Custom\UserFactory.cs" />
+    <Compile Include="Dal\Entities\LicensesValue.cs" />
+    <Compile Include="Dal\Entities\ProductsValue.cs" />
+    <Compile Include="Dal\Entities\TransferValue.cs" />
+    <Compile Include="Dal\Entities\UsersValue.cs" />
+    <Compile Include="Dal\Factories\LicensesFactory.cs" />
+    <Compile Include="Dal\Factories\ProductsFactory.cs" />
+    <Compile Include="Dal\Factories\TransferFactory.cs" />
+    <Compile Include="Dal\Factories\UsersFactory.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Providers\SecurityProviderBase.cs" />
+    <Compile Include="Providers\SiteSecurityProvider.cs" />
+    <Compile Include="Services\WebMoneyReader.cs" />
+    <Compile Include="WebMoney\CertificateValidator.cs" />
+    <Compile Include="WebMoney\InvoiceReader.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Libs\Data\Data.csproj">
+      <Project>{25AB3B90-41A8-4BD4-88B6-4607D1633D4C}</Project>
+      <Name>Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libs\Tools\Savchin.Tools.csproj">
+      <Project>{2F1807E4-39A2-4F38-ADFC-6310A8443D90}</Project>
+      <Name>Savchin.Tools</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libs\WebControls\WebControls.csproj">
+      <Project>{BA6303D3-C692-418A-B948-3C6B5AB146BD}</Project>
+      <Name>WebControls</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Bl\Resource.ru.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.ru.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bl\Resource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

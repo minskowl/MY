@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{25AB3B90-41A8-4BD4-88B6-4607D1633D4C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Savchin.Data</RootNamespace>
+    <AssemblyName>Savchin.Data</AssemblyName>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <PublishUrl>http://localhost/Savchin.Data/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=1.2.9.0, Culture=neutral, PublicKeyToken=b32731d11ce58905">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ThrPartLibs\log4net_1.2.9\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\CommandBuilders\CommandBuilder.cs" />
+    <Compile Include="Common\CommandBuilders\ParametrizedCommandBuilder.cs" />
+    <Compile Include="Common\CommandBuilders\CreateTableCommandBuilder.cs" />
+    <Compile Include="Common\CommandBuilders\TableColumn.cs" />
+    <Compile Include="Common\CommandHelper.cs" />
+    <Compile Include="Common\DataTableHelper.cs" />
+    <Compile Include="Common\DBConnection.cs" />
+    <Compile Include="Common\DBFactory.cs" />
+    <Compile Include="Common\Interfaces\ICommandBuilder.cs" />
+    <Compile Include="Common\Interfaces\IDBFactory.cs" />
+    <Compile Include="Common\CommandBuilders\InsertCommandBuilder.cs" />
+    <Compile Include="Common\Interfaces\IExceptionConverter.cs" />
+    <Compile Include="Common\ParameterCollection.cs" />
+    <Compile Include="Common\Transaction.cs" />
+    <Compile Include="CSV\CachedCsvReader.cs" />
+    <Compile Include="CSV\CachedCsvReader.CsvBindingList.cs" />
+    <Compile Include="CSV\CachedCsvReader.CsvPropertyDescriptor.cs" />
+    <Compile Include="CSV\CachedCsvReader.CsvRecordComparer.cs" />
+    <Compile Include="CSV\CsvReader.cs" />
+    <Compile Include="CSV\CsvReader.DataReaderValidations.cs" />
+    <Compile Include="CSV\CsvReader.RecordEnumerator.cs" />
+    <Compile Include="CSV\MalformedCsvException.cs" />
+    <Compile Include="CSV\MissingFieldAction.cs" />
+    <Compile Include="CSV\MissingFieldCsvException.cs" />
+    <Compile Include="CSV\ParseErrorAction.cs" />
+    <Compile Include="CSV\ParseErrorEventArgs.cs" />
+    <Compile Include="CSV\Resources\ExceptionMessage.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExceptionMessage.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Exceptions\Integrity\ChildEntityExistsException.cs" />
+    <Compile Include="Exceptions\ConcurrencyException.cs" />
+    <Compile Include="Exceptions\Integrity\EntityNotExistsException.cs" />
+    <Compile Include="Exceptions\SqlError.cs" />
+    <Compile Include="Exceptions\IncorrectParametersException.cs" />
+    <Compile Include="Exceptions\Integrity\IntegrityException.cs" />
+    <Compile Include="Exceptions\Integrity\LongFieldException.cs" />
+    <Compile Include="Exceptions\Integrity\MandatoryFieldEmptyException.cs" />
+    <Compile Include="Exceptions\Integrity\NotUniqueException.cs" />
+    <Compile Include="Exceptions\Integrity\ParentEntityNotExistsException.cs" />
+    <Compile Include="Exceptions\SP\SPException.cs" />
+    <Compile Include="Exceptions\SP\SPIncorrectCountParameters.cs" />
+    <Compile Include="Exceptions\SP\SPNotFindException.cs" />
+    <Compile Include="Exceptions\SP\SpParameterNullException.cs" />
+    <Compile Include="Exceptions\SqlErrorCollection.cs" />
+    <Compile Include="Exceptions\UnhandledSqlException.cs" />
+    <Compile Include="Exceptions\UserDefinedSqlException.cs" />
+    <Compile Include="Exceptions\ValidateException.cs" />
+    <Compile Include="MSSQL\ErrorsCode.cs" />
+    <Compile Include="Common\Interfaces\IDBConvertor.cs" />
+    <Compile Include="MSSQL\ExceptionConverter.cs" />
+    <Compile Include="MSSQL\ErrorMessageParser.cs" />
+    <Compile Include="Common\Interfaces\IArrayParameter.cs" />
+    <Compile Include="MSSQL\MSSQLFactory.cs" />
+    <Compile Include="MSSQL\DBConvertor.cs" />
+    <Compile Include="MSSQL\MSSQL2000Factory.cs" />
+    <Compile Include="MSSQL\ArrayParameter.cs" />
+    <Compile Include="MSSQL\Parser.cs" />
+    <Compile Include="MSSQL\MSSQL2005Factory.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CSV\Resources\ExceptionMessage.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ExceptionMessage.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Tools\Savchin.Tools.csproj">
+      <Project>{2F1807E4-39A2-4F38-ADFC-6310A8443D90}</Project>
+      <Name>Savchin.Tools</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

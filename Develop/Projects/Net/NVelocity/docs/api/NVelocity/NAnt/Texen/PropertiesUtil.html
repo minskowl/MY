@@ -1,0 +1,272 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="..\..\..\JavaDoc.css">
+  </head>
+  <body>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td>
+                <a href="namespace-summary.html">Namespace</a> </td>
+              <td class="nav1sel"> Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV TYPE    NEXT TYPE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+      <tr class="nav2">
+        <td>SUMMARY: INNER | FIELD | <a href="#constructor-summary">CONST</a> | PROP | <a href="#method-summary">METHOD</a> | OP | EVENT</td>
+        <td>DETAIL: FIELD | <a href="#constructor-detail">CONST</a> | PROP | <a href="#method-detail">METHOD</a> | OP | EVENT</td>
+      </tr>
+    </table>
+    <hr>
+    <h2>
+      <span class="namespaceName">NVelocity.NAnt.Texen</span>
+      <br>
+      <span class="className">Class PropertiesUtil</span>
+    </h2>
+    <p>
+            A property utility class for the texen text/code generator
+            Usually this class is only used from a Velocity context.
+            </p>
+    <a name="field-summary">
+    </a>
+    <a name="constructor-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Constructor Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="constructor" valign="top">
+          <a href="#NVelocity.NAnt.Texen.PropertiesUtil.#ctor">PropertiesUtil</a>()<br>        Initializes a new instance of the PropertiesUtil class.</td>
+      </tr>
+    </table>
+    <br>
+    <a name="property-summary">
+    </a>
+    <a name="method-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Method Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="returnType" valign="top">Commons.Collections.ExtendedProperties</td>
+        <td class="method">
+          <a href="#NVelocity.NAnt.Texen.PropertiesUtil.load(System.String)">load</a>(string propertiesFile)<br>        
+            Load properties from either a file in the templatePath if there
+            is one or the classPath.
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">Commons.Collections.ExtendedProperties</td>
+        <td class="method">
+          <a href="#NVelocity.NAnt.Texen.PropertiesUtil.loadFromClassPath(System.String)">loadFromClassPath</a>(string propertiesFile)<br>        
+            Load a properties file from the classpath
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">Commons.Collections.ExtendedProperties</td>
+        <td class="method">
+          <a href="#NVelocity.NAnt.Texen.PropertiesUtil.loadFromTemplatePath(System.String)">loadFromTemplatePath</a>(string propertiesFile)<br>        
+            Load a properties file from the templatePath defined in the
+            generator. As the templatePath can contains multiple paths,
+            it will cycle through them to find the file. The first file
+            that can be successfully loaded is considered. (kind of
+            like the java classpath), it is done to clone the Velocity
+            process of loading templates.
+            </td>
+      </tr>
+    </table>
+    <br>
+    <table class="subtable" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Methods inherited from class System.Object</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>
+          <a href="..\..\..\NVelocity/NAnt/Texen/PropertiesUtil/Equals(System.html#Object)">Equals</a>, <a href="..\..\..\NVelocity/NAnt/Texen/PropertiesUtil.html#Finalize">Finalize</a>, <a href="..\..\..\NVelocity/NAnt/Texen/PropertiesUtil.html#GetHashCode">GetHashCode</a>, <a href="..\..\..\NVelocity/NAnt/Texen/PropertiesUtil.html#GetType">GetType</a>, <a href="..\..\..\NVelocity/NAnt/Texen/PropertiesUtil.html#MemberwiseClone">MemberwiseClone</a>, <a href="..\..\..\NVelocity/NAnt/Texen/PropertiesUtil.html#ToString">ToString</a></td>
+      </tr>
+    </table>
+    <br>
+    <a name="operator-summary">
+    </a>
+    <a name="event-summary">
+    </a>
+    <br>
+    <a name="field-detail">
+    </a>
+    <a name="constructor-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Constructor Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.NAnt.Texen.PropertiesUtil.#ctor">
+    </a>
+    <h3>PropertiesUtil</h3>
+    <pre>public PropertiesUtil()</pre>
+    <dl>
+      <dd>
+        <p>Initializes a new instance of the PropertiesUtil class.</p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="property-detail">
+    </a>
+    <a name="method-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Method Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.NAnt.Texen.PropertiesUtil.load(System.String)">
+    </a>
+    <h3>load</h3>
+    <pre>public Commons.Collections.ExtendedProperties load(string propertiesFile)</pre>
+    <dl>
+      <dd>
+        <p>
+            Load properties from either a file in the templatePath if there
+            is one or the classPath.
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>propertiesFile</code> - the properties file to load through
+            either the templatePath or the classpath.
+            </dd>
+        </dl>
+        <b>Returns:</b>
+        <dl>
+          <dd>a properties instance filled with the properties found
+            in the file or an empty instance if no file was found.
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.NAnt.Texen.PropertiesUtil.loadFromClassPath(System.String)">
+    </a>
+    <h3>loadFromClassPath</h3>
+    <pre>protected internal Commons.Collections.ExtendedProperties loadFromClassPath(string propertiesFile)</pre>
+    <dl>
+      <dd>
+        <p>
+            Load a properties file from the classpath
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>propertiesFile</code> - the properties file to load.</dd>
+        </dl>
+        <b>Returns:</b>
+        <dl>
+          <dd>a properties instance loaded with the properties from
+            the file. If no file can be found it returns an empty instance.
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.NAnt.Texen.PropertiesUtil.loadFromTemplatePath(System.String)">
+    </a>
+    <h3>loadFromTemplatePath</h3>
+    <pre>protected internal Commons.Collections.ExtendedProperties loadFromTemplatePath(string propertiesFile)</pre>
+    <dl>
+      <dd>
+        <p>
+            Load a properties file from the templatePath defined in the
+            generator. As the templatePath can contains multiple paths,
+            it will cycle through them to find the file. The first file
+            that can be successfully loaded is considered. (kind of
+            like the java classpath), it is done to clone the Velocity
+            process of loading templates.
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>propertiesFile</code> - the properties file to load. It must be
+            a relative pathname.
+            </dd>
+        </dl>
+        <b>Returns:</b>
+        <dl>
+          <dd>a properties instance loaded with the properties from
+            the file. If no file can be found it returns an empty instance.
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <a name="operator-detail">
+    </a>
+    <a name="event-detail">
+    </a>
+    <hr>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td>
+                <a href="namespace-summary.html">Namespace</a> </td>
+              <td class="nav1sel"> Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV TYPE    NEXT TYPE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+      <tr class="nav2">
+        <td>SUMMARY: INNER | FIELD | <a href="#constructor-summary">CONST</a> | PROP | <a href="#method-summary">METHOD</a> | OP | EVENT</td>
+        <td>DETAIL: FIELD | <a href="#constructor-detail">CONST</a> | PROP | <a href="#method-detail">METHOD</a> | OP | EVENT</td>
+      </tr>
+    </table>
+  </body>
+</html>

@@ -1,0 +1,18 @@
+#macro( PrintAssertForType $tools $interface $ent)
+#foreach( $prop in $tools.getPropertiesFromInterface($interface ) )
+#set( $entProp=$ent.GetProperty($prop.Name))
+#if( $entProp.Name == $prop.Name && $prop.CanRead() && $entProp.CanRead() )
+    Assert.IsTrue(readEnt.${entProp.Name}== mock.${entProp.Name} ,"Incorrect ${entProp.Name}");
+#end
+#end	
+#end
+
+#macro( PrintConstForType $tools $interface $ent $name  $postfix )
+	#foreach( $prop in $tools.getPropertiesFromInterface($interface) )
+	  #set( $entProp=$ent.GetProperty($prop.Name))
+	  #if( $entProp.Name == $prop.Name && $prop.CanWrite() && $entProp.CanWrite() )
+	       const ${prop.PropertyType.Name} ${name}${prop.Name}${postfix} = ${tools.getRandomValue($prop.PropertyType)};
+	  #end
+	#end	
+#end
+

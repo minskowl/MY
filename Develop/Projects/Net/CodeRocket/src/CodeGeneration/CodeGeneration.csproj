@@ -1,0 +1,224 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{26B25C4E-F197-402E-9C7D-DDC13984D675}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Savchin.CodeGeneration</RootNamespace>
+    <AssemblyName>Savchin.CodeGeneration</AssemblyName>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Commons, Version=0.4.2.8580, Culture=neutral, PublicKeyToken=44382d1b57473eda, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\ThrPartLibs\NVelocity\Commons.dll</HintPath>
+    </Reference>
+    <Reference Include="EnvDTE, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="EnvDTE80, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="EnvDTE90, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files\Microsoft Visual Studio 9.0\Common7\IDE\PublicAssemblies\EnvDTE90.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.PdCommon, Version=11.0.0.0, Culture=neutral, PublicKeyToken=1bab2b6f8a3ca538, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\ThrPartLibs\PD\Strong\12\Interop.PdCommon.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.PdPDM, Version=11.0.0.0, Culture=neutral, PublicKeyToken=1bab2b6f8a3ca538, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\ThrPartLibs\PD\Strong\12\Interop.PdPDM.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.PGMRX120Lib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\ThrPartLibs\Interop.PGMRX120Lib.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\ThrPartLibs\log4net_1.2.9\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="NVelocity, Version=0.4.2.8580, Culture=neutral, PublicKeyToken=44382d1b57473eda">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\ThrPartLibs\NVelocity\NVelocity.dll</HintPath>
+    </Reference>
+    <Reference Include="PDModelBrowser, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Libs\Controls\PDModelBrowser\bin\Debug\PDModelBrowser.dll</HintPath>
+    </Reference>
+    <Reference Include="syncfusion.edit.windows, Version=5.102.1.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\ThrPartLibs\syncfusion\syncfusion.edit.windows.dll</HintPath>
+    </Reference>
+    <Reference Include="syncfusion.shared.base, Version=5.102.1.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\ThrPartLibs\syncfusion\syncfusion.shared.base.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="VSLangProj, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="VSLangProj2, Version=7.0.5000.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Assembly\AssemblyGenerationManager.cs">
+    </Compile>
+    <Compile Include="Assembly\AssemblyGenerator.cs" />
+    <Compile Include="Common\BookMark.cs" />
+    <Compile Include="Controls\FileTabWrapperControl.cs" />
+    <Compile Include="Common\GenerationEventArgs.cs" />
+    <Compile Include="Common\GeneratorBase.cs" />
+    <Compile Include="Common\CodeGenrationException.cs" />
+    <Compile Include="Common\GenerateProject.cs" />
+    <Compile Include="Common\ICodeEditor.cs" />
+    <Compile Include="Common\IErrorViewer.cs" />
+    <Compile Include="Common\IFileTabControl.cs" />
+    <Compile Include="Common\IGenerator.cs" />
+    <Compile Include="Common\Property.cs" />
+    <Compile Include="Common\Generation.cs" />
+    <Compile Include="Common\IGenerationManager.cs" />
+    <Compile Include="Common\GenerationManagerBase.cs">
+    </Compile>
+    <Compile Include="Common\GeneratorProjectBrowser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Common\GeneratorProjectBrowser.Designer.cs">
+      <DependentUpon>GeneratorProjectBrowser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Settings.cs" />
+    <Compile Include="Controls\EditControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\FileTabControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PDModel\PDGenerationManger.cs">
+    </Compile>
+    <Compile Include="PDModel\PDGenerator.cs" />
+    <Compile Include="PDModel\PDSchemaBuilder.cs" />
+    <Compile Include="PDModel\PowerDesigner.cs" />
+    <Compile Include="Common\TemplateGenerateEventargs.cs" />
+    <Compile Include="PDModel\VisualStudio.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Schema\SchemaGenerationManager.cs" />
+    <Compile Include="Schema\SchemaGenerator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Libs\CodeParser\CodeParsing.csproj">
+      <Project>{AAEE081B-3D1E-4D11-8D4A-160715EB01D1}</Project>
+      <Name>CodeParsing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libs\Savchin.Forms\Savchin.Forms.csproj">
+      <Project>{9405075A-BD64-4B54-9689-2DD716D6F92A}</Project>
+      <Name>Savchin.Forms</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libs\Tools\Savchin.Tools.csproj">
+      <Project>{2F1807E4-39A2-4F38-ADFC-6310A8443D90}</Project>
+      <Name>Savchin.Tools</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataSchema\DataSchema.csproj">
+      <Project>{709EF347-C049-42A5-AA99-0029AAB56C95}</Project>
+      <Name>DataSchema</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GeneratorTools\GeneratorTools.csproj">
+      <Project>{C1C6B38A-1F70-4664-8A34-9A73838412AA}</Project>
+      <Name>GeneratorTools</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Common\GeneratorProjectBrowser.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>GeneratorProjectBrowser.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Main.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Common\res\folder.ico" />
+    <Content Include="Common\res\folder_open.ico" />
+    <Content Include="Common\res\prj.ico" />
+    <Content Include="Common\res\template.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

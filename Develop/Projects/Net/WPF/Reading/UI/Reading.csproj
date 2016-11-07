@@ -1,0 +1,314 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7AC9A695-9EC3-4240-B830-1A293D470335}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Reading</RootNamespace>
+    <AssemblyName>Prodigy</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>logo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Reading.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="GalaSoft.MvvmLight.WPF4">
+      <HintPath>..\..\..\ThrPartLibs\GalaSpoft\GalaSoft.MvvmLight.WPF4.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controls\MemoryField.cs" />
+    <Compile Include="Models\FindPairModel.cs" />
+    <Compile Include="Models\LetterModel.cs" />
+    <Compile Include="Models\TaskModelBase.cs" />
+    <Compile Include="Pages\PageFindPair.xaml.cs">
+      <DependentUpon>PageFindPair.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <DependentUpon>Settings.settings</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Page Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="Controls\IntegerBox.cs" />
+    <Compile Include="Controls\SentenceControl.xaml.cs">
+      <DependentUpon>SentenceControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BaseModel.cs" />
+    <Compile Include="Models\CompareModel.cs" />
+    <Compile Include="Models\CompositionListModel.cs" />
+    <Compile Include="Models\CompositionModel.cs" />
+    <Compile Include="Models\CountingModel.cs" />
+    <Compile Include="Models\ListModel.cs" />
+    <Compile Include="Models\MenuModel.cs" />
+    <Compile Include="Models\SentenceModel.cs" />
+    <Compile Include="Models\SettingsModel.cs" />
+    <Compile Include="Models\SpeakModel.cs" />
+    <Compile Include="Models\SummationModel.cs" />
+    <Compile Include="Models\SyllablesModel.cs" />
+    <Compile Include="Models\SyllablesModelBase.cs" />
+    <Compile Include="Models\TableSummationModel.cs" />
+    <Compile Include="Models\TaskModel.cs" />
+    <Compile Include="Models\WordListModel.cs" />
+    <Compile Include="Models\WordsModel.cs" />
+    <Compile Include="Pages\PageTableSummation.xaml.cs">
+      <DependentUpon>PageTableSummation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageComposition.xaml.cs">
+      <DependentUpon>PageComposition.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageSentence.xaml.cs">
+      <DependentUpon>PageSentence.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Page Include="Controls\SentenceControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\WordControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\IntegerTextBox.cs" />
+    <Compile Include="Controls\SpeakButton.cs" />
+    <Compile Include="Controls\WordControl.xaml.cs">
+      <DependentUpon>WordControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Pages\PageFindPair.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\PageTableSummation.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\PageComposition.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\PageCompare.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PageCounting.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PageMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PageSentence.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PageSettings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PageSummation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PageSyllables.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PageTest.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PageWordList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PageWords.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Pages\PageCompare.xaml.cs">
+      <DependentUpon>PageCompare.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageCounting.xaml.cs">
+      <DependentUpon>PageCounting.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageMenu.xaml.cs">
+      <DependentUpon>PageMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageSettings.xaml.cs">
+      <DependentUpon>PageSettings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageSummation.xaml.cs">
+      <DependentUpon>PageSummation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageSyllables.xaml.cs">
+      <DependentUpon>PageSyllables.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageTest.xaml.cs">
+      <DependentUpon>PageTest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageWordList.xaml.cs">
+      <DependentUpon>PageWordList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageWords.xaml.cs">
+      <DependentUpon>PageWords.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Libs\Tools\Savchin.Tools.csproj">
+      <Project>{2F1807E4-39A2-4F38-ADFC-6310A8443D90}</Project>
+      <Name>Savchin.Tools</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Controls\Savchin.Wpf.Controls.csproj">
+      <Project>{94FAF521-458A-4A1B-BEE6-42A5A738F6AB}</Project>
+      <Name>WPF.Controls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\WPF.Tools\WPF.Tools.csproj">
+      <Project>{DF7E8E9F-5B87-4561-AD02-38AE103C3DE6}</Project>
+      <Name>WPF.Tools</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Reading.Core\Reading.Core.csproj">
+      <Project>{367C4F53-1A31-4426-B005-831CB7FD2067}</Project>
+      <Name>Reading.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Settings.settings">
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Resources\Logo.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Words\1.txt" />
+    <None Include="Words\2.txt" />
+    <None Include="Words\3.txt" />
+    <None Include="Words\4.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="logo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <SplashScreen Include="Resources\Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Words.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sentences.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Compositions.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Animals\0.png" />
+    <Resource Include="Resources\Animals\1.png" />
+    <Resource Include="Resources\Animals\2.png" />
+    <Resource Include="Resources\Animals\3.png" />
+    <Resource Include="Resources\Animals\4.png" />
+    <Resource Include="Resources\Animals\5.png" />
+    <Resource Include="Resources\Animals\6.png" />
+    <Resource Include="Resources\Animals\7.png" />
+    <Resource Include="Resources\Animals\8.png" />
+    <Resource Include="Resources\Animals\9.png" />
+    <Resource Include="Resources\Animals\10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\card.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

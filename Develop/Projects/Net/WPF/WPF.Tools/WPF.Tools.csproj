@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DF7E8E9F-5B87-4561-AD02-38AE103C3DE6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Savchin.Wpf</RootNamespace>
+    <AssemblyName>Savchin.WPF.Tools</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationFramework">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Converters\ArgumentHelper.cs" />
+    <Compile Include="Converters\ArgumentHelperExtensions.cs" />
+    <Compile Include="Converters\BoolConverter.cs" />
+    <Compile Include="Converters\BoolToVisibilityConverter.cs" />
+    <Compile Include="Converters\CaseConverter.cs" />
+    <Compile Include="Converters\ConvertorEx.cs" />
+    <Compile Include="Converters\DateTimeConversionMode.cs" />
+    <Compile Include="Converters\DateTimeConverter.cs" />
+    <Compile Include="Converters\ExceptionHelper.cs" />
+    <Compile Include="Converters\ExpressionConverter.cs" />
+    <Compile Include="Converters\Expressions\Nodes\AddNode.cs" />
+    <Compile Include="Converters\Expressions\Nodes\BinaryNode.cs" />
+    <Compile Include="Converters\Expressions\Nodes\CastNode.cs" />
+    <Compile Include="Converters\Expressions\Nodes\ComplementNode.cs" />
+    <Compile Include="Converters\Expressions\Nodes\ConditionalAndNode.cs" />
+    <Compile Include="Converters\Expressions\Nodes\ConditionalBinaryNode.cs" />
+    <Compile Include="Converters\Expressions\Nodes\ConditionalOrNode.cs" />
+    <Compile Include="Converters\Expressions\Nodes\ConstantNode.cs" />
+    <Compile Include="Converters\Expressions\Nodes\DivideNode.cs" />
+    <Compile Include="Converters\Expressions\Nodes\EqualityNode.cs" />
+    <Compile Include="Converters\Expressions\Nodes\GreaterThanNode.cs" />
+    <Compile Include="Converters\Expressions\Nodes\GreaterThanOrEqualNode.cs" />
+    <Compile Include="Converters\Expressions\Nodes\InequalityNode.cs" />
+    <Compile Include="Converters\Expressions\Nodes\LessThanNode.cs" />
+    <Compile Include="Converters\Expressions\Nodes\LessThanOrEqualNode.cs" />
+    <Compile Include="Converters\Expressions\Nodes\LogicalAndNode.cs" />
+    <Compile Include="Converters\Expressions\Nodes\LogicalOrNode.cs" />
+    <Compile Include="Converters\Expressions\Nodes\LogicalXorNode.cs" />
+    <Compile Include="Converters\Expressions\Nodes\ModulusNode.cs" />
+    <Compile Include="Converters\Expressions\Nodes\MultiplyNode.cs" />
+    <Compile Include="Converters\Expressions\Nodes\NegateNode.cs" />
+    <Compile Include="Converters\Expressions\Nodes\Node.cs" />
+    <Compile Include="Converters\Expressions\Nodes\NodeEvaluationContext.cs" />
+    <Compile Include="Converters\Expressions\Nodes\NodeValueType.cs" />
+    <Compile Include="Converters\Expressions\Nodes\NotNode.cs" />
+    <Compile Include="Converters\Expressions\Nodes\NullCoalescingNode.cs" />
+    <Compile Include="Converters\Expressions\Nodes\NullNode.cs" />
+    <Compile Include="Converters\Expressions\Nodes\ShiftLeftNode.cs" />
+    <Compile Include="Converters\Expressions\Nodes\ShiftNode.cs" />
+    <Compile Include="Converters\Expressions\Nodes\ShiftRightNode.cs" />
+    <Compile Include="Converters\Expressions\Nodes\SubtractNode.cs" />
+    <Compile Include="Converters\Expressions\Nodes\TernaryConditionalNode.cs" />
+    <Compile Include="Converters\Expressions\Nodes\TernaryNode.cs" />
+    <Compile Include="Converters\Expressions\Nodes\UnaryNode.cs" />
+    <Compile Include="Converters\Expressions\Nodes\VariableNode.cs" />
+    <Compile Include="Converters\Expressions\Nodes\WideningBinaryNode.cs" />
+    <Compile Include="Converters\Expressions\ParseException.cs" />
+    <Compile Include="Converters\Expressions\Parser.cs" />
+    <Compile Include="Converters\Expressions\Token.cs" />
+    <Compile Include="Converters\Expressions\Tokenizer.cs" />
+    <Compile Include="Converters\Expressions\TokenType.cs" />
+    <Compile Include="Converters\FormatConverter.cs" />
+    <Compile Include="Converters\InvertedVisibilityConverter.cs" />
+    <Compile Include="Converters\Markup\CaseConverterExtension.cs" />
+    <Compile Include="Converters\Markup\DateTimeConverterExtension.cs" />
+    <Compile Include="Converters\Markup\ExpressionConverterExtension.cs" />
+    <Compile Include="Converters\Markup\FormatConverterExtension.cs" />
+    <Compile Include="Converters\Markup\TypeConverterExtension.cs" />
+    <Compile Include="Converters\MathConverter.cs" />
+    <Compile Include="Converters\NullToColapsedConverter.cs" />
+    <Compile Include="Converters\TypeConverter.cs" />
+    <Compile Include="Core\ApplicationHelper.cs" />
+    <Compile Include="Core\DependencyObjectHelper.cs" />
+    <Compile Include="Core\DesignTimeProperites.cs" />
+    <Compile Include="Core\FrameworkElementHelper.cs" />
+    <Compile Include="Core\ICompositeObject.cs" />
+    <Compile Include="Core\IDirtyTracker.cs" />
+    <Compile Include="Core\IModelAdapter.cs" />
+    <Compile Include="Core\IViewModelBase.cs" />
+    <Compile Include="Core\ListItemViewModel.cs" />
+    <Compile Include="Core\ObjectBase.cs" />
+    <Compile Include="Core\UI.cs" />
+    <Compile Include="Core\ViewModelBase.cs" />
+    <Compile Include="Data\BoolInvertionConverter.cs" />
+    <Compile Include="Data\BoolToVisibilityConverter.cs" />
+    <Compile Include="Data\DebugConverter.cs" />
+    <Compile Include="Data\DelegateConverter.cs" />
+    <Compile Include="Data\IntegerConverter.cs" />
+    <Compile Include="Data\SimpleConverter.cs" />
+    <Compile Include="Drawing\ConverterColor.cs" />
+    <Compile Include="Drawing\HSBColor.cs" />
+    <Compile Include="Drawing\ITransformation.cs" />
+    <Compile Include="Drawing\LinearTransformation.cs" />
+    <Compile Include="Drawing\Matrix.cs" />
+    <Compile Include="Drawing\RotationalTransformation.cs" />
+    <Compile Include="Imaging\ImageSourceHelper.cs" />
+    <Compile Include="Input\DelegateCommand.cs" />
+    <Compile Include="Input\Masking.cs" />
+    <Compile Include="Input\OverrideCursor.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Shapes\OverallTransformation.cs" />
+    <Compile Include="Shapes\PolyMatrixBuilder.cs" />
+    <Compile Include="Shapes\PolyStar.cs" />
+    <Compile Include="Validation\CellDataInfoValidationRule .cs" />
+    <Compile Include="Validation\RowDataInfoValidationRule.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Libs\Tools\Savchin.Tools.csproj">
+      <Project>{2F1807E4-39A2-4F38-ADFC-6310A8443D90}</Project>
+      <Name>Savchin.Tools</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

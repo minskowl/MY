@@ -1,0 +1,54 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NVelocity", "NVelocity.csproj", "{10AE9F9A-C23F-44D0-9E78-B4C125597ECE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NVelocity.Test", "NVelocity.Test.csproj", "{E1B10210-6A42-4993-B383-0F6AAC255A24}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NVelocity.NAnt", "NVelocity.NAnt.csproj", "{FA9AD745-36B4-4B97-B99D-1291CA7198CB}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "ViewHandler", "http://localhost/nvelocity/examples/viewhandler/ViewHandler.csproj", "{B0F3F674-CD69-4900-9FBA-4A9C8FB60333}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NVelocity.Http", "NVelocity.Http.csproj", "{AFFB9410-9280-40D8-BD99-75C13B1D79FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Commons", "Commons.csproj", "{2A71607F-DF74-4FC4-BD9B-BF3837883172}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{61674DBD-FC2C-4AAB-B30A-7BAEB3093243}"
+	ProjectSection(SolutionItems) = preProject
+		ToDo.txt = ToDo.txt
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{10AE9F9A-C23F-44D0-9E78-B4C125597ECE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10AE9F9A-C23F-44D0-9E78-B4C125597ECE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10AE9F9A-C23F-44D0-9E78-B4C125597ECE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10AE9F9A-C23F-44D0-9E78-B4C125597ECE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1B10210-6A42-4993-B383-0F6AAC255A24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1B10210-6A42-4993-B383-0F6AAC255A24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1B10210-6A42-4993-B383-0F6AAC255A24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1B10210-6A42-4993-B383-0F6AAC255A24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA9AD745-36B4-4B97-B99D-1291CA7198CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA9AD745-36B4-4B97-B99D-1291CA7198CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA9AD745-36B4-4B97-B99D-1291CA7198CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA9AD745-36B4-4B97-B99D-1291CA7198CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0F3F674-CD69-4900-9FBA-4A9C8FB60333}.Debug|Any CPU.ActiveCfg = Debug|.NET
+		{B0F3F674-CD69-4900-9FBA-4A9C8FB60333}.Release|Any CPU.ActiveCfg = Release|.NET
+		{AFFB9410-9280-40D8-BD99-75C13B1D79FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFFB9410-9280-40D8-BD99-75C13B1D79FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFFB9410-9280-40D8-BD99-75C13B1D79FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFFB9410-9280-40D8-BD99-75C13B1D79FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A71607F-DF74-4FC4-BD9B-BF3837883172}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A71607F-DF74-4FC4-BD9B-BF3837883172}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A71607F-DF74-4FC4-BD9B-BF3837883172}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A71607F-DF74-4FC4-BD9B-BF3837883172}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

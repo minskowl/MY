@@ -1,0 +1,53 @@
+A:hover {
+	color: #ff0000;
+	text-decoration: none;
+}
+
+body {
+	font-family: "Trebuchet MS" , Arial;
+	font-size: 10pt;
+	text-decoration: none;
+}
+
+a{
+	text-decoration: none;
+}
+
+td{
+	font-family: "Trebuchet MS" , Arial;
+	font-size: 10pt;
+	text-decoration: none;
+}
+
+i{
+	font-family: "Trebuchet MS" , Arial;
+	font-size: 10pt;
+	text-decoration: none;
+}
+
+#faqtitle{
+	font-size: 12pt;
+}
+
+#faqquestion{
+	font-weight: bold;
+}
+
+#faqanswer{
+	font-weight: none;
+}
+
+.title{
+	font-family: "Trebuchet MS" , Arial;
+	font-size: 36pt;
+	text-decoration: none;
+        color: #003399;     
+        font-weight: bold ;            
+}
+
+.block {
+        font-size : 28pt; 
+        font-weight: bold ; 
+        color : #C2CACD; 
+        font-family : impact
+}

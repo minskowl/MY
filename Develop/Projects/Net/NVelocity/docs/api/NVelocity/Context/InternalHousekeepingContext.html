@@ -1,0 +1,311 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="..\..\JavaDoc.css">
+  </head>
+  <body>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td>
+                <a href="namespace-summary.html">Namespace</a> </td>
+              <td class="nav1sel"> Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV TYPE    NEXT TYPE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+      <tr class="nav2">
+        <td>SUMMARY: INNER | FIELD | CONST | <a href="#property-summary">PROP</a> | <a href="#method-summary">METHOD</a> | OP | EVENT</td>
+        <td>DETAIL: FIELD | CONST | <a href="#property-detail">PROP</a> | <a href="#method-detail">METHOD</a> | OP | EVENT</td>
+      </tr>
+    </table>
+    <hr>
+    <h2>
+      <span class="namespaceName">NVelocity.Context</span>
+      <br>
+      <span class="className">Interface InternalHousekeepingContext</span>
+    </h2>
+    <p>
+            interface to encapsulate the 'stuff' for internal operation of velocity.
+            We use the context as a thread-safe storage : we take advantage of the
+            fact that it's a visitor  of sorts  to all nodes (that matter) of the
+            AST during init() and render().
+            
+            Currently, it carries the template name for namespace
+            support, as well as node-local context data introspection caching.
+            </p>
+    <a name="field-summary">
+    </a>
+    <a name="constructor-summary">
+    </a>
+    <a name="property-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Property Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="propertyType" valign="top">NVelocity.Runtime.Resource.Resource</td>
+        <td class="property">
+          <a href="#NVelocity.Context.InternalHousekeepingContext.CurrentResource">CurrentResource</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="propertyType" valign="top">string</td>
+        <td class="property">
+          <a href="#NVelocity.Context.InternalHousekeepingContext.CurrentTemplateName">CurrentTemplateName</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="propertyType" valign="top">object[]</td>
+        <td class="property">
+          <a href="#NVelocity.Context.InternalHousekeepingContext.TemplateNameStack">TemplateNameStack</a>
+        </td>
+      </tr>
+    </table>
+    <br>
+    <a name="method-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Method Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="returnType" valign="top">NVelocity.Util.Introspection.IntrospectionCacheData</td>
+        <td class="method">
+          <a href="#NVelocity.Context.InternalHousekeepingContext.ICacheGet(System.Object)">ICacheGet</a>(object key)<br>          get the current template name
+            *
+              Returns the template name stack in form of an array.
+            *
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.Context.InternalHousekeepingContext.ICachePut(System.Object,NVelocity.Util.Introspection.IntrospectionCacheData)">ICachePut</a>(object key, NVelocity.Util.Introspection.IntrospectionCacheData o)</td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.Context.InternalHousekeepingContext.PopCurrentTemplateName">PopCurrentTemplateName</a>()<br>        
+            remove the current template name from stack
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.Context.InternalHousekeepingContext.PushCurrentTemplateName(System.String)">PushCurrentTemplateName</a>(string s)<br>        
+            set the current template name on top of stack
+            </td>
+      </tr>
+    </table>
+    <br>
+    <a name="operator-summary">
+    </a>
+    <a name="event-summary">
+    </a>
+    <br>
+    <a name="field-detail">
+    </a>
+    <a name="constructor-detail">
+    </a>
+    <a name="property-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Property Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.Context.InternalHousekeepingContext.CurrentResource">
+    </a>
+    <h3>CurrentResource</h3>
+    <pre>public NVelocity.Runtime.Resource.Resource CurrentResource</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Context.InternalHousekeepingContext.CurrentTemplateName">
+    </a>
+    <h3>CurrentTemplateName</h3>
+    <pre>public string CurrentTemplateName</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Context.InternalHousekeepingContext.TemplateNameStack">
+    </a>
+    <h3>TemplateNameStack</h3>
+    <pre>public object[] TemplateNameStack</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="method-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Method Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.Context.InternalHousekeepingContext.ICacheGet(System.Object)">
+    </a>
+    <h3>ICacheGet</h3>
+    <pre>public NVelocity.Util.Introspection.IntrospectionCacheData ICacheGet(object key)</pre>
+    <dl>
+      <dd>
+        <p>  get the current template name
+            *
+              Returns the template name stack in form of an array.
+            *
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>key</code> -  key to find in cache
+            </dd>
+        </dl>
+        <b>Returns:</b>
+        <dl>
+          <dd>String current template name
+            
+            Object[] with the template name stack contents.
+            
+            cache object
+            
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Context.InternalHousekeepingContext.ICachePut(System.Object,NVelocity.Util.Introspection.IntrospectionCacheData)">
+    </a>
+    <h3>ICachePut</h3>
+    <pre>public void ICachePut(object key,
+                      NVelocity.Util.Introspection.IntrospectionCacheData o)</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>key</code> -  key
+            </dd>
+          <dd>
+            <code>o</code> -  IntrospectionCacheData object to place in cache
+            
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Context.InternalHousekeepingContext.PopCurrentTemplateName">
+    </a>
+    <h3>PopCurrentTemplateName</h3>
+    <pre>public void PopCurrentTemplateName()</pre>
+    <dl>
+      <dd>
+        <p>
+            remove the current template name from stack
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Context.InternalHousekeepingContext.PushCurrentTemplateName(System.String)">
+    </a>
+    <h3>PushCurrentTemplateName</h3>
+    <pre>public void PushCurrentTemplateName(string s)</pre>
+    <dl>
+      <dd>
+        <p>
+            set the current template name on top of stack
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>s</code> - current template name</dd>
+        </dl>
+      </dd>
+    </dl>
+    <a name="operator-detail">
+    </a>
+    <a name="event-detail">
+    </a>
+    <hr>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td>
+                <a href="namespace-summary.html">Namespace</a> </td>
+              <td class="nav1sel"> Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV TYPE    NEXT TYPE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+      <tr class="nav2">
+        <td>SUMMARY: INNER | FIELD | CONST | <a href="#property-summary">PROP</a> | <a href="#method-summary">METHOD</a> | OP | EVENT</td>
+        <td>DETAIL: FIELD | CONST | <a href="#property-detail">PROP</a> | <a href="#method-detail">METHOD</a> | OP | EVENT</td>
+      </tr>
+    </table>
+  </body>
+</html>

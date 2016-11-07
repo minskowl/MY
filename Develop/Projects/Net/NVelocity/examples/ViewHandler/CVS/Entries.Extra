@@ -1,0 +1,17 @@
+/.cvsignore///
+/Default.aspx///
+/Default.aspx.resx///
+/Global.asax///
+/Global.asax.resx///
+/README.txt///
+/Web.config///
+/nvelocity-web.properties///
+/sample.vm///
+/toolbox.xml///
+/AssemblyInfo.cs///
+/Default.aspx.cs///
+/ToyTool.cs///
+/Global.asax.cs///
+/ViewHandler.csproj///
+/ViewHandler.sln///
+/ViewHandler.csproj.webinfo///

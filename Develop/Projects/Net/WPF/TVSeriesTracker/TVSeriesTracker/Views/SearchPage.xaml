@@ -1,0 +1,164 @@
+﻿<Controls1:PageEx x:Class="TVSeriesTracker.Views.SearchPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:Converters="clr-namespace:TVSeriesTracker.Converters"
+      xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+      xmlns:Controls="clr-namespace:Savchin.Wpf.Controls;assembly=Savchin.Wpf.Controls"
+      xmlns:Controls1="clr-namespace:TVSeriesTracker.Controls"
+      xmlns:Converters2="clr-namespace:Savchin.Wpf.Converters;assembly=Savchin.WPF.Tools"
+      xmlns:loc="clr-namespace:Savchin.Wpf.Controls.Localization;assembly=Savchin.Wpf.Controls"  
+                  mc:Ignorable="d" d:DesignHeight="300" d:DesignWidth="400"
+	Title="Search" Style="{StaticResource PageStyle}">
+    <Page.Resources>
+        <Converters:SummaryWidthConverter x:Key="SummaryWidthConverter" Delta="240"/>
+        <Converters2:NullToColapsedConverter x:Key="NullToColapsedConverter"/>
+
+        <DataTemplate x:Key="PersonandStatusTemplate">
+            <StackPanel>
+                <TextBlock Text="{Binding }"/>
+            </StackPanel>
+        </DataTemplate>
+
+
+        <HierarchicalDataTemplate x:Key="categoryTemplate"
+            ItemsSource="{Binding Path=Items}" 
+            ItemTemplate="{StaticResource PersonandStatusTemplate}">
+            <TextBlock Text="{Binding Path=Name}" FontWeight="Bold"
+                 Margin="0,5,0,0"/>
+        </HierarchicalDataTemplate>
+
+    </Page.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" >
+            <TextBlock Style="{StaticResource Title}">
+                <TextBlock Text="{loc:Translate Search}"/>
+                <Hyperlink NavigateUri="WatchListPage.xaml" ><TextBlock Text="{loc:Translate WatchList}"/></Hyperlink>
+                <Hyperlink NavigateUri="SettingsPage.xaml"><TextBlock Text="{loc:Translate Settings}"/></Hyperlink>
+            </TextBlock>
+        </StackPanel>
+        <Grid  Grid.Row="1"  Grid.Column="0" Margin="5" DataContext="{Binding Request}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition  Width="Auto"/>
+                <ColumnDefinition  Width="110"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" Grid.Column="0" Content="{loc:Translate SearchText}"/>
+            <TextBox  Grid.Row="0" Grid.Column="1" Text="{Binding Text,UpdateSourceTrigger=PropertyChanged}"/>
+
+            <Label Grid.Row="1" Grid.Column="0" Content="{loc:Translate Count}"/>
+            <ComboBox  Grid.Row="1" Grid.Column="1" SelectedItem="{Binding Limit}"
+                       ItemsSource="{Binding DataContext.Limits, RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type Page}}}" />
+
+            <Label Grid.Row="2" Grid.Column="0" Content="{loc:Translate Year}"/>
+            <xctk:IntegerUpDown  Grid.Row="2" Grid.Column="1" Value="{Binding Year}" Minimum="1950"/>
+
+            <Label Grid.Row="3" Grid.Column="0"  Content="{loc:Translate Type}"/>
+            <ComboBox  Grid.Row="3" Grid.Column="1" SelectedItem="{Binding Type}"
+                       ItemsSource="{Binding DataContext.Types, RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type Page}}}" />
+
+
+            <Button  Grid.Row="5" Grid.Column="1" Content="Search" 
+                     Command="{Binding Path=DataContext.SearchCommand, RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type Page}}}" />
+
+
+
+        </Grid>
+
+        <ListBox Grid.Row="1" Grid.Column="1"  ItemsSource="{Binding Path=Items}" ScrollViewer.CanContentScroll="False" >
+            <ListBox.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Add to watch" Command="{Binding AddToWatchCommand}"
+                              CommandParameter="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ContextMenu}}, Path=PlacementTarget.SelectedItem}"/>
+                </ContextMenu>
+            </ListBox.ContextMenu>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="200"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Grid.Row="0"  Grid.Column="0" Text="{loc:Translate Title}"/>
+
+                        <TextBlock Grid.Row="0"  Grid.Column="1" >
+                            <Controls:HyperlinkEx NavigateUri="{Binding Imdb_url}" IsExternal="True">
+                                <TextBlock Text="{Binding Title}"/>
+                            </Controls:HyperlinkEx>
+                        </TextBlock>
+
+                        <Image Grid.Row="0"  Grid.Column="2" Grid.RowSpan="9" Source="{Binding Poster}"/>
+
+
+                        <TextBlock Grid.Row="1"  Grid.Column="0" Text="{loc:Translate Rating}"/>
+                        <TextBlock Grid.Row="1"  Grid.Column="1" Text="{Binding Rating}"/>
+
+                        <TextBlock Grid.Row="2"  Grid.Column="0" Text="{loc:Translate Year}"/>
+                        <TextBlock Grid.Row="2"  Grid.Column="1" Text="{Binding Year}"/>
+
+                        <TextBlock Grid.Row="3"  Grid.Column="0" Text="{loc:Translate Type}"/>
+                        <TextBlock Grid.Row="3"  Grid.Column="1" Text="{Binding Type}"/>
+
+                        <TextBlock Grid.Row="4"  Grid.Column="0" Text="{loc:Translate Genres}"/>
+                        <TextBlock Grid.Row="4"  Grid.Column="1" Text="{Binding Genres}"/>
+
+                        <TextBlock Grid.Row="5"  Grid.Column="0">Id</TextBlock>
+                        <TextBlock Grid.Row="5"  Grid.Column="1" Text="{Binding Imdb_id}"/>
+
+                        <TextBlock Grid.Row="6"  Grid.Column="0" Text="{loc:Translate Summary}"/>
+                        <TextBlock Grid.Row="7"  Grid.Column="0" Grid.ColumnSpan="2" Text="{Binding Plot_simple}" TextWrapping="Wrap"
+                                   Width="{Binding Path=ActualWidth,  RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type ListBox}},Converter={StaticResource SummaryWidthConverter}}"/>
+
+
+                        <Expander Grid.Row="8"  Grid.Column="0" Grid.ColumnSpan="2" 
+                                  Visibility="{Binding EpisodesView,Converter={StaticResource NullToColapsedConverter}}">
+                            <Expander.Header>
+                                <TextBlock Text="{loc:Translate Episodes}" Margin="5"/>
+                            </Expander.Header>
+                            <Controls:TreeViewEx Grid.Row="8"  Grid.Column="1" 
+                                  ItemTemplate="{StaticResource categoryTemplate}"  
+                                  ItemsSource="{Binding EpisodesView.Groups}" 
+                                 >
+
+                            </Controls:TreeViewEx>
+                        </Expander>
+
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+
+    </Grid>
+</Controls1:PageEx>

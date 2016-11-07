@@ -1,0 +1,12 @@
+﻿<ad:DockableContent x:Class="KnowledgeBase.Desktop.Controls.Docking.SearchFilterControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:ad="clr-namespace:AvalonDock;assembly=AvalonDock" 
+             xmlns:my="clr-namespace:KnowledgeBase.Desktop.Controls"
+                   mc:Ignorable="d" 
+          Title="Search"
+                d:DesignHeight="200"  d:DesignWidth="200" >
+    <my:SearchControl/>
+</ad:DockableContent>

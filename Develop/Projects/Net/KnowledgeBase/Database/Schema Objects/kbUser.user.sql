@@ -1,0 +1,3 @@
+﻿--CREATE USER [kbUser] FOR LOGIN [kbUser] WITH DEFAULT_SCHEMA=[dbo]
+
+

@@ -1,0 +1,681 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <PostConversionRemoveFromScc>
+    </PostConversionRemoveFromScc>
+    <PostConversionAddToScc>
+    </PostConversionAddToScc>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Default</Configuration>
+    <Name>Database</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ShowWizard>False</ShowWizard>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <DefaultSchemaForUnqualifiedObjects>dbo</DefaultSchemaForUnqualifiedObjects>
+    <EnableCLRIntegration>False</EnableCLRIntegration>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <IncludeSchemaNameInFilename>False</IncludeSchemaNameInFilename>
+    <DoNotUseAlterAssemblyStatementsToUpdateCLRTypes>False</DoNotUseAlterAssemblyStatementsToUpdateCLRTypes>
+    <ProjectVersion>4.0</ProjectVersion>
+    <DefaultDataPath>Undefined</DefaultDataPath>
+    <DefaultSchema>dbo</DefaultSchema>
+    <RootNamespace>Database</RootNamespace>
+    <PreviousProjectVersion>4.0</PreviousProjectVersion>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql90DatabaseSchemaProvider</DSP>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <ModelCollation>1033,CI</ModelCollation>
+    <PostUpgradeAddToSCC>;S:\Develop\Projects\Net\KnowledgeBase\Database\Database Level Objects\Storage\Files\PrimaryFileName.sqlfile.sql;S:\Develop\Projects\Net\KnowledgeBase\Database\Database Level Objects\Storage\Files\PrimaryLogFileName.sqlfile.sql</PostUpgradeAddToSCC>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{f3281a11-d746-4e0c-8ff4-622f100935ad}</ProjectGuid>
+    <GenerateDatabaseFile>False</GenerateDatabaseFile>
+    <GenerateCreateScript>False</GenerateCreateScript>
+    <SqlServerVerification>False</SqlServerVerification>
+    <TargetLanguage>CS</TargetLanguage>
+    <AllowSnapshotIsolation>False</AllowSnapshotIsolation>
+    <AnsiNullDefault>True</AnsiNullDefault>
+    <AnsiNulls>True</AnsiNulls>
+    <AnsiPadding>True</AnsiPadding>
+    <AnsiWarnings>True</AnsiWarnings>
+    <ArithAbort>True</ArithAbort>
+    <AutoClose>False</AutoClose>
+    <AutoCreateStatistics>True</AutoCreateStatistics>
+    <AutoShrink>False</AutoShrink>
+    <AutoUpdateStatistics>True</AutoUpdateStatistics>
+    <AutoUpdateStatisticsAsynchronously>True</AutoUpdateStatisticsAsynchronously>
+    <CloseCursorOnCommitEnabled>False</CloseCursorOnCommitEnabled>
+    <ConcatNullYieldsNull>True</ConcatNullYieldsNull>
+    <DatabaseAccess>MULTI_USER</DatabaseAccess>
+    <DatabaseChaining>False</DatabaseChaining>
+    <DatabaseState>ONLINE</DatabaseState>
+    <DefaultCollation>SQL_Latin1_General_CP1_CS_AS</DefaultCollation>
+    <DefaultCursor>LOCAL</DefaultCursor>
+    <EnableFullTextSearch>False</EnableFullTextSearch>
+    <NumericRoundAbort>False</NumericRoundAbort>
+    <PageVerify>NONE</PageVerify>
+    <Parameterization>SIMPLE</Parameterization>
+    <QuotedIdentifier>True</QuotedIdentifier>
+    <ReadCommittedSnapshot>False</ReadCommittedSnapshot>
+    <Recovery>FULL</Recovery>
+    <RecursiveTriggersEnabled>False</RecursiveTriggersEnabled>
+    <ServiceBrokerOption>DisableBroker</ServiceBrokerOption>
+    <TornPageDetection>False</TornPageDetection>
+    <Trustworthy>False</Trustworthy>
+    <UpdateOptions>READ_WRITE</UpdateOptions>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Default|AnyCPU' ">
+    <OutputPath>.\sql\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TargetDatabase>
+    </TargetDatabase>
+    <TreatTSqlWarningsAsErrors>False</TreatTSqlWarningsAsErrors>
+    <SuppressTSqlWarnings />
+  </PropertyGroup>
+  <!--Import the settings-->
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <PropertyGroup>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="Schema Objects" />
+    <Folder Include="Schema Objects\Jobs" />
+    <Folder Include="Schema Objects\Stored Procedures" />
+    <Folder Include="Schema Objects\Synonyms" />
+    <Folder Include="Schema Objects\Tables" />
+    <Folder Include="Schema Objects\Tables\Constraints" />
+    <Folder Include="Schema Objects\Tables\Indexes" />
+    <Folder Include="Schema Objects\Tables\Keys" />
+    <Folder Include="Schema Objects\Tables\Statistics" />
+    <Folder Include="Schema Objects\Tables\Triggers" />
+    <Folder Include="Schema Objects\Views" />
+    <Folder Include="Schema Objects\Views\Indexes" />
+    <Folder Include="Schema Objects\Views\Statistics" />
+    <Folder Include="Schema Objects\Views\Triggers" />
+    <Folder Include="Scripts" />
+    <Folder Include="Data Generation Plans" />
+    <Folder Include="Database Level Objects\" />
+    <Folder Include="Database Level Objects\Storage\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Schema Objects\Jobs\Backup_Diff.sql">
+      <SubType>NotInBuild</SubType>
+    </None>
+    <None Include="Schema Objects\Jobs\Backup_FULL.sql">
+      <SubType>NotInBuild</SubType>
+    </None>
+    <None Include="Schema Objects\Jobs\CREATE_DEVICE.sql">
+      <SubType>NotInBuild</SubType>
+    </None>
+    <None Include="Schema Objects\Stored Procedures\CategoriesSP.sql">
+      <SubType>NotInBuild</SubType>
+    </None>
+    <None Include="Schema Objects\Stored Procedures\KnowledgesSP.sql">
+      <SubType>NotInBuild</SubType>
+    </None>
+    <None Include="Schema Objects\Stored Procedures\UsersSP.sql">
+      <SubType>NotInBuild</SubType>
+    </None>
+    <None Include="Scripts\Attach.sql">
+      <SubType>NotInBuild</SubType>
+    </None>
+    <None Include="Scripts\CustomErrors.sql">
+      <SubType>NotInBuild</SubType>
+    </None>
+    <None Include="Scripts\DatabaseObjectOptions.sql">
+      <SubType>NotInBuild</SubType>
+    </None>
+    <None Include="Scripts\DeAttach.sql">
+      <SubType>NotInBuild</SubType>
+    </None>
+    <None Include="Scripts\EncryptionKeysAndCertificates.sql">
+      <SubType>NotInBuild</SubType>
+    </None>
+    <None Include="Scripts\LinkedServers.sql">
+      <SubType>NotInBuild</SubType>
+    </None>
+    <None Include="Scripts\Logins.sql">
+      <SubType>NotInBuild</SubType>
+    </None>
+    <None Include="Scripts\Offline.sql">
+      <SubType>NotInBuild</SubType>
+    </None>
+    <None Include="Scripts\Online.sql">
+      <SubType>NotInBuild</SubType>
+    </None>
+    <None Include="Scripts\Permissions.sql">
+      <SubType>NotInBuild</SubType>
+    </None>
+    <None Include="Scripts\RoleMemberships.sql">
+      <SubType>NotInBuild</SubType>
+    </None>
+    <None Include="Scripts\RulesAndDefaults.sql">
+      <SubType>NotInBuild</SubType>
+    </None>
+    <None Include="Scripts\Run.sql">
+      <SubType>NotInBuild</SubType>
+    </None>
+    <None Include="Scripts\ScriptsIgnoredOnImport.sql">
+      <SubType>NotInBuild</SubType>
+    </None>
+    <None Include="Scripts\Signatures.sql">
+      <SubType>NotInBuild</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="D:\MY\Develop\Projects\Net\KnowledgeBase\Database\Permissions.sql" />
+    <Build Include="Schema Objects\dbo.categoryName.uddt.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\dbo.GetUniuqueFileIncludeName.function.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\kbUser.user.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Stored Procedures\dbo.Category_Delete.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Stored Procedures\dbo.Category_GetAll.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Stored Procedures\dbo.Category_GetByID.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Stored Procedures\dbo.Category_GetByParentCategoryID.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Stored Procedures\dbo.Category_Insert.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Stored Procedures\dbo.Category_Update.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Stored Procedures\dbo.FileInclude_Delete.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Stored Procedures\dbo.FileInclude_GetAll.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Stored Procedures\dbo.FileInclude_GetByID.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Stored Procedures\dbo.FileInclude_GetByKnowledgeID.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Stored Procedures\dbo.FileInclude_Insert.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Stored Procedures\dbo.FileInclude_Update.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Stored Procedures\dbo.FileLink_Delete.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Stored Procedures\dbo.FileLink_GetAll.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Stored Procedures\dbo.FileLink_GetByFileStorageID.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Stored Procedures\dbo.FileLink_GetByID.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Stored Procedures\dbo.FileLink_Insert.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Stored Procedures\dbo.FileLink_Update.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Stored Procedures\dbo.FileStorage_Delete.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Stored Procedures\dbo.FileStorage_GetAll.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Stored Procedures\dbo.FileStorage_GetByID.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Stored Procedures\dbo.FileStorage_GetBySettingsID.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Stored Procedures\dbo.FileStorage_Insert.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Stored Procedures\dbo.FileStorage_Update.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Stored Procedures\dbo.Keyword_Delete.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Stored Procedures\dbo.Keyword_GetAll.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Stored Procedures\dbo.Keyword_GetByID.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Stored Procedures\dbo.Keyword_GetByKeywordStatusID.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Stored Procedures\dbo.Keyword_GetByKeywordTypeID.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Stored Procedures\dbo.Keyword_Insert.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Stored Procedures\dbo.Keyword_Update.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Stored Procedures\dbo.Knowledge_Delete.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Stored Procedures\dbo.Knowledge_GetAll.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Stored Procedures\dbo.Knowledge_GetByCategoryID.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Stored Procedures\dbo.Knowledge_GetByCreatorID.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Stored Procedures\dbo.Knowledge_GetByID.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Stored Procedures\dbo.Knowledge_GetByKnowledgeStatusID.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Stored Procedures\dbo.Knowledge_GetByKnowledgeTypeID.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Stored Procedures\dbo.Knowledge_GetByModificatorID.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Stored Procedures\dbo.Knowledge_Insert.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Stored Procedures\dbo.Knowledge_Update.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Stored Procedures\dbo.UserFile_Delete.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Stored Procedures\dbo.UserFile_GetAll.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Stored Procedures\dbo.UserFile_GetByID.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Stored Procedures\dbo.UserFile_GetByUserID.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Stored Procedures\dbo.UserFile_Insert.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Stored Procedures\dbo.UserFile_Update.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Stored Procedures\dbo.UserRight_Delete.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Stored Procedures\dbo.UserRight_GetAll.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Stored Procedures\dbo.UserRight_GetByCategoryID.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Stored Procedures\dbo.UserRight_GetByID.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Stored Procedures\dbo.UserRight_GetByUserID.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Stored Procedures\dbo.UserRight_Insert.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Stored Procedures\dbo.UserRight_Update.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Stored Procedures\dbo.User_Delete.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Stored Procedures\dbo.User_GetAll.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Stored Procedures\dbo.User_GetByID.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Stored Procedures\dbo.User_GetByRootPermissionID.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Stored Procedures\dbo.User_Insert.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Stored Procedures\dbo.User_Update.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Stored Procedures\dbo._Cagegory_GetShortInfoByParentCategoryID.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Stored Procedures\dbo._Categories_GetTree.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Stored Procedures\dbo._Category_FindByName.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Stored Procedures\dbo._Category_GetRootLevel.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Stored Procedures\dbo._ExistsTempTable.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Stored Procedures\dbo._FileIncludes_CreateFromUserFile.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Stored Procedures\dbo._FileIncludes_DeleteByKnowledgeIDByFileName.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Stored Procedures\dbo._FileIncludes_GetData.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Stored Procedures\dbo._FileIncludes_SetData.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Stored Procedures\dbo._FileLinks_GetByFileStorageIDByPath.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Stored Procedures\dbo._FileLinks_GetByPublicID.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Stored Procedures\dbo._KeywordInfo_GetAll.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Stored Procedures\dbo._Keywords_FindByName.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Stored Procedures\dbo._Keywords_GetByListID.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Stored Procedures\dbo._Keywords_GetByName.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Stored Procedures\dbo._Keywords_SetStatus.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Stored Procedures\dbo._Knowledges_GetByPublicID.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Stored Procedures\dbo._Knowledges_GetCategoriesIDs.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Stored Procedures\dbo._Knowledges_GetKeywordsAssociations.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Stored Procedures\dbo._Knowledges_GetShortInfoByCategoryID.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Stored Procedures\dbo._Knowledges_SaveKeywordsAssociations.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Stored Procedures\dbo._UserFiles_DeleteByUserIDByFileName.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Stored Procedures\dbo._UserFiles_GetData.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Stored Procedures\dbo._UserFiles_SetData.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Stored Procedures\dbo._UserRights_SaveRights.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Stored Procedures\dbo._User_GetByLogin.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Stored Procedures\dbo._User_GetByLoginByPassword.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Tables\Constraints\dbo.ActionLog.DF_ActionLog_Date.defconst.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Tables\Constraints\dbo.Categories.DF_Categories_CreationDate.defconst.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Tables\Constraints\dbo.FileIncludes.DF_FileIncludes_FileIncludeID.defconst.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Tables\Constraints\dbo.Keywords.DF_Keywords_CreationDate.defconst.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Tables\Constraints\dbo.Keywords.DF_Keywords_KeywordStatusID.defconst.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Tables\Constraints\dbo.Knowledges.DF_Knowledges_CreationDate.defconst.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Tables\Constraints\dbo.Knowledges.DF_Knowledges_CreatorID.defconst.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Tables\Constraints\dbo.Knowledges.DF_Knowledges_KnowledgeStatusID.defconst.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Tables\Constraints\dbo.Knowledges.DF_Knowledges_ModificatorID.defconst.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Tables\Constraints\dbo.Knowledges.DF_Knowledges_PublicID.defconst.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Tables\Constraints\dbo.Users.DF_Users_CreationDate.defconst.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Tables\Constraints\dbo.Users.DF_Users_IsSystem.defconst.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Tables\Constraints\dbo.Users.DF_Users_UserAdmin.defconst.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Tables\dbo.ActionLog.table.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Tables\dbo.Categories.table.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Tables\dbo.FileIncludes.table.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Tables\dbo.FileLinks.table.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Tables\dbo.FileStorages.table.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Tables\dbo.Keywords.table.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Tables\dbo.KeywordStatuses.table.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Tables\dbo.KeywordTypes.table.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Tables\dbo.KnowledgeKeywords.table.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Tables\dbo.Knowledges.table.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Tables\dbo.KnowledgeStatuses.table.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Tables\dbo.KnowledgeTypes.table.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Tables\dbo.Permissions.table.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Tables\dbo.Settings.table.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Tables\dbo.Severities.table.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Tables\dbo.UserFiles.table.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Tables\dbo.UserRights.table.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Tables\dbo.Users.table.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Tables\Indexes\dbo.FileLinks.IX_FileLinks_Path.index.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Tables\Indexes\dbo.FileStorages.IX_FileStorages_Name.index.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Tables\Indexes\dbo.FileStorages.IX_FileStorages_Path.index.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Tables\Keys\dbo.Categories.FK_Categories_Categories.fkey.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Tables\Keys\dbo.Categories.IX_Categories_UniuqueName.ukey.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Tables\Keys\dbo.Categories.PK_Categories.pkey.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Tables\Keys\dbo.FileIncludes.FK_FileIncludes_FileIncludes.fkey.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Tables\Keys\dbo.FileIncludes.IX_FileIncludes_UniqueName.ukey.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Tables\Keys\dbo.FileIncludes.PK_FileIncludes.pkey.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Tables\Keys\dbo.FileLinks.PK_FileLinks.pkey.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Tables\Keys\dbo.FileStorages.FK_FileStorages_FileStorages.fkey.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Tables\Keys\dbo.FileStorages.PK_FileStorages_1.pkey.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Tables\Keys\dbo.Keywords.FK_Keywords_KeywordStatuses.fkey.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Tables\Keys\dbo.Keywords.FK_Keywords_KeywordTypes.fkey.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Tables\Keys\dbo.Keywords.IX_Keywords.ukey.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Tables\Keys\dbo.Keywords.PK_Keywords.pkey.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Tables\Keys\dbo.KeywordStatuses.PK_KeywordStatuses.pkey.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Tables\Keys\dbo.KeywordTypes.PK_KeywordTypes.pkey.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Tables\Keys\dbo.KnowledgeKeywords.FK_KnowledgeKeywords_Keywords.fkey.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Tables\Keys\dbo.KnowledgeKeywords.FK_KnowledgeKeywords_Knowledges.fkey.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Tables\Keys\dbo.KnowledgeKeywords.PK_KnowledgeKeywords.pkey.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Tables\Keys\dbo.Knowledges.FK_Knowledges_Categories.fkey.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Tables\Keys\dbo.Knowledges.FK_Knowledges_Creator.fkey.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Tables\Keys\dbo.Knowledges.FK_Knowledges_KnowledgeStatuses.fkey.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Tables\Keys\dbo.Knowledges.FK_Knowledges_KnowledgeTypes.fkey.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Tables\Keys\dbo.Knowledges.FK_Knowledges_Modificator.fkey.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Tables\Keys\dbo.Knowledges.PK_Knowledges.pkey.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Tables\Keys\dbo.KnowledgeStatuses.PK_KnowledgeStatuses.pkey.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Tables\Keys\dbo.KnowledgeTypes.PK_KnowledgeTypes.pkey.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Tables\Keys\dbo.Permissions.PK_Permissions.pkey.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Tables\Keys\dbo.Settings.PK_Settings.pkey.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Tables\Keys\dbo.Severities.PK_Severities.pkey.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Tables\Keys\dbo.UserFiles.FK_UserFiles_Users.fkey.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Tables\Keys\dbo.UserFiles.IX_UserFiles_UniqueName.ukey.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Tables\Keys\dbo.UserFiles.PK_UserFiles.pkey.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Tables\Keys\dbo.UserRights.FK_UserRights_Categories.fkey.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Tables\Keys\dbo.UserRights.FK_UserRights_Users.fkey.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Tables\Keys\dbo.UserRights.PK_UserRights.pkey.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Tables\Keys\dbo.Users.FK_Users_Permissions.fkey.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Tables\Keys\dbo.Users.IX_Users.ukey.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Tables\Keys\dbo.Users.PK_Users.pkey.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Tables\Triggers\dbo.Users_System.trigger.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Views\dbo.CategoriesInfo.view.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Views\dbo.KeywordInfo.view.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Views\dbo.KnowledgeInfo.view.sql">
+      <SubType>Code</SubType>
+    </Build>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Database Level Objects\Storage\Filegroups" />
+    <Folder Include="Database Level Objects\Storage\Files" />
+  </ItemGroup>
+  <ItemGroup>
+    <BuildContributorArgument Include="OutDir=$(OutDir)" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Default.publish.xml" />
+  </ItemGroup>
+</Project>

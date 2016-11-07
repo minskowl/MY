@@ -1,0 +1,108 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="..\..\..\JavaDoc.css">
+  </head>
+  <body>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td class="nav1sel"> Namespace </td>
+              <td>Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV NAMESPACE    NEXT NAMESPACE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+    </table>
+    <hr>
+    <h2 class="title">NVelocity.Http.Context Namespace Summary</h2>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Interface Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="name">
+          <a href="IViewContext.html">IViewContext</a>
+        </td>
+        <td class="type">Objects implementing this interface are passed to view tools
+            upon initialization by the
+            {@link org.apache.velocity.tools.view.servlet.ServletToolboxManager}.The interface provides view tools in a servlet environment
+            access to relevant context information, like servlet request, servlet
+            context and the velocity context.</td>
+      </tr>
+    </table>
+    <br>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Class Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="name">
+          <a href="ChainedContext.html">ChainedContext</a>
+        </td>
+        <td class="type">Velocity context implementation specific to the Servlet environment.It provides the following special features:puts the request, response, session, and servlet context objects
+            into the Velocity context for direct access, and keeps them
+            read-onlysupports a read-only toolbox of view toolsauto-searches servlet request attributes, session attributes and
+            servlet context attribues for objectsThe {@link #internalGet(String key)} method implements the following search order
+            for objects:servlet request, servlet response, servlet session, servlet contexttoolboxlocal hashtable of objects (traditional use)servlet request attribues, servlet session attribute, servlet context
+            attributesThe purpose of this class is to make it easy for web designer to work
+            with Java servlet based web applications. They do not need to be concerned
+            with the concepts of request, session or application attributes and the
+            live time of objects in these scopes.Note that the put() method always puts objects into the local hashtable.
+            </td>
+      </tr>
+      <tr>
+        <td class="name">
+          <a href="ToolboxContext.html">ToolboxContext</a>
+        </td>
+        <td class="type">Read-only context used to carry a set of view tools.Writes get dropped.</td>
+      </tr>
+    </table>
+    <br>
+    <hr>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td class="nav1sel"> Namespace </td>
+              <td>Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV NAMESPACE    NEXT NAMESPACE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+    </table>
+  </body>
+</html>

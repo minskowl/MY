@@ -1,0 +1,287 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="..\..\..\JavaDoc.css">
+  </head>
+  <body>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td>
+                <a href="namespace-summary.html">Namespace</a> </td>
+              <td class="nav1sel"> Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV TYPE    NEXT TYPE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+      <tr class="nav2">
+        <td>SUMMARY: INNER | <a href="#field-summary">FIELD</a> | <a href="#constructor-summary">CONST</a> | PROP | <a href="#method-summary">METHOD</a> | OP | EVENT</td>
+        <td>DETAIL: <a href="#field-detail">FIELD</a> | <a href="#constructor-detail">CONST</a> | PROP | <a href="#method-detail">METHOD</a> | OP | EVENT</td>
+      </tr>
+    </table>
+    <hr>
+    <h2>
+      <span class="namespaceName">NVelocity.Runtime.Log</span>
+      <br>
+      <span class="className">Class SimpleLog4NetLogSystem</span>
+    </h2>
+    <p>
+            Implementation of a simple log4net system that will either
+            latch onto an existing category, or just do a simple
+            rolling file log.  Derived from Jon's 'complicated'
+            version :)
+            </p>
+    <a name="field-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Field Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="fieldType" valign="top">log4net.spi.ILogger</td>
+        <td class="field">
+          <a href="#NVelocity.Runtime.Log.SimpleLog4NetLogSystem.logger">logger</a>
+          <br>        
+            log4net logging interface
+            </td>
+      </tr>
+    </table>
+    <br>
+    <a name="constructor-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Constructor Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="constructor" valign="top">
+          <a href="#NVelocity.Runtime.Log.SimpleLog4NetLogSystem.#ctor">SimpleLog4NetLogSystem</a>()<br>        Initializes a new instance of the SimpleLog4NetLogSystem class.</td>
+      </tr>
+    </table>
+    <br>
+    <a name="property-summary">
+    </a>
+    <a name="method-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Method Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Log.SimpleLog4NetLogSystem.Finalize">Finalize</a>()<br>        
+            Also do a shutdown if the object is destroy()'d.
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Log.SimpleLog4NetLogSystem.Init(NVelocity.Runtime.RuntimeServices)">Init</a>(NVelocity.Runtime.RuntimeServices rs)</td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Log.SimpleLog4NetLogSystem.LogVelocityMessage(System.Int32,System.String)">LogVelocityMessage</a>(int level, string message)<br>        
+            logs messages
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Log.SimpleLog4NetLogSystem.Shutdown">Shutdown</a>()<br>        
+            Close all destinations
+            </td>
+      </tr>
+    </table>
+    <br>
+    <table class="subtable" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Methods inherited from class System.Object</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>
+          <a href="..\..\..\NVelocity/Runtime/Log/SimpleLog4NetLogSystem/Equals(System.html#Object)">Equals</a>, <a href="..\..\..\NVelocity/Runtime/Log/SimpleLog4NetLogSystem.html#GetHashCode">GetHashCode</a>, <a href="..\..\..\NVelocity/Runtime/Log/SimpleLog4NetLogSystem.html#GetType">GetType</a>, <a href="..\..\..\NVelocity/Runtime/Log/SimpleLog4NetLogSystem.html#MemberwiseClone">MemberwiseClone</a>, <a href="..\..\..\NVelocity/Runtime/Log/SimpleLog4NetLogSystem.html#ToString">ToString</a></td>
+      </tr>
+    </table>
+    <br>
+    <a name="operator-summary">
+    </a>
+    <a name="event-summary">
+    </a>
+    <br>
+    <a name="field-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Field Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.Runtime.Log.SimpleLog4NetLogSystem.logger">
+    </a>
+    <h3>logger</h3>
+    <pre>protected log4net.spi.ILogger <b>logger</b></pre>
+    <dl>
+      <dd>
+        <p>
+            log4net logging interface
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="constructor-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Constructor Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.Runtime.Log.SimpleLog4NetLogSystem.#ctor">
+    </a>
+    <h3>SimpleLog4NetLogSystem</h3>
+    <pre>public SimpleLog4NetLogSystem()</pre>
+    <dl>
+      <dd>
+        <p>Initializes a new instance of the SimpleLog4NetLogSystem class.</p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="property-detail">
+    </a>
+    <a name="method-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Method Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.Runtime.Log.SimpleLog4NetLogSystem.Finalize">
+    </a>
+    <h3>Finalize</h3>
+    <pre>protected void Finalize()</pre>
+    <dl>
+      <dd>
+        <p>
+            Also do a shutdown if the object is destroy()'d.
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Log.SimpleLog4NetLogSystem.Init(NVelocity.Runtime.RuntimeServices)">
+    </a>
+    <h3>Init</h3>
+    <pre>public void Init(NVelocity.Runtime.RuntimeServices rs)</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Log.SimpleLog4NetLogSystem.LogVelocityMessage(System.Int32,System.String)">
+    </a>
+    <h3>LogVelocityMessage</h3>
+    <pre>public void LogVelocityMessage(int level,
+                               string message)</pre>
+    <dl>
+      <dd>
+        <p>
+            logs messages
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>level</code> - severity level</dd>
+          <dd>
+            <code>message</code> - complete error message</dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Log.SimpleLog4NetLogSystem.Shutdown">
+    </a>
+    <h3>Shutdown</h3>
+    <pre>public void Shutdown()</pre>
+    <dl>
+      <dd>
+        <p>
+            Close all destinations
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="operator-detail">
+    </a>
+    <a name="event-detail">
+    </a>
+    <hr>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td>
+                <a href="namespace-summary.html">Namespace</a> </td>
+              <td class="nav1sel"> Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV TYPE    NEXT TYPE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+      <tr class="nav2">
+        <td>SUMMARY: INNER | <a href="#field-summary">FIELD</a> | <a href="#constructor-summary">CONST</a> | PROP | <a href="#method-summary">METHOD</a> | OP | EVENT</td>
+        <td>DETAIL: <a href="#field-detail">FIELD</a> | <a href="#constructor-detail">CONST</a> | PROP | <a href="#method-detail">METHOD</a> | OP | EVENT</td>
+      </tr>
+    </table>
+  </body>
+</html>

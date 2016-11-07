@@ -1,0 +1,575 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="..\..\..\..\JavaDoc.css">
+  </head>
+  <body>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td>
+                <a href="namespace-summary.html">Namespace</a> </td>
+              <td class="nav1sel"> Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV TYPE    NEXT TYPE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+      <tr class="nav2">
+        <td>SUMMARY: INNER | FIELD | CONST | <a href="#property-summary">PROP</a> | <a href="#method-summary">METHOD</a> | OP | EVENT</td>
+        <td>DETAIL: FIELD | CONST | <a href="#property-detail">PROP</a> | <a href="#method-detail">METHOD</a> | OP | EVENT</td>
+      </tr>
+    </table>
+    <hr>
+    <h2>
+      <span class="namespaceName">NVelocity.Runtime.Parser.Node</span>
+      <br>
+      <span class="className">Interface INode</span>
+    </h2>
+    <p>  All AST nodes must implement this interface.  It provides basic
+            machinery for constructing the parent and child relationships
+            between nodes.
+            </p>
+    <a name="field-summary">
+    </a>
+    <a name="constructor-summary">
+    </a>
+    <a name="property-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Property Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="propertyType" valign="top">int</td>
+        <td class="property">
+          <a href="#NVelocity.Runtime.Parser.Node.INode.Column">Column</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="propertyType" valign="top">NVelocity.Runtime.Parser.Token</td>
+        <td class="property">
+          <a href="#NVelocity.Runtime.Parser.Node.INode.FirstToken">FirstToken</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="propertyType" valign="top">int</td>
+        <td class="property">
+          <a href="#NVelocity.Runtime.Parser.Node.INode.Info">Info</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="propertyType" valign="top">NVelocity.Runtime.Parser.Token</td>
+        <td class="property">
+          <a href="#NVelocity.Runtime.Parser.Node.INode.LastToken">LastToken</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="propertyType" valign="top">int</td>
+        <td class="property">
+          <a href="#NVelocity.Runtime.Parser.Node.INode.Line">Line</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="propertyType" valign="top">int</td>
+        <td class="property">
+          <a href="#NVelocity.Runtime.Parser.Node.INode.Type">Type</a>
+        </td>
+      </tr>
+    </table>
+    <br>
+    <a name="method-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Method Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="returnType" valign="top">object</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Parser.Node.INode.childrenAccept(NVelocity.Runtime.Parser.Node.ParserVisitor,System.Object)">childrenAccept</a>(NVelocity.Runtime.Parser.Node.ParserVisitor visitor, object data)</td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">bool</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Parser.Node.INode.evaluate(NVelocity.Context.InternalContextAdapter)">evaluate</a>(NVelocity.Context.InternalContextAdapter context)</td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">object</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Parser.Node.INode.execute(System.Object,NVelocity.Context.InternalContextAdapter)">execute</a>(object o, NVelocity.Context.InternalContextAdapter context)</td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">object</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Parser.Node.INode.init(NVelocity.Context.InternalContextAdapter,System.Object)">init</a>(NVelocity.Context.InternalContextAdapter context, object data)</td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">bool</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Parser.Node.INode.isInvalid">isInvalid</a>()</td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">object</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Parser.Node.INode.jjtAccept(NVelocity.Runtime.Parser.Node.ParserVisitor,System.Object)">jjtAccept</a>(NVelocity.Runtime.Parser.Node.ParserVisitor visitor, object data)<br>        Accept the visitor. *
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Parser.Node.INode.jjtAddChild(NVelocity.Runtime.Parser.Node.INode,System.Int32)">jjtAddChild</a>(NVelocity.Runtime.Parser.Node.INode n, int i)<br>          This method tells the node to add its argument to the node's
+            list of children.
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Parser.Node.INode.jjtClose">jjtClose</a>()<br>          This method is called after all the child nodes have been
+            added.
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">NVelocity.Runtime.Parser.Node.INode</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Parser.Node.INode.jjtGetChild(System.Int32)">jjtGetChild</a>(int i)<br>          This method returns a child node.  The children are numbered
+            from zero, left to right.
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">int</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Parser.Node.INode.jjtGetNumChildren">jjtGetNumChildren</a>()<br>        Return the number of children the node has.
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">NVelocity.Runtime.Parser.Node.INode</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Parser.Node.INode.jjtGetParent">jjtGetParent</a>()</td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Parser.Node.INode.jjtOpen">jjtOpen</a>()<br>          This method is called after the node has been made the current
+            node.  It indicates that child nodes can now be added to it.
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Parser.Node.INode.jjtSetParent(NVelocity.Runtime.Parser.Node.INode)">jjtSetParent</a>(NVelocity.Runtime.Parser.Node.INode n)<br>          This pair of methods are used to inform the node of its
+            parent.
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">string</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Parser.Node.INode.literal">literal</a>()</td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">bool</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Parser.Node.INode.render(NVelocity.Context.InternalContextAdapter,System.IO.TextWriter)">render</a>(NVelocity.Context.InternalContextAdapter context, System.IO.TextWriter writer)</td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Parser.Node.INode.setInvalid">setInvalid</a>()</td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">object</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Parser.Node.INode.value_Renamed(NVelocity.Context.InternalContextAdapter)">value_Renamed</a>(NVelocity.Context.InternalContextAdapter context)</td>
+      </tr>
+    </table>
+    <br>
+    <a name="operator-summary">
+    </a>
+    <a name="event-summary">
+    </a>
+    <br>
+    <a name="field-detail">
+    </a>
+    <a name="constructor-detail">
+    </a>
+    <a name="property-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Property Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.Runtime.Parser.Node.INode.Column">
+    </a>
+    <h3>Column</h3>
+    <pre>public int Column</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Parser.Node.INode.FirstToken">
+    </a>
+    <h3>FirstToken</h3>
+    <pre>public NVelocity.Runtime.Parser.Token FirstToken</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Parser.Node.INode.Info">
+    </a>
+    <h3>Info</h3>
+    <pre>public int Info</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Parser.Node.INode.LastToken">
+    </a>
+    <h3>LastToken</h3>
+    <pre>public NVelocity.Runtime.Parser.Token LastToken</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Parser.Node.INode.Line">
+    </a>
+    <h3>Line</h3>
+    <pre>public int Line</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Parser.Node.INode.Type">
+    </a>
+    <h3>Type</h3>
+    <pre>public int Type</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="method-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Method Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.Runtime.Parser.Node.INode.childrenAccept(NVelocity.Runtime.Parser.Node.ParserVisitor,System.Object)">
+    </a>
+    <h3>childrenAccept</h3>
+    <pre>public object childrenAccept(NVelocity.Runtime.Parser.Node.ParserVisitor visitor,
+                             object data)</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Parser.Node.INode.evaluate(NVelocity.Context.InternalContextAdapter)">
+    </a>
+    <h3>evaluate</h3>
+    <pre>public bool evaluate(NVelocity.Context.InternalContextAdapter context)</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Parser.Node.INode.execute(System.Object,NVelocity.Context.InternalContextAdapter)">
+    </a>
+    <h3>execute</h3>
+    <pre>public object execute(object o,
+                      NVelocity.Context.InternalContextAdapter context)</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Parser.Node.INode.init(NVelocity.Context.InternalContextAdapter,System.Object)">
+    </a>
+    <h3>init</h3>
+    <pre>public object init(NVelocity.Context.InternalContextAdapter context,
+                   object data)</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Parser.Node.INode.isInvalid">
+    </a>
+    <h3>isInvalid</h3>
+    <pre>public bool isInvalid()</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Parser.Node.INode.jjtAccept(NVelocity.Runtime.Parser.Node.ParserVisitor,System.Object)">
+    </a>
+    <h3>jjtAccept</h3>
+    <pre>public object jjtAccept(NVelocity.Runtime.Parser.Node.ParserVisitor visitor,
+                        object data)</pre>
+    <dl>
+      <dd>
+        <p>Accept the visitor. *
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Parser.Node.INode.jjtAddChild(NVelocity.Runtime.Parser.Node.INode,System.Int32)">
+    </a>
+    <h3>jjtAddChild</h3>
+    <pre>public void jjtAddChild(NVelocity.Runtime.Parser.Node.INode n,
+                        int i)</pre>
+    <dl>
+      <dd>
+        <p>  This method tells the node to add its argument to the node's
+            list of children.
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Parser.Node.INode.jjtClose">
+    </a>
+    <h3>jjtClose</h3>
+    <pre>public void jjtClose()</pre>
+    <dl>
+      <dd>
+        <p>  This method is called after all the child nodes have been
+            added.
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Parser.Node.INode.jjtGetChild(System.Int32)">
+    </a>
+    <h3>jjtGetChild</h3>
+    <pre>public NVelocity.Runtime.Parser.Node.INode jjtGetChild(int i)</pre>
+    <dl>
+      <dd>
+        <p>  This method returns a child node.  The children are numbered
+            from zero, left to right.
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Parser.Node.INode.jjtGetNumChildren">
+    </a>
+    <h3>jjtGetNumChildren</h3>
+    <pre>public int jjtGetNumChildren()</pre>
+    <dl>
+      <dd>
+        <p>Return the number of children the node has.
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Parser.Node.INode.jjtGetParent">
+    </a>
+    <h3>jjtGetParent</h3>
+    <pre>public NVelocity.Runtime.Parser.Node.INode jjtGetParent()</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Parser.Node.INode.jjtOpen">
+    </a>
+    <h3>jjtOpen</h3>
+    <pre>public void jjtOpen()</pre>
+    <dl>
+      <dd>
+        <p>  This method is called after the node has been made the current
+            node.  It indicates that child nodes can now be added to it.
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Parser.Node.INode.jjtSetParent(NVelocity.Runtime.Parser.Node.INode)">
+    </a>
+    <h3>jjtSetParent</h3>
+    <pre>public void jjtSetParent(NVelocity.Runtime.Parser.Node.INode n)</pre>
+    <dl>
+      <dd>
+        <p>  This pair of methods are used to inform the node of its
+            parent.
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Parser.Node.INode.literal">
+    </a>
+    <h3>literal</h3>
+    <pre>public string literal()</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Parser.Node.INode.render(NVelocity.Context.InternalContextAdapter,System.IO.TextWriter)">
+    </a>
+    <h3>render</h3>
+    <pre>public bool render(NVelocity.Context.InternalContextAdapter context,
+                   System.IO.TextWriter writer)</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Parser.Node.INode.setInvalid">
+    </a>
+    <h3>setInvalid</h3>
+    <pre>public void setInvalid()</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Parser.Node.INode.value_Renamed(NVelocity.Context.InternalContextAdapter)">
+    </a>
+    <h3>value_Renamed</h3>
+    <pre>public object value_Renamed(NVelocity.Context.InternalContextAdapter context)</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="operator-detail">
+    </a>
+    <a name="event-detail">
+    </a>
+    <hr>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td>
+                <a href="namespace-summary.html">Namespace</a> </td>
+              <td class="nav1sel"> Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV TYPE    NEXT TYPE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+      <tr class="nav2">
+        <td>SUMMARY: INNER | FIELD | CONST | <a href="#property-summary">PROP</a> | <a href="#method-summary">METHOD</a> | OP | EVENT</td>
+        <td>DETAIL: FIELD | CONST | <a href="#property-detail">PROP</a> | <a href="#method-detail">METHOD</a> | OP | EVENT</td>
+      </tr>
+    </table>
+  </body>
+</html>

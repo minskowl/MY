@@ -1,0 +1,481 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="..\JavaDoc.css">
+  </head>
+  <body>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\overview-summary.html"> Overview </a>
+              </td>
+              <td>
+                <a href="namespace-summary.html">Namespace</a> </td>
+              <td class="nav1sel"> Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV TYPE    NEXT TYPE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+      <tr class="nav2">
+        <td>SUMMARY: INNER | FIELD | <a href="#constructor-summary">CONST</a> | PROP | <a href="#method-summary">METHOD</a> | OP | EVENT</td>
+        <td>DETAIL: FIELD | <a href="#constructor-detail">CONST</a> | PROP | <a href="#method-detail">METHOD</a> | OP | EVENT</td>
+      </tr>
+    </table>
+    <hr>
+    <h2>
+      <span class="namespaceName">NVelocity</span>
+      <br>
+      <span class="className">Class VelocityContext</span>
+    </h2>
+    <p>
+            General purpose implemention of the application Context
+            interface for general application use.  This class should
+            be used in place of the original Context class.
+            </p>
+    <a name="field-summary">
+    </a>
+    <a name="constructor-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Constructor Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="constructor" valign="top">
+          <a href="#NVelocity.VelocityContext.#ctor">VelocityContext</a>()<br>        
+            Creates a new instance (with no inner context).
+            </td>
+      </tr>
+      <tr>
+        <td class="constructor" valign="top">
+          <a href="#NVelocity.VelocityContext.#ctor(System.Collections.Hashtable)">VelocityContext</a>(System.Collections.Hashtable context)<br>        
+            Creates a new instance with the provided storage (and no inner context).
+            </td>
+      </tr>
+      <tr>
+        <td class="constructor" valign="top">
+          <a href="#NVelocity.VelocityContext.#ctor(NVelocity.Context.IContext)">VelocityContext</a>(NVelocity.Context.IContext innerContext)<br>        
+            Chaining constructor, used when you want to
+            wrap a context in another.  The inner context
+            will be 'read only' - put() calls to the
+            wrapping context will only effect the outermost
+            context
+            </td>
+      </tr>
+      <tr>
+        <td class="constructor" valign="top">
+          <a href="#NVelocity.VelocityContext.#ctor(System.Collections.Hashtable,NVelocity.Context.IContext)">VelocityContext</a>(System.Collections.Hashtable context, NVelocity.Context.IContext innerContext)<br>        
+            Initializes internal storage (never to <pre class="code">null</pre>), and
+            inner context.
+            </td>
+      </tr>
+    </table>
+    <br>
+    <a name="property-summary">
+    </a>
+    <table class="subtable" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Properties inherited from class NVelocity.Context.AbstractContext</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>
+          <a href="">ChainedContext</a>, <a href="">Keys</a></td>
+      </tr>
+    </table>
+    <br>
+    <table class="subtable" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Properties inherited from class NVelocity.Context.InternalContextBase</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>
+          <a href="">CurrentResource</a>, <a href="">CurrentTemplateName</a>, <a href="">EventCartridge</a>, <a href="">TemplateNameStack</a></td>
+      </tr>
+    </table>
+    <br>
+    <a name="method-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Method Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="returnType" valign="top">object</td>
+        <td class="method">
+          <a href="#NVelocity.VelocityContext.Clone">Clone</a>()<br>        
+            Clones this context object.
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">bool</td>
+        <td class="method">
+          <a href="#NVelocity.VelocityContext.InternalContainsKey(System.Object)">InternalContainsKey</a>(object key)<br>        
+            determines if there is a value for the
+            given key
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">object</td>
+        <td class="method">
+          <a href="#NVelocity.VelocityContext.InternalGet(System.String)">InternalGet</a>(string key)<br>        
+            retrieves value for key from internal
+            storage
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">object[]</td>
+        <td class="method">
+          <a href="#NVelocity.VelocityContext.InternalGetKeys">InternalGetKeys</a>()<br>        
+            returns array of keys
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">object</td>
+        <td class="method">
+          <a href="#NVelocity.VelocityContext.InternalPut(System.String,System.Object)">InternalPut</a>(string key, object value_Renamed)<br>        
+            stores the value for key to internal
+            storage
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">object</td>
+        <td class="method">
+          <a href="#NVelocity.VelocityContext.InternalRemove(System.Object)">InternalRemove</a>(object key)<br>        
+            remove a key/value pair from the
+            internal storage
+            </td>
+      </tr>
+    </table>
+    <br>
+    <table class="subtable" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Methods inherited from class NVelocity.Context.AbstractContext</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>
+          <a href="..\NVelocity/VelocityContext/ContainsKey(System.html#Object)">ContainsKey</a>, <a href="..\NVelocity/VelocityContext/Get(System.html#String)">Get</a>, <a href="..\NVelocity/VelocityContext/Put(System/String,System.html#Object)">Put</a>, <a href="..\NVelocity/VelocityContext/Remove(System.html#Object)">Remove</a></td>
+      </tr>
+    </table>
+    <br>
+    <table class="subtable" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Methods inherited from class NVelocity.Context.InternalContextBase</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>
+          <a href="..\NVelocity/VelocityContext/AttachEventCartridge(NVelocity/App/Events.html#EventCartridge)">AttachEventCartridge</a>, <a href="..\NVelocity/VelocityContext/ICacheGet(System.html#Object)">ICacheGet</a>, <a href="..\NVelocity/VelocityContext/ICachePut(System/Object,NVelocity/Util/Introspection.html#IntrospectionCacheData)">ICachePut</a>, <a href="..\NVelocity/VelocityContext.html#PopCurrentTemplateName">PopCurrentTemplateName</a>, <a href="..\NVelocity/VelocityContext/PushCurrentTemplateName(System.html#String)">PushCurrentTemplateName</a></td>
+      </tr>
+    </table>
+    <br>
+    <table class="subtable" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Methods inherited from class System.Object</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>
+          <a href="..\NVelocity/VelocityContext/Equals(System.html#Object)">Equals</a>, <a href="..\NVelocity/VelocityContext.html#Finalize">Finalize</a>, <a href="..\NVelocity/VelocityContext.html#GetHashCode">GetHashCode</a>, <a href="..\NVelocity/VelocityContext.html#GetType">GetType</a>, <a href="..\NVelocity/VelocityContext.html#MemberwiseClone">MemberwiseClone</a>, <a href="..\NVelocity/VelocityContext.html#ToString">ToString</a></td>
+      </tr>
+    </table>
+    <br>
+    <a name="operator-summary">
+    </a>
+    <a name="event-summary">
+    </a>
+    <br>
+    <a name="field-detail">
+    </a>
+    <a name="constructor-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Constructor Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.VelocityContext.#ctor">
+    </a>
+    <h3>VelocityContext</h3>
+    <pre>public VelocityContext()</pre>
+    <dl>
+      <dd>
+        <p>
+            Creates a new instance (with no inner context).
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.VelocityContext.#ctor(System.Collections.Hashtable)">
+    </a>
+    <h3>VelocityContext</h3>
+    <pre>public VelocityContext(System.Collections.Hashtable context)</pre>
+    <dl>
+      <dd>
+        <p>
+            Creates a new instance with the provided storage (and no inner context).
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.VelocityContext.#ctor(NVelocity.Context.IContext)">
+    </a>
+    <h3>VelocityContext</h3>
+    <pre>public VelocityContext(NVelocity.Context.IContext innerContext)</pre>
+    <dl>
+      <dd>
+        <p>
+            Chaining constructor, used when you want to
+            wrap a context in another.  The inner context
+            will be 'read only' - put() calls to the
+            wrapping context will only effect the outermost
+            context
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>innerContext</code> - The <pre class="code">Context</pre> implementation to wrap.</dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.VelocityContext.#ctor(System.Collections.Hashtable,NVelocity.Context.IContext)">
+    </a>
+    <h3>VelocityContext</h3>
+    <pre>public VelocityContext(System.Collections.Hashtable context,
+                       NVelocity.Context.IContext innerContext)</pre>
+    <dl>
+      <dd>
+        <p>
+            Initializes internal storage (never to <pre class="code">null</pre>), and
+            inner context.
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>context</code> - Internal storage, or <pre class="code">null</pre> to
+            create default storage.
+            </dd>
+          <dd>
+            <code>innerContext</code> - Inner context.
+            
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <a name="property-detail">
+    </a>
+    <a name="method-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Method Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.VelocityContext.Clone">
+    </a>
+    <h3>Clone</h3>
+    <pre>public object Clone()</pre>
+    <dl>
+      <dd>
+        <p>
+            Clones this context object.
+            </p>
+        <p>
+        </p>
+        <b>Returns:</b>
+        <dl>
+          <dd>A deep copy of this <pre class="code">Context</pre>.</dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.VelocityContext.InternalContainsKey(System.Object)">
+    </a>
+    <h3>InternalContainsKey</h3>
+    <pre>public bool InternalContainsKey(object key)</pre>
+    <dl>
+      <dd>
+        <p>
+            determines if there is a value for the
+            given key
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>key</code> - name of value to check</dd>
+        </dl>
+        <b>Returns:</b>
+        <dl>
+          <dd>true if non-null value in store</dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.VelocityContext.InternalGet(System.String)">
+    </a>
+    <h3>InternalGet</h3>
+    <pre>public object InternalGet(string key)</pre>
+    <dl>
+      <dd>
+        <p>
+            retrieves value for key from internal
+            storage
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>key</code> - name of value to get</dd>
+        </dl>
+        <b>Returns:</b>
+        <dl>
+          <dd>value as object</dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.VelocityContext.InternalGetKeys">
+    </a>
+    <h3>InternalGetKeys</h3>
+    <pre>public object[] InternalGetKeys()</pre>
+    <dl>
+      <dd>
+        <p>
+            returns array of keys
+            </p>
+        <p>
+        </p>
+        <b>Returns:</b>
+        <dl>
+          <dd>keys as []</dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.VelocityContext.InternalPut(System.String,System.Object)">
+    </a>
+    <h3>InternalPut</h3>
+    <pre>public object InternalPut(string key,
+                          object value_Renamed)</pre>
+    <dl>
+      <dd>
+        <p>
+            stores the value for key to internal
+            storage
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>key</code> - name of value to store</dd>
+          <dd>
+            <code>value</code> - value to store</dd>
+        </dl>
+        <b>Returns:</b>
+        <dl>
+          <dd>previous value of key as Object</dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.VelocityContext.InternalRemove(System.Object)">
+    </a>
+    <h3>InternalRemove</h3>
+    <pre>public object InternalRemove(object key)</pre>
+    <dl>
+      <dd>
+        <p>
+            remove a key/value pair from the
+            internal storage
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>key</code> - name of value to remove</dd>
+        </dl>
+        <b>Returns:</b>
+        <dl>
+          <dd>value removed</dd>
+        </dl>
+      </dd>
+    </dl>
+    <a name="operator-detail">
+    </a>
+    <a name="event-detail">
+    </a>
+    <hr>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\overview-summary.html"> Overview </a>
+              </td>
+              <td>
+                <a href="namespace-summary.html">Namespace</a> </td>
+              <td class="nav1sel"> Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV TYPE    NEXT TYPE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+      <tr class="nav2">
+        <td>SUMMARY: INNER | FIELD | <a href="#constructor-summary">CONST</a> | PROP | <a href="#method-summary">METHOD</a> | OP | EVENT</td>
+        <td>DETAIL: FIELD | <a href="#constructor-detail">CONST</a> | PROP | <a href="#method-detail">METHOD</a> | OP | EVENT</td>
+      </tr>
+    </table>
+  </body>
+</html>

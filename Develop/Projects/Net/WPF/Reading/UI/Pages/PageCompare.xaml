@@ -1,0 +1,48 @@
+﻿<Page x:Class="Reading.Pages.PageCompare"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:Controls="clr-namespace:Reading.Controls" xmlns:Data="clr-namespace:Savchin.Wpf.Data;assembly=Savchin.WPF.Tools" mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+	Title="PageCompare">
+    <Page.Resources>
+        <Data:IntegerConverter x:Key="IntegerConverter"/>
+    </Page.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="Auto"/>
+            <RowDefinition />
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="{Binding Title}" Style="{DynamicResource Title}"
+                  VerticalAlignment="Top" />
+        <StackPanel  Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Label  Style="{DynamicResource SyllableLabel}" Content="{Binding FirstNumber}"/>
+            <ComboBox x:Name="list" Style="{DynamicResource SyllableComboBox}"
+                      SelectedValuePath="Tag" SelectedValue="{Binding Result}"
+                      VerticalAlignment="Center">
+                <ComboBoxItem Tag="-1"  >&lt;</ComboBoxItem>
+                <ComboBoxItem Tag="0" >=</ComboBoxItem>
+                <ComboBoxItem Tag="1" >&gt;</ComboBoxItem>
+            </ComboBox>
+           
+            <Label  Style="{DynamicResource SyllableLabel}" Content="{Binding SecondNumber}"/>
+        
+            <Button  Content="?" Style="{DynamicResource SyllableButton}"
+                Command="{Binding NextCommand}" ToolTip="Проверить ответ" Margin="10,0,0,0"/>
+        </StackPanel>
+
+        <WrapPanel  Grid.Row="3" Orientation="Horizontal" >
+            <StackPanel Orientation="Horizontal" >
+                <Label Content="Числа от"/>
+                <Controls:IntegerTextBox 
+                      Text="{Binding NumberFrom, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource IntegerConverter}}" Width="40"/>
+                <Label Content="до"/>
+                <Controls:IntegerTextBox  
+                      Text="{Binding NumberTo, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource IntegerConverter}}" Width="40"/>
+            </StackPanel>
+
+        </WrapPanel >
+    </Grid>
+</Page>

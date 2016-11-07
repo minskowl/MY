@@ -1,0 +1,42 @@
+﻿<Window x:Class="KnowledgeBase.Desktop.Windows.EditUserWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+        xmlns:cn="clr-namespace:KnowledgeBase.Desktop.Controls"
+        xmlns:Controls="clr-namespace:KnowledgeBase.Controls;assembly=KnowledgeBase.Controls" Title="EditUserWindow" Height="450" Width="400" MinHeight="450"
+        WindowStartupLocation="CenterOwner">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="25"/>
+        </Grid.RowDefinitions>
+        <TabControl Grid.Row="0" >
+            <TabItem Header="General">
+                <StackPanel Grid.Row="0">
+                    <Controls:ErrorLabel Text="Login" />
+                    <TextBox Name="boxLogin"/>
+                    <Controls:ErrorLabel Text="Password" />
+                    <PasswordBox Name="boxPassword" PasswordChar="*"/>
+                    <Controls:ErrorLabel Text="Email"  />
+                    <TextBox Name="boxEmail"/>
+                    <Controls:ErrorLabel Text="First Name" PropertyName="FirstName" />
+                    <TextBox Name="boxFirstName"/>
+                    <Controls:ErrorLabel Text="Last Name" PropertyName="LastName" />
+                    <TextBox Name="boxLastName"/>
+                    <Controls:ErrorLabel Text="Security Question"  PropertyName="SecurityQuestion" />
+                    <TextBox Name="boxSecurityQuestion"/>
+                    <Controls:ErrorLabel Text="Security Answer"  PropertyName="SecurityAnswer" />
+                    <TextBox Name="boxSecurityAnswer"/>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="Permissions">
+                <cn:UserRightsControl x:Name="boxUserRights" />
+            </TabItem>
+        </TabControl>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button  Content="OK" Click="ButtonOk_Click" IsDefault="True"  Style="{StaticResource Default}" />
+            <Button  Content="Cancel" IsCancel="True" Click="ButtonCancel_Click"  Style="{StaticResource Default}" />
+        </StackPanel>
+
+    </Grid>
+</Window>

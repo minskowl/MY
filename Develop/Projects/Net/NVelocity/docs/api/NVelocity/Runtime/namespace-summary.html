@@ -1,0 +1,237 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="..\..\JavaDoc.css">
+  </head>
+  <body>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td class="nav1sel"> Namespace </td>
+              <td>Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV NAMESPACE    NEXT NAMESPACE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+    </table>
+    <hr>
+    <h2 class="title">NVelocity.Runtime Namespace Summary</h2>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Interface Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="name">
+          <a href="RuntimeConstants.html">RuntimeConstants</a>
+        </td>
+        <td class="type"> </td>
+      </tr>
+      <tr>
+        <td class="name">
+          <a href="RuntimeServices.html">RuntimeServices</a>
+        </td>
+        <td class="type"> Interface for internal runtime services that are needed by the
+            various components w/in Velocity.  This was taken from the old
+            Runtime singleton, and anything not necessary was removed.
+            
+            Currently implemented by RuntimeInstance.
+            </td>
+      </tr>
+    </table>
+    <br>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Class Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="name">
+          <a href="RuntimeInstance.html">RuntimeInstance</a>
+        </td>
+        <td class="type"> This is the Runtime system for Velocity. It is the
+            single access point for all functionality in Velocity.
+            It adheres to the mediator pattern and is the only
+            structure that developers need to be familiar with
+            in order to get Velocity to perform.
+            *
+            The Runtime will also cooperate with external
+            systems like Turbine. Runtime properties can
+            set and then the Runtime is initialized.
+            *
+            Turbine for example knows where the templates
+            are to be loaded from, and where the velocity
+            log file should be placed.
+            *
+            So in the case of Velocity cooperating with Turbine
+            the code might look something like the following:
+            *
+            
+            Runtime.setProperty(Runtime.FILE_RESOURCE_LOADER_PATH, templatePath);
+            Runtime.setProperty(Runtime.RUNTIME_LOG, pathToVelocityLog);
+            Runtime.init();
+            
+            *
+            
+            -----------------------------------------------------------------------
+            N O T E S  O N  R U N T I M E  I N I T I A L I Z A T I O N
+            -----------------------------------------------------------------------
+            Runtime.init()
+            
+            If Runtime.init() is called by itself the Runtime will
+            initialize with a set of default values.
+            -----------------------------------------------------------------------
+            Runtime.init(String/Properties)
+            *
+            In this case the default velocity properties are layed down
+            first to provide a solid base, then any properties provided
+            in the given properties object will override the corresponding
+            default property.
+            -----------------------------------------------------------------------
+            
+            *
+            </td>
+      </tr>
+      <tr>
+        <td class="name">
+          <a href="RuntimeSingleton.html">RuntimeSingleton</a>
+        </td>
+        <td class="type"> This is the Runtime system for Velocity. It is the
+            single access point for all functionality in Velocity.
+            It adheres to the mediator pattern and is the only
+            structure that developers need to be familiar with
+            in order to get Velocity to perform.
+            *
+            The Runtime will also cooperate with external
+            systems like Turbine. Runtime properties can
+            set and then the Runtime is initialized.
+            *
+            Turbine for example knows where the templates
+            are to be loaded from, and where the velocity
+            log file should be placed.
+            *
+            So in the case of Velocity cooperating with Turbine
+            the code might look something like the following:
+            *
+            
+            Runtime.setProperty(Runtime.FILE_RESOURCE_LOADER_PATH, templatePath);
+            Runtime.setProperty(Runtime.RUNTIME_LOG, pathToVelocityLog);
+            Runtime.init();
+            
+            *
+            
+            -----------------------------------------------------------------------
+            N O T E S  O N  R U N T I M E  I N I T I A L I Z A T I O N
+            -----------------------------------------------------------------------
+            Runtime.init()
+            
+            If Runtime.init() is called by itself the Runtime will
+            initialize with a set of default values.
+            -----------------------------------------------------------------------
+            Runtime.init(String/Properties)
+            *
+            In this case the default velocity properties are layed down
+            first to provide a solid base, then any properties provided
+            in the given properties object will override the corresponding
+            default property.
+            -----------------------------------------------------------------------
+            
+            *
+            </td>
+      </tr>
+      <tr>
+        <td class="name">
+          <a href="VelocimacroFactory.html">VelocimacroFactory</a>
+        </td>
+        <td class="type">  VelocimacroFactory.java
+            *
+            manages the set of VMs in a running Velocity engine.
+            *
+            </td>
+      </tr>
+      <tr>
+        <td class="name">
+          <a href="VelocimacroManager.html">VelocimacroManager</a>
+        </td>
+        <td class="type"> Manages VMs in namespaces.  Currently, two namespace modes are
+            supported:
+            *
+            flat - all allowable VMs are in the global namespacelocal - inline VMs are added to it's own template namespace
+            *
+            Thanks to Jose Alberto Fernandez
+            for some ideas incorporated here.
+            *
+            </td>
+      </tr>
+      <tr>
+        <td class="name">
+          <a href="VelocimacroManager.MacroEntry.html">VelocimacroManager.MacroEntry</a>
+        </td>
+        <td class="type">  wrapper class for holding VM information
+            </td>
+      </tr>
+    </table>
+    <br>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Structure Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="name">
+          <a href="RuntimeConstants_Fields.html">RuntimeConstants_Fields</a>
+        </td>
+        <td class="type">
+            This class defines the keys that are used in the
+            velocity.properties file so that they can be referenced as a constant
+            within Java code.
+            </td>
+      </tr>
+    </table>
+    <br>
+    <hr>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td class="nav1sel"> Namespace </td>
+              <td>Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV NAMESPACE    NEXT NAMESPACE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+    </table>
+  </body>
+</html>

@@ -1,0 +1,196 @@
+﻿
+body
+{
+	font-family: Tahoma, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	margin: 0px;
+}
+form
+{
+	/* No borders in forms */
+	margin: 0px;
+	display: inline;
+}
+body.Login
+{
+	background-color: #FFFFFF;
+}
+body.popup
+{
+	background-color: #FFFFFF;
+	overflow-y:hidden;
+}
+td
+{
+	font-family: Tahoma, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+}
+.HeaderItem
+{
+	font-weight: bold;
+	font-size: 10pt;
+	margin: 5px;
+}
+.HeaderPage
+{
+	font-weight: bold;
+	font-size: 14pt;
+	margin: 5px;
+}
+.HeaderParagraph
+{
+	font-weight: bold;
+	font-size: 12pt;
+	margin: 5px;
+}
+TABLE.fullSize
+{
+	width: 100%;
+	height: 100%;
+}
+DIV.frame
+{
+	width:98%;
+	padding: 10px;
+}
+DIV.pageScroll
+{
+	padding: 0 px;
+	overflow: auto;
+	overflow-y: auto;
+	overflow-x: hidden;
+	width: 100%;
+	height: 100%;
+}
+DIV.scrollable
+{
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+.hide
+{
+	display: none;
+}
+.full
+{
+	width: 100%;
+	height: 100%;
+}
+DIV.popupDiv
+{
+	display: none;
+	position: absolute;
+	width: 300px;
+	padding: 10px;
+	background-color: #80A1B6;
+	border-color: #000000;
+	border-style: solid;
+	border-width: 1px;
+}
+
+.grdRow
+{
+	background-color: #FFFFFF;
+}
+.grdRow TD
+{
+	padding: 1px;
+}
+.grdEditRow
+{
+	background-color: #3B6E8F;
+}
+.grdEditRow TD
+{
+	padding: 1px;
+}
+
+.grdAltRow TD
+{
+	padding: 1px;
+}
+TD.grdCell
+{
+	padding: 5px;
+}
+
+#hintbox
+{
+	/*CSS for pop up hint box */
+	position: absolute;
+	top: 0;
+	background-color: #EDF1F5;
+	width: 200px; /*Default width of hint.*/
+	padding: 3px;
+	border: 1px solid black;
+	font: normal 11px Verdana;
+	line-height: 18px;
+	z-index: 100;
+	border-right: 3px solid black;
+	border-bottom: 3px solid black;
+	visibility: hidden;
+}
+
+.hintanchor
+{
+	/*CSS for link that shows hint onmouseover*/
+	font-weight: bold;
+	color: navy;
+	margin: 3px 8px;
+}
+
+
+TABLE.frm
+{
+	width: 700px;
+	font-size: 9pt;
+}
+TD.frmLabelCol
+{
+	width: 200px;
+	height: 30px;
+	text-align: right;
+	vertical-align: top;
+	font-size: 8pt;
+	padding-top: 5px;
+	white-space: nowrap;
+}
+TD.frmValCol
+{
+	width: 480px;
+	padding-top: 5px;
+	vertical-align: top;
+}
+TD.frmButtons
+{
+	text-align: right;
+	height: 30px;
+	font-size: 8pt;
+}
+
+UL.compact
+{
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+/*             form */
+table.f
+{
+	width: 600px;
+}
+
+td.fl
+{
+	width:250px;
+	text-align:right;
+	
+}
+td.fv
+{
+	width:370px;
+}
+/*            end form */

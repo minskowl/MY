@@ -1,0 +1,10 @@
+/NAnt.Core.dll///
+/NAnt.DotNetTasks.dll///
+/NAnt.ZipTasks.dll///
+/NAnt.exe///
+/NDoc.Core.dll///
+/NDoc.Documenter.Msdn.dll///
+/SharpZipLib.dll///
+/taskdef.Tasks.dll///
+/log4net.dll///
+/nunit.framework.dll///

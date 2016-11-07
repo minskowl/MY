@@ -1,0 +1,205 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CD14A323-39F1-4F5C-9CE9-8477EE1E85FC}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SchemaEditor</RootNamespace>
+    <AssemblyName>SchemaEditor</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <PublishUrl>http://localhost/SchemaEditor/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\ThrPartLibs\log4net_1.2.9\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Commands\CommandsDictionary.cs" />
+    <Compile Include="Commands\Edit\ReverseEngeniringCommand.cs" />
+    <Compile Include="Commands\File\CloseSchemaCommand.cs" />
+    <Compile Include="Commands\File\ExitCommand.cs" />
+    <Compile Include="Commands\File\NewSchemaCommand.cs" />
+    <Compile Include="Commands\File\OpenSchemaCommand.cs" />
+    <Compile Include="Commands\File\SaveAsSchemaCommand.cs" />
+    <Compile Include="Commands\File\SaveSchemaCommand.cs" />
+    <Compile Include="Commands\ShowConsoleCommand.cs" />
+    <Compile Include="Controls\CompareConsole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\CompareConsole.Designer.cs">
+      <DependentUpon>CompareConsole.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ErrorConsole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\ErrorConsole.designer.cs">
+      <DependentUpon>ErrorConsole.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ExceptionViewer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ExceptionViewer.Designer.cs">
+      <DependentUpon>ExceptionViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PropertyConsole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\PropertyConsole.designer.cs">
+      <DependentUpon>PropertyConsole.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SchemaConsole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\SchemaConsole.designer.cs">
+      <DependentUpon>SchemaConsole.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\AppCore.cs" />
+    <Compile Include="Core\IFormMain.cs" />
+    <Compile Include="Core\Log.cs" />
+    <Compile Include="FormConnectionString.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormConnectionString.Designer.cs">
+      <DependentUpon>FormConnectionString.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain.designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Controls\CompareConsole.resx">
+      <DependentUpon>CompareConsole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ErrorConsole.resx">
+      <DependentUpon>ErrorConsole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ExceptionViewer.resx">
+      <DependentUpon>ExceptionViewer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\PropertyConsole.resx">
+      <DependentUpon>PropertyConsole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\SchemaConsole.resx">
+      <DependentUpon>SchemaConsole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormConnectionString.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormConnectionString.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Libs\Controls\Common\Savchin.Controls.Common.csproj">
+      <Project>{A852E8EF-7FCA-44B0-AB22-92F3380357C5}</Project>
+      <Name>Savchin.Controls.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libs\Tools\Savchin.Tools.csproj">
+      <Project>{2F1807E4-39A2-4F38-ADFC-6310A8443D90}</Project>
+      <Name>Savchin.Tools</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataSchema\DataSchema.csproj">
+      <Project>{709EF347-C049-42A5-AA99-0029AAB56C95}</Project>
+      <Name>DataSchema</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,218 @@
+﻿<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DF6DA513-8249-45A5-95B2-E98AD33C6D5E}</ProjectGuid>
+    <ProjectTypeGuids>{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EffectiveSoft.SilverlightDemo</RootNamespace>
+    <AssemblyName>SilverlightDemo</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <SilverlightApplication>true</SilverlightApplication>
+    <SupportedCultures>
+    </SupportedCultures>
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>SilverlightDemo.xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>EffectiveSoft.SilverlightDemo.App</SilverlightAppEntry>
+    <TestPageFileName>TestPage.html</TestPageFileName>
+    <CreateTestPage>true</CreateTestPage>
+    <ValidateXaml>true</ValidateXaml>
+    <ThrowErrorsInValidation>false</ThrowErrorsInValidation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="SLVisifire.Charts, Version=2.0.1.0, Culture=neutral, PublicKeyToken=e1555b029ff71bd3, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\SLVisifire.Charts.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows" />
+    <Reference Include="mscorlib" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Windows.Controls, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="System.Windows.Controls.Data, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Windows.Browser" />
+    <Page Include="Objects\Test.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="Objects\Test.xaml.cs">
+      <DependentUpon>Test.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Windows\IWindow.cs" />
+    <Compile Include="Controls\Windows\IWindowsManager.cs" />
+    <Compile Include="Controls\Windows\Window.cs" />
+    <Compile Include="Controls\Windows\WindowsManager.cs" />
+    <Compile Include="Core\ConverterColor.cs" />
+    <Compile Include="Core\FuelTypeInfo.cs" />
+    <Compile Include="Core\UIFactory.cs" />
+    <Compile Include="SettingsControl.xaml.cs">
+      <DependentUpon>SettingsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Statistics\StatisiticProcessor.cs" />
+    <Compile Include="Core\VirtualClock.cs" />
+    <Compile Include="Controls\Clock\AnalogClock.xaml.cs">
+      <DependentUpon>AnalogClock.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Clock\AnalogClock_v2.xaml.cs">
+      <DependentUpon>AnalogClock_v2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Clock\Clock.cs" />
+    <Compile Include="Controls\Clock\ClockBase.cs" />
+    <Compile Include="Controls\Clock\ClockData.cs" />
+    <Compile Include="Controls\Clock\ClockDataEventArgs.cs" />
+    <Compile Include="Controls\Clock\ClockPresenter.cs" />
+    <Compile Include="Controls\Clock\IClockModel.cs" />
+    <Compile Include="Controls\Clock\IClockView.cs" />
+    <Compile Include="Core\FuelingOperation.cs" />
+    <Compile Include="Core\Enums.cs" />
+    <Compile Include="Core\Pair.cs" />
+    <Compile Include="Core\CarTourFactory.cs" />
+    <Compile Include="Core\Randomizer.cs" />
+    <Compile Include="Core\TimeSet.cs" />
+    <Compile Include="Objects\Car.xaml.cs">
+      <DependentUpon>Car.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Objects\GasPump.xaml.cs">
+      <DependentUpon>GasPump.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Objects\RoadEmulator.xaml.cs">
+      <DependentUpon>RoadEmulator.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Page.xaml.cs">
+      <DependentUpon>Page.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Statistics\HourWindow.xaml.cs">
+      <DependentUpon>HourWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Statistics\PumpFuelTypeSeries.cs" />
+    <Compile Include="Statistics\PumpSeries.cs" />
+    <Compile Include="Statistics\PumpTotalSeries.cs" />
+    <Compile Include="Statistics\SeriesSource.cs" />
+    <Compile Include="Statistics\TotalSeries.cs" />
+    <Compile Include="Statistics\TypeFuelWindow.xaml.cs">
+      <DependentUpon>TypeFuelWindow.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Resource Include="Themes\generic.xaml">
+      <SubType>Designer</SubType>
+    </Resource>
+    <Page Include="Controls\Clock\AnalogClock.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Clock\AnalogClock_v2.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Objects\Car.xaml">
+      <SubType>Page</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+    <Page Include="Objects\GasPump.xaml">
+      <SubType>Page</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+    <Page Include="Objects\RoadEmulator.xaml">
+      <SubType>Page</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+    <Page Include="Page.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SettingsControl.xaml">
+      <SubType>Page</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+    <Page Include="Statistics\HourWindow.xaml">
+      <SubType>Page</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+    <Page Include="Statistics\TypeFuelWindow.xaml">
+      <SubType>Page</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\AppManifest.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Objects\blueCar.png" />
+    <Resource Include="Objects\greenCar.png" />
+    <Resource Include="Objects\redCar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Objects\road.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Objects\car1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Objects\car2.png" />
+    <Resource Include="Objects\car3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Objects\car4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Objects\car5.png" />
+    <Resource Include="Objects\car6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tool.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight\v2.0\Microsoft.Silverlight.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">
+        <SilverlightProjectProperties />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

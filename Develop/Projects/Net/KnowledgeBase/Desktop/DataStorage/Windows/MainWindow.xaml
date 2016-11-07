@@ -1,0 +1,105 @@
+<Window x:Class="KnowledgeBase.Desktop.Windows.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:ad="clr-namespace:AvalonDock;assembly=AvalonDock"
+        xmlns:Controls="clr-namespace:KnowledgeBase.Desktop.Controls" 
+        xmlns:Core="clr-namespace:KnowledgeBase.Desktop.Core" 
+
+        xmlns:Docking="clr-namespace:KnowledgeBase.Desktop.Controls.Docking" 
+        xmlns:Core1="clr-namespace:KnowledgeBase.BussinesLayer.Core;assembly=KnowledgeBase.BussinesLayer"
+
+        xmlns:Windows="clr-namespace:Savchin.Wpf.Controls.Windows;assembly=Savchin.Wpf.Controls"
+
+        xmlns:Properties="clr-namespace:KnowledgeBase.Core.Properties;assembly=KnowledgeBase.Core"
+        Title="Idea Provider" Height="450" Width="725" WindowStartupLocation="CenterScreen"
+        Icon="/IdeaProvider;component/Resources/Project.png" 
+        Closing="Window_Closing" 
+       Style="{DynamicResource win}"
+        Windows:WindowHelper.StateKey="MainWindow"  Windows:WindowHelper.StateType="{x:Static Properties:Settings.Default}"
+        >
+    <Window.Resources>
+        <Core:DockStateToBooleanConverter x:Key="dockStateConverter"/>
+    </Window.Resources>
+    <Window.CommandBindings>
+        <CommandBinding Command="{x:Static Core:AppCommands.Edit}" Executed="EditCommand_Executed" CanExecute="ItemCommand_CanExecute" />
+        <CommandBinding Command="{x:Static Core:AppCommands.View}" Executed="OpenCommand_Executed" CanExecute="ItemCommand_CanExecute" />
+        <CommandBinding Command="{x:Static Core:AppCommands.Add}" Executed="AddCommand_Executed" CanExecute="ItemCommand_CanExecute"/>
+        <CommandBinding Command="{x:Static Core:AppCommands.Delete}" Executed="DeleteCommand_Executed" CanExecute="ItemCommand_CanExecute"/>
+        <CommandBinding Command="{x:Static  Core:AppCommands.Backward}" Executed="BackwardCommand_Executed" CanExecute="BackwardCommand_CanExecute"/>
+        <CommandBinding Command="{x:Static  Core:AppCommands.Forward}" Executed="ForwardCommand_Executed" CanExecute="ForwardCommand_CanExecute"/>
+        <CommandBinding Command="{x:Static  Core:AppCommands.Export}" Executed="ExportCommand_Executed" CanExecute="ItemCommand_CanExecute"/>
+        <CommandBinding Command="{x:Static ApplicationCommands.Find}" Executed="FindCommand_Executed" />
+        <CommandBinding Command="{x:Static  Core:AppCommands.HideToTray}" Executed="HideToTrayCommand_Executed" />
+    </Window.CommandBindings>
+    <DockPanel LastChildFill="True">
+        <DockPanel.LayoutTransform>
+            <ScaleTransform ScaleX="1" ScaleY="1"/>
+        </DockPanel.LayoutTransform>
+        <Menu DockPanel.Dock="Top" >
+            <MenuItem Header="File">
+                <MenuItem x:Name="ShowDockingManager" Header="Docking Manager Hidden" IsCheckable="True" />
+                <Separator/>
+                <MenuItem Header="Test" Tag="reset" Click="TestItem_Click" />
+                <MenuItem x:Name="itemWebServer" Header="Server Start" Click="itemWebServer_Click" />
+            </MenuItem>
+            <MenuItem Header="Windows">
+                <MenuItem Header="Categories Tree" Click="ShowDocking_Click" IsCheckable="True"
+                          Tag="{Binding ElementName='categoriesWindow'}"
+                          IsChecked="{Binding ElementName=categoriesWindow, Path=State, Converter={StaticResource dockStateConverter}, Mode= OneWay}"/>
+
+                <MenuItem Header="Categories Info" Click="ShowDocking_Click" IsCheckable="True"
+                          Tag="{Binding ElementName='categoryInfo'}"
+                          IsChecked="{Binding ElementName=categoryInfo, Path=State, Converter={StaticResource dockStateConverter}, Mode= OneWay}"/>
+
+                <MenuItem Header="Search" Click="ShowDocking_Click"  IsCheckable="True"
+                          Tag="{Binding ElementName='docSearch'}"  
+                          IsChecked="{Binding ElementName=docSearch, Path=State, Converter={StaticResource dockStateConverter}, Mode= OneWay}"/>
+
+                <MenuItem Header="Keywords" Click="ShowDocking_Click" IsCheckable="True"
+                          Visibility="{Binding Source={x:Static Core1:KbContext.CurrentKb}, Path=PermissionSet.CanEditKeywords, Converter={StaticResource convVisibility} }"
+                          Tag="{Binding ElementName='docKeywords'}"
+                          IsChecked="{Binding ElementName=docKeywords, Path=State, Converter={StaticResource dockStateConverter}, Mode= OneWay}"/>
+
+                <MenuItem Header="Users" Click="ShowDocking_Click" IsCheckable="True"
+                          Visibility="{Binding Source={x:Static Core1:KbContext.CurrentKb}, Path=HasUserAdminPermission, Converter={StaticResource convVisibility} }"
+                          Tag="{Binding ElementName='docUsers'}" 
+                          IsChecked="{Binding ElementName=docUsers, Path=State, Converter={StaticResource dockStateConverter}, Mode= OneWay}"/>
+
+                <MenuItem Header="User Files" Click="ShowDocking_Click" IsCheckable="True"
+                          Tag="{Binding ElementName='docUserFiles'}"
+                          IsChecked="{Binding ElementName=docUserFiles, Path=State, Converter={StaticResource dockStateConverter}, Mode= OneWay}"/>      
+                <Separator/>
+                <MenuItem Command="{x:Static  Core:AppCommands.HideToTray}"/>
+
+            </MenuItem>
+        </Menu>
+        <ad:DockingManager x:Name="_dockingManager" DocumentsSource="{Binding Path=OpenDocuments}" 
+                           Loaded="DockingManagerLoaded"  >
+            <ad:ResizingPanel Orientation="Horizontal" >
+                <ad:DockablePane >
+                    <ad:DockableContent x:Name="categoriesWindow" Title="Categories" DockableStyle="Dockable" >
+                        <ad:DockableContent.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem Command="{Binding Source={x:Static Core:AppCommands.Backward }}" />
+                                <MenuItem Command="{Binding Source={x:Static Core:AppCommands.Forward }}" />
+                            </ContextMenu>
+                        </ad:DockableContent.ContextMenu>
+                        <Controls:CategoryTreeControl x:Name="categoryTree" SelectedCategoryChanged="CategoryTreeSelectedCategoryChanged" />
+                    </ad:DockableContent>
+                </ad:DockablePane>
+                <ad:DocumentPane  >
+
+                    <Docking:CategoryInfoControl x:Name="categoryInfo"  />
+                    <Docking:KeywordList x:Name="docKeywords"  />
+                    <Docking:UserList x:Name="docUsers"    />
+                    <ad:DockableContent x:Name="docUserFiles" Title="User Files" >
+                        <Controls:FileListControl x:Name="listUserFiles"/>
+                    </ad:DockableContent>
+                </ad:DocumentPane>
+                <ad:DockablePane >
+                    <Docking:SearchFilterControl x:Name="docSearch" />
+                </ad:DockablePane>
+            </ad:ResizingPanel>
+        </ad:DockingManager>
+    </DockPanel>
+</Window>

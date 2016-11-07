@@ -1,0 +1,91 @@
+#set( $type=$node.Tag)
+#set( $FullName=$type.Name)
+#set( $name =$tools.getShortname($FullName))
+
+
+#macro( ObjProperty $prop) 
+        ${prop.PropertyType.Name} _${prop.Name};
+        /// <summary>
+        /// Gets the models.
+        /// </summary>
+        /// <value>The models.</value>
+        public ${prop.PropertyType.Name} ${prop.Name}
+        {
+           get
+           {
+               if(_${prop.Name}==null)
+               {
+                  _${prop.Name}=new ${prop.PropertyType.Name}( _type.GetProperty("${prop.Name}").GetValue(_obj, null));
+               }
+               return _${prop.Name};
+           } 
+        }
+#end 
+#macro( TypProperty $prop) 
+        /// <summary>
+        /// Gets the models.
+        /// </summary>
+        /// <value>The models.</value>
+        public ${prop.PropertyType.Name} ${prop.Name}
+        {
+           get
+           {
+               return (${prop.PropertyType.Name})( _type.GetProperty("${prop.Name}").GetValue(_obj, null));
+           } 
+        } 
+#end
+
+
+using System;
+using System.Collections;
+
+#set( $interfaces="")
+#foreach( $inter in $type.GetInterfaces())
+   #set( $interfaces="$interfaces ${inter.Name}," )
+#end 
+#set( $interfaces=$tools.CutString($interfaces,1))
+
+#if( $interfaces.Length > 0 )
+ #set( $interfaces=" : $interfaces")
+#else
+ #set( $interfaces="")
+#end
+namespace $namespace
+{
+    public class $FullName $interfaces
+    {
+        object _obj;
+        Type _type;
+        
+        /// <summary>
+        /// Initializes a new instance of the <see cref="$FullName"/> class.
+        /// </summary>
+        /// <param name="obj">The obj.</param>        
+        internal $FullName(object obj)
+        {
+            _obj = obj;
+            _type =  obj.GetType();
+        }
+        
+#foreach( $prop in $type.GetProperties())
+  #if($prop.PropertyType.Namespace == "System")
+   #TypProperty($prop)
+  #else
+   #ObjProperty($prop)
+  #end
+#end   
+
+     
+#foreach( $meth in $type.GetMethods())
+#if(!$meth.IsSpecialName)
+        public ${meth.ReturnType.Name}  ${meth.Name}()
+        {
+            return (${meth.ReturnType.Name})_type.GetMethod("${meth.Name}").Invoke(_obj, null);
+        }   
+          
+#end         
+#end 
+    }
+}
+
+

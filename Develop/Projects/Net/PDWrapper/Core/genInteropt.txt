@@ -1,0 +1,20 @@
+12
+tlbimp "D:\Program Files\Sybase\PowerDesigner 12\pdobj12.dll" /asmversion:12.1.0.1933 /primary /keyfile:E:\Projects\Net\Other\Savchin.snk /namespace:PdCommon  /out:E:\Tmp\Interop.PdCommon.dll
+tlbimp "D:\Program Files\Sybase\PowerDesigner 12\pdwsp12.dll" /asmversion:12.1.0.1933 /primary /keyfile:E:\Projects\Net\Other\Savchin.snk /namespace:PdWSP  /out:E:\Tmp\Interop.PdWSP.dll
+tlbimp "D:\Program Files\Sybase\PowerDesigner 12\shpdm12.dll" /asmversion:12.1.0.1933 /primary /keyfile:E:\Projects\Net\Other\Savchin.snk /namespace:PdPDM  /out:E:\Tmp\Interop.PdPDM.dll
+
+11
+
+tlbimp "D:\Program Files\Sybase\PowerDesigner Trial 11\pdobj11e.dll" /asmversion:11.0.0.0 /primary /keyfile:E:\Projects\Net\Other\Savchin.snk /namespace:PdCommon  /out:E:\Tmp\Interop.PdCommon.dll
+tlbimp "D:\Program Files\Sybase\PowerDesigner Trial 11\pdwsp11e.dll" /asmversion:11.0.0.0 /primary /keyfile:E:\Projects\Net\Other\Savchin.snk /namespace:PdWSP  /out:E:\Tmp\Interop.PdWSP.dll
+tlbimp "D:\Program Files\Sybase\PowerDesigner Trial 11\shpdm11e.dll" /asmversion:11.0.0.0 /primary /keyfile:E:\Projects\Net\Other\Savchin.snk /namespace:PdPDM  /out:E:\Tmp\Interop.PdPDM.dll
+
+gacutil /ir Interop.PdCommon.dll OPAQUE "Interop.PdCommon" "Sybase_PD11"
+gacutil /ir Interop.PdWSP.dll OPAQUE "Interop.PdWSP.11" "Sybase_PD11"
+
+gacutil /u Interop.PdWSP.dll
+
+
+gacutil /ur Interop.PdCommon OPAQUE "Interop.PdCommon" "Sybase_PD11"
+gacutil /ur Interop.PdWSP OPAQUE "Interop.PdWSP.11" "Sybase_PD11"
+gacutil /ur Interop.PdCommon FILEPATH E:\Projects\Net\ThrPartLibs\PD\Strong\11\Interop.PdCommon.dll Sybase_PD11

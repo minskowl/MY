@@ -1,0 +1,290 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="..\..\..\JavaDoc.css">
+  </head>
+  <body>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td>
+                <a href="namespace-summary.html">Namespace</a> </td>
+              <td class="nav1sel"> Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV TYPE    NEXT TYPE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+      <tr class="nav2">
+        <td>SUMMARY: INNER | FIELD | <a href="#constructor-summary">CONST</a> | PROP | <a href="#method-summary">METHOD</a> | OP | EVENT</td>
+        <td>DETAIL: FIELD | <a href="#constructor-detail">CONST</a> | PROP | <a href="#method-detail">METHOD</a> | OP | EVENT</td>
+      </tr>
+    </table>
+    <hr>
+    <h2>
+      <span class="namespaceName">NVelocity.Runtime.Log</span>
+      <br>
+      <span class="className">Class Log4NetExtensionLogSystem</span>
+    </h2>
+    <p>
+            Simple wrapper for the servlet log
+            </p>
+    <a name="field-summary">
+    </a>
+    <a name="constructor-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Constructor Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="constructor" valign="top">
+          <a href="#NVelocity.Runtime.Log.Log4NetExtensionLogSystem.#ctor">Log4NetExtensionLogSystem</a>()<br>        
+            Default constructor, fine when NVelocity will be called from the same app domain.
+            </td>
+      </tr>
+      <tr>
+        <td class="constructor" valign="top">
+          <a href="#NVelocity.Runtime.Log.Log4NetExtensionLogSystem.#ctor(System.String)">Log4NetExtensionLogSystem</a>(string category)<br>        
+            to be used when NVelocity will be called from the same app domain and you want to name the category used
+            for NVelocity messages.
+            </td>
+      </tr>
+      <tr>
+        <td class="constructor" valign="top">
+          <a href="#NVelocity.Runtime.Log.Log4NetExtensionLogSystem.#ctor(System.Reflection.Assembly,System.String)">Log4NetExtensionLogSystem</a>(System.Reflection.Assembly assembly, string category)<br>        
+            specify named category and domain that logging will participate with (needed when using NVelocity in environment
+            where it will be hosted by external process; i.e. IIS or COM+).
+            </td>
+      </tr>
+      <tr>
+        <td class="constructor" valign="top">
+          <a href="#NVelocity.Runtime.Log.Log4NetExtensionLogSystem.#ctor(System.Reflection.Assembly)">Log4NetExtensionLogSystem</a>(System.Reflection.Assembly assembly)<br>        
+            specify domain that logging will participate with (needed when using NVelocity in environment
+            where it will be hosted by external process; i.e. IIS or COM+)
+            </td>
+      </tr>
+    </table>
+    <br>
+    <a name="property-summary">
+    </a>
+    <a name="method-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Method Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Log.Log4NetExtensionLogSystem.Init(NVelocity.Runtime.RuntimeServices)">Init</a>(NVelocity.Runtime.RuntimeServices rs)<br>        
+            Init
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Log.Log4NetExtensionLogSystem.LogVelocityMessage(System.Int32,System.String)">LogVelocityMessage</a>(int level, string message)<br>        
+            Send a log message from NVelocity.
+            </td>
+      </tr>
+    </table>
+    <br>
+    <table class="subtable" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Methods inherited from class System.Object</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>
+          <a href="..\..\..\NVelocity/Runtime/Log/Log4NetExtensionLogSystem/Equals(System.html#Object)">Equals</a>, <a href="..\..\..\NVelocity/Runtime/Log/Log4NetExtensionLogSystem.html#Finalize">Finalize</a>, <a href="..\..\..\NVelocity/Runtime/Log/Log4NetExtensionLogSystem.html#GetHashCode">GetHashCode</a>, <a href="..\..\..\NVelocity/Runtime/Log/Log4NetExtensionLogSystem.html#GetType">GetType</a>, <a href="..\..\..\NVelocity/Runtime/Log/Log4NetExtensionLogSystem.html#MemberwiseClone">MemberwiseClone</a>, <a href="..\..\..\NVelocity/Runtime/Log/Log4NetExtensionLogSystem.html#ToString">ToString</a></td>
+      </tr>
+    </table>
+    <br>
+    <a name="operator-summary">
+    </a>
+    <a name="event-summary">
+    </a>
+    <br>
+    <a name="field-detail">
+    </a>
+    <a name="constructor-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Constructor Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.Runtime.Log.Log4NetExtensionLogSystem.#ctor">
+    </a>
+    <h3>Log4NetExtensionLogSystem</h3>
+    <pre>public Log4NetExtensionLogSystem()</pre>
+    <dl>
+      <dd>
+        <p>
+            Default constructor, fine when NVelocity will be called from the same app domain.
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Log.Log4NetExtensionLogSystem.#ctor(System.String)">
+    </a>
+    <h3>Log4NetExtensionLogSystem</h3>
+    <pre>public Log4NetExtensionLogSystem(string category)</pre>
+    <dl>
+      <dd>
+        <p>
+            to be used when NVelocity will be called from the same app domain and you want to name the category used
+            for NVelocity messages.
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>category</code> - category to use for log messages instead of the name of the actual class</dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Log.Log4NetExtensionLogSystem.#ctor(System.Reflection.Assembly,System.String)">
+    </a>
+    <h3>Log4NetExtensionLogSystem</h3>
+    <pre>public Log4NetExtensionLogSystem(System.Reflection.Assembly assembly,
+                                 string category)</pre>
+    <dl>
+      <dd>
+        <p>
+            specify named category and domain that logging will participate with (needed when using NVelocity in environment
+            where it will be hosted by external process; i.e. IIS or COM+).
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>assembly</code> - </dd>
+          <dd>
+            <code>category</code> - </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Log.Log4NetExtensionLogSystem.#ctor(System.Reflection.Assembly)">
+    </a>
+    <h3>Log4NetExtensionLogSystem</h3>
+    <pre>public Log4NetExtensionLogSystem(System.Reflection.Assembly assembly)</pre>
+    <dl>
+      <dd>
+        <p>
+            specify domain that logging will participate with (needed when using NVelocity in environment
+            where it will be hosted by external process; i.e. IIS or COM+)
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>assembly</code> - </dd>
+        </dl>
+      </dd>
+    </dl>
+    <a name="property-detail">
+    </a>
+    <a name="method-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Method Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.Runtime.Log.Log4NetExtensionLogSystem.Init(NVelocity.Runtime.RuntimeServices)">
+    </a>
+    <h3>Init</h3>
+    <pre>public void Init(NVelocity.Runtime.RuntimeServices rs)</pre>
+    <dl>
+      <dd>
+        <p>
+            Init
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Log.Log4NetExtensionLogSystem.LogVelocityMessage(System.Int32,System.String)">
+    </a>
+    <h3>LogVelocityMessage</h3>
+    <pre>public void LogVelocityMessage(int level,
+                               string message)</pre>
+    <dl>
+      <dd>
+        <p>
+            Send a log message from NVelocity.
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="operator-detail">
+    </a>
+    <a name="event-detail">
+    </a>
+    <hr>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td>
+                <a href="namespace-summary.html">Namespace</a> </td>
+              <td class="nav1sel"> Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV TYPE    NEXT TYPE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+      <tr class="nav2">
+        <td>SUMMARY: INNER | FIELD | <a href="#constructor-summary">CONST</a> | PROP | <a href="#method-summary">METHOD</a> | OP | EVENT</td>
+        <td>DETAIL: FIELD | <a href="#constructor-detail">CONST</a> | PROP | <a href="#method-detail">METHOD</a> | OP | EVENT</td>
+      </tr>
+    </table>
+  </body>
+</html>

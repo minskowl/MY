@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6AAC6319-BBDA-4CCA-9282-7C44B7C23AFB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>KnowledgeBase.BussinesLayer</RootNamespace>
+    <AssemblyName>KnowledgeBase.BussinesLayer</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <PublishUrl>http://localhost/KnowledgeBase.BussinesLayer/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Castle.DynamicProxy">
+      <HintPath>..\..\References\Castle.DynamicProxy.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\CasheKey.cs" />
+    <Compile Include="Core\CategoryTree.cs" />
+    <Compile Include="Core\Identifier.cs" />
+    <Compile Include="Interfaces\IManagersFactory.cs" />
+    <Compile Include="Core\KbContext.cs" />
+    <Compile Include="Core\EntityBase.cs" />
+    <Compile Include="Core\CallLogIntersector.cs" />
+    <Compile Include="Core\Enums.cs" />
+    <Compile Include="Core\KbContext.Managers.cs" />
+    <Compile Include="Core\LoggerAttribute.cs" />
+    <Compile Include="Core\ManagerBase.cs" />
+    <Compile Include="Core\ManagerFactory.cs" />
+    <Compile Include="Core\ObjectCopier.cs" />
+    <Compile Include="Core\SessionKey.cs" />
+    <Compile Include="Entities\Categories.cs" />
+    <Compile Include="Entities\FileIncludes.cs" />
+    <Compile Include="Entities\FileLinks.cs" />
+    <Compile Include="Entities\FileStorages.cs" />
+    <Compile Include="Entities\IFile.cs" />
+    <Compile Include="Entities\Keywords.cs" />
+    <Compile Include="Entities\Knowledges.cs" />
+    <Compile Include="Entities\UserFiles.cs" />
+    <Compile Include="Entities\UserRights.cs" />
+    <Compile Include="Entities\Users.cs" />
+    <Compile Include="Managers\CategoriesManager.cs" />
+    <Compile Include="Managers\FileIncludesManager.cs" />
+    <Compile Include="Managers\FileLinksManager.cs" />
+    <Compile Include="Managers\FileStoragesManager.cs" />
+    <Compile Include="Interfaces\ICategoryManager.cs" />
+    <Compile Include="Interfaces\IUserManager.cs" />
+    <Compile Include="Interfaces\IFileIncludeManager.cs" />
+    <Compile Include="Interfaces\IFileLinkManager.cs" />
+    <Compile Include="Interfaces\IFileStorageManager.cs" />
+    <Compile Include="Interfaces\IKeywordManager.cs" />
+    <Compile Include="Interfaces\IKnowledgeManager.cs" />
+    <Compile Include="Interfaces\IUserFileManager.cs" />
+    <Compile Include="Interfaces\IUserRightManager.cs" />
+    <Compile Include="Managers\KeywordsManager.cs" />
+    <Compile Include="Managers\KnowledgesManager.cs" />
+    <Compile Include="Managers\ManagersFactory.cs" />
+    <Compile Include="Managers\UserFilesManager.cs" />
+    <Compile Include="Managers\UserRightsManager.cs" />
+    <Compile Include="Managers\UsersManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Security\AdminPermisssionSet.cs" />
+    <Compile Include="Security\IPermissionSet.cs" />
+    <Compile Include="Security\Permission.cs" />
+    <Compile Include="Security\PermissionException.cs" />
+    <Compile Include="Security\PermissionSet.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Libs\Data\Savchin.Data.csproj">
+      <Project>{25AB3B90-41A8-4BD4-88B6-4607D1633D4C}</Project>
+      <Name>Savchin.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libs\Tools\Savchin.Tools.csproj">
+      <Project>{2F1807E4-39A2-4F38-ADFC-6310A8443D90}</Project>
+      <Name>Savchin.Tools</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DAL\KnowledgeBase.Dal\KnowledgeBase.Dal.csproj">
+      <Project>{100BEE5D-A096-441D-8629-32AC1C7CF36B}</Project>
+      <Name>KnowledgeBase.Dal</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Collection\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

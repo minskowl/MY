@@ -1,0 +1,16 @@
+
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="PopupMasterPage.master.cs"
+    Inherits="MasterPages_PopupMasterPage" %>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Untitled Page</title>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+</head>
+<body class="popup">
+    <form id="form1" runat="server">
+        <asp:ContentPlaceHolder ID="Content" runat="server">
+        </asp:ContentPlaceHolder>
+    </form>
+
+</body>
+</html>

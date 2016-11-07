@@ -1,0 +1,186 @@
+#set( $entity="${tools.getSingularName($table.Alias)}")
+#set( $columnListSelect="")
+#set( $paramListDelete="")
+#set( $whereList="")
+#set( $hasIdentity=false)
+#set( $hasPrimaryKey=false)
+#set( $identityColumn=false)
+
+#foreach($column in $table.ActiveColumns)
+  #set( $columnListSelect="${columnListSelect}[${column.Name}],")
+  #if($column.IsAutoIncrement)
+    #set( $identityColumn=$column)
+    #set( $hasIdentity=true)	
+  #end	
+#end
+
+#foreach($column in $table.PrimaryKeyColumns )
+	 #set( $hasPrimaryKey=true)
+     #set( $whereList="${whereList}[${column.Name}]=@${column.Name} AND ")
+     #set( $paramListDelete="${paramListDelete}@${column.Name} ${column.DataTypeFull},")
+#end
+
+#set( $columnListSelect=$tools.cutString($columnListSelect,1))
+#set( $paramListDelete=$tools.cutString($paramListDelete,1))
+#set( $whereList=$tools.cutString($whereList,4))
+
+
+#macro( dropSP $name )
+	IF EXISTS(SELECT * FROM sysobjects WHERE xtype='P' AND name='${name}')
+	BEGIN
+			DROP PROCEDURE [dbo].[${name}]
+	END
+	GO
+#end 
+PRINT N'                 START CREATE PROCEDURES 	               '
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+#set( $SPName="${entity}_Insert")
+#set( $InsertColumnList="")
+#set( $InsertValueList="")
+#set( $InsertParamList="")
+
+#foreach($column in $table.ActiveColumns)
+	#if(!$column.IsAutoIncrement && !$column.IsReadOnly)
+		#set( $InsertColumnList="${InsertColumnList}[${column.Name}],")
+	    #set( $InsertValueList="${InsertValueList}@${column.Name},")
+	    #set( $InsertParamList="${InsertParamList}@${column.Name} ${column.DataTypeFull},")
+	#end	
+#end
+
+#set( $InsertColumnList=$tools.cutString($InsertColumnList,1))
+#set( $InsertValueList=$tools.cutString($InsertValueList,1))
+#if($hasIdentity)
+ #set( $InsertParamList="${InsertParamList} @${identityColumn.Name} ${identityColumn.DataTypeFull} OUTPUT")
+#else
+ #set( $InsertParamList=$tools.cutString($InsertParamList,1))
+#end
+
+#dropSP($SPName)
+-- =============================================
+-- Author:		Savchin Inc. 
+-- Create date: $datetimenow
+-- Description:	Generated CodeRocket
+-- =============================================
+CREATE PROCEDURE ${SPName}(${InsertParamList})
+AS
+BEGIN
+	 INSERT [${table.Name}]
+           (${InsertColumnList})
+     VALUES
+           (${InsertValueList})
+#if($hasIdentity)  
+	SELECT @${identityColumn.Name}=@@IDENTITY
+#end         
+END
+GO
+
+#set( $SPName="${entity}_GetAll")
+#dropSP($SPName)
+-- =============================================
+-- Author:		Savchin Inc. 
+-- Create date: $datetimenow
+-- Description:	Generated CodeRocket
+-- =============================================
+CREATE PROCEDURE ${SPName}
+AS
+BEGIN
+	SELECT ${columnListSelect} 
+	FROM [${table.Name}]
+END
+GO
+
+#if($hasPrimaryKey)
+	#set( $setList="")
+	#set( $paramListUpdate="")
+	
+	#foreach($column in $table.OrdinalColumns)
+		#if( $column.IsPrimaryKey  || ( !$column.IsReadOnly && $column.IsActive) )
+			#set( $paramListUpdate="${paramListUpdate}@${column.Name} ${column.DataTypeFull},")
+		#end
+		#if($column.IsActive && !$column.IsAutoIncrement)
+			#set( $setList="${setList}[${column.Name}]=@${column.Name},")
+		#end
+	#end
+	#set( $setList=$tools.cutString($setList,1))
+	#set( $paramListUpdate=$tools.cutString($paramListUpdate,1))
+	
+	#set( $SPName="${entity}_Update")
+	#dropSP($SPName)
+	-- =============================================
+	-- Author:		Savchin Inc. 
+	-- Create date: $datetimenow
+	-- Description:	Generated CodeRocket
+	-- =============================================
+	CREATE PROCEDURE ${SPName}(${paramListUpdate})
+	AS
+	BEGIN
+		UPDATE [${table.Name}]
+		SET 
+			${setList}
+		WHERE ${whereList}       
+	END
+	GO
+	#set( $SPName="${entity}_Delete")
+	#dropSP($SPName)
+	-- =============================================
+	-- Author:		Savchin Inc. 
+	-- Create date: $datetimenow
+	-- Description:	Generated CodeRocket
+	-- =============================================
+	CREATE PROCEDURE ${SPName}(${paramListDelete})
+	AS
+	BEGIN
+		DELETE FROM [${table.Name}]
+		WHERE ${whereList}       
+	END
+	GO
+	#set( $SPName="${entity}_GetByID")
+	#dropSP($SPName)
+	-- =============================================
+	-- Author:		Savchin Inc. 
+	-- Create date: $datetimenow
+	-- Description:	Generated CodeRocket
+	-- =============================================
+	CREATE PROCEDURE ${SPName}(${paramListDelete})
+	AS
+	BEGIN
+		SELECT ${columnListSelect} 
+		FROM [${table.Name}]
+		WHERE ${whereList} 
+	END
+	GO
+#end
+
+-- ========================FOREIGN KEY GENERATION =====================
+
+#foreach($key in $table.ForeignKeys)
+	#if($key.ForeignTableName ==$table.Name)
+	#set( $columns=$key.Associations.GetColumns($table))
+	#set( $SPName="${entity}_GetBy${tools.join($columns,'By','Alias')}")
+	#dropSP($SPName)
+	-- =============================================
+	-- Author:		Savchin Inc. 
+	-- Create date: $datetimenow
+	-- Description:	Generated CodeRocket. Select by ForeygnKey ${key.Name}
+	-- =============================================
+
+	CREATE PROCEDURE ${SPName}(${tools.getSpParamList($columns)})
+	AS
+	BEGIN
+		SELECT ${columnListSelect} 
+		FROM [${table.Name}]
+		WHERE ${tools.getWhereCriteria($columns)}
+	END
+	GO
+	#end
+#end
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER OFF
+GO
+PRINT N'                 END CREATE PROCEDURES 	               '

@@ -1,0 +1,1230 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="..\..\JavaDoc.css">
+  </head>
+  <body>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td>
+                <a href="namespace-summary.html">Namespace</a> </td>
+              <td class="nav1sel"> Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV TYPE    NEXT TYPE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+      <tr class="nav2">
+        <td>SUMMARY: INNER | FIELD | <a href="#constructor-summary">CONST</a> | <a href="#property-summary">PROP</a> | <a href="#method-summary">METHOD</a> | OP | EVENT</td>
+        <td>DETAIL: FIELD | <a href="#constructor-detail">CONST</a> | <a href="#property-detail">PROP</a> | <a href="#method-detail">METHOD</a> | OP | EVENT</td>
+      </tr>
+    </table>
+    <hr>
+    <h2>
+      <span class="namespaceName">NVelocity.Runtime</span>
+      <br>
+      <span class="className">Class RuntimeInstance</span>
+    </h2>
+    <p> This is the Runtime system for Velocity. It is the
+            single access point for all functionality in Velocity.
+            It adheres to the mediator pattern and is the only
+            structure that developers need to be familiar with
+            in order to get Velocity to perform.
+            *
+            The Runtime will also cooperate with external
+            systems like Turbine. Runtime properties can
+            set and then the Runtime is initialized.
+            *
+            Turbine for example knows where the templates
+            are to be loaded from, and where the velocity
+            log file should be placed.
+            *
+            So in the case of Velocity cooperating with Turbine
+            the code might look something like the following:
+            *
+            
+            Runtime.setProperty(Runtime.FILE_RESOURCE_LOADER_PATH, templatePath);
+            Runtime.setProperty(Runtime.RUNTIME_LOG, pathToVelocityLog);
+            Runtime.init();
+            
+            *
+            
+            -----------------------------------------------------------------------
+            N O T E S  O N  R U N T I M E  I N I T I A L I Z A T I O N
+            -----------------------------------------------------------------------
+            Runtime.init()
+            
+            If Runtime.init() is called by itself the Runtime will
+            initialize with a set of default values.
+            -----------------------------------------------------------------------
+            Runtime.init(String/Properties)
+            *
+            In this case the default velocity properties are layed down
+            first to provide a solid base, then any properties provided
+            in the given properties object will override the corresponding
+            default property.
+            -----------------------------------------------------------------------
+            
+            *
+            </p>
+    <a name="field-summary">
+    </a>
+    <a name="constructor-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Constructor Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="constructor" valign="top">
+          <a href="#NVelocity.Runtime.RuntimeInstance.#ctor">RuntimeInstance</a>()<br>        Initializes a new instance of the RuntimeInstance class.</td>
+      </tr>
+    </table>
+    <br>
+    <a name="property-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Property Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="propertyType" valign="top">Commons.Collections.ExtendedProperties</td>
+        <td class="property">
+          <a href="#NVelocity.Runtime.RuntimeInstance.Configuration">Configuration</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="propertyType" valign="top">NVelocity.Util.Introspection.Introspector</td>
+        <td class="property">
+          <a href="#NVelocity.Runtime.RuntimeInstance.Introspector">Introspector</a>
+        </td>
+      </tr>
+    </table>
+    <br>
+    <a name="method-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Method Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.RuntimeInstance.addProperty(System.String,System.Object)">addProperty</a>(string key, object value_Renamed)<br>         Add a property to the configuration. If it already
+            exists then the value stated here will be added
+            to the configuration entry. For example, if
+            *
+            resource.loader = file
+            *
+            is already present in the configuration and you
+            *
+            addProperty("resource.loader", "classpath")
+            *
+            Then you will end up with a Vector like the
+            following:
+            *
+            ["file", "classpath"]
+            *
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">bool</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.RuntimeInstance.addVelocimacro(System.String,System.String,System.String[],System.String)">addVelocimacro</a>(string name, string macro, string[] argArray, string sourceTemplate)<br>         Adds a new Velocimacro. Usually called by Macro only while parsing.
+            *
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.RuntimeInstance.clearProperty(System.String)">clearProperty</a>(string key)<br>         Clear the values pertaining to a particular
+            property.
+            *
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">NVelocity.Runtime.Parser.Parser</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.RuntimeInstance.createNewParser">createNewParser</a>()<br>         Returns a JavaCC generated Parser.
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.RuntimeInstance.debug(System.Object)">debug</a>(object message)<br>         Log a debug message.
+            *
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">bool</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.RuntimeInstance.dumpVMNamespace(System.String)">dumpVMNamespace</a>(string namespace_Renamed)<br>          tells the vmFactory to dump the specified namespace.  This is to support
+            clearing the VM list when in inline-VM-local-scope mode
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.RuntimeInstance.error(System.Object)">error</a>(object message)<br>         Log an error message.
+            *
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">object</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.RuntimeInstance.getApplicationAttribute(System.Object)">getApplicationAttribute</a>(object key)<br>          Return the Introspector for this instance
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">bool</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.RuntimeInstance.getBoolean(System.String,System.Boolean)">getBoolean</a>(string key, bool def)<br>         Boolean property accessor method to hide the configuration implementation.
+            
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">NVelocity.Runtime.Resource.ContentResource</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.RuntimeInstance.getContent(System.String,System.String)">getContent</a>(string name, string encoding)<br>         Returns a static content resource from the
+            resource manager.
+            *
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">NVelocity.Runtime.Resource.ContentResource</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.RuntimeInstance.getContent(System.String)">getContent</a>(string name)<br>         Returns a static content resource from the
+            resource manager.  Uses the current value
+            if INPUT_ENCODING as the character encoding.
+            *
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">int</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.RuntimeInstance.getInt(System.String,System.Int32)">getInt</a>(string key, int defaultValue)<br>         Int property accessor method to hide the configuration implementation.
+            *
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">int</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.RuntimeInstance.getInt(System.String)">getInt</a>(string key)<br>         Int property accessor method to hide the configuration implementation.
+            *
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">string</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.RuntimeInstance.getLoaderNameForResource(System.String)">getLoaderNameForResource</a>(string resourceName)<br>          Determines is a template exists, and returns name of the loader that
+            provides it.  This is a slightly less hokey way to support
+            the Velocity.templateExists() utility method, which was broken
+            when per-template encoding was introduced.  We can revisit this.
+            *
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">object</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.RuntimeInstance.getProperty(System.String)">getProperty</a>(string key)<br>          Allows an external caller to get a property.  The calling
+            routine is required to know the type, as this routine
+            will return an Object, as that is what properties can be.
+            *
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">string</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.RuntimeInstance.getString(System.String)">getString</a>(string key)<br>         String property accessor method to hide the configuration implementation
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">string</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.RuntimeInstance.getString(System.String,System.String)">getString</a>(string key, string defaultValue)<br>         String property accessor method with default to hide the
+            configuration implementation.
+            
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">NVelocity.Template</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.RuntimeInstance.getTemplate(System.String,System.String)">getTemplate</a>(string name, string encoding)<br>         Returns a <pre class="code">Template</pre> from the resource manager
+            *
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">NVelocity.Template</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.RuntimeInstance.getTemplate(System.String)">getTemplate</a>(string name)<br>         Returns a <pre class="code">Template</pre> from the resource manager.
+            This method assumes that the character encoding of the
+            template is set by the <pre class="code">input.encoding</pre>
+            property.  The default is "ISO-8859-1"
+            *
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">NVelocity.Runtime.Directive.Directive</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.RuntimeInstance.getVelocimacro(System.String,System.String)">getVelocimacro</a>(string vmName, string templateName)<br>         Returns the appropriate VelocimacroProxy object if strVMname
+            is a valid current Velocimacro.
+            *
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.RuntimeInstance.info(System.Object)">info</a>(object message)<br>         Log an info message.
+            *
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.RuntimeInstance.init(System.String)">init</a>(string configurationFile)<br>         Initialize the Velocity Runtime with the name of
+            ExtendedProperties object.
+            *
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.RuntimeInstance.init">init</a>()</td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.RuntimeInstance.init(Commons.Collections.ExtendedProperties)">init</a>(Commons.Collections.ExtendedProperties p)<br>         Initialize the Velocity Runtime with a Properties
+            object.
+            *
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">bool</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.RuntimeInstance.isVelocimacro(System.String,System.String)">isVelocimacro</a>(string vmName, string templateName)<br>          Checks to see if a VM exists
+            *
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">NVelocity.Runtime.Parser.Node.SimpleNode</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.RuntimeInstance.parse(System.IO.TextReader,System.String,System.Boolean)">parse</a>(System.IO.TextReader reader, string templateName, bool dumpNamespace)<br>          Parse the input and return the root of the AST node structure.
+            *
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">NVelocity.Runtime.Parser.Node.SimpleNode</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.RuntimeInstance.parse(System.IO.TextReader,System.String)">parse</a>(System.IO.TextReader reader, string templateName)</td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">object</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.RuntimeInstance.setApplicationAttribute(System.Object,System.Object)">setApplicationAttribute</a>(object key, object o)</td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.RuntimeInstance.setProperty(System.String,System.Object)">setProperty</a>(string key, object value_Renamed)<br>         Allows an external system to set a property in
+            the Velocity Runtime.
+            *
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.RuntimeInstance.warn(System.Object)">warn</a>(object message)<br>         Log a warning message.
+            *
+            </td>
+      </tr>
+    </table>
+    <br>
+    <table class="subtable" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Methods inherited from class System.Object</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>
+          <a href="..\..\NVelocity/Runtime/RuntimeInstance/Equals(System.html#Object)">Equals</a>, <a href="..\..\NVelocity/Runtime/RuntimeInstance.html#Finalize">Finalize</a>, <a href="..\..\NVelocity/Runtime/RuntimeInstance.html#GetHashCode">GetHashCode</a>, <a href="..\..\NVelocity/Runtime/RuntimeInstance.html#GetType">GetType</a>, <a href="..\..\NVelocity/Runtime/RuntimeInstance.html#MemberwiseClone">MemberwiseClone</a>, <a href="..\..\NVelocity/Runtime/RuntimeInstance.html#ToString">ToString</a></td>
+      </tr>
+    </table>
+    <br>
+    <a name="operator-summary">
+    </a>
+    <a name="event-summary">
+    </a>
+    <br>
+    <a name="field-detail">
+    </a>
+    <a name="constructor-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Constructor Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.Runtime.RuntimeInstance.#ctor">
+    </a>
+    <h3>RuntimeInstance</h3>
+    <pre>public RuntimeInstance()</pre>
+    <dl>
+      <dd>
+        <p>Initializes a new instance of the RuntimeInstance class.</p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="property-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Property Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.Runtime.RuntimeInstance.Configuration">
+    </a>
+    <h3>Configuration</h3>
+    <pre>public Commons.Collections.ExtendedProperties Configuration</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.RuntimeInstance.Introspector">
+    </a>
+    <h3>Introspector</h3>
+    <pre>public NVelocity.Util.Introspection.Introspector Introspector</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="method-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Method Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.Runtime.RuntimeInstance.addProperty(System.String,System.Object)">
+    </a>
+    <h3>addProperty</h3>
+    <pre>public void addProperty(string key,
+                        object value_Renamed)</pre>
+    <dl>
+      <dd>
+        <p> Add a property to the configuration. If it already
+            exists then the value stated here will be added
+            to the configuration entry. For example, if
+            *
+            resource.loader = file
+            *
+            is already present in the configuration and you
+            *
+            addProperty("resource.loader", "classpath")
+            *
+            Then you will end up with a Vector like the
+            following:
+            *
+            ["file", "classpath"]
+            *
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>String</code> - key
+            </dd>
+          <dd>
+            <code>String</code> - value
+            
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.RuntimeInstance.addVelocimacro(System.String,System.String,System.String[],System.String)">
+    </a>
+    <h3>addVelocimacro</h3>
+    <pre>public bool addVelocimacro(string name,
+                           string macro,
+                           string[] argArray,
+                           string sourceTemplate)</pre>
+    <dl>
+      <dd>
+        <p> Adds a new Velocimacro. Usually called by Macro only while parsing.
+            *
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>String</code> - name  Name of velocimacro
+            </dd>
+          <dd>
+            <code>String</code> - macro  String form of macro body
+            </dd>
+          <dd>
+            <code>String</code> - argArray  Array of strings, containing the
+            #macro() arguments.  the 0th is the name.
+            </dd>
+        </dl>
+        <b>Returns:</b>
+        <dl>
+          <dd>boolean  True if added, false if rejected for some
+            reason (either parameters or permission settings)
+            
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.RuntimeInstance.clearProperty(System.String)">
+    </a>
+    <h3>clearProperty</h3>
+    <pre>public void clearProperty(string key)</pre>
+    <dl>
+      <dd>
+        <p> Clear the values pertaining to a particular
+            property.
+            *
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>String</code> - key of property to clear
+            
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.RuntimeInstance.createNewParser">
+    </a>
+    <h3>createNewParser</h3>
+    <pre>public NVelocity.Runtime.Parser.Parser createNewParser()</pre>
+    <dl>
+      <dd>
+        <p> Returns a JavaCC generated Parser.
+            </p>
+        <p>
+        </p>
+        <b>Returns:</b>
+        <dl>
+          <dd>Parser javacc generated parser
+            
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.RuntimeInstance.debug(System.Object)">
+    </a>
+    <h3>debug</h3>
+    <pre>public void debug(object message)</pre>
+    <dl>
+      <dd>
+        <p> Log a debug message.
+            *
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>Object</code> - message to log
+            
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.RuntimeInstance.dumpVMNamespace(System.String)">
+    </a>
+    <h3>dumpVMNamespace</h3>
+    <pre>public bool dumpVMNamespace(string namespace_Renamed)</pre>
+    <dl>
+      <dd>
+        <p>  tells the vmFactory to dump the specified namespace.  This is to support
+            clearing the VM list when in inline-VM-local-scope mode
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.RuntimeInstance.error(System.Object)">
+    </a>
+    <h3>error</h3>
+    <pre>public void error(object message)</pre>
+    <dl>
+      <dd>
+        <p> Log an error message.
+            *
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>Object</code> - message to log
+            
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.RuntimeInstance.getApplicationAttribute(System.Object)">
+    </a>
+    <h3>getApplicationAttribute</h3>
+    <pre>public object getApplicationAttribute(object key)</pre>
+    <dl>
+      <dd>
+        <p>  Return the Introspector for this instance
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.RuntimeInstance.getBoolean(System.String,System.Boolean)">
+    </a>
+    <h3>getBoolean</h3>
+    <pre>public bool getBoolean(string key,
+                       bool def)</pre>
+    <dl>
+      <dd>
+        <p> Boolean property accessor method to hide the configuration implementation.
+            
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>String</code> - key  property key
+            </dd>
+          <dd>
+            <code>boolean</code> - default default value if property not found
+            </dd>
+        </dl>
+        <b>Returns:</b>
+        <dl>
+          <dd>boolean  value of key or default value
+            
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.RuntimeInstance.getContent(System.String,System.String)">
+    </a>
+    <h3>getContent</h3>
+    <pre>public NVelocity.Runtime.Resource.ContentResource getContent(string name,
+                                                             string encoding)</pre>
+    <dl>
+      <dd>
+        <p> Returns a static content resource from the
+            resource manager.
+            *
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>name</code> - Name of content resource to get
+            </dd>
+          <dd>
+            <code>encoding</code> - Character encoding to use
+            </dd>
+        </dl>
+        <b>Returns:</b>
+        <dl>
+          <dd>parsed ContentResource object ready for use
+            @throws ResourceNotFoundException if template not found
+            from any available source.
+            
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.RuntimeInstance.getContent(System.String)">
+    </a>
+    <h3>getContent</h3>
+    <pre>public NVelocity.Runtime.Resource.ContentResource getContent(string name)</pre>
+    <dl>
+      <dd>
+        <p> Returns a static content resource from the
+            resource manager.  Uses the current value
+            if INPUT_ENCODING as the character encoding.
+            *
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>name</code> - Name of content resource to get
+            </dd>
+        </dl>
+        <b>Returns:</b>
+        <dl>
+          <dd>parsed ContentResource object ready for use
+            @throws ResourceNotFoundException if template not found
+            from any available source.
+            
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.RuntimeInstance.getInt(System.String,System.Int32)">
+    </a>
+    <h3>getInt</h3>
+    <pre>public int getInt(string key,
+                  int defaultValue)</pre>
+    <dl>
+      <dd>
+        <p> Int property accessor method to hide the configuration implementation.
+            *
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>key</code> -  property key
+            </dd>
+          <dd>
+            <code>int</code> - default value
+            </dd>
+        </dl>
+        <b>Returns:</b>
+        <dl>
+          <dd>int  value
+            
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.RuntimeInstance.getInt(System.String)">
+    </a>
+    <h3>getInt</h3>
+    <pre>public int getInt(string key)</pre>
+    <dl>
+      <dd>
+        <p> Int property accessor method to hide the configuration implementation.
+            *
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>String</code> - key property key
+            </dd>
+        </dl>
+        <b>Returns:</b>
+        <dl>
+          <dd>int value
+            
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.RuntimeInstance.getLoaderNameForResource(System.String)">
+    </a>
+    <h3>getLoaderNameForResource</h3>
+    <pre>public string getLoaderNameForResource(string resourceName)</pre>
+    <dl>
+      <dd>
+        <p>  Determines is a template exists, and returns name of the loader that
+            provides it.  This is a slightly less hokey way to support
+            the Velocity.templateExists() utility method, which was broken
+            when per-template encoding was introduced.  We can revisit this.
+            *
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>resourceName</code> - Name of template or content resource
+            </dd>
+        </dl>
+        <b>Returns:</b>
+        <dl>
+          <dd>class name of loader than can provide it
+            
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.RuntimeInstance.getProperty(System.String)">
+    </a>
+    <h3>getProperty</h3>
+    <pre>public object getProperty(string key)</pre>
+    <dl>
+      <dd>
+        <p>  Allows an external caller to get a property.  The calling
+            routine is required to know the type, as this routine
+            will return an Object, as that is what properties can be.
+            *
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>key</code> - property to return
+            
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.RuntimeInstance.getString(System.String)">
+    </a>
+    <h3>getString</h3>
+    <pre>public string getString(string key)</pre>
+    <dl>
+      <dd>
+        <p> String property accessor method to hide the configuration implementation
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>key</code> -  property key
+            </dd>
+        </dl>
+        <b>Returns:</b>
+        <dl>
+          <dd>  value of key or null
+            
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.RuntimeInstance.getString(System.String,System.String)">
+    </a>
+    <h3>getString</h3>
+    <pre>public string getString(string key,
+                        string defaultValue)</pre>
+    <dl>
+      <dd>
+        <p> String property accessor method with default to hide the
+            configuration implementation.
+            
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>String</code> - key property key
+            </dd>
+          <dd>
+            <code>String</code> - defaultValue  default value to return if key not
+            found in resource manager.
+            </dd>
+        </dl>
+        <b>Returns:</b>
+        <dl>
+          <dd>String  value of key or default
+            
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.RuntimeInstance.getTemplate(System.String,System.String)">
+    </a>
+    <h3>getTemplate</h3>
+    <pre>public NVelocity.Template getTemplate(string name,
+                                      string encoding)</pre>
+    <dl>
+      <dd>
+        <p> Returns a <pre class="code">Template</pre> from the resource manager
+            *
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>name</code> - The  name of the desired template.
+            </dd>
+          <dd>
+            <code>encoding</code> - Character encoding of the template
+            </dd>
+        </dl>
+        <b>Returns:</b>
+        <dl>
+          <dd>    The template.
+            @throws ResourceNotFoundException if template not found
+            from any available source.
+            @throws ParseErrorException if template cannot be parsed due
+            to syntax (or other) error.
+            @throws Exception if an error occurs in template initialization
+            
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.RuntimeInstance.getTemplate(System.String)">
+    </a>
+    <h3>getTemplate</h3>
+    <pre>public NVelocity.Template getTemplate(string name)</pre>
+    <dl>
+      <dd>
+        <p> Returns a <pre class="code">Template</pre> from the resource manager.
+            This method assumes that the character encoding of the
+            template is set by the <pre class="code">input.encoding</pre>
+            property.  The default is "ISO-8859-1"
+            *
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>name</code> - The file name of the desired template.
+            </dd>
+        </dl>
+        <b>Returns:</b>
+        <dl>
+          <dd>    The template.
+            @throws ResourceNotFoundException if template not found
+            from any available source.
+            @throws ParseErrorException if template cannot be parsed due
+            to syntax (or other) error.
+            @throws Exception if an error occurs in template initialization
+            
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.RuntimeInstance.getVelocimacro(System.String,System.String)">
+    </a>
+    <h3>getVelocimacro</h3>
+    <pre>public NVelocity.Runtime.Directive.Directive getVelocimacro(string vmName,
+                                                            string templateName)</pre>
+    <dl>
+      <dd>
+        <p> Returns the appropriate VelocimacroProxy object if strVMname
+            is a valid current Velocimacro.
+            *
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>String</code> - vmName  Name of velocimacro requested
+            </dd>
+        </dl>
+        <b>Returns:</b>
+        <dl>
+          <dd>String VelocimacroProxy
+            
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.RuntimeInstance.info(System.Object)">
+    </a>
+    <h3>info</h3>
+    <pre>public void info(object message)</pre>
+    <dl>
+      <dd>
+        <p> Log an info message.
+            *
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>Object</code> - message to log
+            
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.RuntimeInstance.init(System.String)">
+    </a>
+    <h3>init</h3>
+    <pre>public void init(string configurationFile)</pre>
+    <dl>
+      <dd>
+        <p> Initialize the Velocity Runtime with the name of
+            ExtendedProperties object.
+            *
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code></code> - Properties
+            
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.RuntimeInstance.init">
+    </a>
+    <h3>init</h3>
+    <pre>public void init()</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.RuntimeInstance.init(Commons.Collections.ExtendedProperties)">
+    </a>
+    <h3>init</h3>
+    <pre>public void init(Commons.Collections.ExtendedProperties p)</pre>
+    <dl>
+      <dd>
+        <p> Initialize the Velocity Runtime with a Properties
+            object.
+            *
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code></code> - Properties
+            
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.RuntimeInstance.isVelocimacro(System.String,System.String)">
+    </a>
+    <h3>isVelocimacro</h3>
+    <pre>public bool isVelocimacro(string vmName,
+                          string templateName)</pre>
+    <dl>
+      <dd>
+        <p>  Checks to see if a VM exists
+            *
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>name</code> -  Name of velocimacro
+            </dd>
+        </dl>
+        <b>Returns:</b>
+        <dl>
+          <dd>boolean  True if VM by that name exists, false if not
+            
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.RuntimeInstance.parse(System.IO.TextReader,System.String,System.Boolean)">
+    </a>
+    <h3>parse</h3>
+    <pre>public NVelocity.Runtime.Parser.Node.SimpleNode parse(System.IO.TextReader reader,
+                                                      string templateName,
+                                                      bool dumpNamespace)</pre>
+    <dl>
+      <dd>
+        <p>  Parse the input and return the root of the AST node structure.
+            *
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>InputStream</code> - inputstream retrieved by a resource loader
+            </dd>
+          <dd>
+            <code>String</code> - name of the template being parsed
+            </dd>
+          <dd>
+            <code>dumpNamespace</code> - flag to dump the Velocimacro namespace for this template
+            
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.RuntimeInstance.parse(System.IO.TextReader,System.String)">
+    </a>
+    <h3>parse</h3>
+    <pre>public NVelocity.Runtime.Parser.Node.SimpleNode parse(System.IO.TextReader reader,
+                                                      string templateName)</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.RuntimeInstance.setApplicationAttribute(System.Object,System.Object)">
+    </a>
+    <h3>setApplicationAttribute</h3>
+    <pre>public object setApplicationAttribute(object key,
+                                      object o)</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.RuntimeInstance.setProperty(System.String,System.Object)">
+    </a>
+    <h3>setProperty</h3>
+    <pre>public void setProperty(string key,
+                        object value_Renamed)</pre>
+    <dl>
+      <dd>
+        <p> Allows an external system to set a property in
+            the Velocity Runtime.
+            *
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>String</code> - property key
+            </dd>
+          <dd>
+            <code>String</code> - property value
+            
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.RuntimeInstance.warn(System.Object)">
+    </a>
+    <h3>warn</h3>
+    <pre>public void warn(object message)</pre>
+    <dl>
+      <dd>
+        <p> Log a warning message.
+            *
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>Object</code> - message to log
+            
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <a name="operator-detail">
+    </a>
+    <a name="event-detail">
+    </a>
+    <hr>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td>
+                <a href="namespace-summary.html">Namespace</a> </td>
+              <td class="nav1sel"> Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV TYPE    NEXT TYPE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+      <tr class="nav2">
+        <td>SUMMARY: INNER | FIELD | <a href="#constructor-summary">CONST</a> | <a href="#property-summary">PROP</a> | <a href="#method-summary">METHOD</a> | OP | EVENT</td>
+        <td>DETAIL: FIELD | <a href="#constructor-detail">CONST</a> | <a href="#property-detail">PROP</a> | <a href="#method-detail">METHOD</a> | OP | EVENT</td>
+      </tr>
+    </table>
+  </body>
+</html>

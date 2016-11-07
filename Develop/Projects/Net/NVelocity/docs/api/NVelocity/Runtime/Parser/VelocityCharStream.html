@@ -1,0 +1,530 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="..\..\..\JavaDoc.css">
+  </head>
+  <body>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td>
+                <a href="namespace-summary.html">Namespace</a> </td>
+              <td class="nav1sel"> Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV TYPE    NEXT TYPE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+      <tr class="nav2">
+        <td>SUMMARY: INNER | <a href="#field-summary">FIELD</a> | <a href="#constructor-summary">CONST</a> | <a href="#property-summary">PROP</a> | <a href="#method-summary">METHOD</a> | OP | EVENT</td>
+        <td>DETAIL: <a href="#field-detail">FIELD</a> | <a href="#constructor-detail">CONST</a> | <a href="#property-detail">PROP</a> | <a href="#method-detail">METHOD</a> | OP | EVENT</td>
+      </tr>
+    </table>
+    <hr>
+    <h2>
+      <span class="namespaceName">NVelocity.Runtime.Parser</span>
+      <br>
+      <span class="className">Class VelocityCharStream</span>
+    </h2>
+    <p> An implementation of interface CharStream, where the stream is assumed to
+            contain only ASCII characters (without unicode processing).
+            </p>
+    <a name="field-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Field Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="fieldType" valign="top">int</td>
+        <td class="field">
+          <a href="#NVelocity.Runtime.Parser.VelocityCharStream.bufpos">bufpos</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="fieldType" valign="top">bool</td>
+        <td class="field">
+          <a href="#NVelocity.Runtime.Parser.VelocityCharStream.staticFlag">staticFlag</a>
+        </td>
+      </tr>
+    </table>
+    <br>
+    <a name="constructor-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Constructor Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="constructor" valign="top">
+          <a href="#NVelocity.Runtime.Parser.VelocityCharStream.#ctor(System.IO.TextReader,System.Int32,System.Int32,System.Int32)">VelocityCharStream</a>(System.IO.TextReader dstream, int startline, int startcolumn, int buffersize)</td>
+      </tr>
+      <tr>
+        <td class="constructor" valign="top">
+          <a href="#NVelocity.Runtime.Parser.VelocityCharStream.#ctor(System.IO.TextReader,System.Int32,System.Int32)">VelocityCharStream</a>(System.IO.TextReader dstream, int startline, int startcolumn)</td>
+      </tr>
+    </table>
+    <br>
+    <a name="property-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Property Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="propertyType" valign="top">int</td>
+        <td class="property">
+          <a href="#NVelocity.Runtime.Parser.VelocityCharStream.BeginColumn">BeginColumn</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="propertyType" valign="top">int</td>
+        <td class="property">
+          <a href="#NVelocity.Runtime.Parser.VelocityCharStream.BeginLine">BeginLine</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="propertyType" valign="top">int</td>
+        <td class="property">
+          <a href="#NVelocity.Runtime.Parser.VelocityCharStream.Column">Column</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="propertyType" valign="top">int</td>
+        <td class="property">
+          <a href="#NVelocity.Runtime.Parser.VelocityCharStream.EndColumn">EndColumn</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="propertyType" valign="top">int</td>
+        <td class="property">
+          <a href="#NVelocity.Runtime.Parser.VelocityCharStream.EndLine">EndLine</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="propertyType" valign="top">int</td>
+        <td class="property">
+          <a href="#NVelocity.Runtime.Parser.VelocityCharStream.Line">Line</a>
+        </td>
+      </tr>
+    </table>
+    <br>
+    <a name="method-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Method Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Parser.VelocityCharStream.adjustBeginLineColumn(System.Int32,System.Int32)">adjustBeginLineColumn</a>(int newLine, int newCol)</td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Parser.VelocityCharStream.backup(System.Int32)">backup</a>(int amount)</td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">char</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Parser.VelocityCharStream.BeginToken">BeginToken</a>()</td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Parser.VelocityCharStream.Done">Done</a>()</td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">string</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Parser.VelocityCharStream.GetImage">GetImage</a>()</td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">char[]</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Parser.VelocityCharStream.GetSuffix(System.Int32)">GetSuffix</a>(int len)</td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">char</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Parser.VelocityCharStream.readChar">readChar</a>()</td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Parser.VelocityCharStream.ReInit(System.IO.TextReader,System.Int32,System.Int32,System.Int32)">ReInit</a>(System.IO.TextReader dstream, int startline, int startcolumn, int buffersize)</td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Parser.VelocityCharStream.ReInit(System.IO.TextReader,System.Int32,System.Int32)">ReInit</a>(System.IO.TextReader dstream, int startline, int startcolumn)</td>
+      </tr>
+    </table>
+    <br>
+    <table class="subtable" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Methods inherited from class System.Object</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>
+          <a href="..\..\..\NVelocity/Runtime/Parser/VelocityCharStream/Equals(System.html#Object)">Equals</a>, <a href="..\..\..\NVelocity/Runtime/Parser/VelocityCharStream.html#Finalize">Finalize</a>, <a href="..\..\..\NVelocity/Runtime/Parser/VelocityCharStream.html#GetHashCode">GetHashCode</a>, <a href="..\..\..\NVelocity/Runtime/Parser/VelocityCharStream.html#GetType">GetType</a>, <a href="..\..\..\NVelocity/Runtime/Parser/VelocityCharStream.html#MemberwiseClone">MemberwiseClone</a>, <a href="..\..\..\NVelocity/Runtime/Parser/VelocityCharStream.html#ToString">ToString</a></td>
+      </tr>
+    </table>
+    <br>
+    <a name="operator-summary">
+    </a>
+    <a name="event-summary">
+    </a>
+    <br>
+    <a name="field-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Field Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.Runtime.Parser.VelocityCharStream.bufpos">
+    </a>
+    <h3>bufpos</h3>
+    <pre>public int <b>bufpos</b></pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Parser.VelocityCharStream.staticFlag">
+    </a>
+    <h3>staticFlag</h3>
+    <pre>public bool <b>staticFlag</b></pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="constructor-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Constructor Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.Runtime.Parser.VelocityCharStream.#ctor(System.IO.TextReader,System.Int32,System.Int32,System.Int32)">
+    </a>
+    <h3>VelocityCharStream</h3>
+    <pre>public VelocityCharStream(System.IO.TextReader dstream,
+                          int startline,
+                          int startcolumn,
+                          int buffersize)</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Parser.VelocityCharStream.#ctor(System.IO.TextReader,System.Int32,System.Int32)">
+    </a>
+    <h3>VelocityCharStream</h3>
+    <pre>public VelocityCharStream(System.IO.TextReader dstream,
+                          int startline,
+                          int startcolumn)</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="property-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Property Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.Runtime.Parser.VelocityCharStream.BeginColumn">
+    </a>
+    <h3>BeginColumn</h3>
+    <pre>public int BeginColumn</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Parser.VelocityCharStream.BeginLine">
+    </a>
+    <h3>BeginLine</h3>
+    <pre>public int BeginLine</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Parser.VelocityCharStream.Column">
+    </a>
+    <h3>Column</h3>
+    <pre>public int Column</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Parser.VelocityCharStream.EndColumn">
+    </a>
+    <h3>EndColumn</h3>
+    <pre>public int EndColumn</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Parser.VelocityCharStream.EndLine">
+    </a>
+    <h3>EndLine</h3>
+    <pre>public int EndLine</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Parser.VelocityCharStream.Line">
+    </a>
+    <h3>Line</h3>
+    <pre>public int Line</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="method-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Method Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.Runtime.Parser.VelocityCharStream.adjustBeginLineColumn(System.Int32,System.Int32)">
+    </a>
+    <h3>adjustBeginLineColumn</h3>
+    <pre>public void adjustBeginLineColumn(int newLine,
+                                  int newCol)</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Parser.VelocityCharStream.backup(System.Int32)">
+    </a>
+    <h3>backup</h3>
+    <pre>public void backup(int amount)</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Parser.VelocityCharStream.BeginToken">
+    </a>
+    <h3>BeginToken</h3>
+    <pre>public char BeginToken()</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Parser.VelocityCharStream.Done">
+    </a>
+    <h3>Done</h3>
+    <pre>public void Done()</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Parser.VelocityCharStream.GetImage">
+    </a>
+    <h3>GetImage</h3>
+    <pre>public string GetImage()</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Parser.VelocityCharStream.GetSuffix(System.Int32)">
+    </a>
+    <h3>GetSuffix</h3>
+    <pre>public char[] GetSuffix(int len)</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Parser.VelocityCharStream.readChar">
+    </a>
+    <h3>readChar</h3>
+    <pre>public char readChar()</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Parser.VelocityCharStream.ReInit(System.IO.TextReader,System.Int32,System.Int32,System.Int32)">
+    </a>
+    <h3>ReInit</h3>
+    <pre>public void ReInit(System.IO.TextReader dstream,
+                   int startline,
+                   int startcolumn,
+                   int buffersize)</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Parser.VelocityCharStream.ReInit(System.IO.TextReader,System.Int32,System.Int32)">
+    </a>
+    <h3>ReInit</h3>
+    <pre>public void ReInit(System.IO.TextReader dstream,
+                   int startline,
+                   int startcolumn)</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="operator-detail">
+    </a>
+    <a name="event-detail">
+    </a>
+    <hr>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td>
+                <a href="namespace-summary.html">Namespace</a> </td>
+              <td class="nav1sel"> Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV TYPE    NEXT TYPE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+      <tr class="nav2">
+        <td>SUMMARY: INNER | <a href="#field-summary">FIELD</a> | <a href="#constructor-summary">CONST</a> | <a href="#property-summary">PROP</a> | <a href="#method-summary">METHOD</a> | OP | EVENT</td>
+        <td>DETAIL: <a href="#field-detail">FIELD</a> | <a href="#constructor-detail">CONST</a> | <a href="#property-detail">PROP</a> | <a href="#method-detail">METHOD</a> | OP | EVENT</td>
+      </tr>
+    </table>
+  </body>
+</html>

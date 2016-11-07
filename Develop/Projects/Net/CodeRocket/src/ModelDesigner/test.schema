@@ -1,0 +1,551 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DatabaseSchema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Northwind" ConnectionString="Provider=SQLOLEDB;Data Source=(local);Integrated Security=SSPI;Initial Catalog=Northwind">
+  <Tables>
+    <TableSchema Name="Alphabetical list of products" Alias="AlphabeticalListOfProducts" IsActive="true" TableType="VIEW">
+      <Columns>
+        <ColumnSchema Name="CategoryID" Alias="CategoryID" NetType="System.Int32" DataType="" Length="4" IsActive="true" IsReadOnly="true" Ordinal="11" AllowNulls="false" IsUnique="false" IsAutoIncrement="true" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="3" DefaultValue="" />
+        <ColumnSchema Name="CategoryName" Alias="CategoryName" NetType="System.String" DataType="" Length="15" IsActive="true" IsReadOnly="false" Ordinal="10" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="202" DefaultValue="" />
+        <ColumnSchema Name="Discontinued" Alias="Discontinued" NetType="System.Boolean" DataType="" Length="2" IsActive="true" IsReadOnly="false" Ordinal="9" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="11" DefaultValue="" />
+        <ColumnSchema Name="ProductID" Alias="ProductID" NetType="System.Int32" DataType="" Length="4" IsActive="true" IsReadOnly="false" Ordinal="0" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="3" DefaultValue="" />
+        <ColumnSchema Name="ProductName" Alias="ProductName" NetType="System.String" DataType="" Length="40" IsActive="true" IsReadOnly="false" Ordinal="1" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="202" DefaultValue="" />
+        <ColumnSchema Name="QuantityPerUnit" Alias="QuantityPerUnit" NetType="System.String" DataType="" Length="20" IsActive="true" IsReadOnly="false" Ordinal="4" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="202" DefaultValue="" />
+        <ColumnSchema Name="ReorderLevel" Alias="ReorderLevel" NetType="System.Int16" DataType="" Length="2" IsActive="true" IsReadOnly="false" Ordinal="8" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="2" DefaultValue="" />
+        <ColumnSchema Name="SupplierID" Alias="SupplierID" NetType="System.Int32" DataType="" Length="4" IsActive="true" IsReadOnly="false" Ordinal="2" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="3" DefaultValue="" />
+        <ColumnSchema Name="UnitPrice" Alias="UnitPrice" NetType="System.Decimal" DataType="" Length="8" IsActive="true" IsReadOnly="false" Ordinal="5" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="6" DefaultValue="" />
+        <ColumnSchema Name="UnitsInStock" Alias="UnitsInStock" NetType="System.Int16" DataType="" Length="2" IsActive="true" IsReadOnly="false" Ordinal="6" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="2" DefaultValue="" />
+        <ColumnSchema Name="UnitsOnOrder" Alias="UnitsOnOrder" NetType="System.Int16" DataType="" Length="2" IsActive="true" IsReadOnly="false" Ordinal="7" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="2" DefaultValue="" />
+      </Columns>
+      <ForeignKeys />
+    </TableSchema>
+    <TableSchema Name="Categories" Alias="Categories" IsActive="true" TableType="TABLE">
+      <Columns>
+        <ColumnSchema Name="CategoryID" Alias="CategoryID" NetType="System.Int32" DataType="" Length="4" IsActive="true" IsReadOnly="true" Ordinal="0" AllowNulls="false" IsUnique="false" IsAutoIncrement="true" IsPrimaryKey="true" IsForeignKey="false" DataTypeId="3" DefaultValue="" />
+        <ColumnSchema Name="CategoryName" Alias="CategoryName" NetType="System.String" DataType="" Length="15" IsActive="true" IsReadOnly="false" Ordinal="1" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="202" DefaultValue="" />
+        <ColumnSchema Name="Description" Alias="Description" NetType="System.String" DataType="" Length="1073741823" IsActive="true" IsReadOnly="false" Ordinal="2" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="203" DefaultValue="" />
+        <ColumnSchema Name="Picture" Alias="Picture" NetType="System.Byte[]" DataType="" Length="2147483647" IsActive="true" IsReadOnly="false" Ordinal="3" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="205" DefaultValue="" />
+      </Columns>
+      <ForeignKeys>
+        <ForeignKey Name="FK_Products_Categories" ForeignTableName="Products" PrimaryTableName="Categories">
+          <Association>
+            <ForeignKeyAssociation ForeignColumnName="CategoryID" PrimaryColumnName="CategoryID" />
+          </Association>
+        </ForeignKey>
+      </ForeignKeys>
+    </TableSchema>
+    <TableSchema Name="Category Sales for 1997" Alias="CategorySalesFor1997" IsActive="true" TableType="VIEW">
+      <Columns>
+        <ColumnSchema Name="CategoryName" Alias="CategoryName" NetType="System.String" DataType="" Length="15" IsActive="true" IsReadOnly="false" Ordinal="0" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="202" DefaultValue="" />
+        <ColumnSchema Name="CategorySales" Alias="CategorySales" NetType="System.Decimal" DataType="" Length="8" IsActive="true" IsReadOnly="true" Ordinal="1" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="6" DefaultValue="" />
+      </Columns>
+      <ForeignKeys />
+    </TableSchema>
+    <TableSchema Name="Current Product List" Alias="CurrentProductList" IsActive="true" TableType="VIEW">
+      <Columns>
+        <ColumnSchema Name="ProductID" Alias="ProductID" NetType="System.Int32" DataType="" Length="4" IsActive="true" IsReadOnly="true" Ordinal="0" AllowNulls="false" IsUnique="false" IsAutoIncrement="true" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="3" DefaultValue="" />
+        <ColumnSchema Name="ProductName" Alias="ProductName" NetType="System.String" DataType="" Length="40" IsActive="true" IsReadOnly="false" Ordinal="1" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="202" DefaultValue="" />
+      </Columns>
+      <ForeignKeys />
+    </TableSchema>
+    <TableSchema Name="Customer and Suppliers by City" Alias="CustomerAndSuppliersByCity" IsActive="true" TableType="VIEW">
+      <Columns>
+        <ColumnSchema Name="City" Alias="City" NetType="System.String" DataType="" Length="15" IsActive="true" IsReadOnly="false" Ordinal="0" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="202" DefaultValue="" />
+        <ColumnSchema Name="CompanyName" Alias="CompanyName" NetType="System.String" DataType="" Length="40" IsActive="true" IsReadOnly="false" Ordinal="1" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="202" DefaultValue="" />
+        <ColumnSchema Name="ContactName" Alias="ContactName" NetType="System.String" DataType="" Length="30" IsActive="true" IsReadOnly="false" Ordinal="2" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="202" DefaultValue="" />
+        <ColumnSchema Name="Relationship" Alias="Relationship" NetType="System.String" DataType="" Length="9" IsActive="true" IsReadOnly="true" Ordinal="3" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="200" DefaultValue="" />
+      </Columns>
+      <ForeignKeys />
+    </TableSchema>
+    <TableSchema Name="CustomerCustomerDemo" Alias="CustomerCustomerDemo" IsActive="true" TableType="TABLE">
+      <Columns>
+        <ColumnSchema Name="CustomerID" Alias="CustomerID" NetType="System.String" DataType="" Length="5" IsActive="true" IsReadOnly="false" Ordinal="0" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="true" IsForeignKey="false" DataTypeId="130" DefaultValue="" />
+        <ColumnSchema Name="CustomerTypeID" Alias="CustomerTypeID" NetType="System.String" DataType="" Length="10" IsActive="true" IsReadOnly="false" Ordinal="1" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="true" IsForeignKey="false" DataTypeId="130" DefaultValue="" />
+      </Columns>
+      <ForeignKeys>
+        <ForeignKey Name="FK_CustomerCustomerDemo" ForeignTableName="CustomerCustomerDemo" PrimaryTableName="CustomerDemographics">
+          <Association>
+            <ForeignKeyAssociation ForeignColumnName="CustomerTypeID" PrimaryColumnName="CustomerTypeID" />
+          </Association>
+        </ForeignKey>
+        <ForeignKey Name="FK_CustomerCustomerDemo_Customers" ForeignTableName="CustomerCustomerDemo" PrimaryTableName="Customers">
+          <Association>
+            <ForeignKeyAssociation ForeignColumnName="CustomerID" PrimaryColumnName="CustomerID" />
+          </Association>
+        </ForeignKey>
+      </ForeignKeys>
+    </TableSchema>
+    <TableSchema Name="CustomerDemographics" Alias="CustomerDemographics" IsActive="true" TableType="TABLE">
+      <Columns>
+        <ColumnSchema Name="CustomerDesc" Alias="CustomerDesc" NetType="System.String" DataType="" Length="1073741823" IsActive="true" IsReadOnly="false" Ordinal="1" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="203" DefaultValue="" />
+        <ColumnSchema Name="CustomerTypeID" Alias="CustomerTypeID" NetType="System.String" DataType="" Length="10" IsActive="true" IsReadOnly="false" Ordinal="0" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="true" IsForeignKey="false" DataTypeId="130" DefaultValue="" />
+      </Columns>
+      <ForeignKeys>
+        <ForeignKey Name="FK_CustomerCustomerDemo" ForeignTableName="CustomerCustomerDemo" PrimaryTableName="CustomerDemographics">
+          <Association>
+            <ForeignKeyAssociation ForeignColumnName="CustomerTypeID" PrimaryColumnName="CustomerTypeID" />
+          </Association>
+        </ForeignKey>
+      </ForeignKeys>
+    </TableSchema>
+    <TableSchema Name="Customers" Alias="Customers" IsActive="true" TableType="TABLE">
+      <Columns>
+        <ColumnSchema Name="Address" Alias="Address" NetType="System.String" DataType="" Length="60" IsActive="true" IsReadOnly="false" Ordinal="4" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="202" DefaultValue="" />
+        <ColumnSchema Name="City" Alias="City" NetType="System.String" DataType="" Length="15" IsActive="true" IsReadOnly="false" Ordinal="5" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="202" DefaultValue="" />
+        <ColumnSchema Name="CompanyName" Alias="CompanyName" NetType="System.String" DataType="" Length="40" IsActive="true" IsReadOnly="false" Ordinal="1" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="202" DefaultValue="" />
+        <ColumnSchema Name="ContactName" Alias="ContactName" NetType="System.String" DataType="" Length="30" IsActive="true" IsReadOnly="false" Ordinal="2" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="202" DefaultValue="" />
+        <ColumnSchema Name="ContactTitle" Alias="ContactTitle" NetType="System.String" DataType="" Length="30" IsActive="true" IsReadOnly="false" Ordinal="3" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="202" DefaultValue="" />
+        <ColumnSchema Name="Country" Alias="Country" NetType="System.String" DataType="" Length="15" IsActive="true" IsReadOnly="false" Ordinal="8" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="202" DefaultValue="" />
+        <ColumnSchema Name="CustomerID" Alias="CustomerID" NetType="System.String" DataType="" Length="5" IsActive="true" IsReadOnly="false" Ordinal="0" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="true" IsForeignKey="false" DataTypeId="130" DefaultValue="" />
+        <ColumnSchema Name="Fax" Alias="Fax" NetType="System.String" DataType="" Length="24" IsActive="true" IsReadOnly="false" Ordinal="10" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="202" DefaultValue="" />
+        <ColumnSchema Name="Phone" Alias="Phone" NetType="System.String" DataType="" Length="24" IsActive="true" IsReadOnly="false" Ordinal="9" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="202" DefaultValue="" />
+        <ColumnSchema Name="PostalCode" Alias="PostalCode" NetType="System.String" DataType="" Length="10" IsActive="true" IsReadOnly="false" Ordinal="7" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="202" DefaultValue="" />
+        <ColumnSchema Name="Region" Alias="Region" NetType="System.String" DataType="" Length="15" IsActive="true" IsReadOnly="false" Ordinal="6" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="202" DefaultValue="" />
+      </Columns>
+      <ForeignKeys>
+        <ForeignKey Name="FK_CustomerCustomerDemo_Customers" ForeignTableName="CustomerCustomerDemo" PrimaryTableName="Customers">
+          <Association>
+            <ForeignKeyAssociation ForeignColumnName="CustomerID" PrimaryColumnName="CustomerID" />
+          </Association>
+        </ForeignKey>
+        <ForeignKey Name="FK_Orders_Customers" ForeignTableName="Orders" PrimaryTableName="Customers">
+          <Association>
+            <ForeignKeyAssociation ForeignColumnName="CustomerID" PrimaryColumnName="CustomerID" />
+          </Association>
+        </ForeignKey>
+      </ForeignKeys>
+    </TableSchema>
+    <TableSchema Name="Employees" Alias="Employees" IsActive="true" TableType="TABLE">
+      <Columns>
+        <ColumnSchema Name="Address" Alias="Address" NetType="System.String" DataType="" Length="60" IsActive="true" IsReadOnly="false" Ordinal="7" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="202" DefaultValue="" />
+        <ColumnSchema Name="BirthDate" Alias="BirthDate" NetType="System.DateTime" DataType="" Length="16" IsActive="true" IsReadOnly="false" Ordinal="5" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="135" DefaultValue="" />
+        <ColumnSchema Name="City" Alias="City" NetType="System.String" DataType="" Length="15" IsActive="true" IsReadOnly="false" Ordinal="8" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="202" DefaultValue="" />
+        <ColumnSchema Name="Country" Alias="Country" NetType="System.String" DataType="" Length="15" IsActive="true" IsReadOnly="false" Ordinal="11" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="202" DefaultValue="" />
+        <ColumnSchema Name="EmployeeID" Alias="EmployeeID" NetType="System.Int32" DataType="" Length="4" IsActive="true" IsReadOnly="true" Ordinal="0" AllowNulls="false" IsUnique="false" IsAutoIncrement="true" IsPrimaryKey="true" IsForeignKey="false" DataTypeId="3" DefaultValue="" />
+        <ColumnSchema Name="Extension" Alias="Extension" NetType="System.String" DataType="" Length="4" IsActive="true" IsReadOnly="false" Ordinal="13" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="202" DefaultValue="" />
+        <ColumnSchema Name="FirstName" Alias="FirstName" NetType="System.String" DataType="" Length="10" IsActive="true" IsReadOnly="false" Ordinal="2" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="202" DefaultValue="" />
+        <ColumnSchema Name="HireDate" Alias="HireDate" NetType="System.DateTime" DataType="" Length="16" IsActive="true" IsReadOnly="false" Ordinal="6" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="135" DefaultValue="" />
+        <ColumnSchema Name="HomePhone" Alias="HomePhone" NetType="System.String" DataType="" Length="24" IsActive="true" IsReadOnly="false" Ordinal="12" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="202" DefaultValue="" />
+        <ColumnSchema Name="LastName" Alias="LastName" NetType="System.String" DataType="" Length="20" IsActive="true" IsReadOnly="false" Ordinal="1" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="202" DefaultValue="" />
+        <ColumnSchema Name="Notes" Alias="Notes" NetType="System.String" DataType="" Length="1073741823" IsActive="true" IsReadOnly="false" Ordinal="15" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="203" DefaultValue="" />
+        <ColumnSchema Name="Photo" Alias="Photo" NetType="System.Byte[]" DataType="" Length="2147483647" IsActive="true" IsReadOnly="false" Ordinal="14" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="205" DefaultValue="" />
+        <ColumnSchema Name="PhotoPath" Alias="PhotoPath" NetType="System.String" DataType="" Length="255" IsActive="true" IsReadOnly="false" Ordinal="17" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="202" DefaultValue="" />
+        <ColumnSchema Name="PostalCode" Alias="PostalCode" NetType="System.String" DataType="" Length="10" IsActive="true" IsReadOnly="false" Ordinal="10" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="202" DefaultValue="" />
+        <ColumnSchema Name="Region" Alias="Region" NetType="System.String" DataType="" Length="15" IsActive="true" IsReadOnly="false" Ordinal="9" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="202" DefaultValue="" />
+        <ColumnSchema Name="ReportsTo" Alias="ReportsTo" NetType="System.Int32" DataType="" Length="4" IsActive="true" IsReadOnly="false" Ordinal="16" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="3" DefaultValue="" />
+        <ColumnSchema Name="Title" Alias="Title" NetType="System.String" DataType="" Length="30" IsActive="true" IsReadOnly="false" Ordinal="3" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="202" DefaultValue="" />
+        <ColumnSchema Name="TitleOfCourtesy" Alias="TitleOfCourtesy" NetType="System.String" DataType="" Length="25" IsActive="true" IsReadOnly="false" Ordinal="4" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="202" DefaultValue="" />
+      </Columns>
+      <ForeignKeys>
+        <ForeignKey Name="FK_Employees_Employees" ForeignTableName="Employees" PrimaryTableName="Employees">
+          <Association>
+            <ForeignKeyAssociation ForeignColumnName="ReportsTo" PrimaryColumnName="EmployeeID" />
+          </Association>
+        </ForeignKey>
+        <ForeignKey Name="FK_EmployeeTerritories_Employees" ForeignTableName="EmployeeTerritories" PrimaryTableName="Employees">
+          <Association>
+            <ForeignKeyAssociation ForeignColumnName="EmployeeID" PrimaryColumnName="EmployeeID" />
+          </Association>
+        </ForeignKey>
+        <ForeignKey Name="FK_Orders_Employees" ForeignTableName="Orders" PrimaryTableName="Employees">
+          <Association>
+            <ForeignKeyAssociation ForeignColumnName="EmployeeID" PrimaryColumnName="EmployeeID" />
+          </Association>
+        </ForeignKey>
+      </ForeignKeys>
+    </TableSchema>
+    <TableSchema Name="EmployeeTerritories" Alias="EmployeeTerritories" IsActive="true" TableType="TABLE">
+      <Columns>
+        <ColumnSchema Name="EmployeeID" Alias="EmployeeID" NetType="System.Int32" DataType="" Length="4" IsActive="true" IsReadOnly="false" Ordinal="0" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="true" IsForeignKey="false" DataTypeId="3" DefaultValue="" />
+        <ColumnSchema Name="TerritoryID" Alias="TerritoryID" NetType="System.String" DataType="" Length="20" IsActive="true" IsReadOnly="false" Ordinal="1" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="true" IsForeignKey="false" DataTypeId="202" DefaultValue="" />
+      </Columns>
+      <ForeignKeys>
+        <ForeignKey Name="FK_EmployeeTerritories_Employees" ForeignTableName="EmployeeTerritories" PrimaryTableName="Employees">
+          <Association>
+            <ForeignKeyAssociation ForeignColumnName="EmployeeID" PrimaryColumnName="EmployeeID" />
+          </Association>
+        </ForeignKey>
+        <ForeignKey Name="FK_EmployeeTerritories_Territories" ForeignTableName="EmployeeTerritories" PrimaryTableName="Territories">
+          <Association>
+            <ForeignKeyAssociation ForeignColumnName="TerritoryID" PrimaryColumnName="TerritoryID" />
+          </Association>
+        </ForeignKey>
+      </ForeignKeys>
+    </TableSchema>
+    <TableSchema Name="Invoices" Alias="Invoices" IsActive="true" TableType="VIEW">
+      <Columns>
+        <ColumnSchema Name="Address" Alias="Address" NetType="System.String" DataType="" Length="60" IsActive="true" IsReadOnly="false" Ordinal="8" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="202" DefaultValue="" />
+        <ColumnSchema Name="City" Alias="City" NetType="System.String" DataType="" Length="15" IsActive="true" IsReadOnly="false" Ordinal="9" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="202" DefaultValue="" />
+        <ColumnSchema Name="Country" Alias="Country" NetType="System.String" DataType="" Length="15" IsActive="true" IsReadOnly="false" Ordinal="12" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="202" DefaultValue="" />
+        <ColumnSchema Name="CustomerID" Alias="CustomerID" NetType="System.String" DataType="" Length="5" IsActive="true" IsReadOnly="false" Ordinal="29" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="130" DefaultValue="" />
+        <ColumnSchema Name="CustomerName" Alias="CustomerName" NetType="System.String" DataType="" Length="40" IsActive="true" IsReadOnly="false" Ordinal="7" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="202" DefaultValue="" />
+        <ColumnSchema Name="Discount" Alias="Discount" NetType="System.Single" DataType="" Length="4" IsActive="true" IsReadOnly="false" Ordinal="23" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="4" DefaultValue="" />
+        <ColumnSchema Name="EmployeeID" Alias="EmployeeID" NetType="System.Int32" DataType="" Length="4" IsActive="true" IsReadOnly="true" Ordinal="28" AllowNulls="false" IsUnique="false" IsAutoIncrement="true" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="3" DefaultValue="" />
+        <ColumnSchema Name="ExtendedPrice" Alias="ExtendedPrice" NetType="System.Decimal" DataType="" Length="8" IsActive="true" IsReadOnly="true" Ordinal="24" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="6" DefaultValue="" />
+        <ColumnSchema Name="Freight" Alias="Freight" NetType="System.Decimal" DataType="" Length="8" IsActive="true" IsReadOnly="false" Ordinal="25" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="6" DefaultValue="" />
+        <ColumnSchema Name="OrderDate" Alias="OrderDate" NetType="System.DateTime" DataType="" Length="16" IsActive="true" IsReadOnly="false" Ordinal="15" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="135" DefaultValue="" />
+        <ColumnSchema Name="OrderID" Alias="OrderID" NetType="System.Int32" DataType="" Length="4" IsActive="true" IsReadOnly="false" Ordinal="30" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="3" DefaultValue="" />
+        <ColumnSchema Name="PostalCode" Alias="PostalCode" NetType="System.String" DataType="" Length="10" IsActive="true" IsReadOnly="false" Ordinal="11" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="202" DefaultValue="" />
+        <ColumnSchema Name="ProductID" Alias="ProductID" NetType="System.Int32" DataType="" Length="4" IsActive="true" IsReadOnly="true" Ordinal="27" AllowNulls="false" IsUnique="false" IsAutoIncrement="true" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="3" DefaultValue="" />
+        <ColumnSchema Name="ProductName" Alias="ProductName" NetType="System.String" DataType="" Length="40" IsActive="true" IsReadOnly="false" Ordinal="20" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="202" DefaultValue="" />
+        <ColumnSchema Name="Quantity" Alias="Quantity" NetType="System.Int16" DataType="" Length="2" IsActive="true" IsReadOnly="false" Ordinal="22" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="2" DefaultValue="" />
+        <ColumnSchema Name="Region" Alias="Region" NetType="System.String" DataType="" Length="15" IsActive="true" IsReadOnly="false" Ordinal="10" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="202" DefaultValue="" />
+        <ColumnSchema Name="RequiredDate" Alias="RequiredDate" NetType="System.DateTime" DataType="" Length="16" IsActive="true" IsReadOnly="false" Ordinal="16" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="135" DefaultValue="" />
+        <ColumnSchema Name="Salesperson" Alias="Salesperson" NetType="System.String" DataType="" Length="31" IsActive="true" IsReadOnly="true" Ordinal="13" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="202" DefaultValue="" />
+        <ColumnSchema Name="ShipAddress" Alias="ShipAddress" NetType="System.String" DataType="" Length="60" IsActive="true" IsReadOnly="false" Ordinal="1" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="202" DefaultValue="" />
+        <ColumnSchema Name="ShipCity" Alias="ShipCity" NetType="System.String" DataType="" Length="15" IsActive="true" IsReadOnly="false" Ordinal="2" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="202" DefaultValue="" />
+        <ColumnSchema Name="ShipCountry" Alias="ShipCountry" NetType="System.String" DataType="" Length="15" IsActive="true" IsReadOnly="false" Ordinal="5" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="202" DefaultValue="" />
+        <ColumnSchema Name="ShipName" Alias="ShipName" NetType="System.String" DataType="" Length="40" IsActive="true" IsReadOnly="false" Ordinal="0" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="202" DefaultValue="" />
+        <ColumnSchema Name="ShippedDate" Alias="ShippedDate" NetType="System.DateTime" DataType="" Length="16" IsActive="true" IsReadOnly="false" Ordinal="17" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="135" DefaultValue="" />
+        <ColumnSchema Name="ShipperID" Alias="ShipperID" NetType="System.Int32" DataType="" Length="4" IsActive="true" IsReadOnly="true" Ordinal="26" AllowNulls="false" IsUnique="false" IsAutoIncrement="true" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="3" DefaultValue="" />
+        <ColumnSchema Name="ShipperName" Alias="ShipperName" NetType="System.String" DataType="" Length="40" IsActive="true" IsReadOnly="false" Ordinal="18" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="202" DefaultValue="" />
+        <ColumnSchema Name="ShipPostalCode" Alias="ShipPostalCode" NetType="System.String" DataType="" Length="10" IsActive="true" IsReadOnly="false" Ordinal="4" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="202" DefaultValue="" />
+        <ColumnSchema Name="ShipRegion" Alias="ShipRegion" NetType="System.String" DataType="" Length="15" IsActive="true" IsReadOnly="false" Ordinal="3" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="202" DefaultValue="" />
+        <ColumnSchema Name="UnitPrice" Alias="UnitPrice" NetType="System.Decimal" DataType="" Length="8" IsActive="true" IsReadOnly="false" Ordinal="21" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="6" DefaultValue="" />
+      </Columns>
+      <ForeignKeys />
+    </TableSchema>
+    <TableSchema Name="Order Details" Alias="OrderDetails" IsActive="true" TableType="TABLE">
+      <Columns>
+        <ColumnSchema Name="Discount" Alias="Discount" NetType="System.Single" DataType="" Length="4" IsActive="true" IsReadOnly="false" Ordinal="4" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="4" DefaultValue="" />
+        <ColumnSchema Name="OrderID" Alias="OrderID" NetType="System.Int32" DataType="" Length="4" IsActive="true" IsReadOnly="false" Ordinal="0" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="true" IsForeignKey="false" DataTypeId="3" DefaultValue="" />
+        <ColumnSchema Name="ProductID" Alias="ProductID" NetType="System.Int32" DataType="" Length="4" IsActive="true" IsReadOnly="false" Ordinal="1" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="true" IsForeignKey="false" DataTypeId="3" DefaultValue="" />
+        <ColumnSchema Name="Quantity" Alias="Quantity" NetType="System.Int16" DataType="" Length="2" IsActive="true" IsReadOnly="false" Ordinal="3" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="2" DefaultValue="" />
+        <ColumnSchema Name="UnitPrice" Alias="UnitPrice" NetType="System.Decimal" DataType="" Length="8" IsActive="true" IsReadOnly="false" Ordinal="2" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="6" DefaultValue="" />
+      </Columns>
+      <ForeignKeys>
+        <ForeignKey Name="FK_Order_Details_Orders" ForeignTableName="Order Details" PrimaryTableName="Orders">
+          <Association>
+            <ForeignKeyAssociation ForeignColumnName="OrderID" PrimaryColumnName="OrderID" />
+          </Association>
+        </ForeignKey>
+        <ForeignKey Name="FK_Order_Details_Products" ForeignTableName="Order Details" PrimaryTableName="Products">
+          <Association>
+            <ForeignKeyAssociation ForeignColumnName="ProductID" PrimaryColumnName="ProductID" />
+          </Association>
+        </ForeignKey>
+      </ForeignKeys>
+    </TableSchema>
+    <TableSchema Name="Order Details Extended" Alias="OrderDetailsExtended" IsActive="true" TableType="VIEW">
+      <Columns>
+        <ColumnSchema Name="Discount" Alias="Discount" NetType="System.Single" DataType="" Length="4" IsActive="true" IsReadOnly="false" Ordinal="5" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="4" DefaultValue="" />
+        <ColumnSchema Name="ExtendedPrice" Alias="ExtendedPrice" NetType="System.Decimal" DataType="" Length="8" IsActive="true" IsReadOnly="true" Ordinal="6" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="6" DefaultValue="" />
+        <ColumnSchema Name="OrderID" Alias="OrderID" NetType="System.Int32" DataType="" Length="4" IsActive="true" IsReadOnly="false" Ordinal="0" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="3" DefaultValue="" />
+        <ColumnSchema Name="ProductID" Alias="ProductID" NetType="System.Int32" DataType="" Length="4" IsActive="true" IsReadOnly="true" Ordinal="7" AllowNulls="false" IsUnique="false" IsAutoIncrement="true" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="3" DefaultValue="" />
+        <ColumnSchema Name="ProductName" Alias="ProductName" NetType="System.String" DataType="" Length="40" IsActive="true" IsReadOnly="false" Ordinal="2" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="202" DefaultValue="" />
+        <ColumnSchema Name="Quantity" Alias="Quantity" NetType="System.Int16" DataType="" Length="2" IsActive="true" IsReadOnly="false" Ordinal="4" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="2" DefaultValue="" />
+        <ColumnSchema Name="UnitPrice" Alias="UnitPrice" NetType="System.Decimal" DataType="" Length="8" IsActive="true" IsReadOnly="false" Ordinal="3" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="6" DefaultValue="" />
+      </Columns>
+      <ForeignKeys />
+    </TableSchema>
+    <TableSchema Name="Order Subtotals" Alias="OrderSubtotals" IsActive="true" TableType="VIEW">
+      <Columns>
+        <ColumnSchema Name="OrderID" Alias="OrderID" NetType="System.Int32" DataType="" Length="4" IsActive="true" IsReadOnly="false" Ordinal="0" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="3" DefaultValue="" />
+        <ColumnSchema Name="Subtotal" Alias="Subtotal" NetType="System.Decimal" DataType="" Length="8" IsActive="true" IsReadOnly="true" Ordinal="1" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="6" DefaultValue="" />
+      </Columns>
+      <ForeignKeys />
+    </TableSchema>
+    <TableSchema Name="Orders" Alias="Orders" IsActive="true" TableType="TABLE">
+      <Columns>
+        <ColumnSchema Name="CustomerID" Alias="CustomerID" NetType="System.String" DataType="" Length="5" IsActive="true" IsReadOnly="false" Ordinal="1" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="130" DefaultValue="" />
+        <ColumnSchema Name="EmployeeID" Alias="EmployeeID" NetType="System.Int32" DataType="" Length="4" IsActive="true" IsReadOnly="false" Ordinal="2" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="3" DefaultValue="" />
+        <ColumnSchema Name="Freight" Alias="Freight" NetType="System.Decimal" DataType="" Length="8" IsActive="true" IsReadOnly="false" Ordinal="7" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="6" DefaultValue="" />
+        <ColumnSchema Name="OrderDate" Alias="OrderDate" NetType="System.DateTime" DataType="" Length="16" IsActive="true" IsReadOnly="false" Ordinal="3" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="135" DefaultValue="" />
+        <ColumnSchema Name="OrderID" Alias="OrderID" NetType="System.Int32" DataType="" Length="4" IsActive="true" IsReadOnly="true" Ordinal="0" AllowNulls="false" IsUnique="false" IsAutoIncrement="true" IsPrimaryKey="true" IsForeignKey="false" DataTypeId="3" DefaultValue="" />
+        <ColumnSchema Name="RequiredDate" Alias="RequiredDate" NetType="System.DateTime" DataType="" Length="16" IsActive="true" IsReadOnly="false" Ordinal="4" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="135" DefaultValue="" />
+        <ColumnSchema Name="ShipAddress" Alias="ShipAddress" NetType="System.String" DataType="" Length="60" IsActive="true" IsReadOnly="false" Ordinal="9" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="202" DefaultValue="" />
+        <ColumnSchema Name="ShipCity" Alias="ShipCity" NetType="System.String" DataType="" Length="15" IsActive="true" IsReadOnly="false" Ordinal="10" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="202" DefaultValue="" />
+        <ColumnSchema Name="ShipCountry" Alias="ShipCountry" NetType="System.String" DataType="" Length="15" IsActive="true" IsReadOnly="false" Ordinal="13" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="202" DefaultValue="" />
+        <ColumnSchema Name="ShipName" Alias="ShipName" NetType="System.String" DataType="" Length="40" IsActive="true" IsReadOnly="false" Ordinal="8" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="202" DefaultValue="" />
+        <ColumnSchema Name="ShippedDate" Alias="ShippedDate" NetType="System.DateTime" DataType="" Length="16" IsActive="true" IsReadOnly="false" Ordinal="5" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="135" DefaultValue="" />
+        <ColumnSchema Name="ShipPostalCode" Alias="ShipPostalCode" NetType="System.String" DataType="" Length="10" IsActive="true" IsReadOnly="false" Ordinal="12" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="202" DefaultValue="" />
+        <ColumnSchema Name="ShipRegion" Alias="ShipRegion" NetType="System.String" DataType="" Length="15" IsActive="true" IsReadOnly="false" Ordinal="11" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="202" DefaultValue="" />
+        <ColumnSchema Name="ShipVia" Alias="ShipVia" NetType="System.Int32" DataType="" Length="4" IsActive="true" IsReadOnly="false" Ordinal="6" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="3" DefaultValue="" />
+      </Columns>
+      <ForeignKeys>
+        <ForeignKey Name="FK_Order_Details_Orders" ForeignTableName="Order Details" PrimaryTableName="Orders">
+          <Association>
+            <ForeignKeyAssociation ForeignColumnName="OrderID" PrimaryColumnName="OrderID" />
+          </Association>
+        </ForeignKey>
+        <ForeignKey Name="FK_Orders_Customers" ForeignTableName="Orders" PrimaryTableName="Customers">
+          <Association>
+            <ForeignKeyAssociation ForeignColumnName="CustomerID" PrimaryColumnName="CustomerID" />
+          </Association>
+        </ForeignKey>
+        <ForeignKey Name="FK_Orders_Employees" ForeignTableName="Orders" PrimaryTableName="Employees">
+          <Association>
+            <ForeignKeyAssociation ForeignColumnName="EmployeeID" PrimaryColumnName="EmployeeID" />
+          </Association>
+        </ForeignKey>
+        <ForeignKey Name="FK_Orders_Shippers" ForeignTableName="Orders" PrimaryTableName="Shippers">
+          <Association>
+            <ForeignKeyAssociation ForeignColumnName="ShipVia" PrimaryColumnName="ShipperID" />
+          </Association>
+        </ForeignKey>
+      </ForeignKeys>
+    </TableSchema>
+    <TableSchema Name="Orders Qry" Alias="OrdersQry" IsActive="true" TableType="VIEW">
+      <Columns>
+        <ColumnSchema Name="Address" Alias="Address" NetType="System.String" DataType="" Length="60" IsActive="true" IsReadOnly="false" Ordinal="15" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="202" DefaultValue="" />
+        <ColumnSchema Name="City" Alias="City" NetType="System.String" DataType="" Length="15" IsActive="true" IsReadOnly="false" Ordinal="16" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="202" DefaultValue="" />
+        <ColumnSchema Name="CompanyName" Alias="CompanyName" NetType="System.String" DataType="" Length="40" IsActive="true" IsReadOnly="false" Ordinal="14" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="202" DefaultValue="" />
+        <ColumnSchema Name="Country" Alias="Country" NetType="System.String" DataType="" Length="15" IsActive="true" IsReadOnly="false" Ordinal="19" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="202" DefaultValue="" />
+        <ColumnSchema Name="CustomerID" Alias="CustomerID" NetType="System.String" DataType="" Length="5" IsActive="true" IsReadOnly="false" Ordinal="20" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="130" DefaultValue="" />
+        <ColumnSchema Name="EmployeeID" Alias="EmployeeID" NetType="System.Int32" DataType="" Length="4" IsActive="true" IsReadOnly="false" Ordinal="2" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="3" DefaultValue="" />
+        <ColumnSchema Name="Freight" Alias="Freight" NetType="System.Decimal" DataType="" Length="8" IsActive="true" IsReadOnly="false" Ordinal="7" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="6" DefaultValue="" />
+        <ColumnSchema Name="OrderDate" Alias="OrderDate" NetType="System.DateTime" DataType="" Length="16" IsActive="true" IsReadOnly="false" Ordinal="3" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="135" DefaultValue="" />
+        <ColumnSchema Name="OrderID" Alias="OrderID" NetType="System.Int32" DataType="" Length="4" IsActive="true" IsReadOnly="false" Ordinal="0" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="3" DefaultValue="" />
+        <ColumnSchema Name="PostalCode" Alias="PostalCode" NetType="System.String" DataType="" Length="10" IsActive="true" IsReadOnly="false" Ordinal="18" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="202" DefaultValue="" />
+        <ColumnSchema Name="Region" Alias="Region" NetType="System.String" DataType="" Length="15" IsActive="true" IsReadOnly="false" Ordinal="17" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="202" DefaultValue="" />
+        <ColumnSchema Name="RequiredDate" Alias="RequiredDate" NetType="System.DateTime" DataType="" Length="16" IsActive="true" IsReadOnly="false" Ordinal="4" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="135" DefaultValue="" />
+        <ColumnSchema Name="ShipAddress" Alias="ShipAddress" NetType="System.String" DataType="" Length="60" IsActive="true" IsReadOnly="false" Ordinal="9" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="202" DefaultValue="" />
+        <ColumnSchema Name="ShipCity" Alias="ShipCity" NetType="System.String" DataType="" Length="15" IsActive="true" IsReadOnly="false" Ordinal="10" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="202" DefaultValue="" />
+        <ColumnSchema Name="ShipCountry" Alias="ShipCountry" NetType="System.String" DataType="" Length="15" IsActive="true" IsReadOnly="false" Ordinal="13" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="202" DefaultValue="" />
+        <ColumnSchema Name="ShipName" Alias="ShipName" NetType="System.String" DataType="" Length="40" IsActive="true" IsReadOnly="false" Ordinal="8" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="202" DefaultValue="" />
+        <ColumnSchema Name="ShippedDate" Alias="ShippedDate" NetType="System.DateTime" DataType="" Length="16" IsActive="true" IsReadOnly="false" Ordinal="5" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="135" DefaultValue="" />
+        <ColumnSchema Name="ShipPostalCode" Alias="ShipPostalCode" NetType="System.String" DataType="" Length="10" IsActive="true" IsReadOnly="false" Ordinal="12" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="202" DefaultValue="" />
+        <ColumnSchema Name="ShipRegion" Alias="ShipRegion" NetType="System.String" DataType="" Length="15" IsActive="true" IsReadOnly="false" Ordinal="11" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="202" DefaultValue="" />
+        <ColumnSchema Name="ShipVia" Alias="ShipVia" NetType="System.Int32" DataType="" Length="4" IsActive="true" IsReadOnly="false" Ordinal="6" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="3" DefaultValue="" />
+      </Columns>
+      <ForeignKeys />
+    </TableSchema>
+    <TableSchema Name="Product Sales for 1997" Alias="ProductSalesFor1997" IsActive="true" TableType="VIEW">
+      <Columns>
+        <ColumnSchema Name="CategoryName" Alias="CategoryName" NetType="System.String" DataType="" Length="15" IsActive="true" IsReadOnly="false" Ordinal="0" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="202" DefaultValue="" />
+        <ColumnSchema Name="ProductName" Alias="ProductName" NetType="System.String" DataType="" Length="40" IsActive="true" IsReadOnly="false" Ordinal="1" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="202" DefaultValue="" />
+        <ColumnSchema Name="ProductSales" Alias="ProductSales" NetType="System.Decimal" DataType="" Length="8" IsActive="true" IsReadOnly="true" Ordinal="2" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="6" DefaultValue="" />
+      </Columns>
+      <ForeignKeys />
+    </TableSchema>
+    <TableSchema Name="Products" Alias="Products" IsActive="true" TableType="TABLE">
+      <Columns>
+        <ColumnSchema Name="CategoryID" Alias="CategoryID" NetType="System.Int32" DataType="" Length="4" IsActive="true" IsReadOnly="false" Ordinal="3" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="3" DefaultValue="" />
+        <ColumnSchema Name="Discontinued" Alias="Discontinued" NetType="System.Boolean" DataType="" Length="2" IsActive="true" IsReadOnly="false" Ordinal="9" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="11" DefaultValue="" />
+        <ColumnSchema Name="ProductID" Alias="ProductID" NetType="System.Int32" DataType="" Length="4" IsActive="true" IsReadOnly="true" Ordinal="0" AllowNulls="false" IsUnique="false" IsAutoIncrement="true" IsPrimaryKey="true" IsForeignKey="false" DataTypeId="3" DefaultValue="" />
+        <ColumnSchema Name="ProductName" Alias="ProductName" NetType="System.String" DataType="" Length="40" IsActive="true" IsReadOnly="false" Ordinal="1" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="202" DefaultValue="" />
+        <ColumnSchema Name="QuantityPerUnit" Alias="QuantityPerUnit" NetType="System.String" DataType="" Length="20" IsActive="true" IsReadOnly="false" Ordinal="4" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="202" DefaultValue="" />
+        <ColumnSchema Name="ReorderLevel" Alias="ReorderLevel" NetType="System.Int16" DataType="" Length="2" IsActive="true" IsReadOnly="false" Ordinal="8" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="2" DefaultValue="" />
+        <ColumnSchema Name="SupplierID" Alias="SupplierID" NetType="System.Int32" DataType="" Length="4" IsActive="true" IsReadOnly="false" Ordinal="2" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="3" DefaultValue="" />
+        <ColumnSchema Name="UnitPrice" Alias="UnitPrice" NetType="System.Decimal" DataType="" Length="8" IsActive="true" IsReadOnly="false" Ordinal="5" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="6" DefaultValue="" />
+        <ColumnSchema Name="UnitsInStock" Alias="UnitsInStock" NetType="System.Int16" DataType="" Length="2" IsActive="true" IsReadOnly="false" Ordinal="6" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="2" DefaultValue="" />
+        <ColumnSchema Name="UnitsOnOrder" Alias="UnitsOnOrder" NetType="System.Int16" DataType="" Length="2" IsActive="true" IsReadOnly="false" Ordinal="7" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="2" DefaultValue="" />
+      </Columns>
+      <ForeignKeys>
+        <ForeignKey Name="FK_Order_Details_Products" ForeignTableName="Order Details" PrimaryTableName="Products">
+          <Association>
+            <ForeignKeyAssociation ForeignColumnName="ProductID" PrimaryColumnName="ProductID" />
+          </Association>
+        </ForeignKey>
+        <ForeignKey Name="FK_Products_Categories" ForeignTableName="Products" PrimaryTableName="Categories">
+          <Association>
+            <ForeignKeyAssociation ForeignColumnName="CategoryID" PrimaryColumnName="CategoryID" />
+          </Association>
+        </ForeignKey>
+        <ForeignKey Name="FK_Products_Suppliers" ForeignTableName="Products" PrimaryTableName="Suppliers">
+          <Association>
+            <ForeignKeyAssociation ForeignColumnName="SupplierID" PrimaryColumnName="SupplierID" />
+          </Association>
+        </ForeignKey>
+      </ForeignKeys>
+    </TableSchema>
+    <TableSchema Name="Products Above Average Price" Alias="ProductsAboveAveragePrice" IsActive="true" TableType="VIEW">
+      <Columns>
+        <ColumnSchema Name="ProductID" Alias="ProductID" NetType="System.Int32" DataType="" Length="4" IsActive="true" IsReadOnly="true" Ordinal="2" AllowNulls="false" IsUnique="false" IsAutoIncrement="true" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="3" DefaultValue="" />
+        <ColumnSchema Name="ProductName" Alias="ProductName" NetType="System.String" DataType="" Length="40" IsActive="true" IsReadOnly="false" Ordinal="0" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="202" DefaultValue="" />
+        <ColumnSchema Name="UnitPrice" Alias="UnitPrice" NetType="System.Decimal" DataType="" Length="8" IsActive="true" IsReadOnly="false" Ordinal="1" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="6" DefaultValue="" />
+      </Columns>
+      <ForeignKeys />
+    </TableSchema>
+    <TableSchema Name="Products by Category" Alias="ProductsByCategory" IsActive="true" TableType="VIEW">
+      <Columns>
+        <ColumnSchema Name="CategoryID" Alias="CategoryID" NetType="System.Int32" DataType="" Length="4" IsActive="true" IsReadOnly="true" Ordinal="5" AllowNulls="false" IsUnique="false" IsAutoIncrement="true" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="3" DefaultValue="" />
+        <ColumnSchema Name="CategoryName" Alias="CategoryName" NetType="System.String" DataType="" Length="15" IsActive="true" IsReadOnly="false" Ordinal="0" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="202" DefaultValue="" />
+        <ColumnSchema Name="Discontinued" Alias="Discontinued" NetType="System.Boolean" DataType="" Length="2" IsActive="true" IsReadOnly="false" Ordinal="4" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="11" DefaultValue="" />
+        <ColumnSchema Name="ProductID" Alias="ProductID" NetType="System.Int32" DataType="" Length="4" IsActive="true" IsReadOnly="true" Ordinal="6" AllowNulls="false" IsUnique="false" IsAutoIncrement="true" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="3" DefaultValue="" />
+        <ColumnSchema Name="ProductName" Alias="ProductName" NetType="System.String" DataType="" Length="40" IsActive="true" IsReadOnly="false" Ordinal="1" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="202" DefaultValue="" />
+        <ColumnSchema Name="QuantityPerUnit" Alias="QuantityPerUnit" NetType="System.String" DataType="" Length="20" IsActive="true" IsReadOnly="false" Ordinal="2" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="202" DefaultValue="" />
+        <ColumnSchema Name="UnitsInStock" Alias="UnitsInStock" NetType="System.Int16" DataType="" Length="2" IsActive="true" IsReadOnly="false" Ordinal="3" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="2" DefaultValue="" />
+      </Columns>
+      <ForeignKeys />
+    </TableSchema>
+    <TableSchema Name="Quarterly Orders" Alias="QuarterlyOrders" IsActive="true" TableType="VIEW">
+      <Columns>
+        <ColumnSchema Name="City" Alias="City" NetType="System.String" DataType="" Length="15" IsActive="true" IsReadOnly="false" Ordinal="2" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="202" DefaultValue="" />
+        <ColumnSchema Name="CompanyName" Alias="CompanyName" NetType="System.String" DataType="" Length="40" IsActive="true" IsReadOnly="false" Ordinal="1" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="202" DefaultValue="" />
+        <ColumnSchema Name="Country" Alias="Country" NetType="System.String" DataType="" Length="15" IsActive="true" IsReadOnly="false" Ordinal="3" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="202" DefaultValue="" />
+        <ColumnSchema Name="CustomerID" Alias="CustomerID" NetType="System.String" DataType="" Length="5" IsActive="true" IsReadOnly="false" Ordinal="0" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="130" DefaultValue="" />
+      </Columns>
+      <ForeignKeys />
+    </TableSchema>
+    <TableSchema Name="Region" Alias="Region" IsActive="true" TableType="TABLE">
+      <Columns>
+        <ColumnSchema Name="RegionDescription" Alias="RegionDescription" NetType="System.String" DataType="" Length="50" IsActive="true" IsReadOnly="false" Ordinal="1" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="130" DefaultValue="" />
+        <ColumnSchema Name="RegionID" Alias="RegionID" NetType="System.Int32" DataType="" Length="4" IsActive="true" IsReadOnly="false" Ordinal="0" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="true" IsForeignKey="false" DataTypeId="3" DefaultValue="" />
+      </Columns>
+      <ForeignKeys>
+        <ForeignKey Name="FK_Territories_Region" ForeignTableName="Territories" PrimaryTableName="Region">
+          <Association>
+            <ForeignKeyAssociation ForeignColumnName="RegionID" PrimaryColumnName="RegionID" />
+          </Association>
+        </ForeignKey>
+      </ForeignKeys>
+    </TableSchema>
+    <TableSchema Name="Sales by Category" Alias="SalesByCategory" IsActive="true" TableType="VIEW">
+      <Columns>
+        <ColumnSchema Name="CategoryID" Alias="CategoryID" NetType="System.Int32" DataType="" Length="4" IsActive="true" IsReadOnly="false" Ordinal="0" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="3" DefaultValue="" />
+        <ColumnSchema Name="CategoryName" Alias="CategoryName" NetType="System.String" DataType="" Length="15" IsActive="true" IsReadOnly="false" Ordinal="1" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="202" DefaultValue="" />
+        <ColumnSchema Name="ProductName" Alias="ProductName" NetType="System.String" DataType="" Length="40" IsActive="true" IsReadOnly="false" Ordinal="2" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="202" DefaultValue="" />
+        <ColumnSchema Name="ProductSales" Alias="ProductSales" NetType="System.Decimal" DataType="" Length="8" IsActive="true" IsReadOnly="true" Ordinal="3" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="6" DefaultValue="" />
+      </Columns>
+      <ForeignKeys />
+    </TableSchema>
+    <TableSchema Name="Sales Totals by Amount" Alias="SalesTotalsByAmount" IsActive="true" TableType="VIEW">
+      <Columns>
+        <ColumnSchema Name="CompanyName" Alias="CompanyName" NetType="System.String" DataType="" Length="40" IsActive="true" IsReadOnly="false" Ordinal="2" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="202" DefaultValue="" />
+        <ColumnSchema Name="CustomerID" Alias="CustomerID" NetType="System.String" DataType="" Length="5" IsActive="true" IsReadOnly="false" Ordinal="4" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="130" DefaultValue="" />
+        <ColumnSchema Name="OrderID" Alias="OrderID" NetType="System.Int32" DataType="" Length="4" IsActive="true" IsReadOnly="false" Ordinal="1" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="3" DefaultValue="" />
+        <ColumnSchema Name="SaleAmount" Alias="SaleAmount" NetType="System.Decimal" DataType="" Length="8" IsActive="true" IsReadOnly="true" Ordinal="0" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="6" DefaultValue="" />
+        <ColumnSchema Name="ShippedDate" Alias="ShippedDate" NetType="System.DateTime" DataType="" Length="16" IsActive="true" IsReadOnly="false" Ordinal="3" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="135" DefaultValue="" />
+      </Columns>
+      <ForeignKeys />
+    </TableSchema>
+    <TableSchema Name="Shippers" Alias="Shippers" IsActive="true" TableType="TABLE">
+      <Columns>
+        <ColumnSchema Name="CompanyName" Alias="CompanyName" NetType="System.String" DataType="" Length="40" IsActive="true" IsReadOnly="false" Ordinal="1" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="202" DefaultValue="" />
+        <ColumnSchema Name="Phone" Alias="Phone" NetType="System.String" DataType="" Length="24" IsActive="true" IsReadOnly="false" Ordinal="2" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="202" DefaultValue="" />
+        <ColumnSchema Name="ShipperID" Alias="ShipperID" NetType="System.Int32" DataType="" Length="4" IsActive="true" IsReadOnly="true" Ordinal="0" AllowNulls="false" IsUnique="false" IsAutoIncrement="true" IsPrimaryKey="true" IsForeignKey="false" DataTypeId="3" DefaultValue="" />
+      </Columns>
+      <ForeignKeys>
+        <ForeignKey Name="FK_Orders_Shippers" ForeignTableName="Orders" PrimaryTableName="Shippers">
+          <Association>
+            <ForeignKeyAssociation ForeignColumnName="ShipVia" PrimaryColumnName="ShipperID" />
+          </Association>
+        </ForeignKey>
+      </ForeignKeys>
+    </TableSchema>
+    <TableSchema Name="Summary of Sales by Quarter" Alias="SummaryOfSalesByQuarter" IsActive="true" TableType="VIEW">
+      <Columns>
+        <ColumnSchema Name="OrderID" Alias="OrderID" NetType="System.Int32" DataType="" Length="4" IsActive="true" IsReadOnly="false" Ordinal="1" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="3" DefaultValue="" />
+        <ColumnSchema Name="ShippedDate" Alias="ShippedDate" NetType="System.DateTime" DataType="" Length="16" IsActive="true" IsReadOnly="false" Ordinal="0" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="135" DefaultValue="" />
+        <ColumnSchema Name="Subtotal" Alias="Subtotal" NetType="System.Decimal" DataType="" Length="8" IsActive="true" IsReadOnly="true" Ordinal="2" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="6" DefaultValue="" />
+      </Columns>
+      <ForeignKeys />
+    </TableSchema>
+    <TableSchema Name="Summary of Sales by Year" Alias="SummaryOfSalesByYear" IsActive="true" TableType="VIEW">
+      <Columns>
+        <ColumnSchema Name="OrderID" Alias="OrderID" NetType="System.Int32" DataType="" Length="4" IsActive="true" IsReadOnly="false" Ordinal="1" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="3" DefaultValue="" />
+        <ColumnSchema Name="ShippedDate" Alias="ShippedDate" NetType="System.DateTime" DataType="" Length="16" IsActive="true" IsReadOnly="false" Ordinal="0" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="135" DefaultValue="" />
+        <ColumnSchema Name="Subtotal" Alias="Subtotal" NetType="System.Decimal" DataType="" Length="8" IsActive="true" IsReadOnly="true" Ordinal="2" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="6" DefaultValue="" />
+      </Columns>
+      <ForeignKeys />
+    </TableSchema>
+    <TableSchema Name="Suppliers" Alias="Suppliers" IsActive="true" TableType="TABLE">
+      <Columns>
+        <ColumnSchema Name="Address" Alias="Address" NetType="System.String" DataType="" Length="60" IsActive="true" IsReadOnly="false" Ordinal="4" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="202" DefaultValue="" />
+        <ColumnSchema Name="City" Alias="City" NetType="System.String" DataType="" Length="15" IsActive="true" IsReadOnly="false" Ordinal="5" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="202" DefaultValue="" />
+        <ColumnSchema Name="CompanyName" Alias="CompanyName" NetType="System.String" DataType="" Length="40" IsActive="true" IsReadOnly="false" Ordinal="1" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="202" DefaultValue="" />
+        <ColumnSchema Name="ContactName" Alias="ContactName" NetType="System.String" DataType="" Length="30" IsActive="true" IsReadOnly="false" Ordinal="2" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="202" DefaultValue="" />
+        <ColumnSchema Name="ContactTitle" Alias="ContactTitle" NetType="System.String" DataType="" Length="30" IsActive="true" IsReadOnly="false" Ordinal="3" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="202" DefaultValue="" />
+        <ColumnSchema Name="Country" Alias="Country" NetType="System.String" DataType="" Length="15" IsActive="true" IsReadOnly="false" Ordinal="8" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="202" DefaultValue="" />
+        <ColumnSchema Name="Fax" Alias="Fax" NetType="System.String" DataType="" Length="24" IsActive="true" IsReadOnly="false" Ordinal="10" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="202" DefaultValue="" />
+        <ColumnSchema Name="HomePage" Alias="HomePage" NetType="System.String" DataType="" Length="1073741823" IsActive="true" IsReadOnly="false" Ordinal="11" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="203" DefaultValue="" />
+        <ColumnSchema Name="Phone" Alias="Phone" NetType="System.String" DataType="" Length="24" IsActive="true" IsReadOnly="false" Ordinal="9" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="202" DefaultValue="" />
+        <ColumnSchema Name="PostalCode" Alias="PostalCode" NetType="System.String" DataType="" Length="10" IsActive="true" IsReadOnly="false" Ordinal="7" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="202" DefaultValue="" />
+        <ColumnSchema Name="Region" Alias="Region" NetType="System.String" DataType="" Length="15" IsActive="true" IsReadOnly="false" Ordinal="6" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="202" DefaultValue="" />
+        <ColumnSchema Name="SupplierID" Alias="SupplierID" NetType="System.Int32" DataType="" Length="4" IsActive="true" IsReadOnly="true" Ordinal="0" AllowNulls="false" IsUnique="false" IsAutoIncrement="true" IsPrimaryKey="true" IsForeignKey="false" DataTypeId="3" DefaultValue="" />
+      </Columns>
+      <ForeignKeys>
+        <ForeignKey Name="FK_Products_Suppliers" ForeignTableName="Products" PrimaryTableName="Suppliers">
+          <Association>
+            <ForeignKeyAssociation ForeignColumnName="SupplierID" PrimaryColumnName="SupplierID" />
+          </Association>
+        </ForeignKey>
+      </ForeignKeys>
+    </TableSchema>
+    <TableSchema Name="Territories" Alias="Territories" IsActive="true" TableType="TABLE">
+      <Columns>
+        <ColumnSchema Name="RegionID" Alias="RegionID" NetType="System.Int32" DataType="" Length="4" IsActive="true" IsReadOnly="false" Ordinal="2" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="3" DefaultValue="" />
+        <ColumnSchema Name="TerritoryDescription" Alias="TerritoryDescription" NetType="System.String" DataType="" Length="50" IsActive="true" IsReadOnly="false" Ordinal="1" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="130" DefaultValue="" />
+        <ColumnSchema Name="TerritoryID" Alias="TerritoryID" NetType="System.String" DataType="" Length="20" IsActive="true" IsReadOnly="false" Ordinal="0" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="true" IsForeignKey="false" DataTypeId="202" DefaultValue="" />
+      </Columns>
+      <ForeignKeys>
+        <ForeignKey Name="FK_EmployeeTerritories_Territories" ForeignTableName="EmployeeTerritories" PrimaryTableName="Territories">
+          <Association>
+            <ForeignKeyAssociation ForeignColumnName="TerritoryID" PrimaryColumnName="TerritoryID" />
+          </Association>
+        </ForeignKey>
+        <ForeignKey Name="FK_Territories_Region" ForeignTableName="Territories" PrimaryTableName="Region">
+          <Association>
+            <ForeignKeyAssociation ForeignColumnName="RegionID" PrimaryColumnName="RegionID" />
+          </Association>
+        </ForeignKey>
+      </ForeignKeys>
+    </TableSchema>
+  </Tables>
+  <ForeignKeys>
+    <ForeignKey Name="FK_CustomerCustomerDemo" ForeignTableName="CustomerCustomerDemo" PrimaryTableName="CustomerDemographics">
+      <Association>
+        <ForeignKeyAssociation ForeignColumnName="CustomerTypeID" PrimaryColumnName="CustomerTypeID" />
+      </Association>
+    </ForeignKey>
+    <ForeignKey Name="FK_CustomerCustomerDemo_Customers" ForeignTableName="CustomerCustomerDemo" PrimaryTableName="Customers">
+      <Association>
+        <ForeignKeyAssociation ForeignColumnName="CustomerID" PrimaryColumnName="CustomerID" />
+      </Association>
+    </ForeignKey>
+    <ForeignKey Name="FK_Employees_Employees" ForeignTableName="Employees" PrimaryTableName="Employees">
+      <Association>
+        <ForeignKeyAssociation ForeignColumnName="ReportsTo" PrimaryColumnName="EmployeeID" />
+      </Association>
+    </ForeignKey>
+    <ForeignKey Name="FK_EmployeeTerritories_Employees" ForeignTableName="EmployeeTerritories" PrimaryTableName="Employees">
+      <Association>
+        <ForeignKeyAssociation ForeignColumnName="EmployeeID" PrimaryColumnName="EmployeeID" />
+      </Association>
+    </ForeignKey>
+    <ForeignKey Name="FK_EmployeeTerritories_Territories" ForeignTableName="EmployeeTerritories" PrimaryTableName="Territories">
+      <Association>
+        <ForeignKeyAssociation ForeignColumnName="TerritoryID" PrimaryColumnName="TerritoryID" />
+      </Association>
+    </ForeignKey>
+    <ForeignKey Name="FK_Order_Details_Orders" ForeignTableName="Order Details" PrimaryTableName="Orders">
+      <Association>
+        <ForeignKeyAssociation ForeignColumnName="OrderID" PrimaryColumnName="OrderID" />
+      </Association>
+    </ForeignKey>
+    <ForeignKey Name="FK_Order_Details_Products" ForeignTableName="Order Details" PrimaryTableName="Products">
+      <Association>
+        <ForeignKeyAssociation ForeignColumnName="ProductID" PrimaryColumnName="ProductID" />
+      </Association>
+    </ForeignKey>
+    <ForeignKey Name="FK_Orders_Customers" ForeignTableName="Orders" PrimaryTableName="Customers">
+      <Association>
+        <ForeignKeyAssociation ForeignColumnName="CustomerID" PrimaryColumnName="CustomerID" />
+      </Association>
+    </ForeignKey>
+    <ForeignKey Name="FK_Orders_Employees" ForeignTableName="Orders" PrimaryTableName="Employees">
+      <Association>
+        <ForeignKeyAssociation ForeignColumnName="EmployeeID" PrimaryColumnName="EmployeeID" />
+      </Association>
+    </ForeignKey>
+    <ForeignKey Name="FK_Orders_Shippers" ForeignTableName="Orders" PrimaryTableName="Shippers">
+      <Association>
+        <ForeignKeyAssociation ForeignColumnName="ShipVia" PrimaryColumnName="ShipperID" />
+      </Association>
+    </ForeignKey>
+    <ForeignKey Name="FK_Products_Categories" ForeignTableName="Products" PrimaryTableName="Categories">
+      <Association>
+        <ForeignKeyAssociation ForeignColumnName="CategoryID" PrimaryColumnName="CategoryID" />
+      </Association>
+    </ForeignKey>
+    <ForeignKey Name="FK_Products_Suppliers" ForeignTableName="Products" PrimaryTableName="Suppliers">
+      <Association>
+        <ForeignKeyAssociation ForeignColumnName="SupplierID" PrimaryColumnName="SupplierID" />
+      </Association>
+    </ForeignKey>
+    <ForeignKey Name="FK_Territories_Region" ForeignTableName="Territories" PrimaryTableName="Region">
+      <Association>
+        <ForeignKeyAssociation ForeignColumnName="RegionID" PrimaryColumnName="RegionID" />
+      </Association>
+    </ForeignKey>
+  </ForeignKeys>
+</DatabaseSchema>

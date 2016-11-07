@@ -1,0 +1,282 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="..\..\..\..\JavaDoc.css">
+  </head>
+  <body>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td>
+                <a href="namespace-summary.html">Namespace</a> </td>
+              <td class="nav1sel"> Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV TYPE    NEXT TYPE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+      <tr class="nav2">
+        <td>SUMMARY: INNER | FIELD | <a href="#constructor-summary">CONST</a> | PROP | <a href="#method-summary">METHOD</a> | OP | EVENT</td>
+        <td>DETAIL: FIELD | <a href="#constructor-detail">CONST</a> | PROP | <a href="#method-detail">METHOD</a> | OP | EVENT</td>
+      </tr>
+    </table>
+    <hr>
+    <h2>
+      <span class="namespaceName">NVelocity.Runtime.Parser.Node</span>
+      <br>
+      <span class="className">Class ASTEQNode</span>
+    </h2>
+    <a name="field-summary">
+    </a>
+    <table class="subtable" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Fields inherited from class NVelocity.Runtime.Parser.Node.SimpleNode</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>
+          <a href="">children</a>, <a href="">first</a>, <a href="">id</a>, <a href="">info</a>, <a href="">invalid</a>, <a href="">last</a>, <a href="">parent</a>, <a href="">parser</a>, <a href="">rsvc</a>, <a href="">state</a></td>
+      </tr>
+    </table>
+    <br>
+    <a name="constructor-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Constructor Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="constructor" valign="top">
+          <a href="#NVelocity.Runtime.Parser.Node.ASTEQNode.#ctor(System.Int32)">ASTEQNode</a>(int id)</td>
+      </tr>
+      <tr>
+        <td class="constructor" valign="top">
+          <a href="#NVelocity.Runtime.Parser.Node.ASTEQNode.#ctor(NVelocity.Runtime.Parser.Parser,System.Int32)">ASTEQNode</a>(NVelocity.Runtime.Parser.Parser p, int id)</td>
+      </tr>
+    </table>
+    <br>
+    <a name="property-summary">
+    </a>
+    <table class="subtable" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Properties inherited from class NVelocity.Runtime.Parser.Node.SimpleNode</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>
+          <a href="">Column</a>, <a href="">FirstToken</a>, <a href="">Info</a>, <a href="">LastToken</a>, <a href="">Line</a>, <a href="">Type</a></td>
+      </tr>
+    </table>
+    <br>
+    <a name="method-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Method Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="returnType" valign="top">bool</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Parser.Node.ASTEQNode.evaluate(NVelocity.Context.InternalContextAdapter)">evaluate</a>(NVelocity.Context.InternalContextAdapter context)<br>           Calculates the value of the logical expression
+            *
+            arg1 == arg2
+            *
+            All class types are supported.   Uses equals() to
+            determine equivalence.  This should work as we represent
+            with the types we already support, and anything else that
+            implements equals() to mean more than identical references.
+            *
+            *
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">object</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Parser.Node.ASTEQNode.jjtAccept(NVelocity.Runtime.Parser.Node.ParserVisitor,System.Object)">jjtAccept</a>(NVelocity.Runtime.Parser.Node.ParserVisitor visitor, object data)<br>        Accept the visitor. *
+            </td>
+      </tr>
+    </table>
+    <br>
+    <table class="subtable" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Methods inherited from class NVelocity.Runtime.Parser.Node.SimpleNode</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>
+          <a href="..\..\..\..\NVelocity/Runtime/Parser/Node/ASTEQNode/childrenAccept(NVelocity/Runtime/Parser/Node/ParserVisitor,System.html#Object)">childrenAccept</a>, <a href="..\..\..\..\NVelocity/Runtime/Parser/Node/ASTEQNode/dump(System.html#String)">dump</a>, <a href="..\..\..\..\NVelocity/Runtime/Parser/Node/ASTEQNode/execute(System/Object,NVelocity/Context.html#InternalContextAdapter)">execute</a>, <a href="..\..\..\..\NVelocity/Runtime/Parser/Node/ASTEQNode/init(NVelocity/Context/InternalContextAdapter,System.html#Object)">init</a>, <a href="..\..\..\..\NVelocity/Runtime/Parser/Node/ASTEQNode.html#isInvalid">isInvalid</a>, <a href="..\..\..\..\NVelocity/Runtime/Parser/Node/ASTEQNode/jjtAddChild(NVelocity/Runtime/Parser/Node/INode,System.html#Int32)">jjtAddChild</a>, <a href="..\..\..\..\NVelocity/Runtime/Parser/Node/ASTEQNode.html#jjtClose">jjtClose</a>, <a href="..\..\..\..\NVelocity/Runtime/Parser/Node/ASTEQNode/jjtGetChild(System.html#Int32)">jjtGetChild</a>, <a href="..\..\..\..\NVelocity/Runtime/Parser/Node/ASTEQNode.html#jjtGetNumChildren">jjtGetNumChildren</a>, <a href="..\..\..\..\NVelocity/Runtime/Parser/Node/ASTEQNode.html#jjtGetParent">jjtGetParent</a>, <a href="..\..\..\..\NVelocity/Runtime/Parser/Node/ASTEQNode.html#jjtOpen">jjtOpen</a>, <a href="..\..\..\..\NVelocity/Runtime/Parser/Node/ASTEQNode/jjtSetParent(NVelocity/Runtime/Parser/Node.html#INode)">jjtSetParent</a>, <a href="..\..\..\..\NVelocity/Runtime/Parser/Node/ASTEQNode.html#literal">literal</a>, <a href="..\..\..\..\NVelocity/Runtime/Parser/Node/ASTEQNode/render(NVelocity/Context/InternalContextAdapter,System/IO.html#TextWriter)">render</a>, <a href="..\..\..\..\NVelocity/Runtime/Parser/Node/ASTEQNode.html#setInvalid">setInvalid</a>, <a href="..\..\..\..\NVelocity/Runtime/Parser/Node/ASTEQNode/toString(System.html#String)">toString</a>, <a href="..\..\..\..\NVelocity/Runtime/Parser/Node/ASTEQNode/value_Renamed(NVelocity/Context.html#InternalContextAdapter)">value_Renamed</a></td>
+      </tr>
+    </table>
+    <br>
+    <table class="subtable" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Methods inherited from class System.Object</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>
+          <a href="..\..\..\..\NVelocity/Runtime/Parser/Node/ASTEQNode/Equals(System.html#Object)">Equals</a>, <a href="..\..\..\..\NVelocity/Runtime/Parser/Node/ASTEQNode.html#Finalize">Finalize</a>, <a href="..\..\..\..\NVelocity/Runtime/Parser/Node/ASTEQNode.html#GetHashCode">GetHashCode</a>, <a href="..\..\..\..\NVelocity/Runtime/Parser/Node/ASTEQNode.html#GetType">GetType</a>, <a href="..\..\..\..\NVelocity/Runtime/Parser/Node/ASTEQNode.html#MemberwiseClone">MemberwiseClone</a>, <a href="..\..\..\..\NVelocity/Runtime/Parser/Node/ASTEQNode.html#ToString">ToString</a></td>
+      </tr>
+    </table>
+    <br>
+    <a name="operator-summary">
+    </a>
+    <a name="event-summary">
+    </a>
+    <br>
+    <a name="field-detail">
+    </a>
+    <a name="constructor-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Constructor Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.Runtime.Parser.Node.ASTEQNode.#ctor(System.Int32)">
+    </a>
+    <h3>ASTEQNode</h3>
+    <pre>public ASTEQNode(int id)</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Parser.Node.ASTEQNode.#ctor(NVelocity.Runtime.Parser.Parser,System.Int32)">
+    </a>
+    <h3>ASTEQNode</h3>
+    <pre>public ASTEQNode(NVelocity.Runtime.Parser.Parser p,
+                 int id)</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="property-detail">
+    </a>
+    <a name="method-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Method Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.Runtime.Parser.Node.ASTEQNode.evaluate(NVelocity.Context.InternalContextAdapter)">
+    </a>
+    <h3>evaluate</h3>
+    <pre>public bool evaluate(NVelocity.Context.InternalContextAdapter context)</pre>
+    <dl>
+      <dd>
+        <p>   Calculates the value of the logical expression
+            *
+            arg1 == arg2
+            *
+            All class types are supported.   Uses equals() to
+            determine equivalence.  This should work as we represent
+            with the types we already support, and anything else that
+            implements equals() to mean more than identical references.
+            *
+            *
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>context</code> -  internal context used to evaluate the LHS and RHS
+            </dd>
+        </dl>
+        <b>Returns:</b>
+        <dl>
+          <dd>true if equivalent, false if not equivalent,
+            false if not compatible arguments, or false
+            if either LHS or RHS is null
+            
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Parser.Node.ASTEQNode.jjtAccept(NVelocity.Runtime.Parser.Node.ParserVisitor,System.Object)">
+    </a>
+    <h3>jjtAccept</h3>
+    <pre>public object jjtAccept(NVelocity.Runtime.Parser.Node.ParserVisitor visitor,
+                        object data)</pre>
+    <dl>
+      <dd>
+        <p>Accept the visitor. *
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="operator-detail">
+    </a>
+    <a name="event-detail">
+    </a>
+    <hr>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td>
+                <a href="namespace-summary.html">Namespace</a> </td>
+              <td class="nav1sel"> Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV TYPE    NEXT TYPE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+      <tr class="nav2">
+        <td>SUMMARY: INNER | FIELD | <a href="#constructor-summary">CONST</a> | PROP | <a href="#method-summary">METHOD</a> | OP | EVENT</td>
+        <td>DETAIL: FIELD | <a href="#constructor-detail">CONST</a> | PROP | <a href="#method-detail">METHOD</a> | OP | EVENT</td>
+      </tr>
+    </table>
+  </body>
+</html>

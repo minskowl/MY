@@ -1,0 +1,168 @@
+<AddIn name        = "C# Binding"
+       author      = "Mike Krueger"
+       copyright   = "prj:///doc/copyright.txt"
+       description = "Backing binding for C#"
+       addInManagerHidden = "preinstalled">
+	
+	<Manifest>
+		<Identity name = "ICSharpCode.CSharpBinding"/>
+	</Manifest>
+	
+	<Runtime>
+    <Import assembly = "CodeEditor.dll">
+      <ConditionEvaluator name="ActiveContentExtension" class="ICSharpCode.SharpDevelop.ActiveContentExtensionConditionEvaluator"/>
+      <ConditionEvaluator name="ActiveViewContentUntitled" class="ICSharpCode.SharpDevelop.ActiveViewContentUntitledConditionEvaluator"/>
+      <ConditionEvaluator name="ActiveWindowState" class="ICSharpCode.SharpDevelop.ActiveWindowStateConditionEvaluator"/>
+      <ConditionEvaluator name="SolutionOpen" class="ICSharpCode.SharpDevelop.SolutionOpenConditionEvaluator"/>
+      <ConditionEvaluator name="DebuggerSupports" class="ICSharpCode.SharpDevelop.Debugging.DebuggerSupportsConditionEvaluator"/>
+      <ConditionEvaluator name="IsProcessRunning" class="ICSharpCode.SharpDevelop.Debugging.IsProcessRunningConditionEvaluator"/>
+      <ConditionEvaluator name="OpenWindowState" class="ICSharpCode.SharpDevelop.OpenWindowStateConditionEvaluator"/>
+      <ConditionEvaluator name="WindowActive" class="ICSharpCode.SharpDevelop.WindowActiveConditionEvaluator"/>
+      <ConditionEvaluator name="WindowOpen" class="ICSharpCode.SharpDevelop.WindowOpenConditionEvaluator"/>
+      <ConditionEvaluator name="WriteableProject" class="ICSharpCode.SharpDevelop.WriteableProjectConditionEvaluator"/>
+      <ConditionEvaluator name="WriteableSolution" class="ICSharpCode.SharpDevelop.WriteableSolutionConditionEvaluator"/>
+      <ConditionEvaluator name="ProjectActive" class="ICSharpCode.SharpDevelop.ProjectActiveConditionEvaluator"/>
+      <ConditionEvaluator name="TextContent" class="ICSharpCode.SharpDevelop.Editor.AvalonEdit.TextContentConditionEvaluator"/>
+      <ConditionEvaluator name="BrowserLocation" class="ICSharpCode.SharpDevelop.BrowserDisplayBinding.BrowserLocationConditionEvaluator"/>
+      <ConditionEvaluator name="RefactoringProviderSupports" class="ICSharpCode.SharpDevelop.Refactoring.RefactoringProviderSupportsConditionEvaluator"/>
+      <ConditionEvaluator name="CanNavigateBack" class="ICSharpCode.SharpDevelop.CanNavigateBackConditionEvaluator"/>
+      <ConditionEvaluator name="CanNavigateForward" class="ICSharpCode.SharpDevelop.CanNavigateForwardConditionEvaluator"/>
+      <ConditionEvaluator name="CompareProjectProperty" class="ICSharpCode.SharpDevelop.CompareProjectPropertyConditionEvaluator"/>
+      <ConditionEvaluator name="ProjectItem" class="ICSharpCode.SharpDevelop.Project.ProjectItemConditionEvaluator"/>
+      <ConditionEvaluator name="IsTextSelected" class="ICSharpCode.SharpDevelop.Editor.AvalonEdit.TextSelectedCondition"/>
+      <ConditionEvaluator name="ViewInBrowser" class="ICSharpCode.SharpDevelop.ViewInBrowserConditionEvaluator"/>
+      <ConditionEvaluator name="ProjectBehaviorSupported" class="ICSharpCode.SharpDevelop.Project.ProjectBehaviorSupportedConditionEvaluator"/>
+
+      <Doozer name="CustomTool" class="ICSharpCode.SharpDevelop.Project.CustomToolDoozer"/>
+      <Doozer name="CustomProperty" class="ICSharpCode.SharpDevelop.Project.CustomPropertyDoozer"/>
+      <Doozer name="OptionPanel" class="ICSharpCode.SharpDevelop.OptionPanelDoozer"/>
+      <Doozer name="DisplayBinding" class="ICSharpCode.SharpDevelop.DisplayBindingDoozer"/>
+      <Doozer name="ProjectBinding" class="Savchin.CodeEditor.Services.ProjectBinding.ProjectBindingDoozer"/>
+      <Doozer name="LanguageBinding" class="ICSharpCode.SharpDevelop.LanguageBindingDoozer"/>
+      <Doozer name="Parser" class="Savchin.CodeEditor.Services.Parse.Doozer.ParserDoozer"/>
+      <Doozer name="ProjectContentRegistry" class="ICSharpCode.SharpDevelop.ProjectContentRegistryDoozer"/>
+      <Doozer name="BrowserSchemeExtension" class="ICSharpCode.SharpDevelop.BrowserDisplayBinding.SchemeExtensionDoozer"/>
+      <Doozer name="CodeCompletionBinding" class="ICSharpCode.SharpDevelop.Editor.CodeCompletion.CodeCompletionBindingDoozer"/>
+      <Doozer name="Debugger" class="ICSharpCode.SharpDevelop.Debugging.DebuggerDoozer"/>
+      <Doozer name="Directory" class="ICSharpCode.SharpDevelop.DirectoryDoozer"/>
+      <Doozer name="TaskBoundAdditionalLogger" class="ICSharpCode.SharpDevelop.Project.TaskBoundAdditionalLoggerDoozer"/>
+      <Doozer name="TaskBoundLoggerFilter" class="ICSharpCode.SharpDevelop.Project.TaskBoundLoggerFilterDoozer"/>
+
+
+    </Import>
+		<Import assembly = ":ICSharpCode.SharpDevelop"/>
+		<Import assembly = ":ICSharpCode.SharpDevelop.Dom"/>
+	</Runtime>
+	
+	<Path name = "/SharpDevelop/Workbench/Ambiences">
+		<Class id    = "C#"
+		       class = "ICSharpCode.SharpDevelop.Dom.CSharp.CSharpAmbience"/>
+	</Path>
+	
+	<Path name = "/SharpDevelop/Pads/ProjectBrowser/ContextMenu/ProjectActions/Convert">
+		<Condition name = "ProjectActive" activeproject="VBNet">
+			<MenuItem id = "VBToCSharpConverter"
+			          label = "${res:ICSharpCode.SharpDevelop.Commands.VBConvertProjectToCSharp}"
+			          class = "CSharpBinding.VBNetToCSharpConverter"/>
+		</Condition>
+	</Path>
+	
+	<Path name = "/SharpDevelop/MSBuildEngine/CompileTaskNames">
+		<!-- Makes SharpDevelop show the text 'Compiling ProjectName...' when the task is started -->
+		<String id="csc" text = "csc"/>
+	</Path>
+	
+	<Path name = "/SharpDevelop/Workbench/FileFilter">
+		<FileFilter id = "C#"
+		            insertbefore="AllFiles"
+		            name = "${res:SharpDevelop.FileFilter.CSharpFiles}"
+		            extensions = "*.cs"
+		            mimeType = "text/plain"/>
+	</Path>
+	
+	<Path name = "/SharpDevelop/Workbench/Combine/FileFilter">
+		<FileFilter id         = "CSharpProject"
+		            insertbefore="AllFiles"
+		            name       = "${res:SharpDevelop.FileFilter.CSharpPrjFiles} (*.csproj)"
+		            class      = "ICSharpCode.SharpDevelop.Project.LoadProject"
+		            extensions = "*.csproj"/>
+	</Path>
+	
+	<Path name = "/Workspace/Parser">
+		<Parser id    = "C#"
+		        supportedextensions  = ".cs"
+		        projectfileextension = ".csproj"
+		        class = "Savchin.CodeEditor.CSharpBinding.TParser"/>
+	</Path>
+	
+	<Path name = "/AddIns/DefaultTextEditor/CodeCompletion">
+		<CodeCompletionBinding id = "CSharp" extensions = ".cs" class = "CSharpBinding.CSharpCompletionBinding"/>
+	</Path>
+	
+	<Path name="/SharpDevelop/Workbench/LanguageBindings">
+		<LanguageBinding
+			id="CSharp"
+		    class="CSharpBinding.CSharpLanguageBinding"
+		    extensions=".cs" />
+	</Path>
+	
+	<!--
+	<Path name = "/AddIns/DefaultTextEditor/AdvancedHighlighter/C#">
+		<Class id = "CSharpHighlighter" class = "CSharpBinding.CSharpAdvancedHighlighter"/>
+	</Path>
+	-->
+	
+	<Path path = "/SharpDevelop/BackendBindings/ProjectOptions/C#">
+		<OptionPanel id    = "Application"
+		             label = "${res:Dialog.ProjectOptions.ApplicationSettings}"
+		             class = "ICSharpCode.SharpDevelop.Gui.OptionPanels.ApplicationSettings"/>
+		<OptionPanel id    = "ReferencePaths"
+		             label = "${res:Dialog.ProjectOptions.ReferencePaths}"
+		             class = "ICSharpCode.SharpDevelop.Gui.OptionPanels.ReferencePaths"/>
+		<OptionPanel id    = "Signing"
+		             label = "${res:Dialog.ProjectOptions.Signing}"
+		             class = "ICSharpCode.SharpDevelop.Gui.OptionPanels.Signing"/>
+		<OptionPanel id    = "BuildEvents"
+		             label = "${res:Dialog.ProjectOptions.BuildEvents}"
+		             class = "ICSharpCode.SharpDevelop.Gui.OptionPanels.BuildEvents"/>
+		<OptionPanel id    = "BuildOptions"
+		             label = "${res:Dialog.ProjectOptions.BuildOptions}"
+		             class = "CSharpBinding.OptionPanels.BuildOptions"/>
+		<OptionPanel id    = "DebugOptions"
+		             label = "${res:Dialog.ProjectOptions.DebugOptions}"
+		             class = "ICSharpCode.SharpDevelop.Gui.OptionPanels.DebugOptions"/>
+		<!--<OptionPanel id    = "Publish"
+		             label = "${res:Dialog.ProjectOptions.Publish}"
+		             class = "ICSharpCode.SharpDevelop.Gui.OptionPanels.Publish"/>-->
+		<Include id = "AllManaged" path="/SharpDevelop/BackendBindings/ProjectOptions/AllManaged"/>
+	</Path>
+	
+	<!--
+	depreciated, use LanguageBinding instead
+
+	<Path name = "/AddIns/DefaultTextEditor/Formatter/C#">
+		<Class id ="CSharpFormatter" class = "CSharpBinding.FormattingStrategy.CSharpFormattingStrategy"/>
+	</Path>
+	-->
+	
+	<Path name = "/Workspace/Icons">
+		<!-- C# -->
+		<Icon id         = "C#Prj"
+		      language   = "C#"
+		      resource   = "C#.ProjectIcon"/>
+		
+		<Icon id         = "C#File"
+		      extensions = ".cs"
+		      resource   = "C#.FileIcon"/>
+	</Path>
+	
+	<Path path = "/SharpDevelop/Workbench/ProjectBindings">
+		<ProjectBinding id                   = "C#"
+		                guid                 = "{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}"
+		                supportedextensions  = ".cs"
+		                projectfileextension = ".csproj"
+		                class                = "Savchin.CodeEditor.CSharpBinding.CSharpProjectBinding" />
+	</Path>
+</AddIn>
+
+

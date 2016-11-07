@@ -1,0 +1,83 @@
+﻿<Page x:Class="Reading.Pages.PageSummation"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:Controls="clr-namespace:Reading.Controls" xmlns:Data="clr-namespace:Savchin.Wpf.Data;assembly=Savchin.WPF.Tools" mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+	Title="PageSummation">
+
+    <Page.Resources>
+        <Data:IntegerConverter x:Key="IntegerConverter"/>
+    </Page.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="2*"/>
+            <RowDefinition />
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="{Binding Title}" Style="{DynamicResource Title}"
+                  VerticalAlignment="Top" />
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Border  Grid.Column="0" BorderThickness="1" BorderBrush="Black" SnapsToDevicePixels="True" >
+                <Controls:IntegerBox   Digit="{Binding FirstNumber}" 
+                                  Object="{Binding Shape}"
+                                   />
+            </Border>
+
+            <Label  Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{DynamicResource SyllableLabel}" Content="{Binding Sign}"/>
+            <Border  Grid.Column="2" BorderThickness="1" BorderBrush="Black" SnapsToDevicePixels="True" >
+                <Controls:IntegerBox   Digit="{Binding SecondNumber}" Object="{Binding Shape}"/>
+            </Border>
+            <Label  Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{DynamicResource SyllableLabel}" Content="="/>
+            <Controls:IntegerTextBox Grid.Column="4" x:Name="boxResult" Margin="0,0,20,0" 
+                                     Style="{DynamicResource SyllableTextBox}"
+                                     VerticalContentAlignment="Center"
+                                     MinWidth="100"
+                      Text="{Binding Result, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource IntegerConverter}}" Width="40"/>
+            <Button  Grid.Column="5" Content="?" Style="{DynamicResource SyllableButton}" ToolTip="Проверить ответ"
+                Command="{Binding NextCommand}"/>
+        </Grid>
+
+
+        <WrapPanel  Grid.Row="3" Orientation="Horizontal" >
+            <StackPanel Orientation="Horizontal" >
+                <Label Content="Операция"/>
+                <ComboBox ItemsSource="{Binding Modes}" 
+                      SelectedValue="{Binding SummationMode, Mode=TwoWay}" 
+                      SelectedValuePath="Value" DisplayMemberPath="Name"    />
+            </StackPanel>
+             <StackPanel Orientation="Horizontal" >
+                <Label Content="Считаем"/>
+                <ComboBox ItemsSource="{Binding DigitViewModes}" 
+                      SelectedValue="{Binding DigitViewMode, Mode=TwoWay}" 
+                      SelectedValuePath="Value" DisplayMemberPath="Name"    />
+            </StackPanel>           
+            <StackPanel Orientation="Horizontal" >
+                <Label Content="Первое число от"/>
+                <Controls:IntegerTextBox 
+                 
+                      Text="{Binding FirstNumberFrom, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource IntegerConverter}}" Width="40"/>
+                <Label Content="до"/>
+                <Controls:IntegerTextBox  
+                      Text="{Binding FirstNumberTo, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource IntegerConverter}}" Width="40"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" >
+                <Label Content="Второе число от"/>
+                <Controls:IntegerTextBox 
+                      Text="{Binding SecondNumberFrom, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource IntegerConverter}}" Width="40"/>
+                <Label Content="до"/>
+                <Controls:IntegerTextBox  
+                      Text="{Binding SecondNumberTo, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource IntegerConverter}}" Width="40"/>
+            </StackPanel>
+        </WrapPanel >
+    </Grid>
+</Page>

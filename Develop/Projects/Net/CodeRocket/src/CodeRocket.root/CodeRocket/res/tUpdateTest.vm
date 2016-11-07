@@ -1,0 +1,43 @@
+#set( $method = $node.Tag)
+#set( $methodName = $node.Text)
+#set( $len= $methodName.Length - 6)
+#set( $name = $methodName.substring(0,$len))
+#set( $interfaceName = $node.Parent.Text)
+#set( $callParams = "")
+#foreach( $param in $method.GetParameters() )
+  #if( $tools.couldGetRandomValue($param.ParameterType)  )
+    	const ${param.ParameterType.Name} ${name}${param.Name}Update = ${tools.getRandomValue($param.ParameterType)};
+    	#set( $callParams="${callParams},${name}${param.Name}Update")
+  #else
+    	#set( $callParams="${callParams}, new ${param.ParameterType}()")
+  #end
+#end
+[Test]
+public void Update()
+{
+			DB.checkDaoIsClear(dao);
+			Tbl${name}Entity ent=Create();
+			
+			
+			DateTime n = DateTime.Now;
+			
+			Tbl${name}Entity entUpdate=DB.puser.${interfaceName}.${methodName}(${callParams.substring(1)});
+			Assert.IsNotNull(entUpdate,"Created entity is null");
+
+			DB.checkDaoHasOneRecord(dao);
+			
+			// compare properties
+			
+#foreach( $param in $method.GetParameters() )
+  #if( $tools.couldGetRandomValue($param.ParameterType)  )
+  		Assert.IsTrue(entUpdate.${param.Name}== ${name}${param.Name}Update ,"Incorrect ${param.Name}");
+  #end
+#end			
+
+			DB.checkModifiedObject(entUpdate,n);
+			
+			dao.Delete(ent.${name}ID);
+			DB.checkDaoIsClear(dao);
+
+			Assert.IsNull(dao.SelectById(ent.${name}ID),"Entity exists");
+}

@@ -1,0 +1,937 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="..\..\JavaDoc.css">
+  </head>
+  <body>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td>
+                <a href="namespace-summary.html">Namespace</a> </td>
+              <td class="nav1sel"> Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV TYPE    NEXT TYPE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+      <tr class="nav2">
+        <td>SUMMARY: INNER | FIELD | <a href="#constructor-summary">CONST</a> | PROP | <a href="#method-summary">METHOD</a> | OP | EVENT</td>
+        <td>DETAIL: FIELD | <a href="#constructor-detail">CONST</a> | PROP | <a href="#method-detail">METHOD</a> | OP | EVENT</td>
+      </tr>
+    </table>
+    <hr>
+    <h2>
+      <span class="namespaceName">NVelocity.Util</span>
+      <br>
+      <span class="className">Class StringUtils</span>
+    </h2>
+    <p> This class provides some methods for dynamically
+            invoking methods in objects, and some string
+            manipulation methods used by torque. The string
+            methods will soon be moved into the turbine
+            string utilities class.
+            *
+            </p>
+    <a name="field-summary">
+    </a>
+    <a name="constructor-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Constructor Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="constructor" valign="top">
+          <a href="#NVelocity.Util.StringUtils.#ctor">StringUtils</a>()<br>        Initializes a new instance of the StringUtils class.</td>
+      </tr>
+    </table>
+    <br>
+    <a name="property-summary">
+    </a>
+    <a name="method-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Method Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="returnType" valign="top">bool</td>
+        <td class="method">
+          <a href="#NVelocity.Util.StringUtils.allEmpty(System.Collections.IList)">allEmpty</a>(System.Collections.IList list)<br>         Check to see if all the string objects passed
+            in are empty.
+            *
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">string</td>
+        <td class="method">
+          <a href="#NVelocity.Util.StringUtils.capitalizeFirstLetter(System.String)">capitalizeFirstLetter</a>(string data)<br>        
+            Capitalize the first letter but leave the rest as they are.
+            
+            *
+            
+            For example <pre class="code">fooBar</pre> becomes <pre class="code">FooBar</pre>.
+            
+            *
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">string</td>
+        <td class="method">
+          <a href="#NVelocity.Util.StringUtils.chop(System.String,System.Int32)">chop</a>(string s, int i)<br>         Chop i characters off the end of a string.
+            This method assumes that any EOL characters in String s
+            and the platform EOL will be the same.
+            A 2 character EOL will count as 1 character.
+            *
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">string</td>
+        <td class="method">
+          <a href="#NVelocity.Util.StringUtils.chop(System.String,System.Int32,System.String)">chop</a>(string s, int i, string eol)<br>         Chop i characters off the end of a string.
+            A 2 character EOL will count as 1 character.
+            *
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">string</td>
+        <td class="method">
+          <a href="#NVelocity.Util.StringUtils.collapseNewlines(System.String)">collapseNewlines</a>(string argStr)<br>         Remove/collapse multiple newline characters.
+            *
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">string</td>
+        <td class="method">
+          <a href="#NVelocity.Util.StringUtils.collapseSpaces(System.String)">collapseSpaces</a>(string argStr)<br>         Remove/collapse multiple spaces.
+            *
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">string</td>
+        <td class="method">
+          <a href="#NVelocity.Util.StringUtils.concat(System.Collections.IList)">concat</a>(System.Collections.IList list)<br>         Concatenates a list of objects as a String.
+            *
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">string</td>
+        <td class="method">
+          <a href="#NVelocity.Util.StringUtils.fileContentsToString(System.String)">fileContentsToString</a>(string file)<br>         Read the contents of a file and place them in
+            a string object.
+            *
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">string</td>
+        <td class="method">
+          <a href="#NVelocity.Util.StringUtils.firstLetterCaps(System.String)">firstLetterCaps</a>(string data)<br>        
+            Makes the first letter caps and the rest lowercase.
+            
+            *
+            
+            For example <pre class="code">fooBar</pre> becomes <pre class="code">Foobar</pre>.
+            
+            *
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">string</td>
+        <td class="method">
+          <a href="#NVelocity.Util.StringUtils.getPackageAsPath(System.String)">getPackageAsPath</a>(string pckge)<br>         Return a package name as a relative path name
+            *
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">string</td>
+        <td class="method">
+          <a href="#NVelocity.Util.StringUtils.normalizePath(System.String)">normalizePath</a>(string path)<br>         Return a context-relative path, beginning with a "/", that represents
+            the canonical version of the specified path after ".." and "." elements
+            are resolved out.  If the specified path attempts to go outside the
+            boundaries of the current context (i.e. too many ".." path elements
+            are present), return <pre class="code">null</pre> instead.
+            *
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">string</td>
+        <td class="method">
+          <a href="#NVelocity.Util.StringUtils.removeAndHump(System.String)">removeAndHump</a>(string data)<br>        
+            'Camels Hump' replacement of underscores.
+            
+            *
+            
+            Remove underscores from a string but leave the capitalization of the
+            other letters unchanged.
+            
+            *
+            
+            For example <pre class="code">foo_barBar</pre> becomes <pre class="code">FooBarBar</pre>.
+            
+            *
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">string</td>
+        <td class="method">
+          <a href="#NVelocity.Util.StringUtils.removeAndHump(System.String,System.String)">removeAndHump</a>(string data, string replaceThis)<br>        
+            'Camels Hump' replacement.
+            
+            *
+            
+            Remove one string from another string but leave the capitalization of the
+            other letters unchanged.
+            
+            *
+            
+            For example, removing "_" from <pre class="code">foo_barBar</pre> becomes <pre class="code">FooBarBar</pre>.
+            
+            *
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">string</td>
+        <td class="method">
+          <a href="#NVelocity.Util.StringUtils.removeUnderScores(System.String)">removeUnderScores</a>(string data)<br>        
+            Remove underscores from a string and replaces first
+            letters with capitals.  Other letters are changed to lower case.
+            
+            *
+            
+            For example <pre class="code">foo_bar</pre> becomes <pre class="code">FooBar</pre>
+            but <pre class="code">foo_barBar</pre> becomes <pre class="code">FooBarbar</pre>.
+            
+            *
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">string</td>
+        <td class="method">
+          <a href="#NVelocity.Util.StringUtils.select(System.Boolean,System.String,System.String)">select</a>(bool state, string trueString, string falseString)<br>         If state is true then return the trueString, else
+            return the falseString.
+            *
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">string[]</td>
+        <td class="method">
+          <a href="#NVelocity.Util.StringUtils.split(System.String,System.String)">split</a>(string line, string delim)<br>         Create a string array from a string separated by delim
+            *
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">string</td>
+        <td class="method">
+          <a href="#NVelocity.Util.StringUtils.stackTrace(System.Exception)">stackTrace</a>(System.Exception e)<br>         Returns the output of printStackTrace as a String.
+            *
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">System.Text.StringBuilder</td>
+        <td class="method">
+          <a href="#NVelocity.Util.StringUtils.stringSubstitution(System.String,System.Collections.Hashtable)">stringSubstitution</a>(string argStr, System.Collections.Hashtable vars)<br>         Perform a series of substitutions. The substitions
+            are performed by replacing $variable in the target
+            string with the value of provided by the key "variable"
+            in the provided hashtable.
+            *
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">string</td>
+        <td class="method">
+          <a href="#NVelocity.Util.StringUtils.sub(System.String,System.String,System.String)">sub</a>(string line, string oldString, string newString)<br>         Replaces all instances of oldString with newString in line.
+            Taken from the Jive forum package.
+            *
+            </td>
+      </tr>
+    </table>
+    <br>
+    <table class="subtable" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Methods inherited from class System.Object</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>
+          <a href="..\..\NVelocity/Util/StringUtils/Equals(System.html#Object)">Equals</a>, <a href="..\..\NVelocity/Util/StringUtils.html#Finalize">Finalize</a>, <a href="..\..\NVelocity/Util/StringUtils.html#GetHashCode">GetHashCode</a>, <a href="..\..\NVelocity/Util/StringUtils.html#GetType">GetType</a>, <a href="..\..\NVelocity/Util/StringUtils.html#MemberwiseClone">MemberwiseClone</a>, <a href="..\..\NVelocity/Util/StringUtils.html#ToString">ToString</a></td>
+      </tr>
+    </table>
+    <br>
+    <a name="operator-summary">
+    </a>
+    <a name="event-summary">
+    </a>
+    <br>
+    <a name="field-detail">
+    </a>
+    <a name="constructor-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Constructor Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.Util.StringUtils.#ctor">
+    </a>
+    <h3>StringUtils</h3>
+    <pre>public StringUtils()</pre>
+    <dl>
+      <dd>
+        <p>Initializes a new instance of the StringUtils class.</p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="property-detail">
+    </a>
+    <a name="method-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Method Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.Util.StringUtils.allEmpty(System.Collections.IList)">
+    </a>
+    <h3>allEmpty</h3>
+    <pre>public bool allEmpty(System.Collections.IList list)</pre>
+    <dl>
+      <dd>
+        <p> Check to see if all the string objects passed
+            in are empty.
+            *
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>list</code> - A list of {@link java.lang.String} objects.
+            </dd>
+        </dl>
+        <b>Returns:</b>
+        <dl>
+          <dd>    Whether all strings are empty.
+            
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Util.StringUtils.capitalizeFirstLetter(System.String)">
+    </a>
+    <h3>capitalizeFirstLetter</h3>
+    <pre>public string capitalizeFirstLetter(string data)</pre>
+    <dl>
+      <dd>
+        <p>
+            Capitalize the first letter but leave the rest as they are.
+            
+            *
+            
+            For example <pre class="code">fooBar</pre> becomes <pre class="code">FooBar</pre>.
+            
+            *
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>data</code> - capitalize this
+            </dd>
+        </dl>
+        <b>Returns:</b>
+        <dl>
+          <dd>String
+            
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Util.StringUtils.chop(System.String,System.Int32)">
+    </a>
+    <h3>chop</h3>
+    <pre>public string chop(string s,
+                   int i)</pre>
+    <dl>
+      <dd>
+        <p> Chop i characters off the end of a string.
+            This method assumes that any EOL characters in String s
+            and the platform EOL will be the same.
+            A 2 character EOL will count as 1 character.
+            *
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>string</code> - String to chop.
+            </dd>
+          <dd>
+            <code>i</code> - Number of characters to chop.
+            </dd>
+        </dl>
+        <b>Returns:</b>
+        <dl>
+          <dd>String with processed answer.
+            
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Util.StringUtils.chop(System.String,System.Int32,System.String)">
+    </a>
+    <h3>chop</h3>
+    <pre>public string chop(string s,
+                   int i,
+                   string eol)</pre>
+    <dl>
+      <dd>
+        <p> Chop i characters off the end of a string.
+            A 2 character EOL will count as 1 character.
+            *
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>string</code> - String to chop.
+            </dd>
+          <dd>
+            <code>i</code> - Number of characters to chop.
+            </dd>
+          <dd>
+            <code>eol</code> - A String representing the EOL (end of line).
+            </dd>
+        </dl>
+        <b>Returns:</b>
+        <dl>
+          <dd>String with processed answer.
+            
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Util.StringUtils.collapseNewlines(System.String)">
+    </a>
+    <h3>collapseNewlines</h3>
+    <pre>public string collapseNewlines(string argStr)</pre>
+    <dl>
+      <dd>
+        <p> Remove/collapse multiple newline characters.
+            *
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>String</code> - string to collapse newlines in.
+            </dd>
+        </dl>
+        <b>Returns:</b>
+        <dl>
+          <dd>String
+            
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Util.StringUtils.collapseSpaces(System.String)">
+    </a>
+    <h3>collapseSpaces</h3>
+    <pre>public string collapseSpaces(string argStr)</pre>
+    <dl>
+      <dd>
+        <p> Remove/collapse multiple spaces.
+            *
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>String</code> - string to remove multiple spaces from.
+            </dd>
+        </dl>
+        <b>Returns:</b>
+        <dl>
+          <dd>String
+            
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Util.StringUtils.concat(System.Collections.IList)">
+    </a>
+    <h3>concat</h3>
+    <pre>public string concat(System.Collections.IList list)</pre>
+    <dl>
+      <dd>
+        <p> Concatenates a list of objects as a String.
+            *
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>list</code> - The list of objects to concatenate.
+            </dd>
+        </dl>
+        <b>Returns:</b>
+        <dl>
+          <dd>    A text representation of the concatenated objects.
+            
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Util.StringUtils.fileContentsToString(System.String)">
+    </a>
+    <h3>fileContentsToString</h3>
+    <pre>public string fileContentsToString(string file)</pre>
+    <dl>
+      <dd>
+        <p> Read the contents of a file and place them in
+            a string object.
+            *
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>String</code> - path to file.
+            </dd>
+        </dl>
+        <b>Returns:</b>
+        <dl>
+          <dd>String contents of the file.
+            
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Util.StringUtils.firstLetterCaps(System.String)">
+    </a>
+    <h3>firstLetterCaps</h3>
+    <pre>public string firstLetterCaps(string data)</pre>
+    <dl>
+      <dd>
+        <p>
+            Makes the first letter caps and the rest lowercase.
+            
+            *
+            
+            For example <pre class="code">fooBar</pre> becomes <pre class="code">Foobar</pre>.
+            
+            *
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>data</code> - capitalize this
+            </dd>
+        </dl>
+        <b>Returns:</b>
+        <dl>
+          <dd>String
+            
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Util.StringUtils.getPackageAsPath(System.String)">
+    </a>
+    <h3>getPackageAsPath</h3>
+    <pre>public string getPackageAsPath(string pckge)</pre>
+    <dl>
+      <dd>
+        <p> Return a package name as a relative path name
+            *
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>String</code> - package name to convert to a directory.
+            </dd>
+        </dl>
+        <b>Returns:</b>
+        <dl>
+          <dd>String directory path.
+            
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Util.StringUtils.normalizePath(System.String)">
+    </a>
+    <h3>normalizePath</h3>
+    <pre>public string normalizePath(string path)</pre>
+    <dl>
+      <dd>
+        <p> Return a context-relative path, beginning with a "/", that represents
+            the canonical version of the specified path after ".." and "." elements
+            are resolved out.  If the specified path attempts to go outside the
+            boundaries of the current context (i.e. too many ".." path elements
+            are present), return <pre class="code">null</pre> instead.
+            *
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>path</code> - Path to be normalized
+            </dd>
+        </dl>
+        <b>Returns:</b>
+        <dl>
+          <dd>String normalized path
+            
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Util.StringUtils.removeAndHump(System.String)">
+    </a>
+    <h3>removeAndHump</h3>
+    <pre>public string removeAndHump(string data)</pre>
+    <dl>
+      <dd>
+        <p>
+            'Camels Hump' replacement of underscores.
+            
+            *
+            
+            Remove underscores from a string but leave the capitalization of the
+            other letters unchanged.
+            
+            *
+            
+            For example <pre class="code">foo_barBar</pre> becomes <pre class="code">FooBarBar</pre>.
+            
+            *
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>data</code> - string to hump
+            </dd>
+        </dl>
+        <b>Returns:</b>
+        <dl>
+          <dd>String
+            
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Util.StringUtils.removeAndHump(System.String,System.String)">
+    </a>
+    <h3>removeAndHump</h3>
+    <pre>public string removeAndHump(string data,
+                            string replaceThis)</pre>
+    <dl>
+      <dd>
+        <p>
+            'Camels Hump' replacement.
+            
+            *
+            
+            Remove one string from another string but leave the capitalization of the
+            other letters unchanged.
+            
+            *
+            
+            For example, removing "_" from <pre class="code">foo_barBar</pre> becomes <pre class="code">FooBarBar</pre>.
+            
+            *
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>data</code> - string to hump
+            </dd>
+          <dd>
+            <code>replaceThis</code> - string to be replaced
+            </dd>
+        </dl>
+        <b>Returns:</b>
+        <dl>
+          <dd>String
+            
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Util.StringUtils.removeUnderScores(System.String)">
+    </a>
+    <h3>removeUnderScores</h3>
+    <pre>public string removeUnderScores(string data)</pre>
+    <dl>
+      <dd>
+        <p>
+            Remove underscores from a string and replaces first
+            letters with capitals.  Other letters are changed to lower case.
+            
+            *
+            
+            For example <pre class="code">foo_bar</pre> becomes <pre class="code">FooBar</pre>
+            but <pre class="code">foo_barBar</pre> becomes <pre class="code">FooBarbar</pre>.
+            
+            *
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>data</code> - string to remove underscores from.
+            </dd>
+        </dl>
+        <b>Returns:</b>
+        <dl>
+          <dd>String
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Util.StringUtils.select(System.Boolean,System.String,System.String)">
+    </a>
+    <h3>select</h3>
+    <pre>public string select(bool state,
+                     string trueString,
+                     string falseString)</pre>
+    <dl>
+      <dd>
+        <p> If state is true then return the trueString, else
+            return the falseString.
+            *
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>boolean</code> - </dd>
+          <dd>
+            <code>String</code> - trueString
+            </dd>
+          <dd>
+            <code>String</code> - falseString
+            
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Util.StringUtils.split(System.String,System.String)">
+    </a>
+    <h3>split</h3>
+    <pre>public string[] split(string line,
+                      string delim)</pre>
+    <dl>
+      <dd>
+        <p> Create a string array from a string separated by delim
+            *
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>line</code> - the line to split
+            </dd>
+          <dd>
+            <code>delim</code> - the delimter to split by
+            </dd>
+        </dl>
+        <b>Returns:</b>
+        <dl>
+          <dd>a string array of the split fields
+            
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Util.StringUtils.stackTrace(System.Exception)">
+    </a>
+    <h3>stackTrace</h3>
+    <pre>public string stackTrace(System.Exception e)</pre>
+    <dl>
+      <dd>
+        <p> Returns the output of printStackTrace as a String.
+            *
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>e</code> - A Throwable.
+            </dd>
+        </dl>
+        <b>Returns:</b>
+        <dl>
+          <dd>A String.
+            
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Util.StringUtils.stringSubstitution(System.String,System.Collections.Hashtable)">
+    </a>
+    <h3>stringSubstitution</h3>
+    <pre>public System.Text.StringBuilder stringSubstitution(string argStr,
+                                                    System.Collections.Hashtable vars)</pre>
+    <dl>
+      <dd>
+        <p> Perform a series of substitutions. The substitions
+            are performed by replacing $variable in the target
+            string with the value of provided by the key "variable"
+            in the provided hashtable.
+            *
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>String</code> - target string
+            </dd>
+          <dd>
+            <code>Hashtable</code> - name/value pairs used for substitution
+            </dd>
+        </dl>
+        <b>Returns:</b>
+        <dl>
+          <dd>String target string with replacements.
+            
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Util.StringUtils.sub(System.String,System.String,System.String)">
+    </a>
+    <h3>sub</h3>
+    <pre>public string sub(string line,
+                  string oldString,
+                  string newString)</pre>
+    <dl>
+      <dd>
+        <p> Replaces all instances of oldString with newString in line.
+            Taken from the Jive forum package.
+            *
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>String</code> - original string.
+            </dd>
+          <dd>
+            <code>String</code> - string in line to replace.
+            </dd>
+          <dd>
+            <code>String</code> - replace oldString with this.
+            </dd>
+        </dl>
+        <b>Returns:</b>
+        <dl>
+          <dd>String string with replacements.
+            
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <a name="operator-detail">
+    </a>
+    <a name="event-detail">
+    </a>
+    <hr>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td>
+                <a href="namespace-summary.html">Namespace</a> </td>
+              <td class="nav1sel"> Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV TYPE    NEXT TYPE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+      <tr class="nav2">
+        <td>SUMMARY: INNER | FIELD | <a href="#constructor-summary">CONST</a> | PROP | <a href="#method-summary">METHOD</a> | OP | EVENT</td>
+        <td>DETAIL: FIELD | <a href="#constructor-detail">CONST</a> | PROP | <a href="#method-detail">METHOD</a> | OP | EVENT</td>
+      </tr>
+    </table>
+  </body>
+</html>

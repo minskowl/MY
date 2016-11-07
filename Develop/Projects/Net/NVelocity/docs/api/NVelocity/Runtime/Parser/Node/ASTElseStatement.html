@@ -1,0 +1,258 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="..\..\..\..\JavaDoc.css">
+  </head>
+  <body>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td>
+                <a href="namespace-summary.html">Namespace</a> </td>
+              <td class="nav1sel"> Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV TYPE    NEXT TYPE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+      <tr class="nav2">
+        <td>SUMMARY: INNER | FIELD | <a href="#constructor-summary">CONST</a> | PROP | <a href="#method-summary">METHOD</a> | OP | EVENT</td>
+        <td>DETAIL: FIELD | <a href="#constructor-detail">CONST</a> | PROP | <a href="#method-detail">METHOD</a> | OP | EVENT</td>
+      </tr>
+    </table>
+    <hr>
+    <h2>
+      <span class="namespaceName">NVelocity.Runtime.Parser.Node</span>
+      <br>
+      <span class="className">Class ASTElseStatement</span>
+    </h2>
+    <p> This class is responsible for handling the Else VTL control statement.
+            
+            Please look at the Parser.jjt file which is
+            what controls the generation of this class.
+            *
+            </p>
+    <a name="field-summary">
+    </a>
+    <table class="subtable" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Fields inherited from class NVelocity.Runtime.Parser.Node.SimpleNode</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>
+          <a href="">children</a>, <a href="">first</a>, <a href="">id</a>, <a href="">info</a>, <a href="">invalid</a>, <a href="">last</a>, <a href="">parent</a>, <a href="">parser</a>, <a href="">rsvc</a>, <a href="">state</a></td>
+      </tr>
+    </table>
+    <br>
+    <a name="constructor-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Constructor Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="constructor" valign="top">
+          <a href="#NVelocity.Runtime.Parser.Node.ASTElseStatement.#ctor(System.Int32)">ASTElseStatement</a>(int id)</td>
+      </tr>
+      <tr>
+        <td class="constructor" valign="top">
+          <a href="#NVelocity.Runtime.Parser.Node.ASTElseStatement.#ctor(NVelocity.Runtime.Parser.Parser,System.Int32)">ASTElseStatement</a>(NVelocity.Runtime.Parser.Parser p, int id)</td>
+      </tr>
+    </table>
+    <br>
+    <a name="property-summary">
+    </a>
+    <table class="subtable" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Properties inherited from class NVelocity.Runtime.Parser.Node.SimpleNode</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>
+          <a href="">Column</a>, <a href="">FirstToken</a>, <a href="">Info</a>, <a href="">LastToken</a>, <a href="">Line</a>, <a href="">Type</a></td>
+      </tr>
+    </table>
+    <br>
+    <a name="method-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Method Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="returnType" valign="top">bool</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Parser.Node.ASTElseStatement.evaluate(NVelocity.Context.InternalContextAdapter)">evaluate</a>(NVelocity.Context.InternalContextAdapter context)<br>         An ASTElseStatement always evaluates to
+            true. Basically behaves like an #if(true).
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">object</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Parser.Node.ASTElseStatement.jjtAccept(NVelocity.Runtime.Parser.Node.ParserVisitor,System.Object)">jjtAccept</a>(NVelocity.Runtime.Parser.Node.ParserVisitor visitor, object data)<br>        Accept the visitor. *
+            </td>
+      </tr>
+    </table>
+    <br>
+    <table class="subtable" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Methods inherited from class NVelocity.Runtime.Parser.Node.SimpleNode</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>
+          <a href="..\..\..\..\NVelocity/Runtime/Parser/Node/ASTElseStatement/childrenAccept(NVelocity/Runtime/Parser/Node/ParserVisitor,System.html#Object)">childrenAccept</a>, <a href="..\..\..\..\NVelocity/Runtime/Parser/Node/ASTElseStatement/dump(System.html#String)">dump</a>, <a href="..\..\..\..\NVelocity/Runtime/Parser/Node/ASTElseStatement/execute(System/Object,NVelocity/Context.html#InternalContextAdapter)">execute</a>, <a href="..\..\..\..\NVelocity/Runtime/Parser/Node/ASTElseStatement/init(NVelocity/Context/InternalContextAdapter,System.html#Object)">init</a>, <a href="..\..\..\..\NVelocity/Runtime/Parser/Node/ASTElseStatement.html#isInvalid">isInvalid</a>, <a href="..\..\..\..\NVelocity/Runtime/Parser/Node/ASTElseStatement/jjtAddChild(NVelocity/Runtime/Parser/Node/INode,System.html#Int32)">jjtAddChild</a>, <a href="..\..\..\..\NVelocity/Runtime/Parser/Node/ASTElseStatement.html#jjtClose">jjtClose</a>, <a href="..\..\..\..\NVelocity/Runtime/Parser/Node/ASTElseStatement/jjtGetChild(System.html#Int32)">jjtGetChild</a>, <a href="..\..\..\..\NVelocity/Runtime/Parser/Node/ASTElseStatement.html#jjtGetNumChildren">jjtGetNumChildren</a>, <a href="..\..\..\..\NVelocity/Runtime/Parser/Node/ASTElseStatement.html#jjtGetParent">jjtGetParent</a>, <a href="..\..\..\..\NVelocity/Runtime/Parser/Node/ASTElseStatement.html#jjtOpen">jjtOpen</a>, <a href="..\..\..\..\NVelocity/Runtime/Parser/Node/ASTElseStatement/jjtSetParent(NVelocity/Runtime/Parser/Node.html#INode)">jjtSetParent</a>, <a href="..\..\..\..\NVelocity/Runtime/Parser/Node/ASTElseStatement.html#literal">literal</a>, <a href="..\..\..\..\NVelocity/Runtime/Parser/Node/ASTElseStatement/render(NVelocity/Context/InternalContextAdapter,System/IO.html#TextWriter)">render</a>, <a href="..\..\..\..\NVelocity/Runtime/Parser/Node/ASTElseStatement.html#setInvalid">setInvalid</a>, <a href="..\..\..\..\NVelocity/Runtime/Parser/Node/ASTElseStatement/toString(System.html#String)">toString</a>, <a href="..\..\..\..\NVelocity/Runtime/Parser/Node/ASTElseStatement/value_Renamed(NVelocity/Context.html#InternalContextAdapter)">value_Renamed</a></td>
+      </tr>
+    </table>
+    <br>
+    <table class="subtable" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Methods inherited from class System.Object</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>
+          <a href="..\..\..\..\NVelocity/Runtime/Parser/Node/ASTElseStatement/Equals(System.html#Object)">Equals</a>, <a href="..\..\..\..\NVelocity/Runtime/Parser/Node/ASTElseStatement.html#Finalize">Finalize</a>, <a href="..\..\..\..\NVelocity/Runtime/Parser/Node/ASTElseStatement.html#GetHashCode">GetHashCode</a>, <a href="..\..\..\..\NVelocity/Runtime/Parser/Node/ASTElseStatement.html#GetType">GetType</a>, <a href="..\..\..\..\NVelocity/Runtime/Parser/Node/ASTElseStatement.html#MemberwiseClone">MemberwiseClone</a>, <a href="..\..\..\..\NVelocity/Runtime/Parser/Node/ASTElseStatement.html#ToString">ToString</a></td>
+      </tr>
+    </table>
+    <br>
+    <a name="operator-summary">
+    </a>
+    <a name="event-summary">
+    </a>
+    <br>
+    <a name="field-detail">
+    </a>
+    <a name="constructor-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Constructor Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.Runtime.Parser.Node.ASTElseStatement.#ctor(System.Int32)">
+    </a>
+    <h3>ASTElseStatement</h3>
+    <pre>public ASTElseStatement(int id)</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Parser.Node.ASTElseStatement.#ctor(NVelocity.Runtime.Parser.Parser,System.Int32)">
+    </a>
+    <h3>ASTElseStatement</h3>
+    <pre>public ASTElseStatement(NVelocity.Runtime.Parser.Parser p,
+                        int id)</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="property-detail">
+    </a>
+    <a name="method-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Method Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.Runtime.Parser.Node.ASTElseStatement.evaluate(NVelocity.Context.InternalContextAdapter)">
+    </a>
+    <h3>evaluate</h3>
+    <pre>public bool evaluate(NVelocity.Context.InternalContextAdapter context)</pre>
+    <dl>
+      <dd>
+        <p> An ASTElseStatement always evaluates to
+            true. Basically behaves like an #if(true).
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Parser.Node.ASTElseStatement.jjtAccept(NVelocity.Runtime.Parser.Node.ParserVisitor,System.Object)">
+    </a>
+    <h3>jjtAccept</h3>
+    <pre>public object jjtAccept(NVelocity.Runtime.Parser.Node.ParserVisitor visitor,
+                        object data)</pre>
+    <dl>
+      <dd>
+        <p>Accept the visitor. *
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="operator-detail">
+    </a>
+    <a name="event-detail">
+    </a>
+    <hr>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td>
+                <a href="namespace-summary.html">Namespace</a> </td>
+              <td class="nav1sel"> Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV TYPE    NEXT TYPE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+      <tr class="nav2">
+        <td>SUMMARY: INNER | FIELD | <a href="#constructor-summary">CONST</a> | PROP | <a href="#method-summary">METHOD</a> | OP | EVENT</td>
+        <td>DETAIL: FIELD | <a href="#constructor-detail">CONST</a> | PROP | <a href="#method-detail">METHOD</a> | OP | EVENT</td>
+      </tr>
+    </table>
+  </body>
+</html>

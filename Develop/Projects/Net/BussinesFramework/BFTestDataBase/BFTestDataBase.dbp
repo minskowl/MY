@@ -1,0 +1,16 @@
+# Microsoft Developer Studio Project File - Database Project
+Begin DataProject = "BFTestDataBase"
+   MSDTVersion = "80"
+   SccProjectName = "SAK"
+   SccLocalPath = "SAK"
+   SccAuxPath = "SAK"
+   SccProvider = "SAK"
+   Begin Folder = "Change Scripts"
+   End
+   Begin Folder = "Create Scripts"
+   End
+   Begin DBRefFolder = "Database References"
+   End
+   Begin Folder = "Queries"
+   End
+End

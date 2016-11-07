@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ColorPicker", "ColorPicker\ColorPicker.csproj", "{2DF0BC88-7E9F-4D09-A223-71AEF1A06FD5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Savchin.Tools", "..\Libs\Tools\Savchin.Tools.csproj", "{2F1807E4-39A2-4F38-ADFC-6310A8443D90}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Savchin.Controls.Common", "..\Libs\Controls\Common\Savchin.Controls.Common.csproj", "{A852E8EF-7FCA-44B0-AB22-92F3380357C5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2DF0BC88-7E9F-4D09-A223-71AEF1A06FD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DF0BC88-7E9F-4D09-A223-71AEF1A06FD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DF0BC88-7E9F-4D09-A223-71AEF1A06FD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DF0BC88-7E9F-4D09-A223-71AEF1A06FD5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F1807E4-39A2-4F38-ADFC-6310A8443D90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F1807E4-39A2-4F38-ADFC-6310A8443D90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F1807E4-39A2-4F38-ADFC-6310A8443D90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F1807E4-39A2-4F38-ADFC-6310A8443D90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A852E8EF-7FCA-44B0-AB22-92F3380357C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A852E8EF-7FCA-44B0-AB22-92F3380357C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A852E8EF-7FCA-44B0-AB22-92F3380357C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A852E8EF-7FCA-44B0-AB22-92F3380357C5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

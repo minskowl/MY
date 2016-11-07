@@ -1,0 +1,484 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="..\..\JavaDoc.css">
+  </head>
+  <body>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td>
+                <a href="namespace-summary.html">Namespace</a> </td>
+              <td class="nav1sel"> Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV TYPE    NEXT TYPE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+      <tr class="nav2">
+        <td>SUMMARY: INNER | FIELD | <a href="#constructor-summary">CONST</a> | <a href="#property-summary">PROP</a> | <a href="#method-summary">METHOD</a> | OP | EVENT</td>
+        <td>DETAIL: FIELD | <a href="#constructor-detail">CONST</a> | <a href="#property-detail">PROP</a> | <a href="#method-detail">METHOD</a> | OP | EVENT</td>
+      </tr>
+    </table>
+    <hr>
+    <h2>
+      <span class="namespaceName">NVelocity.Context</span>
+      <br>
+      <span class="className">Class InternalContextAdapterImpl</span>
+    </h2>
+    <a name="field-summary">
+    </a>
+    <a name="constructor-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Constructor Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="constructor" valign="top">
+          <a href="#NVelocity.Context.InternalContextAdapterImpl.#ctor(NVelocity.Context.IContext)">InternalContextAdapterImpl</a>(NVelocity.Context.IContext c)<br>          CTOR takes a Context and wraps it, delegating all 'data' calls
+            to it.
+            
+            For support of internal contexts, it will create an InternalContextBase
+            if need be.
+            </td>
+      </tr>
+    </table>
+    <br>
+    <a name="property-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Property Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="propertyType" valign="top">NVelocity.Context.InternalContextAdapter</td>
+        <td class="property">
+          <a href="#NVelocity.Context.InternalContextAdapterImpl.BaseContext">BaseContext</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="propertyType" valign="top">NVelocity.Runtime.Resource.Resource</td>
+        <td class="property">
+          <a href="#NVelocity.Context.InternalContextAdapterImpl.CurrentResource">CurrentResource</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="propertyType" valign="top">string</td>
+        <td class="property">
+          <a href="#NVelocity.Context.InternalContextAdapterImpl.CurrentTemplateName">CurrentTemplateName</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="propertyType" valign="top">NVelocity.App.Events.EventCartridge</td>
+        <td class="property">
+          <a href="#NVelocity.Context.InternalContextAdapterImpl.EventCartridge">EventCartridge</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="propertyType" valign="top">NVelocity.Context.IContext</td>
+        <td class="property">
+          <a href="#NVelocity.Context.InternalContextAdapterImpl.InternalUserContext">InternalUserContext</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="propertyType" valign="top">object[]</td>
+        <td class="property">
+          <a href="#NVelocity.Context.InternalContextAdapterImpl.Keys">Keys</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="propertyType" valign="top">object[]</td>
+        <td class="property">
+          <a href="#NVelocity.Context.InternalContextAdapterImpl.TemplateNameStack">TemplateNameStack</a>
+        </td>
+      </tr>
+    </table>
+    <br>
+    <a name="method-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Method Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="returnType" valign="top">NVelocity.App.Events.EventCartridge</td>
+        <td class="method">
+          <a href="#NVelocity.Context.InternalContextAdapterImpl.AttachEventCartridge(NVelocity.App.Events.EventCartridge)">AttachEventCartridge</a>(NVelocity.App.Events.EventCartridge ec)<br>          Returns the base context that we are
+            wrapping. Here, its this, but for other thing
+            like VM related context contortions, it can
+            be something else
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">bool</td>
+        <td class="method">
+          <a href="#NVelocity.Context.InternalContextAdapterImpl.ContainsKey(System.Object)">ContainsKey</a>(object key)</td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">object</td>
+        <td class="method">
+          <a href="#NVelocity.Context.InternalContextAdapterImpl.Get(System.String)">Get</a>(string key)</td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">NVelocity.Util.Introspection.IntrospectionCacheData</td>
+        <td class="method">
+          <a href="#NVelocity.Context.InternalContextAdapterImpl.ICacheGet(System.Object)">ICacheGet</a>(object key)</td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.Context.InternalContextAdapterImpl.ICachePut(System.Object,NVelocity.Util.Introspection.IntrospectionCacheData)">ICachePut</a>(object key, NVelocity.Util.Introspection.IntrospectionCacheData o)</td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.Context.InternalContextAdapterImpl.PopCurrentTemplateName">PopCurrentTemplateName</a>()</td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.Context.InternalContextAdapterImpl.PushCurrentTemplateName(System.String)">PushCurrentTemplateName</a>(string s)</td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">object</td>
+        <td class="method">
+          <a href="#NVelocity.Context.InternalContextAdapterImpl.Put(System.String,System.Object)">Put</a>(string key, object value_Renamed)</td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">object</td>
+        <td class="method">
+          <a href="#NVelocity.Context.InternalContextAdapterImpl.Remove(System.Object)">Remove</a>(object key)</td>
+      </tr>
+    </table>
+    <br>
+    <table class="subtable" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Methods inherited from class System.Object</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>
+          <a href="..\..\NVelocity/Context/InternalContextAdapterImpl/Equals(System.html#Object)">Equals</a>, <a href="..\..\NVelocity/Context/InternalContextAdapterImpl.html#Finalize">Finalize</a>, <a href="..\..\NVelocity/Context/InternalContextAdapterImpl.html#GetHashCode">GetHashCode</a>, <a href="..\..\NVelocity/Context/InternalContextAdapterImpl.html#GetType">GetType</a>, <a href="..\..\NVelocity/Context/InternalContextAdapterImpl.html#MemberwiseClone">MemberwiseClone</a>, <a href="..\..\NVelocity/Context/InternalContextAdapterImpl.html#ToString">ToString</a></td>
+      </tr>
+    </table>
+    <br>
+    <a name="operator-summary">
+    </a>
+    <a name="event-summary">
+    </a>
+    <br>
+    <a name="field-detail">
+    </a>
+    <a name="constructor-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Constructor Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.Context.InternalContextAdapterImpl.#ctor(NVelocity.Context.IContext)">
+    </a>
+    <h3>InternalContextAdapterImpl</h3>
+    <pre>public InternalContextAdapterImpl(NVelocity.Context.IContext c)</pre>
+    <dl>
+      <dd>
+        <p>  CTOR takes a Context and wraps it, delegating all 'data' calls
+            to it.
+            
+            For support of internal contexts, it will create an InternalContextBase
+            if need be.
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="property-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Property Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.Context.InternalContextAdapterImpl.BaseContext">
+    </a>
+    <h3>BaseContext</h3>
+    <pre>public NVelocity.Context.InternalContextAdapter BaseContext</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Context.InternalContextAdapterImpl.CurrentResource">
+    </a>
+    <h3>CurrentResource</h3>
+    <pre>public NVelocity.Runtime.Resource.Resource CurrentResource</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Context.InternalContextAdapterImpl.CurrentTemplateName">
+    </a>
+    <h3>CurrentTemplateName</h3>
+    <pre>public string CurrentTemplateName</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Context.InternalContextAdapterImpl.EventCartridge">
+    </a>
+    <h3>EventCartridge</h3>
+    <pre>public NVelocity.App.Events.EventCartridge EventCartridge</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Context.InternalContextAdapterImpl.InternalUserContext">
+    </a>
+    <h3>InternalUserContext</h3>
+    <pre>public NVelocity.Context.IContext InternalUserContext</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Context.InternalContextAdapterImpl.Keys">
+    </a>
+    <h3>Keys</h3>
+    <pre>public object[] Keys</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Context.InternalContextAdapterImpl.TemplateNameStack">
+    </a>
+    <h3>TemplateNameStack</h3>
+    <pre>public object[] TemplateNameStack</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="method-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Method Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.Context.InternalContextAdapterImpl.AttachEventCartridge(NVelocity.App.Events.EventCartridge)">
+    </a>
+    <h3>AttachEventCartridge</h3>
+    <pre>public NVelocity.App.Events.EventCartridge AttachEventCartridge(NVelocity.App.Events.EventCartridge ec)</pre>
+    <dl>
+      <dd>
+        <p>  Returns the base context that we are
+            wrapping. Here, its this, but for other thing
+            like VM related context contortions, it can
+            be something else
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Context.InternalContextAdapterImpl.ContainsKey(System.Object)">
+    </a>
+    <h3>ContainsKey</h3>
+    <pre>public bool ContainsKey(object key)</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Context.InternalContextAdapterImpl.Get(System.String)">
+    </a>
+    <h3>Get</h3>
+    <pre>public object Get(string key)</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Context.InternalContextAdapterImpl.ICacheGet(System.Object)">
+    </a>
+    <h3>ICacheGet</h3>
+    <pre>public NVelocity.Util.Introspection.IntrospectionCacheData ICacheGet(object key)</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Context.InternalContextAdapterImpl.ICachePut(System.Object,NVelocity.Util.Introspection.IntrospectionCacheData)">
+    </a>
+    <h3>ICachePut</h3>
+    <pre>public void ICachePut(object key,
+                      NVelocity.Util.Introspection.IntrospectionCacheData o)</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Context.InternalContextAdapterImpl.PopCurrentTemplateName">
+    </a>
+    <h3>PopCurrentTemplateName</h3>
+    <pre>public void PopCurrentTemplateName()</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Context.InternalContextAdapterImpl.PushCurrentTemplateName(System.String)">
+    </a>
+    <h3>PushCurrentTemplateName</h3>
+    <pre>public void PushCurrentTemplateName(string s)</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Context.InternalContextAdapterImpl.Put(System.String,System.Object)">
+    </a>
+    <h3>Put</h3>
+    <pre>public object Put(string key,
+                  object value_Renamed)</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Context.InternalContextAdapterImpl.Remove(System.Object)">
+    </a>
+    <h3>Remove</h3>
+    <pre>public object Remove(object key)</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="operator-detail">
+    </a>
+    <a name="event-detail">
+    </a>
+    <hr>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td>
+                <a href="namespace-summary.html">Namespace</a> </td>
+              <td class="nav1sel"> Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV TYPE    NEXT TYPE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+      <tr class="nav2">
+        <td>SUMMARY: INNER | FIELD | <a href="#constructor-summary">CONST</a> | <a href="#property-summary">PROP</a> | <a href="#method-summary">METHOD</a> | OP | EVENT</td>
+        <td>DETAIL: FIELD | <a href="#constructor-detail">CONST</a> | <a href="#property-detail">PROP</a> | <a href="#method-detail">METHOD</a> | OP | EVENT</td>
+      </tr>
+    </table>
+  </body>
+</html>

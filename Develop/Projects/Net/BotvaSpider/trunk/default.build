@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<project name="Build Libs" default="buildAll">
+	<include buildfile="..\..\NAnt\common.build" />
+	<target name="buildAll">
+    <property name="Project.Folder" value="${path::get-full-path('.')}" />
+    <property name="Project.File" value="BotvaSpider.sln" />
+    <call target="buildDebug" />
+    <call target="buildRelease" />
+	</target>
+	<target name="buildRelease">
+		<property name="Project.Config" value="Release" />
+		<call target="buildProject" />
+	</target>
+	<target name="buildDebug">
+		<property name="Project.Config" value="Debug" />
+		<call target="buildProject" />
+	</target>
+</project>

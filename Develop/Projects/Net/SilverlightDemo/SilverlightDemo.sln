@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SilverlightDemo", "SilverlightDemo\SilverlightDemo.csproj", "{DF6DA513-8249-45A5-95B2-E98AD33C6D5E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SilverlightDemo.Web", "SilverlightDemo.Web\SilverlightDemo.Web.csproj", "{275DDD3C-9A0B-4025-B756-7234C151D70D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DF6DA513-8249-45A5-95B2-E98AD33C6D5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF6DA513-8249-45A5-95B2-E98AD33C6D5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF6DA513-8249-45A5-95B2-E98AD33C6D5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF6DA513-8249-45A5-95B2-E98AD33C6D5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{275DDD3C-9A0B-4025-B756-7234C151D70D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{275DDD3C-9A0B-4025-B756-7234C151D70D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{275DDD3C-9A0B-4025-B756-7234C151D70D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{275DDD3C-9A0B-4025-B756-7234C151D70D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

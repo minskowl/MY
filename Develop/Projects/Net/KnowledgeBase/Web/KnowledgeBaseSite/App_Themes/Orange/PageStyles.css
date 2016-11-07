@@ -1,0 +1,17 @@
+﻿.pageBody
+{
+	margin:0px 0px 0px 0xp;
+}
+
+.breadCrumbsHeader
+{
+	height: 30px;
+	background-image: url(PanelImages/button.gif);
+}
+
+.appHeader
+{
+	background-image: url(PageImages/AppHeaderBackground.jpg); 
+	background-repeat: repeat-x; 
+	height: 50px
+}

@@ -1,0 +1,40 @@
+﻿<UserControl x:Class="KnowledgeBase.Desktop.Controls.KeywordSelector"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:Controls="clr-namespace:KnowledgeBase.Controls;assembly=KnowledgeBase.Controls"
+             mc:Ignorable="d" DataContextChanged="OnDataContextChanged"
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <DataTemplate x:Key="centralTile">
+            <Border Background="LightBlue" BorderBrush="Black" 
+        BorderThickness="2" 
+        CornerRadius="4" 
+        Padding="5,2,5,2">
+
+                <TextBlock Text="{Binding Path=Name}" FontSize="13" 
+                     HorizontalAlignment="Left" Margin="0,0,0,1" />
+            </Border>
+        </DataTemplate>
+
+        <Controls:PlainView x:Key="tileView" 
+                   ItemTemplate="{StaticResource centralTile}" />
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <StackPanel Grid.Row="0" Orientation="Horizontal" >
+            <ComboBox x:Name="comboWords" Width="200" IsEditable="True"  IsReadOnly="False" />
+            <Button Content="Add" Click="ButtonAdd_Click"  Style="{StaticResource Default}" />
+        </StackPanel>
+
+        <ListView Grid.Row="1" x:Name="listWords" 
+                  View="{Binding Source={StaticResource tileView}}"
+                  MouseDoubleClick="listWords_MouseDoubleClick" MinHeight="20" 
+                  ItemsSource="{Binding DataContext, RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type UserControl}}}" />
+    </Grid>
+</UserControl>

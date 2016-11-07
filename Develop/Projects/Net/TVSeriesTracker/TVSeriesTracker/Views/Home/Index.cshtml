@@ -1,0 +1,132 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title.</h1>
+                <h2>@ViewBag.Message</h2>
+            </hgroup>
+        </div>
+    </section>
+}
+<h3>We suggest the following:</h3>
+<input data-bind="value: searchText" />
+<select width="50" data-bind="options: types, value: selectedType"></select>
+<button data-bind="click: doSearch">Do search</button>
+
+<table data-bind="visible: results().length > 0">
+    <tbody data-bind="foreach: results">
+
+        <tr>
+            <td class="label">Title</td>
+            <td><a data-bind="text: title,attr: {href: url}" target="_blank" /></td>
+            <td rowspan="7">
+                <img data-bind="attr: {src: poster}" width="300" /></td>
+        </tr>
+        <tr>
+            <td class="label">Type</td>
+            <td data-bind="text: type"></td>
+        </tr>
+        <tr>
+            <td class="label">Year</td>
+            <td data-bind="text: year"></td>
+        </tr>
+        <tr>
+            <td class="label">Rating</td>
+            <td data-bind="text: rating"></td>
+        </tr>
+        <tr>
+            <td class="label">Id</td>
+            <td data-bind="text: id"></td>
+        </tr>
+        <tr></tr>
+        <tr >
+            <td class="label">Summary</td>
+            <td data-bind="text: plot_simple"></td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+
+
+    </tbody>
+</table>
+@Scripts.Render("~/bundles/knockout")
+@Scripts.Render("~/bundles/sammy")
+
+@section scripts
+{
+    <script type="text/javascript" language="jscript">
+        function MovieModel(m) {
+            var self = this;
+            self.title = m.title;
+            self.type = m.genres;
+            self.year = m.year;
+            self.rating = m.rating;
+            self.plot_simple = m.overview;
+            self.url = m.url;
+            self.id = m.imdb_id;
+            self.poster = m.images.poster == undefined ? "http://desertpeace.files.wordpress.com/2012/12/no-photos.jpg" : m.images.poster;
+        }
+
+        function AppViewModel(types) {
+            var self = this;
+
+            self.searchText = ko.observable("White collar");
+            self.types = ko.observableArray(types);
+            self.results = ko.observableArray();
+            self.selectedType = ko.observable("shows");
+
+            self.doSearch = function () {
+
+                var q = this.searchText().replace(" ", "+");
+                var url = "http://api.trakt.tv/search/" + this.selectedType() + ".json/5bf9c60ee3094b0745f23c4ea046b974/" + escape(q);
+
+                $.ajax({
+                    url: url,
+                    type: 'GET',
+                    crossDomain: true,
+                    dataType: 'jsonp',
+                    success: function (data) {
+                        for (i in data) {
+                            self.results.push(new MovieModel(data[i]));
+                        }
+                    },
+                    error: function (jqXHR, textStatus, errorThrown) {
+                        console.log("error " + textStatus);
+                        console.log("incoming Text " + jqXHR.responseText);
+                    }
+                    , beforeSend: function (xhr) {
+                        xhr.setRequestHeader('Accept', 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8');
+                        xhr.setRequestHeader('Accept-Encoding', 'deflate');
+
+                    }
+                });
+
+
+                /*$.getJSON(url, function (data) {
+                    for (i in data) {
+                        self.results.push(new MovieModel(data[i]));
+                    }
+
+                })*/
+
+            };
+
+        }
+
+        // Activates knockout.js
+        ko.applyBindings(new AppViewModel(["movies", "shows", "episodes"]));
+
+        $.ajaxSetup({
+            "error": function (jqXHR, textStatus, errorThrown) {
+                console.log("error " + textStatus);
+                console.log("incoming Text " + jqXHR.responseText);
+            }
+        });
+
+    </script>
+}

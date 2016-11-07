@@ -1,0 +1,598 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="..\..\..\JavaDoc.css">
+  </head>
+  <body>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td>
+                <a href="namespace-summary.html">Namespace</a> </td>
+              <td class="nav1sel"> Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV TYPE    NEXT TYPE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+      <tr class="nav2">
+        <td>SUMMARY: INNER | <a href="#field-summary">FIELD</a> | <a href="#constructor-summary">CONST</a> | <a href="#property-summary">PROP</a> | <a href="#method-summary">METHOD</a> | OP | EVENT</td>
+        <td>DETAIL: <a href="#field-detail">FIELD</a> | <a href="#constructor-detail">CONST</a> | <a href="#property-detail">PROP</a> | <a href="#method-detail">METHOD</a> | OP | EVENT</td>
+      </tr>
+    </table>
+    <hr>
+    <h2>
+      <span class="namespaceName">NVelocity.NAnt.Dvsl</span>
+      <br>
+      <span class="className">Class DvslTask</span>
+    </h2>
+    <a name="field-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Field Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="fieldType" valign="top">string</td>
+        <td class="field">
+          <a href="#NVelocity.NAnt.Dvsl.DvslTask.INFILENAME">INFILENAME</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="fieldType" valign="top">string</td>
+        <td class="field">
+          <a href="#NVelocity.NAnt.Dvsl.DvslTask.OUTFILENAME">OUTFILENAME</a>
+        </td>
+      </tr>
+    </table>
+    <br>
+    <table class="subtable" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Fields inherited from class SourceForge.NAnt.Element</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>
+          <a href="">_location</a>, <a href="">_parent</a>, <a href="">_project</a>, <a href="">_xmlNode</a></td>
+      </tr>
+    </table>
+    <br>
+    <a name="constructor-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Constructor Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="constructor" valign="top">
+          <a href="#NVelocity.NAnt.Dvsl.DvslTask.#ctor">DvslTask</a>()<br>        Initializes a new instance of the DvslTask class.</td>
+      </tr>
+    </table>
+    <br>
+    <a name="property-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Property Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="propertyType" valign="top">string</td>
+        <td class="property">
+          <a href="#NVelocity.NAnt.Dvsl.DvslTask.Destdir">Destdir</a>
+          <br>        
+            Set the destination directory where the generated files should be directed.
+            </td>
+      </tr>
+      <tr>
+        <td class="propertyType" valign="top">string</td>
+        <td class="property">
+          <a href="#NVelocity.NAnt.Dvsl.DvslTask.Extension">Extension</a>
+          <br>        
+            Set the desired file extension to be used for the target files.
+            If not specified, "<pre class="code">.html</pre>" is used.
+            </td>
+      </tr>
+      <tr>
+        <td class="propertyType" valign="top">SourceForge.NAnt.FileSet</td>
+        <td class="property">
+          <a href="#NVelocity.NAnt.Dvsl.DvslTask.FileSet">FileSet</a>
+          <br>        
+            The set of files to be included in the archive.
+            </td>
+      </tr>
+      <tr>
+        <td class="propertyType" valign="top">bool</td>
+        <td class="property">
+          <a href="#NVelocity.NAnt.Dvsl.DvslTask.Force">Force</a>
+          <br>        
+            Set whether to check dependencies, or always generate.
+            </td>
+      </tr>
+      <tr>
+        <td class="propertyType" valign="top">string</td>
+        <td class="property">
+          <a href="#NVelocity.NAnt.Dvsl.DvslTask.In">In</a>
+          <br>        
+            Sets an input xml file to be styled
+            </td>
+      </tr>
+      <tr>
+        <td class="propertyType" valign="top">string</td>
+        <td class="property">
+          <a href="#NVelocity.NAnt.Dvsl.DvslTask.LogFile">LogFile</a>
+          <br>        
+            Sets the file to use for logging.  If not specified, all logging
+            is directed through NAnt's logging system.
+            </td>
+      </tr>
+      <tr>
+        <td class="propertyType" valign="top">string</td>
+        <td class="property">
+          <a href="#NVelocity.NAnt.Dvsl.DvslTask.Out">Out</a>
+          <br>        
+            Sets an output file
+            </td>
+      </tr>
+      <tr>
+        <td class="propertyType" valign="top">string</td>
+        <td class="property">
+          <a href="#NVelocity.NAnt.Dvsl.DvslTask.OutputEncoding">OutputEncoding</a>
+          <br>        
+            Sets the character encoding for output files.  If not specified,
+            output is written with UTF-8 encodin6g.
+            </td>
+      </tr>
+      <tr>
+        <td class="propertyType" valign="top">string</td>
+        <td class="property">
+          <a href="#NVelocity.NAnt.Dvsl.DvslTask.Style">Style</a>
+          <br>        
+            Sets the file to use for stylesheet.
+            </td>
+      </tr>
+      <tr>
+        <td class="propertyType" valign="top">string</td>
+        <td class="property">
+          <a href="#NVelocity.NAnt.Dvsl.DvslTask.ToolboxFile">ToolboxFile</a>
+          <br>        
+            Sets the Toolbox properties file to use.
+            </td>
+      </tr>
+      <tr>
+        <td class="propertyType" valign="top">bool</td>
+        <td class="property">
+          <a href="#NVelocity.NAnt.Dvsl.DvslTask.ValidatingParser">ValidatingParser</a>
+          <br>        
+            Sets the flag to have DVSL use a validating parser for the
+            input documents
+            </td>
+      </tr>
+    </table>
+    <br>
+    <table class="subtable" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Properties inherited from class SourceForge.NAnt.Task</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>
+          <a href="">FailOnError</a>, <a href="">IfDefined</a>, <a href="">LogPrefix</a>, <a href="">Name</a>, <a href="">UnlessDefined</a>, <a href="">Verbose</a></td>
+      </tr>
+    </table>
+    <br>
+    <table class="subtable" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Properties inherited from class SourceForge.NAnt.Element</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>
+          <a href="">Location</a>, <a href="">Parent</a>, <a href="">Project</a>, <a href="">Properties</a></td>
+      </tr>
+    </table>
+    <br>
+    <a name="method-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Method Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.NAnt.Dvsl.DvslTask.ExecuteTask">ExecuteTask</a>()</td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.NAnt.Dvsl.DvslTask.PutAppValue(System.String,System.Object)">PutAppValue</a>(string name, object o)<br>        
+            Sets an application value from outside of the DVSL task
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.NAnt.Dvsl.DvslTask.xExecuteTask">xExecuteTask</a>()</td>
+      </tr>
+    </table>
+    <br>
+    <table class="subtable" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Methods inherited from class SourceForge.NAnt.Task</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>
+          <a href="..\..\..\NVelocity/NAnt/Dvsl/DvslTask.html#Execute">Execute</a>, <a href="..\..\..\NVelocity/NAnt/Dvsl/DvslTask/InitializeElement(System/Xml.html#XmlNode)">InitializeElement</a>, <a href="..\..\..\NVelocity/NAnt/Dvsl/DvslTask/InitializeTask(System/Xml.html#XmlNode)">InitializeTask</a></td>
+      </tr>
+    </table>
+    <br>
+    <table class="subtable" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Methods inherited from class SourceForge.NAnt.Element</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>
+          <a href="..\..\..\NVelocity/NAnt/Dvsl/DvslTask/Initialize(System/Xml.html#XmlNode)">Initialize</a>
+        </td>
+      </tr>
+    </table>
+    <br>
+    <table class="subtable" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Methods inherited from class System.Object</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>
+          <a href="..\..\..\NVelocity/NAnt/Dvsl/DvslTask/Equals(System.html#Object)">Equals</a>, <a href="..\..\..\NVelocity/NAnt/Dvsl/DvslTask.html#Finalize">Finalize</a>, <a href="..\..\..\NVelocity/NAnt/Dvsl/DvslTask.html#GetHashCode">GetHashCode</a>, <a href="..\..\..\NVelocity/NAnt/Dvsl/DvslTask.html#GetType">GetType</a>, <a href="..\..\..\NVelocity/NAnt/Dvsl/DvslTask.html#MemberwiseClone">MemberwiseClone</a>, <a href="..\..\..\NVelocity/NAnt/Dvsl/DvslTask.html#ToString">ToString</a></td>
+      </tr>
+    </table>
+    <br>
+    <a name="operator-summary">
+    </a>
+    <a name="event-summary">
+    </a>
+    <br>
+    <a name="field-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Field Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.NAnt.Dvsl.DvslTask.INFILENAME">
+    </a>
+    <h3>INFILENAME</h3>
+    <pre>public string <b>INFILENAME</b></pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.NAnt.Dvsl.DvslTask.OUTFILENAME">
+    </a>
+    <h3>OUTFILENAME</h3>
+    <pre>public string <b>OUTFILENAME</b></pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="constructor-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Constructor Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.NAnt.Dvsl.DvslTask.#ctor">
+    </a>
+    <h3>DvslTask</h3>
+    <pre>public DvslTask()</pre>
+    <dl>
+      <dd>
+        <p>Initializes a new instance of the DvslTask class.</p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="property-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Property Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.NAnt.Dvsl.DvslTask.Destdir">
+    </a>
+    <h3>Destdir</h3>
+    <pre>public string Destdir</pre>
+    <dl>
+      <dd>
+        <p>
+            Set the destination directory where the generated files should be directed.
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.NAnt.Dvsl.DvslTask.Extension">
+    </a>
+    <h3>Extension</h3>
+    <pre>public string Extension</pre>
+    <dl>
+      <dd>
+        <p>
+            Set the desired file extension to be used for the target files.
+            If not specified, "<pre class="code">.html</pre>" is used.
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.NAnt.Dvsl.DvslTask.FileSet">
+    </a>
+    <h3>FileSet</h3>
+    <pre>public SourceForge.NAnt.FileSet FileSet</pre>
+    <dl>
+      <dd>
+        <p>
+            The set of files to be included in the archive.
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.NAnt.Dvsl.DvslTask.Force">
+    </a>
+    <h3>Force</h3>
+    <pre>public bool Force</pre>
+    <dl>
+      <dd>
+        <p>
+            Set whether to check dependencies, or always generate.
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.NAnt.Dvsl.DvslTask.In">
+    </a>
+    <h3>In</h3>
+    <pre>public string In</pre>
+    <dl>
+      <dd>
+        <p>
+            Sets an input xml file to be styled
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.NAnt.Dvsl.DvslTask.LogFile">
+    </a>
+    <h3>LogFile</h3>
+    <pre>public string LogFile</pre>
+    <dl>
+      <dd>
+        <p>
+            Sets the file to use for logging.  If not specified, all logging
+            is directed through NAnt's logging system.
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.NAnt.Dvsl.DvslTask.Out">
+    </a>
+    <h3>Out</h3>
+    <pre>public string Out</pre>
+    <dl>
+      <dd>
+        <p>
+            Sets an output file
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.NAnt.Dvsl.DvslTask.OutputEncoding">
+    </a>
+    <h3>OutputEncoding</h3>
+    <pre>public string OutputEncoding</pre>
+    <dl>
+      <dd>
+        <p>
+            Sets the character encoding for output files.  If not specified,
+            output is written with UTF-8 encodin6g.
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.NAnt.Dvsl.DvslTask.Style">
+    </a>
+    <h3>Style</h3>
+    <pre>public string Style</pre>
+    <dl>
+      <dd>
+        <p>
+            Sets the file to use for stylesheet.
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.NAnt.Dvsl.DvslTask.ToolboxFile">
+    </a>
+    <h3>ToolboxFile</h3>
+    <pre>public string ToolboxFile</pre>
+    <dl>
+      <dd>
+        <p>
+            Sets the Toolbox properties file to use.
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.NAnt.Dvsl.DvslTask.ValidatingParser">
+    </a>
+    <h3>ValidatingParser</h3>
+    <pre>public bool ValidatingParser</pre>
+    <dl>
+      <dd>
+        <p>
+            Sets the flag to have DVSL use a validating parser for the
+            input documents
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="method-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Method Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.NAnt.Dvsl.DvslTask.ExecuteTask">
+    </a>
+    <h3>ExecuteTask</h3>
+    <pre>protected void ExecuteTask()</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.NAnt.Dvsl.DvslTask.PutAppValue(System.String,System.Object)">
+    </a>
+    <h3>PutAppValue</h3>
+    <pre>public void PutAppValue(string name,
+                        object o)</pre>
+    <dl>
+      <dd>
+        <p>
+            Sets an application value from outside of the DVSL task
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>name</code> - </dd>
+          <dd>
+            <code>o</code> - </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.NAnt.Dvsl.DvslTask.xExecuteTask">
+    </a>
+    <h3>xExecuteTask</h3>
+    <pre>protected void xExecuteTask()</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="operator-detail">
+    </a>
+    <a name="event-detail">
+    </a>
+    <hr>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td>
+                <a href="namespace-summary.html">Namespace</a> </td>
+              <td class="nav1sel"> Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV TYPE    NEXT TYPE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+      <tr class="nav2">
+        <td>SUMMARY: INNER | <a href="#field-summary">FIELD</a> | <a href="#constructor-summary">CONST</a> | <a href="#property-summary">PROP</a> | <a href="#method-summary">METHOD</a> | OP | EVENT</td>
+        <td>DETAIL: <a href="#field-detail">FIELD</a> | <a href="#constructor-detail">CONST</a> | <a href="#property-detail">PROP</a> | <a href="#method-detail">METHOD</a> | OP | EVENT</td>
+      </tr>
+    </table>
+  </body>
+</html>

@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="Savchin.Bubbles.Controls.StatisticsColorPanel"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Controls="clr-namespace:Savchin.Bubbles.Controls"
+    xmlns:ListViewLayout="clr-namespace:Savchin.Wpf.Controls.ListViewLayout;assembly=Savchin.Wpf.Controls"
+    Height="300" MinWidth="125"  Background="Silver">
+    <StackPanel x:Name="layout">
+        <TextBlock  Text="Color Statistics"/>
+        <ListView x:Name="grid" ListViewLayout:ListViewLayoutManager.Enabled="True">
+            <ListView.View>
+                <GridView>
+                    <GridView.Columns>
+                        <GridViewColumn Header="Color"  Width="40"  ListViewLayout:SortedColumn.SortExpression="Color"  >
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Controls:Bubble Color="{Binding Path=Color}"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Header="Count"  DisplayMemberBinding="{Binding Path=Count}"  Width="40"
+                                        ListViewLayout:SortedColumn.SortExpression="Count"/>
+                        <GridViewColumn  DisplayMemberBinding="{Binding Path=PosibleScore}" Width="40" 
+ListViewLayout:SortedColumn.SortExpression="PosibleScore"   >
+                            <GridViewColumn.Header>
+                                <TextBlock ToolTip="Possible Score" HorizontalAlignment="Stretch" >PS</TextBlock>
+                            </GridViewColumn.Header>
+                        </GridViewColumn>
+                        
+                    </GridView.Columns>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </StackPanel>
+</UserControl>

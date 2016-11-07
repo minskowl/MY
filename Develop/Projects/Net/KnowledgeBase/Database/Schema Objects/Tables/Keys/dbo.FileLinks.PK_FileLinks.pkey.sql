@@ -1,0 +1,3 @@
+﻿ALTER TABLE [dbo].[FileLinks] ADD CONSTRAINT [PK_FileLinks] PRIMARY KEY CLUSTERED  ([FileLinkID]) ON [PRIMARY]
+
+

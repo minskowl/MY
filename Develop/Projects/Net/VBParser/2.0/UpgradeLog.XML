@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="VBParser">
+</Property><Property Name="Solution File" Value="E:\Projects\Net\VBParser\2.0\VBParser.sln">
+</Property><Property Name="Date" Value="1 апреля 2006 г.">
+</Property><Property Name="Time" Value="10:41">
+</Property></Properties><Event ErrorLevel="0" Project="VBParser" Source="VBParser.vbproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="VBParser" Source="VBParser.vbproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="VBParser.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="VBParser.sln" Description="Converted">
+</Event><Event ErrorLevel="3" Project="VBParser" Source="CodeParser\CodeBuilderMSCodeDom.vb" Description="file converted">
+</Event></UpgradeLog>

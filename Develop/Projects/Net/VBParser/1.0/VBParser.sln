@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "VBParser", "VBParser.vbproj", "{D5952864-D830-4626-AB9E-2E94514B42EC}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{D5952864-D830-4626-AB9E-2E94514B42EC}.Debug.ActiveCfg = Debug|.NET
+		{D5952864-D830-4626-AB9E-2E94514B42EC}.Debug.Build.0 = Debug|.NET
+		{D5952864-D830-4626-AB9E-2E94514B42EC}.Release.ActiveCfg = Release|.NET
+		{D5952864-D830-4626-AB9E-2E94514B42EC}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

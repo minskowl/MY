@@ -1,0 +1,12 @@
+/.cvsignore///
+/Default.aspx///
+/Default.aspx.resx///
+/README.txt///
+/SimpleHttp.csproj.webinfo///
+/Web.config///
+/sample.vm///
+/AssemblyInfo.cs///
+/Default.aspx.cs///
+/SimpleNVelocityHandler.cs///
+/SimpleHttp.csproj///
+/SimpleHttp.sln///

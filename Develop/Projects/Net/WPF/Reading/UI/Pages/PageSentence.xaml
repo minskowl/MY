@@ -1,0 +1,66 @@
+﻿<Page x:Class="Reading.Pages.PageSentence"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:Data="clr-namespace:Savchin.Wpf.Data;assembly=Savchin.WPF.Tools" xmlns:Controls="clr-namespace:Reading.Controls" mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+	Title="PageSentence">
+
+    <Page.Resources>
+        <Data:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+    </Page.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="Auto"/>
+            <RowDefinition />
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="{Binding Title}" Style="{DynamicResource Title}"
+                  VerticalAlignment="Top" />
+        <Grid Grid.Row="1"  >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Controls:SentenceControl  Grid.Column="0" HorizontalAlignment="Center" 
+                                   Sentence="{Binding SelectedItem}"  />
+            <Button Grid.Column="1" Content="&gt;&gt;" 
+                    Command="{Binding NextItemCommand}"
+                    Style="{DynamicResource Syllable}" Margin="10,0,0,0"/>
+        </Grid>
+        <Expander Header="Настройки" Grid.Row="3">
+            <WrapPanel   Orientation="Horizontal" >
+                <CheckBox x:Name="boxSyllablesView" Content="Разбивать на слоги" 
+                      IsChecked="{Binding SyllablesView,Mode=TwoWay}" 
+                      VerticalAlignment="Center" />
+                <StackPanel Orientation="Horizontal" >
+                    <Label Content="Кол-во слогов от"/>
+                    <ComboBox ItemsSource="{Binding SyllableCounts}" 
+                      SelectedValue="{Binding WordSyllablesCountFrom, Mode=TwoWay}" />
+                    <Label Content="до"/>
+                    <ComboBox ItemsSource="{Binding SyllableCounts}"  
+                      SelectedValue="{Binding WordSyllablesCountTo, Mode=TwoWay}" />
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" >
+                    <Label Content="Длинна слова от"/>
+                    <ComboBox ItemsSource="{Binding WordLengths}" 
+                      SelectedValue="{Binding WordWidthFrom, Mode=TwoWay}" />
+                    <Label Content="до"/>
+                    <ComboBox ItemsSource="{Binding WordLengths}"  
+                      SelectedValue="{Binding WordWidthTo, Mode=TwoWay}" />
+                    <Label Content="букв"/>
+                </StackPanel>
+                <CheckBox Content="С повтором слов" 
+                      IsChecked="{Binding ItemsRepetable,Mode=TwoWay}" 
+                      VerticalAlignment="Center"/>
+                <StackPanel Orientation="Horizontal" >
+                    <Label>Кол-во предложений в словаре</Label>
+                    <Label Content="{Binding ItemsCount}"/>
+                </StackPanel>
+            </WrapPanel >
+        </Expander>
+
+    </Grid>
+</Page>

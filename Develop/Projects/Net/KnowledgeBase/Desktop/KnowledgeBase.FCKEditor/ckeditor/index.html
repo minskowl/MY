@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Editor</title>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <script type="text/javascript" src="ckeditor.js"></script>
+<script type="text/javascript" src="plugins/syntaxhighlight/scripts/shCore.js"></script>
+<script type="text/javascript" src="plugins/syntaxhighlight/scripts/shBrushBash.js"></script>
+<script type="text/javascript" src="plugins/syntaxhighlight/scripts/shBrushCpp.js"></script>
+<script type="text/javascript" src="plugins/syntaxhighlight/scripts/shBrushCSharp.js"></script>
+<script type="text/javascript" src="plugins/syntaxhighlight/scripts/shBrushCss.js"></script>
+<script type="text/javascript" src="plugins/syntaxhighlight/scripts/shBrushDelphi.js"></script>
+<script type="text/javascript" src="plugins/syntaxhighlight/scripts/shBrushDiff.js"></script>
+<script type="text/javascript" src="plugins/syntaxhighlight/scripts/shBrushGroovy.js"></script>
+<script type="text/javascript" src="plugins/syntaxhighlight/scripts/shBrushJava.js"></script>
+<script type="text/javascript" src="plugins/syntaxhighlight/scripts/shBrushJScript.js"></script>
+<script type="text/javascript" src="plugins/syntaxhighlight/scripts/shBrushPhp.js"></script>
+<script type="text/javascript" src="plugins/syntaxhighlight/scripts/shBrushPlain.js"></script>
+<script type="text/javascript" src="plugins/syntaxhighlight/scripts/shBrushPython.js"></script>
+<script type="text/javascript" src="plugins/syntaxhighlight/scripts/shBrushRuby.js"></script>
+<script type="text/javascript" src="plugins/syntaxhighlight/scripts/shBrushScala.js"></script>
+<script type="text/javascript" src="plugins/syntaxhighlight/scripts/shBrushSql.js"></script>
+<script type="text/javascript" src="plugins/syntaxhighlight/scripts/shBrushVb.js"></script>
+<script type="text/javascript" src="plugins/syntaxhighlight/scripts/shBrushXml.js"></script>
+ <link type="text/css" rel="stylesheet" href="plugins/syntaxhighlight/styles/shCore.css"/>
+ <link type="text/css" rel="stylesheet" href="plugins/syntaxhighlight/styles/shThemeDefault.css"/>
+ <script type="text/javascript">
+  SyntaxHighlighter.config.clipboardSwf = 'plugins/syntaxhighlight/scripts/clipboard.swf';
+  SyntaxHighlighter.all();
+ </script>    
+ 
+</head>
+<body>
+    <p>
+        <textarea cols="80" id="editor" name="editor" rows="10">&lt;p&gt;This is some &lt;strong&gt;sample text&lt;/strong&gt;. You are using &lt;a href="http://ckeditor.com/"&gt;CKEditor&lt;/a&gt;.&lt;/p&gt;</textarea>
+        <script type="text/javascript">
+//<![CDATA[
+
+CKEDITOR.replace( 'editor',
+	{
+        skin : 'kama',
+        filebrowserBrowseUrl : 'browser.html',
+        filebrowserImageBrowseUrl : 'browser.html?type=Images',
+        filebrowserUploadUrl : 'upload.html',
+        filebrowserImageUploadUrl : 'upload.html?type=Images'
+	});
+CKEDITOR.on('instanceReady',  function( evt ) {     evt.editor.execCommand('maximize');  });
+			 
+function getHtml()
+{
+	return CKEDITOR.instances.editor.getData();
+}
+			
+function setHtml(text)
+{
+	CKEDITOR.instances.editor.setData(text);
+}
+
+var filesXML;
+function setFiles(text) {
+    window.filesXML = text;
+}
+
+//]]>
+        </script>
+    </p>
+</body>
+</html>

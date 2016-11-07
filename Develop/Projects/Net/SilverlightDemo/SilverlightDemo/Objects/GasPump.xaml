@@ -1,0 +1,59 @@
+﻿<UserControl x:Class="EffectiveSoft.SilverlightDemo.Objects.GasPump"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    Width="60" Height="30">
+    <UserControl.Resources>
+        <LinearGradientBrush x:Key="brushRegular" EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FFA2A310" Offset="1"/>
+            <GradientStop Color="#FFE0DFC0" Offset="0.413"/>
+            <GradientStop Color="#FFD8D69B" Offset="0.022"/>
+        </LinearGradientBrush>
+
+        <LinearGradientBrush x:Key="brushPremium" EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FF3CA310" Offset="1"/>
+            <GradientStop Color="#FFCCE6C0" Offset="0.413"/>
+            <GradientStop Color="#FFADD89B" Offset="0.022"/>
+        </LinearGradientBrush>
+
+        <LinearGradientBrush  x:Key="brushSuper" EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FF1075A3" Offset="1"/>
+            <GradientStop Color="#FFC0D7E6" Offset="0.413"/>
+            <GradientStop Color="#FF9BBFD8" Offset="0.022"/>
+        </LinearGradientBrush>
+    </UserControl.Resources>
+    <Canvas x:Name="LayoutRoot" >
+        <Path x:Name="hobot"   Stretch="Fill"  Canvas.Left="49.896" Canvas.Top="8" Data="M51,8 L59.833332,8 C59.747803,13.666874 61.686161,21.167149 73.417343,21.5835 C75.249077,21.833841 95.791687,21.5835 95.791687,21.5835 L95.791687,29.50079 L50.581993,29.50079" RenderTransformOrigin="0.5,0.5" Visibility="Collapsed">
+            <Path.RenderTransform>
+            	<TransformGroup>
+            		<ScaleTransform ScaleX="-1"/>
+            		<SkewTransform/>
+            		<RotateTransform/>
+            		<TranslateTransform/>
+            	</TransformGroup>
+            </Path.RenderTransform>
+            <Path.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFA2A310" Offset="1"/>
+                    <GradientStop Color="#FFE0DFC0" Offset="0.413"/>
+                    <GradientStop Color="#FFD8D69B" Offset="0.022"/>
+                </LinearGradientBrush>
+            </Path.Fill>
+        </Path>
+        <Rectangle x:Name="labelBackground" Width="60" Height="30" RadiusX="5" RadiusY="5" >
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFA2A310" Offset="1"/>
+                    <GradientStop Color="#FFE0DFC0" Offset="0.413"/>
+                    <GradientStop Color="#FFD8D69B" Offset="0.022"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <TextBlock x:Name="labelFuelType" Foreground="#FFFFFFFF" FontWeight="Bold" 
+                   FontFamily="Portable User Interface" TextAlignment="Center" Width="60"
+                   >Regular</TextBlock>
+        <TextBlock x:Name="labelCounter" Foreground="#FFFFFFFF" FontWeight="Bold" 
+                   FontFamily="Portable User Interface" TextAlignment="Center" Width="60"
+                   Canvas.Top="15" >0045</TextBlock>
+      
+    </Canvas>
+</UserControl>

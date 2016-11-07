@@ -1,0 +1,87 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F44DAF14-09C2-4777-9B71-D6D80EFB3EBB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Resorces</RootNamespace>
+    <AssemblyName>Resorces</AssemblyName>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="libs\nunit.framework.dll" />
+    <Content Include="libs\nunit.mocks.dll" />
+    <None Include="Templates\project.pdgp" />
+    <Content Include="Templates\readme.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DataBase\DB.bak" />
+    <None Include="Model\MRS.pdm" />
+    <None Include="Model\Workspace.sws" />
+    <None Include="Templates\blProject.gp" />
+    <None Include="Templates\Entity.tcs" />
+    <None Include="Templates\EntityValue.tcs" />
+    <None Include="Templates\Factory.tcs" />
+    <None Include="Templates\tmp\abstractdao.tcs" />
+    <None Include="Templates\tmp\entity.tcs" />
+    <None Include="Templates\tmp\entitybase.tcs" />
+    <None Include="Templates\tmp\entitycollection.tcs" />
+    <None Include="Templates\tmp\entitycollectiontests.tcs" />
+    <None Include="Templates\tmp\entitydao.tcs" />
+    <None Include="Templates\tmp\entitydaotest.tcs" />
+    <None Include="Templates\tmp\entitymock.tcs" />
+    <None Include="Templates\tmp\entitypool.tcs" />
+    <None Include="Templates\tmp\ientity.tcs" />
+    <None Include="Templates\tmp\ientitybase.tcs" />
+    <None Include="Templates\tmp\ientitycollection.tcs" />
+    <None Include="Templates\tmp\storedprocedures.tcs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

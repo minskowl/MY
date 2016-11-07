@@ -1,0 +1,247 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{ED10A054-EFF9-408A-B50C-BD61B03D116F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Advertiser</RootNamespace>
+    <AssemblyName>Advertiser</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\Images\logo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\ThrPartLibs\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Controllers\AvController.cs" />
+    <Compile Include="Controls\WheelsReportWindow.xaml.cs">
+      <DependentUpon>WheelsReportWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Core\ElementHelper.cs" />
+    <Compile Include="Controllers\IrrController.cs" />
+    <Compile Include="Controllers\TutByController.cs" />
+    <Compile Include="Controls\LoginControl.xaml.cs">
+      <DependentUpon>LoginControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PhoneUserControl.xaml.cs">
+      <DependentUpon>PhoneUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SelectAccontsWindow.xaml.cs">
+      <DependentUpon>SelectAccontsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TextControl.xaml.cs">
+      <DependentUpon>TextControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UILogger.cs" />
+    <Compile Include="Controls\WheelSizeControl.xaml.cs">
+      <DependentUpon>WheelSizeControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\AbwController.cs" />
+    <Compile Include="Core\AdvContext.cs" />
+    <Compile Include="Controllers\AdvControllerBase.cs" />
+    <Compile Include="Controllers\IAdvController.cs" />
+    <Compile Include="Controllers\OnlinerController.cs" />
+    <Compile Include="Core\BrowserOptions.cs" />
+    <Compile Include="Core\Publisher.cs" />
+    <Compile Include="Entities\Entity.cs" />
+    <Compile Include="Entities\Interfaces.cs" />
+    <Compile Include="Entities\Phone.cs" />
+    <Compile Include="Views\EntityListView.cs" />
+    <Compile Include="Views\IObservableCollection.cs" />
+    <Compile Include="Views\ItemListView.cs" />
+    <Compile Include="Views\LoginListView.cs" />
+    <Compile Include="Views\MainWindowView.cs" />
+    <Compile Include="Views\PhonesListView.cs" />
+    <Compile Include="Views\TextListView.cs" />
+    <Compile Include="Views\ViewBase.cs" />
+    <Compile Include="Views\WheelsListView.cs" />
+    <Compile Include="Views\WheelsReportModel.cs" />
+    <Page Include="Controls\LoginControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\PhoneUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\SelectAccontsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\TextControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\WheelsControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\WheelSizeControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\WheelsReportWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\WheelsControl.xaml.cs">
+      <DependentUpon>WheelsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Advertisement.cs" />
+    <Compile Include="Entities\DataBase.cs" />
+    <Compile Include="Entities\Login.cs" />
+    <Compile Include="Entities\Wheels.cs" />
+    <Compile Include="Entities\WheelSize.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Themes\Generic.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Libs\Savchin.WinApi\Savchin.WinApi.csproj">
+      <Project>{dd712413-b47a-4707-a45d-84f786e47baf}</Project>
+      <Name>Savchin.WinApi</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libs\Tools\Savchin.Tools.csproj">
+      <Project>{2F1807E4-39A2-4F38-ADFC-6310A8443D90}</Project>
+      <Name>Savchin.Tools</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\NUnit\Watin\source\src\Core\WatiN.Core.csproj">
+      <Project>{217E2D34-F6DF-431B-AC5A-B368F481A530}</Project>
+      <Name>WatiN.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Controls\Savchin.Wpf.Controls.csproj">
+      <Project>{94FAF521-458A-4A1B-BEE6-42A5A738F6AB}</Project>
+      <Name>Savchin.Wpf.Controls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\WPF.Tools\WPF.Tools.csproj">
+      <Project>{DF7E8E9F-5B87-4561-AD02-38AE103C3DE6}</Project>
+      <Name>WPF.Tools</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="database.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\add.png" />
+    <Resource Include="Resources\Images\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\open.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\magic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\logo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\export.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\report.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,229 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="..\..\..\JavaDoc.css">
+  </head>
+  <body>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td>
+                <a href="namespace-summary.html">Namespace</a> </td>
+              <td class="nav1sel"> Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV TYPE    NEXT TYPE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+      <tr class="nav2">
+        <td>SUMMARY: INNER | FIELD | CONST | PROP | <a href="#method-summary">METHOD</a> | OP | EVENT</td>
+        <td>DETAIL: FIELD | CONST | PROP | <a href="#method-detail">METHOD</a> | OP | EVENT</td>
+      </tr>
+    </table>
+    <hr>
+    <h2>
+      <span class="namespaceName">NVelocity.Runtime.Resource</span>
+      <br>
+      <span class="className">Interface ResourceManager</span>
+    </h2>
+    <a name="field-summary">
+    </a>
+    <a name="constructor-summary">
+    </a>
+    <a name="property-summary">
+    </a>
+    <a name="method-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Method Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="returnType" valign="top">string</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Resource.ResourceManager.getLoaderNameForResource(System.String)">getLoaderNameForResource</a>(string resourceName)<br>          Determines is a template exists, and returns name of the loader that
+            provides it.  This is a slightly less hokey way to support
+            the Velocity.templateExists() utility method, which was broken
+            when per-template encoding was introduced.  We can revisit this.
+            *
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">NVelocity.Runtime.Resource.Resource</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Resource.ResourceManager.getResource(System.String,System.Int32,System.String)">getResource</a>(string resourceName, int resourceType, string encoding)<br>         Gets the named resource.  Returned class type corresponds to specified type
+            (i.e. <pre class="code">Template</pre> to <pre class="code">RESOURCE_TEMPLATE</pre>).
+            *
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Resource.ResourceManager.initialize(NVelocity.Runtime.RuntimeServices)">initialize</a>(NVelocity.Runtime.RuntimeServices rs)<br>         A template resources.
+             A static content resource.
+             Initialize the ResourceManager. It is assumed
+            that assembleSourceInitializers() has been
+            called before this is run.
+            </td>
+      </tr>
+    </table>
+    <br>
+    <a name="operator-summary">
+    </a>
+    <a name="event-summary">
+    </a>
+    <br>
+    <a name="field-detail">
+    </a>
+    <a name="constructor-detail">
+    </a>
+    <a name="property-detail">
+    </a>
+    <a name="method-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Method Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.Runtime.Resource.ResourceManager.getLoaderNameForResource(System.String)">
+    </a>
+    <h3>getLoaderNameForResource</h3>
+    <pre>public string getLoaderNameForResource(string resourceName)</pre>
+    <dl>
+      <dd>
+        <p>  Determines is a template exists, and returns name of the loader that
+            provides it.  This is a slightly less hokey way to support
+            the Velocity.templateExists() utility method, which was broken
+            when per-template encoding was introduced.  We can revisit this.
+            *
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>resourceName</code> - Name of template or content resource
+            </dd>
+        </dl>
+        <b>Returns:</b>
+        <dl>
+          <dd>class name of loader than can provide it
+            
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Resource.ResourceManager.getResource(System.String,System.Int32,System.String)">
+    </a>
+    <h3>getResource</h3>
+    <pre>public NVelocity.Runtime.Resource.Resource getResource(string resourceName,
+                                                       int resourceType,
+                                                       string encoding)</pre>
+    <dl>
+      <dd>
+        <p> Gets the named resource.  Returned class type corresponds to specified type
+            (i.e. <pre class="code">Template</pre> to <pre class="code">RESOURCE_TEMPLATE</pre>).
+            *
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>resourceName</code> - The name of the resource to retrieve.
+            </dd>
+          <dd>
+            <code>resourceType</code> - The type of resource (<pre class="code">RESOURCE_TEMPLATE</pre>,
+            <pre class="code">RESOURCE_CONTENT</pre>, etc.).
+            </dd>
+          <dd>
+            <code>encoding</code> -  The character encoding to use.
+            </dd>
+        </dl>
+        <b>Returns:</b>
+        <dl>
+          <dd>Resource with the template parsed and ready.
+            @throws ResourceNotFoundException if template not found
+            from any available source.
+            @throws ParseErrorException if template cannot be parsed due
+            to syntax (or other) error.
+            @throws Exception if a problem in parse
+            
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Resource.ResourceManager.initialize(NVelocity.Runtime.RuntimeServices)">
+    </a>
+    <h3>initialize</h3>
+    <pre>public void initialize(NVelocity.Runtime.RuntimeServices rs)</pre>
+    <dl>
+      <dd>
+        <p> A template resources.
+             A static content resource.
+             Initialize the ResourceManager. It is assumed
+            that assembleSourceInitializers() has been
+            called before this is run.
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="operator-detail">
+    </a>
+    <a name="event-detail">
+    </a>
+    <hr>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td>
+                <a href="namespace-summary.html">Namespace</a> </td>
+              <td class="nav1sel"> Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV TYPE    NEXT TYPE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+      <tr class="nav2">
+        <td>SUMMARY: INNER | FIELD | CONST | PROP | <a href="#method-summary">METHOD</a> | OP | EVENT</td>
+        <td>DETAIL: FIELD | CONST | PROP | <a href="#method-detail">METHOD</a> | OP | EVENT</td>
+      </tr>
+    </table>
+  </body>
+</html>

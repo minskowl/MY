@@ -1,0 +1,596 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="..\..\..\JavaDoc.css">
+  </head>
+  <body>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td>
+                <a href="namespace-summary.html">Namespace</a> </td>
+              <td class="nav1sel"> Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV TYPE    NEXT TYPE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+      <tr class="nav2">
+        <td>SUMMARY: INNER | <a href="#field-summary">FIELD</a> | <a href="#constructor-summary">CONST</a> | <a href="#property-summary">PROP</a> | <a href="#method-summary">METHOD</a> | OP | EVENT</td>
+        <td>DETAIL: <a href="#field-detail">FIELD</a> | <a href="#constructor-detail">CONST</a> | <a href="#property-detail">PROP</a> | <a href="#method-detail">METHOD</a> | OP | EVENT</td>
+      </tr>
+    </table>
+    <hr>
+    <h2>
+      <span class="namespaceName">NVelocity.Runtime.Resource</span>
+      <br>
+      <span class="className">Class Resource</span>
+    </h2>
+    <p> This class represent a general text resource that
+            may have been retrieved from any number of possible
+            sources.
+            *
+            </p>
+    <a name="field-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Field Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="fieldType" valign="top">object</td>
+        <td class="field">
+          <a href="#NVelocity.Runtime.Resource.Resource.data">data</a>
+          <br>          Resource might require ancillary storage of some kind
+            </td>
+      </tr>
+      <tr>
+        <td class="fieldType" valign="top">string</td>
+        <td class="field">
+          <a href="#NVelocity.Runtime.Resource.Resource.encoding">encoding</a>
+          <br>          Character encoding of this resource
+            </td>
+      </tr>
+      <tr>
+        <td class="fieldType" valign="top">long</td>
+        <td class="field">
+          <a href="#NVelocity.Runtime.Resource.Resource.lastModified">lastModified</a>
+          <br>         The file modification time (in milliseconds) for the cached template.
+            </td>
+      </tr>
+      <tr>
+        <td class="fieldType" valign="top">long</td>
+        <td class="field">
+          <a href="#NVelocity.Runtime.Resource.Resource.MILLIS_PER_SECOND">MILLIS_PER_SECOND</a>
+          <br>         The number of milliseconds in a minute, used to calculate the
+            check interval.
+            </td>
+      </tr>
+      <tr>
+        <td class="fieldType" valign="top">long</td>
+        <td class="field">
+          <a href="#NVelocity.Runtime.Resource.Resource.modificationCheckInterval">modificationCheckInterval</a>
+          <br>         How often the file modification time is checked (in milliseconds).
+            </td>
+      </tr>
+      <tr>
+        <td class="fieldType" valign="top">string</td>
+        <td class="field">
+          <a href="#NVelocity.Runtime.Resource.Resource.name">name</a>
+          <br>          Name of the resource
+            </td>
+      </tr>
+      <tr>
+        <td class="fieldType" valign="top">long</td>
+        <td class="field">
+          <a href="#NVelocity.Runtime.Resource.Resource.nextCheck">nextCheck</a>
+          <br>         The next time the file modification time will be checked (in
+            milliseconds).
+            </td>
+      </tr>
+      <tr>
+        <td class="fieldType" valign="top">NVelocity.Runtime.Resource.Loader.ResourceLoader</td>
+        <td class="field">
+          <a href="#NVelocity.Runtime.Resource.Resource.resourceLoader">resourceLoader</a>
+          <br>         The template loader that initially loaded the input
+            stream for this template, and knows how to check the
+            source of the input stream for modification.
+            </td>
+      </tr>
+      <tr>
+        <td class="fieldType" valign="top">NVelocity.Runtime.RuntimeServices</td>
+        <td class="field">
+          <a href="#NVelocity.Runtime.Resource.Resource.rsvc">rsvc</a>
+        </td>
+      </tr>
+    </table>
+    <br>
+    <a name="constructor-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Constructor Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="constructor" valign="top">
+          <a href="#NVelocity.Runtime.Resource.Resource.#ctor">Resource</a>()<br>          Default constructor
+            </td>
+      </tr>
+    </table>
+    <br>
+    <a name="property-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Property Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="propertyType" valign="top">object</td>
+        <td class="property">
+          <a href="#NVelocity.Runtime.Resource.Resource.Data">Data</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="propertyType" valign="top">string</td>
+        <td class="property">
+          <a href="#NVelocity.Runtime.Resource.Resource.Encoding">Encoding</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="propertyType" valign="top">long</td>
+        <td class="property">
+          <a href="#NVelocity.Runtime.Resource.Resource.LastModified">LastModified</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="propertyType" valign="top">long</td>
+        <td class="property">
+          <a href="#NVelocity.Runtime.Resource.Resource.ModificationCheckInterval">ModificationCheckInterval</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="propertyType" valign="top">string</td>
+        <td class="property">
+          <a href="#NVelocity.Runtime.Resource.Resource.Name">Name</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="propertyType" valign="top">NVelocity.Runtime.Resource.Loader.ResourceLoader</td>
+        <td class="property">
+          <a href="#NVelocity.Runtime.Resource.Resource.ResourceLoader">ResourceLoader</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="propertyType" valign="top">NVelocity.Runtime.RuntimeServices</td>
+        <td class="property">
+          <a href="#NVelocity.Runtime.Resource.Resource.RuntimeServices">RuntimeServices</a>
+        </td>
+      </tr>
+    </table>
+    <br>
+    <a name="method-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Method Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="returnType" valign="top">bool</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Resource.Resource.IsSourceModified">IsSourceModified</a>()</td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">bool</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Resource.Resource.Process">Process</a>()<br>         Perform any subsequent processing that might need
+            to be done by a resource. In the case of a template
+            the actual parsing of the input stream needs to be
+            performed.
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">bool</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Resource.Resource.RequiresChecking">RequiresChecking</a>()<br>         Is it time to check to see if the resource
+            source has been updated?
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Resource.Resource.Touch">Touch</a>()<br>         'Touch' this template and thereby resetting
+            the nextCheck field.
+            </td>
+      </tr>
+    </table>
+    <br>
+    <table class="subtable" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Methods inherited from class System.Object</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>
+          <a href="..\..\..\NVelocity/Runtime/Resource/Resource/Equals(System.html#Object)">Equals</a>, <a href="..\..\..\NVelocity/Runtime/Resource/Resource.html#Finalize">Finalize</a>, <a href="..\..\..\NVelocity/Runtime/Resource/Resource.html#GetHashCode">GetHashCode</a>, <a href="..\..\..\NVelocity/Runtime/Resource/Resource.html#GetType">GetType</a>, <a href="..\..\..\NVelocity/Runtime/Resource/Resource.html#MemberwiseClone">MemberwiseClone</a>, <a href="..\..\..\NVelocity/Runtime/Resource/Resource.html#ToString">ToString</a></td>
+      </tr>
+    </table>
+    <br>
+    <a name="operator-summary">
+    </a>
+    <a name="event-summary">
+    </a>
+    <br>
+    <a name="field-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Field Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.Runtime.Resource.Resource.data">
+    </a>
+    <h3>data</h3>
+    <pre>protected internal object <b>data</b></pre>
+    <dl>
+      <dd>
+        <p>  Resource might require ancillary storage of some kind
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Resource.Resource.encoding">
+    </a>
+    <h3>encoding</h3>
+    <pre>protected internal string <b>encoding</b></pre>
+    <dl>
+      <dd>
+        <p>  Character encoding of this resource
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Resource.Resource.lastModified">
+    </a>
+    <h3>lastModified</h3>
+    <pre>protected internal long <b>lastModified</b></pre>
+    <dl>
+      <dd>
+        <p> The file modification time (in milliseconds) for the cached template.
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Resource.Resource.MILLIS_PER_SECOND">
+    </a>
+    <h3>MILLIS_PER_SECOND</h3>
+    <pre>protected internal long <b>MILLIS_PER_SECOND</b></pre>
+    <dl>
+      <dd>
+        <p> The number of milliseconds in a minute, used to calculate the
+            check interval.
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Resource.Resource.modificationCheckInterval">
+    </a>
+    <h3>modificationCheckInterval</h3>
+    <pre>protected internal long <b>modificationCheckInterval</b></pre>
+    <dl>
+      <dd>
+        <p> How often the file modification time is checked (in milliseconds).
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Resource.Resource.name">
+    </a>
+    <h3>name</h3>
+    <pre>protected internal string <b>name</b></pre>
+    <dl>
+      <dd>
+        <p>  Name of the resource
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Resource.Resource.nextCheck">
+    </a>
+    <h3>nextCheck</h3>
+    <pre>protected internal long <b>nextCheck</b></pre>
+    <dl>
+      <dd>
+        <p> The next time the file modification time will be checked (in
+            milliseconds).
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Resource.Resource.resourceLoader">
+    </a>
+    <h3>resourceLoader</h3>
+    <pre>protected internal NVelocity.Runtime.Resource.Loader.ResourceLoader <b>resourceLoader</b></pre>
+    <dl>
+      <dd>
+        <p> The template loader that initially loaded the input
+            stream for this template, and knows how to check the
+            source of the input stream for modification.
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Resource.Resource.rsvc">
+    </a>
+    <h3>rsvc</h3>
+    <pre>protected internal NVelocity.Runtime.RuntimeServices <b>rsvc</b></pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="constructor-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Constructor Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.Runtime.Resource.Resource.#ctor">
+    </a>
+    <h3>Resource</h3>
+    <pre>public Resource()</pre>
+    <dl>
+      <dd>
+        <p>  Default constructor
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="property-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Property Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.Runtime.Resource.Resource.Data">
+    </a>
+    <h3>Data</h3>
+    <pre>public object Data</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Resource.Resource.Encoding">
+    </a>
+    <h3>Encoding</h3>
+    <pre>public string Encoding</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Resource.Resource.LastModified">
+    </a>
+    <h3>LastModified</h3>
+    <pre>public long LastModified</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Resource.Resource.ModificationCheckInterval">
+    </a>
+    <h3>ModificationCheckInterval</h3>
+    <pre>public long ModificationCheckInterval</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Resource.Resource.Name">
+    </a>
+    <h3>Name</h3>
+    <pre>public string Name</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Resource.Resource.ResourceLoader">
+    </a>
+    <h3>ResourceLoader</h3>
+    <pre>public NVelocity.Runtime.Resource.Loader.ResourceLoader ResourceLoader</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Resource.Resource.RuntimeServices">
+    </a>
+    <h3>RuntimeServices</h3>
+    <pre>public NVelocity.Runtime.RuntimeServices RuntimeServices</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="method-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Method Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.Runtime.Resource.Resource.IsSourceModified">
+    </a>
+    <h3>IsSourceModified</h3>
+    <pre>public bool IsSourceModified()</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Resource.Resource.Process">
+    </a>
+    <h3>Process</h3>
+    <pre>public bool Process()</pre>
+    <dl>
+      <dd>
+        <p> Perform any subsequent processing that might need
+            to be done by a resource. In the case of a template
+            the actual parsing of the input stream needs to be
+            performed.
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Resource.Resource.RequiresChecking">
+    </a>
+    <h3>RequiresChecking</h3>
+    <pre>public bool RequiresChecking()</pre>
+    <dl>
+      <dd>
+        <p> Is it time to check to see if the resource
+            source has been updated?
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Resource.Resource.Touch">
+    </a>
+    <h3>Touch</h3>
+    <pre>public void Touch()</pre>
+    <dl>
+      <dd>
+        <p> 'Touch' this template and thereby resetting
+            the nextCheck field.
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="operator-detail">
+    </a>
+    <a name="event-detail">
+    </a>
+    <hr>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td>
+                <a href="namespace-summary.html">Namespace</a> </td>
+              <td class="nav1sel"> Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV TYPE    NEXT TYPE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+      <tr class="nav2">
+        <td>SUMMARY: INNER | <a href="#field-summary">FIELD</a> | <a href="#constructor-summary">CONST</a> | <a href="#property-summary">PROP</a> | <a href="#method-summary">METHOD</a> | OP | EVENT</td>
+        <td>DETAIL: <a href="#field-detail">FIELD</a> | <a href="#constructor-detail">CONST</a> | <a href="#property-detail">PROP</a> | <a href="#method-detail">METHOD</a> | OP | EVENT</td>
+      </tr>
+    </table>
+  </body>
+</html>

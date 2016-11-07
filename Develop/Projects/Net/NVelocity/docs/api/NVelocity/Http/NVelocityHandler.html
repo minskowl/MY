@@ -1,0 +1,714 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="..\..\JavaDoc.css">
+  </head>
+  <body>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td>
+                <a href="namespace-summary.html">Namespace</a> </td>
+              <td class="nav1sel"> Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV TYPE    NEXT TYPE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+      <tr class="nav2">
+        <td>SUMMARY: INNER | <a href="#field-summary">FIELD</a> | <a href="#constructor-summary">CONST</a> | <a href="#property-summary">PROP</a> | <a href="#method-summary">METHOD</a> | OP | EVENT</td>
+        <td>DETAIL: <a href="#field-detail">FIELD</a> | <a href="#constructor-detail">CONST</a> | <a href="#property-detail">PROP</a> | <a href="#method-detail">METHOD</a> | OP | EVENT</td>
+      </tr>
+    </table>
+    <hr>
+    <h2>
+      <span class="namespaceName">NVelocity.Http</span>
+      <br>
+      <span class="className">Class NVelocityHandler</span>
+    </h2>
+    <a name="field-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Field Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="fieldType" valign="top">string</td>
+        <td class="field">
+          <a href="#NVelocity.Http.NVelocityHandler.CONTENT_TYPE">CONTENT_TYPE</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="fieldType" valign="top">System.Web.HttpContext</td>
+        <td class="field">
+          <a href="#NVelocity.Http.NVelocityHandler.context">context</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="fieldType" valign="top">string</td>
+        <td class="field">
+          <a href="#NVelocity.Http.NVelocityHandler.CONTEXT">CONTEXT</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="fieldType" valign="top">string</td>
+        <td class="field">
+          <a href="#NVelocity.Http.NVelocityHandler.DEFAULT_CONTENT_TYPE">DEFAULT_CONTENT_TYPE</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="fieldType" valign="top">string</td>
+        <td class="field">
+          <a href="#NVelocity.Http.NVelocityHandler.DEFAULT_OUTPUT_ENCODING">DEFAULT_OUTPUT_ENCODING</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="fieldType" valign="top">string</td>
+        <td class="field">
+          <a href="#NVelocity.Http.NVelocityHandler.pathTranslated">pathTranslated</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="fieldType" valign="top">string</td>
+        <td class="field">
+          <a href="#NVelocity.Http.NVelocityHandler.REQUEST">REQUEST</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="fieldType" valign="top">string</td>
+        <td class="field">
+          <a href="#NVelocity.Http.NVelocityHandler.requestType">requestType</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="fieldType" valign="top">string</td>
+        <td class="field">
+          <a href="#NVelocity.Http.NVelocityHandler.RESPONSE">RESPONSE</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="fieldType" valign="top">string</td>
+        <td class="field">
+          <a href="#NVelocity.Http.NVelocityHandler.url">url</a>
+        </td>
+      </tr>
+    </table>
+    <br>
+    <table class="subtable" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Fields inherited from class NVelocity.Http.HandlerSkeleton</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>
+          <a href="">toolboxManager</a>
+        </td>
+      </tr>
+    </table>
+    <br>
+    <a name="constructor-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Constructor Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="constructor" valign="top">
+          <a href="#NVelocity.Http.NVelocityHandler.#ctor">NVelocityHandler</a>()<br>        Initializes a new instance of the NVelocityHandler class.</td>
+      </tr>
+    </table>
+    <br>
+    <a name="property-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Property Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="propertyType" valign="top">bool</td>
+        <td class="property">
+          <a href="#NVelocity.Http.NVelocityHandler.IsReusable">IsReusable</a>
+          <br>        
+            Implement the IHttpHandler interface method, return true because the class is poolable
+            </td>
+      </tr>
+    </table>
+    <br>
+    <a name="method-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Method Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="returnType" valign="top">NVelocity.Context.IContext</td>
+        <td class="method">
+          <a href="#NVelocity.Http.NVelocityHandler.CreateContext(System.Web.HttpContext)">CreateContext</a>(System.Web.HttpContext context)</td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.Http.NVelocityHandler.Error(System.Web.HttpContext,System.Exception)">Error</a>(System.Web.HttpContext context, System.Exception cause)</td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">NVelocity.Template</td>
+        <td class="method">
+          <a href="#NVelocity.Http.NVelocityHandler.GetTemplate(System.String,System.String)">GetTemplate</a>(string name, string encoding)<br>        
+            Retrieves the requested template with the specified
+            character encoding.
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">NVelocity.Template</td>
+        <td class="method">
+          <a href="#NVelocity.Http.NVelocityHandler.GetTemplate(System.String)">GetTemplate</a>(string name)<br>        
+            Retrieves the requested template.
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">NVelocity.Template</td>
+        <td class="method">
+          <a href="#NVelocity.Http.NVelocityHandler.HandleRequest(System.Web.HttpContext,NVelocity.Context.IContext)">HandleRequest</a>(System.Web.HttpContext context, NVelocity.Context.IContext ctx)</td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.Http.NVelocityHandler.Init(System.Web.HttpContext,System.String,System.String,System.String)">Init</a>(System.Web.HttpContext context, string requestType, string url, string pathTranslated)<br>        
+            Implementation of IHttpHandler method, called by container upon
+            loading (is Isreusable returns true, instances may be pooled)
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.Http.NVelocityHandler.MergeTemplate(NVelocity.Template,NVelocity.Context.IContext,System.IO.TextWriter)">MergeTemplate</a>(NVelocity.Template template, NVelocity.Context.IContext ctx, System.IO.TextWriter response)<br>        
+            merges the template with the context.  Only override this if you really, really
+            really need to. (And don't call us with questions if it breaks :)
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.Http.NVelocityHandler.ProcessRequest(System.Web.HttpContext)">ProcessRequest</a>(System.Web.HttpContext context)<br>        
+            Handles all requests
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.Http.NVelocityHandler.RequestCleanup(System.Web.HttpContext,NVelocity.Context.IContext)">RequestCleanup</a>(System.Web.HttpContext context, NVelocity.Context.IContext ctx)<br>        
+            cleanup routine called at the end of the request processing sequence
+            allows a derived class to do resource cleanup or other end of
+            process cycle tasks
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.Http.NVelocityHandler.SetContentType(System.Web.HttpContext)">SetContentType</a>(System.Web.HttpContext context)<br>        
+            Sets the content type of the response.  This is available to be overriden
+            by a derived class.
+            
+            The default implementation is :
+            
+            response.setContentType( defaultContentType );
+            
+            where defaultContentType is set to the value of the default.contentType
+            property, or "text/html" if that is not set.
+            </td>
+      </tr>
+    </table>
+    <br>
+    <table class="subtable" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Methods inherited from class NVelocity.Http.HandlerSkeleton</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>
+          <a href="..\..\NVelocity/Http/NVelocityHandler.html#InitVelocity">InitVelocity</a>, <a href="..\..\NVelocity/Http/NVelocityHandler.html#LoadConfiguration">LoadConfiguration</a>, <a href="..\..\NVelocity/Http/NVelocityHandler.html#LoadToolbox">LoadToolbox</a></td>
+      </tr>
+    </table>
+    <br>
+    <table class="subtable" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Methods inherited from class System.Object</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>
+          <a href="..\..\NVelocity/Http/NVelocityHandler/Equals(System.html#Object)">Equals</a>, <a href="..\..\NVelocity/Http/NVelocityHandler.html#Finalize">Finalize</a>, <a href="..\..\NVelocity/Http/NVelocityHandler.html#GetHashCode">GetHashCode</a>, <a href="..\..\NVelocity/Http/NVelocityHandler.html#GetType">GetType</a>, <a href="..\..\NVelocity/Http/NVelocityHandler.html#MemberwiseClone">MemberwiseClone</a>, <a href="..\..\NVelocity/Http/NVelocityHandler.html#ToString">ToString</a></td>
+      </tr>
+    </table>
+    <br>
+    <a name="operator-summary">
+    </a>
+    <a name="event-summary">
+    </a>
+    <br>
+    <a name="field-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Field Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.Http.NVelocityHandler.CONTENT_TYPE">
+    </a>
+    <h3>CONTENT_TYPE</h3>
+    <pre>public string <b>CONTENT_TYPE</b></pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Http.NVelocityHandler.context">
+    </a>
+    <h3>context</h3>
+    <pre>protected System.Web.HttpContext <b>context</b></pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Http.NVelocityHandler.CONTEXT">
+    </a>
+    <h3>CONTEXT</h3>
+    <pre>public string <b>CONTEXT</b></pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Http.NVelocityHandler.DEFAULT_CONTENT_TYPE">
+    </a>
+    <h3>DEFAULT_CONTENT_TYPE</h3>
+    <pre>public string <b>DEFAULT_CONTENT_TYPE</b></pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Http.NVelocityHandler.DEFAULT_OUTPUT_ENCODING">
+    </a>
+    <h3>DEFAULT_OUTPUT_ENCODING</h3>
+    <pre>public string <b>DEFAULT_OUTPUT_ENCODING</b></pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Http.NVelocityHandler.pathTranslated">
+    </a>
+    <h3>pathTranslated</h3>
+    <pre>protected string <b>pathTranslated</b></pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Http.NVelocityHandler.REQUEST">
+    </a>
+    <h3>REQUEST</h3>
+    <pre>public string <b>REQUEST</b></pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Http.NVelocityHandler.requestType">
+    </a>
+    <h3>requestType</h3>
+    <pre>protected string <b>requestType</b></pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Http.NVelocityHandler.RESPONSE">
+    </a>
+    <h3>RESPONSE</h3>
+    <pre>public string <b>RESPONSE</b></pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Http.NVelocityHandler.url">
+    </a>
+    <h3>url</h3>
+    <pre>protected string <b>url</b></pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="constructor-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Constructor Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.Http.NVelocityHandler.#ctor">
+    </a>
+    <h3>NVelocityHandler</h3>
+    <pre>protected NVelocityHandler()</pre>
+    <dl>
+      <dd>
+        <p>Initializes a new instance of the NVelocityHandler class.</p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="property-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Property Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.Http.NVelocityHandler.IsReusable">
+    </a>
+    <h3>IsReusable</h3>
+    <pre>public bool IsReusable</pre>
+    <dl>
+      <dd>
+        <p>
+            Implement the IHttpHandler interface method, return true because the class is poolable
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="method-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Method Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.Http.NVelocityHandler.CreateContext(System.Web.HttpContext)">
+    </a>
+    <h3>CreateContext</h3>
+    <pre>protected NVelocity.Context.IContext CreateContext(System.Web.HttpContext context)</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Http.NVelocityHandler.Error(System.Web.HttpContext,System.Exception)">
+    </a>
+    <h3>Error</h3>
+    <pre>protected void Error(System.Web.HttpContext context,
+                     System.Exception cause)</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Http.NVelocityHandler.GetTemplate(System.String,System.String)">
+    </a>
+    <h3>GetTemplate</h3>
+    <pre>public NVelocity.Template GetTemplate(string name,
+                                      string encoding)</pre>
+    <dl>
+      <dd>
+        <p>
+            Retrieves the requested template with the specified
+            character encoding.
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>name</code> - The file name of the template to retrieve relative to the template root.</dd>
+          <dd>
+            <code>encoding</code> - encoding the character encoding of the template</dd>
+        </dl>
+        <b>Returns:</b>
+        <dl>
+          <dd>The requested template.</dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Http.NVelocityHandler.GetTemplate(System.String)">
+    </a>
+    <h3>GetTemplate</h3>
+    <pre>public NVelocity.Template GetTemplate(string name)</pre>
+    <dl>
+      <dd>
+        <p>
+            Retrieves the requested template.
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>name</code> - The file name of the template to retrieve relative to the template root.</dd>
+        </dl>
+        <b>Returns:</b>
+        <dl>
+          <dd>teh requested template</dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Http.NVelocityHandler.HandleRequest(System.Web.HttpContext,NVelocity.Context.IContext)">
+    </a>
+    <h3>HandleRequest</h3>
+    <pre>protected NVelocity.Template HandleRequest(System.Web.HttpContext context,
+                                           NVelocity.Context.IContext ctx)</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Http.NVelocityHandler.Init(System.Web.HttpContext,System.String,System.String,System.String)">
+    </a>
+    <h3>Init</h3>
+    <pre>public void Init(System.Web.HttpContext context,
+                 string requestType,
+                 string url,
+                 string pathTranslated)</pre>
+    <dl>
+      <dd>
+        <p>
+            Implementation of IHttpHandler method, called by container upon
+            loading (is Isreusable returns true, instances may be pooled)
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>context</code> - </dd>
+          <dd>
+            <code>requestType</code> - </dd>
+          <dd>
+            <code>url</code> - </dd>
+          <dd>
+            <code>pathTranslated</code> - </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Http.NVelocityHandler.MergeTemplate(NVelocity.Template,NVelocity.Context.IContext,System.IO.TextWriter)">
+    </a>
+    <h3>MergeTemplate</h3>
+    <pre>protected void MergeTemplate(NVelocity.Template template,
+                             NVelocity.Context.IContext ctx,
+                             System.IO.TextWriter response)</pre>
+    <dl>
+      <dd>
+        <p>
+            merges the template with the context.  Only override this if you really, really
+            really need to. (And don't call us with questions if it breaks :)
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>template</code> - template object returned by the handleRequest() method</dd>
+          <dd>
+            <code>ctx</code> - context created by the CreateContext() method</dd>
+          <dd>
+            <code>response</code> - TextWriter to write to (i.e. Response.Output)</dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Http.NVelocityHandler.ProcessRequest(System.Web.HttpContext)">
+    </a>
+    <h3>ProcessRequest</h3>
+    <pre>public void ProcessRequest(System.Web.HttpContext context)</pre>
+    <dl>
+      <dd>
+        <p>
+            Handles all requests
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>context</code> - HttpContext for current request</dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Http.NVelocityHandler.RequestCleanup(System.Web.HttpContext,NVelocity.Context.IContext)">
+    </a>
+    <h3>RequestCleanup</h3>
+    <pre>protected void RequestCleanup(System.Web.HttpContext context,
+                              NVelocity.Context.IContext ctx)</pre>
+    <dl>
+      <dd>
+        <p>
+            cleanup routine called at the end of the request processing sequence
+            allows a derived class to do resource cleanup or other end of
+            process cycle tasks
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>context</code> - HttpContext passed from client</dd>
+          <dd>
+            <code>ctx</code> - velocity context create by the CreateContext() method</dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Http.NVelocityHandler.SetContentType(System.Web.HttpContext)">
+    </a>
+    <h3>SetContentType</h3>
+    <pre>protected void SetContentType(System.Web.HttpContext context)</pre>
+    <dl>
+      <dd>
+        <p>
+            Sets the content type of the response.  This is available to be overriden
+            by a derived class.
+            
+            The default implementation is :
+            
+            response.setContentType( defaultContentType );
+            
+            where defaultContentType is set to the value of the default.contentType
+            property, or "text/html" if that is not set.
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>context</code> - HttpContext for current request</dd>
+        </dl>
+      </dd>
+    </dl>
+    <a name="operator-detail">
+    </a>
+    <a name="event-detail">
+    </a>
+    <hr>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td>
+                <a href="namespace-summary.html">Namespace</a> </td>
+              <td class="nav1sel"> Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV TYPE    NEXT TYPE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+      <tr class="nav2">
+        <td>SUMMARY: INNER | <a href="#field-summary">FIELD</a> | <a href="#constructor-summary">CONST</a> | <a href="#property-summary">PROP</a> | <a href="#method-summary">METHOD</a> | OP | EVENT</td>
+        <td>DETAIL: <a href="#field-detail">FIELD</a> | <a href="#constructor-detail">CONST</a> | <a href="#property-detail">PROP</a> | <a href="#method-detail">METHOD</a> | OP | EVENT</td>
+      </tr>
+    </table>
+  </body>
+</html>

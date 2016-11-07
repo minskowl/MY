@@ -1,0 +1,459 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="..\..\..\JavaDoc.css">
+  </head>
+  <body>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td>
+                <a href="namespace-summary.html">Namespace</a> </td>
+              <td class="nav1sel"> Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV TYPE    NEXT TYPE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+      <tr class="nav2">
+        <td>SUMMARY: INNER | FIELD | <a href="#constructor-summary">CONST</a> | <a href="#property-summary">PROP</a> | <a href="#method-summary">METHOD</a> | OP | EVENT</td>
+        <td>DETAIL: FIELD | <a href="#constructor-detail">CONST</a> | <a href="#property-detail">PROP</a> | <a href="#method-detail">METHOD</a> | OP | EVENT</td>
+      </tr>
+    </table>
+    <hr>
+    <h2>
+      <span class="namespaceName">NVelocity.NAnt.Anakia</span>
+      <br>
+      <span class="className">Class AnakiaTask</span>
+    </h2>
+    <a name="field-summary">
+    </a>
+    <table class="subtable" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Fields inherited from class SourceForge.NAnt.Element</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>
+          <a href="">_location</a>, <a href="">_parent</a>, <a href="">_project</a>, <a href="">_xmlNode</a></td>
+      </tr>
+    </table>
+    <br>
+    <a name="constructor-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Constructor Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="constructor" valign="top">
+          <a href="#NVelocity.NAnt.Anakia.AnakiaTask.#ctor">AnakiaTask</a>()<br>        
+            Constructor
+            </td>
+      </tr>
+    </table>
+    <br>
+    <a name="property-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Property Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="propertyType" valign="top">string</td>
+        <td class="property">
+          <a href="#NVelocity.NAnt.Anakia.AnakiaTask.Destdir">Destdir</a>
+          <br>        
+            Set the destination directory into which the VSL result
+            files should be copied to
+            </td>
+      </tr>
+      <tr>
+        <td class="propertyType" valign="top">string</td>
+        <td class="property">
+          <a href="#NVelocity.NAnt.Anakia.AnakiaTask.Extension">Extension</a>
+          <br>        
+            Allow people to set the default output file extension
+            </td>
+      </tr>
+      <tr>
+        <td class="propertyType" valign="top">SourceForge.NAnt.FileSet</td>
+        <td class="property">
+          <a href="#NVelocity.NAnt.Anakia.AnakiaTask.FileSet">FileSet</a>
+          <br>        
+            The set of files to be included in the archive.
+            </td>
+      </tr>
+      <tr>
+        <td class="propertyType" valign="top">string</td>
+        <td class="property">
+          <a href="#NVelocity.NAnt.Anakia.AnakiaTask.LastModifiedCheck">LastModifiedCheck</a>
+          <br>        
+            Turn on/off last modified checking. by default, it is on.
+            </td>
+      </tr>
+      <tr>
+        <td class="propertyType" valign="top">string</td>
+        <td class="property">
+          <a href="#NVelocity.NAnt.Anakia.AnakiaTask.ProjectFile">ProjectFile</a>
+          <br>        
+            Allow people to set the path to the project.xml file
+            </td>
+      </tr>
+      <tr>
+        <td class="propertyType" valign="top">string</td>
+        <td class="property">
+          <a href="#NVelocity.NAnt.Anakia.AnakiaTask.Style">Style</a>
+          <br>        
+            Allow people to set the path to the .vsl file
+            </td>
+      </tr>
+      <tr>
+        <td class="propertyType" valign="top">string</td>
+        <td class="property">
+          <a href="#NVelocity.NAnt.Anakia.AnakiaTask.TemplatePath">TemplatePath</a>
+          <br>        
+            Set the path to the templates.
+            The way it works is this:
+            If you have a Velocity.properties file defined, this method
+            will override whatever is set in the
+            Velocity.properties file. This allows one to not have to define
+            a Velocity.properties file, therefore using Velocity's defaults
+            only.
+            </td>
+      </tr>
+      <tr>
+        <td class="propertyType" valign="top">string</td>
+        <td class="property">
+          <a href="#NVelocity.NAnt.Anakia.AnakiaTask.VelocityPropertiesFile">VelocityPropertiesFile</a>
+          <br>        
+            Allow people to set the path to the velocity.properties file
+            This file is found relative to the path where the JVM was run.
+            For example, if build.sh was executed in the ./build directory,
+            then the path would be relative to this directory.
+            This is optional based on the setting of setTemplatePath().
+            </td>
+      </tr>
+    </table>
+    <br>
+    <table class="subtable" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Properties inherited from class SourceForge.NAnt.Task</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>
+          <a href="">FailOnError</a>, <a href="">IfDefined</a>, <a href="">LogPrefix</a>, <a href="">Name</a>, <a href="">UnlessDefined</a>, <a href="">Verbose</a></td>
+      </tr>
+    </table>
+    <br>
+    <table class="subtable" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Properties inherited from class SourceForge.NAnt.Element</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>
+          <a href="">Location</a>, <a href="">Parent</a>, <a href="">Project</a>, <a href="">Properties</a></td>
+      </tr>
+    </table>
+    <br>
+    <a name="method-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Method Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.NAnt.Anakia.AnakiaTask.ExecuteTask">ExecuteTask</a>()<br>        
+            Main body of the application
+            </td>
+      </tr>
+    </table>
+    <br>
+    <table class="subtable" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Methods inherited from class SourceForge.NAnt.Task</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>
+          <a href="..\..\..\NVelocity/NAnt/Anakia/AnakiaTask.html#Execute">Execute</a>, <a href="..\..\..\NVelocity/NAnt/Anakia/AnakiaTask/InitializeElement(System/Xml.html#XmlNode)">InitializeElement</a>, <a href="..\..\..\NVelocity/NAnt/Anakia/AnakiaTask/InitializeTask(System/Xml.html#XmlNode)">InitializeTask</a></td>
+      </tr>
+    </table>
+    <br>
+    <table class="subtable" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Methods inherited from class SourceForge.NAnt.Element</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>
+          <a href="..\..\..\NVelocity/NAnt/Anakia/AnakiaTask/Initialize(System/Xml.html#XmlNode)">Initialize</a>
+        </td>
+      </tr>
+    </table>
+    <br>
+    <table class="subtable" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Methods inherited from class System.Object</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>
+          <a href="..\..\..\NVelocity/NAnt/Anakia/AnakiaTask/Equals(System.html#Object)">Equals</a>, <a href="..\..\..\NVelocity/NAnt/Anakia/AnakiaTask.html#Finalize">Finalize</a>, <a href="..\..\..\NVelocity/NAnt/Anakia/AnakiaTask.html#GetHashCode">GetHashCode</a>, <a href="..\..\..\NVelocity/NAnt/Anakia/AnakiaTask.html#GetType">GetType</a>, <a href="..\..\..\NVelocity/NAnt/Anakia/AnakiaTask.html#MemberwiseClone">MemberwiseClone</a>, <a href="..\..\..\NVelocity/NAnt/Anakia/AnakiaTask.html#ToString">ToString</a></td>
+      </tr>
+    </table>
+    <br>
+    <a name="operator-summary">
+    </a>
+    <a name="event-summary">
+    </a>
+    <br>
+    <a name="field-detail">
+    </a>
+    <a name="constructor-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Constructor Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.NAnt.Anakia.AnakiaTask.#ctor">
+    </a>
+    <h3>AnakiaTask</h3>
+    <pre>public AnakiaTask()</pre>
+    <dl>
+      <dd>
+        <p>
+            Constructor
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="property-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Property Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.NAnt.Anakia.AnakiaTask.Destdir">
+    </a>
+    <h3>Destdir</h3>
+    <pre>public string Destdir</pre>
+    <dl>
+      <dd>
+        <p>
+            Set the destination directory into which the VSL result
+            files should be copied to
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>dirName</code> - the name of the destination directory</dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.NAnt.Anakia.AnakiaTask.Extension">
+    </a>
+    <h3>Extension</h3>
+    <pre>public string Extension</pre>
+    <dl>
+      <dd>
+        <p>
+            Allow people to set the default output file extension
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.NAnt.Anakia.AnakiaTask.FileSet">
+    </a>
+    <h3>FileSet</h3>
+    <pre>public SourceForge.NAnt.FileSet FileSet</pre>
+    <dl>
+      <dd>
+        <p>
+            The set of files to be included in the archive.
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.NAnt.Anakia.AnakiaTask.LastModifiedCheck">
+    </a>
+    <h3>LastModifiedCheck</h3>
+    <pre>public string LastModifiedCheck</pre>
+    <dl>
+      <dd>
+        <p>
+            Turn on/off last modified checking. by default, it is on.
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.NAnt.Anakia.AnakiaTask.ProjectFile">
+    </a>
+    <h3>ProjectFile</h3>
+    <pre>public string ProjectFile</pre>
+    <dl>
+      <dd>
+        <p>
+            Allow people to set the path to the project.xml file
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.NAnt.Anakia.AnakiaTask.Style">
+    </a>
+    <h3>Style</h3>
+    <pre>public string Style</pre>
+    <dl>
+      <dd>
+        <p>
+            Allow people to set the path to the .vsl file
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.NAnt.Anakia.AnakiaTask.TemplatePath">
+    </a>
+    <h3>TemplatePath</h3>
+    <pre>public string TemplatePath</pre>
+    <dl>
+      <dd>
+        <p>
+            Set the path to the templates.
+            The way it works is this:
+            If you have a Velocity.properties file defined, this method
+            will override whatever is set in the
+            Velocity.properties file. This allows one to not have to define
+            a Velocity.properties file, therefore using Velocity's defaults
+            only.
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.NAnt.Anakia.AnakiaTask.VelocityPropertiesFile">
+    </a>
+    <h3>VelocityPropertiesFile</h3>
+    <pre>public string VelocityPropertiesFile</pre>
+    <dl>
+      <dd>
+        <p>
+            Allow people to set the path to the velocity.properties file
+            This file is found relative to the path where the JVM was run.
+            For example, if build.sh was executed in the ./build directory,
+            then the path would be relative to this directory.
+            This is optional based on the setting of setTemplatePath().
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="method-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Method Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.NAnt.Anakia.AnakiaTask.ExecuteTask">
+    </a>
+    <h3>ExecuteTask</h3>
+    <pre>protected void ExecuteTask()</pre>
+    <dl>
+      <dd>
+        <p>
+            Main body of the application
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="operator-detail">
+    </a>
+    <a name="event-detail">
+    </a>
+    <hr>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td>
+                <a href="namespace-summary.html">Namespace</a> </td>
+              <td class="nav1sel"> Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV TYPE    NEXT TYPE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+      <tr class="nav2">
+        <td>SUMMARY: INNER | FIELD | <a href="#constructor-summary">CONST</a> | <a href="#property-summary">PROP</a> | <a href="#method-summary">METHOD</a> | OP | EVENT</td>
+        <td>DETAIL: FIELD | <a href="#constructor-detail">CONST</a> | <a href="#property-detail">PROP</a> | <a href="#method-detail">METHOD</a> | OP | EVENT</td>
+      </tr>
+    </table>
+  </body>
+</html>

@@ -1,0 +1,9 @@
+/AvalonLogSystem.cs///
+/Log4JLogSystem.cs///
+/Log4NetExtensionLogSystem.cs///
+/LogManager.cs///
+/LogSystem.cs///
+/NullLogSystem.cs///
+/PrimordialLogSystem.cs///
+/SimpleLog4NetLogSystem.cs///
+/VelocityFormatter.cs///

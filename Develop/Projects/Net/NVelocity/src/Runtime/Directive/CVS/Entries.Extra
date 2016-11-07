@@ -1,0 +1,10 @@
+/Directive.cs///
+/DirectiveConstants.cs///
+/Foreach.cs///
+/Include.cs///
+/Literal.cs///
+/Macro.cs///
+/Parse.cs///
+/ParseDirectiveException.cs///
+/VelocimacroProxy.cs///
+/VMProxyArg.cs///

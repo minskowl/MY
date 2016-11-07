@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DAAB0423-50E1-4868-B5A7-07D47BF7CE45}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NUnit.Extensions.Forms.Recorder</RootNamespace>
+    <AssemblyName>NUnitForms.Recorder</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>NUnitForms.Recorder.XML</DocumentationFile>
+    <NoWarn>1591</NoWarn>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>NUnitForms.Recorder.XML</DocumentationFile>
+    <NoWarn>1591</NoWarn>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Action.cs" />
+    <Compile Include="AppForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForm.Designer.cs">
+      <DependentUpon>AppForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Recoders\ButtonRecorder.cs" />
+    <Compile Include="Censor.cs" />
+    <Compile Include="Recoders\CheckBoxRecorder.cs" />
+    <Compile Include="CollapsingProcessor.cs" />
+    <Compile Include="Recoders\ComboBoxRecorder.cs" />
+    <Compile Include="CompareControlCaptureAction.cs" />
+    <Compile Include="CompositeAction.cs" />
+    <Compile Include="Recoders\ControlRecorder.cs" />
+    <Compile Include="Definition.cs" />
+    <Compile Include="EnterSelectTextCollapsingProcessor.cs" />
+    <Compile Include="EnterTextCollapsingProcessor.cs" />
+    <Compile Include="EventAction.cs" />
+    <Compile Include="FormFactory.cs" />
+    <Compile Include="Recoders\FormRecorder.cs" />
+    <Compile Include="ICollapsingProcessor.cs" />
+    <Compile Include="Recoders\IRecorder.cs" />
+    <Compile Include="Recoders\LabelRecorder.cs" />
+    <Compile Include="Recoders\LinkLabelRecorder.cs" />
+    <Compile Include="Recoders\ListBoxRecorder.cs" />
+    <Compile Include="Listener.cs" />
+    <Compile Include="Recoders\MenuItemRecorder.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PropertyAssertAction.cs" />
+    <Compile Include="Recoders\RadioButtonRecorder.cs" />
+    <Compile Include="Recoders\Recorder.cs" />
+    <Compile Include="Recoders\RichTextBoxRecorder.cs" />
+    <Compile Include="SupportedEventsRegistry.cs" />
+    <Compile Include="Recoders\TabControlRecorder.cs" />
+    <Compile Include="TestWriter.cs" />
+    <Compile Include="Recoders\TextBoxRecorder.cs" />
+    <Compile Include="Recoders\ToolStripButtonRecorder.cs" />
+    <Compile Include="Recoders\ToolStripComboBoxRecorder.cs" />
+    <Compile Include="Recoders\ToolStripDropDownButtonRecorder.cs" />
+    <Compile Include="Recoders\ToolStripMenuItemRecorder.cs" />
+    <Compile Include="Recoders\ToolStripRecorder.cs" />
+    <Compile Include="Recoders\ToolStripSplitButtonRecorder.cs" />
+    <Compile Include="Recoders\ToolStripTextBoxRecorder.cs" />
+    <Compile Include="Recoders\TreeViewRecorder.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AppForm.resx">
+      <DependentUpon>AppForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Libs\Savchin.WinApi\Savchin.WinApi.csproj">
+      <Project>{DD712413-B47A-4707-A45D-84F786E47BAF}</Project>
+      <Name>Savchin.WinApi</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libs\Tools\Savchin.Tools.csproj">
+      <Project>{2F1807E4-39A2-4F38-ADFC-6310A8443D90}</Project>
+      <Name>Savchin.Tools</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NUnitForms\NUnitForms.csproj">
+      <Project>{E579ACDA-8C4F-4E35-A18B-C001D9EECD2B}</Project>
+      <Name>NUnitForms</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy /Y "$(TargetPath)" "$(SolutionDir)..\..\Libs\Out\$(ConfigurationName)\"</PostBuildEvent>
+  </PropertyGroup>
+</Project>

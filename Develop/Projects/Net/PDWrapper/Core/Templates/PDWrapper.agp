@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AssemblyGenerateProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <OutputPath>E:\tmp</OutputPath>
+  <SolutionFile />
+  <Properties>
+    <Property Name="namespace" Value="PDWrapper" />
+  </Properties>
+  <TemplatePath>.</TemplatePath>
+  <Generations>
+    <Generation TemplateFile="tWrapper.vm" DestinationFile="{0}Test.cs" ObjectType="type" DestinationDirectory="..\..\MarketResearchLibraryTest\Dao\" SolutionPath="MarketResearchSoftware\Bussiness Framework\MarketResearchLibraryTest\Dao" />
+    <Generation TemplateFile="Interface.tmpl" DestinationFile="I{0}.cs" ObjectType="type" DestinationDirectory="E:\Projects\Net\CodeRocket\src\CodeRocket.root\PDWrapper\Interfaces\" SolutionPath="MarketResearchSoftware\Bussiness Framework\MarketResearchLibraryTest\Dao" />
+  </Generations>
+  <BookMarks>
+    <BookMark Name="createUnit">
+      <FullPath>cmTSATdao\PortalUser\IManager\IManager\createUnit</FullPath>
+    </BookMark>
+    <BookMark Name="ObjectSet">
+      <FullPath>Interop.PdWSP\ObjectSet</FullPath>
+    </BookMark>
+  </BookMarks>
+  <AssemblyFile>E:\Projects\Net\ThrPartLibs\PD12\Interop.PdCommon.dll</AssemblyFile>
+  <LastView>Interop.PdWSP</LastView>
+</AssemblyGenerateProject>

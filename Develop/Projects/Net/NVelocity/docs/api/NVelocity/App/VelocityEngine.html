@@ -1,0 +1,966 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="..\..\JavaDoc.css">
+  </head>
+  <body>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td>
+                <a href="namespace-summary.html">Namespace</a> </td>
+              <td class="nav1sel"> Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV TYPE    NEXT TYPE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+      <tr class="nav2">
+        <td>SUMMARY: INNER | FIELD | <a href="#constructor-summary">CONST</a> | <a href="#property-summary">PROP</a> | <a href="#method-summary">METHOD</a> | OP | EVENT</td>
+        <td>DETAIL: FIELD | <a href="#constructor-detail">CONST</a> | <a href="#property-detail">PROP</a> | <a href="#method-detail">METHOD</a> | OP | EVENT</td>
+      </tr>
+    </table>
+    <hr>
+    <h2>
+      <span class="namespaceName">NVelocity.App</span>
+      <br>
+      <span class="className">Class VelocityEngine</span>
+    </h2>
+    <p>
+            This class provides a separate new-able instance of the
+            Velocity template engine.  The alternative model for use
+            is using the Velocity class which employs the singleton
+            model.
+            
+            Please ensure that you call one of the init() variants.
+            This is critical for proper behavior.
+             Coming soon : Velocity will call
+            the parameter-less init() at the first use of this class
+            if the init() wasn't explicitly called.  While this will
+            ensure that Velocity functions, it almost certainly won't
+            function in the way you intend, so please make sure to
+            call init().
+            </p>
+    <a name="field-summary">
+    </a>
+    <a name="constructor-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Constructor Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="constructor" valign="top">
+          <a href="#NVelocity.App.VelocityEngine.#ctor">VelocityEngine</a>()<br>        Initializes a new instance of the VelocityEngine class.</td>
+      </tr>
+    </table>
+    <br>
+    <a name="property-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Property Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="propertyType" valign="top">Commons.Collections.ExtendedProperties</td>
+        <td class="property">
+          <a href="#NVelocity.App.VelocityEngine.ExtendedProperties">ExtendedProperties</a>
+          <br>        
+            Set an entire configuration at once. This is
+            useful in cases where the parent application uses
+            the ExtendedProperties class and the velocity configuration
+            is a subset of the parent application's configuration.
+            </td>
+      </tr>
+    </table>
+    <br>
+    <a name="method-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Method Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.App.VelocityEngine.AddProperty(System.String,System.Object)">AddProperty</a>(string key, object value_Renamed)<br>        
+            Add a Velocity Runtime property.
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.App.VelocityEngine.ClearProperty(System.String)">ClearProperty</a>(string key)<br>        
+            Clear a Velocity Runtime property.
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.App.VelocityEngine.Debug(System.Object)">Debug</a>(object message)<br>        
+            Log a debug message.
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.App.VelocityEngine.Error(System.Object)">Error</a>(object message)<br>        
+            Log an error message.
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">bool</td>
+        <td class="method">
+          <a href="#NVelocity.App.VelocityEngine.Evaluate(NVelocity.Context.IContext,System.IO.TextWriter,System.String,System.IO.TextReader)">Evaluate</a>(NVelocity.Context.IContext context, System.IO.TextWriter writer, string logTag, System.IO.TextReader reader)<br>        
+            Renders the input reader using the context into the output writer.
+            To be used when a template is dynamically constructed, or want to
+            use Velocity as a token replacer.
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">bool</td>
+        <td class="method">
+          <a href="#NVelocity.App.VelocityEngine.Evaluate(NVelocity.Context.IContext,System.IO.TextWriter,System.String,System.IO.Stream)">Evaluate</a>(NVelocity.Context.IContext context, System.IO.TextWriter writer, string logTag, System.IO.Stream instream)<br>        
+            Renders the input stream using the context into the output writer.
+            To be used when a template is dynamically constructed, or want to
+            use Velocity as a token replacer.
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">bool</td>
+        <td class="method">
+          <a href="#NVelocity.App.VelocityEngine.Evaluate(NVelocity.Context.IContext,System.IO.TextWriter,System.String,System.String)">Evaluate</a>(NVelocity.Context.IContext context, System.IO.TextWriter out_Renamed, string logTag, string instring)<br>        
+            renders the input string using the context into the output writer.
+            To be used when a template is dynamically constructed, or want to use
+            Velocity as a token replacer.
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">object</td>
+        <td class="method">
+          <a href="#NVelocity.App.VelocityEngine.GetProperty(System.String)">GetProperty</a>(string key)<br>        
+            Get a Velocity Runtime property.
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">NVelocity.Template</td>
+        <td class="method">
+          <a href="#NVelocity.App.VelocityEngine.GetTemplate(System.String,System.String)">GetTemplate</a>(string name, string encoding)<br>        
+            Returns a <pre class="code">Template</pre> from the Velocity
+            resource management system.
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">NVelocity.Template</td>
+        <td class="method">
+          <a href="#NVelocity.App.VelocityEngine.GetTemplate(System.String)">GetTemplate</a>(string name)<br>        
+            Returns a <pre class="code">Template</pre> from the Velocity
+            resource management system.
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.App.VelocityEngine.Info(System.Object)">Info</a>(object message)<br>        
+            Log an info message.
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.App.VelocityEngine.Init(Commons.Collections.ExtendedProperties)">Init</a>(Commons.Collections.ExtendedProperties p)<br>        
+            initialize the Velocity runtime engine, using default properties
+            plus the properties in the passed in java.util.Properties object
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.App.VelocityEngine.Init(System.String)">Init</a>(string propsFilename)<br>        
+            initialize the Velocity runtime engine, using default properties
+            plus the properties in the properties file passed in as the arg
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.App.VelocityEngine.Init">Init</a>()<br>        
+            initialize the Velocity runtime engine, using the default
+            properties of the Velocity distribution
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">bool</td>
+        <td class="method">
+          <a href="#NVelocity.App.VelocityEngine.InvokeVelocimacro(System.String,System.String,System.String[],NVelocity.Context.IContext,System.IO.TextWriter)">InvokeVelocimacro</a>(string vmName, string logTag, string[] params_Renamed, NVelocity.Context.IContext context, System.IO.TextWriter writer)<br>        
+            Invokes a currently registered Velocimacro with the parms provided
+            and places the rendered stream into the writer.
+            Note : currently only accepts args to the VM if they are in the context.
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">bool</td>
+        <td class="method">
+          <a href="#NVelocity.App.VelocityEngine.MergeTemplate(System.String,System.String,NVelocity.Context.IContext,System.IO.TextWriter)">MergeTemplate</a>(string templateName, string encoding, NVelocity.Context.IContext context, System.IO.TextWriter writer)<br>        
+            merges a template and puts the rendered stream into the writer
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">bool</td>
+        <td class="method">
+          <a href="#NVelocity.App.VelocityEngine.MergeTemplate(System.String,NVelocity.Context.IContext,System.IO.TextWriter)">MergeTemplate</a>(string templateName, NVelocity.Context.IContext context, System.IO.TextWriter writer)<br>        
+            merges a template and puts the rendered stream into the writer
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.App.VelocityEngine.SetApplicationAttribute(System.Object,System.Object)">SetApplicationAttribute</a>(object key, object value_Renamed)<br>        
+            Set the an ApplicationAttribue, which is an Object
+            set by the application which is accessable from
+            any component of the system that gets a RuntimeServices.
+            This allows communication between the application
+            environment and custom pluggable components of the
+            Velocity engine, such as loaders and loggers.
+            
+            Note that there is no enfocement or rules for the key
+            used - it is up to the application developer.  However, to
+            help make the intermixing of components possible, using
+            the target Class name (e.g.  com.foo.bar ) as the key
+            might help avoid collision.
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.App.VelocityEngine.SetProperty(System.String,System.Object)">SetProperty</a>(string key, object value_Renamed)<br>        
+            Set a Velocity Runtime property.
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">bool</td>
+        <td class="method">
+          <a href="#NVelocity.App.VelocityEngine.TemplateExists(System.String)">TemplateExists</a>(string templateName)</td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.App.VelocityEngine.Warn(System.Object)">Warn</a>(object message)<br>        
+            Log a warning message.
+            </td>
+      </tr>
+    </table>
+    <br>
+    <table class="subtable" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Methods inherited from class System.Object</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>
+          <a href="..\..\NVelocity/App/VelocityEngine/Equals(System.html#Object)">Equals</a>, <a href="..\..\NVelocity/App/VelocityEngine.html#Finalize">Finalize</a>, <a href="..\..\NVelocity/App/VelocityEngine.html#GetHashCode">GetHashCode</a>, <a href="..\..\NVelocity/App/VelocityEngine.html#GetType">GetType</a>, <a href="..\..\NVelocity/App/VelocityEngine.html#MemberwiseClone">MemberwiseClone</a>, <a href="..\..\NVelocity/App/VelocityEngine.html#ToString">ToString</a></td>
+      </tr>
+    </table>
+    <br>
+    <a name="operator-summary">
+    </a>
+    <a name="event-summary">
+    </a>
+    <br>
+    <a name="field-detail">
+    </a>
+    <a name="constructor-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Constructor Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.App.VelocityEngine.#ctor">
+    </a>
+    <h3>VelocityEngine</h3>
+    <pre>public VelocityEngine()</pre>
+    <dl>
+      <dd>
+        <p>Initializes a new instance of the VelocityEngine class.</p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="property-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Property Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.App.VelocityEngine.ExtendedProperties">
+    </a>
+    <h3>ExtendedProperties</h3>
+    <pre>public Commons.Collections.ExtendedProperties ExtendedProperties</pre>
+    <dl>
+      <dd>
+        <p>
+            Set an entire configuration at once. This is
+            useful in cases where the parent application uses
+            the ExtendedProperties class and the velocity configuration
+            is a subset of the parent application's configuration.
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>ExtendedProperties</code> - configuration
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <a name="method-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Method Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.App.VelocityEngine.AddProperty(System.String,System.Object)">
+    </a>
+    <h3>AddProperty</h3>
+    <pre>public void AddProperty(string key,
+                        object value_Renamed)</pre>
+    <dl>
+      <dd>
+        <p>
+            Add a Velocity Runtime property.
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>String</code> - key
+            </dd>
+          <dd>
+            <code>Object</code> - value
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.App.VelocityEngine.ClearProperty(System.String)">
+    </a>
+    <h3>ClearProperty</h3>
+    <pre>public void ClearProperty(string key)</pre>
+    <dl>
+      <dd>
+        <p>
+            Clear a Velocity Runtime property.
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>key</code> - of property to clear
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.App.VelocityEngine.Debug(System.Object)">
+    </a>
+    <h3>Debug</h3>
+    <pre>public void Debug(object message)</pre>
+    <dl>
+      <dd>
+        <p>
+            Log a debug message.
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>Object</code> - message to log</dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.App.VelocityEngine.Error(System.Object)">
+    </a>
+    <h3>Error</h3>
+    <pre>public void Error(object message)</pre>
+    <dl>
+      <dd>
+        <p>
+            Log an error message.
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>Object</code> - message to log</dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.App.VelocityEngine.Evaluate(NVelocity.Context.IContext,System.IO.TextWriter,System.String,System.IO.TextReader)">
+    </a>
+    <h3>Evaluate</h3>
+    <pre>public bool Evaluate(NVelocity.Context.IContext context,
+                     System.IO.TextWriter writer,
+                     string logTag,
+                     System.IO.TextReader reader)</pre>
+    <dl>
+      <dd>
+        <p>
+            Renders the input reader using the context into the output writer.
+            To be used when a template is dynamically constructed, or want to
+            use Velocity as a token replacer.
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>context</code> - context to use in rendering input string
+            </dd>
+          <dd>
+            <code>out</code> -  Writer in which to render the output
+            </dd>
+          <dd>
+            <code>logTag</code> -  string to be used as the template name for log messages
+            in case of error
+            </dd>
+          <dd>
+            <code>reader</code> - Reader containing the VTL to be rendered
+            </dd>
+        </dl>
+        <b>Returns:</b>
+        <dl>
+          <dd>true if successful, false otherwise.  If false, see
+            Velocity runtime log
+            @since Velocity v1.1
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.App.VelocityEngine.Evaluate(NVelocity.Context.IContext,System.IO.TextWriter,System.String,System.IO.Stream)">
+    </a>
+    <h3>Evaluate</h3>
+    <pre>public bool Evaluate(NVelocity.Context.IContext context,
+                     System.IO.TextWriter writer,
+                     string logTag,
+                     System.IO.Stream instream)</pre>
+    <dl>
+      <dd>
+        <p>
+            Renders the input stream using the context into the output writer.
+            To be used when a template is dynamically constructed, or want to
+            use Velocity as a token replacer.
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>context</code> - context to use in rendering input string
+            </dd>
+          <dd>
+            <code>out</code> -  Writer in which to render the output
+            </dd>
+          <dd>
+            <code>logTag</code> -  string to be used as the template name for log messages
+            in case of error
+            </dd>
+          <dd>
+            <code>instream</code> - input stream containing the VTL to be rendered
+            </dd>
+        </dl>
+        <b>Returns:</b>
+        <dl>
+          <dd>true if successful, false otherwise.  If false, see
+            Velocity runtime log
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.App.VelocityEngine.Evaluate(NVelocity.Context.IContext,System.IO.TextWriter,System.String,System.String)">
+    </a>
+    <h3>Evaluate</h3>
+    <pre>public bool Evaluate(NVelocity.Context.IContext context,
+                     System.IO.TextWriter out_Renamed,
+                     string logTag,
+                     string instring)</pre>
+    <dl>
+      <dd>
+        <p>
+            renders the input string using the context into the output writer.
+            To be used when a template is dynamically constructed, or want to use
+            Velocity as a token replacer.
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>context</code> - context to use in rendering input string
+            </dd>
+          <dd>
+            <code>out</code> -  Writer in which to render the output
+            </dd>
+          <dd>
+            <code>logTag</code> -  string to be used as the template name for log
+            messages in case of error
+            </dd>
+          <dd>
+            <code>instring</code> - input string containing the VTL to be rendered
+            </dd>
+        </dl>
+        <b>Returns:</b>
+        <dl>
+          <dd>true if successful, false otherwise.  If false, see
+            Velocity runtime log
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.App.VelocityEngine.GetProperty(System.String)">
+    </a>
+    <h3>GetProperty</h3>
+    <pre>public object GetProperty(string key)</pre>
+    <dl>
+      <dd>
+        <p>
+            Get a Velocity Runtime property.
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>key</code> - property to retrieve
+            </dd>
+        </dl>
+        <b>Returns:</b>
+        <dl>
+          <dd>property value or null if the property
+            not currently set
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.App.VelocityEngine.GetTemplate(System.String,System.String)">
+    </a>
+    <h3>GetTemplate</h3>
+    <pre>public NVelocity.Template GetTemplate(string name,
+                                      string encoding)</pre>
+    <dl>
+      <dd>
+        <p>
+            Returns a <pre class="code">Template</pre> from the Velocity
+            resource management system.
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>name</code> - The file name of the desired template.
+            </dd>
+          <dd>
+            <code>encoding</code> - The character encoding to use for the template.
+            </dd>
+        </dl>
+        <b>Returns:</b>
+        <dl>
+          <dd>    The template.
+            @throws ResourceNotFoundException if template not found
+            from any available source.
+            @throws ParseErrorException if template cannot be parsed due
+            to syntax (or other) error.
+            @throws Exception if an error occurs in template initialization
+            @since Velocity v1.1
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.App.VelocityEngine.GetTemplate(System.String)">
+    </a>
+    <h3>GetTemplate</h3>
+    <pre>public NVelocity.Template GetTemplate(string name)</pre>
+    <dl>
+      <dd>
+        <p>
+            Returns a <pre class="code">Template</pre> from the Velocity
+            resource management system.
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>name</code> - The file name of the desired template.
+            </dd>
+        </dl>
+        <b>Returns:</b>
+        <dl>
+          <dd>    The template.
+            @throws ResourceNotFoundException if template not found
+            from any available source.
+            @throws ParseErrorException if template cannot be parsed due
+            to syntax (or other) error.
+            @throws Exception if an error occurs in template initialization
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.App.VelocityEngine.Info(System.Object)">
+    </a>
+    <h3>Info</h3>
+    <pre>public void Info(object message)</pre>
+    <dl>
+      <dd>
+        <p>
+            Log an info message.
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>Object</code> - message to log</dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.App.VelocityEngine.Init(Commons.Collections.ExtendedProperties)">
+    </a>
+    <h3>Init</h3>
+    <pre>public void Init(Commons.Collections.ExtendedProperties p)</pre>
+    <dl>
+      <dd>
+        <p>
+            initialize the Velocity runtime engine, using default properties
+            plus the properties in the passed in java.util.Properties object
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>p</code> -  Proprties object containing initialization properties</dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.App.VelocityEngine.Init(System.String)">
+    </a>
+    <h3>Init</h3>
+    <pre>public void Init(string propsFilename)</pre>
+    <dl>
+      <dd>
+        <p>
+            initialize the Velocity runtime engine, using default properties
+            plus the properties in the properties file passed in as the arg
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>propsFilename</code> - file containing properties to use to initialize
+            the Velocity runtime</dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.App.VelocityEngine.Init">
+    </a>
+    <h3>Init</h3>
+    <pre>public void Init()</pre>
+    <dl>
+      <dd>
+        <p>
+            initialize the Velocity runtime engine, using the default
+            properties of the Velocity distribution
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.App.VelocityEngine.InvokeVelocimacro(System.String,System.String,System.String[],NVelocity.Context.IContext,System.IO.TextWriter)">
+    </a>
+    <h3>InvokeVelocimacro</h3>
+    <pre>public bool InvokeVelocimacro(string vmName,
+                              string logTag,
+                              string[] params_Renamed,
+                              NVelocity.Context.IContext context,
+                              System.IO.TextWriter writer)</pre>
+    <dl>
+      <dd>
+        <p>
+            Invokes a currently registered Velocimacro with the parms provided
+            and places the rendered stream into the writer.
+            Note : currently only accepts args to the VM if they are in the context.
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>vmName</code> - name of Velocimacro to call
+            </dd>
+          <dd>
+            <code>logTag</code> - string to be used for template name in case of error
+            </dd>
+          <dd>
+            <code>params[]</code> - args used to invoke Velocimacro. In context key format :
+            eg  "foo","bar" (rather than "$foo","$bar")
+            </dd>
+          <dd>
+            <code>context</code> - Context object containing data/objects used for rendering.
+            </dd>
+          <dd>
+            <code>writer</code> -  Writer for output stream
+            </dd>
+        </dl>
+        <b>Returns:</b>
+        <dl>
+          <dd>true if Velocimacro exists and successfully invoked, false otherwise.
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.App.VelocityEngine.MergeTemplate(System.String,System.String,NVelocity.Context.IContext,System.IO.TextWriter)">
+    </a>
+    <h3>MergeTemplate</h3>
+    <pre>public bool MergeTemplate(string templateName,
+                          string encoding,
+                          NVelocity.Context.IContext context,
+                          System.IO.TextWriter writer)</pre>
+    <dl>
+      <dd>
+        <p>
+            merges a template and puts the rendered stream into the writer
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>templateName</code> - name of template to be used in merge
+            </dd>
+          <dd>
+            <code>encoding</code> - encoding used in template
+            </dd>
+          <dd>
+            <code>context</code> -  filled context to be used in merge
+            </dd>
+          <dd>
+            <code>writer</code> -  writer to write template into
+            </dd>
+        </dl>
+        <b>Returns:</b>
+        <dl>
+          <dd>true if successful, false otherwise.  Errors
+            logged to velocity log
+            @since Velocity v1.1
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.App.VelocityEngine.MergeTemplate(System.String,NVelocity.Context.IContext,System.IO.TextWriter)">
+    </a>
+    <h3>MergeTemplate</h3>
+    <pre>public bool MergeTemplate(string templateName,
+                          NVelocity.Context.IContext context,
+                          System.IO.TextWriter writer)</pre>
+    <dl>
+      <dd>
+        <p>
+            merges a template and puts the rendered stream into the writer
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>templateName</code> - name of template to be used in merge
+            </dd>
+          <dd>
+            <code>context</code> -  filled context to be used in merge
+            </dd>
+          <dd>
+            <code>writer</code> -  writer to write template into
+            </dd>
+        </dl>
+        <b>Returns:</b>
+        <dl>
+          <dd>true if successful, false otherwise.  Errors
+            logged to velocity log.
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.App.VelocityEngine.SetApplicationAttribute(System.Object,System.Object)">
+    </a>
+    <h3>SetApplicationAttribute</h3>
+    <pre>public void SetApplicationAttribute(object key,
+                                    object value_Renamed)</pre>
+    <dl>
+      <dd>
+        <p>
+            Set the an ApplicationAttribue, which is an Object
+            set by the application which is accessable from
+            any component of the system that gets a RuntimeServices.
+            This allows communication between the application
+            environment and custom pluggable components of the
+            Velocity engine, such as loaders and loggers.
+            
+            Note that there is no enfocement or rules for the key
+            used - it is up to the application developer.  However, to
+            help make the intermixing of components possible, using
+            the target Class name (e.g.  com.foo.bar ) as the key
+            might help avoid collision.
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>key</code> - object 'name' under which the object is stored</dd>
+          <dd>
+            <code>value</code> - object to store under this key</dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.App.VelocityEngine.SetProperty(System.String,System.Object)">
+    </a>
+    <h3>SetProperty</h3>
+    <pre>public void SetProperty(string key,
+                        object value_Renamed)</pre>
+    <dl>
+      <dd>
+        <p>
+            Set a Velocity Runtime property.
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>String</code> - key</dd>
+          <dd>
+            <code>Object</code> - value</dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.App.VelocityEngine.TemplateExists(System.String)">
+    </a>
+    <h3>TemplateExists</h3>
+    <pre>public bool TemplateExists(string templateName)</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.App.VelocityEngine.Warn(System.Object)">
+    </a>
+    <h3>Warn</h3>
+    <pre>public void Warn(object message)</pre>
+    <dl>
+      <dd>
+        <p>
+            Log a warning message.
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>Object</code> - message to log</dd>
+        </dl>
+      </dd>
+    </dl>
+    <a name="operator-detail">
+    </a>
+    <a name="event-detail">
+    </a>
+    <hr>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td>
+                <a href="namespace-summary.html">Namespace</a> </td>
+              <td class="nav1sel"> Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV TYPE    NEXT TYPE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+      <tr class="nav2">
+        <td>SUMMARY: INNER | FIELD | <a href="#constructor-summary">CONST</a> | <a href="#property-summary">PROP</a> | <a href="#method-summary">METHOD</a> | OP | EVENT</td>
+        <td>DETAIL: FIELD | <a href="#constructor-detail">CONST</a> | <a href="#property-detail">PROP</a> | <a href="#method-detail">METHOD</a> | OP | EVENT</td>
+      </tr>
+    </table>
+  </body>
+</html>

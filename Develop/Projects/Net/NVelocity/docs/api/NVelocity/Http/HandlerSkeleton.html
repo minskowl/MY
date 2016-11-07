@@ -1,0 +1,336 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="..\..\JavaDoc.css">
+  </head>
+  <body>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td>
+                <a href="namespace-summary.html">Namespace</a> </td>
+              <td class="nav1sel"> Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV TYPE    NEXT TYPE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+      <tr class="nav2">
+        <td>SUMMARY: INNER | <a href="#field-summary">FIELD</a> | <a href="#constructor-summary">CONST</a> | PROP | <a href="#method-summary">METHOD</a> | OP | EVENT</td>
+        <td>DETAIL: <a href="#field-detail">FIELD</a> | <a href="#constructor-detail">CONST</a> | PROP | <a href="#method-detail">METHOD</a> | OP | EVENT</td>
+      </tr>
+    </table>
+    <hr>
+    <h2>
+      <span class="namespaceName">NVelocity.Http</span>
+      <br>
+      <span class="className">Class HandlerSkeleton</span>
+    </h2>
+    <p>
+            Summary description for NVelocityHandlerSkeleton.
+            </p>
+    <a name="field-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Field Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="fieldType" valign="top">string</td>
+        <td class="field">
+          <a href="#NVelocity.Http.HandlerSkeleton.INIT_PROPERTIES_KEY">INIT_PROPERTIES_KEY</a>
+          <br>        
+            Key used to access the Velocity configuration file path from the
+            Servlet init parameters. This is the string that is looked for when
+            getInitParameter is called.
+            </td>
+      </tr>
+      <tr>
+        <td class="fieldType" valign="top">string</td>
+        <td class="field">
+          <a href="#NVelocity.Http.HandlerSkeleton.INIT_TOOLBOX_KEY">INIT_TOOLBOX_KEY</a>
+          <br>        
+            Key used to access the toolbox configuration file path from the
+            Servlet init parameters.
+            </td>
+      </tr>
+      <tr>
+        <td class="fieldType" valign="top">bool</td>
+        <td class="field">
+          <a href="#NVelocity.Http.HandlerSkeleton.initialized">initialized</a>
+          <br>        
+            has the NVelocity initialization taken place
+            </td>
+      </tr>
+      <tr>
+        <td class="fieldType" valign="top">NVelocity.Http.Tool.ServletToolboxManager</td>
+        <td class="field">
+          <a href="#NVelocity.Http.HandlerSkeleton.toolboxManager">toolboxManager</a>
+          <br>        
+            A reference to the toolbox manager.
+            </td>
+      </tr>
+    </table>
+    <br>
+    <a name="constructor-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Constructor Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="constructor" valign="top">
+          <a href="#NVelocity.Http.HandlerSkeleton.#ctor">HandlerSkeleton</a>()<br>        Initializes a new instance of the HandlerSkeleton class.</td>
+      </tr>
+    </table>
+    <br>
+    <a name="property-summary">
+    </a>
+    <a name="method-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Method Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.Http.HandlerSkeleton.InitVelocity">InitVelocity</a>()<br>        
+            Initializes the Velocity runtime, first calling
+            loadConfiguration(ServletConvig) to get a
+            java.util.Properties of configuration information
+            and then calling Velocity.init().  Override this
+            to do anything to the environment before the
+            initialization of the singelton takes place, or to
+            initialize the singleton in other ways.
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">Commons.Collections.ExtendedProperties</td>
+        <td class="method">
+          <a href="#NVelocity.Http.HandlerSkeleton.LoadConfiguration">LoadConfiguration</a>()</td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.Http.HandlerSkeleton.LoadToolbox">LoadToolbox</a>()</td>
+      </tr>
+    </table>
+    <br>
+    <table class="subtable" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Methods inherited from class System.Object</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>
+          <a href="..\..\NVelocity/Http/HandlerSkeleton/Equals(System.html#Object)">Equals</a>, <a href="..\..\NVelocity/Http/HandlerSkeleton.html#Finalize">Finalize</a>, <a href="..\..\NVelocity/Http/HandlerSkeleton.html#GetHashCode">GetHashCode</a>, <a href="..\..\NVelocity/Http/HandlerSkeleton.html#GetType">GetType</a>, <a href="..\..\NVelocity/Http/HandlerSkeleton.html#MemberwiseClone">MemberwiseClone</a>, <a href="..\..\NVelocity/Http/HandlerSkeleton.html#ToString">ToString</a></td>
+      </tr>
+    </table>
+    <br>
+    <a name="operator-summary">
+    </a>
+    <a name="event-summary">
+    </a>
+    <br>
+    <a name="field-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Field Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.Http.HandlerSkeleton.INIT_PROPERTIES_KEY">
+    </a>
+    <h3>INIT_PROPERTIES_KEY</h3>
+    <pre>public string <b>INIT_PROPERTIES_KEY</b></pre>
+    <dl>
+      <dd>
+        <p>
+            Key used to access the Velocity configuration file path from the
+            Servlet init parameters. This is the string that is looked for when
+            getInitParameter is called.
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Http.HandlerSkeleton.INIT_TOOLBOX_KEY">
+    </a>
+    <h3>INIT_TOOLBOX_KEY</h3>
+    <pre>public string <b>INIT_TOOLBOX_KEY</b></pre>
+    <dl>
+      <dd>
+        <p>
+            Key used to access the toolbox configuration file path from the
+            Servlet init parameters.
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Http.HandlerSkeleton.initialized">
+    </a>
+    <h3>initialized</h3>
+    <pre>protected bool <b>initialized</b></pre>
+    <dl>
+      <dd>
+        <p>
+            has the NVelocity initialization taken place
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Http.HandlerSkeleton.toolboxManager">
+    </a>
+    <h3>toolboxManager</h3>
+    <pre>protected internal NVelocity.Http.Tool.ServletToolboxManager <b>toolboxManager</b></pre>
+    <dl>
+      <dd>
+        <p>
+            A reference to the toolbox manager.
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="constructor-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Constructor Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.Http.HandlerSkeleton.#ctor">
+    </a>
+    <h3>HandlerSkeleton</h3>
+    <pre>protected HandlerSkeleton()</pre>
+    <dl>
+      <dd>
+        <p>Initializes a new instance of the HandlerSkeleton class.</p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="property-detail">
+    </a>
+    <a name="method-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Method Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.Http.HandlerSkeleton.InitVelocity">
+    </a>
+    <h3>InitVelocity</h3>
+    <pre>protected void InitVelocity()</pre>
+    <dl>
+      <dd>
+        <p>
+            Initializes the Velocity runtime, first calling
+            loadConfiguration(ServletConvig) to get a
+            java.util.Properties of configuration information
+            and then calling Velocity.init().  Override this
+            to do anything to the environment before the
+            initialization of the singelton takes place, or to
+            initialize the singleton in other ways.
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Http.HandlerSkeleton.LoadConfiguration">
+    </a>
+    <h3>LoadConfiguration</h3>
+    <pre>protected Commons.Collections.ExtendedProperties LoadConfiguration()</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Http.HandlerSkeleton.LoadToolbox">
+    </a>
+    <h3>LoadToolbox</h3>
+    <pre>protected void LoadToolbox()</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="operator-detail">
+    </a>
+    <a name="event-detail">
+    </a>
+    <hr>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td>
+                <a href="namespace-summary.html">Namespace</a> </td>
+              <td class="nav1sel"> Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV TYPE    NEXT TYPE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+      <tr class="nav2">
+        <td>SUMMARY: INNER | <a href="#field-summary">FIELD</a> | <a href="#constructor-summary">CONST</a> | PROP | <a href="#method-summary">METHOD</a> | OP | EVENT</td>
+        <td>DETAIL: <a href="#field-detail">FIELD</a> | <a href="#constructor-detail">CONST</a> | PROP | <a href="#method-detail">METHOD</a> | OP | EVENT</td>
+      </tr>
+    </table>
+  </body>
+</html>

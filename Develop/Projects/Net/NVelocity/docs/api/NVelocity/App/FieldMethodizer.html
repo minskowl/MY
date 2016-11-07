@@ -1,0 +1,290 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="..\..\JavaDoc.css">
+  </head>
+  <body>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td>
+                <a href="namespace-summary.html">Namespace</a> </td>
+              <td class="nav1sel"> Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV TYPE    NEXT TYPE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+      <tr class="nav2">
+        <td>SUMMARY: INNER | FIELD | <a href="#constructor-summary">CONST</a> | PROP | <a href="#method-summary">METHOD</a> | OP | EVENT</td>
+        <td>DETAIL: FIELD | <a href="#constructor-detail">CONST</a> | PROP | <a href="#method-detail">METHOD</a> | OP | EVENT</td>
+      </tr>
+    </table>
+    <hr>
+    <h2>
+      <span class="namespaceName">NVelocity.App</span>
+      <br>
+      <span class="className">Class FieldMethodizer</span>
+    </h2>
+    <a name="field-summary">
+    </a>
+    <a name="constructor-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Constructor Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="constructor" valign="top">
+          <a href="#NVelocity.App.FieldMethodizer.#ctor">FieldMethodizer</a>()<br>        
+            Allow object to be initialized without any data. You would use
+            addObject() to add data later.
+            </td>
+      </tr>
+      <tr>
+        <td class="constructor" valign="top">
+          <a href="#NVelocity.App.FieldMethodizer.#ctor(System.String)">FieldMethodizer</a>(string s)<br>        
+            Constructor that takes as it's arg the name of the class
+            to methodize.
+            </td>
+      </tr>
+      <tr>
+        <td class="constructor" valign="top">
+          <a href="#NVelocity.App.FieldMethodizer.#ctor(System.Object)">FieldMethodizer</a>(object o)<br>        
+            Constructor that takes as it's arg a living
+            object to methodize.  Note that it will still
+            only methodized the public static fields of
+            the class.
+            </td>
+      </tr>
+    </table>
+    <br>
+    <a name="property-summary">
+    </a>
+    <a name="method-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Method Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.App.FieldMethodizer.addObject(System.Object)">addObject</a>(object o)<br>         Add an Object to methodize
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.App.FieldMethodizer.addObject(System.String)">addObject</a>(string s)<br>        
+            Add the Name of the class to methodize
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">object</td>
+        <td class="method">
+          <a href="#NVelocity.App.FieldMethodizer.Get(System.String)">Get</a>(string fieldName)<br>        
+            Accessor method to get the fields by name.
+            </td>
+      </tr>
+    </table>
+    <br>
+    <table class="subtable" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Methods inherited from class System.Object</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>
+          <a href="..\..\NVelocity/App/FieldMethodizer/Equals(System.html#Object)">Equals</a>, <a href="..\..\NVelocity/App/FieldMethodizer.html#Finalize">Finalize</a>, <a href="..\..\NVelocity/App/FieldMethodizer.html#GetHashCode">GetHashCode</a>, <a href="..\..\NVelocity/App/FieldMethodizer.html#GetType">GetType</a>, <a href="..\..\NVelocity/App/FieldMethodizer.html#MemberwiseClone">MemberwiseClone</a>, <a href="..\..\NVelocity/App/FieldMethodizer.html#ToString">ToString</a></td>
+      </tr>
+    </table>
+    <br>
+    <a name="operator-summary">
+    </a>
+    <a name="event-summary">
+    </a>
+    <br>
+    <a name="field-detail">
+    </a>
+    <a name="constructor-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Constructor Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.App.FieldMethodizer.#ctor">
+    </a>
+    <h3>FieldMethodizer</h3>
+    <pre>public FieldMethodizer()</pre>
+    <dl>
+      <dd>
+        <p>
+            Allow object to be initialized without any data. You would use
+            addObject() to add data later.
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.App.FieldMethodizer.#ctor(System.String)">
+    </a>
+    <h3>FieldMethodizer</h3>
+    <pre>public FieldMethodizer(string s)</pre>
+    <dl>
+      <dd>
+        <p>
+            Constructor that takes as it's arg the name of the class
+            to methodize.
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>s</code> - Name of class to methodize.</dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.App.FieldMethodizer.#ctor(System.Object)">
+    </a>
+    <h3>FieldMethodizer</h3>
+    <pre>public FieldMethodizer(object o)</pre>
+    <dl>
+      <dd>
+        <p>
+            Constructor that takes as it's arg a living
+            object to methodize.  Note that it will still
+            only methodized the public static fields of
+            the class.
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>o</code> - object to methodize.</dd>
+        </dl>
+      </dd>
+    </dl>
+    <a name="property-detail">
+    </a>
+    <a name="method-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Method Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.App.FieldMethodizer.addObject(System.Object)">
+    </a>
+    <h3>addObject</h3>
+    <pre>public void addObject(object o)</pre>
+    <dl>
+      <dd>
+        <p> Add an Object to methodize
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.App.FieldMethodizer.addObject(System.String)">
+    </a>
+    <h3>addObject</h3>
+    <pre>public void addObject(string s)</pre>
+    <dl>
+      <dd>
+        <p>
+            Add the Name of the class to methodize
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.App.FieldMethodizer.Get(System.String)">
+    </a>
+    <h3>Get</h3>
+    <pre>public object Get(string fieldName)</pre>
+    <dl>
+      <dd>
+        <p>
+            Accessor method to get the fields by name.
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>fieldName</code> - Name of static field to retrieve</dd>
+        </dl>
+        <b>Returns:</b>
+        <dl>
+          <dd>The value of the given field.</dd>
+        </dl>
+      </dd>
+    </dl>
+    <a name="operator-detail">
+    </a>
+    <a name="event-detail">
+    </a>
+    <hr>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td>
+                <a href="namespace-summary.html">Namespace</a> </td>
+              <td class="nav1sel"> Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV TYPE    NEXT TYPE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+      <tr class="nav2">
+        <td>SUMMARY: INNER | FIELD | <a href="#constructor-summary">CONST</a> | PROP | <a href="#method-summary">METHOD</a> | OP | EVENT</td>
+        <td>DETAIL: FIELD | <a href="#constructor-detail">CONST</a> | PROP | <a href="#method-detail">METHOD</a> | OP | EVENT</td>
+      </tr>
+    </table>
+  </body>
+</html>

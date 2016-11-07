@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DatabaseSchema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="KnowledgeBase" ConnectionString="Provider=SQLOLEDB;Data Source=.;Integrated Security=SSPI;Initial Catalog=KnowledgeBase">
+  <Tables>
+    <TableSchema Name="Categories" Alias="Categories" IsActive="true" TableType="TABLE">
+      <Columns>
+        <ColumnSchema Name="CategoryID" Alias="CategoryID" NetType="System.Int32" DataTypeFull="[int]" DataType="int" Length="4" Precision="10" Scale="0" IsActive="true" IsReadOnly="false" Ordinal="1" AllowNulls="false" IsUnique="false" IsAutoIncrement="true" IsPrimaryKey="true" IsForeignKey="false" DataTypeId="56" DefaultValue="" />
+        <ColumnSchema Name="CreationDate" Alias="CreationDate" NetType="System.DateTime" DataTypeFull="[datetime]" DataType="datetime" Length="8" Precision="23" Scale="3" IsActive="true" IsReadOnly="false" Ordinal="4" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="61" DefaultValue="" />
+        <ColumnSchema Name="Name" Alias="Name" NetType="System.String" DataTypeFull="[nvarchar](50)" DataType="nvarchar" Length="50" Precision="0" Scale="0" IsActive="true" IsReadOnly="false" Ordinal="3" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="231" DefaultValue="" />
+        <ColumnSchema Name="ParentCategoryID" Alias="ParentCategoryID" NetType="System.Int32" DataTypeFull="[int]" DataType="int" Length="4" Precision="10" Scale="0" IsActive="true" IsReadOnly="false" Ordinal="2" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="56" DefaultValue="" />
+      </Columns>
+    </TableSchema>
+    <TableSchema Name="Keywords" Alias="Keywords" IsActive="true" TableType="TABLE">
+      <Columns>
+        <ColumnSchema Name="KeywordID" Alias="KeywordID" NetType="System.Int32" DataTypeFull="[int]" DataType="int" Length="4" Precision="10" Scale="0" IsActive="true" IsReadOnly="false" Ordinal="1" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="true" IsForeignKey="false" DataTypeId="56" DefaultValue="" />
+        <ColumnSchema Name="Name" Alias="Name" NetType="System.String" DataTypeFull="[nvarchar](50)" DataType="nvarchar" Length="50" Precision="0" Scale="0" IsActive="true" IsReadOnly="false" Ordinal="2" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="231" DefaultValue="" />
+      </Columns>
+    </TableSchema>
+    <TableSchema Name="KnowledgeCategory" Alias="KnowledgeCategory" IsActive="true" TableType="TABLE">
+      <Columns>
+        <ColumnSchema Name="CategoryID" Alias="CategoryID" NetType="System.Int32" DataTypeFull="[int]" DataType="int" Length="4" Precision="10" Scale="0" IsActive="true" IsReadOnly="false" Ordinal="2" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="true" IsForeignKey="false" DataTypeId="56" DefaultValue="" />
+        <ColumnSchema Name="KnowledgeID" Alias="KnowledgeID" NetType="System.Int32" DataTypeFull="[int]" DataType="int" Length="4" Precision="10" Scale="0" IsActive="true" IsReadOnly="false" Ordinal="1" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="true" IsForeignKey="false" DataTypeId="56" DefaultValue="" />
+      </Columns>
+    </TableSchema>
+    <TableSchema Name="Knowledges" Alias="Knowledges" IsActive="true" TableType="TABLE">
+      <Columns>
+        <ColumnSchema Name="CreationDate" Alias="CreationDate" NetType="System.DateTime" DataTypeFull="[datetime]" DataType="datetime" Length="8" Precision="23" Scale="3" IsActive="true" IsReadOnly="false" Ordinal="5" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="61" DefaultValue="" />
+        <ColumnSchema Name="CreatorID" Alias="CreatorID" NetType="System.Int32" DataTypeFull="[int]" DataType="int" Length="4" Precision="10" Scale="0" IsActive="true" IsReadOnly="false" Ordinal="6" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="56" DefaultValue="" />
+        <ColumnSchema Name="KnowledgeID" Alias="KnowledgeID" NetType="System.Int32" DataTypeFull="[int]" DataType="int" Length="4" Precision="10" Scale="0" IsActive="true" IsReadOnly="false" Ordinal="1" AllowNulls="false" IsUnique="false" IsAutoIncrement="true" IsPrimaryKey="true" IsForeignKey="false" DataTypeId="56" DefaultValue="" />
+        <ColumnSchema Name="KnowledgeTypeID" Alias="KnowledgeTypeID" NetType="System.Int16" DataTypeFull="[smallint]" DataType="smallint" Length="2" Precision="5" Scale="0" IsActive="true" IsReadOnly="false" Ordinal="4" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="52" DefaultValue="" />
+        <ColumnSchema Name="ModificationDate" Alias="ModificationDate" NetType="System.DateTime" DataTypeFull="[datetime]" DataType="datetime" Length="8" Precision="23" Scale="3" IsActive="true" IsReadOnly="false" Ordinal="7" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="61" DefaultValue="" />
+        <ColumnSchema Name="ModificatorID" Alias="ModificatorID" NetType="System.Int32" DataTypeFull="[int]" DataType="int" Length="4" Precision="10" Scale="0" IsActive="true" IsReadOnly="false" Ordinal="8" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="56" DefaultValue="" />
+        <ColumnSchema Name="Summary" Alias="Summary" NetType="System.String" DataTypeFull="[text]" DataType="text" Length="16" Precision="0" Scale="0" IsActive="true" IsReadOnly="false" Ordinal="3" AllowNulls="true" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="35" DefaultValue="" />
+        <ColumnSchema Name="Title" Alias="Title" NetType="System.String" DataTypeFull="[nvarchar](150)" DataType="nvarchar" Length="150" Precision="0" Scale="0" IsActive="true" IsReadOnly="false" Ordinal="2" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="231" DefaultValue="" />
+      </Columns>
+    </TableSchema>
+    <TableSchema Name="KnowledgeTypes" Alias="KnowledgeTypes" IsActive="true" TableType="TABLE">
+      <Columns>
+        <ColumnSchema Name="KnowledgeTypeID" Alias="KnowledgeTypeID" NetType="System.Int16" DataTypeFull="[smallint]" DataType="smallint" Length="2" Precision="5" Scale="0" IsActive="true" IsReadOnly="false" Ordinal="1" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="true" IsForeignKey="false" DataTypeId="52" DefaultValue="" />
+        <ColumnSchema Name="Name" Alias="Name" NetType="System.String" DataTypeFull="[nvarchar](50)" DataType="nvarchar" Length="50" Precision="0" Scale="0" IsActive="true" IsReadOnly="false" Ordinal="2" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="231" DefaultValue="" />
+      </Columns>
+    </TableSchema>
+    <TableSchema Name="Users" Alias="Users" IsActive="true" TableType="TABLE">
+      <Columns>
+        <ColumnSchema Name="CreationDate" Alias="CreationDate" NetType="System.DateTime" DataTypeFull="[datetime]" DataType="datetime" Length="8" Precision="23" Scale="3" IsActive="true" IsReadOnly="false" Ordinal="9" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="61" DefaultValue="" />
+        <ColumnSchema Name="Email" Alias="Email" NetType="System.String" DataTypeFull="[nvarchar](150)" DataType="nvarchar" Length="150" Precision="0" Scale="0" IsActive="true" IsReadOnly="false" Ordinal="6" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="231" DefaultValue="" />
+        <ColumnSchema Name="FirstName" Alias="FirstName" NetType="System.String" DataTypeFull="[nvarchar](50)" DataType="nvarchar" Length="50" Precision="0" Scale="0" IsActive="true" IsReadOnly="false" Ordinal="4" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="231" DefaultValue="" />
+        <ColumnSchema Name="LastName" Alias="LastName" NetType="System.String" DataTypeFull="[nvarchar](50)" DataType="nvarchar" Length="50" Precision="0" Scale="0" IsActive="true" IsReadOnly="false" Ordinal="5" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="231" DefaultValue="" />
+        <ColumnSchema Name="Login" Alias="Login" NetType="System.String" DataTypeFull="[nvarchar](50)" DataType="nvarchar" Length="50" Precision="0" Scale="0" IsActive="true" IsReadOnly="false" Ordinal="2" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="231" DefaultValue="" />
+        <ColumnSchema Name="Password" Alias="Password" NetType="System.String" DataTypeFull="[nvarchar](50)" DataType="nvarchar" Length="50" Precision="0" Scale="0" IsActive="true" IsReadOnly="false" Ordinal="3" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="231" DefaultValue="" />
+        <ColumnSchema Name="SecurityAnswer" Alias="SecurityAnswer" NetType="System.String" DataTypeFull="[nvarchar](50)" DataType="nvarchar" Length="50" Precision="0" Scale="0" IsActive="true" IsReadOnly="false" Ordinal="8" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="231" DefaultValue="" />
+        <ColumnSchema Name="SecurityQuestion" Alias="SecurityQuestion" NetType="System.String" DataTypeFull="[nvarchar](50)" DataType="nvarchar" Length="50" Precision="0" Scale="0" IsActive="true" IsReadOnly="false" Ordinal="7" AllowNulls="false" IsUnique="false" IsAutoIncrement="false" IsPrimaryKey="false" IsForeignKey="false" DataTypeId="231" DefaultValue="" />
+        <ColumnSchema Name="UserID" Alias="UserID" NetType="System.Int32" DataTypeFull="[int]" DataType="int" Length="4" Precision="10" Scale="0" IsActive="true" IsReadOnly="false" Ordinal="1" AllowNulls="false" IsUnique="false" IsAutoIncrement="true" IsPrimaryKey="true" IsForeignKey="false" DataTypeId="56" DefaultValue="" />
+      </Columns>
+    </TableSchema>
+  </Tables>
+  <ForeignKeys>
+    <ForeignKeySchema Name="FK_Categories_Categories" ForeignTableName="Categories" PrimaryTableName="Categories">
+      <Associations>
+        <ForeignKeyAssociation ForeignColumnName="ParentCategoryID" PrimaryColumnName="CategoryID" />
+      </Associations>
+    </ForeignKeySchema>
+    <ForeignKeySchema Name="FK_KnowledgeCategory_Categories" ForeignTableName="KnowledgeCategory" PrimaryTableName="Categories">
+      <Associations>
+        <ForeignKeyAssociation ForeignColumnName="CategoryID" PrimaryColumnName="CategoryID" />
+      </Associations>
+    </ForeignKeySchema>
+    <ForeignKeySchema Name="FK_KnowledgeCategory_Knowledges" ForeignTableName="KnowledgeCategory" PrimaryTableName="Knowledges">
+      <Associations>
+        <ForeignKeyAssociation ForeignColumnName="KnowledgeID" PrimaryColumnName="KnowledgeID" />
+      </Associations>
+    </ForeignKeySchema>
+    <ForeignKeySchema Name="FK_Knowledges_KnowledgeTypes" ForeignTableName="Knowledges" PrimaryTableName="KnowledgeTypes">
+      <Associations>
+        <ForeignKeyAssociation ForeignColumnName="KnowledgeTypeID" PrimaryColumnName="KnowledgeTypeID" />
+      </Associations>
+    </ForeignKeySchema>
+    <ForeignKeySchema Name="FK_Knowledges_Users" ForeignTableName="Knowledges" PrimaryTableName="Users">
+      <Associations>
+        <ForeignKeyAssociation ForeignColumnName="CreatorID" PrimaryColumnName="UserID" />
+      </Associations>
+    </ForeignKeySchema>
+    <ForeignKeySchema Name="FK_Knowledges_Users1" ForeignTableName="Knowledges" PrimaryTableName="Users">
+      <Associations>
+        <ForeignKeyAssociation ForeignColumnName="ModificatorID" PrimaryColumnName="UserID" />
+      </Associations>
+    </ForeignKeySchema>
+  </ForeignKeys>
+</DatabaseSchema>

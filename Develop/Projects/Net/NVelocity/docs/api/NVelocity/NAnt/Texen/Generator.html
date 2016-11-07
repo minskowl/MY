@@ -1,0 +1,903 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="..\..\..\JavaDoc.css">
+  </head>
+  <body>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td>
+                <a href="namespace-summary.html">Namespace</a> </td>
+              <td class="nav1sel"> Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV TYPE    NEXT TYPE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+      <tr class="nav2">
+        <td>SUMMARY: INNER | <a href="#field-summary">FIELD</a> | <a href="#constructor-summary">CONST</a> | <a href="#property-summary">PROP</a> | <a href="#method-summary">METHOD</a> | OP | EVENT</td>
+        <td>DETAIL: <a href="#field-detail">FIELD</a> | <a href="#constructor-detail">CONST</a> | <a href="#property-detail">PROP</a> | <a href="#method-detail">METHOD</a> | OP | EVENT</td>
+      </tr>
+    </table>
+    <hr>
+    <h2>
+      <span class="namespaceName">NVelocity.NAnt.Texen</span>
+      <br>
+      <span class="className">Class Generator</span>
+    </h2>
+    <p>
+            A text/code generator class
+            </p>
+    <a name="field-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Field Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="fieldType" valign="top">string</td>
+        <td class="field">
+          <a href="#NVelocity.NAnt.Texen.Generator.inputEncoding">inputEncoding</a>
+          <br>         This is the encoding for the input file(s)
+            (templates).
+            </td>
+      </tr>
+      <tr>
+        <td class="fieldType" valign="top">string</td>
+        <td class="field">
+          <a href="#NVelocity.NAnt.Texen.Generator.OUTPUT_PATH">OUTPUT_PATH</a>
+          <br>         Where the texen output will placed.
+            </td>
+      </tr>
+      <tr>
+        <td class="fieldType" valign="top">string</td>
+        <td class="field">
+          <a href="#NVelocity.NAnt.Texen.Generator.outputEncoding">outputEncoding</a>
+          <br>         This is the encoding for the output file(s).
+            </td>
+      </tr>
+      <tr>
+        <td class="fieldType" valign="top">string</td>
+        <td class="field">
+          <a href="#NVelocity.NAnt.Texen.Generator.TEMPLATE_PATH">TEMPLATE_PATH</a>
+          <br>         Where the velocity templates live.
+            </td>
+      </tr>
+      <tr>
+        <td class="fieldType" valign="top">NVelocity.App.VelocityEngine</td>
+        <td class="field">
+          <a href="#NVelocity.NAnt.Texen.Generator.ve">ve</a>
+          <br>         Velocity engine.
+            </td>
+      </tr>
+    </table>
+    <br>
+    <a name="constructor-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Constructor Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="constructor" valign="top">
+          <a href="#NVelocity.NAnt.Texen.Generator.#ctor">Generator</a>()<br>         Default constructor.
+            </td>
+      </tr>
+      <tr>
+        <td class="constructor" valign="top">
+          <a href="#NVelocity.NAnt.Texen.Generator.#ctor(System.String)">Generator</a>(string propFile)<br>         Create a new generator object with properties loaded from
+            a file.  If the file does not exist or any other exception
+            occurs during the reading operation the default properties
+            are used.
+            *
+            </td>
+      </tr>
+      <tr>
+        <td class="constructor" valign="top">
+          <a href="#NVelocity.NAnt.Texen.Generator.#ctor(Commons.Collections.ExtendedProperties)">Generator</a>(Commons.Collections.ExtendedProperties props)<br>         Create a new Generator object with a given property
+            set. The property set will be duplicated.
+            *
+            </td>
+      </tr>
+    </table>
+    <br>
+    <a name="property-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Property Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="propertyType" valign="top">string</td>
+        <td class="property">
+          <a href="#NVelocity.NAnt.Texen.Generator.InputEncoding">InputEncoding</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="propertyType" valign="top">NVelocity.NAnt.Texen.Generator</td>
+        <td class="property">
+          <a href="#NVelocity.NAnt.Texen.Generator.Instance">Instance</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="propertyType" valign="top">string</td>
+        <td class="property">
+          <a href="#NVelocity.NAnt.Texen.Generator.LogPrefix">LogPrefix</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="propertyType" valign="top">string</td>
+        <td class="property">
+          <a href="#NVelocity.NAnt.Texen.Generator.OutputEncoding">OutputEncoding</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="propertyType" valign="top">string</td>
+        <td class="property">
+          <a href="#NVelocity.NAnt.Texen.Generator.OutputPath">OutputPath</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="propertyType" valign="top">string</td>
+        <td class="property">
+          <a href="#NVelocity.NAnt.Texen.Generator.TemplatePath">TemplatePath</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="propertyType" valign="top">NVelocity.App.VelocityEngine</td>
+        <td class="property">
+          <a href="#NVelocity.NAnt.Texen.Generator.VelocityEngine">VelocityEngine</a>
+        </td>
+      </tr>
+    </table>
+    <br>
+    <a name="method-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Method Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.NAnt.Texen.Generator.fillContextDefaults(NVelocity.Context.IContext)">fillContextDefaults</a>(NVelocity.Context.IContext context)<br>         Add properties that will aways be in the context by default
+            *
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.NAnt.Texen.Generator.fillContextHash(NVelocity.Context.IContext,System.Collections.Hashtable)">fillContextHash</a>(NVelocity.Context.IContext context, System.Collections.Hashtable objs)<br>         Add all the contents of a Hashtable to the context.
+            *
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.NAnt.Texen.Generator.fillContextProperties(NVelocity.Context.IContext)">fillContextProperties</a>(NVelocity.Context.IContext context)<br>         Add objects to the context from the current properties.
+            *
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">NVelocity.Context.IContext</td>
+        <td class="method">
+          <a href="#NVelocity.NAnt.Texen.Generator.getContext(System.Collections.Hashtable)">getContext</a>(System.Collections.Hashtable objs)<br>         Create a new context and fill it with the elements of the
+            objs Hashtable.  Default objects and objects that comes from
+            the properties of this Generator object is also added.
+            *
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">NVelocity.Template</td>
+        <td class="method">
+          <a href="#NVelocity.NAnt.Texen.Generator.getTemplate(System.String,System.String)">getTemplate</a>(string templateName, string encoding)<br>         Returns a template, based on encoding and path.
+            *
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">System.IO.StreamWriter</td>
+        <td class="method">
+          <a href="#NVelocity.NAnt.Texen.Generator.getWriter(System.String,System.String)">getWriter</a>(string path, string encoding)<br>         Returns a writer, based on encoding and path.
+            *
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">string</td>
+        <td class="method">
+          <a href="#NVelocity.NAnt.Texen.Generator.parse(System.String,NVelocity.Context.IContext)">parse</a>(string controlTemplate, NVelocity.Context.IContext controlContext)<br>         Parse the control template and merge it with the control
+            context. This is the starting point in texen.
+            *
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">string</td>
+        <td class="method">
+          <a href="#NVelocity.NAnt.Texen.Generator.parse(System.String,System.String,System.String,System.String,System.String,System.Object)">parse</a>(string inputTemplate, string intputEncoding, string outputFile, string outputEncoding, string objectID, object object_Renamed)<br>         Parse an input and write the output to an output file.  If the
+            output file parameter is null or an empty string the result is
+            returned as a string object.  Otherwise an empty string is returned.
+            You can add objects to the context with the objs Hashtable.
+            *
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">string</td>
+        <td class="method">
+          <a href="#NVelocity.NAnt.Texen.Generator.parse(System.String,System.String,System.String,System.Object)">parse</a>(string inputTemplate, string outputFile, string objectID, object object_Renamed)<br>         Parse an input and write the output to an output file.  If the
+            output file parameter is null or an empty string the result is
+            returned as a string object.  Otherwise an empty string is returned.
+            You can add objects to the context with the objs Hashtable.
+            *
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">string</td>
+        <td class="method">
+          <a href="#NVelocity.NAnt.Texen.Generator.parse(System.String,System.String)">parse</a>(string inputTemplate, string outputFile)<br>         Parse an input and write the output to an output file.  If the
+            output file parameter is null or an empty string the result is
+            returned as a string object.  Otherwise an empty string is returned.
+            *
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.NAnt.Texen.Generator.setDefaultProps">setDefaultProps</a>()<br>         Set default properties.
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.NAnt.Texen.Generator.shutdown">shutdown</a>()<br>         Properly shut down the generator, right now
+            this is simply flushing and closing the file
+            writers that we have been holding on to.
+            </td>
+      </tr>
+    </table>
+    <br>
+    <table class="subtable" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Methods inherited from class System.Object</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>
+          <a href="..\..\..\NVelocity/NAnt/Texen/Generator/Equals(System.html#Object)">Equals</a>, <a href="..\..\..\NVelocity/NAnt/Texen/Generator.html#Finalize">Finalize</a>, <a href="..\..\..\NVelocity/NAnt/Texen/Generator.html#GetHashCode">GetHashCode</a>, <a href="..\..\..\NVelocity/NAnt/Texen/Generator.html#GetType">GetType</a>, <a href="..\..\..\NVelocity/NAnt/Texen/Generator.html#MemberwiseClone">MemberwiseClone</a>, <a href="..\..\..\NVelocity/NAnt/Texen/Generator.html#ToString">ToString</a></td>
+      </tr>
+    </table>
+    <br>
+    <a name="operator-summary">
+    </a>
+    <a name="event-summary">
+    </a>
+    <br>
+    <a name="field-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Field Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.NAnt.Texen.Generator.inputEncoding">
+    </a>
+    <h3>inputEncoding</h3>
+    <pre>protected internal string <b>inputEncoding</b></pre>
+    <dl>
+      <dd>
+        <p> This is the encoding for the input file(s)
+            (templates).
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.NAnt.Texen.Generator.OUTPUT_PATH">
+    </a>
+    <h3>OUTPUT_PATH</h3>
+    <pre>public string <b>OUTPUT_PATH</b></pre>
+    <dl>
+      <dd>
+        <p> Where the texen output will placed.
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.NAnt.Texen.Generator.outputEncoding">
+    </a>
+    <h3>outputEncoding</h3>
+    <pre>protected internal string <b>outputEncoding</b></pre>
+    <dl>
+      <dd>
+        <p> This is the encoding for the output file(s).
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.NAnt.Texen.Generator.TEMPLATE_PATH">
+    </a>
+    <h3>TEMPLATE_PATH</h3>
+    <pre>public string <b>TEMPLATE_PATH</b></pre>
+    <dl>
+      <dd>
+        <p> Where the velocity templates live.
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.NAnt.Texen.Generator.ve">
+    </a>
+    <h3>ve</h3>
+    <pre>protected internal NVelocity.App.VelocityEngine <b>ve</b></pre>
+    <dl>
+      <dd>
+        <p> Velocity engine.
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="constructor-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Constructor Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.NAnt.Texen.Generator.#ctor">
+    </a>
+    <h3>Generator</h3>
+    <pre>public Generator()</pre>
+    <dl>
+      <dd>
+        <p> Default constructor.
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.NAnt.Texen.Generator.#ctor(System.String)">
+    </a>
+    <h3>Generator</h3>
+    <pre>public Generator(string propFile)</pre>
+    <dl>
+      <dd>
+        <p> Create a new generator object with properties loaded from
+            a file.  If the file does not exist or any other exception
+            occurs during the reading operation the default properties
+            are used.
+            *
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>String</code> - properties used to help populate the control context.
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.NAnt.Texen.Generator.#ctor(Commons.Collections.ExtendedProperties)">
+    </a>
+    <h3>Generator</h3>
+    <pre>public Generator(Commons.Collections.ExtendedProperties props)</pre>
+    <dl>
+      <dd>
+        <p> Create a new Generator object with a given property
+            set. The property set will be duplicated.
+            *
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>Properties</code> - properties object to help populate the control context.
+            
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <a name="property-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Property Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.NAnt.Texen.Generator.InputEncoding">
+    </a>
+    <h3>InputEncoding</h3>
+    <pre>public string InputEncoding</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.NAnt.Texen.Generator.Instance">
+    </a>
+    <h3>Instance</h3>
+    <pre>public NVelocity.NAnt.Texen.Generator Instance</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.NAnt.Texen.Generator.LogPrefix">
+    </a>
+    <h3>LogPrefix</h3>
+    <pre>public string LogPrefix</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.NAnt.Texen.Generator.OutputEncoding">
+    </a>
+    <h3>OutputEncoding</h3>
+    <pre>public string OutputEncoding</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.NAnt.Texen.Generator.OutputPath">
+    </a>
+    <h3>OutputPath</h3>
+    <pre>public string OutputPath</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.NAnt.Texen.Generator.TemplatePath">
+    </a>
+    <h3>TemplatePath</h3>
+    <pre>public string TemplatePath</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.NAnt.Texen.Generator.VelocityEngine">
+    </a>
+    <h3>VelocityEngine</h3>
+    <pre>public NVelocity.App.VelocityEngine VelocityEngine</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="method-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Method Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.NAnt.Texen.Generator.fillContextDefaults(NVelocity.Context.IContext)">
+    </a>
+    <h3>fillContextDefaults</h3>
+    <pre>protected internal void fillContextDefaults(NVelocity.Context.IContext context)</pre>
+    <dl>
+      <dd>
+        <p> Add properties that will aways be in the context by default
+            *
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>Context</code> - control context to fill with default values.
+            
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.NAnt.Texen.Generator.fillContextHash(NVelocity.Context.IContext,System.Collections.Hashtable)">
+    </a>
+    <h3>fillContextHash</h3>
+    <pre>protected internal void fillContextHash(NVelocity.Context.IContext context,
+                                        System.Collections.Hashtable objs)</pre>
+    <dl>
+      <dd>
+        <p> Add all the contents of a Hashtable to the context.
+            *
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>Context</code> - context to fill with objects
+            </dd>
+          <dd>
+            <code>Hashtable</code> - source of objects
+            
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.NAnt.Texen.Generator.fillContextProperties(NVelocity.Context.IContext)">
+    </a>
+    <h3>fillContextProperties</h3>
+    <pre>protected internal void fillContextProperties(NVelocity.Context.IContext context)</pre>
+    <dl>
+      <dd>
+        <p> Add objects to the context from the current properties.
+            *
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>Context</code> - control context to fill with objects
+            that are specified in the default.properties
+            file
+            
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.NAnt.Texen.Generator.getContext(System.Collections.Hashtable)">
+    </a>
+    <h3>getContext</h3>
+    <pre>protected internal NVelocity.Context.IContext getContext(System.Collections.Hashtable objs)</pre>
+    <dl>
+      <dd>
+        <p> Create a new context and fill it with the elements of the
+            objs Hashtable.  Default objects and objects that comes from
+            the properties of this Generator object is also added.
+            *
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>Hashtable</code> - objects to place in the control context
+            </dd>
+        </dl>
+        <b>Returns:</b>
+        <dl>
+          <dd>Context context filled with objects
+            
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.NAnt.Texen.Generator.getTemplate(System.String,System.String)">
+    </a>
+    <h3>getTemplate</h3>
+    <pre>public NVelocity.Template getTemplate(string templateName,
+                                      string encoding)</pre>
+    <dl>
+      <dd>
+        <p> Returns a template, based on encoding and path.
+            *
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>templateName</code> -  name of the template
+            </dd>
+          <dd>
+            <code>encoding</code> -      template encoding
+            
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.NAnt.Texen.Generator.getWriter(System.String,System.String)">
+    </a>
+    <h3>getWriter</h3>
+    <pre>public System.IO.StreamWriter getWriter(string path,
+                                        string encoding)</pre>
+    <dl>
+      <dd>
+        <p> Returns a writer, based on encoding and path.
+            *
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>path</code> -      path to the output file
+            </dd>
+          <dd>
+            <code>encoding</code> -  output encoding
+            
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.NAnt.Texen.Generator.parse(System.String,NVelocity.Context.IContext)">
+    </a>
+    <h3>parse</h3>
+    <pre>public string parse(string controlTemplate,
+                    NVelocity.Context.IContext controlContext)</pre>
+    <dl>
+      <dd>
+        <p> Parse the control template and merge it with the control
+            context. This is the starting point in texen.
+            *
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>String</code> - control template
+            </dd>
+          <dd>
+            <code>Context</code> - control context
+            </dd>
+        </dl>
+        <b>Returns:</b>
+        <dl>
+          <dd>String generated output
+            
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.NAnt.Texen.Generator.parse(System.String,System.String,System.String,System.String,System.String,System.Object)">
+    </a>
+    <h3>parse</h3>
+    <pre>public string parse(string inputTemplate,
+                    string intputEncoding,
+                    string outputFile,
+                    string outputEncoding,
+                    string objectID,
+                    object object_Renamed)</pre>
+    <dl>
+      <dd>
+        <p> Parse an input and write the output to an output file.  If the
+            output file parameter is null or an empty string the result is
+            returned as a string object.  Otherwise an empty string is returned.
+            You can add objects to the context with the objs Hashtable.
+            *
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>String</code> - input template
+            </dd>
+          <dd>
+            <code>String</code> - inputEncoding template encoding
+            </dd>
+          <dd>
+            <code>String</code> - output file
+            </dd>
+          <dd>
+            <code>String</code> - outputEncoding encoding of output file
+            </dd>
+          <dd>
+            <code>String</code> - id for object to be placed in the control context
+            </dd>
+          <dd>
+            <code>String</code> - object to be placed in the context
+            </dd>
+        </dl>
+        <b>Returns:</b>
+        <dl>
+          <dd>String generated output from velocity
+            
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.NAnt.Texen.Generator.parse(System.String,System.String,System.String,System.Object)">
+    </a>
+    <h3>parse</h3>
+    <pre>public string parse(string inputTemplate,
+                    string outputFile,
+                    string objectID,
+                    object object_Renamed)</pre>
+    <dl>
+      <dd>
+        <p> Parse an input and write the output to an output file.  If the
+            output file parameter is null or an empty string the result is
+            returned as a string object.  Otherwise an empty string is returned.
+            You can add objects to the context with the objs Hashtable.
+            *
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>String</code> - input template
+            </dd>
+          <dd>
+            <code>String</code> - output file
+            </dd>
+          <dd>
+            <code>String</code> - id for object to be placed in the control context
+            </dd>
+          <dd>
+            <code>String</code> - object to be placed in the context
+            </dd>
+        </dl>
+        <b>Returns:</b>
+        <dl>
+          <dd>String generated output from velocity
+            
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.NAnt.Texen.Generator.parse(System.String,System.String)">
+    </a>
+    <h3>parse</h3>
+    <pre>public string parse(string inputTemplate,
+                    string outputFile)</pre>
+    <dl>
+      <dd>
+        <p> Parse an input and write the output to an output file.  If the
+            output file parameter is null or an empty string the result is
+            returned as a string object.  Otherwise an empty string is returned.
+            *
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>String</code> - input template
+            </dd>
+          <dd>
+            <code>String</code> - output file
+            
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.NAnt.Texen.Generator.setDefaultProps">
+    </a>
+    <h3>setDefaultProps</h3>
+    <pre>protected internal void setDefaultProps()</pre>
+    <dl>
+      <dd>
+        <p> Set default properties.
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.NAnt.Texen.Generator.shutdown">
+    </a>
+    <h3>shutdown</h3>
+    <pre>public void shutdown()</pre>
+    <dl>
+      <dd>
+        <p> Properly shut down the generator, right now
+            this is simply flushing and closing the file
+            writers that we have been holding on to.
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="operator-detail">
+    </a>
+    <a name="event-detail">
+    </a>
+    <hr>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td>
+                <a href="namespace-summary.html">Namespace</a> </td>
+              <td class="nav1sel"> Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV TYPE    NEXT TYPE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+      <tr class="nav2">
+        <td>SUMMARY: INNER | <a href="#field-summary">FIELD</a> | <a href="#constructor-summary">CONST</a> | <a href="#property-summary">PROP</a> | <a href="#method-summary">METHOD</a> | OP | EVENT</td>
+        <td>DETAIL: <a href="#field-detail">FIELD</a> | <a href="#constructor-detail">CONST</a> | <a href="#property-detail">PROP</a> | <a href="#method-detail">METHOD</a> | OP | EVENT</td>
+      </tr>
+    </table>
+  </body>
+</html>

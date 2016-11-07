@@ -1,0 +1,155 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="..\..\..\JavaDoc.css">
+  </head>
+  <body>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td class="nav1sel"> Namespace </td>
+              <td>Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV NAMESPACE    NEXT NAMESPACE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+    </table>
+    <hr>
+    <h2 class="title">NVelocity.Util.Introspection Namespace Summary</h2>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Class Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="name">
+          <a href="AmbiguousException.html">AmbiguousException</a>
+        </td>
+        <td class="type">  simple distinguishable exception, used when
+            we run across ambiguous overloading
+            </td>
+      </tr>
+      <tr>
+        <td class="name">
+          <a href="ClassMap.html">ClassMap</a>
+        </td>
+        <td class="type"> A cache of introspection information for a specific class instance.
+            Keys {@link java.lang.Method} objects by a concatenation of the
+            method name and the names of classes that make up the parameters.
+            </td>
+      </tr>
+      <tr>
+        <td class="name">
+          <a href="IntrospectionCacheData.html">IntrospectionCacheData</a>
+        </td>
+        <td class="type">  Holds information for node-local context data introspection
+            information.
+            *
+            </td>
+      </tr>
+      <tr>
+        <td class="name">
+          <a href="Introspector.html">Introspector</a>
+        </td>
+        <td class="type"> This basic function of this class is to return a Method
+            object for a particular class given the name of a method
+            and the parameters to the method in the form of an Object[]
+            
+            The first time the Introspector sees a
+            class it creates a class method map for the
+            class in question. Basically the class method map
+            is a Hastable where Method objects are keyed by a
+            concatenation of the method name and the names of
+            classes that make up the parameters.
+            
+            For example, a method with the following signature:
+            
+            public void method(String a, StringBuffer b)
+            
+            would be mapped by the key:
+            
+            "method" + "java.lang.String" + "java.lang.StringBuffer"
+            
+            This mapping is performed for all the methods in a class
+            and stored for
+            </td>
+      </tr>
+      <tr>
+        <td class="name">
+          <a href="IntrospectorBase.html">IntrospectorBase</a>
+        </td>
+        <td class="type"> This basic function of this class is to return a Method
+            object for a particular class given the name of a method
+            and the parameters to the method in the form of an Object[]
+            
+            The first time the Introspector sees a
+            class it creates a class method map for the
+            class in question. Basically the class method map
+            is a Hastable where Method objects are keyed by a
+            concatenation of the method name and the names of
+            classes that make up the parameters.
+            
+            For example, a method with the following signature:
+            
+            public void method(String a, StringBuffer b)
+            
+            would be mapped by the key:
+            
+            "method" + "java.lang.String" + "java.lang.StringBuffer"
+            
+            This mapping is performed for all the methods in a class
+            and stored for
+            </td>
+      </tr>
+      <tr>
+        <td class="name">
+          <a href="MethodMap.html">MethodMap</a>
+        </td>
+        <td class="type"> </td>
+      </tr>
+    </table>
+    <br>
+    <hr>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td class="nav1sel"> Namespace </td>
+              <td>Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV NAMESPACE    NEXT NAMESPACE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+    </table>
+  </body>
+</html>

@@ -1,0 +1,436 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="..\..\..\JavaDoc.css">
+  </head>
+  <body>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td>
+                <a href="namespace-summary.html">Namespace</a> </td>
+              <td class="nav1sel"> Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV TYPE    NEXT TYPE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+      <tr class="nav2">
+        <td>SUMMARY: INNER | <a href="#field-summary">FIELD</a> | <a href="#constructor-summary">CONST</a> | PROP | <a href="#method-summary">METHOD</a> | OP | EVENT</td>
+        <td>DETAIL: <a href="#field-detail">FIELD</a> | <a href="#constructor-detail">CONST</a> | PROP | <a href="#method-detail">METHOD</a> | OP | EVENT</td>
+      </tr>
+    </table>
+    <hr>
+    <h2>
+      <span class="namespaceName">NVelocity.Runtime.Parser</span>
+      <br>
+      <span class="className">Class Token</span>
+    </h2>
+    <p> Describes the input token stream.
+            </p>
+    <a name="field-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Field Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="fieldType" valign="top">int</td>
+        <td class="field">
+          <a href="#NVelocity.Runtime.Parser.Token.beginColumn">beginColumn</a>
+          <br>         beginLine and beginColumn describe the position of the first character
+            of this token; endLine and endColumn describe the position of the
+            last character of this token.
+            </td>
+      </tr>
+      <tr>
+        <td class="fieldType" valign="top">int</td>
+        <td class="field">
+          <a href="#NVelocity.Runtime.Parser.Token.beginLine">beginLine</a>
+          <br>         beginLine and beginColumn describe the position of the first character
+            of this token; endLine and endColumn describe the position of the
+            last character of this token.
+            </td>
+      </tr>
+      <tr>
+        <td class="fieldType" valign="top">int</td>
+        <td class="field">
+          <a href="#NVelocity.Runtime.Parser.Token.endColumn">endColumn</a>
+          <br>         beginLine and beginColumn describe the position of the first character
+            of this token; endLine and endColumn describe the position of the
+            last character of this token.
+            </td>
+      </tr>
+      <tr>
+        <td class="fieldType" valign="top">int</td>
+        <td class="field">
+          <a href="#NVelocity.Runtime.Parser.Token.endLine">endLine</a>
+          <br>         beginLine and beginColumn describe the position of the first character
+            of this token; endLine and endColumn describe the position of the
+            last character of this token.
+            </td>
+      </tr>
+      <tr>
+        <td class="fieldType" valign="top">string</td>
+        <td class="field">
+          <a href="#NVelocity.Runtime.Parser.Token.image">image</a>
+          <br>         The string image of the token.
+            </td>
+      </tr>
+      <tr>
+        <td class="fieldType" valign="top">int</td>
+        <td class="field">
+          <a href="#NVelocity.Runtime.Parser.Token.kind">kind</a>
+          <br>         An integer that describes the kind of this token.  This numbering
+            system is determined by JavaCCParser, and a table of these numbers is
+            stored in the file ...Constants.java.
+            </td>
+      </tr>
+      <tr>
+        <td class="fieldType" valign="top">NVelocity.Runtime.Parser.Token</td>
+        <td class="field">
+          <a href="#NVelocity.Runtime.Parser.Token.next">next</a>
+          <br>         A reference to the next regular (non-special) token from the input
+            stream.  If this is the last token from the input stream, or if the
+            token manager has not read tokens beyond this one, this field is
+            set to null.  This is true only if this token is also a regular
+            token.  Otherwise, see below for a description of the contents of
+            this field.
+            </td>
+      </tr>
+      <tr>
+        <td class="fieldType" valign="top">NVelocity.Runtime.Parser.Token</td>
+        <td class="field">
+          <a href="#NVelocity.Runtime.Parser.Token.specialToken">specialToken</a>
+          <br>         This field is used to access special tokens that occur prior to this
+            token, but after the immediately preceding regular (non-special) token.
+            If there are no such special tokens, this field is set to null.
+            When there are more than one such special token, this field refers
+            to the last of these special tokens, which in turn refers to the next
+            previous special token through its specialToken field, and so on
+            until the first special token (whose specialToken field is null).
+            The next fields of special tokens refer to other special tokens that
+            immediately follow it (without an intervening regular token).  If there
+            is no such token, this field is null.
+            </td>
+      </tr>
+    </table>
+    <br>
+    <a name="constructor-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Constructor Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="constructor" valign="top">
+          <a href="#NVelocity.Runtime.Parser.Token.#ctor">Token</a>()<br>        Initializes a new instance of the Token class.</td>
+      </tr>
+    </table>
+    <br>
+    <a name="property-summary">
+    </a>
+    <a name="method-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Method Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="returnType" valign="top">NVelocity.Runtime.Parser.Token</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Parser.Token.newToken(System.Int32)">newToken</a>(int ofKind)<br>         Returns a new Token object, by default. However, if you want, you
+            can create and return subclass objects based on the value of ofKind.
+            Simply add the cases to the switch for all those special cases.
+            For example, if you have a subclass of Token called IDToken that
+            you want to create if ofKind is ID, simlpy add something like :
+            *
+            case MyParserConstants.ID : return new IDToken();
+            *
+            to the following switch statement. Then you can cast matchedToken
+            variable to the appropriate type and use it in your lexical actions.
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">string</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Parser.Token.ToString">ToString</a>()<br>         Returns the image.
+            </td>
+      </tr>
+    </table>
+    <br>
+    <table class="subtable" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Methods inherited from class System.Object</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>
+          <a href="..\..\..\NVelocity/Runtime/Parser/Token/Equals(System.html#Object)">Equals</a>, <a href="..\..\..\NVelocity/Runtime/Parser/Token.html#Finalize">Finalize</a>, <a href="..\..\..\NVelocity/Runtime/Parser/Token.html#GetHashCode">GetHashCode</a>, <a href="..\..\..\NVelocity/Runtime/Parser/Token.html#GetType">GetType</a>, <a href="..\..\..\NVelocity/Runtime/Parser/Token.html#MemberwiseClone">MemberwiseClone</a></td>
+      </tr>
+    </table>
+    <br>
+    <a name="operator-summary">
+    </a>
+    <a name="event-summary">
+    </a>
+    <br>
+    <a name="field-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Field Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.Runtime.Parser.Token.beginColumn">
+    </a>
+    <h3>beginColumn</h3>
+    <pre>public int <b>beginColumn</b></pre>
+    <dl>
+      <dd>
+        <p> beginLine and beginColumn describe the position of the first character
+            of this token; endLine and endColumn describe the position of the
+            last character of this token.
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Parser.Token.beginLine">
+    </a>
+    <h3>beginLine</h3>
+    <pre>public int <b>beginLine</b></pre>
+    <dl>
+      <dd>
+        <p> beginLine and beginColumn describe the position of the first character
+            of this token; endLine and endColumn describe the position of the
+            last character of this token.
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Parser.Token.endColumn">
+    </a>
+    <h3>endColumn</h3>
+    <pre>public int <b>endColumn</b></pre>
+    <dl>
+      <dd>
+        <p> beginLine and beginColumn describe the position of the first character
+            of this token; endLine and endColumn describe the position of the
+            last character of this token.
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Parser.Token.endLine">
+    </a>
+    <h3>endLine</h3>
+    <pre>public int <b>endLine</b></pre>
+    <dl>
+      <dd>
+        <p> beginLine and beginColumn describe the position of the first character
+            of this token; endLine and endColumn describe the position of the
+            last character of this token.
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Parser.Token.image">
+    </a>
+    <h3>image</h3>
+    <pre>public string <b>image</b></pre>
+    <dl>
+      <dd>
+        <p> The string image of the token.
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Parser.Token.kind">
+    </a>
+    <h3>kind</h3>
+    <pre>public int <b>kind</b></pre>
+    <dl>
+      <dd>
+        <p> An integer that describes the kind of this token.  This numbering
+            system is determined by JavaCCParser, and a table of these numbers is
+            stored in the file ...Constants.java.
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Parser.Token.next">
+    </a>
+    <h3>next</h3>
+    <pre>public NVelocity.Runtime.Parser.Token <b>next</b></pre>
+    <dl>
+      <dd>
+        <p> A reference to the next regular (non-special) token from the input
+            stream.  If this is the last token from the input stream, or if the
+            token manager has not read tokens beyond this one, this field is
+            set to null.  This is true only if this token is also a regular
+            token.  Otherwise, see below for a description of the contents of
+            this field.
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Parser.Token.specialToken">
+    </a>
+    <h3>specialToken</h3>
+    <pre>public NVelocity.Runtime.Parser.Token <b>specialToken</b></pre>
+    <dl>
+      <dd>
+        <p> This field is used to access special tokens that occur prior to this
+            token, but after the immediately preceding regular (non-special) token.
+            If there are no such special tokens, this field is set to null.
+            When there are more than one such special token, this field refers
+            to the last of these special tokens, which in turn refers to the next
+            previous special token through its specialToken field, and so on
+            until the first special token (whose specialToken field is null).
+            The next fields of special tokens refer to other special tokens that
+            immediately follow it (without an intervening regular token).  If there
+            is no such token, this field is null.
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="constructor-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Constructor Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.Runtime.Parser.Token.#ctor">
+    </a>
+    <h3>Token</h3>
+    <pre>public Token()</pre>
+    <dl>
+      <dd>
+        <p>Initializes a new instance of the Token class.</p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="property-detail">
+    </a>
+    <a name="method-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Method Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.Runtime.Parser.Token.newToken(System.Int32)">
+    </a>
+    <h3>newToken</h3>
+    <pre>public NVelocity.Runtime.Parser.Token newToken(int ofKind)</pre>
+    <dl>
+      <dd>
+        <p> Returns a new Token object, by default. However, if you want, you
+            can create and return subclass objects based on the value of ofKind.
+            Simply add the cases to the switch for all those special cases.
+            For example, if you have a subclass of Token called IDToken that
+            you want to create if ofKind is ID, simlpy add something like :
+            *
+            case MyParserConstants.ID : return new IDToken();
+            *
+            to the following switch statement. Then you can cast matchedToken
+            variable to the appropriate type and use it in your lexical actions.
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Parser.Token.ToString">
+    </a>
+    <h3>ToString</h3>
+    <pre>public string ToString()</pre>
+    <dl>
+      <dd>
+        <p> Returns the image.
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="operator-detail">
+    </a>
+    <a name="event-detail">
+    </a>
+    <hr>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td>
+                <a href="namespace-summary.html">Namespace</a> </td>
+              <td class="nav1sel"> Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV TYPE    NEXT TYPE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+      <tr class="nav2">
+        <td>SUMMARY: INNER | <a href="#field-summary">FIELD</a> | <a href="#constructor-summary">CONST</a> | PROP | <a href="#method-summary">METHOD</a> | OP | EVENT</td>
+        <td>DETAIL: <a href="#field-detail">FIELD</a> | <a href="#constructor-detail">CONST</a> | PROP | <a href="#method-detail">METHOD</a> | OP | EVENT</td>
+      </tr>
+    </table>
+  </body>
+</html>

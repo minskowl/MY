@@ -1,0 +1,52 @@
+#set( $interface=$node.Tag)
+#set( $interfaceName=$node.Text)
+#set( $name =$methodName.substring(1))
+
+#macro( getMethodDefaultImp $meth)
+	#set( $params="")
+  #foreach( $param in $meth.GetParameters() )
+  		#set( $params="${params},${param.ParameterType.FullName} ${param.Name}")
+  #end
+  #if( $params.Length > 0 )
+  	#set( $params = $params.Substring(1))
+  #end
+public ${meth.ReturnType.FullName} ${meth.Name}(${params})
+{
+	throw new NotImplementedException();
+}
+#end
+
+#macro( getPropertyDefaultImp $prop $DefaultValue )
+private ${prop.PropertyType.FullName} _${prop.Name}=${DefaultValue};
+public ${prop.PropertyType.FullName} ${prop.Name}
+ { 
+
+  #if( $prop.CanRead() )
+       get { return _${prop.Name}; }
+  #end
+  #if( $prop.CanWrite() )
+       set { _${prop.Name} = value; }
+  #end
+ }
+#end
+
+using System;
+
+namespace cmTSATdao.Mock
+{
+	public class Mock${node.Text}:cmTSATdao.${node.Text}
+	{
+		
+#foreach( $prop in $tools.getPropertiesFromInterface($interface ) )
+ 	 #set(  $DefaultValue = $tools.getRandomValue($prop.PropertyType) ) 
+	#getPropertyDefaultImp($prop $DefaultValue )
+#end
+
+#foreach( $meth in $tools.getMethodsFromInterface($interface ) )
+#if( !$meth.IsSpecialName )	
+	#getMethodDefaultImp($meth) 
+#end
+#end
+	}
+	
+}	

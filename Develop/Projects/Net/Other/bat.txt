@@ -1,0 +1,10 @@
+sn.exe -k E:\Projects\Net\Savchin.snk
+sn -p E:\Projects\Net\Savchin.snk E:\Projects\Net\PublicSavchin.snk
+
+
+tlbimp "D:\Program Files\Sybase\PowerDesigner 12\pdobj12.dll" /primary /keyfile:E:\Projects\Net\Savchin.snk /namespace:PdCommon  /out:E:\Tmp\Strong.Interop.PdCommon.dll
+
+gacutil /i E:\Tmp\Strong.Interop.PdCommon.dll 
+
+sn -R E:\Projects\Net\PDWrapper\WrapperTest\bin\Debug\PD12\Interop.PdCommon.dll E:\Projects\Net\Savchin.snk
+

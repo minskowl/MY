@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<nHibernateModelDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="DataBase">
+  <modelMoniker name="/" />
+  <nestedChildShapes>
+    <entityShape Id="1f0e5ace-43c3-4239-93fc-a4ceaef03b31" absoluteBounds="1.75, 1.75, 1.5, 1.880286458333333">
+      <entityMoniker name="//Movie" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f5cf451a-228e-4c82-a8cd-1645dc90c6d1" absoluteBounds="1.7650000000000001, 2.06, 1.4700000000000002, 0.44169108072916657" name="Identity" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="06148f6f-e26c-4c86-aae4-55b43dc75e87" absoluteBounds="1.7650000000000001, 2.5116910807291664, 1.4700000000000002, 1.0185953776041665" name="Properties" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </entityShape>
+  </nestedChildShapes>
+</nHibernateModelDiagram>

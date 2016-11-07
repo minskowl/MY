@@ -1,0 +1,125 @@
+﻿<Window x:Class="Bashni.MainWindow"
+ xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:Controls="clr-namespace:Bashni.Controls"
+ xmlns:Properties="clr-namespace:Bashni.Properties"
+ xmlns:con="http://schemas.savchin.com/converters"
+ xmlns:sys="clr-namespace:System;assembly=mscorlib"
+ Title="MainWindow" Height="600" Width="1000" Unloaded="OnUnloaded" >
+    <Window.InputBindings>
+        <KeyBinding Modifiers="Control" Key="L" Command="{Binding LoadCommand}" />
+        <KeyBinding Modifiers="Control" Key="P" Command="{Binding ParseCommand}" />
+        <KeyBinding Modifiers="Control" Key="S" Command="{Binding SaveCommand}" />
+        <KeyBinding Modifiers="Control" Key="B" Command="{Binding BuildCommand}" />
+        <KeyBinding Modifiers="Control" Key="G" Command="{Binding GoToNodeCommand}" />
+        <KeyBinding Modifiers="Control" Key="F" Command="{Binding FindBestCommand}" />        
+        <KeyBinding Modifiers="Control+Shift" Key="B" Command="{Binding BuildBestCommand}" />
+        <KeyBinding Modifiers="Control+Shift" Key="P" Command="{Binding GetPathNodeCommand}" />
+    </Window.InputBindings>
+    <Window.Resources>
+        <ContextMenu x:Key="NodeMenu" >
+            <MenuItem Header="Build step" Command="{Binding BuildNodeCommand}" CommandParameter="{Binding Path=Navigator.CurrentStep}"/>
+            <MenuItem Header="Build selected steps" Command="{Binding BuildSelecedNodesCommand}" CommandParameter="{Binding Path=SelectedItems , RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type ListBox}}}"/>
+            <MenuItem Header="Find equal" Command="{Binding FindEqualNodeCommand}" 
+   CommandParameter="{Binding Path=Navigator.CurrentStep}"/>
+            <MenuItem Header="Save step" Command="{Binding SaveNodeCommand}" CommandParameter="{Binding Path=Navigator.CurrentStep}"/>
+            <Separator/>
+            <MenuItem Header="Go to step" InputGestureText="Ctrl+G" Command="{Binding GoToNodeCommand}" 
+   CommandParameter="{Binding Path=Navigator.CurrentStep}"/>
+            <MenuItem Header="Get Path" Command="{Binding GetPathNodeCommand}" CommandParameter="{Binding Path=Navigator.CurrentStep}"/>
+
+        </ContextMenu>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Menu>
+            <MenuItem Header="_Field">
+                <MenuItem Header="_Load" Command="{Binding LoadCommand}" InputGestureText="Ctrl+L" />
+                <MenuItem Header="_Parse" Command="{Binding ParseCommand}" InputGestureText="Ctrl+P"/>
+                <MenuItem Header="_Save" Command="{Binding SaveCommand}" InputGestureText="Ctrl+S"/>
+                <MenuItem x:Name="btnBuild" Header="_Build" Command="{Binding BuildCommand}" InputGestureText="Ctrl+B"/>
+
+            </MenuItem>
+            <MenuItem Header="_Tools">
+                <MenuItem Header="Test" Command="{Binding TestCommand}"/>
+                <MenuItem Header="Find Best" Command="{Binding FindBestCommand}" InputGestureText="Ctrl+F"/>
+                <MenuItem Header="Build Best" Command="{Binding BuildBestCommand}" InputGestureText="Ctrl+Shift+B"/>
+                <MenuItem x:Name="menuMultyThreading" Header="Multy Threading" IsChecked="True" Click="MenuMultyThreading_OnClick" />
+            </MenuItem>
+        </Menu>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="3"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="3*"/>
+                    <RowDefinition Height="3"/>
+                    <RowDefinition/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Controls:FieldControl Grid.Row="0" x:Name="canvas" Background="Tan"
+     DataContext="{Binding Navigator}" Step="{Binding CurrentStep}" />
+                <Controls:FieldControl Grid.Row="0" x:Name="canvasPrevious" Opacity="0.3" 
+     DataContext="{Binding Navigator}" Background="Transparent" 
+     Step="{Binding CurrentStep.Previous}" />
+
+                <GridSplitter Grid.Row="1" ResizeDirection="Rows" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="Auto" />
+
+                <TabControl Grid.Row="2" ItemsSource="{Binding BottomTabs}"/>
+
+
+                <ToolBarTray Grid.Row="3" >
+
+                    <ToolBar DataContext="{Binding Navigator}">
+                        <TextBox x:Name="txtId" Width="70"/>
+                        <Button Content="&gt;&gt;" Padding="5" Margin="3" Command="{Binding CodeCommand}" 
+    CommandParameter="{Binding ElementName=txtId, Path=Text, Converter={con:TypeConverter sys:String, sys:Int32}}" />
+                        <Button Content="&lt;" Padding="5" Margin="3" Command="{Binding GoBackCommand}"/>
+                        <ComboBox Margin="3" MinWidth="35" ItemsSource="{Binding Variants}" SelectedItem="{Binding SelectedVariant}" />
+                        <Button Content="&gt;" Padding="5" Margin="3" Command="{Binding GoForwardCommand}"/>
+
+                    </ToolBar>
+                    <ToolBar>
+                        <Label x:Name="status" MinWidth="200" Content="{Binding Status}"/>
+                    </ToolBar>
+                </ToolBarTray>
+
+
+            </Grid>
+
+            <GridSplitter Grid.Column="1" ResizeDirection="Columns" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" Height="Auto" />
+
+            <TabControl Grid.Column="2"  >
+                <TabItem x:Name="tabSolution" Header="Solutions">
+                    <Controls:SolutionTree />
+                </TabItem>
+                <TabItem Header="Settings">
+                    <WrapPanel DataContext="{Binding Source={x:Static Properties:Settings.Default}}">
+                        <Label Content="step limit"/>
+                        <TextBox x:Name="txtStepLimit" Margin="3" HorizontalContentAlignment="Center" Width="40" 
+    Text="{Binding StepLimit, UpdateSourceTrigger=PropertyChanged}"/>
+                        <Label Content="diff limit"/>
+                        <TextBox x:Name="txtDiffLimit" Margin="3" HorizontalContentAlignment="Center" Width="40"
+    Text="{Binding DiffLimit, UpdateSourceTrigger=PropertyChanged}"/>
+                        <Label Content="threads"/>
+                        <TextBox x:Name="txtThreadsLimit" Margin="3" HorizontalContentAlignment="Center" Width="40"
+    Text="{Binding ThreadCounts, UpdateSourceTrigger=PropertyChanged}"/>
+                        <CheckBox Content="Memory Optimization" IsChecked="{Binding MemoryOptimization}"/>
+                        <CheckBox Content="Buil Statistics" IsChecked="{Binding ProgressStatistics}"/>
+                    </WrapPanel>
+                </TabItem>
+                <Controls:TabStatistics x:Name="tabStatistics"/>
+            </TabControl>
+
+        </Grid>
+    </Grid>
+</Window>

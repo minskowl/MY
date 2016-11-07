@@ -1,0 +1,682 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="..\..\..\JavaDoc.css">
+  </head>
+  <body>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td>
+                <a href="namespace-summary.html">Namespace</a> </td>
+              <td class="nav1sel"> Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV TYPE    NEXT TYPE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+      <tr class="nav2">
+        <td>SUMMARY: INNER | <a href="#field-summary">FIELD</a> | <a href="#constructor-summary">CONST</a> | <a href="#property-summary">PROP</a> | <a href="#method-summary">METHOD</a> | OP | EVENT</td>
+        <td>DETAIL: <a href="#field-detail">FIELD</a> | <a href="#constructor-detail">CONST</a> | <a href="#property-detail">PROP</a> | <a href="#method-detail">METHOD</a> | OP | EVENT</td>
+      </tr>
+    </table>
+    <hr>
+    <h2>
+      <span class="namespaceName">NVelocity.NAnt.Texen</span>
+      <br>
+      <span class="className">Class TexenTask</span>
+    </h2>
+    <p>
+            An ant task for generating output by using Velocity
+            </p>
+    <a name="field-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Field Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="fieldType" valign="top">Commons.Collections.ExtendedProperties</td>
+        <td class="field">
+          <a href="#NVelocity.NAnt.Texen.TexenTask.contextProperties">contextProperties</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="fieldType" valign="top">string</td>
+        <td class="field">
+          <a href="#NVelocity.NAnt.Texen.TexenTask.controlTemplate">controlTemplate</a>
+          <br>         This is the control template that governs the output.
+            It may or may not invoke the services of worker
+            templates.
+            </td>
+      </tr>
+      <tr>
+        <td class="fieldType" valign="top">string</td>
+        <td class="field">
+          <a href="#NVelocity.NAnt.Texen.TexenTask.inputEncoding">inputEncoding</a>
+          <br>         This is the encoding for the input file(s)
+            (templates).
+            </td>
+      </tr>
+      <tr>
+        <td class="fieldType" valign="top">string</td>
+        <td class="field">
+          <a href="#NVelocity.NAnt.Texen.TexenTask.outputDirectory">outputDirectory</a>
+          <br>        
+            This is where texen will place all the output
+            that is a product of the generation process.
+            </td>
+      </tr>
+      <tr>
+        <td class="fieldType" valign="top">string</td>
+        <td class="field">
+          <a href="#NVelocity.NAnt.Texen.TexenTask.outputEncoding">outputEncoding</a>
+          <br>         This is the encoding for the output file(s).
+            </td>
+      </tr>
+      <tr>
+        <td class="fieldType" valign="top">string</td>
+        <td class="field">
+          <a href="#NVelocity.NAnt.Texen.TexenTask.outputFile">outputFile</a>
+          <br>        
+            This is the file where the generated text
+            will be placed.
+            </td>
+      </tr>
+      <tr>
+        <td class="fieldType" valign="top">string</td>
+        <td class="field">
+          <a href="#NVelocity.NAnt.Texen.TexenTask.templatePath">templatePath</a>
+          <br>         This is where Velocity will look for templates
+            using the file template loader.
+            </td>
+      </tr>
+      <tr>
+        <td class="fieldType" valign="top">bool</td>
+        <td class="field">
+          <a href="#NVelocity.NAnt.Texen.TexenTask.useClasspath">useClasspath</a>
+          <br>        
+            Property which controls whether the classpath
+            will be used when trying to locate templates.
+            </td>
+      </tr>
+    </table>
+    <br>
+    <table class="subtable" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Fields inherited from class SourceForge.NAnt.Element</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>
+          <a href="">_location</a>, <a href="">_parent</a>, <a href="">_project</a>, <a href="">_xmlNode</a></td>
+      </tr>
+    </table>
+    <br>
+    <a name="constructor-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Constructor Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="constructor" valign="top">
+          <a href="#NVelocity.NAnt.Texen.TexenTask.#ctor">TexenTask</a>()<br>        Initializes a new instance of the TexenTask class.</td>
+      </tr>
+    </table>
+    <br>
+    <a name="property-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Property Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="propertyType" valign="top">string</td>
+        <td class="property">
+          <a href="#NVelocity.NAnt.Texen.TexenTask.ContextProperties">ContextProperties</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="propertyType" valign="top">string</td>
+        <td class="property">
+          <a href="#NVelocity.NAnt.Texen.TexenTask.ControlTemplate">ControlTemplate</a>
+          <br>         [REQUIRED] Set the control template for the
+            generating process.
+            </td>
+      </tr>
+      <tr>
+        <td class="propertyType" valign="top">string</td>
+        <td class="property">
+          <a href="#NVelocity.NAnt.Texen.TexenTask.InputEncoding">InputEncoding</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="propertyType" valign="top">string</td>
+        <td class="property">
+          <a href="#NVelocity.NAnt.Texen.TexenTask.OutputDirectory">OutputDirectory</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="propertyType" valign="top">string</td>
+        <td class="property">
+          <a href="#NVelocity.NAnt.Texen.TexenTask.OutputEncoding">OutputEncoding</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="propertyType" valign="top">string</td>
+        <td class="property">
+          <a href="#NVelocity.NAnt.Texen.TexenTask.OutputFile">OutputFile</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="propertyType" valign="top">string</td>
+        <td class="property">
+          <a href="#NVelocity.NAnt.Texen.TexenTask.TemplatePath">TemplatePath</a>
+        </td>
+      </tr>
+    </table>
+    <br>
+    <table class="subtable" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Properties inherited from class SourceForge.NAnt.Task</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>
+          <a href="">FailOnError</a>, <a href="">IfDefined</a>, <a href="">LogPrefix</a>, <a href="">Name</a>, <a href="">UnlessDefined</a>, <a href="">Verbose</a></td>
+      </tr>
+    </table>
+    <br>
+    <table class="subtable" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Properties inherited from class SourceForge.NAnt.Element</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>
+          <a href="">Location</a>, <a href="">Parent</a>, <a href="">Project</a>, <a href="">Properties</a></td>
+      </tr>
+    </table>
+    <br>
+    <a name="method-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Method Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.NAnt.Texen.TexenTask.cleanup">cleanup</a>()<br>        
+            A hook method called at the end of {@link #execute()} which can
+            be overridden to perform any necessary cleanup activities (such
+            as the release of database connections, etc.).  By default,
+            does nothing.
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.NAnt.Texen.TexenTask.ExecuteTask">ExecuteTask</a>()<br>        
+            Execute the input script with Velocity
+            @throws BuildException
+            BuildExceptions are thrown when required attributes are missing.
+            Exceptions thrown by Velocity are rethrown as BuildExceptions.
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">NVelocity.Context.IContext</td>
+        <td class="method">
+          <a href="#NVelocity.NAnt.Texen.TexenTask.initControlContext">initControlContext</a>()<br>         Creates a VelocityContext.
+            *
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.NAnt.Texen.TexenTask.populateInitialContext(NVelocity.Context.IContext)">populateInitialContext</a>(NVelocity.Context.IContext context)<br>        Place useful objects into the initial context.TexenTask places <pre class="code">Date().toString()</pre> into the
+            context as <pre class="code">$now</pre>.  Subclasses who want to vary the
+            objects in the context should override this method.<pre class="code">$generator</pre> is not put into the context in this
+            method.</td>
+      </tr>
+    </table>
+    <br>
+    <table class="subtable" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Methods inherited from class SourceForge.NAnt.Task</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>
+          <a href="..\..\..\NVelocity/NAnt/Texen/TexenTask.html#Execute">Execute</a>, <a href="..\..\..\NVelocity/NAnt/Texen/TexenTask/InitializeElement(System/Xml.html#XmlNode)">InitializeElement</a>, <a href="..\..\..\NVelocity/NAnt/Texen/TexenTask/InitializeTask(System/Xml.html#XmlNode)">InitializeTask</a></td>
+      </tr>
+    </table>
+    <br>
+    <table class="subtable" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Methods inherited from class SourceForge.NAnt.Element</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>
+          <a href="..\..\..\NVelocity/NAnt/Texen/TexenTask/Initialize(System/Xml.html#XmlNode)">Initialize</a>
+        </td>
+      </tr>
+    </table>
+    <br>
+    <table class="subtable" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Methods inherited from class System.Object</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>
+          <a href="..\..\..\NVelocity/NAnt/Texen/TexenTask/Equals(System.html#Object)">Equals</a>, <a href="..\..\..\NVelocity/NAnt/Texen/TexenTask.html#Finalize">Finalize</a>, <a href="..\..\..\NVelocity/NAnt/Texen/TexenTask.html#GetHashCode">GetHashCode</a>, <a href="..\..\..\NVelocity/NAnt/Texen/TexenTask.html#GetType">GetType</a>, <a href="..\..\..\NVelocity/NAnt/Texen/TexenTask.html#MemberwiseClone">MemberwiseClone</a>, <a href="..\..\..\NVelocity/NAnt/Texen/TexenTask.html#ToString">ToString</a></td>
+      </tr>
+    </table>
+    <br>
+    <a name="operator-summary">
+    </a>
+    <a name="event-summary">
+    </a>
+    <br>
+    <a name="field-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Field Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.NAnt.Texen.TexenTask.contextProperties">
+    </a>
+    <h3>contextProperties</h3>
+    <pre>protected internal Commons.Collections.ExtendedProperties <b>contextProperties</b></pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.NAnt.Texen.TexenTask.controlTemplate">
+    </a>
+    <h3>controlTemplate</h3>
+    <pre>protected internal string <b>controlTemplate</b></pre>
+    <dl>
+      <dd>
+        <p> This is the control template that governs the output.
+            It may or may not invoke the services of worker
+            templates.
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.NAnt.Texen.TexenTask.inputEncoding">
+    </a>
+    <h3>inputEncoding</h3>
+    <pre>protected internal string <b>inputEncoding</b></pre>
+    <dl>
+      <dd>
+        <p> This is the encoding for the input file(s)
+            (templates).
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.NAnt.Texen.TexenTask.outputDirectory">
+    </a>
+    <h3>outputDirectory</h3>
+    <pre>protected internal string <b>outputDirectory</b></pre>
+    <dl>
+      <dd>
+        <p>
+            This is where texen will place all the output
+            that is a product of the generation process.
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.NAnt.Texen.TexenTask.outputEncoding">
+    </a>
+    <h3>outputEncoding</h3>
+    <pre>protected internal string <b>outputEncoding</b></pre>
+    <dl>
+      <dd>
+        <p> This is the encoding for the output file(s).
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.NAnt.Texen.TexenTask.outputFile">
+    </a>
+    <h3>outputFile</h3>
+    <pre>protected internal string <b>outputFile</b></pre>
+    <dl>
+      <dd>
+        <p>
+            This is the file where the generated text
+            will be placed.
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.NAnt.Texen.TexenTask.templatePath">
+    </a>
+    <h3>templatePath</h3>
+    <pre>protected internal string <b>templatePath</b></pre>
+    <dl>
+      <dd>
+        <p> This is where Velocity will look for templates
+            using the file template loader.
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.NAnt.Texen.TexenTask.useClasspath">
+    </a>
+    <h3>useClasspath</h3>
+    <pre>protected internal bool <b>useClasspath</b></pre>
+    <dl>
+      <dd>
+        <p>
+            Property which controls whether the classpath
+            will be used when trying to locate templates.
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="constructor-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Constructor Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.NAnt.Texen.TexenTask.#ctor">
+    </a>
+    <h3>TexenTask</h3>
+    <pre>public TexenTask()</pre>
+    <dl>
+      <dd>
+        <p>Initializes a new instance of the TexenTask class.</p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="property-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Property Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.NAnt.Texen.TexenTask.ContextProperties">
+    </a>
+    <h3>ContextProperties</h3>
+    <pre>public string ContextProperties</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.NAnt.Texen.TexenTask.ControlTemplate">
+    </a>
+    <h3>ControlTemplate</h3>
+    <pre>public string ControlTemplate</pre>
+    <dl>
+      <dd>
+        <p> [REQUIRED] Set the control template for the
+            generating process.
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.NAnt.Texen.TexenTask.InputEncoding">
+    </a>
+    <h3>InputEncoding</h3>
+    <pre>public string InputEncoding</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.NAnt.Texen.TexenTask.OutputDirectory">
+    </a>
+    <h3>OutputDirectory</h3>
+    <pre>public string OutputDirectory</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.NAnt.Texen.TexenTask.OutputEncoding">
+    </a>
+    <h3>OutputEncoding</h3>
+    <pre>public string OutputEncoding</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.NAnt.Texen.TexenTask.OutputFile">
+    </a>
+    <h3>OutputFile</h3>
+    <pre>public string OutputFile</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.NAnt.Texen.TexenTask.TemplatePath">
+    </a>
+    <h3>TemplatePath</h3>
+    <pre>public string TemplatePath</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="method-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Method Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.NAnt.Texen.TexenTask.cleanup">
+    </a>
+    <h3>cleanup</h3>
+    <pre>protected internal void cleanup()</pre>
+    <dl>
+      <dd>
+        <p>
+            A hook method called at the end of {@link #execute()} which can
+            be overridden to perform any necessary cleanup activities (such
+            as the release of database connections, etc.).  By default,
+            does nothing.
+            </p>
+        <p>
+        </p>
+        <b>Throws:</b>
+        <dl>
+          <dd>
+            <code></code> - Exception Problem cleaning up.</dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.NAnt.Texen.TexenTask.ExecuteTask">
+    </a>
+    <h3>ExecuteTask</h3>
+    <pre>protected void ExecuteTask()</pre>
+    <dl>
+      <dd>
+        <p>
+            Execute the input script with Velocity
+            @throws BuildException
+            BuildExceptions are thrown when required attributes are missing.
+            Exceptions thrown by Velocity are rethrown as BuildExceptions.
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.NAnt.Texen.TexenTask.initControlContext">
+    </a>
+    <h3>initControlContext</h3>
+    <pre>public NVelocity.Context.IContext initControlContext()</pre>
+    <dl>
+      <dd>
+        <p> Creates a VelocityContext.
+            *
+            </p>
+        <p>
+        </p>
+        <b>Returns:</b>
+        <dl>
+          <dd>new Context
+            @throws Exception the execute method will catch
+            and rethrow as a <pre class="code">BuildException</pre></dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.NAnt.Texen.TexenTask.populateInitialContext(NVelocity.Context.IContext)">
+    </a>
+    <h3>populateInitialContext</h3>
+    <pre>protected internal void populateInitialContext(NVelocity.Context.IContext context)</pre>
+    <dl>
+      <dd>
+        <p>Place useful objects into the initial context.TexenTask places <pre class="code">Date().toString()</pre> into the
+            context as <pre class="code">$now</pre>.  Subclasses who want to vary the
+            objects in the context should override this method.<pre class="code">$generator</pre> is not put into the context in this
+            method.</p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>context</code> - The context to populate, as retrieved from
+            {@link #initControlContext()}.
+            @throws Exception Error while populating context.  The {@link
+            #execute()} method will catch and rethrow as a
+            <pre class="code">BuildException</pre>.
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <a name="operator-detail">
+    </a>
+    <a name="event-detail">
+    </a>
+    <hr>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td>
+                <a href="namespace-summary.html">Namespace</a> </td>
+              <td class="nav1sel"> Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV TYPE    NEXT TYPE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+      <tr class="nav2">
+        <td>SUMMARY: INNER | <a href="#field-summary">FIELD</a> | <a href="#constructor-summary">CONST</a> | <a href="#property-summary">PROP</a> | <a href="#method-summary">METHOD</a> | OP | EVENT</td>
+        <td>DETAIL: <a href="#field-detail">FIELD</a> | <a href="#constructor-detail">CONST</a> | <a href="#property-detail">PROP</a> | <a href="#method-detail">METHOD</a> | OP | EVENT</td>
+      </tr>
+    </table>
+  </body>
+</html>

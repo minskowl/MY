@@ -1,0 +1,317 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BA6303D3-C692-418A-B948-3C6B5AB146BD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Savchin.Web.UI</RootNamespace>
+    <AssemblyName>Savchin.WebControls</AssemblyName>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <PublishUrl>http://localhost/Savchin.WebControls/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="dotnetCHARTING, Version=4.3.2747.18105, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ThrPartLibs\dotnetcharting2005\dotnetCHARTING.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ThrPartLibs\log4net_1.2.9\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AJAXHandler.cs" />
+    <Compile Include="Calendar\CalendarControl.cs" />
+    <Compile Include="Calendar\EditBoxLayout.cs" />
+    <Compile Include="Calendar\LabelLayout.cs" />
+    <Compile Include="Calendar\LayoutBase.cs" />
+    <Compile Include="Captcha\CaptchaControl.cs" />
+    <Compile Include="Captcha\CaptchaImage.cs" />
+    <Compile Include="Captcha\CaptchaImageHandler.cs" />
+    <Compile Include="Extenders\ButtonEx.cs" />
+    <Compile Include="Chart\ChartControl.cs" />
+    <Compile Include="Chart\ChartEx.cs" />
+    <Compile Include="Chart\GraphTypeControl.cs" />
+    <Compile Include="Chart\TymeFrameControl.cs" />
+    <Compile Include="CheckBoxColumn.cs" />
+    <Compile Include="Data\ControlDataSource.cs" />
+    <Compile Include="Data\ControlDataSourceView.cs" />
+    <Compile Include="DashBoard\ISettingProvider.cs" />
+    <Compile Include="DynamicGrid\AbstractJsGrid.cs" />
+    <Compile Include="DynamicGrid\CollectionEditor.cs" />
+    <Compile Include="DynamicGrid\DynamicDataInfoProvider.cs" />
+    <Compile Include="DynamicGrid\DynamicGrid.cs" />
+    <Compile Include="DynamicGrid\DynamicGridButton.cs" />
+    <Compile Include="DynamicGrid\DynamicGridDataSource.cs" />
+    <Compile Include="DynamicGrid\DynamicGridDelegateDataSource.cs" />
+    <Compile Include="DynamicGrid\DynamicGridInfoProvider.cs" />
+    <Compile Include="DynamicGrid\DynamicGrid_ButtonBuilder.cs" />
+    <Compile Include="DynamicGrid\GridColumn.cs" />
+    <Compile Include="DynamicGrid\GridColumnCollection.cs" />
+    <Compile Include="DynamicGrid\GridCommandEventArgs.cs" />
+    <Compile Include="DynamicGrid\RowItem.cs" />
+    <Compile Include="DynamicGrid\StaticGrid.cs" />
+    <Compile Include="EmbeddedResources.cs" />
+    <Compile Include="Extenders\CheckBoxEx.cs" />
+    <Compile Include="ControlHelper.cs" />
+    <Compile Include="DashBoard\ChartDashboard.cs" />
+    <Compile Include="DashBoard\ChartDashboardSettings.cs" />
+    <Compile Include="DashBoard\Dashboard.cs" />
+    <Compile Include="DashBoard\DashboardControl.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DashBoard\DashboardLayout.cs" />
+    <Compile Include="DashBoard\DashboardManager.cs" />
+    <Compile Include="DashBoard\DashboardManagerPanel.cs" />
+    <Compile Include="DashBoard\DashboardSettings.cs" />
+    <Compile Include="DashBoard\DragableBoxControl.cs" />
+    <Compile Include="DashBoard\HeaderControl.cs" />
+    <Compile Include="DashBoard\IDashboard.cs" />
+    <Compile Include="DataRequestEventArgs.cs" />
+    <Compile Include="Delegates.cs" />
+    <Compile Include="DropPanelButton.cs" />
+    <Compile Include="Extenders\CheckBoxListEx.cs" />
+    <Compile Include="Extenders\DropDownListEx.cs" />
+    <Compile Include="Extenders\LabelEx.cs" />
+    <Compile Include="Extenders\LiteralEx.cs" />
+    <Compile Include="Extenders\PanelEx.cs" />
+    <Compile Include="Extenders\TextBoxEx.cs" />
+    <Compile Include="Extenders\WebControlEx.cs" />
+    <Compile Include="Extenders\GridViewEx.cs" />
+    <Compile Include="Headers\HeaderItem.cs" />
+    <Compile Include="Headers\HeaderPage.cs" />
+    <Compile Include="Headers\HeaderParagraph.cs" />
+    <Compile Include="HelpTip.cs" />
+    <Compile Include="Extenders\HtmlTableEx.cs" />
+    <Compile Include="Extenders\ImageEx.cs" />
+    <Compile Include="HtmlEditor\HtmlEditorControl.cs" />
+    <Compile Include="HtmlEditor\FCKeditorConfigurations.cs" />
+    <Compile Include="HtmlEditor\FCKeditorDesigner.cs" />
+    <Compile Include="HtmlEditor\FileBrowser\Config.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HtmlEditor\FileBrowser\Connector.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HtmlEditor\FileBrowser\FileWorkerBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HtmlEditor\FileBrowser\TypeConfig.cs" />
+    <Compile Include="HtmlEditor\FileBrowser\TypeConfigList.cs" />
+    <Compile Include="HtmlEditor\FileBrowser\Uploader.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HtmlEditor\FileBrowser\XmlResponseHandler.cs" />
+    <Compile Include="HtmlEditor\Util.cs" />
+    <Compile Include="HtmlEditor\XmlUtil.cs" />
+    <Compile Include="IBindable.cs" />
+    <Compile Include="ImagePathProvider.cs" />
+    <Compile Include="Lists\CheckBoxCombo.cs" />
+    <Compile Include="Lists\CheckedListBox.cs" />
+    <Compile Include="Lists\CheckedListBoxDesigner.cs" />
+    <Compile Include="Lists\EnumCheckComboBox.cs" />
+    <Compile Include="Lists\FilterCombo.cs" />
+    <Compile Include="Lists\FilterComboLayout.cs" />
+    <Compile Include="Lists\ListItem.cs" />
+    <Compile Include="Lists\ListItemCollection.cs" />
+    <Compile Include="Page\PageInclude.cs" />
+    <Compile Include="Page\PageIncludesCollection.cs" />
+    <Compile Include="Page\WindowOpenOptions.cs" />
+    <Compile Include="PhoneBox.cs" />
+    <Compile Include="TreeView\DefaultTemplate.cs" />
+    <Compile Include="TreeView\EventArgs\OdcTreeNodeBindingEventArgs.cs" />
+    <Compile Include="TreeView\EventArgs\OdcTreeNodeCheckEventArgs.cs" />
+    <Compile Include="TreeView\EventArgs\OdcTreeNodeEventArgs.cs" />
+    <Compile Include="TreeView\EventArgs\OdcTreeViewCommandEventArgs.cs" />
+    <Compile Include="TreeView\OdcTreeNode.cs" />
+    <Compile Include="TreeView\OdcTreeNodeBinding.cs" />
+    <Compile Include="TreeView\OdcTreeNodeBindings.cs" />
+    <Compile Include="TreeView\OdcTreeNodeCollection.cs" />
+    <Compile Include="TreeView\OdcTreeNodeContainer.cs" />
+    <Compile Include="TreeView\OdcTreeView.cs" />
+    <Compile Include="TreeView\OdcTreeViewContextMenuContainer.cs" />
+    <Compile Include="Window\MessageBoxEventArgs.cs" />
+    <Compile Include="Data\ObjectParameter.cs" />
+    <Compile Include="OutlookBar\OutlookContentPanel.cs" />
+    <Compile Include="OutlookBar\OutlookPanelBar.cs" />
+    <Compile Include="Page\ErrorPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\PageEx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\PageEx_DataProcessing.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Extenders\RadioButtonEx.cs" />
+    <Compile Include="PropertyGrid\GridControl.cs" />
+    <Compile Include="PropertyGrid\Manager.cs" />
+    <Compile Include="PropertyGrid\PropertyGridCategory.cs" />
+    <Compile Include="PropertyGrid\PropertyGridControl.cs" />
+    <Compile Include="PropertyGrid\PropertyGridFooter.cs" />
+    <Compile Include="PropertyGrid\PropertyGridHeader.cs" />
+    <Compile Include="PropertyGrid\PropertyGridItem.cs" />
+    <Compile Include="PropertyGrid\PropertyGridSubItem.cs" />
+    <Compile Include="PropertyGrid\SubItems.cs" />
+    <Compile Include="ShortcutIcon.cs" />
+    <Compile Include="Extenders\TreeViewEx.cs" />
+    <Compile Include="TabControl\TabControl.cs" />
+    <Compile Include="TabControl\TabPanel.cs" />
+    <Compile Include="Util.cs" />
+    <Compile Include="Utils\HashCodeCombiner.cs" />
+    <Compile Include="Validators\AdvancedValidator.cs" />
+    <Compile Include="Validators\EmailValidator.cs" />
+    <Compile Include="Validators\ProxyValidator.cs" />
+    <Compile Include="Window\MessageBox.cs" />
+    <Compile Include="Window\Window.cs" />
+    <Compile Include="Window\WindowControl.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="HelpTip.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DashBoard\ChartDashboard.js" />
+    <EmbeddedResource Include="Ajax.js" />
+    <EmbeddedResource Include="Calendar\Calendar.css" />
+    <EmbeddedResource Include="Calendar\Calendar.js" />
+    <Content Include="DashBoard\Dashboard.css" />
+    <Content Include="Extenders\TextBoxEx.js" />
+    <EmbeddedResource Include="Page\Prototype.js" />
+    <EmbeddedResource Include="Page\jquery-1.4.1.js" />
+    <Content Include="TreeView\Resources\last.gif" />
+    <Content Include="TreeView\Resources\line.gif" />
+    <Content Include="TreeView\Resources\mid.gif" />
+    <Content Include="TreeView\Resources\minus.png" />
+    <Content Include="TreeView\Resources\plus.png" />
+    <Content Include="TreeView\Resources\root.gif" />
+    <Content Include="TreeView\Resources\top.gif" />
+    <Content Include="TreeView\Resources\TreeNode.js" />
+    <Content Include="TreeView\Resources\TreeView.css" />
+    <Content Include="TreeView\Resources\TreeViewControl.js" />
+    <EmbeddedResource Include="Window\Window.css" />
+    <EmbeddedResource Include="Window\Window.js" />
+    <EmbeddedResource Include="Lists\arrow.gif" />
+    <EmbeddedResource Include="Lists\clear.gif" />
+    <EmbeddedResource Include="Lists\CheckeBoxCombo.js" />
+    <EmbeddedResource Include="Lists\CheckedListBox.js" />
+    <EmbeddedResource Include="PropertyGrid\PropertyGrid.bmp" />
+    <EmbeddedResource Include="PropertyGrid\PropertyGrid.css" />
+    <EmbeddedResource Include="PropertyGrid\PropertyGrid.js" />
+    <EmbeddedResource Include="OutlookBar\OutlookPanelBar.js" />
+    <EmbeddedResource Include="TabControl\TabControlScripts.js" />
+    <EmbeddedResource Include="Json.js" />
+    <EmbeddedResource Include="DashBoard\Dashboard.js" />
+    <EmbeddedResource Include="DashBoard\DashboardEngine.js" />
+    <EmbeddedResource Include="DashBoard\DashboardManagerWindow.js" />
+    <EmbeddedResource Include="DynamicGrid\Resources\dhtmlXCommon.js" />
+    <EmbeddedResource Include="DynamicGrid\Resources\dhtmlXGrid.css" />
+    <EmbeddedResource Include="DynamicGrid\Resources\dhtmlXGrid.js" />
+    <EmbeddedResource Include="DynamicGrid\Resources\dhtmlXGridCell.js" />
+    <EmbeddedResource Include="DynamicGrid\Resources\dhtmlXGrid_drag.js" />
+    <EmbeddedResource Include="DynamicGrid\Resources\dhtmlXGrid_srnd.js" />
+    <EmbeddedResource Include="DynamicGrid\Resources\dhtmlXGrid_start.js" />
+    <EmbeddedResource Include="Page\PageEx.js" />
+    <EmbeddedResource Include="DropPanelButton.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Savchin.Web\Savchin.Web.csproj">
+      <Project>{BFF8B5DA-97CA-401F-8BDC-D9B3B50FD8EB}</Project>
+      <Name>Savchin.Web</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tools\Savchin.Tools.csproj">
+      <Project>{2F1807E4-39A2-4F38-ADFC-6310A8443D90}</Project>
+      <Name>Savchin.Tools</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

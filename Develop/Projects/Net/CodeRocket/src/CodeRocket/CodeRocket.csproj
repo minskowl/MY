@@ -1,0 +1,281 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3A189A8E-06D3-4CDA-B83B-E0A7140765F9}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CodeRocket</RootNamespace>
+    <AssemblyName>CodeRocket</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <ApplicationIcon>logo.ico</ApplicationIcon>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <DocumentationFile>
+    </DocumentationFile>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ICSharpCode.TextEditor, Version=3.0.0.3775, Culture=neutral, PublicKeyToken=4d61825e8dd49f1a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\ThrPartLibs\ICSharpCode.TextEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.9.0, Culture=neutral, PublicKeyToken=b32731d11ce58905">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\ThrPartLibs\log4net_1.2.9\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Commands\Edit\EditorCommand.cs" />
+    <Compile Include="Commands\Project\ProjectCommand.cs" />
+    <Compile Include="Commands\Project\RecentProjectOpenCommand.cs" />
+    <Compile Include="Commands\ShowConsoleCommand.cs" />
+    <Compile Include="Common\AppCore.cs" />
+    <Compile Include="Commands\AboutCommand.cs" />
+    <Compile Include="Commands\CloseAllWindowsCommand.cs" />
+    <Compile Include="Commands\CommandException.cs" />
+    <Compile Include="Commands\CommandsDictionary.cs" />
+    <Compile Include="Commands\Edit\CopyCommand.cs" />
+    <Compile Include="Commands\Edit\PasteCommand.cs" />
+    <Compile Include="Commands\Edit\SelectAllCommand.cs" />
+    <Compile Include="Commands\File\SaveCommand.cs" />
+    <Compile Include="Commands\Generate\GenerateToOutputCommand.cs" />
+    <Compile Include="Commands\Generate\GenerateToSolutionCommand.cs" />
+    <Compile Include="Commands\Generate\GenerateToSolutionDirCommand.cs" />
+    <Compile Include="Commands\OpenTemplateCommand.cs" />
+    <Compile Include="Commands\Project\ProjectCloseCommand.cs" />
+    <Compile Include="Commands\Project\ProjectOpenCommad.cs" />
+    <Compile Include="Commands\Project\ProjectSaveCommand.cs" />
+    <Compile Include="Commands\Schema\SchemaReverseEngineeringCommand.cs" />
+    <Compile Include="Commands\Schema\SchemaSaveCommand.cs" />
+    <Compile Include="Common\IFormMain.cs" />
+    <Compile Include="Common\Log.cs" />
+    <Compile Include="Controls\AssemblyConsole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\AssemblyConsole.designer.cs">
+      <DependentUpon>AssemblyConsole.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CompareConsole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\CompareConsole.Designer.cs">
+      <DependentUpon>CompareConsole.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FileWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\FileWindow.designer.cs">
+      <DependentUpon>FileWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ProjectConsole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\ProjectConsole.designer.cs">
+      <DependentUpon>ProjectConsole.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ErrorConsole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\ErrorConsole.designer.cs">
+      <DependentUpon>ErrorConsole.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SchemaConsole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\SchemaConsole.designer.cs">
+      <DependentUpon>SchemaConsole.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PowerDesigerConsole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\PowerDesigerConsole.designer.cs">
+      <DependentUpon>PowerDesigerConsole.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ErrorViewer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ErrorViewer.Designer.cs">
+      <DependentUpon>ErrorViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FormAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\FormAbout.Designer.cs">
+      <DependentUpon>FormAbout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PropertyConsole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\PropertyConsole.designer.cs">
+      <DependentUpon>PropertyConsole.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Controls\AssemblyConsole.resx">
+      <DependentUpon>AssemblyConsole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\CompareConsole.resx">
+      <DependentUpon>CompareConsole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\FileWindow.resx">
+      <DependentUpon>FileWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ProjectConsole.resx">
+      <DependentUpon>ProjectConsole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ErrorConsole.resx">
+      <DependentUpon>ErrorConsole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\SchemaConsole.resx">
+      <DependentUpon>SchemaConsole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\PowerDesigerConsole.resx">
+      <DependentUpon>PowerDesigerConsole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ErrorViewer.resx">
+      <DependentUpon>ErrorViewer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\FormAbout.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormAbout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\PropertyConsole.resx">
+      <DependentUpon>PropertyConsole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="App.config" />
+    <Compile Include="Commands\Project\ProjectSaveAsCommand.cs" />
+    <None Include="def.cfg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Libs\Controls\PDModelBrowser\PDModelBrowser.csproj">
+      <Project>{B7DB4BF1-6B6F-4512-87A1-D471D182A5C6}</Project>
+      <Name>PDModelBrowser</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libs\Savchin.Forms\Savchin.Forms.csproj">
+      <Project>{9405075A-BD64-4B54-9689-2DD716D6F92A}</Project>
+      <Name>Savchin.Forms</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libs\Tools\Savchin.Tools.csproj">
+      <Project>{2F1807E4-39A2-4F38-ADFC-6310A8443D90}</Project>
+      <Name>Savchin.Tools</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CodeGeneration\CodeGeneration.csproj">
+      <Project>{26B25C4E-F197-402E-9C7D-DDC13984D675}</Project>
+      <Name>CodeGeneration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataSchema\DataSchema.csproj">
+      <Project>{709EF347-C049-42A5-AA99-0029AAB56C95}</Project>
+      <Name>DataSchema</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="logo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

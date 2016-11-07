@@ -1,0 +1,120 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="..\..\..\JavaDoc.css">
+  </head>
+  <body>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td class="nav1sel"> Namespace </td>
+              <td>Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV NAMESPACE    NEXT NAMESPACE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+    </table>
+    <hr>
+    <h2 class="title">NVelocity.NAnt.Anakia Namespace Summary</h2>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Class Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="name">
+          <a href="AnakiaTask.html">AnakiaTask</a>
+        </td>
+        <td class="type"> </td>
+      </tr>
+      <tr>
+        <td class="name">
+          <a href="AnakiaXmlDocument.html">AnakiaXmlDocument</a>
+        </td>
+        <td class="type">
+            Customized XmlDocument for Anakia so that AnakiaXmlElements can be created
+            </td>
+      </tr>
+      <tr>
+        <td class="name">
+          <a href="AnakiaXmlElement.html">AnakiaXmlElement</a>
+        </td>
+        <td class="type">
+            A JDOM {@link Element} that is tailored for Anakia needs. It has
+            {@link #selectNodes(String)} method as well as a {@link #toString()} that
+            outputs the XML serialized form of the element. This way it acts in much the
+            same way as a single-element {@link NodeList} would.
+            </td>
+      </tr>
+      <tr>
+        <td class="name">
+          <a href="Escape.html">Escape</a>
+        </td>
+        <td class="type">
+            This class is for escaping CDATA sections. The code was
+            "borrowed" from the JDOM code. I also added in escaping
+            of the " -&gt; &amp;quot; character.
+            </td>
+      </tr>
+      <tr>
+        <td class="name">
+          <a href="NodeList.html">NodeList</a>
+        </td>
+        <td class="type">
+            Provides a class for wrapping a list of JDOM objects primarily for use in template
+            engines and other kinds of text transformation tools.
+            It has a {@link #toString()} method that will output the XML serialized form of the
+            nodes it contains - again focusing on template engine usage, as well as the
+            {@link #selectNodes(String)} method that helps selecting a different set of nodes
+            starting from the nodes in this list. The class also implements the {@link java.util.List}
+            interface by simply delegating calls to the contained list (the {@link #subList(int, int)}
+            method is implemented by delegating to the contained list and wrapping the returned
+            sublist into a NodeList).
+            </td>
+      </tr>
+    </table>
+    <br>
+    <hr>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td class="nav1sel"> Namespace </td>
+              <td>Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV NAMESPACE    NEXT NAMESPACE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+    </table>
+  </body>
+</html>

@@ -1,0 +1,627 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9405075A-BD64-4B54-9689-2DD716D6F92A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Savchin.Forms</RootNamespace>
+    <AssemblyName>Savchin.Forms</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <PublishUrl>http://localhost/Savchin.Forms/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\..\Other\Key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Browsers\AssemblyBrowser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Browsers\AssemblyBrowser.Designer.cs">
+      <DependentUpon>AssemblyBrowser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Browsers\ControlBrowser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Browsers\ControlBrowser.Designer.cs">
+      <DependentUpon>ControlBrowser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Browsers\GacBrowser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Browsers\GacBrowser.Designer.cs">
+      <DependentUpon>GacBrowser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Browsers\IObjectBrowser.cs" />
+    <Compile Include="Browsers\RegistryBrowser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Browsers\RegistryBrowser.Designer.cs">
+      <DependentUpon>RegistryBrowser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Browsers\RegistryEventArgs.cs" />
+    <Compile Include="Browsers\RegistryStringValueForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Browsers\RegistryStringValueForm.Designer.cs">
+      <DependentUpon>RegistryStringValueForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CollapsibleGroupBox\CollapsibleGroupBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CollapsibleGroupBox\CollapsibleGroupBox.designer.cs">
+      <DependentUpon>CollapsibleGroupBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ColorPicker.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ColorPicker.Designer.cs">
+      <DependentUpon>ColorPicker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Commands\Command.cs" />
+    <Compile Include="Core\Commands\CommandBinder.cs" />
+    <Compile Include="Core\Commands\CommandManager.cs" />
+    <Compile Include="Core\Commands\DelegateCommand.cs" />
+    <Compile Include="Core\Commands\Handlers\CommandBinding.cs" />
+    <Compile Include="Core\Commands\Handlers\ICommandBinding.cs" />
+    <Compile Include="Core\Commands\Handlers\ToolStripButtonHandler.cs" />
+    <Compile Include="Core\Commands\Handlers\ToolStripComboBoxHandler.cs" />
+    <Compile Include="Core\Commands\Handlers\ToolStripMenuItemHandler.cs" />
+    <Compile Include="Core\Commands\Handlers\ToolStripMenuItemTracker.cs" />
+    <Compile Include="Core\Commands\ICommand.cs" />
+    <Compile Include="Comparer\CompareView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Comparer\CompareView.designer.cs">
+      <DependentUpon>CompareView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Comparer\FormCompare.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Comparer\FormCompare.Designer.cs">
+      <DependentUpon>FormCompare.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Comparer\FormFilter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Comparer\FormFilter.Designer.cs">
+      <DependentUpon>FormFilter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\AbstractSettings.cs" />
+    <Compile Include="Core\ApplicationManager.cs" />
+    <Compile Include="Core\Commands\SimpleCommand.cs" />
+    <Compile Include="Core\ControlHelper.cs" />
+    <Compile Include="DateRangeControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DateRangeControl.Designer.cs">
+      <DependentUpon>DateRangeControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Docking\AutoHideStripBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\DockAreasEditor.cs" />
+    <Compile Include="Docking\DockContent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Docking\DockContentCollection.cs" />
+    <Compile Include="Docking\DockContentEventArgs.cs" />
+    <Compile Include="Docking\DockContentHandler.cs" />
+    <Compile Include="Docking\DockOutlineBase.cs" />
+    <Compile Include="Docking\DockPane.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Docking\DockPane.SplitterControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Docking\DockPaneCaptionBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\DockPaneCollection.cs" />
+    <Compile Include="Docking\DockPanel.AutoHideWindow.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\DockPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\DockPanel.DockDragHandler.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\DockPanel.DragHandler.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\DockPanel.FocusManager.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\DockPanel.MdiClientController.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\DockPanel.Persistor.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\DockPanel.SplitterDragHandler.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\DockPanelExtender.cs" />
+    <Compile Include="Docking\DockPaneStripBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\DockWindow.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\DockWindow.SplitterControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\DockWindowCollection.cs" />
+    <Compile Include="Docking\DragForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Docking\DummyControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\Enums.cs" />
+    <Compile Include="Docking\FloatWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Docking\FloatWindowCollection.cs" />
+    <Compile Include="Docking\Helpers\DockHelper.cs" />
+    <Compile Include="Docking\Helpers\DrawHelper.cs" />
+    <Compile Include="Docking\Helpers\ResourceHelper.cs" />
+    <Compile Include="Docking\Helpers\Win32Helper.cs" />
+    <Compile Include="Docking\InertButtonBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\Interfaces.cs" />
+    <Compile Include="Docking\Localization.cs" />
+    <Compile Include="Docking\Measures.cs" />
+    <Compile Include="Docking\NestedDockingStatus.cs" />
+    <Compile Include="Docking\NestedPaneCollection.cs" />
+    <Compile Include="Docking\Resources.Designer.cs" />
+    <Compile Include="Docking\SplitterBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\Strings.Designer.cs" />
+    <Compile Include="Docking\VisibleNestedPaneCollection.cs" />
+    <Compile Include="Docking\VS2005AutoHideStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\VS2005DockPaneCaption.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\VS2005DockPaneStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\Win32\Enums.cs" />
+    <Compile Include="Docking\Win32\NativeMethods.cs" />
+    <Compile Include="Forms\ExceptionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ExceptionForm.Designer.cs">
+      <DependentUpon>ExceptionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExceptionHelper.cs" />
+    <Compile Include="Forms\FormObject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormObject.Designer.cs">
+      <DependentUpon>FormObject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormText.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormText.Designer.cs">
+      <DependentUpon>FormText.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\FormHelper.cs" />
+    <Compile Include="Helpers\GuiEnumHelper.cs" />
+    <Compile Include="ListView\CellEditors.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ListView\Comparers.cs" />
+    <Compile Include="ListView\Datasorces\AbstractVirtualListDataSource.cs" />
+    <Compile Include="ListView\Datasorces\FastObjectListDataSource.cs" />
+    <Compile Include="ListView\Datasorces\VirtualListVersion1DataSource.cs" />
+    <Compile Include="ListView\Delegates.cs" />
+    <Compile Include="ListView\EventArgs\AfterSortingEventArgs.cs" />
+    <Compile Include="ListView\EventArgs\CellEditEventArgs.cs" />
+    <Compile Include="ListView\EventArgs\CellMouseEventArgs.cs" />
+    <Compile Include="ListView\EventArgs\EventArgs.cs" />
+    <Compile Include="ListView\Events.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ListView\HeaderControl.cs" />
+    <Compile Include="ListView\IVirtualListDataSource.cs" />
+    <Compile Include="ListView\Munger.cs" />
+    <Compile Include="ListView\MyToolTip.cs" />
+    <Compile Include="ListView\NativeMethods.cs" />
+    <Compile Include="ListView\NullableDictionary.cs" />
+    <Compile Include="ListView\OLVColumn.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ListView\OLVListItem.cs" />
+    <Compile Include="ListView\OLVListSubItem.cs" />
+    <Compile Include="ListView\Renders\BarRenderer.cs" />
+    <Compile Include="ListView\Renders\BaseRenderer.cs" />
+    <Compile Include="ListView\Renders\FlagRenderer.cs" />
+    <Compile Include="ListView\Renders\ImageRenderer.cs" />
+    <Compile Include="ListView\Renders\ImagesRenderer.cs" />
+    <Compile Include="ListView\Renders\MappedImageRenderer.cs" />
+    <Compile Include="ListView\Renders\MultiImageRenderer.cs" />
+    <Compile Include="ListView\Views\DataListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ListView\Views\FastObjectListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ListView\Views\ObjectListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ListView\Views\TreeListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ListView\Views\TypedObjectListView.cs" />
+    <Compile Include="ListView\Views\VirtualObjectListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MessageBoxEx.cs" />
+    <Compile Include="MessageEventArgs.cs" />
+    <Compile Include="Net\CredentialControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Net\CredentialControl.Designer.cs">
+      <DependentUpon>CredentialControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Net\InternetSettingsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Net\InternetSettingsControl.Designer.cs">
+      <DependentUpon>InternetSettingsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Net\ProxySettingsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Net\ProxySettingsControl.Designer.cs">
+      <DependentUpon>ProxySettingsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <DependentUpon>Resources.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="PropertyGrid\PropertiesTabEx.cs" />
+    <Compile Include="PropertyGrid\PropertyGridEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PropertyGrid\PropertyOrderAttribute.cs" />
+    <Compile Include="PropertyGrid\PropertyOrderPair.cs" />
+    <Compile Include="PropertyGrid\PropertySorter.cs" />
+    <Compile Include="PropertyGrid\ValidationTypeConverter.cs" />
+    <Compile Include="Resources\Attributes.cs" />
+    <Compile Include="Resources\BitmapEditor.cs" />
+    <Compile Include="Resources\BitmapHolder.cs" />
+    <Compile Include="Resources\ClassLoader.cs" />
+    <Compile Include="Resources\DefaultResourceEditor.cs" />
+    <Compile Include="Resources\DefaultResourceHolder.cs" />
+    <Compile Include="Resources\frmBitmapEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Resources\frmIconEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Resources\frmImageStreamEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Resources\frmStringEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Resources\IconEditor.cs" />
+    <Compile Include="Resources\IconHolder.cs" />
+    <Compile Include="Resources\ImageStreamEditor.cs" />
+    <Compile Include="Resources\ImageStreamHolder.cs" />
+    <Compile Include="Resources\Interfaces.cs" />
+    <Compile Include="Resources\ResourceManager.cs" />
+    <Compile Include="Resources\StringEditor.cs" />
+    <Compile Include="Resources\StringHolder.cs" />
+    <Compile Include="SyncTree.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TreeViewEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Wizard\Header.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Wizard\HeaderDesigner.cs" />
+    <Compile Include="Wizard\InfoContainer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Wizard\InfoContainer.Designer.cs">
+      <DependentUpon>InfoContainer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wizard\InfoContainerDesigner.cs" />
+    <Compile Include="Wizard\InfoPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Wizard\InfoPage.Designer.cs">
+      <DependentUpon>InfoPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wizard\InfoPageDesigner.cs" />
+    <Compile Include="Wizard\PageCollection.cs" />
+    <Compile Include="Wizard\PageEventHandler.cs" />
+    <Compile Include="Wizard\Wizard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Wizard\WizardDesigner.cs" />
+    <Compile Include="Wizard\WizardPage.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Wizard\WizardPageDesigner.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Browsers\AssemblyBrowser.resx">
+      <DependentUpon>AssemblyBrowser.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Browsers\GacBrowser.resx">
+      <DependentUpon>GacBrowser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Browsers\RegistryBrowser.resx">
+      <DependentUpon>RegistryBrowser.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Browsers\RegistryStringValueForm.resx">
+      <DependentUpon>RegistryStringValueForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CollapsibleGroupBox\CollapsibleGroupBox.resx">
+      <DependentUpon>CollapsibleGroupBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ColorPicker.resx">
+      <DependentUpon>ColorPicker.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Comparer\CompareView.resx">
+      <DependentUpon>CompareView.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Comparer\FormCompare.resx">
+      <DependentUpon>FormCompare.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Comparer\FormFilter.resx">
+      <DependentUpon>FormFilter.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DateRangeControl.resx">
+      <DependentUpon>DateRangeControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ExceptionForm.resx">
+      <DependentUpon>ExceptionForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormObject.resx">
+      <DependentUpon>FormObject.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormText.resx">
+      <DependentUpon>FormText.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Net\CredentialControl.resx">
+      <DependentUpon>CredentialControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Net\InternetSettingsControl.resx">
+      <DependentUpon>InternetSettingsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Net\ProxySettingsControl.resx">
+      <DependentUpon>ProxySettingsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\frmBitmapEditor.resx">
+      <DependentUpon>frmBitmapEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\frmIconEditor.resx">
+      <DependentUpon>frmIconEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\frmImageStreamEditor.resx">
+      <DependentUpon>frmImageStreamEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\frmStringEditor.resx">
+      <DependentUpon>frmStringEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard\Header.resx">
+      <DependentUpon>Header.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard\InfoContainer.resx">
+      <DependentUpon>InfoContainer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard\InfoPage.resx">
+      <DependentUpon>InfoPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard\Wizard.resx">
+      <DependentUpon>Wizard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard\WizardPage.resx">
+      <DependentUpon>WizardPage.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Savchin.WinApi\Savchin.WinApi.csproj">
+      <Project>{DD712413-B47A-4707-A45D-84F786E47BAF}</Project>
+      <Name>Savchin.WinApi</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tools\Savchin.Tools.csproj">
+      <Project>{2F1807E4-39A2-4F38-ADFC-6310A8443D90}</Project>
+      <Name>Savchin.Tools</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\Other\Key.snk">
+      <Link>Key.snk</Link>
+    </None>
+    <None Include="Resources\Images\CheckAll.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\UnCheckAll.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\Filter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\First.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\Last.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\Next.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\Prevoius.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Browsers\ControlBrowser.resx">
+      <DependentUpon>ControlBrowser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Docking\DockPanel.bmp" />
+    <EmbeddedResource Include="Docking\Resources.resx" />
+    <EmbeddedResource Include="Docking\Strings.resx" />
+    <Resource Include="CollapsibleGroupBox\CollapsibleGroupBox.bmp" />
+    <Content Include="Docking\Resources\DockIndicator_PaneDiamond.bmp" />
+    <Content Include="Docking\Resources\DockIndicator_PaneDiamond_Bottom.bmp" />
+    <Content Include="Docking\Resources\Dockindicator_PaneDiamond_Fill.bmp" />
+    <Content Include="Docking\Resources\DockIndicator_PaneDiamond_Hotspot.bmp" />
+    <Content Include="Docking\Resources\DockIndicator_PaneDiamond_HotspotIndex.bmp" />
+    <Content Include="Docking\Resources\DockIndicator_PaneDiamond_Left.bmp" />
+    <Content Include="Docking\Resources\DockIndicator_PaneDiamond_Right.bmp" />
+    <Content Include="Docking\Resources\DockIndicator_PaneDiamond_Top.bmp" />
+    <Content Include="Docking\Resources\DockIndicator_PanelBottom.bmp" />
+    <Content Include="Docking\Resources\DockIndicator_PanelBottom_Active.bmp" />
+    <Content Include="Docking\Resources\DockIndicator_PanelFill.bmp" />
+    <Content Include="Docking\Resources\DockIndicator_PanelFill_Active.bmp" />
+    <Content Include="Docking\Resources\DockIndicator_PanelLeft.bmp" />
+    <Content Include="Docking\Resources\DockIndicator_PanelLeft_Active.bmp" />
+    <Content Include="Docking\Resources\DockIndicator_PanelRight.bmp" />
+    <Content Include="Docking\Resources\DockIndicator_PanelRight_Active.bmp" />
+    <Content Include="Docking\Resources\DockIndicator_PanelTop.bmp" />
+    <Content Include="Docking\Resources\DockIndicator_PanelTop_Active.bmp" />
+    <Content Include="Docking\Resources\DockPane_AutoHide.bmp" />
+    <Content Include="Docking\Resources\DockPane_Close.bmp" />
+    <Content Include="Docking\Resources\DockPane_Dock.bmp" />
+    <Content Include="Docking\Resources\DockPane_Option.bmp" />
+    <Content Include="Docking\Resources\DockPane_OptionOverflow.bmp" />
+    <Content Include="ListView\CustomDictionary.xml" />
+    <Content Include="Resources\Images\assembly.ico" />
+    <Content Include="Resources\Images\class.ico" />
+    <None Include="Resources\Images\db.ico" />
+    <None Include="Resources\Images\dbAdd.ico" />
+    <None Include="Resources\Images\dbE.ico" />
+    <None Include="Resources\Images\dbMinus.ico" />
+    <Content Include="Resources\Images\empty.gif" />
+    <Content Include="Resources\Images\empty.ico" />
+    <None Include="Resources\Images\key.ico" />
+    <None Include="Resources\Images\keyAdd.ico" />
+    <None Include="Resources\Images\keyE.ico" />
+    <None Include="Resources\Images\keyMinus.ico" />
+    <None Include="Resources\Images\lib.png" />
+    <Content Include="Resources\Images\method.ico" />
+    <None Include="Resources\Images\minus.bmp" />
+    <Content Include="Resources\Images\namespace.ico" />
+    <None Include="Resources\Images\obj.ico" />
+    <None Include="Resources\Images\objAdd.ico" />
+    <None Include="Resources\Images\objE.ico" />
+    <None Include="Resources\Images\objMinus.ico" />
+    <Content Include="Resources\Images\objNotExists.ico" />
+    <None Include="Resources\Images\plus.bmp" />
+    <Content Include="Resources\Images\property.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

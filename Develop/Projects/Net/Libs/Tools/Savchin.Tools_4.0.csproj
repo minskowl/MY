@@ -1,0 +1,382 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2F1807E4-39A2-4F38-ADFC-6310A8443D90}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Savchin</RootNamespace>
+    <AssemblyName>Savchin.Tools</AssemblyName>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <PublishUrl>http://localhost/Savchin.Tools/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\4.0\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\4.0\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\..\Other\Key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Client Release|AnyCPU'">
+    <OutputPath>bin\Client Release\</OutputPath>
+    <DefineConstants>TRACE;CLIENT</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\Savchin.Tools.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;D:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;D:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Client Debug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Client Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;CLIENT</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\Savchin.Tools.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;D:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;D:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL" Condition="'$(Configuration)' == 'Debug' or '$(Configuration)' == 'Release'">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ThrPartLibs\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Collection\AlphanumComparator.cs" />
+    <Compile Include="Collection\Enumerable.cs" />
+    <Compile Include="Collection\Generic\AlphanumComparator.cs" />
+    <Compile Include="Collection\Generic\Enumerable.cs" />
+    <Compile Include="Collection\Generic\ObservableCollectionEx.cs" />
+    <Compile Include="Collection\Generic\Sorting\ComparerBuilder.cs" />
+    <Compile Include="Collection\Generic\ComparerExtensions.cs" />
+    <Compile Include="Collection\Generic\Sorting\TypeComparer.cs" />
+    <Compile Include="Collection\Generic\ThreadSafeDictionary.cs" />
+    <Compile Include="Collection\HashtableEx.cs" />
+    <Compile Include="Collection\NameValueCollectionHelper_3.5.cs" />
+    <Compile Include="Collection\Sorting\ComparerBuilder.cs" />
+    <Compile Include="Collection\Sorting\ComparerBuilderBase.cs" />
+    <Compile Include="Collection\ComparerExtensions.cs" />
+    <Compile Include="Collection\Sorting\ParserException.cs" />
+    <Compile Include="Collection\Sorting\SimpleTokenizer.cs" />
+    <Compile Include="Collection\Sorting\TypeComparer.cs" />
+    <Compile Include="CommandLine\ArgummentParser.cs" />
+    <Compile Include="CommandLine\BaseSwitch.cs" />
+    <Compile Include="CommandLine\CollectionSwitch.cs" />
+    <Compile Include="CommandLine\PropertySwitch.cs" />
+    <Compile Include="CommandLine\SwitchAttribute.cs" />
+    <Compile Include="Comparer\Collection\PrimitiveResultCollection.cs" />
+    <Compile Include="Comparer\Collection\ResultCollection.cs" />
+    <Compile Include="Comparer\CompareAttribute.cs" />
+    <Compile Include="Comparer\CompareResultBase.cs" />
+    <Compile Include="Comparer\DictionaryResult.cs" />
+    <Compile Include="Comparer\Collection\DictionaryResultCollection.cs" />
+    <Compile Include="Comparer\Filter.cs" />
+    <Compile Include="Comparer\KeyMatcher.cs" />
+    <Compile Include="Comparer\ObjectResult.cs" />
+    <Compile Include="Comparer\Collection\ObjectResultCollection.cs" />
+    <Compile Include="Comparer\PrimitiveResult.cs" />
+    <Compile Include="Comparer\ResultType.cs" />
+    <Compile Include="ComponentModel\BaseObject.cs" />
+    <Compile Include="ComponentModel\DisplayNameExAttribute.cs" />
+    <Compile Include="Configuration\ConfigurationBase.cs" />
+    <Compile Include="Configuration\ConfigurationCollection.cs" />
+    <Compile Include="Configuration\DataFile.cs" />
+    <Compile Include="Configuration\DataFileCollection.cs" />
+    <Compile Include="Collection\Generic\DictionaryEx.cs" />
+    <Compile Include="Core\DecimalHelper.cs" />
+    <Compile Include="Core\Fusion.cs" />
+    <Compile Include="Core\ICopiable.cs" />
+    <Compile Include="Core\MemberInfoHelper.cs" />
+    <Compile Include="Core\NameValuePair.cs" />
+    <Compile Include="Core\Pair.cs" />
+    <Compile Include="Core\Reflected.cs" />
+    <Compile Include="Crypto\Rsa.cs" />
+    <Compile Include="Core\AppInfo.cs" />
+    <Compile Include="Development\AppContext.cs" />
+    <Compile Include="Development\BaseObjectProvider.cs" />
+    <Compile Include="Development\IApplicationObjectsProvider.cs" />
+    <Compile Include="Development\ISession.cs" />
+    <Compile Include="Development\MultiThreadProvider.cs" />
+    <Compile Include="Development\SimpleSession.cs" />
+    <Compile Include="Development\SingleThreadProvider.cs" />
+    <Compile Include="Drawing\ImageHelper.cs" />
+    <Compile Include="IO\Compressor.cs" />
+    <Compile Include="IO\CopositeTextWriter.cs" />
+    <Compile Include="IO\Mime.cs" />
+    <Compile Include="IO\StreamHelper.cs" />
+    <Compile Include="IO\TemporaryFile.cs" />
+    <Compile Include="Linq\Dynamic\Core\ClassFactory.cs" />
+    <Compile Include="Linq\Dynamic\Core\ExpressionParser.Types.cs" />
+    <Compile Include="Linq\Dynamic\DynamicClass.cs" />
+    <Compile Include="Linq\Dynamic\DynamicExpression.cs" />
+    <Compile Include="Linq\Dynamic\DynamicLibrary.cs" />
+    <Compile Include="Linq\Dynamic\DynamicProperty.cs" />
+    <Compile Include="Linq\Dynamic\DynamicQueryable.cs" />
+    <Compile Include="Linq\Dynamic\Core\ExpressionParser.cs" />
+    <Compile Include="Linq\Dynamic\ParseException.cs" />
+    <Compile Include="Linq\Dynamic\Core\Signature.cs" />
+    <Compile Include="Logging\ILogger.cs" />
+    <Compile Include="Logging\LoggerLog4Net.cs" />
+    <Compile Include="Logging\LogWriter.cs" />
+    <Compile Include="Logging\NullLoger.cs" />
+    <Compile Include="Logging\Severity.cs" />
+    <Compile Include="ServiceModel\CommunicationObjectHolder.cs" />
+    <Compile Include="ServiceModel\CompressListener.cs" />
+    <Compile Include="ServiceModel\NetworkException.cs" />
+    <Compile Include="ServiceModel\ServerException.cs" />
+    <Compile Include="ServiceModel\ServiceEndpointConfigurationHelper.cs" />
+    <Compile Include="ServiceModel\ServiceExceptionConverter.cs" />
+    <Compile Include="ServiceModel\ServiceInvoker.cs" />
+    <Compile Include="SystemEnvironment\ErrorReport.cs" />
+    <Compile Include="Text\AdvancedString.cs" />
+    <Compile Include="Text\ResourceStringLoader.cs" />
+    <Compile Include="Text\Wildcard.cs" />
+    <Compile Include="Validation\Validators\RangeValidator.cs" />
+    <Compile Include="Validation\ErrorCollection.cs" />
+    <Compile Include="Validation\Resources.Designer.cs">
+      <DependentUpon>Resources.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Validation\Resources.ru.Designer.cs">
+      <DependentUpon>Resources.ru.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="SystemEnvironment\EnviromentInfo.cs" />
+    <Compile Include="SystemEnvironment\FrameworksCollection.cs" />
+    <Compile Include="Core\IRange.cs" />
+    <Compile Include="SystemEnvironment\OperatingSystemInfo.cs" />
+    <Compile Include="Core\Range.cs" />
+    <Compile Include="Core\TypeHelper.cs" />
+    <Compile Include="SystemEnvironment\WindowsVersion.cs" />
+    <Compile Include="Collection\Generic\SortableBindingList.cs" />
+    <Compile Include="ComponentModel\DynamicPropertyFilterAttribute.cs" />
+    <Compile Include="ComponentModel\EnumTypeConverter.cs" />
+    <Compile Include="ComponentModel\FilterablePropertyType.cs" />
+    <Compile Include="Core\Variable.cs" />
+    <Compile Include="TimeManagment\Time.cs" />
+    <Compile Include="TimeManagment\TimeRange.cs" />
+    <Compile Include="Net\FtpClient.cs" />
+    <Compile Include="Net\FtpSocketClient.cs" />
+    <Compile Include="Net\FtpException.cs" />
+    <Compile Include="Net\GenericCredential.cs" />
+    <Compile Include="Net\GenericProxy.cs" />
+    <Compile Include="Net\InternetSettings.cs" />
+    <Compile Include="Threading\async.cs" />
+    <Compile Include="Threading\IOCP\Node.cs" />
+    <Compile Include="Threading\Tasks\AsyncDelegateTask.cs" />
+    <Compile Include="Threading\Delegates.cs" />
+    <Compile Include="Threading\CodeException.cs" />
+    <Compile Include="Threading\ITask.cs" />
+    <Compile Include="Threading\IOCP\ManagedIOCP.cs" />
+    <Compile Include="Threading\IOCP\ManagedIOCPExceptions.cs" />
+    <Compile Include="Threading\ObjectPool\ObjectPool.cs" />
+    <Compile Include="Threading\ObjectPool\PoolableObject.cs" />
+    <Compile Include="Threading\ObjectPool\PoolableObjectFactory.cs" />
+    <Compile Include="Threading\IOCP\Queue.cs" />
+    <Compile Include="Threading\SerializableCodeBlock.cs" />
+    <Compile Include="Threading\Tasks\Task.cs" />
+    <Compile Include="Threading\ThreadPool.cs" />
+    <Compile Include="Threading\waitableasync.cs" />
+    <Compile Include="Threading\Tasks\WaitableAsyncDelegateTask.cs" />
+    <Compile Include="Threading\Tasks\WaitableGenericTask.cs" />
+    <Compile Include="Validation\Validators\TypeValidator.cs" />
+    <Compile Include="Validation\Validators\IValidator.cs" />
+    <Compile Include="Validation\Validators\RegexValidator.cs" />
+    <Compile Include="Validation\Validators\RequiredFieldValidator.cs" />
+    <Compile Include="Validation\Validators\ValidatorBase.cs" />
+    <Compile Include="TimeManagment\DatePart.cs" />
+    <Compile Include="TimeManagment\DatePartSpan.cs" />
+    <Compile Include="TimeManagment\DateRange.cs" />
+    <Compile Include="TimeManagment\DateTimeEx.cs" />
+    <Compile Include="TimeManagment\DateTimeUtils.cs" />
+    <Compile Include="TimeManagment\TimeZoneCollection.cs" />
+    <Compile Include="TimeManagment\TimeZoneManager.cs" />
+    <Compile Include="TimeManagment\UITimeZone.cs" />
+    <Compile Include="Drawing\ConverterColor.cs" />
+    <Compile Include="Drawing\HSBColor.cs" />
+    <Compile Include="Ini\IniDocument.cs" />
+    <Compile Include="Ini\IniException.cs" />
+    <Compile Include="Ini\IniItem.cs" />
+    <Compile Include="Ini\IniReader.cs" />
+    <Compile Include="Ini\IniSection.cs" />
+    <Compile Include="Ini\IniSectionCollection.cs" />
+    <Compile Include="Ini\IniWriter.cs" />
+    <Compile Include="Ini\Util\ArgvParser.cs" />
+    <Compile Include="Ini\Util\OrderedList.cs" />
+    <Compile Include="Ini\Util\OrderedListEnumerator.cs" />
+    <Compile Include="IO\CommandLineParser.cs" />
+    <Compile Include="IO\CommandLineSwitchAttribute.cs" />
+    <Compile Include="IO\DirectoryHelper.cs" />
+    <Compile Include="IO\IOHelper.cs" />
+    <Compile Include="IO\PathHelper.cs" />
+    <Compile Include="IO\StorageSize.cs" />
+    <Compile Include="IO\SwitchRecord.cs" />
+    <Compile Include="Mp3\id3.cs">
+    </Compile>
+    <Compile Include="Mp3\Mp3Tool.cs" />
+    <Compile Include="Core\EnumHelper.cs" />
+    <Compile Include="Core\RegistryHelper.cs" />
+    <Compile Include="IO\StreamPipe.cs" />
+    <Compile Include="Core\TypeSerializer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Collection\Generic\BiDictionary.cs" />
+    <Compile Include="Collection\Generic\CollectionUtil.cs" />
+    <Compile Include="Core\Randomizer.cs" />
+    <Compile Include="Text\RegularExpressions.cs" />
+    <Compile Include="Text\StringUtil.cs" />
+    <Compile Include="Validation\IValidationValidator.cs" />
+    <Compile Include="Validation\ObjectValidator.cs" />
+    <Compile Include="Validation\IValidatable.cs" />
+    <Compile Include="Validation\Attributes\RangeValidationAttribute.cs" />
+    <Compile Include="Validation\Attributes\RegularExpressionValidationAttribute.cs" />
+    <Compile Include="Validation\Attributes\RequiredFieldValidationAttribute.cs" />
+    <Compile Include="Validation\Attributes\ValidationAttribute.cs" />
+    <Compile Include="Validation\ValidationError.cs" />
+    <Compile Include="Validation\ValidationException.cs" />
+    <Compile Include="Net\DownloadException.cs" />
+    <Compile Include="Net\PageDownloader.cs" />
+    <Compile Include="Validation\Validators\ValidatorsCollection.cs" />
+    <Compile Include="Xml\AssemblyGenerator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\Other\Key.snk">
+      <Link>Key.snk</Link>
+    </None>
+    <None Include="Threading\Tasks\Tasks.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Validation\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Validation\Resources.ru.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.ru.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Diagnostics\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

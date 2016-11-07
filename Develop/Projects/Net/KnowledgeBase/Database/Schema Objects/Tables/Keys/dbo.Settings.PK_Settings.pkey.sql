@@ -1,0 +1,3 @@
+﻿ALTER TABLE [dbo].[Settings] ADD CONSTRAINT [PK_Settings] PRIMARY KEY CLUSTERED  ([SettingsID]) ON [PRIMARY]
+
+

@@ -1,0 +1,934 @@
+NAnt 0.86 (Build 0.86.2898.0; beta1; 08.12.2007)
+Copyright (C) 2001-2007 Gerry Shaw
+http://nant.sourceforge.net
+
+Buildfile: file:///S:/Develop/Projects/Net/CodeRocket/src/default.build
+Target framework: Microsoft .NET Framework 3.5
+Target(s) specified: buildCodeRocket 
+
+
+buildCodeRocket:
+
+
+buildDebug:
+
+
+buildProject:
+
+     [echo] build project: S:\Develop\Projects\Net\CodeRocket\src\CodeRocket.sln
+  [msbuild] Build started 21.02.2009 17:20:50.
+  [msbuild] Project "S:\Develop\Projects\Net\CodeRocket\src\CodeRocket.sln" on node 0 (Rebuild target(s)).
+  [msbuild]   Building solution configuration "Debug|Any CPU".
+  [msbuild] Project "S:\Develop\Projects\Net\CodeRocket\src\CodeRocket.sln" (1) is building "S:\Develop\Projects\Net\Libs\CodeParser\CodeParsing.csproj" (2) on node 0 (Rebuild target(s)).
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\CodeParser\bin\Debug\CodeParser.dll".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\CodeParser\bin\Debug\CodeParser.pdb".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\CodeParser\bin\Debug\Interop.PGMRX120Lib.dll".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\CodeParser\obj\Debug\ResolveAssemblyReference.cache".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\CodeParser\obj\Debug\Savchin.CodeParsing.Resource.resources".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\CodeParser\obj\Debug\CodeParsing.csproj.GenerateResource.Cache".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\CodeParser\obj\Debug\CodeParser.dll".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\CodeParser\obj\Debug\CodeParser.pdb".
+  [msbuild] CoreResGen:
+  [msbuild]   Processing resource file "Resource.resx" into "obj\Debug\Savchin.CodeParsing.Resource.resources".
+  [msbuild] _CopyFilesMarkedCopyLocal:
+  [msbuild]   Copying file from "..\..\ThrPartLibs\Interop.PGMRX120Lib.dll" to "bin\Debug\Interop.PGMRX120Lib.dll".
+  [msbuild] CopyFilesToOutputDirectory:
+  [msbuild]   Copying file from "obj\Debug\CodeParser.dll" to "bin\Debug\CodeParser.dll".
+  [msbuild]   CodeParsing -> S:\Develop\Projects\Net\Libs\CodeParser\bin\Debug\CodeParser.dll
+  [msbuild]   Copying file from "obj\Debug\CodeParser.pdb" to "bin\Debug\CodeParser.pdb".
+  [msbuild] Done Building Project "S:\Develop\Projects\Net\Libs\CodeParser\CodeParsing.csproj" (Rebuild target(s)).
+  [msbuild] Project "S:\Develop\Projects\Net\CodeRocket\src\CodeRocket.sln" (1) is building "S:\Develop\Projects\Net\Libs\Tools\Savchin.Tools.csproj" (3) on node 0 (Rebuild target(s)).
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Tools\bin\Debug\Savchin.Tools.dll".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Tools\bin\Debug\Savchin.Tools.pdb".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Tools\bin\Debug\Newtonsoft.Json.dll".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Tools\bin\Debug\Newtonsoft.Json.pdb".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Tools\bin\Debug\Newtonsoft.Json.xml".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Tools\obj\Debug\ResolveAssemblyReference.cache".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Tools\obj\Debug\Savchin.Tools.dll".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Tools\obj\Debug\Savchin.Tools.pdb".
+  [msbuild] EntityClean:
+  [msbuild]   Successfully cleaned the output for 0 EDMX files.
+  [msbuild] EntityDeploy:
+  [msbuild]   Processing 0 EDMX files.
+  [msbuild]   Finished processing 0 EDMX files.
+  [msbuild] Threading\IOCP\ManagedIOCP.cs(643,42): warning CS0420: 'Savchin.Threading.IOCP.ManagedIOCP<T>._activeThreads': a reference to a volatile field will not be treated as volatile
+  [msbuild] Threading\IOCP\ManagedIOCP.cs(658,31): warning CS0420: 'Savchin.Threading.IOCP.ManagedIOCP<T>._activeThreads': a reference to a volatile field will not be treated as volatile
+  [msbuild] Threading\ObjectPool\ObjectPool.cs(93,61): warning CS0420: 'Savchin.Threading.DataStructures.LockFree.PoolableObject.LinkedObject': a reference to a volatile field will not be treated as volatile
+  [msbuild] Threading\ObjectPool\ObjectPool.cs(106,57): warning CS0420: 'Savchin.Threading.DataStructures.LockFree.ObjectPool._tail': a reference to a volatile field will not be treated as volatile
+  [msbuild] Threading\ObjectPool\ObjectPool.cs(114,45): warning CS0420: 'Savchin.Threading.DataStructures.LockFree.ObjectPool._tail': a reference to a volatile field will not be treated as volatile
+  [msbuild] Threading\ObjectPool\ObjectPool.cs(165,61): warning CS0420: 'Savchin.Threading.DataStructures.LockFree.ObjectPool._tail': a reference to a volatile field will not be treated as volatile
+  [msbuild] Threading\ObjectPool\ObjectPool.cs(178,61): warning CS0420: 'Savchin.Threading.DataStructures.LockFree.ObjectPool._head': a reference to a volatile field will not be treated as volatile
+  [msbuild] Threading\IOCP\Queue.cs(66,39): warning CS0420: 'Savchin.Threading.IOCP.Queue<T>._tail': a reference to a volatile field will not be treated as volatile
+  [msbuild] Threading\IOCP\Queue.cs(74,36): warning CS0420: 'Savchin.Threading.IOCP.Queue<T>._tail': a reference to a volatile field will not be treated as volatile
+  [msbuild] Threading\IOCP\Queue.cs(117,40): warning CS0420: 'Savchin.Threading.IOCP.Queue<T>._tail': a reference to a volatile field will not be treated as volatile
+  [msbuild] Threading\IOCP\Queue.cs(127,61): warning CS0420: 'Savchin.Threading.IOCP.Queue<T>._head': a reference to a volatile field will not be treated as volatile
+  [msbuild] Threading\ThreadPool.cs(183,21): warning CS0618: 'System.AppDomain.GetCurrentThreadId()' is obsolete: 'AppDomain.GetCurrentThreadId has been deprecated because it does not provide a stable Id when managed threads are running on fibers (aka lightweight threads). To get a stable identifier for a managed thread, use the ManagedThreadId property on Thread.  http://go.microsoft.com/fwlink/?linkid=14202'
+  [msbuild] Net\FtpSocketClient.cs(24,22): warning CS0649: Field 'Savchin.Net.FtpSocketClient.binMode' is never assigned to, and will always have its default value false
+  [msbuild] _CopyFilesMarkedCopyLocal:
+  [msbuild]   Copying file from "..\..\ThrPartLibs\JSON\Newtonsoft.Json.dll" to "bin\Debug\Newtonsoft.Json.dll".
+  [msbuild]   Copying file from "..\..\ThrPartLibs\JSON\Newtonsoft.Json.pdb" to "bin\Debug\Newtonsoft.Json.pdb".
+  [msbuild]   Copying file from "..\..\ThrPartLibs\JSON\Newtonsoft.Json.xml" to "bin\Debug\Newtonsoft.Json.xml".
+  [msbuild] CopyFilesToOutputDirectory:
+  [msbuild]   Copying file from "obj\Debug\Savchin.Tools.dll" to "bin\Debug\Savchin.Tools.dll".
+  [msbuild]   Savchin.Tools -> S:\Develop\Projects\Net\Libs\Tools\bin\Debug\Savchin.Tools.dll
+  [msbuild]   Copying file from "obj\Debug\Savchin.Tools.pdb" to "bin\Debug\Savchin.Tools.pdb".
+  [msbuild] Done Building Project "S:\Develop\Projects\Net\Libs\Tools\Savchin.Tools.csproj" (Rebuild target(s)).
+  [msbuild] CodeRocketSetup:Rebuild:
+  [msbuild]   The project "CodeRocketSetup" is not selected for building in solution configuration "Debug|Any CPU".
+  [msbuild] Project "S:\Develop\Projects\Net\CodeRocket\src\CodeRocket.sln" (1) is building "S:\Develop\Projects\Net\Libs\Controls\Common\Savchin.Controls.Common.csproj" (4) on node 0 (Rebuild target(s)).
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Controls\Common\bin\Debug\Savchin.Controls.Common.dll".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Controls\Common\bin\Debug\Savchin.Controls.Common.pdb".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Controls\Common\bin\Debug\Savchin.Tools.dll".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Controls\Common\bin\Debug\Newtonsoft.Json.dll".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Controls\Common\bin\Debug\Savchin.Tools.pdb".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Controls\Common\bin\Debug\Newtonsoft.Json.pdb".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Controls\Common\bin\Debug\Newtonsoft.Json.xml".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Controls\Common\obj\Debug\ResolveAssemblyReference.cache".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Controls\Common\obj\Debug\Savchin.Controls.Browsers.AssemblyBrowser.resources".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Controls\Common\obj\Debug\Savchin.Controls.Browsers.RegistryBrowser.resources".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Controls\Common\obj\Debug\Savchin.Controls.Common.Browsers.RegistryStringValueForm.resources".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Controls\Common\obj\Debug\Savchin.Controls.Common.ColorPicker.resources".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Controls\Common\obj\Debug\Savchin.Controls.Common.Comparer.CompareView.resources".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Controls\Common\obj\Debug\Savchin.Controls.Common.Comparer.FormFilter.resources".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Controls\Common\obj\Debug\Savchin.Controls.Docking.Resources.resources".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Controls\Common\obj\Debug\Savchin.Controls.Docking.Strings.resources".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Controls\Common\obj\Debug\Savchin.Controls.Common.ExceptionForm.resources".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Controls\Common\obj\Debug\Savchin.Controls.Common.Comparer.FormCompare.resources".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Controls\Common\obj\Debug\Savchin.Controls.Common.FormObject.resources".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Controls\Common\obj\Debug\Savchin.Controls.Common.frmSearch.resources".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Controls\Common\obj\Debug\Savchin.Controls.Properties.Resources.resources".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Controls\Common\obj\Debug\Savchin.Controls.Net.CredentialControl.resources".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Controls\Common\obj\Debug\Savchin.Controls.Net.InternetSettingsControl.resources".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Controls\Common\obj\Debug\Savchin.Controls.Net.ProxySettingsControl.resources".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Controls\Common\obj\Debug\Savchin.Controls.Wizard.Header.resources".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Controls\Common\obj\Debug\Savchin.Controls.Wizard.InfoContainer.resources".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Controls\Common\obj\Debug\Savchin.Controls.Wizard.InfoPage.resources".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Controls\Common\obj\Debug\Savchin.Controls.Wizard.Wizard.resources".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Controls\Common\obj\Debug\Savchin.Controls.Wizard.WizardPage.resources".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Controls\Common\obj\Debug\Savchin.Controls.Common.csproj.GenerateResource.Cache".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Controls\Common\obj\Debug\Savchin.Controls.Common.dll".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Controls\Common\obj\Debug\Savchin.Controls.Common.pdb".
+  [msbuild] EntityClean:
+  [msbuild]   Successfully cleaned the output for 0 EDMX files.
+  [msbuild] EntityDeploy:
+  [msbuild]   Processing 0 EDMX files.
+  [msbuild]   Finished processing 0 EDMX files.
+  [msbuild] CoreResGen:
+  [msbuild]   Processing resource file "Browsers\AssemblyBrowser.resx" into "obj\Debug\Savchin.Controls.Browsers.AssemblyBrowser.resources".
+  [msbuild]   Processing resource file "Browsers\RegistryBrowser.resx" into "obj\Debug\Savchin.Controls.Browsers.RegistryBrowser.resources".
+  [msbuild]   Processing resource file "Browsers\RegistryStringValueForm.resx" into "obj\Debug\Savchin.Controls.Common.Browsers.RegistryStringValueForm.resources".
+  [msbuild]   Processing resource file "ColorPicker.resx" into "obj\Debug\Savchin.Controls.Common.ColorPicker.resources".
+  [msbuild]   Processing resource file "Comparer\CompareView.resx" into "obj\Debug\Savchin.Controls.Common.Comparer.CompareView.resources".
+  [msbuild]   Processing resource file "Comparer\FormFilter.resx" into "obj\Debug\Savchin.Controls.Common.Comparer.FormFilter.resources".
+  [msbuild]   Processing resource file "Docking\Resources.resx" into "obj\Debug\Savchin.Controls.Docking.Resources.resources".
+  [msbuild]   Processing resource file "Docking\Strings.resx" into "obj\Debug\Savchin.Controls.Docking.Strings.resources".
+  [msbuild]   Processing resource file "ExceptionForm.resx" into "obj\Debug\Savchin.Controls.Common.ExceptionForm.resources".
+  [msbuild]   Processing resource file "Comparer\FormCompare.resx" into "obj\Debug\Savchin.Controls.Common.Comparer.FormCompare.resources".
+  [msbuild]   Processing resource file "FormObject.resx" into "obj\Debug\Savchin.Controls.Common.FormObject.resources".
+  [msbuild]   Processing resource file "frmSearch.resx" into "obj\Debug\Savchin.Controls.Common.frmSearch.resources".
+  [msbuild]   Processing resource file "Properties\Resources.resx" into "obj\Debug\Savchin.Controls.Properties.Resources.resources".
+  [msbuild]   Processing resource file "Net\CredentialControl.resx" into "obj\Debug\Savchin.Controls.Net.CredentialControl.resources".
+  [msbuild]   Processing resource file "Net\InternetSettingsControl.resx" into "obj\Debug\Savchin.Controls.Net.InternetSettingsControl.resources".
+  [msbuild]   Processing resource file "Net\ProxySettingsControl.resx" into "obj\Debug\Savchin.Controls.Net.ProxySettingsControl.resources".
+  [msbuild]   Processing resource file "Wizard\Header.resx" into "obj\Debug\Savchin.Controls.Wizard.Header.resources".
+  [msbuild]   Processing resource file "Wizard\InfoContainer.resx" into "obj\Debug\Savchin.Controls.Wizard.InfoContainer.resources".
+  [msbuild]   Processing resource file "Wizard\InfoPage.resx" into "obj\Debug\Savchin.Controls.Wizard.InfoPage.resources".
+  [msbuild]   Processing resource file "Wizard\Wizard.resx" into "obj\Debug\Savchin.Controls.Wizard.Wizard.resources".
+  [msbuild]   Processing resource file "Wizard\WizardPage.resx" into "obj\Debug\Savchin.Controls.Wizard.WizardPage.resources".
+  [msbuild] Docking\Win32\NativeMethods.cs(6,7): warning CS0105: The using directive for 'Savchin.Controls.Docking.Win32' appeared previously in this namespace
+  [msbuild] CSC : warning CS1607: Assembly generation -- The version '1.0.0.*' specified for the 'file version' is not in the normal 'major.minor.build.revision' format
+  [msbuild] _CopyFilesMarkedCopyLocal:
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\Libs\Tools\bin\Debug\Savchin.Tools.dll" to "bin\Debug\Savchin.Tools.dll".
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\Libs\Tools\bin\Debug\Newtonsoft.Json.dll" to "bin\Debug\Newtonsoft.Json.dll".
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\Libs\Tools\bin\Debug\Savchin.Tools.pdb" to "bin\Debug\Savchin.Tools.pdb".
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\Libs\Tools\bin\Debug\Newtonsoft.Json.pdb" to "bin\Debug\Newtonsoft.Json.pdb".
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\Libs\Tools\bin\Debug\Newtonsoft.Json.xml" to "bin\Debug\Newtonsoft.Json.xml".
+  [msbuild] CopyFilesToOutputDirectory:
+  [msbuild]   Copying file from "obj\Debug\Savchin.Controls.Common.dll" to "bin\Debug\Savchin.Controls.Common.dll".
+  [msbuild]   Savchin.Controls.Common -> S:\Develop\Projects\Net\Libs\Controls\Common\bin\Debug\Savchin.Controls.Common.dll
+  [msbuild]   Copying file from "obj\Debug\Savchin.Controls.Common.pdb" to "bin\Debug\Savchin.Controls.Common.pdb".
+  [msbuild] Done Building Project "S:\Develop\Projects\Net\Libs\Controls\Common\Savchin.Controls.Common.csproj" (Rebuild target(s)).
+  [msbuild] Project "S:\Develop\Projects\Net\CodeRocket\src\CodeRocket.sln" (1) is building "S:\Develop\Projects\Net\Libs\Data\Data.csproj" (5) on node 0 (Rebuild target(s)).
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Data\bin\Debug\Savchin.Data.dll".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Data\bin\Debug\Savchin.Data.pdb".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Data\bin\Debug\log4net.dll".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Data\bin\Debug\Savchin.Tools.dll".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Data\bin\Debug\Newtonsoft.Json.dll".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Data\bin\Debug\Savchin.Tools.pdb".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Data\bin\Debug\Newtonsoft.Json.pdb".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Data\bin\Debug\Newtonsoft.Json.xml".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Data\obj\Debug\ResolveAssemblyReference.cache".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Data\obj\Debug\Savchin.Data.CSV.Resources.ExceptionMessage.resources".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Data\obj\Debug\Data.csproj.GenerateResource.Cache".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Data\obj\Debug\Savchin.Data.dll".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Data\obj\Debug\Savchin.Data.pdb".
+  [msbuild] EntityClean:
+  [msbuild]   Successfully cleaned the output for 0 EDMX files.
+  [msbuild] EntityDeploy:
+  [msbuild]   Processing 0 EDMX files.
+  [msbuild]   Finished processing 0 EDMX files.
+  [msbuild] CoreResGen:
+  [msbuild]   Processing resource file "CSV\Resources\ExceptionMessage.resx" into "obj\Debug\Savchin.Data.CSV.Resources.ExceptionMessage.resources".
+  [msbuild] _CopyFilesMarkedCopyLocal:
+  [msbuild]   Copying file from "..\..\ThrPartLibs\log4net_1.2.9\log4net.dll" to "bin\Debug\log4net.dll".
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\Libs\Tools\bin\Debug\Savchin.Tools.dll" to "bin\Debug\Savchin.Tools.dll".
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\Libs\Tools\bin\Debug\Newtonsoft.Json.dll" to "bin\Debug\Newtonsoft.Json.dll".
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\Libs\Tools\bin\Debug\Savchin.Tools.pdb" to "bin\Debug\Savchin.Tools.pdb".
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\Libs\Tools\bin\Debug\Newtonsoft.Json.pdb" to "bin\Debug\Newtonsoft.Json.pdb".
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\Libs\Tools\bin\Debug\Newtonsoft.Json.xml" to "bin\Debug\Newtonsoft.Json.xml".
+  [msbuild] CopyFilesToOutputDirectory:
+  [msbuild]   Copying file from "obj\Debug\Savchin.Data.dll" to "bin\Debug\Savchin.Data.dll".
+  [msbuild]   Data -> S:\Develop\Projects\Net\Libs\Data\bin\Debug\Savchin.Data.dll
+  [msbuild]   Copying file from "obj\Debug\Savchin.Data.pdb" to "bin\Debug\Savchin.Data.pdb".
+  [msbuild] Done Building Project "S:\Develop\Projects\Net\Libs\Data\Data.csproj" (Rebuild target(s)).
+  [msbuild] Project "S:\Develop\Projects\Net\CodeRocket\src\CodeRocket.sln" (1) is building "S:\Develop\Projects\Net\Libs\Controls\PDModelBrowser\PDModelBrowser.csproj" (6) on node 0 (Rebuild target(s)).
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Controls\PDModelBrowser\bin\Debug\PDModelBrowser.dll".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Controls\PDModelBrowser\bin\Debug\PDModelBrowser.pdb".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Controls\PDModelBrowser\bin\Debug\Interop.PdCommon.dll".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Controls\PDModelBrowser\bin\Debug\Interop.PdPDM.dll".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Controls\PDModelBrowser\bin\Debug\Interop.PdWSP.dll".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Controls\PDModelBrowser\bin\Debug\Savchin.Controls.Common.dll".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Controls\PDModelBrowser\bin\Debug\Newtonsoft.Json.dll".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Controls\PDModelBrowser\bin\Debug\Savchin.Tools.dll".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Controls\PDModelBrowser\bin\Debug\Newtonsoft.Json.pdb".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Controls\PDModelBrowser\bin\Debug\Newtonsoft.Json.xml".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Controls\PDModelBrowser\bin\Debug\Savchin.Tools.pdb".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Controls\PDModelBrowser\bin\Debug\Savchin.Controls.Common.pdb".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Controls\PDModelBrowser\obj\Debug\ResolveAssemblyReference.cache".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Controls\PDModelBrowser\obj\Debug\Savchin.Controls.Browsers.PDBrowser.resources".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Controls\PDModelBrowser\obj\Debug\PDModelBrowser.csproj.GenerateResource.Cache".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Controls\PDModelBrowser\obj\Debug\PDModelBrowser.dll".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Controls\PDModelBrowser\obj\Debug\PDModelBrowser.pdb".
+  [msbuild] EntityClean:
+  [msbuild]   Successfully cleaned the output for 0 EDMX files.
+  [msbuild] EntityDeploy:
+  [msbuild]   Processing 0 EDMX files.
+  [msbuild]   Finished processing 0 EDMX files.
+  [msbuild] CoreResGen:
+  [msbuild]   Processing resource file "PDBrowser.resx" into "obj\Debug\Savchin.Controls.Browsers.PDBrowser.resources".
+  [msbuild] _CopyFilesMarkedCopyLocal:
+  [msbuild]   Copying file from "..\..\..\ThrPartLibs\PD\Strong\11\Interop.PdCommon.dll" to "bin\Debug\Interop.PdCommon.dll".
+  [msbuild]   Copying file from "..\..\..\ThrPartLibs\PD\Strong\11\Interop.PdPDM.dll" to "bin\Debug\Interop.PdPDM.dll".
+  [msbuild]   Copying file from "..\..\..\ThrPartLibs\PD\Strong\11\Interop.PdWSP.dll" to "bin\Debug\Interop.PdWSP.dll".
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\Libs\Controls\Common\bin\Debug\Savchin.Controls.Common.dll" to "bin\Debug\Savchin.Controls.Common.dll".
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\Libs\Controls\Common\bin\Debug\Newtonsoft.Json.dll" to "bin\Debug\Newtonsoft.Json.dll".
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\Libs\Controls\Common\bin\Debug\Savchin.Tools.dll" to "bin\Debug\Savchin.Tools.dll".
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\Libs\Controls\Common\bin\Debug\Newtonsoft.Json.pdb" to "bin\Debug\Newtonsoft.Json.pdb".
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\Libs\Controls\Common\bin\Debug\Newtonsoft.Json.xml" to "bin\Debug\Newtonsoft.Json.xml".
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\Libs\Controls\Common\bin\Debug\Savchin.Tools.pdb" to "bin\Debug\Savchin.Tools.pdb".
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\Libs\Controls\Common\bin\Debug\Savchin.Controls.Common.pdb" to "bin\Debug\Savchin.Controls.Common.pdb".
+  [msbuild] CopyFilesToOutputDirectory:
+  [msbuild]   Copying file from "obj\Debug\PDModelBrowser.dll" to "bin\Debug\PDModelBrowser.dll".
+  [msbuild]   PDModelBrowser -> S:\Develop\Projects\Net\Libs\Controls\PDModelBrowser\bin\Debug\PDModelBrowser.dll
+  [msbuild]   Copying file from "obj\Debug\PDModelBrowser.pdb" to "bin\Debug\PDModelBrowser.pdb".
+  [msbuild] Done Building Project "S:\Develop\Projects\Net\Libs\Controls\PDModelBrowser\PDModelBrowser.csproj" (Rebuild target(s)).
+  [msbuild] Project "S:\Develop\Projects\Net\CodeRocket\src\CodeRocket.sln" (1) is building "S:\Develop\Projects\Net\CodeRocket\src\DataSchema\DataSchema.csproj" (7) on node 0 (Rebuild target(s)).
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\DataSchema\bin\Debug\Savchin.Data.Schema.dll".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\DataSchema\bin\Debug\Savchin.Data.Schema.pdb".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\DataSchema\bin\Debug\Savchin.Controls.Common.dll".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\DataSchema\bin\Debug\Savchin.Data.dll".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\DataSchema\bin\Debug\Savchin.Tools.dll".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\DataSchema\bin\Debug\log4net.dll".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\DataSchema\bin\Debug\Newtonsoft.Json.dll".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\DataSchema\bin\Debug\Savchin.Data.pdb".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\DataSchema\bin\Debug\Savchin.Controls.Common.pdb".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\DataSchema\bin\Debug\Savchin.Tools.pdb".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\DataSchema\bin\Debug\Newtonsoft.Json.pdb".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\DataSchema\bin\Debug\Newtonsoft.Json.xml".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\DataSchema\bin\Debug\Savchin.Data.Schema.xml".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\DataSchema\obj\Debug\ResolveAssemblyReference.cache".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\DataSchema\obj\Debug\Savchin.Data.Schema.Controls.SchemaBrowser.resources".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\DataSchema\obj\Debug\DataSchema.csproj.GenerateResource.Cache".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\DataSchema\obj\Debug\Savchin.Data.Schema.dll".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\DataSchema\obj\Debug\Savchin.Data.Schema.pdb".
+  [msbuild] EntityClean:
+  [msbuild]   Successfully cleaned the output for 0 EDMX files.
+  [msbuild] EntityDeploy:
+  [msbuild]   Processing 0 EDMX files.
+  [msbuild]   Finished processing 0 EDMX files.
+  [msbuild] CoreResGen:
+  [msbuild]   Processing resource file "Controls\SchemaBrowser.resx" into "obj\Debug\Savchin.Data.Schema.Controls.SchemaBrowser.resources".
+  [msbuild] Builders\IDataSchemaBuilder.cs(6,22): warning CS1591: Missing XML comment for publicly visible type or member 'Savchin.Data.Schema.Builders.IDataSchemaBuilder'
+  [msbuild] Builders\OleDb\MssqlSchemaBuilder.cs(7,18): warning CS1591: Missing XML comment for publicly visible type or member 'Savchin.Data.Schema.Builders.MssqlSchemaBuilder'
+  [msbuild] Builders\SQLiteSchemaBuilder.cs(100,62): warning CS1573: Parameter 'type' has no matching param tag in the XML comment for 'Savchin.Data.Schema.Builders.SQLiteSchemaBuilder.BuildTable(System.Data.DataRow, Savchin.Data.Schema.TableType)' (but other parameters do)
+  [msbuild] Builders\SQLiteSchemaBuilder.cs(114,24): warning CS1591: Missing XML comment for publicly visible type or member 'Savchin.Data.Schema.Builders.SQLiteSchemaBuilder.BuildColumns(Savchin.Data.Schema.TableSchema)'
+  [msbuild] Schemas\DatabaseSchema.cs(25,29): warning CS1591: Missing XML comment for publicly visible type or member 'Savchin.Data.Schema.DatabaseSchema.Extension'
+  [msbuild] Schemas\DatabaseSchema.cs(97,23): warning CS1591: Missing XML comment for publicly visible type or member 'Savchin.Data.Schema.DatabaseSchema.ConnectionString'
+  [msbuild] Schemas\TableSchema.cs(150,45): warning CS1591: Missing XML comment for publicly visible type or member 'Savchin.Data.Schema.TableSchema.procedures'
+  [msbuild] Builders\OleDb\CommonServerSchemaBuilder.cs(15,24): warning CS0649: Field 'Savchin.Data.Schema.Builders.CommonServerSchemaBuilder._schemaFilter' is never assigned to, and will always have its default value null
+  [msbuild] _CopyFilesMarkedCopyLocal:
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\Libs\Controls\Common\bin\Debug\Savchin.Controls.Common.dll" to "bin\Debug\Savchin.Controls.Common.dll".
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\Libs\Data\bin\Debug\Savchin.Data.dll" to "bin\Debug\Savchin.Data.dll".
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\Libs\Tools\bin\Debug\Savchin.Tools.dll" to "bin\Debug\Savchin.Tools.dll".
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\Libs\Data\bin\Debug\log4net.dll" to "bin\Debug\log4net.dll".
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\Libs\Tools\bin\Debug\Newtonsoft.Json.dll" to "bin\Debug\Newtonsoft.Json.dll".
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\Libs\Data\bin\Debug\Savchin.Data.pdb" to "bin\Debug\Savchin.Data.pdb".
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\Libs\Controls\Common\bin\Debug\Savchin.Controls.Common.pdb" to "bin\Debug\Savchin.Controls.Common.pdb".
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\Libs\Tools\bin\Debug\Savchin.Tools.pdb" to "bin\Debug\Savchin.Tools.pdb".
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\Libs\Tools\bin\Debug\Newtonsoft.Json.pdb" to "bin\Debug\Newtonsoft.Json.pdb".
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\Libs\Tools\bin\Debug\Newtonsoft.Json.xml" to "bin\Debug\Newtonsoft.Json.xml".
+  [msbuild] CopyFilesToOutputDirectory:
+  [msbuild]   Copying file from "obj\Debug\Savchin.Data.Schema.dll" to "bin\Debug\Savchin.Data.Schema.dll".
+  [msbuild]   DataSchema -> S:\Develop\Projects\Net\CodeRocket\src\DataSchema\bin\Debug\Savchin.Data.Schema.dll
+  [msbuild]   Copying file from "obj\Debug\Savchin.Data.Schema.pdb" to "bin\Debug\Savchin.Data.Schema.pdb".
+  [msbuild] Done Building Project "S:\Develop\Projects\Net\CodeRocket\src\DataSchema\DataSchema.csproj" (Rebuild target(s)).
+  [msbuild] Project "S:\Develop\Projects\Net\CodeRocket\src\CodeRocket.sln" (1) is building "S:\Develop\Projects\Net\CodeRocket\src\DataSchemaTests\DataSchemaTests.csproj" (8) on node 0 (Rebuild target(s)).
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\DataSchemaTests\bin\Debug\Resources\Data.schema".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\DataSchemaTests\bin\Debug\Resources\test.s3db".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\DataSchemaTests\bin\Debug\Savchin.Data.Schema.Tests.dll".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\DataSchemaTests\bin\Debug\Savchin.Data.Schema.Tests.pdb".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\DataSchemaTests\bin\Debug\nunit.framework.dll".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\DataSchemaTests\bin\Debug\Savchin.Data.Schema.dll".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\DataSchemaTests\bin\Debug\log4net.dll".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\DataSchemaTests\bin\Debug\Savchin.Tools.dll".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\DataSchemaTests\bin\Debug\Savchin.Data.dll".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\DataSchemaTests\bin\Debug\Savchin.Controls.Common.dll".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\DataSchemaTests\bin\Debug\Newtonsoft.Json.dll".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\DataSchemaTests\bin\Debug\Savchin.Tools.pdb".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\DataSchemaTests\bin\Debug\Savchin.Data.pdb".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\DataSchemaTests\bin\Debug\Savchin.Controls.Common.pdb".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\DataSchemaTests\bin\Debug\Savchin.Data.Schema.pdb".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\DataSchemaTests\bin\Debug\Savchin.Data.Schema.xml".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\DataSchemaTests\bin\Debug\Newtonsoft.Json.pdb".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\DataSchemaTests\bin\Debug\Newtonsoft.Json.xml".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\DataSchemaTests\obj\Debug\ResolveAssemblyReference.cache".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\DataSchemaTests\obj\Debug\Savchin.Data.Schema.Tests.dll".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\DataSchemaTests\obj\Debug\Savchin.Data.Schema.Tests.pdb".
+  [msbuild] EntityClean:
+  [msbuild]   Successfully cleaned the output for 0 EDMX files.
+  [msbuild] EntityDeploy:
+  [msbuild]   Processing 0 EDMX files.
+  [msbuild]   Finished processing 0 EDMX files.
+  [msbuild] DatabaseSchemaTests.cs(6,7): warning CS0105: The using directive for 'Savchin.Data.Schema.Tests.Core' appeared previously in this namespace
+  [msbuild] _CopyFilesMarkedCopyLocal:
+  [msbuild]   Copying file from "..\..\..\ThrPartLibs\nunit.framework.dll" to "bin\Debug\nunit.framework.dll".
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\CodeRocket\src\DataSchema\bin\Debug\Savchin.Data.Schema.dll" to "bin\Debug\Savchin.Data.Schema.dll".
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\CodeRocket\src\DataSchema\bin\Debug\log4net.dll" to "bin\Debug\log4net.dll".
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\CodeRocket\src\DataSchema\bin\Debug\Savchin.Tools.dll" to "bin\Debug\Savchin.Tools.dll".
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\CodeRocket\src\DataSchema\bin\Debug\Savchin.Data.dll" to "bin\Debug\Savchin.Data.dll".
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\CodeRocket\src\DataSchema\bin\Debug\Savchin.Controls.Common.dll" to "bin\Debug\Savchin.Controls.Common.dll".
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\CodeRocket\src\DataSchema\bin\Debug\Newtonsoft.Json.dll" to "bin\Debug\Newtonsoft.Json.dll".
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\CodeRocket\src\DataSchema\bin\Debug\Savchin.Tools.pdb" to "bin\Debug\Savchin.Tools.pdb".
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\CodeRocket\src\DataSchema\bin\Debug\Savchin.Data.pdb" to "bin\Debug\Savchin.Data.pdb".
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\CodeRocket\src\DataSchema\bin\Debug\Savchin.Controls.Common.pdb" to "bin\Debug\Savchin.Controls.Common.pdb".
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\CodeRocket\src\DataSchema\bin\Debug\Savchin.Data.Schema.pdb" to "bin\Debug\Savchin.Data.Schema.pdb".
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\CodeRocket\src\DataSchema\bin\Debug\Savchin.Data.Schema.xml" to "bin\Debug\Savchin.Data.Schema.xml".
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\CodeRocket\src\DataSchema\bin\Debug\Newtonsoft.Json.pdb" to "bin\Debug\Newtonsoft.Json.pdb".
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\CodeRocket\src\DataSchema\bin\Debug\Newtonsoft.Json.xml" to "bin\Debug\Newtonsoft.Json.xml".
+  [msbuild] _CopyOutOfDateSourceItemsToOutputDirectory:
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\CodeRocket\src\DataSchemaTests\Resources\Data.schema" to "bin\Debug\Resources\Data.schema".
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\CodeRocket\src\DataSchemaTests\Resources\test.s3db" to "bin\Debug\Resources\test.s3db".
+  [msbuild] CopyFilesToOutputDirectory:
+  [msbuild]   Copying file from "obj\Debug\Savchin.Data.Schema.Tests.dll" to "bin\Debug\Savchin.Data.Schema.Tests.dll".
+  [msbuild]   DataSchemaTests -> S:\Develop\Projects\Net\CodeRocket\src\DataSchemaTests\bin\Debug\Savchin.Data.Schema.Tests.dll
+  [msbuild]   Copying file from "obj\Debug\Savchin.Data.Schema.Tests.pdb" to "bin\Debug\Savchin.Data.Schema.Tests.pdb".
+  [msbuild] Done Building Project "S:\Develop\Projects\Net\CodeRocket\src\DataSchemaTests\DataSchemaTests.csproj" (Rebuild target(s)).
+  [msbuild] Project "S:\Develop\Projects\Net\CodeRocket\src\CodeRocket.sln" (1) is building "S:\Develop\Projects\Net\CodeRocket\src\GeneratorTools\GeneratorTools.csproj" (9) on node 0 (Rebuild target(s)).
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\GeneratorTools\bin\Debug\GeneratorTools.dll".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\GeneratorTools\bin\Debug\GeneratorTools.pdb".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\GeneratorTools\bin\Debug\Savchin.Data.Schema.dll".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\GeneratorTools\bin\Debug\Savchin.Tools.dll".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\GeneratorTools\bin\Debug\log4net.dll".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\GeneratorTools\bin\Debug\Savchin.Data.dll".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\GeneratorTools\bin\Debug\Savchin.Controls.Common.dll".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\GeneratorTools\bin\Debug\Newtonsoft.Json.dll".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\GeneratorTools\bin\Debug\Savchin.Data.pdb".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\GeneratorTools\bin\Debug\Savchin.Controls.Common.pdb".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\GeneratorTools\bin\Debug\Savchin.Tools.pdb".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\GeneratorTools\bin\Debug\Savchin.Data.Schema.pdb".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\GeneratorTools\bin\Debug\Savchin.Data.Schema.xml".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\GeneratorTools\bin\Debug\Newtonsoft.Json.pdb".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\GeneratorTools\bin\Debug\Newtonsoft.Json.xml".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\GeneratorTools\obj\Debug\GeneratorTools.dll".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\GeneratorTools\obj\Debug\GeneratorTools.pdb".
+  [msbuild] EntityClean:
+  [msbuild]   Successfully cleaned the output for 0 EDMX files.
+  [msbuild] EntityDeploy:
+  [msbuild]   Processing 0 EDMX files.
+  [msbuild]   Finished processing 0 EDMX files.
+  [msbuild] _CopyFilesMarkedCopyLocal:
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\CodeRocket\src\DataSchema\bin\Debug\Savchin.Data.Schema.dll" to "bin\Debug\Savchin.Data.Schema.dll".
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\Libs\Tools\bin\Debug\Savchin.Tools.dll" to "bin\Debug\Savchin.Tools.dll".
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\CodeRocket\src\DataSchema\bin\Debug\log4net.dll" to "bin\Debug\log4net.dll".
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\CodeRocket\src\DataSchema\bin\Debug\Savchin.Data.dll" to "bin\Debug\Savchin.Data.dll".
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\CodeRocket\src\DataSchema\bin\Debug\Savchin.Controls.Common.dll" to "bin\Debug\Savchin.Controls.Common.dll".
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\Libs\Tools\bin\Debug\Newtonsoft.Json.dll" to "bin\Debug\Newtonsoft.Json.dll".
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\CodeRocket\src\DataSchema\bin\Debug\Savchin.Data.pdb" to "bin\Debug\Savchin.Data.pdb".
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\CodeRocket\src\DataSchema\bin\Debug\Savchin.Controls.Common.pdb" to "bin\Debug\Savchin.Controls.Common.pdb".
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\Libs\Tools\bin\Debug\Savchin.Tools.pdb" to "bin\Debug\Savchin.Tools.pdb".
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\CodeRocket\src\DataSchema\bin\Debug\Savchin.Data.Schema.pdb" to "bin\Debug\Savchin.Data.Schema.pdb".
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\CodeRocket\src\DataSchema\bin\Debug\Savchin.Data.Schema.xml" to "bin\Debug\Savchin.Data.Schema.xml".
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\Libs\Tools\bin\Debug\Newtonsoft.Json.pdb" to "bin\Debug\Newtonsoft.Json.pdb".
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\Libs\Tools\bin\Debug\Newtonsoft.Json.xml" to "bin\Debug\Newtonsoft.Json.xml".
+  [msbuild] CopyFilesToOutputDirectory:
+  [msbuild]   Copying file from "obj\Debug\GeneratorTools.dll" to "bin\Debug\GeneratorTools.dll".
+  [msbuild]   GeneratorTools -> S:\Develop\Projects\Net\CodeRocket\src\GeneratorTools\bin\Debug\GeneratorTools.dll
+  [msbuild]   Copying file from "obj\Debug\GeneratorTools.pdb" to "bin\Debug\GeneratorTools.pdb".
+  [msbuild] Done Building Project "S:\Develop\Projects\Net\CodeRocket\src\GeneratorTools\GeneratorTools.csproj" (Rebuild target(s)).
+  [msbuild] Project "S:\Develop\Projects\Net\CodeRocket\src\CodeRocket.sln" (1) is building "S:\Develop\Projects\Net\CodeRocket\src\CodeGeneration\CodeGeneration.csproj" (10) on node 0 (Rebuild target(s)).
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\CodeGeneration\bin\Debug\Savchin.CodeGeneration.dll".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\CodeGeneration\bin\Debug\Savchin.CodeGeneration.pdb".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\CodeGeneration\bin\Debug\CodeParser.dll".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\CodeGeneration\bin\Debug\Commons.dll".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\CodeGeneration\bin\Debug\GeneratorTools.dll".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\CodeGeneration\bin\Debug\Interop.PdCommon.dll".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\CodeGeneration\bin\Debug\Interop.PdPDM.dll".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\CodeGeneration\bin\Debug\log4net.dll".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\CodeGeneration\bin\Debug\NVelocity.dll".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\CodeGeneration\bin\Debug\PDModelBrowser.dll".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\CodeGeneration\bin\Debug\Savchin.Controls.Common.dll".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\CodeGeneration\bin\Debug\Savchin.Data.Schema.dll".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\CodeGeneration\bin\Debug\Savchin.Tools.dll".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\CodeGeneration\bin\Debug\Newtonsoft.Json.dll".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\CodeGeneration\bin\Debug\Interop.PdWSP.dll".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\CodeGeneration\bin\Debug\Savchin.Data.dll".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\CodeGeneration\bin\Debug\Newtonsoft.Json.pdb".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\CodeGeneration\bin\Debug\Newtonsoft.Json.xml".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\CodeGeneration\bin\Debug\Savchin.Tools.pdb".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\CodeGeneration\bin\Debug\GeneratorTools.pdb".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\CodeGeneration\bin\Debug\PDModelBrowser.pdb".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\CodeGeneration\bin\Debug\Savchin.Controls.Common.pdb".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\CodeGeneration\bin\Debug\Savchin.Data.Schema.pdb".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\CodeGeneration\bin\Debug\Savchin.Data.Schema.xml".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\CodeGeneration\bin\Debug\Savchin.Data.pdb".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\CodeGeneration\bin\Debug\CodeParser.pdb".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\CodeGeneration\obj\Debug\ResolveAssemblyReference.cache".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\CodeGeneration\obj\Debug\Savchin.CodeGeneration.GeneratorProjectBrowser.resources".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\CodeGeneration\obj\Debug\CodeGeneration.csproj.GenerateResource.Cache".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\CodeGeneration\obj\Debug\Savchin.CodeGeneration.dll".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\CodeGeneration\obj\Debug\Savchin.CodeGeneration.pdb".
+  [msbuild] EntityClean:
+  [msbuild]   Successfully cleaned the output for 0 EDMX files.
+  [msbuild] EntityDeploy:
+  [msbuild]   Processing 0 EDMX files.
+  [msbuild]   Finished processing 0 EDMX files.
+  [msbuild] ResolveAssemblyReferences:
+  [msbuild]   Primary reference "Interop.PGMRX120Lib".
+  [msbuild] C:\WINDOWS\Microsoft.NET\Framework\v3.5\Microsoft.Common.targets : warning MSB3245: Could not resolve this reference. Could not locate the assembly "Interop.PGMRX120Lib". Check to make sure the assembly exists on disk. If this reference is required by your code, you may get compilation errors.
+  [msbuild]           For SearchPath "{HintPathFromItem}".
+  [msbuild]           Considered "..\..\..\..\..\ThrPartLibs\Interop.PGMRX120Lib.dll", but it didn't exist.
+  [msbuild]           For SearchPath "{TargetFrameworkDirectory}".
+  [msbuild]           Considered "C:\Program Files\Reference Assemblies\Microsoft\Framework\v3.5\Interop.PGMRX120Lib.exe", but it didn't exist.
+  [msbuild]           Considered "C:\Program Files\Reference Assemblies\Microsoft\Framework\v3.5\Interop.PGMRX120Lib.dll", but it didn't exist.
+  [msbuild]           Considered "C:\Program Files\Reference Assemblies\Microsoft\Framework\v3.0\Interop.PGMRX120Lib.exe", but it didn't exist.
+  [msbuild]           Considered "C:\Program Files\Reference Assemblies\Microsoft\Framework\v3.0\Interop.PGMRX120Lib.dll", but it didn't exist.
+  [msbuild]           Considered "C:\WINDOWS\Microsoft.NET\Framework\v3.5\Interop.PGMRX120Lib.exe", but it didn't exist.
+  [msbuild]           Considered "C:\WINDOWS\Microsoft.NET\Framework\v3.5\Interop.PGMRX120Lib.dll", but it didn't exist.
+  [msbuild]           Considered "C:\WINDOWS\Microsoft.NET\Framework\v3.0\Interop.PGMRX120Lib.exe", but it didn't exist.
+  [msbuild]           Considered "C:\WINDOWS\Microsoft.NET\Framework\v3.0\Interop.PGMRX120Lib.dll", but it didn't exist.
+  [msbuild]           Considered "C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\Interop.PGMRX120Lib.exe", but it didn't exist.
+  [msbuild]           Considered "C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\Interop.PGMRX120Lib.dll", but it didn't exist.
+  [msbuild]           For SearchPath "{Registry:Software\Microsoft\.NetFramework,v3.5,AssemblyFoldersEx}".
+  [msbuild]           Considered "C:\Program Files\Microsoft ASP.NET\ASP.NET 2.0 AJAX Extensions\v1.0.61025\Interop.PGMRX120Lib.exe", but it didn't exist.
+  [msbuild]           Considered "C:\Program Files\Microsoft ASP.NET\ASP.NET 2.0 AJAX Extensions\v1.0.61025\Interop.PGMRX120Lib.dll", but it didn't exist.
+  [msbuild]           Considered "C:\Program Files\Common Files\Business Objects\2.7\Managed\Interop.PGMRX120Lib.exe", but it didn't exist.
+  [msbuild]           Considered "C:\Program Files\Common Files\Business Objects\2.7\Managed\Interop.PGMRX120Lib.dll", but it didn't exist.
+  [msbuild]           Considered "C:\Program Files\Business Objects\Common\2.8\managed\Interop.PGMRX120Lib.exe", but it didn't exist.
+  [msbuild]           Considered "C:\Program Files\Business Objects\Common\2.8\managed\Interop.PGMRX120Lib.dll", but it didn't exist.
+  [msbuild]           Considered "C:\Program Files\Common Files\Devart\dotConnect\5.00\Net2\Interop.PGMRX120Lib.exe", but it didn't exist.
+  [msbuild]           Considered "C:\Program Files\Common Files\Devart\dotConnect\5.00\Net2\Interop.PGMRX120Lib.dll", but it didn't exist.
+  [msbuild]           Considered "D:\Program Files\Microsoft Visual Studio 9.0\Visual Studio Tools for Office\PIA\Office11\Interop.PGMRX120Lib.exe", but it didn't exist.
+  [msbuild]           Considered "D:\Program Files\Microsoft Visual Studio 9.0\Visual Studio Tools for Office\PIA\Office11\Interop.PGMRX120Lib.dll", but it didn't exist.
+  [msbuild]           Considered "D:\Program Files\Microsoft Visual Studio 9.0\Visual Studio Tools for Office\PIA\Office12\Interop.PGMRX120Lib.exe", but it didn't exist.
+  [msbuild]           Considered "D:\Program Files\Microsoft Visual Studio 9.0\Visual Studio Tools for Office\PIA\Office12\Interop.PGMRX120Lib.dll", but it didn't exist.
+  [msbuild]           Considered "C:\Program Files\Microsoft.NET\Primary Interop Assemblies\Interop.PGMRX120Lib.exe", but it didn't exist.
+  [msbuild]           Considered "C:\Program Files\Microsoft.NET\Primary Interop Assemblies\Interop.PGMRX120Lib.dll", but it didn't exist.
+  [msbuild]           Considered "d:\Program Files\Microsoft Visual Studio 8\Common7\IDE\PublicAssemblies\Interop.PGMRX120Lib.exe", but it didn't exist.
+  [msbuild]           Considered "d:\Program Files\Microsoft Visual Studio 8\Common7\IDE\PublicAssemblies\Interop.PGMRX120Lib.dll", but it didn't exist.
+  [msbuild]           Considered "C:\Program Files\Common Files\Microsoft Shared\MSEnv\PublicAssemblies\Interop.PGMRX120Lib.exe", but it didn't exist.
+  [msbuild]           Considered "C:\Program Files\Common Files\Microsoft Shared\MSEnv\PublicAssemblies\Interop.PGMRX120Lib.dll", but it didn't exist.
+  [msbuild]           Considered "D:\Program Files\Microsoft Visual Studio 9.0\Common7\IDE\PublicAssemblies\Interop.PGMRX120Lib.exe", but it didn't exist.
+  [msbuild]           Considered "D:\Program Files\Microsoft Visual Studio 9.0\Common7\IDE\PublicAssemblies\Interop.PGMRX120Lib.dll", but it didn't exist.
+  [msbuild]           Considered "d:\Program Files\Microsoft Visual Studio 8\ReportViewer\Interop.PGMRX120Lib.exe", but it didn't exist.
+  [msbuild]           Considered "d:\Program Files\Microsoft Visual Studio 8\ReportViewer\Interop.PGMRX120Lib.dll", but it didn't exist.
+  [msbuild]           Considered "D:\Program Files\Microsoft Visual Studio 9.0\ReportViewer\Interop.PGMRX120Lib.exe", but it didn't exist.
+  [msbuild]           Considered "D:\Program Files\Microsoft Visual Studio 9.0\ReportViewer\Interop.PGMRX120Lib.dll", but it didn't exist.
+  [msbuild]           Considered "C:\Program Files\Microsoft SDKs\Silverlight\v2.0\Libraries\Server\Interop.PGMRX120Lib.exe", but it didn't exist.
+  [msbuild]           Considered "C:\Program Files\Microsoft SDKs\Silverlight\v2.0\Libraries\Server\Interop.PGMRX120Lib.dll", but it didn't exist.
+  [msbuild]           Considered "d:\Program Files\Devart\dotConnect\SQLite\Interop.PGMRX120Lib.exe", but it didn't exist.
+  [msbuild]           Considered "d:\Program Files\Devart\dotConnect\SQLite\Interop.PGMRX120Lib.dll", but it didn't exist.
+  [msbuild]           Considered "C:\Program Files\Common Files\Microsoft Shared\Visual Basic Power Packs\1.1\Interop.PGMRX120Lib.exe", but it didn't exist.
+  [msbuild]           Considered "C:\Program Files\Common Files\Microsoft Shared\Visual Basic Power Packs\1.1\Interop.PGMRX120Lib.dll", but it didn't exist.
+  [msbuild]           Considered "D:\Program Files\Microsoft Visual Studio 9.0\DBPro\Interop.PGMRX120Lib.exe", but it didn't exist.
+  [msbuild]           Considered "D:\Program Files\Microsoft Visual Studio 9.0\DBPro\Interop.PGMRX120Lib.dll", but it didn't exist.
+  [msbuild]           Considered "C:\Program Files\Reference Assemblies\Microsoft\VSTA\v9.0\Interop.PGMRX120Lib.exe", but it didn't exist.
+  [msbuild]           Considered "C:\Program Files\Reference Assemblies\Microsoft\VSTA\v9.0\Interop.PGMRX120Lib.dll", but it didn't exist.
+  [msbuild]           Considered "C:\Program Files\Common Files\Microsoft Shared\VSTO\8.0\Interop.PGMRX120Lib.exe", but it didn't exist.
+  [msbuild]           Considered "C:\Program Files\Common Files\Microsoft Shared\VSTO\8.0\Interop.PGMRX120Lib.dll", but it didn't exist.
+  [msbuild]           Considered "C:\Program Files\Reference Assemblies\Microsoft\VSTO\v8.0\Interop.PGMRX120Lib.exe", but it didn't exist.
+  [msbuild]           Considered "C:\Program Files\Reference Assemblies\Microsoft\VSTO\v8.0\Interop.PGMRX120Lib.dll", but it didn't exist.
+  [msbuild]           Considered "C:\Program Files\Reference Assemblies\Microsoft\VSTO\v9.0\Interop.PGMRX120Lib.exe", but it didn't exist.
+  [msbuild]           Considered "C:\Program Files\Reference Assemblies\Microsoft\VSTO\v9.0\Interop.PGMRX120Lib.dll", but it didn't exist.
+  [msbuild]           For SearchPath "{AssemblyFolders}".
+  [msbuild]           Considered "C:\Program Files\Reference Assemblies\Microsoft\Framework\v3.5\Interop.PGMRX120Lib.exe", but it didn't exist.
+  [msbuild]           Considered "C:\Program Files\Reference Assemblies\Microsoft\Framework\v3.5\Interop.PGMRX120Lib.dll", but it didn't exist.
+  [msbuild]           Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2910.0\Interop.PGMRX120Lib.exe", but it didn't exist.
+  [msbuild]           Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2910.0\Interop.PGMRX120Lib.dll", but it didn't exist.
+  [msbuild]           Considered "C:\Program Files\Microsoft Synchronization Services\ADO.NET\v1.0\Interop.PGMRX120Lib.exe", but it didn't exist.
+  [msbuild]           Considered "C:\Program Files\Microsoft Synchronization Services\ADO.NET\v1.0\Interop.PGMRX120Lib.dll", but it didn't exist.
+  [msbuild]           Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2911.0\Interop.PGMRX120Lib.exe", but it didn't exist.
+  [msbuild]           Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2911.0\Interop.PGMRX120Lib.dll", but it didn't exist.
+  [msbuild]           Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2909.0\Interop.PGMRX120Lib.exe", but it didn't exist.
+  [msbuild]           Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2909.0\Interop.PGMRX120Lib.dll", but it didn't exist.
+  [msbuild]           Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2905.0\Interop.PGMRX120Lib.exe", but it didn't exist.
+  [msbuild]           Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2905.0\Interop.PGMRX120Lib.dll", but it didn't exist.
+  [msbuild]           Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2908.0\Interop.PGMRX120Lib.exe", but it didn't exist.
+  [msbuild]           Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2908.0\Interop.PGMRX120Lib.dll", but it didn't exist.
+  [msbuild]           Considered "D:\Program Files\Microsoft SQL Server\90\NotificationServices\9.0.242\Bin\Interop.PGMRX120Lib.exe", but it didn't exist.
+  [msbuild]           Considered "D:\Program Files\Microsoft SQL Server\90\NotificationServices\9.0.242\Bin\Interop.PGMRX120Lib.dll", but it didn't exist.
+  [msbuild]           Considered "D:\Program Files\Microsoft SQL Server\90\SDK\Assemblies\Interop.PGMRX120Lib.exe", but it didn't exist.
+  [msbuild]           Considered "D:\Program Files\Microsoft SQL Server\90\SDK\Assemblies\Interop.PGMRX120Lib.dll", but it didn't exist.
+  [msbuild]           Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2904.0\Interop.PGMRX120Lib.exe", but it didn't exist.
+  [msbuild]           Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2904.0\Interop.PGMRX120Lib.dll", but it didn't exist.
+  [msbuild]           Considered "D:\Program Files\Microsoft SQL Server\MSSQL.2\OLAP\bin\Interop.PGMRX120Lib.exe", but it didn't exist.
+  [msbuild]           Considered "D:\Program Files\Microsoft SQL Server\MSSQL.2\OLAP\bin\Interop.PGMRX120Lib.dll", but it didn't exist.
+  [msbuild]           Considered "C:\Program Files\SQLXML 4.0\bin\Interop.PGMRX120Lib.exe", but it didn't exist.
+  [msbuild]           Considered "C:\Program Files\SQLXML 4.0\bin\Interop.PGMRX120Lib.dll", but it didn't exist.
+  [msbuild]           Considered "d:\Program Files\Devart\dotConnect\SQLite\Interop.PGMRX120Lib.exe", but it didn't exist.
+  [msbuild]           Considered "d:\Program Files\Devart\dotConnect\SQLite\Interop.PGMRX120Lib.dll", but it didn't exist.
+  [msbuild]           Considered "C:\Program Files\Common Files\Devart\dotConnect\5.00\Net2\Interop.PGMRX120Lib.exe", but it didn't exist.
+  [msbuild]           Considered "C:\Program Files\Common Files\Devart\dotConnect\5.00\Net2\Interop.PGMRX120Lib.dll", but it didn't exist.
+  [msbuild]           Considered "d:\Program Files\Dundas Software\DiagrammingVS2005\Bin_2005\Interop.PGMRX120Lib.exe", but it didn't exist.
+  [msbuild]           Considered "d:\Program Files\Dundas Software\DiagrammingVS2005\Bin_2005\Interop.PGMRX120Lib.dll", but it didn't exist.
+  [msbuild]           Considered "D:\Program Files\Microsoft SQL Server\90\DTS\Connections\Interop.PGMRX120Lib.exe", but it didn't exist.
+  [msbuild]           Considered "D:\Program Files\Microsoft SQL Server\90\DTS\Connections\Interop.PGMRX120Lib.dll", but it didn't exist.
+  [msbuild]           Considered "D:\Program Files\Actipro Software\WPFStudio\v4.5.0482\Assemblies\Interop.PGMRX120Lib.exe", but it didn't exist.
+  [msbuild]           Considered "D:\Program Files\Actipro Software\WPFStudio\v4.5.0482\Assemblies\Interop.PGMRX120Lib.dll", but it didn't exist.
+  [msbuild]           Considered "C:\Program Files\Reference Assemblies\Microsoft\Framework\v3.0\Interop.PGMRX120Lib.exe", but it didn't exist.
+  [msbuild]           Considered "C:\Program Files\Reference Assemblies\Microsoft\Framework\v3.0\Interop.PGMRX120Lib.dll", but it didn't exist.
+  [msbuild]           Considered "C:\Program Files\Microsoft.NET\ADOMD.NET\90\Interop.PGMRX120Lib.exe", but it didn't exist.
+  [msbuild]           Considered "C:\Program Files\Microsoft.NET\ADOMD.NET\90\Interop.PGMRX120Lib.dll", but it didn't exist.
+  [msbuild]           Considered "D:\Program Files\Microsoft SQL Server\90\DTS\Tasks\Interop.PGMRX120Lib.exe", but it didn't exist.
+  [msbuild]           Considered "D:\Program Files\Microsoft SQL Server\90\DTS\Tasks\Interop.PGMRX120Lib.dll", but it didn't exist.
+  [msbuild]           Considered "C:\Program Files\Common Files\Telerik\Charting\2.0.4\Interop.PGMRX120Lib.exe", but it didn't exist.
+  [msbuild]           Considered "C:\Program Files\Common Files\Telerik\Charting\2.0.4\Interop.PGMRX120Lib.dll", but it didn't exist.
+  [msbuild]           Considered "D:\Program Files\Infragistics\NetAdvantage 2006 Volume 2 CLR 2.0\Windows Forms\Bin\Interop.PGMRX120Lib.exe", but it didn't exist.
+  [msbuild]           Considered "D:\Program Files\Infragistics\NetAdvantage 2006 Volume 2 CLR 2.0\Windows Forms\Bin\Interop.PGMRX120Lib.dll", but it didn't exist.
+  [msbuild]           Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2907.0\Interop.PGMRX120Lib.exe", but it didn't exist.
+  [msbuild]           Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2907.0\Interop.PGMRX120Lib.dll", but it didn't exist.
+  [msbuild]           Considered "C:\Program Files\Microsoft SQL Server Compact Edition\v3.5\Desktop\Interop.PGMRX120Lib.exe", but it didn't exist.
+  [msbuild]           Considered "C:\Program Files\Microsoft SQL Server Compact Edition\v3.5\Desktop\Interop.PGMRX120Lib.dll", but it didn't exist.
+  [msbuild]           Considered "D:\Program Files\Infragistics\NetAdvantage 2006 Volume 2 CLR 2.0\ASP.NET\Bin\Interop.PGMRX120Lib.exe", but it didn't exist.
+  [msbuild]           Considered "D:\Program Files\Infragistics\NetAdvantage 2006 Volume 2 CLR 2.0\ASP.NET\Bin\Interop.PGMRX120Lib.dll", but it didn't exist.
+  [msbuild]           Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2903.0\Interop.PGMRX120Lib.exe", but it didn't exist.
+  [msbuild]           Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2903.0\Interop.PGMRX120Lib.dll", but it didn't exist.
+  [msbuild]           Considered "D:\Program Files\Microsoft SQL Server\100\SDK\Assemblies\Interop.PGMRX120Lib.exe", but it didn't exist.
+  [msbuild]           Considered "D:\Program Files\Microsoft SQL Server\100\SDK\Assemblies\Interop.PGMRX120Lib.dll", but it didn't exist.
+  [msbuild]           Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2906.0\Interop.PGMRX120Lib.exe", but it didn't exist.
+  [msbuild]           Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2906.0\Interop.PGMRX120Lib.dll", but it didn't exist.
+  [msbuild]           Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2902.0\Interop.PGMRX120Lib.exe", but it didn't exist.
+  [msbuild]           Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2902.0\Interop.PGMRX120Lib.dll", but it didn't exist.
+  [msbuild]           Considered "D:\Program Files\Microsoft SQL Server\90\DTS\PipelineComponents\Interop.PGMRX120Lib.exe", but it didn't exist.
+  [msbuild]           Considered "D:\Program Files\Microsoft SQL Server\90\DTS\PipelineComponents\Interop.PGMRX120Lib.dll", but it didn't exist.
+  [msbuild]           Considered "D:\Program Files\Microsoft SQL Server\90\DTS\ForEachEnumerators\Interop.PGMRX120Lib.exe", but it didn't exist.
+  [msbuild]           Considered "D:\Program Files\Microsoft SQL Server\90\DTS\ForEachEnumerators\Interop.PGMRX120Lib.dll", but it didn't exist.
+  [msbuild]           For SearchPath "{GAC}".
+  [msbuild]           Considered "Interop.PGMRX120Lib", which was not found in the GAC.
+  [msbuild]           For SearchPath "{RawFileName}".
+  [msbuild]           Considered treating "Interop.PGMRX120Lib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" as a file name, but it didn't exist.
+  [msbuild]           For SearchPath "bin\Debug\".
+  [msbuild]           Considered "bin\Debug\Interop.PGMRX120Lib.exe", but it didn't exist.
+  [msbuild]           Considered "bin\Debug\Interop.PGMRX120Lib.dll", but it didn't exist.
+  [msbuild] CoreResGen:
+  [msbuild]   Processing resource file "Common\GeneratorProjectBrowser.resx" into "obj\Debug\Savchin.CodeGeneration.GeneratorProjectBrowser.resources".
+  [msbuild] _CopyFilesMarkedCopyLocal:
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\Libs\CodeParser\bin\Debug\CodeParser.dll" to "bin\Debug\CodeParser.dll".
+  [msbuild]   Copying file from "..\..\..\ThrPartLibs\NVelocity\Commons.dll" to "bin\Debug\Commons.dll".
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\CodeRocket\src\GeneratorTools\bin\Debug\GeneratorTools.dll" to "bin\Debug\GeneratorTools.dll".
+  [msbuild]   Copying file from "..\..\..\ThrPartLibs\PD\Strong\12\Interop.PdCommon.dll" to "bin\Debug\Interop.PdCommon.dll".
+  [msbuild]   Copying file from "..\..\..\ThrPartLibs\PD\Strong\12\Interop.PdPDM.dll" to "bin\Debug\Interop.PdPDM.dll".
+  [msbuild]   Copying file from "..\..\..\ThrPartLibs\log4net_1.2.9\log4net.dll" to "bin\Debug\log4net.dll".
+  [msbuild]   Copying file from "..\..\..\ThrPartLibs\NVelocity\NVelocity.dll" to "bin\Debug\NVelocity.dll".
+  [msbuild]   Copying file from "..\..\..\Libs\Controls\PDModelBrowser\bin\Debug\PDModelBrowser.dll" to "bin\Debug\PDModelBrowser.dll".
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\Libs\Controls\Common\bin\Debug\Savchin.Controls.Common.dll" to "bin\Debug\Savchin.Controls.Common.dll".
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\CodeRocket\src\DataSchema\bin\Debug\Savchin.Data.Schema.dll" to "bin\Debug\Savchin.Data.Schema.dll".
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\Libs\Tools\bin\Debug\Savchin.Tools.dll" to "bin\Debug\Savchin.Tools.dll".
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\Libs\Tools\bin\Debug\Newtonsoft.Json.dll" to "bin\Debug\Newtonsoft.Json.dll".
+  [msbuild]   Copying file from "..\..\..\Libs\Controls\PDModelBrowser\bin\Debug\Interop.PdWSP.dll" to "bin\Debug\Interop.PdWSP.dll".
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\CodeRocket\src\DataSchema\bin\Debug\Savchin.Data.dll" to "bin\Debug\Savchin.Data.dll".
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\Libs\Tools\bin\Debug\Newtonsoft.Json.pdb" to "bin\Debug\Newtonsoft.Json.pdb".
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\Libs\Tools\bin\Debug\Newtonsoft.Json.xml" to "bin\Debug\Newtonsoft.Json.xml".
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\Libs\Tools\bin\Debug\Savchin.Tools.pdb" to "bin\Debug\Savchin.Tools.pdb".
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\CodeRocket\src\GeneratorTools\bin\Debug\GeneratorTools.pdb" to "bin\Debug\GeneratorTools.pdb".
+  [msbuild]   Copying file from "..\..\..\Libs\Controls\PDModelBrowser\bin\Debug\PDModelBrowser.pdb" to "bin\Debug\PDModelBrowser.pdb".
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\Libs\Controls\Common\bin\Debug\Savchin.Controls.Common.pdb" to "bin\Debug\Savchin.Controls.Common.pdb".
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\CodeRocket\src\DataSchema\bin\Debug\Savchin.Data.Schema.pdb" to "bin\Debug\Savchin.Data.Schema.pdb".
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\CodeRocket\src\DataSchema\bin\Debug\Savchin.Data.Schema.xml" to "bin\Debug\Savchin.Data.Schema.xml".
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\CodeRocket\src\DataSchema\bin\Debug\Savchin.Data.pdb" to "bin\Debug\Savchin.Data.pdb".
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\Libs\CodeParser\bin\Debug\CodeParser.pdb" to "bin\Debug\CodeParser.pdb".
+  [msbuild] CopyFilesToOutputDirectory:
+  [msbuild]   Copying file from "obj\Debug\Savchin.CodeGeneration.dll" to "bin\Debug\Savchin.CodeGeneration.dll".
+  [msbuild]   CodeGeneration -> S:\Develop\Projects\Net\CodeRocket\src\CodeGeneration\bin\Debug\Savchin.CodeGeneration.dll
+  [msbuild]   Copying file from "obj\Debug\Savchin.CodeGeneration.pdb" to "bin\Debug\Savchin.CodeGeneration.pdb".
+  [msbuild] Done Building Project "S:\Develop\Projects\Net\CodeRocket\src\CodeGeneration\CodeGeneration.csproj" (Rebuild target(s)).
+  [msbuild] Project "S:\Develop\Projects\Net\CodeRocket\src\CodeRocket.sln" (1) is building "S:\Develop\Projects\Net\CodeRocket\src\CodeRocket\CodeRocket.csproj" (11) on node 0 (Rebuild target(s)).
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\CodeRocket\bin\Debug\def.cfg".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\CodeRocket\bin\Debug\CodeRocket.exe.config".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\CodeRocket\bin\Debug\CodeRocket.exe".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\CodeRocket\bin\Debug\CodeRocket.pdb".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\CodeRocket\bin\Debug\ICSharpCode.TextEditor.dll".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\CodeRocket\bin\Debug\log4net.dll".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\CodeRocket\bin\Debug\PDModelBrowser.dll".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\CodeRocket\bin\Debug\Savchin.CodeGeneration.dll".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\CodeRocket\bin\Debug\Savchin.Controls.Common.dll".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\CodeRocket\bin\Debug\Savchin.Data.Schema.dll".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\CodeRocket\bin\Debug\Savchin.Tools.dll".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\CodeRocket\bin\Debug\Newtonsoft.Json.dll".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\CodeRocket\bin\Debug\GeneratorTools.dll".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\CodeRocket\bin\Debug\Interop.PdCommon.dll".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\CodeRocket\bin\Debug\Commons.dll".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\CodeRocket\bin\Debug\Savchin.Data.dll".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\CodeRocket\bin\Debug\Interop.PdPDM.dll".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\CodeRocket\bin\Debug\Interop.PdWSP.dll".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\CodeRocket\bin\Debug\NVelocity.dll".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\CodeRocket\bin\Debug\CodeParser.dll".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\CodeRocket\bin\Debug\Savchin.Tools.pdb".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\CodeRocket\bin\Debug\Newtonsoft.Json.pdb".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\CodeRocket\bin\Debug\Newtonsoft.Json.xml".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\CodeRocket\bin\Debug\GeneratorTools.pdb".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\CodeRocket\bin\Debug\PDModelBrowser.pdb".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\CodeRocket\bin\Debug\Savchin.Controls.Common.pdb".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\CodeRocket\bin\Debug\Savchin.Data.pdb".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\CodeRocket\bin\Debug\Savchin.Data.Schema.pdb".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\CodeRocket\bin\Debug\Savchin.Data.Schema.xml".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\CodeRocket\bin\Debug\CodeParser.pdb".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\CodeRocket\bin\Debug\Savchin.CodeGeneration.pdb".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\CodeRocket\obj\Debug\ResolveAssemblyReference.cache".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\CodeRocket\obj\Debug\CodeRocket.Controls.AssemblyConsole.resources".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\CodeRocket\obj\Debug\CodeRocket.Controls.FileWindow.resources".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\CodeRocket\obj\Debug\CodeRocket.Controls.ProjectConsole.resources".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\CodeRocket\obj\Debug\CodeRocket.Controls.ErrorConsole.resources".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\CodeRocket\obj\Debug\CodeRocket.Controls.SchemaConsole.resources".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\CodeRocket\obj\Debug\CodeRocket.Controls.PowerDesigerConsole.resources".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\CodeRocket\obj\Debug\CodeRocket.Controls.ErrorViewer.resources".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\CodeRocket\obj\Debug\CodeRocket.Controls.FormAbout.resources".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\CodeRocket\obj\Debug\CodeRocket.Controls.PropertyConsole.resources".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\CodeRocket\obj\Debug\CodeRocket.FormMain1.resources".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\CodeRocket\obj\Debug\CodeRocket.Properties.Resources.resources".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\CodeRocket\obj\Debug\CodeRocket.csproj.GenerateResource.Cache".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\CodeRocket\obj\Debug\CodeRocket.exe".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\CodeRocket\src\CodeRocket\obj\Debug\CodeRocket.pdb".
+  [msbuild] EntityClean:
+  [msbuild]   Successfully cleaned the output for 0 EDMX files.
+  [msbuild] EntityDeploy:
+  [msbuild]   Processing 0 EDMX files.
+  [msbuild]   Finished processing 0 EDMX files.
+  [msbuild] ResolveAssemblyReferences:
+  [msbuild]   No way to resolve conflict between "Interop.PdPDM, Version=12.1.0.1933, Culture=neutral, PublicKeyToken=1bab2b6f8a3ca538" and "Interop.PdPDM, Version=11.0.0.0, Culture=neutral, PublicKeyToken=1bab2b6f8a3ca538". Choosing "Interop.PdPDM, Version=12.1.0.1933, Culture=neutral, PublicKeyToken=1bab2b6f8a3ca538" arbitrarily.
+  [msbuild]   No way to resolve conflict between "Interop.PdCommon, Version=12.1.0.1933, Culture=neutral, PublicKeyToken=1bab2b6f8a3ca538" and "Interop.PdCommon, Version=11.0.0.0, Culture=neutral, PublicKeyToken=1bab2b6f8a3ca538". Choosing "Interop.PdCommon, Version=12.1.0.1933, Culture=neutral, PublicKeyToken=1bab2b6f8a3ca538" arbitrarily.
+  [msbuild]   Consider app.config remapping of assembly "Interop.PdPDM, Culture=neutral, PublicKeyToken=1bab2b6f8a3ca538" from Version "11.0.0.0" [S:\Develop\Projects\Net\Libs\Controls\PDModelBrowser\bin\Debug\Interop.PdPDM.dll] to Version "12.1.0.1933" [S:\Develop\Projects\Net\CodeRocket\src\CodeGeneration\bin\Debug\Interop.PdPDM.dll] to solve conflict and get rid of warning.
+  [msbuild]   Consider app.config remapping of assembly "Interop.PdCommon, Culture=neutral, PublicKeyToken=1bab2b6f8a3ca538" from Version "11.0.0.0" [S:\Develop\Projects\Net\Libs\Controls\PDModelBrowser\bin\Debug\Interop.PdCommon.dll] to Version "12.1.0.1933" [S:\Develop\Projects\Net\CodeRocket\src\CodeGeneration\bin\Debug\Interop.PdCommon.dll] to solve conflict and get rid of warning.
+  [msbuild] C:\WINDOWS\Microsoft.NET\Framework\v3.5\Microsoft.Common.targets : warning MSB3247: Found conflicts between different versions of the same dependent assembly.
+  [msbuild] CoreResGen:
+  [msbuild]   Processing resource file "Controls\AssemblyConsole.resx" into "obj\Debug\CodeRocket.Controls.AssemblyConsole.resources".
+  [msbuild]   Processing resource file "Controls\FileWindow.resx" into "obj\Debug\CodeRocket.Controls.FileWindow.resources".
+  [msbuild]   Processing resource file "Controls\ProjectConsole.resx" into "obj\Debug\CodeRocket.Controls.ProjectConsole.resources".
+  [msbuild]   Processing resource file "Controls\ErrorConsole.resx" into "obj\Debug\CodeRocket.Controls.ErrorConsole.resources".
+  [msbuild]   Processing resource file "Controls\SchemaConsole.resx" into "obj\Debug\CodeRocket.Controls.SchemaConsole.resources".
+  [msbuild]   Processing resource file "Controls\PowerDesigerConsole.resx" into "obj\Debug\CodeRocket.Controls.PowerDesigerConsole.resources".
+  [msbuild]   Processing resource file "Controls\ErrorViewer.resx" into "obj\Debug\CodeRocket.Controls.ErrorViewer.resources".
+  [msbuild]   Processing resource file "Controls\FormAbout.resx" into "obj\Debug\CodeRocket.Controls.FormAbout.resources".
+  [msbuild]   Processing resource file "Controls\PropertyConsole.resx" into "obj\Debug\CodeRocket.Controls.PropertyConsole.resources".
+  [msbuild]   Processing resource file "FormMain1.resx" into "obj\Debug\CodeRocket.FormMain1.resources".
+  [msbuild]   Processing resource file "Properties\Resources.resx" into "obj\Debug\CodeRocket.Properties.Resources.resources".
+  [msbuild] _CopyFilesMarkedCopyLocal:
+  [msbuild]   Copying file from "..\..\..\ThrPartLibs\ICSharpCode.TextEditor.dll" to "bin\Debug\ICSharpCode.TextEditor.dll".
+  [msbuild]   Copying file from "..\..\..\ThrPartLibs\log4net_1.2.9\log4net.dll" to "bin\Debug\log4net.dll".
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\Libs\Controls\PDModelBrowser\bin\Debug\PDModelBrowser.dll" to "bin\Debug\PDModelBrowser.dll".
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\CodeRocket\src\CodeGeneration\bin\Debug\Savchin.CodeGeneration.dll" to "bin\Debug\Savchin.CodeGeneration.dll".
+  [msbuild]   Copying file from "..\..\..\Libs\Controls\Common\bin\Debug\Savchin.Controls.Common.dll" to "bin\Debug\Savchin.Controls.Common.dll".
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\CodeRocket\src\DataSchema\bin\Debug\Savchin.Data.Schema.dll" to "bin\Debug\Savchin.Data.Schema.dll".
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\Libs\Tools\bin\Debug\Savchin.Tools.dll" to "bin\Debug\Savchin.Tools.dll".
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\Libs\Tools\bin\Debug\Newtonsoft.Json.dll" to "bin\Debug\Newtonsoft.Json.dll".
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\CodeRocket\src\CodeGeneration\bin\Debug\GeneratorTools.dll" to "bin\Debug\GeneratorTools.dll".
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\CodeRocket\src\CodeGeneration\bin\Debug\Interop.PdCommon.dll" to "bin\Debug\Interop.PdCommon.dll".
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\CodeRocket\src\CodeGeneration\bin\Debug\Commons.dll" to "bin\Debug\Commons.dll".
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\CodeRocket\src\DataSchema\bin\Debug\Savchin.Data.dll" to "bin\Debug\Savchin.Data.dll".
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\CodeRocket\src\CodeGeneration\bin\Debug\Interop.PdPDM.dll" to "bin\Debug\Interop.PdPDM.dll".
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\Libs\Controls\PDModelBrowser\bin\Debug\Interop.PdWSP.dll" to "bin\Debug\Interop.PdWSP.dll".
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\CodeRocket\src\CodeGeneration\bin\Debug\NVelocity.dll" to "bin\Debug\NVelocity.dll".
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\CodeRocket\src\CodeGeneration\bin\Debug\CodeParser.dll" to "bin\Debug\CodeParser.dll".
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\Libs\Tools\bin\Debug\Savchin.Tools.pdb" to "bin\Debug\Savchin.Tools.pdb".
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\Libs\Tools\bin\Debug\Newtonsoft.Json.pdb" to "bin\Debug\Newtonsoft.Json.pdb".
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\Libs\Tools\bin\Debug\Newtonsoft.Json.xml" to "bin\Debug\Newtonsoft.Json.xml".
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\CodeRocket\src\CodeGeneration\bin\Debug\GeneratorTools.pdb" to "bin\Debug\GeneratorTools.pdb".
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\Libs\Controls\PDModelBrowser\bin\Debug\PDModelBrowser.pdb" to "bin\Debug\PDModelBrowser.pdb".
+  [msbuild]   Copying file from "..\..\..\Libs\Controls\Common\bin\Debug\Savchin.Controls.Common.pdb" to "bin\Debug\Savchin.Controls.Common.pdb".
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\CodeRocket\src\DataSchema\bin\Debug\Savchin.Data.pdb" to "bin\Debug\Savchin.Data.pdb".
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\CodeRocket\src\DataSchema\bin\Debug\Savchin.Data.Schema.pdb" to "bin\Debug\Savchin.Data.Schema.pdb".
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\CodeRocket\src\DataSchema\bin\Debug\Savchin.Data.Schema.xml" to "bin\Debug\Savchin.Data.Schema.xml".
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\CodeRocket\src\CodeGeneration\bin\Debug\CodeParser.pdb" to "bin\Debug\CodeParser.pdb".
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\CodeRocket\src\CodeGeneration\bin\Debug\Savchin.CodeGeneration.pdb" to "bin\Debug\Savchin.CodeGeneration.pdb".
+  [msbuild] _CopyOutOfDateSourceItemsToOutputDirectory:
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\CodeRocket\src\CodeRocket\def.cfg" to "bin\Debug\def.cfg".
+  [msbuild] _CopyAppConfigFile:
+  [msbuild]   Copying file from "App.config" to "bin\Debug\CodeRocket.exe.config".
+  [msbuild] CopyFilesToOutputDirectory:
+  [msbuild]   Copying file from "obj\Debug\CodeRocket.exe" to "bin\Debug\CodeRocket.exe".
+  [msbuild]   CodeRocket -> S:\Develop\Projects\Net\CodeRocket\src\CodeRocket\bin\Debug\CodeRocket.exe
+  [msbuild]   Copying file from "obj\Debug\CodeRocket.pdb" to "bin\Debug\CodeRocket.pdb".
+  [msbuild] Done Building Project "S:\Develop\Projects\Net\CodeRocket\src\CodeRocket\CodeRocket.csproj" (Rebuild target(s)).
+  [msbuild] Done Building Project "S:\Develop\Projects\Net\CodeRocket\src\CodeRocket.sln" (Rebuild target(s)).
+  [msbuild] 
+  [msbuild] Build succeeded.
+  [msbuild] 
+  [msbuild] "S:\Develop\Projects\Net\CodeRocket\src\CodeRocket.sln" (Rebuild target) (1) ->
+  [msbuild] "S:\Develop\Projects\Net\Libs\Tools\Savchin.Tools.csproj" (Rebuild target) (3) ->
+  [msbuild] (CoreCompile target) -> 
+  [msbuild]   Threading\IOCP\ManagedIOCP.cs(643,42): warning CS0420: 'Savchin.Threading.IOCP.ManagedIOCP<T>._activeThreads': a reference to a volatile field will not be treated as volatile
+  [msbuild]   Threading\IOCP\ManagedIOCP.cs(658,31): warning CS0420: 'Savchin.Threading.IOCP.ManagedIOCP<T>._activeThreads': a reference to a volatile field will not be treated as volatile
+  [msbuild]   Threading\ObjectPool\ObjectPool.cs(93,61): warning CS0420: 'Savchin.Threading.DataStructures.LockFree.PoolableObject.LinkedObject': a reference to a volatile field will not be treated as volatile
+  [msbuild]   Threading\ObjectPool\ObjectPool.cs(106,57): warning CS0420: 'Savchin.Threading.DataStructures.LockFree.ObjectPool._tail': a reference to a volatile field will not be treated as volatile
+  [msbuild]   Threading\ObjectPool\ObjectPool.cs(114,45): warning CS0420: 'Savchin.Threading.DataStructures.LockFree.ObjectPool._tail': a reference to a volatile field will not be treated as volatile
+  [msbuild]   Threading\ObjectPool\ObjectPool.cs(165,61): warning CS0420: 'Savchin.Threading.DataStructures.LockFree.ObjectPool._tail': a reference to a volatile field will not be treated as volatile
+  [msbuild]   Threading\ObjectPool\ObjectPool.cs(178,61): warning CS0420: 'Savchin.Threading.DataStructures.LockFree.ObjectPool._head': a reference to a volatile field will not be treated as volatile
+  [msbuild]   Threading\IOCP\Queue.cs(66,39): warning CS0420: 'Savchin.Threading.IOCP.Queue<T>._tail': a reference to a volatile field will not be treated as volatile
+  [msbuild]   Threading\IOCP\Queue.cs(74,36): warning CS0420: 'Savchin.Threading.IOCP.Queue<T>._tail': a reference to a volatile field will not be treated as volatile
+  [msbuild]   Threading\IOCP\Queue.cs(117,40): warning CS0420: 'Savchin.Threading.IOCP.Queue<T>._tail': a reference to a volatile field will not be treated as volatile
+  [msbuild]   Threading\IOCP\Queue.cs(127,61): warning CS0420: 'Savchin.Threading.IOCP.Queue<T>._head': a reference to a volatile field will not be treated as volatile
+  [msbuild]   Threading\ThreadPool.cs(183,21): warning CS0618: 'System.AppDomain.GetCurrentThreadId()' is obsolete: 'AppDomain.GetCurrentThreadId has been deprecated because it does not provide a stable Id when managed threads are running on fibers (aka lightweight threads). To get a stable identifier for a managed thread, use the ManagedThreadId property on Thread.  http://go.microsoft.com/fwlink/?linkid=14202'
+  [msbuild]   Net\FtpSocketClient.cs(24,22): warning CS0649: Field 'Savchin.Net.FtpSocketClient.binMode' is never assigned to, and will always have its default value false
+  [msbuild] 
+  [msbuild] 
+  [msbuild] "S:\Develop\Projects\Net\CodeRocket\src\CodeRocket.sln" (Rebuild target) (1) ->
+  [msbuild] "S:\Develop\Projects\Net\Libs\Controls\Common\Savchin.Controls.Common.csproj" (Rebuild target) (4) ->
+  [msbuild]   Docking\Win32\NativeMethods.cs(6,7): warning CS0105: The using directive for 'Savchin.Controls.Docking.Win32' appeared previously in this namespace
+  [msbuild]   CSC : warning CS1607: Assembly generation -- The version '1.0.0.*' specified for the 'file version' is not in the normal 'major.minor.build.revision' format
+  [msbuild] 
+  [msbuild] 
+  [msbuild] "S:\Develop\Projects\Net\CodeRocket\src\CodeRocket.sln" (Rebuild target) (1) ->
+  [msbuild] "S:\Develop\Projects\Net\CodeRocket\src\DataSchema\DataSchema.csproj" (Rebuild target) (7) ->
+  [msbuild]   Builders\IDataSchemaBuilder.cs(6,22): warning CS1591: Missing XML comment for publicly visible type or member 'Savchin.Data.Schema.Builders.IDataSchemaBuilder'
+  [msbuild]   Builders\OleDb\MssqlSchemaBuilder.cs(7,18): warning CS1591: Missing XML comment for publicly visible type or member 'Savchin.Data.Schema.Builders.MssqlSchemaBuilder'
+  [msbuild]   Builders\SQLiteSchemaBuilder.cs(100,62): warning CS1573: Parameter 'type' has no matching param tag in the XML comment for 'Savchin.Data.Schema.Builders.SQLiteSchemaBuilder.BuildTable(System.Data.DataRow, Savchin.Data.Schema.TableType)' (but other parameters do)
+  [msbuild]   Builders\SQLiteSchemaBuilder.cs(114,24): warning CS1591: Missing XML comment for publicly visible type or member 'Savchin.Data.Schema.Builders.SQLiteSchemaBuilder.BuildColumns(Savchin.Data.Schema.TableSchema)'
+  [msbuild]   Schemas\DatabaseSchema.cs(25,29): warning CS1591: Missing XML comment for publicly visible type or member 'Savchin.Data.Schema.DatabaseSchema.Extension'
+  [msbuild]   Schemas\DatabaseSchema.cs(97,23): warning CS1591: Missing XML comment for publicly visible type or member 'Savchin.Data.Schema.DatabaseSchema.ConnectionString'
+  [msbuild]   Schemas\TableSchema.cs(150,45): warning CS1591: Missing XML comment for publicly visible type or member 'Savchin.Data.Schema.TableSchema.procedures'
+  [msbuild]   Builders\OleDb\CommonServerSchemaBuilder.cs(15,24): warning CS0649: Field 'Savchin.Data.Schema.Builders.CommonServerSchemaBuilder._schemaFilter' is never assigned to, and will always have its default value null
+  [msbuild] 
+  [msbuild] 
+  [msbuild] "S:\Develop\Projects\Net\CodeRocket\src\CodeRocket.sln" (Rebuild target) (1) ->
+  [msbuild] "S:\Develop\Projects\Net\CodeRocket\src\DataSchemaTests\DataSchemaTests.csproj" (Rebuild target) (8) ->
+  [msbuild]   DatabaseSchemaTests.cs(6,7): warning CS0105: The using directive for 'Savchin.Data.Schema.Tests.Core' appeared previously in this namespace
+  [msbuild] 
+  [msbuild] 
+  [msbuild] "S:\Develop\Projects\Net\CodeRocket\src\CodeRocket.sln" (Rebuild target) (1) ->
+  [msbuild] "S:\Develop\Projects\Net\CodeRocket\src\CodeGeneration\CodeGeneration.csproj" (Rebuild target) (10) ->
+  [msbuild] (ResolveAssemblyReferences target) -> 
+  [msbuild]   C:\WINDOWS\Microsoft.NET\Framework\v3.5\Microsoft.Common.targets : warning MSB3245: Could not resolve this reference. Could not locate the assembly "Interop.PGMRX120Lib". Check to make sure the assembly exists on disk. If this reference is required by your code, you may get compilation errors.
+  [msbuild] 
+  [msbuild] 
+  [msbuild] "S:\Develop\Projects\Net\CodeRocket\src\CodeRocket.sln" (Rebuild target) (1) ->
+  [msbuild] "S:\Develop\Projects\Net\CodeRocket\src\CodeRocket\CodeRocket.csproj" (Rebuild target) (11) ->
+  [msbuild]   C:\WINDOWS\Microsoft.NET\Framework\v3.5\Microsoft.Common.targets : warning MSB3247: Found conflicts between different versions of the same dependent assembly.
+  [msbuild] 
+  [msbuild]     26 Warning(s)
+  [msbuild]     0 Error(s)
+  [msbuild] 
+  [msbuild] Time Elapsed 00:00:16.01
+
+buildRelease:
+
+
+buildProject:
+
+     [echo] build project: S:\Develop\Projects\Net\CodeRocket\src\CodeRocket.sln
+  [msbuild] Build started 21.02.2009 17:21:06.
+  [msbuild] Project "S:\Develop\Projects\Net\CodeRocket\src\CodeRocket.sln" on node 0 (Rebuild target(s)).
+  [msbuild]   Building solution configuration "Release|Any CPU".
+  [msbuild] Project "S:\Develop\Projects\Net\CodeRocket\src\CodeRocket.sln" (1) is building "S:\Develop\Projects\Net\Libs\CodeParser\CodeParsing.csproj" (2) on node 0 (Rebuild target(s)).
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\CodeParser\bin\Release\CodeParser.dll".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\CodeParser\bin\Release\CodeParser.pdb".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\CodeParser\bin\Release\Interop.PGMRX120Lib.dll".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\CodeParser\obj\Release\ResolveAssemblyReference.cache".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\CodeParser\obj\Release\Savchin.CodeParsing.Resource.resources".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\CodeParser\obj\Release\CodeParsing.csproj.GenerateResource.Cache".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\CodeParser\obj\Release\CodeParser.dll".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\CodeParser\obj\Release\CodeParser.pdb".
+  [msbuild] CoreResGen:
+  [msbuild]   Processing resource file "Resource.resx" into "obj\Release\Savchin.CodeParsing.Resource.resources".
+  [msbuild] _CopyFilesMarkedCopyLocal:
+  [msbuild]   Copying file from "..\..\ThrPartLibs\Interop.PGMRX120Lib.dll" to "bin\Release\Interop.PGMRX120Lib.dll".
+  [msbuild] CopyFilesToOutputDirectory:
+  [msbuild]   Copying file from "obj\Release\CodeParser.dll" to "bin\Release\CodeParser.dll".
+  [msbuild]   CodeParsing -> S:\Develop\Projects\Net\Libs\CodeParser\bin\Release\CodeParser.dll
+  [msbuild]   Copying file from "obj\Release\CodeParser.pdb" to "bin\Release\CodeParser.pdb".
+  [msbuild] Done Building Project "S:\Develop\Projects\Net\Libs\CodeParser\CodeParsing.csproj" (Rebuild target(s)).
+  [msbuild] Project "S:\Develop\Projects\Net\CodeRocket\src\CodeRocket.sln" (1) is building "S:\Develop\Projects\Net\Libs\Tools\Savchin.Tools.csproj" (3) on node 0 (Rebuild target(s)).
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Tools\bin\Release\Savchin.Tools.dll".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Tools\bin\Release\Savchin.Tools.pdb".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Tools\bin\Release\Newtonsoft.Json.dll".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Tools\bin\Release\Newtonsoft.Json.pdb".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Tools\bin\Release\Newtonsoft.Json.xml".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Tools\obj\Release\ResolveAssemblyReference.cache".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Tools\obj\Release\Savchin.Tools.dll".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Tools\obj\Release\Savchin.Tools.pdb".
+  [msbuild] EntityClean:
+  [msbuild]   Successfully cleaned the output for 0 EDMX files.
+  [msbuild] EntityDeploy:
+  [msbuild]   Processing 0 EDMX files.
+  [msbuild]   Finished processing 0 EDMX files.
+  [msbuild] Threading\IOCP\ManagedIOCP.cs(643,42): warning CS0420: 'Savchin.Threading.IOCP.ManagedIOCP<T>._activeThreads': a reference to a volatile field will not be treated as volatile
+  [msbuild] Threading\IOCP\ManagedIOCP.cs(658,31): warning CS0420: 'Savchin.Threading.IOCP.ManagedIOCP<T>._activeThreads': a reference to a volatile field will not be treated as volatile
+  [msbuild] Threading\ObjectPool\ObjectPool.cs(93,61): warning CS0420: 'Savchin.Threading.DataStructures.LockFree.PoolableObject.LinkedObject': a reference to a volatile field will not be treated as volatile
+  [msbuild] Threading\ObjectPool\ObjectPool.cs(106,57): warning CS0420: 'Savchin.Threading.DataStructures.LockFree.ObjectPool._tail': a reference to a volatile field will not be treated as volatile
+  [msbuild] Threading\ObjectPool\ObjectPool.cs(114,45): warning CS0420: 'Savchin.Threading.DataStructures.LockFree.ObjectPool._tail': a reference to a volatile field will not be treated as volatile
+  [msbuild] Threading\ObjectPool\ObjectPool.cs(165,61): warning CS0420: 'Savchin.Threading.DataStructures.LockFree.ObjectPool._tail': a reference to a volatile field will not be treated as volatile
+  [msbuild] Threading\ObjectPool\ObjectPool.cs(178,61): warning CS0420: 'Savchin.Threading.DataStructures.LockFree.ObjectPool._head': a reference to a volatile field will not be treated as volatile
+  [msbuild] Threading\IOCP\Queue.cs(66,39): warning CS0420: 'Savchin.Threading.IOCP.Queue<T>._tail': a reference to a volatile field will not be treated as volatile
+  [msbuild] Threading\IOCP\Queue.cs(74,36): warning CS0420: 'Savchin.Threading.IOCP.Queue<T>._tail': a reference to a volatile field will not be treated as volatile
+  [msbuild] Threading\IOCP\Queue.cs(117,40): warning CS0420: 'Savchin.Threading.IOCP.Queue<T>._tail': a reference to a volatile field will not be treated as volatile
+  [msbuild] Threading\IOCP\Queue.cs(127,61): warning CS0420: 'Savchin.Threading.IOCP.Queue<T>._head': a reference to a volatile field will not be treated as volatile
+  [msbuild] Threading\ThreadPool.cs(183,21): warning CS0618: 'System.AppDomain.GetCurrentThreadId()' is obsolete: 'AppDomain.GetCurrentThreadId has been deprecated because it does not provide a stable Id when managed threads are running on fibers (aka lightweight threads). To get a stable identifier for a managed thread, use the ManagedThreadId property on Thread.  http://go.microsoft.com/fwlink/?linkid=14202'
+  [msbuild] Net\FtpSocketClient.cs(24,22): warning CS0649: Field 'Savchin.Net.FtpSocketClient.binMode' is never assigned to, and will always have its default value false
+  [msbuild] _CopyFilesMarkedCopyLocal:
+  [msbuild]   Copying file from "..\..\ThrPartLibs\JSON\Newtonsoft.Json.dll" to "bin\Release\Newtonsoft.Json.dll".
+  [msbuild]   Copying file from "..\..\ThrPartLibs\JSON\Newtonsoft.Json.pdb" to "bin\Release\Newtonsoft.Json.pdb".
+  [msbuild]   Copying file from "..\..\ThrPartLibs\JSON\Newtonsoft.Json.xml" to "bin\Release\Newtonsoft.Json.xml".
+  [msbuild] CopyFilesToOutputDirectory:
+  [msbuild]   Copying file from "obj\Release\Savchin.Tools.dll" to "bin\Release\Savchin.Tools.dll".
+  [msbuild]   Savchin.Tools -> S:\Develop\Projects\Net\Libs\Tools\bin\Release\Savchin.Tools.dll
+  [msbuild]   Copying file from "obj\Release\Savchin.Tools.pdb" to "bin\Release\Savchin.Tools.pdb".
+  [msbuild] Done Building Project "S:\Develop\Projects\Net\Libs\Tools\Savchin.Tools.csproj" (Rebuild target(s)).
+  [msbuild] CodeRocketSetup:Rebuild:
+  [msbuild]   The project "CodeRocketSetup" is not selected for building in solution configuration "Release|Any CPU".
+  [msbuild] Project "S:\Develop\Projects\Net\CodeRocket\src\CodeRocket.sln" (1) is building "S:\Develop\Projects\Net\Libs\Controls\Common\Savchin.Controls.Common.csproj" (4) on node 0 (Rebuild target(s)).
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Controls\Common\obj\Release\ResolveAssemblyReference.cache".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Controls\Common\obj\Release\Savchin.Controls.Browsers.AssemblyBrowser.resources".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Controls\Common\obj\Release\Savchin.Controls.Browsers.RegistryBrowser.resources".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Controls\Common\obj\Release\Savchin.Controls.Common.Browsers.RegistryStringValueForm.resources".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Controls\Common\obj\Release\Savchin.Controls.Common.ColorPicker.resources".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Controls\Common\obj\Release\Savchin.Controls.Common.Comparer.CompareView.resources".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Controls\Common\obj\Release\Savchin.Controls.Common.Comparer.FormFilter.resources".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Controls\Common\obj\Release\Savchin.Controls.Docking.Resources.resources".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Controls\Common\obj\Release\Savchin.Controls.Docking.Strings.resources".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Controls\Common\obj\Release\Savchin.Controls.Common.ExceptionForm.resources".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Controls\Common\obj\Release\Savchin.Controls.Common.Comparer.FormCompare.resources".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Controls\Common\obj\Release\Savchin.Controls.Common.FormObject.resources".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Controls\Common\obj\Release\Savchin.Controls.Common.frmSearch.resources".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Controls\Common\obj\Release\Savchin.Controls.Properties.Resources.resources".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Controls\Common\obj\Release\Savchin.Controls.Net.CredentialControl.resources".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Controls\Common\obj\Release\Savchin.Controls.Net.InternetSettingsControl.resources".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Controls\Common\obj\Release\Savchin.Controls.Net.ProxySettingsControl.resources".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Controls\Common\obj\Release\Savchin.Controls.Wizard.Header.resources".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Controls\Common\obj\Release\Savchin.Controls.Wizard.InfoContainer.resources".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Controls\Common\obj\Release\Savchin.Controls.Wizard.InfoPage.resources".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Controls\Common\obj\Release\Savchin.Controls.Wizard.Wizard.resources".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Controls\Common\obj\Release\Savchin.Controls.Wizard.WizardPage.resources".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Controls\Common\obj\Release\Savchin.Controls.Common.csproj.GenerateResource.Cache".
+  [msbuild] EntityClean:
+  [msbuild]   Successfully cleaned the output for 0 EDMX files.
+  [msbuild] EntityDeploy:
+  [msbuild]   Processing 0 EDMX files.
+  [msbuild]   Finished processing 0 EDMX files.
+  [msbuild] CoreResGen:
+  [msbuild]   Processing resource file "Browsers\AssemblyBrowser.resx" into "obj\Release\Savchin.Controls.Browsers.AssemblyBrowser.resources".
+  [msbuild]   Processing resource file "Browsers\RegistryBrowser.resx" into "obj\Release\Savchin.Controls.Browsers.RegistryBrowser.resources".
+  [msbuild]   Processing resource file "Browsers\RegistryStringValueForm.resx" into "obj\Release\Savchin.Controls.Common.Browsers.RegistryStringValueForm.resources".
+  [msbuild]   Processing resource file "ColorPicker.resx" into "obj\Release\Savchin.Controls.Common.ColorPicker.resources".
+  [msbuild]   Processing resource file "Comparer\CompareView.resx" into "obj\Release\Savchin.Controls.Common.Comparer.CompareView.resources".
+  [msbuild]   Processing resource file "Comparer\FormFilter.resx" into "obj\Release\Savchin.Controls.Common.Comparer.FormFilter.resources".
+  [msbuild]   Processing resource file "Docking\Resources.resx" into "obj\Release\Savchin.Controls.Docking.Resources.resources".
+  [msbuild]   Processing resource file "Docking\Strings.resx" into "obj\Release\Savchin.Controls.Docking.Strings.resources".
+  [msbuild]   Processing resource file "ExceptionForm.resx" into "obj\Release\Savchin.Controls.Common.ExceptionForm.resources".
+  [msbuild]   Processing resource file "Comparer\FormCompare.resx" into "obj\Release\Savchin.Controls.Common.Comparer.FormCompare.resources".
+  [msbuild]   Processing resource file "FormObject.resx" into "obj\Release\Savchin.Controls.Common.FormObject.resources".
+  [msbuild]   Processing resource file "frmSearch.resx" into "obj\Release\Savchin.Controls.Common.frmSearch.resources".
+  [msbuild]   Processing resource file "Properties\Resources.resx" into "obj\Release\Savchin.Controls.Properties.Resources.resources".
+  [msbuild]   Processing resource file "Net\CredentialControl.resx" into "obj\Release\Savchin.Controls.Net.CredentialControl.resources".
+  [msbuild]   Processing resource file "Net\InternetSettingsControl.resx" into "obj\Release\Savchin.Controls.Net.InternetSettingsControl.resources".
+  [msbuild]   Processing resource file "Net\ProxySettingsControl.resx" into "obj\Release\Savchin.Controls.Net.ProxySettingsControl.resources".
+  [msbuild]   Processing resource file "Wizard\Header.resx" into "obj\Release\Savchin.Controls.Wizard.Header.resources".
+  [msbuild]   Processing resource file "Wizard\InfoContainer.resx" into "obj\Release\Savchin.Controls.Wizard.InfoContainer.resources".
+  [msbuild]   Processing resource file "Wizard\InfoPage.resx" into "obj\Release\Savchin.Controls.Wizard.InfoPage.resources".
+  [msbuild]   Processing resource file "Wizard\Wizard.resx" into "obj\Release\Savchin.Controls.Wizard.Wizard.resources".
+  [msbuild]   Processing resource file "Wizard\WizardPage.resx" into "obj\Release\Savchin.Controls.Wizard.WizardPage.resources".
+  [msbuild] Docking\Win32\NativeMethods.cs(6,7): warning CS0105: The using directive for 'Savchin.Controls.Docking.Win32' appeared previously in this namespace
+  [msbuild] ListView\ObjectListView.cs(2360,31): error CS0227: Unsafe code may only appear if compiling with /unsafe
+  [msbuild] ListView\ObjectListView.cs(2448,31): error CS0227: Unsafe code may only appear if compiling with /unsafe
+  [msbuild] ListView\HeaderControl.cs(81,31): error CS0227: Unsafe code may only appear if compiling with /unsafe
+  [msbuild] ListView\TreeListView.cs(331,39): error CS0227: Unsafe code may only appear if compiling with /unsafe
+  [msbuild] Done Building Project "S:\Develop\Projects\Net\Libs\Controls\Common\Savchin.Controls.Common.csproj" (Rebuild target(s)) -- FAILED.
+  [msbuild] Project "S:\Develop\Projects\Net\CodeRocket\src\CodeRocket.sln" (1) is building "S:\Develop\Projects\Net\Libs\Data\Data.csproj" (5) on node 0 (Rebuild target(s)).
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Data\bin\Release\Savchin.Data.dll".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Data\bin\Release\Savchin.Data.pdb".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Data\bin\Release\log4net.dll".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Data\bin\Release\Savchin.Tools.dll".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Data\bin\Release\Newtonsoft.Json.dll".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Data\bin\Release\Savchin.Tools.pdb".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Data\bin\Release\Newtonsoft.Json.pdb".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Data\bin\Release\Newtonsoft.Json.xml".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Data\obj\Release\ResolveAssemblyReference.cache".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Data\obj\Release\Savchin.Data.CSV.Resources.ExceptionMessage.resources".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Data\obj\Release\Data.csproj.GenerateResource.Cache".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Data\obj\Release\Savchin.Data.dll".
+  [msbuild]   Deleting file "S:\Develop\Projects\Net\Libs\Data\obj\Release\Savchin.Data.pdb".
+  [msbuild] EntityClean:
+  [msbuild]   Successfully cleaned the output for 0 EDMX files.
+  [msbuild] EntityDeploy:
+  [msbuild]   Processing 0 EDMX files.
+  [msbuild]   Finished processing 0 EDMX files.
+  [msbuild] CoreResGen:
+  [msbuild]   Processing resource file "CSV\Resources\ExceptionMessage.resx" into "obj\Release\Savchin.Data.CSV.Resources.ExceptionMessage.resources".
+  [msbuild] _CopyFilesMarkedCopyLocal:
+  [msbuild]   Copying file from "..\..\ThrPartLibs\log4net_1.2.9\log4net.dll" to "bin\Release\log4net.dll".
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\Libs\Tools\bin\Release\Savchin.Tools.dll" to "bin\Release\Savchin.Tools.dll".
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\Libs\Tools\bin\Release\Newtonsoft.Json.dll" to "bin\Release\Newtonsoft.Json.dll".
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\Libs\Tools\bin\Release\Savchin.Tools.pdb" to "bin\Release\Savchin.Tools.pdb".
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\Libs\Tools\bin\Release\Newtonsoft.Json.pdb" to "bin\Release\Newtonsoft.Json.pdb".
+  [msbuild]   Copying file from "S:\Develop\Projects\Net\Libs\Tools\bin\Release\Newtonsoft.Json.xml" to "bin\Release\Newtonsoft.Json.xml".
+  [msbuild] CopyFilesToOutputDirectory:
+  [msbuild]   Copying file from "obj\Release\Savchin.Data.dll" to "bin\Release\Savchin.Data.dll".
+  [msbuild]   Data -> S:\Develop\Projects\Net\Libs\Data\bin\Release\Savchin.Data.dll
+  [msbuild]   Copying file from "obj\Release\Savchin.Data.pdb" to "bin\Release\Savchin.Data.pdb".
+  [msbuild] Done Building Project "S:\Develop\Projects\Net\Libs\Data\Data.csproj" (Rebuild target(s)).
+  [msbuild] Done Building Project "S:\Develop\Projects\Net\CodeRocket\src\CodeRocket.sln" (Rebuild target(s)) -- FAILED.
+  [msbuild] 
+  [msbuild] Build FAILED.
+  [msbuild] 
+  [msbuild] "S:\Develop\Projects\Net\CodeRocket\src\CodeRocket.sln" (Rebuild target) (1) ->
+  [msbuild] "S:\Develop\Projects\Net\Libs\Tools\Savchin.Tools.csproj" (Rebuild target) (3) ->
+  [msbuild] (CoreCompile target) -> 
+  [msbuild]   Threading\IOCP\ManagedIOCP.cs(643,42): warning CS0420: 'Savchin.Threading.IOCP.ManagedIOCP<T>._activeThreads': a reference to a volatile field will not be treated as volatile
+  [msbuild]   Threading\IOCP\ManagedIOCP.cs(658,31): warning CS0420: 'Savchin.Threading.IOCP.ManagedIOCP<T>._activeThreads': a reference to a volatile field will not be treated as volatile
+  [msbuild]   Threading\ObjectPool\ObjectPool.cs(93,61): warning CS0420: 'Savchin.Threading.DataStructures.LockFree.PoolableObject.LinkedObject': a reference to a volatile field will not be treated as volatile
+  [msbuild]   Threading\ObjectPool\ObjectPool.cs(106,57): warning CS0420: 'Savchin.Threading.DataStructures.LockFree.ObjectPool._tail': a reference to a volatile field will not be treated as volatile
+  [msbuild]   Threading\ObjectPool\ObjectPool.cs(114,45): warning CS0420: 'Savchin.Threading.DataStructures.LockFree.ObjectPool._tail': a reference to a volatile field will not be treated as volatile
+  [msbuild]   Threading\ObjectPool\ObjectPool.cs(165,61): warning CS0420: 'Savchin.Threading.DataStructures.LockFree.ObjectPool._tail': a reference to a volatile field will not be treated as volatile
+  [msbuild]   Threading\ObjectPool\ObjectPool.cs(178,61): warning CS0420: 'Savchin.Threading.DataStructures.LockFree.ObjectPool._head': a reference to a volatile field will not be treated as volatile
+  [msbuild]   Threading\IOCP\Queue.cs(66,39): warning CS0420: 'Savchin.Threading.IOCP.Queue<T>._tail': a reference to a volatile field will not be treated as volatile
+  [msbuild]   Threading\IOCP\Queue.cs(74,36): warning CS0420: 'Savchin.Threading.IOCP.Queue<T>._tail': a reference to a volatile field will not be treated as volatile
+  [msbuild]   Threading\IOCP\Queue.cs(117,40): warning CS0420: 'Savchin.Threading.IOCP.Queue<T>._tail': a reference to a volatile field will not be treated as volatile
+  [msbuild]   Threading\IOCP\Queue.cs(127,61): warning CS0420: 'Savchin.Threading.IOCP.Queue<T>._head': a reference to a volatile field will not be treated as volatile
+  [msbuild]   Threading\ThreadPool.cs(183,21): warning CS0618: 'System.AppDomain.GetCurrentThreadId()' is obsolete: 'AppDomain.GetCurrentThreadId has been deprecated because it does not provide a stable Id when managed threads are running on fibers (aka lightweight threads). To get a stable identifier for a managed thread, use the ManagedThreadId property on Thread.  http://go.microsoft.com/fwlink/?linkid=14202'
+  [msbuild]   Net\FtpSocketClient.cs(24,22): warning CS0649: Field 'Savchin.Net.FtpSocketClient.binMode' is never assigned to, and will always have its default value false
+  [msbuild] 
+  [msbuild] 
+  [msbuild] "S:\Develop\Projects\Net\CodeRocket\src\CodeRocket.sln" (Rebuild target) (1) ->
+  [msbuild] "S:\Develop\Projects\Net\Libs\Controls\Common\Savchin.Controls.Common.csproj" (Rebuild target) (4) ->
+  [msbuild]   Docking\Win32\NativeMethods.cs(6,7): warning CS0105: The using directive for 'Savchin.Controls.Docking.Win32' appeared previously in this namespace
+  [msbuild] 
+  [msbuild] 
+  [msbuild] "S:\Develop\Projects\Net\CodeRocket\src\CodeRocket.sln" (Rebuild target) (1) ->
+  [msbuild] "S:\Develop\Projects\Net\Libs\Controls\Common\Savchin.Controls.Common.csproj" (Rebuild target) (4) ->
+  [msbuild] (CoreCompile target) -> 
+  [msbuild]   ListView\ObjectListView.cs(2360,31): error CS0227: Unsafe code may only appear if compiling with /unsafe
+  [msbuild]   ListView\ObjectListView.cs(2448,31): error CS0227: Unsafe code may only appear if compiling with /unsafe
+  [msbuild]   ListView\HeaderControl.cs(81,31): error CS0227: Unsafe code may only appear if compiling with /unsafe
+  [msbuild]   ListView\TreeListView.cs(331,39): error CS0227: Unsafe code may only appear if compiling with /unsafe
+  [msbuild] 
+  [msbuild]     14 Warning(s)
+  [msbuild]     4 Error(s)
+  [msbuild] 
+  [msbuild] Time Elapsed 00:00:04.67
+
+BUILD FAILED
+
+S:\Develop\Projects\Net\NAnt\common.build(7,4):
+Failed to start MSBuild.
+    S:\Develop\Projects\Net\NAnt\common.build(7,4):
+    External Program Failed: C:\WINDOWS\Microsoft.NET\Framework\v3.5\msbuild.exe (return code was 1)
+
+Total time: 21.7 seconds.
+

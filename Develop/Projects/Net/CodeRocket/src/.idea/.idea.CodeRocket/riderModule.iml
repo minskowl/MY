@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="RIDER_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$/../..">
+      <sourceFolder url="file://$MODULE_DIR$/../../build.bat" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../buildCodeRocket.bat" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../CodeGeneration" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../CodeRocket" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../CodeRocketSetup" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../DataSchema" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../DataSchemaTests" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../default.build" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../GeneratorTools" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/../../CodeGeneration/bin" />
+      <excludeFolder url="file://$MODULE_DIR$/../../CodeGeneration/obj" />
+      <excludeFolder url="file://$MODULE_DIR$/../../CodeRocket/bin" />
+      <excludeFolder url="file://$MODULE_DIR$/../../CodeRocket/obj" />
+      <excludeFolder url="file://$MODULE_DIR$/../../DataSchema/bin" />
+      <excludeFolder url="file://$MODULE_DIR$/../../DataSchema/obj" />
+      <excludeFolder url="file://$MODULE_DIR$/../../DataSchemaTests/bin" />
+      <excludeFolder url="file://$MODULE_DIR$/../../DataSchemaTests/obj" />
+      <excludeFolder url="file://$MODULE_DIR$/../../GeneratorTools/bin" />
+      <excludeFolder url="file://$MODULE_DIR$/../../GeneratorTools/obj" />
+      <excludeFolder url="file://$MODULE_DIR$/../../packages" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../../../Libs/CodeParser">
+      <sourceFolder url="file://$MODULE_DIR$/../../../../Libs/CodeParser" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../../Libs/CodeParser/bin" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../../Libs/CodeParser/obj" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../../../Libs/Controls/PDModelBrowser">
+      <sourceFolder url="file://$MODULE_DIR$/../../../../Libs/Controls/PDModelBrowser" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../../Libs/Controls/PDModelBrowser/bin" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../../Libs/Controls/PDModelBrowser/obj" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../../../Libs/Data">
+      <sourceFolder url="file://$MODULE_DIR$/../../../../Libs/Data" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../../Libs/Data/bin" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../../Libs/Data/obj" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../../../Libs/Savchin.Forms">
+      <sourceFolder url="file://$MODULE_DIR$/../../../../Libs/Savchin.Forms" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../../Libs/Savchin.Forms/bin" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../../Libs/Savchin.Forms/obj" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../../../Libs/Savchin.WinApi">
+      <sourceFolder url="file://$MODULE_DIR$/../../../../Libs/Savchin.WinApi" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../../Libs/Savchin.WinApi/bin" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../../Libs/Savchin.WinApi/obj" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../../../Libs/Tools">
+      <sourceFolder url="file://$MODULE_DIR$/../../../../Libs/Tools" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../../Libs/Tools/bin" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../../Libs/Tools/obj" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../../../Other/Key.snk">
+      <sourceFolder url="file://$MODULE_DIR$/../../../../Other/Key.snk" isTestSource="false" />
+    </content>
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

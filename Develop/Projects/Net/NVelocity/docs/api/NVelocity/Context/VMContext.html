@@ -1,0 +1,552 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="..\..\JavaDoc.css">
+  </head>
+  <body>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td>
+                <a href="namespace-summary.html">Namespace</a> </td>
+              <td class="nav1sel"> Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV TYPE    NEXT TYPE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+      <tr class="nav2">
+        <td>SUMMARY: INNER | FIELD | <a href="#constructor-summary">CONST</a> | <a href="#property-summary">PROP</a> | <a href="#method-summary">METHOD</a> | OP | EVENT</td>
+        <td>DETAIL: FIELD | <a href="#constructor-detail">CONST</a> | <a href="#property-detail">PROP</a> | <a href="#method-detail">METHOD</a> | OP | EVENT</td>
+      </tr>
+    </table>
+    <hr>
+    <h2>
+      <span class="namespaceName">NVelocity.Context</span>
+      <br>
+      <span class="className">Class VMContext</span>
+    </h2>
+    <p>  This is a special, internal-use-only context implementation to be
+            used for the new Velocimacro implementation.
+            *
+            The main distinguishing feature is the management of the VMProxyArg objects
+            in the put() and get() methods.
+            *
+            Further, this context also supports the 'VM local context' mode, where
+            any get() or put() of references that aren't args to the VM are considered
+            local to the vm, protecting the global context.
+            
+            </p>
+    <a name="field-summary">
+    </a>
+    <a name="constructor-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Constructor Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="constructor" valign="top">
+          <a href="#NVelocity.Context.VMContext.#ctor(NVelocity.Context.InternalContextAdapter,NVelocity.Runtime.RuntimeServices)">VMContext</a>(NVelocity.Context.InternalContextAdapter inner, NVelocity.Runtime.RuntimeServices rsvc)<br>          CTOR, wraps an ICA
+            </td>
+      </tr>
+    </table>
+    <br>
+    <a name="property-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Property Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="propertyType" valign="top">NVelocity.Context.InternalContextAdapter</td>
+        <td class="property">
+          <a href="#NVelocity.Context.VMContext.BaseContext">BaseContext</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="propertyType" valign="top">NVelocity.Runtime.Resource.Resource</td>
+        <td class="property">
+          <a href="#NVelocity.Context.VMContext.CurrentResource">CurrentResource</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="propertyType" valign="top">string</td>
+        <td class="property">
+          <a href="#NVelocity.Context.VMContext.CurrentTemplateName">CurrentTemplateName</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="propertyType" valign="top">NVelocity.App.Events.EventCartridge</td>
+        <td class="property">
+          <a href="#NVelocity.Context.VMContext.EventCartridge">EventCartridge</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="propertyType" valign="top">NVelocity.Context.IContext</td>
+        <td class="property">
+          <a href="#NVelocity.Context.VMContext.InternalUserContext">InternalUserContext</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="propertyType" valign="top">object[]</td>
+        <td class="property">
+          <a href="#NVelocity.Context.VMContext.Keys">Keys</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="propertyType" valign="top">object[]</td>
+        <td class="property">
+          <a href="#NVelocity.Context.VMContext.TemplateNameStack">TemplateNameStack</a>
+        </td>
+      </tr>
+    </table>
+    <br>
+    <a name="method-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Method Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.Context.VMContext.AddVMProxyArg(NVelocity.Runtime.Directive.VMProxyArg)">AddVMProxyArg</a>(NVelocity.Runtime.Directive.VMProxyArg vmpa)<br>          Used to put VMProxyArgs into this context.  It separates
+            the VMProxyArgs into constant and non-constant types
+            pulling out the value of the constant types so they can
+            be modified w/o damaging the VMProxyArg, and leaving the
+            dynamic ones, as they modify context rather than their own
+            state
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">NVelocity.App.Events.EventCartridge</td>
+        <td class="method">
+          <a href="#NVelocity.Context.VMContext.AttachEventCartridge(NVelocity.App.Events.EventCartridge)">AttachEventCartridge</a>(NVelocity.App.Events.EventCartridge ec)</td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">bool</td>
+        <td class="method">
+          <a href="#NVelocity.Context.VMContext.ContainsKey(System.Object)">ContainsKey</a>(object key)<br>          not yet impl
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">object</td>
+        <td class="method">
+          <a href="#NVelocity.Context.VMContext.Get(System.String)">Get</a>(string key)<br>          Impl of the Context.gut() method.
+            *
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">NVelocity.Util.Introspection.IntrospectionCacheData</td>
+        <td class="method">
+          <a href="#NVelocity.Context.VMContext.ICacheGet(System.Object)">ICacheGet</a>(object key)</td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.Context.VMContext.ICachePut(System.Object,NVelocity.Util.Introspection.IntrospectionCacheData)">ICachePut</a>(object key, NVelocity.Util.Introspection.IntrospectionCacheData o)</td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.Context.VMContext.PopCurrentTemplateName">PopCurrentTemplateName</a>()</td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.Context.VMContext.PushCurrentTemplateName(System.String)">PushCurrentTemplateName</a>(string s)</td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">object</td>
+        <td class="method">
+          <a href="#NVelocity.Context.VMContext.Put(System.String,System.Object)">Put</a>(string key, object value_Renamed)<br>          Impl of the Context.put() method.
+            *
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">object</td>
+        <td class="method">
+          <a href="#NVelocity.Context.VMContext.Remove(System.Object)">Remove</a>(object key)<br>          impl badly
+            </td>
+      </tr>
+    </table>
+    <br>
+    <table class="subtable" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Methods inherited from class System.Object</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>
+          <a href="..\..\NVelocity/Context/VMContext/Equals(System.html#Object)">Equals</a>, <a href="..\..\NVelocity/Context/VMContext.html#Finalize">Finalize</a>, <a href="..\..\NVelocity/Context/VMContext.html#GetHashCode">GetHashCode</a>, <a href="..\..\NVelocity/Context/VMContext.html#GetType">GetType</a>, <a href="..\..\NVelocity/Context/VMContext.html#MemberwiseClone">MemberwiseClone</a>, <a href="..\..\NVelocity/Context/VMContext.html#ToString">ToString</a></td>
+      </tr>
+    </table>
+    <br>
+    <a name="operator-summary">
+    </a>
+    <a name="event-summary">
+    </a>
+    <br>
+    <a name="field-detail">
+    </a>
+    <a name="constructor-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Constructor Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.Context.VMContext.#ctor(NVelocity.Context.InternalContextAdapter,NVelocity.Runtime.RuntimeServices)">
+    </a>
+    <h3>VMContext</h3>
+    <pre>public VMContext(NVelocity.Context.InternalContextAdapter inner,
+                 NVelocity.Runtime.RuntimeServices rsvc)</pre>
+    <dl>
+      <dd>
+        <p>  CTOR, wraps an ICA
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="property-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Property Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.Context.VMContext.BaseContext">
+    </a>
+    <h3>BaseContext</h3>
+    <pre>public NVelocity.Context.InternalContextAdapter BaseContext</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Context.VMContext.CurrentResource">
+    </a>
+    <h3>CurrentResource</h3>
+    <pre>public NVelocity.Runtime.Resource.Resource CurrentResource</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Context.VMContext.CurrentTemplateName">
+    </a>
+    <h3>CurrentTemplateName</h3>
+    <pre>public string CurrentTemplateName</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Context.VMContext.EventCartridge">
+    </a>
+    <h3>EventCartridge</h3>
+    <pre>public NVelocity.App.Events.EventCartridge EventCartridge</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Context.VMContext.InternalUserContext">
+    </a>
+    <h3>InternalUserContext</h3>
+    <pre>public NVelocity.Context.IContext InternalUserContext</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Context.VMContext.Keys">
+    </a>
+    <h3>Keys</h3>
+    <pre>public object[] Keys</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Context.VMContext.TemplateNameStack">
+    </a>
+    <h3>TemplateNameStack</h3>
+    <pre>public object[] TemplateNameStack</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="method-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Method Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.Context.VMContext.AddVMProxyArg(NVelocity.Runtime.Directive.VMProxyArg)">
+    </a>
+    <h3>AddVMProxyArg</h3>
+    <pre>public void AddVMProxyArg(NVelocity.Runtime.Directive.VMProxyArg vmpa)</pre>
+    <dl>
+      <dd>
+        <p>  Used to put VMProxyArgs into this context.  It separates
+            the VMProxyArgs into constant and non-constant types
+            pulling out the value of the constant types so they can
+            be modified w/o damaging the VMProxyArg, and leaving the
+            dynamic ones, as they modify context rather than their own
+            state
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>vmpa</code> - VMProxyArg to add
+            
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Context.VMContext.AttachEventCartridge(NVelocity.App.Events.EventCartridge)">
+    </a>
+    <h3>AttachEventCartridge</h3>
+    <pre>public NVelocity.App.Events.EventCartridge AttachEventCartridge(NVelocity.App.Events.EventCartridge ec)</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Context.VMContext.ContainsKey(System.Object)">
+    </a>
+    <h3>ContainsKey</h3>
+    <pre>public bool ContainsKey(object key)</pre>
+    <dl>
+      <dd>
+        <p>  not yet impl
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Context.VMContext.Get(System.String)">
+    </a>
+    <h3>Get</h3>
+    <pre>public object Get(string key)</pre>
+    <dl>
+      <dd>
+        <p>  Impl of the Context.gut() method.
+            *
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>key</code> - name of item to get
+            </dd>
+        </dl>
+        <b>Returns:</b>
+        <dl>
+          <dd> stored object or null
+            
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Context.VMContext.ICacheGet(System.Object)">
+    </a>
+    <h3>ICacheGet</h3>
+    <pre>public NVelocity.Util.Introspection.IntrospectionCacheData ICacheGet(object key)</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Context.VMContext.ICachePut(System.Object,NVelocity.Util.Introspection.IntrospectionCacheData)">
+    </a>
+    <h3>ICachePut</h3>
+    <pre>public void ICachePut(object key,
+                      NVelocity.Util.Introspection.IntrospectionCacheData o)</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Context.VMContext.PopCurrentTemplateName">
+    </a>
+    <h3>PopCurrentTemplateName</h3>
+    <pre>public void PopCurrentTemplateName()</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Context.VMContext.PushCurrentTemplateName(System.String)">
+    </a>
+    <h3>PushCurrentTemplateName</h3>
+    <pre>public void PushCurrentTemplateName(string s)</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Context.VMContext.Put(System.String,System.Object)">
+    </a>
+    <h3>Put</h3>
+    <pre>public object Put(string key,
+                  object value_Renamed)</pre>
+    <dl>
+      <dd>
+        <p>  Impl of the Context.put() method.
+            *
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>key</code> - name of item to set
+            </dd>
+          <dd>
+            <code>value</code> - object to set to key
+            </dd>
+        </dl>
+        <b>Returns:</b>
+        <dl>
+          <dd>old stored object
+            
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Context.VMContext.Remove(System.Object)">
+    </a>
+    <h3>Remove</h3>
+    <pre>public object Remove(object key)</pre>
+    <dl>
+      <dd>
+        <p>  impl badly
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="operator-detail">
+    </a>
+    <a name="event-detail">
+    </a>
+    <hr>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td>
+                <a href="namespace-summary.html">Namespace</a> </td>
+              <td class="nav1sel"> Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV TYPE    NEXT TYPE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+      <tr class="nav2">
+        <td>SUMMARY: INNER | FIELD | <a href="#constructor-summary">CONST</a> | <a href="#property-summary">PROP</a> | <a href="#method-summary">METHOD</a> | OP | EVENT</td>
+        <td>DETAIL: FIELD | <a href="#constructor-detail">CONST</a> | <a href="#property-detail">PROP</a> | <a href="#method-detail">METHOD</a> | OP | EVENT</td>
+      </tr>
+    </table>
+  </body>
+</html>

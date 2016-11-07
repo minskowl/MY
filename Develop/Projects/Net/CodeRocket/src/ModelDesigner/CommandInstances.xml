@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CommandInstances>
+  <MenuDescription>
+    <Menu name="File" text="&amp;File">
+      <MenuItem command="New" text="&amp;New" imageId="Main_New" description="Create a new diagram" />
+      <MenuItem command="Open" text="&amp;Open..." imageId="Main_Open" description="Open an existing diagram" />
+      <MenuItem command="OpenSchema" text="Open &amp;Schema..." imageId="Main_Open" description="Open an existing data schema" />
+      <Separator />
+      <MenuItem command="Save" text="&amp;Save" imageId="Main_Save" description="Save the open diagram" />
+      <MenuItem command="SaveAs" text="Save &amp;As..." imageId="Application_SaveAs" description="Save the open diagram with a new name" />
+      <Separator />
+      <MenuItem command="CloseEditor" text="Close Editor" imageId="" description="Closes the open editor" />
+      <Separator component="LibraryManager" />
+      <MenuItem component="LibraryManager" command="NewLibrary" text="Create New Library..." imageId="Library_NewLibrary" description="Creates a new library" />
+      <Separator />
+      <Menu name="FileImport" text="Import">
+        <MenuItem command="ImportMetafile" text="Import Metafile..." imageId="" description="Imports drawing from the metafile" />
+        <Separator component="LibraryManager" />
+        <MenuItem component="LibraryManager" command="ImportLibrary" text="Import Library..." imageId="Library_ImportLibrary" description="Imports an exported library" />
+      </Menu>
+      <Menu name="FileExport" text="Export">
+        <MenuItem command="ExportImage" text="Export as Image..." imageId="" description="Exports the current active page as an image" />
+        <MenuItem command="ExportSvg" text="Export as SVG..." imageId="" description="Exports the current active page as an SVG file" />
+        <Separator component="LibraryManager" />
+        <MenuItem component="LibraryManager" command="ExportLibrary" text="Export a library..." imageId="Library_ExportLibrary" description="Exports a library for distribution" />
+      </Menu>
+      <Separator />
+      <MenuItem component="PrintManager" command="PrintSetup" text="Print Set&amp;up..." imageId="" description="Modify the print settings" />
+      <MenuItem component="PrintManager" command="PrintPreview" text="Pr&amp;int Preview..." imageId="" description="Show a preview of the print out" />
+      <MenuItem component="PrintManager" command="Print" text="&amp;Print" imageId="Main_Print" description="Print the open diagram" />
+      <Separator component="PrintManager" />
+      <MenuItem conditions="StandAlone" command="Exit" text="E&amp;xit" imageId="" description="Closes the editor application" />
+      <MenuItem conditions="Owned" command="Exit" text="C&amp;lose" imageId="" description="Closes the editor window" />
+    </Menu>
+    <Menu name="Edit" text="&amp;Edit">
+      <MenuItem command="Undo" text="&amp;Undo" imageId="Main_Undo" description="Undo an action" />
+      <MenuItem command="Redo" text="&amp;Redo" imageId="Main_Redo" description="Redo an action" />
+      <Separator />
+      <MenuItem command="Cut" text="Cu&amp;t" imageId="Main_Cut" description="Cut the current selection to the clipboard" />
+      <MenuItem command="Copy" text="&amp;Copy" imageId="Main_Copy" description="Copy the current selection to the clipboard" />
+      <MenuItem command="Paste" text="&amp;Paste" imageId="Main_Paste" description="Paste the clipboard to the open diagram" />
+      <MenuItem command="Delete" text="&amp;Delete" imageId="Main_Delete" description="Delete the current selection" />
+    </Menu>
+    <Menu name="View" text="&amp;View">
+      <ComponentToggleMenuItems />
+    </Menu>
+    <Menu name="Page" text="&amp;Page">
+      <MenuItem command="AddPage" text="&amp;Add Page..." imageId="Designer_NewPage" description="Add a new page to the document" />
+      <MenuItem command="InsertPage" text="&amp;Insert Page..." imageId="Designer_InsertPage" description="Insert a new page in the document before the current page" />
+      <MenuItem command="RemovePage" text="&amp;Remove Page" imageId="Designer_RemovePage" description="Remove the current page from the document" />
+      <Separator />
+      <MenuItem command="ToggleRulers" text="&amp;Show Page Rulers" imageId="" description="Toggles the rulers for the current page" />
+      <MenuItem command="ToggleGrid" text="&amp;Show Page Grid" imageId="" description="Toggles the grid for the current page" />
+      <Separator />
+      <MenuItem command="AddLayer" text="&amp;Add Layer" imageId="Designer_NewLayer" description="Add a new layer to the current page" />
+      <Separator />
+      <MenuItem command="PageSetup" text="&amp;Page Setup..." imageId="" description="Edit the settings for the current page" />
+      <Separator />
+      <MenuItem command="FitToContent" text="&amp;Fit to Content" imageId="Designer_FitToContent" description="Adjust the size of the current page to fit the contained elements" />
+      <Separator />
+      <MenuItem command="CustomSelectAll" text="&amp;Select All" imageId="Application_SelectAll" description="Select all element on active page" />
+    </Menu>
+    <Menu name="Format" text="F&amp;ormat">
+      <Menu name="FormatGrouping" text="&amp;Grouping">
+        <MenuItem command="Group" text="&amp;Group" imageId="Designer_Group" description="Group the selected elements into a group element" />
+        <MenuItem command="Ungroup" text="&amp;Ungroup" imageId="Designer_Ungroup" description="Ungroup the selected group element into child elements" />
+      </Menu>
+      <Menu name="FormatShapes" text="&amp;Shapes">
+        <MenuItem command="Combine" text="&amp;Combine" imageId="Designer_Combine" description="Combine the selected elements into a shape element" />
+        <MenuItem command="Decompose" text="&amp;Decompose" imageId="Designer_Decompose" description="Decompose the selected shape element into primitive elements" />
+      </Menu>
+      <Separator />
+      <Menu name="FormatOrder" text="&amp;Order">
+        <MenuItem command="BringToFront" text="Bring to &amp;Front" imageId="Designer_BringToFront" description="Bring the selected elements to the front" />
+        <MenuItem command="BringForward" text="Bring F&amp;orward" imageId="Designer_BringForward" description="Bring the selected elements forward" />
+        <MenuItem command="SendBackward" text="Send B&amp;ackward" imageId="Designer_SendBackward" description="Send the selected elements backward" />
+        <MenuItem command="SendToBack" text="Send to &amp;Back" imageId="Designer_SendToBack" description="Send the selected elements to the back" />
+      </Menu>
+      <Separator />
+      <Menu name="FormatAlign" text="&amp;Align">
+        <MenuItem command="AlignLeft" text="Align &amp;Left" imageId="Designer_AlignLeft" description="Aligns the selected elements left" />
+        <MenuItem command="AlignCenter" text="Align &amp;Center" imageId="Designer_AlignCenter" description="Aligns the selected elements center" />
+        <MenuItem command="AlignRight" text="Align &amp;Right" imageId="Designer_AlignRight" description="Aligns the selected elements right" />
+        <Separator />
+        <MenuItem command="AlignTop" text="Align &amp;Top" imageId="Designer_AlignTop" description="Aligns the selected elements top" />
+        <MenuItem command="AlignMiddle" text="Align &amp;Middle" imageId="Designer_AlignMiddle" description="Aligns the selected elements middle" />
+        <MenuItem command="AlignBottom" text="Align &amp;Bottom" imageId="Designer_AlignBottom" description="Aligns the selected elements bottom" />
+        <Separator />
+        <MenuItem command="AlignHorizontalPinpoint" text="Align &amp;Horizontally to Pinpoint" imageId="" description="Aligns the selected elements horizontally to the pinpoints" />
+        <MenuItem command="AlignVerticalPinpoint" text="Align &amp;Vertically to Pinpoint" imageId="" description="Aligns the selected elements vertically to the pinpoints" />
+      </Menu>
+      <Separator />
+      <Menu name="FormatFlip" text="&amp;Flip">
+        <MenuItem command="FlipX" text="Flip &amp;Horizontally" imageId="Designer_FlipX" description="Flip the selected element(s) horizontally" />
+        <MenuItem command="FlipY" text="Flip &amp;Vertically" imageId="Designer_FlipY" description="Flip the selected element(s) vertically" />
+        <MenuItem command="FlipXY" text="Flip &amp;Both" imageId="Designer_FlipXY" description="Flip the selected element(s) both horizontally and vertically" />
+      </Menu>
+      <Menu name="FormatRotate" text="&amp;Rotate">
+        <MenuItem command="RotateLeft" text="Rotate 90 Degrees &amp;Left" imageId="Designer_RotateLeft" description="Rotate the selected element(s) 90 degrees left" />
+        <MenuItem command="Rotate180" text="R&amp;otate 180 Degrees" imageId="Designer_Rotate180" description="Rotate the selected element(s) 180 degrees" />
+        <MenuItem command="RotateRight" text="Rotate 90 Degrees &amp;Right" imageId="Designer_RotateRight" description="Rotate the selected element(s) 90 degrees right" />
+      </Menu>
+    </Menu>
+    <Menu name="Tools" text="&amp;Tools">
+      <MenuItem command="SelectionTool" text="Selection" imageId="Designer_Selection" description="Selection tool" />
+      <MenuItem command="ZoomTool" text="Zoom" imageId="Designer_Zoom" description="Zoom tool" />
+      <MenuItem command="ConnectorTool" text="Connector" imageId="Designer_Connector" description="Connector tool" />
+      <MenuItem command="LineTool" text="Line" imageId="Designer_Line" description="Line tool" />
+      <MenuItem command="LineToLineTool" text="Line-to-Line" imageId="Designer_LineToLine" description="Line-to-Line tool" />
+      <MenuItem command="CircularArcTool" text="Circular Arc" imageId="Designer_CircularArc" description="Circular arc tool" />
+      <MenuItem command="CurveTool" text="Curve" imageId="Designer_Curve" description="Curve tool" />
+      <MenuItem command="BezierTool" text="Bezier" imageId="Designer_Bezier" description="Bezier tool" />
+      <MenuItem command="BezierToBezierTool" text="Bezier-to-Bezier" imageId="Designer_BezierToBezier" description="Bezier-to-Bezier tool" />
+      <MenuItem command="FreehandLineTool" text="Freehand Line" imageId="Designer_FreehandLine" description="Freehand Line tool" />
+      <MenuItem command="CardinalCurveTool" text="Cardinal Curve" imageId="Designer_CardinalCurve" description="Cardinal Curve tool" />
+      <MenuItem command="RectangleTool" text="Rectangle" imageId="Designer_Rectangle" description="Rectangle tool" />
+      <MenuItem command="EllipseTool" text="Ellipse" imageId="Designer_Ellipse" description="Ellipse tool" />
+      <MenuItem command="ArtisticTextTool" text="Artistic Text" imageId="Designer_ArtisticText" description="Artistic Text tool" />
+      <MenuItem command="ParagraphTextTool" text="Paragraph Text" imageId="Designer_ParagraphText" description="Paragraph Text tool" />
+      <MenuItem command="ImageTool" text="Image" imageId="Designer_Image" description="Image tool" />
+      <Separator />
+      <MenuItem command="Preferences" text="&amp;Preferences..." imageId="Main_Configure" description="Edit the editor preferences" />
+    </Menu>
+    <Menu name="Help" text="&amp;Help">
+      <MenuItem command="ContextHelp" text="&amp;Help..." imageId="Main_Help" description="Display the context-specific help for the editor" />
+      <Separator />
+      <MenuItem command="HelpIndex" text="Help &amp;Index..." imageId="Main_Help" description="Display the help index for the editor" />
+      <Separator />
+      <MenuItem command="About" text="&amp;About Dundas Diagram.NET Editor..." imageId="Main_Info" description="Display version and copyright information" />
+      <MenuItem command="Test" text="&amp;Test" imageId="Main_Info" description="Test Action" />
+    </Menu>
+  </MenuDescription>
+  <ToolbarDescription>
+    <Toolbar name="File" slot="0" left="0">
+      <Button style="Button" command="New" text="New" imageId="Main_New" description="Create a new diagram" />
+      <Button style="Button" command="Open" text="Open" imageId="Main_Open" description="Open an existing diagram" />
+      <Button style="Button" command="Save" text="Save" imageId="Main_Save" description="Save the open diagram" />
+      <Button style="Button" command="SaveAs" text="Save As" imageId="Application_SaveAs" description="Save the open diagram with a new name" />
+      <Button component="PrintManager" style="Button" command="Print" text="Print..." imageId="Main_Print" description="Print the open diagram" />
+      <Separator />
+      <Button style="Button" command="Undo" text="Undo" imageId="Main_Undo" description="Undo an action" />
+      <Button style="Button" command="Redo" text="Redo" imageId="Main_Redo" description="Redo an action" />
+      <Separator />
+      <Button style="Button" command="Cut" text="Cut" imageId="Main_Cut" description="Cut the current selection to the clipboard" />
+      <Button style="Button" command="Copy" text="Copy" imageId="Main_Copy" description="Copy the current selection to the clipboard" />
+      <Button style="Button" command="Paste" text="Paste" imageId="Main_Paste" description="Paste the clipboard to the open diagram" />
+      <Button style="Button" command="Delete" text="Delete" imageId="Main_Delete" description="Delete the current selection" />
+    </Toolbar>
+    <Toolbar name="Editor" slot="0" left="100">
+      <Button style="Button" command="Group" text="Group" imageId="Designer_Group" description="Group the selected elements into a group element" />
+      <Button style="Button" command="Ungroup" text="Ungroup" imageId="Designer_Ungroup" description="Ungroup the selected group element into child elements" />
+      <Button style="Button" command="Combine" text="Combine" imageId="Designer_Combine" description="Combine the selected elements into a shape element" />
+      <Button style="Button" command="Decompose" text="Decompose" imageId="Designer_Decompose" description="Decompose the selected shape element into primitive elements" />
+      <Separator />
+      <Button style="Button" command="FitToContent" text="Fit to Content" imageId="Designer_FitToContent" description="Adjusts the size of the current page to fit the contained elements" />
+    </Toolbar>
+    <Toolbar name="Tools" slot="0" left="2">
+      <Button style="Button" command="SelectionTool" text="Selection" imageId="Designer_Selection" description="Selection tool" />
+      <Button style="Button" command="ZoomTool" text="Zoom" imageId="Designer_Zoom" description="Zoom tool" />
+      <Button style="Button" command="ConnectorTool" text="Connector" imageId="Designer_Connector" description="Connector tool" />
+      <Button style="Button" command="LineTool" text="Line" imageId="Designer_Line" description="Line tool" />
+      <Button style="Button" command="LineToLineTool" text="Line-to-Line" imageId="Designer_LineToLine" description="Line-to-Line tool" />
+      <Button style="Button" command="CircularArcTool" text="Circular Arc" imageId="Designer_CircularArc" description="Circular arc tool" />
+      <Button style="Button" command="CurveTool" text="Curve" imageId="Designer_Curve" description="Curve tool" />
+      <Button style="Button" command="BezierTool" text="Bezier" imageId="Designer_Bezier" description="Bezier tool" />
+      <Button style="Button" command="BezierToBezierTool" text="Bezier-to-Bezier" imageId="Designer_BezierToBezier" description="Bezier-to-Bezier tool" />
+      <Button style="Button" command="FreehandLineTool" text="Freehand Line" imageId="Designer_FreehandLine" description="Freehand Line tool" />
+      <Button style="Button" command="CardinalCurveTool" text="Cardinal Curve" imageId="Designer_CardinalCurve" description="Cardinal Curve tool" />
+      <Button style="Button" command="RectangleTool" text="Rectangle" imageId="Designer_Rectangle" description="Rectangle tool" />
+      <Button style="Button" command="EllipseTool" text="Ellipse" imageId="Designer_Ellipse" description="Ellipse tool" />
+      <Button style="Button" command="ArtisticTextTool" text="Artistic Text" imageId="Designer_ArtisticText" description="Artistic Text tool" />
+      <Button style="Button" command="ParagraphTextTool" text="Paragraph Text" imageId="Designer_ParagraphText" description="Paragraph Text tool" />
+      <Button style="Button" command="ImageTool" text="Image" imageId="Designer_Image" description="Image tool" />
+    </Toolbar>
+    <Toolbar name="TextModifiers" slot="1" left="0">
+      <List command="TextFontFaceModifier" width="200" allowEdit="false" numbersOnly="false" description="Select the text font face" />
+      <List command="TextFontSizeModifier" width="64" allowEdit="true" numbersOnly="true" description="Select the text font size (in points)" />
+      <Button style="DropButton" command="TextColorModifier" text="Text Color" imageId="Designer_TextColor" description="Set the text color" />
+      <Button style="DropButton" command="TextBackgroundColorModifier" text="Text Background Color" imageId="Designer_TextBackgroundColor" description="Set the text background color" />
+      <Separator />
+      <Button style="Button" command="TextBoldModifier" text="Bold" imageId="Designer_TextBold" description="Toggle bold" />
+      <Button style="Button" command="TextItalicsModifier" text="Italics" imageId="Designer_TextItalics" description="Toggle italics" />
+      <Button style="Button" command="TextUnderlineModifier" text="Underline" imageId="Designer_TextUnderline" description="Toggle underline" />
+      <Separator />
+      <Button style="Button" command="TextHorizontalAlignmentModifier_Left" text="Left" imageId="Designer_TextHorizontrolAlignment_Left" description="Set the horizontal text alignment to left-aligned" />
+      <Button style="Button" command="TextHorizontalAlignmentModifier_Center" text="Center" imageId="Designer_TextHorizontrolAlignment_Center" description="Set the horizontal text alignment to center-aligned" />
+      <Button style="Button" command="TextHorizontalAlignmentModifier_Right" text="Right" imageId="Designer_TextHorizontrolAlignment_Right" description="Set the horizontal text alignment to right-aligned" />
+      <Separator />
+      <Button style="Button" command="TextVerticalAlignmentModifier_Top" text="Top" imageId="Designer_TextVerticalAlignement_Top" description="Set the vertical text alignment to top-aligned" />
+      <Button style="Button" command="TextVerticalAlignmentModifier_Middle" text="Middle" imageId="Designer_TextVerticalAlignement_Middle" description="Set the vertical text alignment to middle-aligned" />
+      <Button style="Button" command="TextVerticalAlignmentModifier_Bottom" text="Bottom" imageId="Designer_TextVerticalAlignement_Bottom" description="Set the vertical text alignment to bottom-aligned" />
+      <Separator />
+      <Button style="DropButton" command="StrokeColorModifier" text="Color" imageId="Designer_StrokeColor" description="Set the stroke color" />
+      <Button style="DropButton" command="StrokeStartCapModifier" text="Start Cap" imageId="Designer_StrokeStartCap" description="Set the stroke start cap" />
+      <Button style="DropButton" command="StrokeEndCapModifier" text="End Cap" imageId="Designer_StrokeEndCap" description="Set the stroke end cap" />
+      <Button style="DropButton" command="StrokeDashTypeModifier" text="Dash Type" imageId="Designer_StrokeDashType" description="Set the stroke dash type" />
+      <Button style="DropButton" command="StrokeWeightModifier" text="Weight" imageId="Designer_StrokeWeight" description="Set the stroke weight" />
+      <Separator />
+      <Button style="DropButton" command="FillTypeModifier" text="Type" imageId="Designer_FillType" description="Set the fill type" />
+      <Button style="DropButton" command="FillColorModifier" text="Color" imageId="Designer_FillColor" description="Set the fill color" />
+      <Button style="DropButton" command="FillEndColorModifier" text="End Color" imageId="Designer_FillEndColor" description="Set the fill end color" />
+      <Button style="DropButton" command="FillGradientTypeModifier" text="Gradient Type" imageId="Designer_FillGradientType" description="Set the fill gradient type" />
+      <Button style="DropButton" command="FillHatchTypeModifier" text="Hatch Type" imageId="Designer_FillHatchType" description="Set the fill hatch type" />
+      <Separator />
+      <Button style="DropButton" command="DrawingShadowColorModifier" text="Shadow Color" imageId="Designer_DrawingShadowColor" description="Set the drawing shadow color" />
+    </Toolbar>
+   </ToolbarDescription>
+</CommandInstances>

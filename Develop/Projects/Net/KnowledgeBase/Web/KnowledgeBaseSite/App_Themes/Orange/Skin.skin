@@ -1,0 +1,48 @@
+
+<KB:HelpTip   runat="server"  ImageUrl="images/help_14.gif"/>
+
+
+<KB:GridViewEx runat="server" SkinId="View" AllowSorting="True" AutoGenerateColumns="False" 
+GridLines="None" CellPadding="4" CssClass="grdBody"  
+SortAscImageUrl="~/App_Themes/images/arrow-up.png" SortDescImageUrl="~/App_Themes/images/arrow-down.png"
+>
+        <PagerStyle  ForeColor="Black"  CssClass="grdPager"  />
+        <RowStyle CssClass="grdRow" />
+        <EditRowStyle CssClass="grdEditRow"  />
+        <SelectedRowStyle CssClass="grdSelRow" />
+        <AlternatingRowStyle CssClass="grdAltRow" />  
+        <HeaderStyle  CssClass="grdHeader" ForeColor="Black"  />
+        <FooterStyle  CssClass="grdFooter" />
+</KB:GridViewEx>
+
+
+
+<KB:SaveButton  runat="server" Mode="InputButton" Text="Save" AlternateText="Save" Width="70px" />
+<KB:SaveAndExitButton runat="server" Mode="InputButton" AlternateText="Save And Close" Text="Save And Close" Width="110px" />
+
+<KB:HeaderPage  runat="server" CssClass="HeaderPage"/>
+<KB:headerparagraph  runat="server" CssClass="HeaderParagraph" SkinId="Header" />
+<KB:headerparagraph  runat="server" CssClass="TodayHeader" SkinId="Today" />
+<KB:HeaderItem  runat="server" CssClass="HeaderItem" />
+
+
+<KB:PageFrameset runat="server"  BorderColor="#FF6800" />
+
+
+<asp:TextBox  runat="server" Width="200px"/>
+<asp:TextBox  SkinId="Wide" runat="server" Width="400px" />
+<asp:TextBox  SkinId="Full" runat="server" Width="100%" />
+<asp:TextBox  SkinId="Multi" runat="server"  Width="250px"/>
+<asp:TextBox  SkinId="Custom" runat="server"/>
+
+<KB:TextBoxEx  runat="server" Width="200px"/>
+<KB:TextBoxEx  SkinId="Wide" runat="server" Width="400px" />
+<KB:TextBoxEx  SkinId="Full" runat="server" Width="100%" />
+<KB:TextBoxEx  SkinId="Multi" runat="server"  Width="250px"/>
+<KB:TextBoxEx  SkinId="Custom" runat="server"/>
+
+<asp:DropDownList runat="server" Width="200px"/>
+<asp:DropDownList runat="server" SkinId="Custom" />
+
+<KB:DropPanelButton runat="server" PanelBorderColor="#FFBD99"  />
+

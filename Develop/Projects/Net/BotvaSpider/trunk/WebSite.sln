@@ -1,0 +1,96 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Bot", "http://localhost/Bot", "{D2FF96E9-3E0F-4145-8D41-F6F163CAFE00}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFramework = "3.5"
+		ProjectReferences = "{3B075380-25C1-44B9-AF4B-76990450C01A}|Site.Core.dll;{25AB3B90-41A8-4BD4-88B6-4607D1633D4C}|Savchin.Data.dll;{2F1807E4-39A2-4F38-ADFC-6310A8443D90}|Savchin.Tools.dll;{BA6303D3-C692-418A-B948-3C6B5AB146BD}|Savchin.WebControls.dll;{BFF8B5DA-97CA-401F-8BDC-D9B3B50FD8EB}|Savchin.Web.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/Bot"
+		Debug.AspNetCompiler.PhysicalPath = "WebSite\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\Bot\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/Bot"
+		Release.AspNetCompiler.PhysicalPath = "WebSite\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\Bot\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "WebSite\"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Site.Core", "Site.Core\Site.Core.csproj", "{3B075380-25C1-44B9-AF4B-76990450C01A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Savchin.Tools", "..\..\Libs\Tools\Savchin.Tools.csproj", "{2F1807E4-39A2-4F38-ADFC-6310A8443D90}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "..\..\Libs\Data\Data.csproj", "{25AB3B90-41A8-4BD4-88B6-4607D1633D4C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Resources", "Resources", "{A8966B04-9189-4444-857C-541DF4DBCBB4}"
+	ProjectSection(SolutionItems) = preProject
+		Resources\DAO.tsql = Resources\DAO.tsql
+		Resources\Data.schema = Resources\Data.schema
+		Resources\Entity.tcs = Resources\Entity.tcs
+		Resources\EntityValue.tcs = Resources\EntityValue.tcs
+		Resources\Factory.tcs = Resources\Factory.tcs
+		Resources\Manager.tcs = Resources\Manager.tcs
+		Resources\ManagerTests.tcs = Resources\ManagerTests.tcs
+		Resources\Project.gp = Resources\Project.gp
+		Resources\spGetBy.tsql = Resources\spGetBy.tsql
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libs", "Libs", "{AAB38611-A576-406A-8634-170FC3C6600B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebControls", "..\..\Libs\WebControls\WebControls.csproj", "{BA6303D3-C692-418A-B948-3C6B5AB146BD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Site.Core.Tests", "Site.Core.Tests\Site.Core.Tests.csproj", "{1CA6C5A2-5923-4718-9FB1-F6E199EC8936}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Savchin.Web", "..\..\Libs\Savchin.Web\Savchin.Web.csproj", "{BFF8B5DA-97CA-401F-8BDC-D9B3B50FD8EB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D2FF96E9-3E0F-4145-8D41-F6F163CAFE00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2FF96E9-3E0F-4145-8D41-F6F163CAFE00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2FF96E9-3E0F-4145-8D41-F6F163CAFE00}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2FF96E9-3E0F-4145-8D41-F6F163CAFE00}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{3B075380-25C1-44B9-AF4B-76990450C01A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B075380-25C1-44B9-AF4B-76990450C01A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B075380-25C1-44B9-AF4B-76990450C01A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B075380-25C1-44B9-AF4B-76990450C01A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F1807E4-39A2-4F38-ADFC-6310A8443D90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F1807E4-39A2-4F38-ADFC-6310A8443D90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F1807E4-39A2-4F38-ADFC-6310A8443D90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F1807E4-39A2-4F38-ADFC-6310A8443D90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{25AB3B90-41A8-4BD4-88B6-4607D1633D4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25AB3B90-41A8-4BD4-88B6-4607D1633D4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25AB3B90-41A8-4BD4-88B6-4607D1633D4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25AB3B90-41A8-4BD4-88B6-4607D1633D4C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA6303D3-C692-418A-B948-3C6B5AB146BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA6303D3-C692-418A-B948-3C6B5AB146BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA6303D3-C692-418A-B948-3C6B5AB146BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA6303D3-C692-418A-B948-3C6B5AB146BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CA6C5A2-5923-4718-9FB1-F6E199EC8936}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CA6C5A2-5923-4718-9FB1-F6E199EC8936}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CA6C5A2-5923-4718-9FB1-F6E199EC8936}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CA6C5A2-5923-4718-9FB1-F6E199EC8936}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BFF8B5DA-97CA-401F-8BDC-D9B3B50FD8EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFF8B5DA-97CA-401F-8BDC-D9B3B50FD8EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFF8B5DA-97CA-401F-8BDC-D9B3B50FD8EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFF8B5DA-97CA-401F-8BDC-D9B3B50FD8EB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{25AB3B90-41A8-4BD4-88B6-4607D1633D4C} = {AAB38611-A576-406A-8634-170FC3C6600B}
+		{2F1807E4-39A2-4F38-ADFC-6310A8443D90} = {AAB38611-A576-406A-8634-170FC3C6600B}
+		{BA6303D3-C692-418A-B948-3C6B5AB146BD} = {AAB38611-A576-406A-8634-170FC3C6600B}
+		{BFF8B5DA-97CA-401F-8BDC-D9B3B50FD8EB} = {AAB38611-A576-406A-8634-170FC3C6600B}
+	EndGlobalSection
+EndGlobal

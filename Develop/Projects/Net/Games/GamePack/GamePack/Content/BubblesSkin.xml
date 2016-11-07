@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<skin
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../Nuclex Framework/Sources/framework/Nuclex.UserInterface/Resources/skin.xsd"
+  name="Suave"
+>
+
+  <!--
+    Resources used to draw GUI elements using this skin
+  -->
+  <resources>
+    <bitmap name="Bubles" contentPath="Bubles" />
+  </resources>
+
+  <!--
+    Frames that are used as building blocks for GUI elements
+  -->
+  <frames>
+ 
+    <!-- Tiles-->
+    <frame name="buble.Red">
+      <region source="Bubles" hplacement="left" vplacement="top" x="0" y="0" w="40" h="40" />
+      <text font="default" color="#000000" hplacement="left" vplacement="center" xoffset="4" yoffset="13" />
+    </frame>
+   
+    <frame name= "buble.Blue">
+      <region source="Bubles" hplacement="left" vplacement="top" x="40" y="0" w="40" h="40" />
+      <text font="default" color="#000000" hplacement="left" vplacement="center" xoffset="4" yoffset="13" />
+    </frame>
+
+    <frame name= "buble.Green">
+      <region source="Bubles" hplacement="left" vplacement="top" x="80" y="0" w="40" h="40" />
+      <text font="default" color="#000000" hplacement="left" vplacement="center" xoffset="4" yoffset="13" />
+    </frame>
+
+    <frame name= "buble.Yellow">
+      <region source="Bubles" hplacement="left" vplacement="top" x="120" y="0" w="40" h="40" />
+      <text font="default" color="#000000" hplacement="left" vplacement="center" xoffset="4" yoffset="13" />
+    </frame>
+    
+    <frame name= "buble.Violet">
+      <region source="Bubles" hplacement="left" vplacement="top" x="160" y="0" w="40" h="40" />
+      <text font="default" color="#000000" hplacement="left" vplacement="center" xoffset="4" yoffset="13" />
+    </frame>
+
+
+
+
+
+
+    <frame name="buble.Red.selected">
+      <region source="Bubles" hplacement="left" vplacement="top" x="0" y="40" w="40" h="40" />
+      <text font="default" color="#000000" hplacement="left" vplacement="center" xoffset="4" yoffset="13" />
+    </frame>
+
+    <frame name= "buble.Blue.selected">
+      <region source="Bubles" hplacement="left" vplacement="top" x="40" y="40" w="40" h="40" />
+      <text font="default" color="#000000" hplacement="left" vplacement="center" xoffset="4" yoffset="13" />
+    </frame>
+
+    <frame name= "buble.Green.selected">
+      <region source="Bubles" hplacement="left" vplacement="top" x="80" y="40" w="40" h="40" />
+      <text font="default" color="#000000" hplacement="left" vplacement="center" xoffset="4" yoffset="13" />
+    </frame>
+
+    <frame name= "buble.Yellow.selected">
+      <region source="Bubles" hplacement="left" vplacement="top" x="120" y="40" w="40" h="40" />
+      <text font="default" color="#000000" hplacement="left" vplacement="center" xoffset="4" yoffset="13" />
+    </frame>
+
+    <frame name= "buble.Violet.selected">
+      <region source="Bubles" hplacement="left" vplacement="top" x="160" y="40" w="40" h="40" />
+      <text font="default" color="#000000" hplacement="left" vplacement="center" xoffset="4" yoffset="13" />
+    </frame>
+  </frames>
+
+</skin>

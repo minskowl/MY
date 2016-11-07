@@ -1,0 +1,43 @@
+﻿<%@ Import Namespace="KnowledgeBase.SiteCore" %>
+
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="SimpleMasterPage.master.cs"
+    Inherits="MasterPages_SimpleMasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+</head>
+<body class="site">
+    <form id="form1" runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server">
+    </asp:ScriptManager>
+    <table style="width: 100%; height: 100%;">
+        <tr>
+            <td>
+                <table style="width: 100%;">
+                    <tr>
+                        <td style="width: 34px;">
+                            <KB:Logo ID="logo" runat="server" />
+                        </td>
+                        <td>
+                            <KB:HeaderPage runat="server" ID="header" ForeColor="White">Knowledge base</KB:HeaderPage>
+                            <asp:Label runat="server" ID="labelVersion" />
+                        </td>
+                        <asp:ContentPlaceHolder ID="toolbar" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </tr>
+                </table>
+                <div>
+                    <asp:ContentPlaceHolder ID="content" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+            </td>
+        </tr>
+    </table>
+    </form>
+</body>
+</html>

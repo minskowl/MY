@@ -1,0 +1,10 @@
+
+
+<KB:StaticGrid 
+    runat="server" 
+    LineCssClass="grdRow"
+    AltLineCssClass="grdAltRow" 
+    GridCellStyle="border-right: #CCCCDD 1px solid; border-left: #CCCCDD 1px solid; font-size:12px;"
+    HeaderColumnStyle="background-repeat: repeat-x;border-color:#80A1B6;border-width:1px;border-style:solid;font-size:7pt;horizontal-align: left; font-family:Verdana; font-weight:bold;text-decoration:underline;"
+    BackgroundCssClass="lstAltRow"    
+/>

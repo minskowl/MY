@@ -1,0 +1,684 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="..\..\JavaDoc.css">
+  </head>
+  <body>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td>
+                <a href="namespace-summary.html">Namespace</a> </td>
+              <td class="nav1sel"> Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV TYPE    NEXT TYPE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+      <tr class="nav2">
+        <td>SUMMARY: INNER | FIELD | <a href="#constructor-summary">CONST</a> | <a href="#property-summary">PROP</a> | <a href="#method-summary">METHOD</a> | OP | EVENT</td>
+        <td>DETAIL: FIELD | <a href="#constructor-detail">CONST</a> | <a href="#property-detail">PROP</a> | <a href="#method-detail">METHOD</a> | OP | EVENT</td>
+      </tr>
+    </table>
+    <hr>
+    <h2>
+      <span class="namespaceName">NVelocity.Dvsl</span>
+      <br>
+      <span class="className">Class Dvsl</span>
+    </h2>
+    <p>
+            Main DVSL class - use this as the helper class for apps
+            </p>
+    <a name="field-summary">
+    </a>
+    <a name="constructor-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Constructor Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="constructor" valign="top">
+          <a href="#NVelocity.Dvsl.Dvsl.#ctor">Dvsl</a>()<br>        Initializes a new instance of the Dvsl class.</td>
+      </tr>
+    </table>
+    <br>
+    <a name="property-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Property Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="propertyType" valign="top">System.IO.FileInfo</td>
+        <td class="property">
+          <a href="#NVelocity.Dvsl.Dvsl.LogFile">LogFile</a>
+          <br>        
+            lets the user specify a filename for logging.
+            </td>
+      </tr>
+      <tr>
+        <td class="propertyType" valign="top">NVelocity.Runtime.Log.LogSystem</td>
+        <td class="property">
+          <a href="#NVelocity.Dvsl.Dvsl.LogSystem">LogSystem</a>
+          <br>        
+            lets the user specify a class instance for logging.
+            </td>
+      </tr>
+      <tr>
+        <td class="propertyType" valign="top">Commons.Collections.ExtendedProperties</td>
+        <td class="property">
+          <a href="#NVelocity.Dvsl.Dvsl.Toolbox">Toolbox</a>
+          <br>        Loads the toolbox from the input Properties.Currently supports specification of the Toolbox
+            name in the context, creating classes, and string
+            and integer values.  Ex :
+            
+            toolbox.contextname = floyd
+            toolbox.tool.footool = Footool
+            toolbox.string.mystring = Hello there!
+            toolbox.integer.myint = 7
+            toolbox.string.sourcebase = ./xdocs/
+            
+            So in template, this toolbox and it's values would
+            be accessed as :
+            
+            $context.floyd.footool.getFoo()
+            $context.floyd.mystring
+            $context.floyd.myint
+            </td>
+      </tr>
+      <tr>
+        <td class="propertyType" valign="top">NVelocity.Context.IContext</td>
+        <td class="property">
+          <a href="#NVelocity.Dvsl.Dvsl.UserContext">UserContext</a>
+          <br>        
+            Sets the user context.  The user context is
+            a Velocity Context containing user-supplied
+            objects and data that are to be made available
+            in the template
+            </td>
+      </tr>
+      <tr>
+        <td class="propertyType" valign="top">bool</td>
+        <td class="property">
+          <a href="#NVelocity.Dvsl.Dvsl.ValidatingParser">ValidatingParser</a>
+          <br>        
+            Uses a validating parser on all input documents
+            </td>
+      </tr>
+      <tr>
+        <td class="propertyType" valign="top">System.Collections.Hashtable</td>
+        <td class="property">
+          <a href="#NVelocity.Dvsl.Dvsl.VelocityConfig">VelocityConfig</a>
+          <br>        
+            lets the user pass a java.util.Properties containing
+            properties for the configuration of the VelocityEngine
+            used by DVSL
+            </td>
+      </tr>
+    </table>
+    <br>
+    <a name="method-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Method Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="returnType" valign="top">object</td>
+        <td class="method">
+          <a href="#NVelocity.Dvsl.Dvsl.GetAppValue(System.Object)">GetAppValue</a>(object key)<br>        
+            Gets the application value for the specified key
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.Dvsl.Dvsl.Main(System.String[])">Main</a>(string[] args)<br>        
+            Allows command-line access.
+            
+            Usage :  Dvsl.exe -STYLE stylesheeet [-IN infile] [-OUT outfile] [-TOOL toolboxname]
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.Dvsl.Dvsl.MakeReady">MakeReady</a>()<br>        
+            sets up all the context goodies
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">object</td>
+        <td class="method">
+          <a href="#NVelocity.Dvsl.Dvsl.PutAppValue(System.Object,System.Object)">PutAppValue</a>(object key, object value)<br>        
+            Sets the application value for the specified key
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.Dvsl.Dvsl.SetStylesheet(System.IO.TextReader)">SetStylesheet</a>(System.IO.TextReader value)<br>        
+            Sets the stylesheet for this transformation set
+            
+            Note that don't need this for each document you want
+            to transform.  Just do it once, and transform away...
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.Dvsl.Dvsl.SetStylesheet(System.IO.FileInfo)">SetStylesheet</a>(System.IO.FileInfo value)<br>        
+            Convenience function.  See...
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.Dvsl.Dvsl.SetStylesheet(System.String)">SetStylesheet</a>(string value)<br>        
+            Convenience function.  See...
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">long</td>
+        <td class="method">
+          <a href="#NVelocity.Dvsl.Dvsl.Transform(System.String,System.IO.TextWriter)">Transform</a>(string infile, System.IO.TextWriter writer)</td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">long</td>
+        <td class="method">
+          <a href="#NVelocity.Dvsl.Dvsl.Transform(System.Xml.XmlDocument,System.IO.TextWriter)">Transform</a>(System.Xml.XmlDocument dom4jdoc, System.IO.TextWriter writer)<br>        
+            Transforms the given dom4j Document into the writer.
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">long</td>
+        <td class="method">
+          <a href="#NVelocity.Dvsl.Dvsl.Transform(System.IO.Stream,System.IO.TextWriter)">Transform</a>(System.IO.Stream stream, System.IO.TextWriter writer)</td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">long</td>
+        <td class="method">
+          <a href="#NVelocity.Dvsl.Dvsl.Transform(System.IO.TextReader,System.IO.TextWriter)">Transform</a>(System.IO.TextReader reader, System.IO.TextWriter writer)</td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">long</td>
+        <td class="method">
+          <a href="#NVelocity.Dvsl.Dvsl.Transform(System.IO.FileInfo,System.IO.TextWriter)">Transform</a>(System.IO.FileInfo f, System.IO.TextWriter writer)</td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">long</td>
+        <td class="method">
+          <a href="#NVelocity.Dvsl.Dvsl.XForm(System.Xml.XmlDocument,System.IO.TextWriter)">XForm</a>(System.Xml.XmlDocument dom4jdoc, System.IO.TextWriter writer)</td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">long</td>
+        <td class="method">
+          <a href="#NVelocity.Dvsl.Dvsl.XForm(System.IO.TextReader,System.IO.TextWriter)">XForm</a>(System.IO.TextReader reader, System.IO.TextWriter writer)<br>        
+            does the transformation of the inputstream into
+            the output writer
+            </td>
+      </tr>
+    </table>
+    <br>
+    <table class="subtable" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Methods inherited from class System.Object</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>
+          <a href="..\..\NVelocity/Dvsl/Dvsl/Equals(System.html#Object)">Equals</a>, <a href="..\..\NVelocity/Dvsl/Dvsl.html#Finalize">Finalize</a>, <a href="..\..\NVelocity/Dvsl/Dvsl.html#GetHashCode">GetHashCode</a>, <a href="..\..\NVelocity/Dvsl/Dvsl.html#GetType">GetType</a>, <a href="..\..\NVelocity/Dvsl/Dvsl.html#MemberwiseClone">MemberwiseClone</a>, <a href="..\..\NVelocity/Dvsl/Dvsl.html#ToString">ToString</a></td>
+      </tr>
+    </table>
+    <br>
+    <a name="operator-summary">
+    </a>
+    <a name="event-summary">
+    </a>
+    <br>
+    <a name="field-detail">
+    </a>
+    <a name="constructor-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Constructor Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.Dvsl.Dvsl.#ctor">
+    </a>
+    <h3>Dvsl</h3>
+    <pre>public Dvsl()</pre>
+    <dl>
+      <dd>
+        <p>Initializes a new instance of the Dvsl class.</p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="property-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Property Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.Dvsl.Dvsl.LogFile">
+    </a>
+    <h3>LogFile</h3>
+    <pre>public System.IO.FileInfo LogFile</pre>
+    <dl>
+      <dd>
+        <p>
+            lets the user specify a filename for logging.
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Dvsl.Dvsl.LogSystem">
+    </a>
+    <h3>LogSystem</h3>
+    <pre>public NVelocity.Runtime.Log.LogSystem LogSystem</pre>
+    <dl>
+      <dd>
+        <p>
+            lets the user specify a class instance for logging.
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Dvsl.Dvsl.Toolbox">
+    </a>
+    <h3>Toolbox</h3>
+    <pre>public Commons.Collections.ExtendedProperties Toolbox</pre>
+    <dl>
+      <dd>
+        <p>Loads the toolbox from the input Properties.Currently supports specification of the Toolbox
+            name in the context, creating classes, and string
+            and integer values.  Ex :
+            
+            toolbox.contextname = floyd
+            toolbox.tool.footool = Footool
+            toolbox.string.mystring = Hello there!
+            toolbox.integer.myint = 7
+            toolbox.string.sourcebase = ./xdocs/
+            
+            So in template, this toolbox and it's values would
+            be accessed as :
+            
+            $context.floyd.footool.getFoo()
+            $context.floyd.mystring
+            $context.floyd.myint
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Dvsl.Dvsl.UserContext">
+    </a>
+    <h3>UserContext</h3>
+    <pre>public NVelocity.Context.IContext UserContext</pre>
+    <dl>
+      <dd>
+        <p>
+            Sets the user context.  The user context is
+            a Velocity Context containing user-supplied
+            objects and data that are to be made available
+            in the template
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>ctx</code> - User context of data</dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Dvsl.Dvsl.ValidatingParser">
+    </a>
+    <h3>ValidatingParser</h3>
+    <pre>public bool ValidatingParser</pre>
+    <dl>
+      <dd>
+        <p>
+            Uses a validating parser on all input documents
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code></code> - validate</dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Dvsl.Dvsl.VelocityConfig">
+    </a>
+    <h3>VelocityConfig</h3>
+    <pre>public System.Collections.Hashtable VelocityConfig</pre>
+    <dl>
+      <dd>
+        <p>
+            lets the user pass a java.util.Properties containing
+            properties for the configuration of the VelocityEngine
+            used by DVSL
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="method-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Method Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.Dvsl.Dvsl.GetAppValue(System.Object)">
+    </a>
+    <h3>GetAppValue</h3>
+    <pre>public object GetAppValue(object key)</pre>
+    <dl>
+      <dd>
+        <p>
+            Gets the application value for the specified key
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>key</code> - key to use to retrieve value</dd>
+        </dl>
+        <b>Returns:</b>
+        <dl>
+          <dd>value if found, null otherwise</dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Dvsl.Dvsl.Main(System.String[])">
+    </a>
+    <h3>Main</h3>
+    <pre>public void Main(string[] args)</pre>
+    <dl>
+      <dd>
+        <p>
+            Allows command-line access.
+            
+            Usage :  Dvsl.exe -STYLE stylesheeet [-IN infile] [-OUT outfile] [-TOOL toolboxname]
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Dvsl.Dvsl.MakeReady">
+    </a>
+    <h3>MakeReady</h3>
+    <pre>protected internal void MakeReady()</pre>
+    <dl>
+      <dd>
+        <p>
+            sets up all the context goodies
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Dvsl.Dvsl.PutAppValue(System.Object,System.Object)">
+    </a>
+    <h3>PutAppValue</h3>
+    <pre>public object PutAppValue(object key,
+                          object value)</pre>
+    <dl>
+      <dd>
+        <p>
+            Sets the application value for the specified key
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>key</code> - key to use to store value</dd>
+          <dd>
+            <code>value</code> - value to be stored</dd>
+        </dl>
+        <b>Returns:</b>
+        <dl>
+          <dd>old value if any, null otherwise</dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Dvsl.Dvsl.SetStylesheet(System.IO.TextReader)">
+    </a>
+    <h3>SetStylesheet</h3>
+    <pre>public void SetStylesheet(System.IO.TextReader value)</pre>
+    <dl>
+      <dd>
+        <p>
+            Sets the stylesheet for this transformation set
+            
+            Note that don't need this for each document you want
+            to transform.  Just do it once, and transform away...
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>styleReader</code> - Reader with stylesheet char stream</dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Dvsl.Dvsl.SetStylesheet(System.IO.FileInfo)">
+    </a>
+    <h3>SetStylesheet</h3>
+    <pre>public void SetStylesheet(System.IO.FileInfo value)</pre>
+    <dl>
+      <dd>
+        <p>
+            Convenience function.  See...
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Dvsl.Dvsl.SetStylesheet(System.String)">
+    </a>
+    <h3>SetStylesheet</h3>
+    <pre>public void SetStylesheet(string value)</pre>
+    <dl>
+      <dd>
+        <p>
+            Convenience function.  See...
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Dvsl.Dvsl.Transform(System.String,System.IO.TextWriter)">
+    </a>
+    <h3>Transform</h3>
+    <pre>public long Transform(string infile,
+                      System.IO.TextWriter writer)</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Dvsl.Dvsl.Transform(System.Xml.XmlDocument,System.IO.TextWriter)">
+    </a>
+    <h3>Transform</h3>
+    <pre>public long Transform(System.Xml.XmlDocument dom4jdoc,
+                      System.IO.TextWriter writer)</pre>
+    <dl>
+      <dd>
+        <p>
+            Transforms the given dom4j Document into the writer.
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>dom4jdoc</code> - dom4j Document object</dd>
+          <dd>
+            <code>writer</code> - Writer for output</dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Dvsl.Dvsl.Transform(System.IO.Stream,System.IO.TextWriter)">
+    </a>
+    <h3>Transform</h3>
+    <pre>public long Transform(System.IO.Stream stream,
+                      System.IO.TextWriter writer)</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Dvsl.Dvsl.Transform(System.IO.TextReader,System.IO.TextWriter)">
+    </a>
+    <h3>Transform</h3>
+    <pre>public long Transform(System.IO.TextReader reader,
+                      System.IO.TextWriter writer)</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Dvsl.Dvsl.Transform(System.IO.FileInfo,System.IO.TextWriter)">
+    </a>
+    <h3>Transform</h3>
+    <pre>public long Transform(System.IO.FileInfo f,
+                      System.IO.TextWriter writer)</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Dvsl.Dvsl.XForm(System.Xml.XmlDocument,System.IO.TextWriter)">
+    </a>
+    <h3>XForm</h3>
+    <pre>protected internal long XForm(System.Xml.XmlDocument dom4jdoc,
+                              System.IO.TextWriter writer)</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Dvsl.Dvsl.XForm(System.IO.TextReader,System.IO.TextWriter)">
+    </a>
+    <h3>XForm</h3>
+    <pre>protected internal long XForm(System.IO.TextReader reader,
+                              System.IO.TextWriter writer)</pre>
+    <dl>
+      <dd>
+        <p>
+            does the transformation of the inputstream into
+            the output writer
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="operator-detail">
+    </a>
+    <a name="event-detail">
+    </a>
+    <hr>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td>
+                <a href="namespace-summary.html">Namespace</a> </td>
+              <td class="nav1sel"> Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV TYPE    NEXT TYPE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+      <tr class="nav2">
+        <td>SUMMARY: INNER | FIELD | <a href="#constructor-summary">CONST</a> | <a href="#property-summary">PROP</a> | <a href="#method-summary">METHOD</a> | OP | EVENT</td>
+        <td>DETAIL: FIELD | <a href="#constructor-detail">CONST</a> | <a href="#property-detail">PROP</a> | <a href="#method-detail">METHOD</a> | OP | EVENT</td>
+      </tr>
+    </table>
+  </body>
+</html>

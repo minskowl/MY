@@ -1,0 +1,474 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<!-- Content Stylesheet for Site -->
+
+        
+<!-- start the processing -->
+    <!-- ====================================================================== -->
+    <!-- Main Page Section -->
+    <!-- ====================================================================== -->
+    <html>
+        <head>
+            <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+
+                                                    <meta name="author" value="Cort Schaefer">
+            <meta name="email" value="cort@xmission.com">
+            
+           
+                                    
+            <title>NVelocity - NVelocity</title>
+	    <link rel="SHORTCUT ICON" href="./images/favicon.ico">
+	    <link rel="stylesheet" type="text/css" href="./css/nvelocity.css">
+
+        </head>
+
+        <body bgcolor="#ffffff" text="#000000" link="#525D76">        
+	<table border="0" width="100%" cellspacing="0" ID="Table2">
+	    <tr>
+		<td align="left">
+		    <A href="http://sourceforge.net"><IMG src="http://sourceforge.net/sflogo.php?group_id=58632&amp;type=5" width="210" height="62" border="0" alt="SourceForge Logo"></A>
+		</td>
+		<td align="right">
+		    <a href="http://nvelocity.sourceforge.net" style="text-decoration: none;">
+			<span class="title">NVelocity</span></a>
+		</td>
+	    </tr>
+	</table>
+	<br>
+
+
+            <table border="0" width="100%" cellspacing="4">
+                <tr><td colspan="2">
+                    <hr noshade="" size="1"/>
+                </td></tr>
+                
+                <tr>
+                    <!-- LEFT SIDE NAVIGATION -->
+                    <td width="20%" valign="top" nowrap="true">
+                                <p><strong>About</strong></p>
+        <ul>
+                    <li>    <a href="./index.html">Overview</a>
+</li>
+                    <li>    <a href="http://sourceforge.net/project/showfiles.php?group_id=58632">Download</a>
+</li>
+                    <li>    <a href="./changelog.html">ChangeLog</a>
+</li>
+                </ul>
+            <p><strong>Community</strong></p>
+        <ul>
+                    <li>    <a href="http://sourceforge.net/projects/nvelocity">Project Summary</a>
+</li>
+                    <li>    <a href="http://sourceforge.net/mail/?group_id=58632">Mailing Lists</a>
+</li>
+                    <li>    <a href="http://sourceforge.net/cvs/?group_id=58632">CVS Repositories</a>
+</li>
+                </ul>
+            <p><strong>Docs</strong></p>
+        <ul>
+                    <li>    <a href="./api/overview-summary.html">API Specs</a>
+</li>
+                    <li>    <a href="./nant/index.html">NAnt Tasks</a>
+</li>
+                    <li>    <a href="http://jakarta.apache.org/velocity/vtl-reference-guide.html">VTL Reference Guide</a>
+</li>
+                </ul>
+            <p><strong>Related Sites</strong></p>
+        <ul>
+                    <li>    <a href="http://jakarta.apache.org/velocity">Velocity (the original)</a>
+</li>
+                    <li>    <a href="http://sourceforge.net/projects/mavnet">Maverick.Net</a>
+</li>
+                    <li>    <a href="http://sourceforge.net/projects/nant">NAnt</a>
+</li>
+                </ul>
+                        </td>
+                    <td width="80%" align="left" valign="top">
+                                                                    <table border="0" cellspacing="0" cellpadding="2" width="100%">
+      <tr><td bgcolor="#525D76">
+        <font color="#ffffff" face="arial,helvetica,sanserif">
+          <a name="NVelocity-0.4.2"><strong>NVelocity-0.4.2</strong></a>
+        </font>
+      </td></tr>
+      <tr><td>
+        <blockquote>
+                                    <ul><li>updates to support a common version number as well as Makefile targets to build a package that corresponds to that version</li><li>add zip containing java source that should correspond to what is available in NVelocity</li><li>update solution and project files to VS 2003 format (add make targets to convert versions between 2002 and 2003)</li><li>add Makefile target to style source using astyle</li><li>update NUnit tests to NUnit 2.x style</li><li>remove NUnitRunner (tests can be run via Makefile target or using NUnitAddin)</li><li>add local verion of NAnt, NUnit and NDoc that the project depends on</li><li>updated version of log4net used to version 1.2 beta 8, modifications in assembly attributes to reflect changes in log4net as well as changes to SimpleLog4NetLogSystem</li><li>add logging to DefaultTraceListener while the logger is being setup (for debugging)</li><li>sign assemblies</li><li>resolved several issues with ResourceLocator not being able to find embedded resources and exceptions that can happen in that process</li><li>add better support for handling fully qualified class names when specified from properties files</li></ul>
+                            </blockquote>
+        </p>
+      </td></tr>
+      <tr><td><br/></td></tr>
+    </table>
+                                                <table border="0" cellspacing="0" cellpadding="2" width="100%">
+      <tr><td bgcolor="#525D76">
+        <font color="#ffffff" face="arial,helvetica,sanserif">
+          <a name="NVelocity-0.4.1"><strong>NVelocity-0.4.1</strong></a>
+        </font>
+      </td></tr>
+      <tr><td>
+        <blockquote>
+                                    <ul><li>fix problem with internal initialization of log4net logger</li><li>add examples of using the NVelocity engine in an application</li><li>change Velocity and VelocityEngine methods that took StreamWriter an an argument to take TextWriter for more flexability</li><li>fix problem with DvslNodeImpl.Copy not rendering the correctly</li></ul>
+                            </blockquote>
+        </p>
+      </td></tr>
+      <tr><td><br/></td></tr>
+    </table>
+                                                <table border="0" cellspacing="0" cellpadding="2" width="100%">
+      <tr><td bgcolor="#525D76">
+        <font color="#ffffff" face="arial,helvetica,sanserif">
+          <a name="NVelocity-0.4"><strong>NVelocity-0.4</strong></a>
+        </font>
+      </td></tr>
+      <tr><td>
+        <blockquote>
+                                    <ul><li>make Foreach directive aware of derivitives of IEnumerable</li><li>add simple tests to make sure that Dvsl is working</li><li>change search for methods and properties to allow for Get/get named "properties" as well as to search for a property when a method is specified that has no arguments.  These changes were made so that it would be possible that more Velocity templates could be used directly from Java without conversion.  After thought, this might not have been as good of an idea as I had originally thought - it certainly blurs the line between what is a property and what is a method.</li><li>change functionality of Foreach directive when iterating over IDictionary to iterate over the IDictionaryItem collection as opposed to the Values collection (otherwise it would not be possible to get the key durring the iteration).</li><li>output NVelocity.NAntTasks.dll so that NAnt will recognize it automatically when placed in the NAnt.exe directory.</li><li>complete implementation of NVelocityHandler and NVelocityViewHandler, with common base class for both.  This work was partly done as cleanup and partly done to better support the work needed for Opt-NVelocity under Maverick.Net.</li><li>update LogManager to allow for a logging system to be set durring initialization</li><li>change internal logging durring initialization to use PrimordialLogSystem</li><li>seperation of http related classes into seperate NVelocity.Http assembly</li><li>Port of VelocityViewServlet, NVelocity.Http.NVelocityViewHandler</li><li>port of Tools package for toolbox support</li><li>update log4net to version 1.2 beta 3 - needed to support default logging domain.  Change NVelocity assemblies to use default logging domain.</li><li>update version of NDoc used to create JavaDoc API documentation</li><li>allow for unrestricted configuration of VelocityEngine options in Dvsl from properties file</li><li>lots of code clean up and reformatting, use more .Net conventions.</li></ul>
+                            </blockquote>
+        </p>
+      </td></tr>
+      <tr><td><br/></td></tr>
+    </table>
+                                                <table border="0" cellspacing="0" cellpadding="2" width="100%">
+      <tr><td bgcolor="#525D76">
+        <font color="#ffffff" face="arial,helvetica,sanserif">
+          <a name="NVelocity-0.3"><strong>NVelocity-0.3</strong></a>
+        </font>
+      </td></tr>
+      <tr><td>
+        <blockquote>
+                                    <PRE>
+2002-09-11 Wednesday 03:46  corts
+
+	* src/nvelocity.build:
+	
+	cleanup
+
+2002-09-11 Wednesday 03:45  corts
+
+	* src/Makefile:
+	
+	call nant for documentation
+
+2002-09-11 Wednesday 01:58  corts
+
+	* www/index.html:
+	
+	www content is now rendered by anakia.
+
+2002-09-11 Wednesday 01:56  corts
+
+	* examples/Texen/: additional.props, default.build, license.txt,
+	service.props, templates/Control.vm,
+	templates/ServiceImplementation.vm, templates/ServiceInterface.vm,
+	templates/ServiceStaticHelper.vm, templates/book.vm,
+	templates/Test.vm, templates/test.props:
+	
+	initial example based on Velocity test case
+
+2002-09-11 Wednesday 01:55  corts
+
+	* examples/Dvsl/nant/default.build:
+	
+	reflect updated DvslTask
+
+2002-09-11 Wednesday 01:44  corts
+
+	* xdocs/: index.xml, css/nant-task.css, css/nvelocity.css,
+	images/favicon.ico, nant/anakia.xml, nant/dvsl.xml, nant/texen.xml,
+	stylesheets/project.xml, stylesheets/site.vsl:
+	
+	initial import of site in xdocs format (to be rendered using the
+	NAnt anakia task).
+
+2002-09-11 Wednesday 01:37  corts
+
+	* src/ToDo.txt:
+	
+	updated ToDone stuff
+
+2002-09-11 Wednesday 01:37  corts
+
+	* src/NAnt/Texen/Generator.cs:
+	
+	use NAnt static log class replace ; for , in class names
+
+2002-09-11 Wednesday 01:36  corts
+
+	* src/NVelocity.NAnt.csproj:
+	
+	set properties file to be embedded resource
+
+2002-09-11 Wednesday 01:35  corts
+
+	* src/NAnt/Dvsl/DvslTask.cs:
+	
+	completed initial port
+
+2002-09-11 Wednesday 01:34  corts
+
+	* src/NAnt/Anakia/AnakiaTask.cs:
+	
+	use NAnt static log class use of Path.DirecotyrSeparatorChar
+
+2002-09-11 Wednesday 01:34  corts
+
+	* src/NAnt/Texen/TexenTask.cs:
+	
+	use NAnt static log class
+
+2002-09-11 Wednesday 01:32  corts
+
+	* src/NAnt/Texen/texen.properties:
+	
+	specify fully qualified class names
+
+2002-09-11 Wednesday 01:28  corts
+
+	* src/.cvsignore:
+	
+	ignore the .xml files output for documentation
+
+2002-09-08 Sunday 01:59  corts
+
+	* src/Runtime/Resource/ResourceManagerImpl.cs:
+	
+	fix bug loading ResourceCache manager reformatting
+
+2002-09-08 Sunday 01:57  corts
+
+	* src/Runtime/RuntimeInstance.cs:
+	
+	change version id
+
+2002-09-08 Sunday 01:56  corts
+
+	* src/Makefile:
+	
+	update default target
+
+2002-09-08 Sunday 01:52  corts
+
+	* src/: NUnitRunner.csproj, NVelocity.NAnt.csproj,
+	NVelocity.Tools.Dvsl.csproj, NVelocity.Tools.csproj,
+	NVelocity.csproj, NVelocity.sln, Test.csproj:
+	
+	no message
+
+2002-09-08 Sunday 01:52  corts
+
+	* src/ToDo.txt:
+	
+	list of stuff to be done
+
+2002-09-08 Sunday 01:50  corts
+
+	* src/nvelocity.build:
+	
+	nant build file
+
+2002-09-08 Sunday 01:47  corts
+
+	* src/Tools/SupportClass.cs:
+	
+	no message
+
+2002-09-08 Sunday 01:46  corts
+
+	* src/Test/: AnakiaTestCase.cs, CommonsTest.cs:
+	
+	reformatting
+
+2002-09-08 Sunday 01:31  corts
+
+	* src/: NAnt/AssemblyInfo.cs, NAnt/Anakia/AnakiaTask.cs,
+	NAnt/Anakia/AnakiaXmlDocument.cs, NAnt/Anakia/AnakiaXmlElement.cs,
+	NAnt/Anakia/Escape.cs, NAnt/Anakia/NodeList.cs,
+	NAnt/Anakia/OutputWrapper.cs, NAnt/Anakia/TreeWalker.cs,
+	NAnt/Anakia/XPathTool.cs, NAnt/Dvsl/DvslTask.cs,
+	NAnt/Texen/FileUtil.cs, NAnt/Texen/Generator.cs,
+	NAnt/Texen/PropertiesUtil.cs, NAnt/Texen/SupportClass.cs,
+	NAnt/Texen/TexenTask.cs, NAnt/Texen/texen.properties,
+	Texen/Generator.cs, Texen/Defaults/texen.properties,
+	Texen/NAnt/TexenTask.cs, Texen/Util/FileUtil.cs,
+	Texen/Util/PropertiesUtil.cs:
+	
+	move all NAnt related stuff to a NAnt namespace
+
+2002-09-08 Sunday 01:25  corts
+
+	* src/: Dvsl/Dvsl.cs, Dvsl/DvslContext.cs, Dvsl/DvslNode.cs,
+	Dvsl/DvslNodeContext.cs, Dvsl/DvslNodeImpl.cs,
+	Dvsl/TemplateHandler.cs, Dvsl/TransformTool.cs,
+	Dvsl/Transformer.cs, Dvsl/Directive/MatchDirective.cs,
+	Dvsl/Directive/NameDirective.cs, Dvsl/Resource/defaultroot.dvsl,
+	Tools/Dvsl/AntLogSystem.cs, Tools/Dvsl/Dvsl.cs,
+	Tools/Dvsl/DvslContext.cs, Tools/Dvsl/DvslNode.cs,
+	Tools/Dvsl/DvslNodeContext.cs, Tools/Dvsl/DvslNodeImpl.cs,
+	Tools/Dvsl/DvslTask-ant.cs, Tools/Dvsl/DvslTask.cs,
+	Tools/Dvsl/TemplateHandler.cs, Tools/Dvsl/TransformTool.cs,
+	Tools/Dvsl/Transformer.cs, Tools/Dvsl/Directive/MatchDirective.cs,
+	Tools/Dvsl/Directive/NameDirective.cs,
+	Tools/Dvsl/Resource/defaultroot.dvsl:
+	
+	move from Tools to core
+
+2002-09-08 Sunday 01:22  corts
+
+	* examples/Anakia/: default.build, xdocs/index.xml,
+	xdocs/stylesheets/project.xml, xdocs/stylesheets/site.vsl:
+	
+	simple Anakia example
+
+2002-09-07 Saturday 17:29  corts
+
+	* www/index.html:
+	
+	no message
+
+2002-09-03 Tuesday 09:49  corts
+
+	* src/Texen/: Generator.cs, Defaults/texen.properties,
+	NAnt/TexenTask.cs, Util/FileUtil.cs, Util/PropertiesUtil.cs:
+	
+	initial port of Texen - still needs cleanup, but it functions
+
+2002-08-31 Saturday 16:31  corts
+
+	* lib/: NAnt.Core.dll, NAnt.DotNetTasks.dll, NAnt.ZipTasks.dll,
+	NAnt.exe, NDoc.Core.dll, NDoc.Documenter.Msdn.dll, SharpZipLib.dll,
+	taskdef.Tasks.dll:
+	
+	updated references including the addition of NAnt
+
+2002-08-31 Saturday 16:28  corts
+
+	* examples/Dvsl/nant/: default.build, xdocs/example1.dvsl,
+	xdocs/example1.xml:
+	
+	simple example of using DvslTask with NAnt
+
+2002-08-31 Saturday 16:20  corts
+
+	* src/Runtime/RuntimeInstance.cs:
+	
+	provide escaping for comma in fullly qualified Type names
+
+2002-08-31 Saturday 16:09  corts
+
+	* src/: App/VelocityEngine.cs, Runtime/Exception/NodeException.cs:
+	
+	initial port
+
+2002-08-31 Saturday 16:08  corts
+
+	* src/Runtime/Log/SimpleLog4JLogSystem.cs:
+	
+	minor reformatting
+
+2002-08-31 Saturday 16:08  corts
+
+	* src/Runtime/Resource/Loader/ResourceLocator.cs:
+	
+	corrected shortcomming of being able to find a resource in an
+	assebly that is reference but not referenced at compile time (i.e.
+	loaded programatically)
+
+2002-08-31 Saturday 16:04  corts
+
+	* src/: NVelocity.Tools.Dvsl.csproj, NVelocity.sln,
+	Tools/AssemblyInfo.cs:
+	
+	addition of Tools.Dvsl project
+
+2002-08-31 Saturday 16:03  corts
+
+	* src/Test/Provider/TestProvider.cs:
+	
+	minor reformatting
+
+2002-08-31 Saturday 16:01  corts
+
+	* src/Test.csproj:
+	
+	add reference to Dvsl - for later testing (also helps with build
+	order and file locks)
+
+2002-08-31 Saturday 15:58  corts
+
+	* src/NVelocity.csproj:
+	
+	addition of VelocityEngine and NodeException change output
+	directory to get over VS.Net bug with intermediate files being in
+	use
+
+2002-08-31 Saturday 15:54  corts
+
+	* src/Makefile:
+	
+	add publishwww and publicapi targets for publishing updated site
+
+2002-08-31 Saturday 15:53  corts
+
+	* src/dist.sh:
+	
+	assume that anyone doing this process will already have their
+	CVSROOT setup correctly - either as a developer or anonymously
+
+2002-08-31 Saturday 15:51  corts
+
+	* src/Commons.csproj:
+	
+	change output directory to get over VS.Net bug with intermediate
+	files being in use
+
+2002-08-31 Saturday 15:38  corts
+
+	* src/Tools/Dvsl/: AntLogSystem.cs, Dvsl.cs, DvslContext.cs,
+	DvslNode.cs, DvslNodeContext.cs, DvslNodeImpl.cs, DvslTask-ant.cs,
+	DvslTask.cs, TemplateHandler.cs, TransformTool.cs, Transformer.cs,
+	Directive/MatchDirective.cs, Directive/NameDirective.cs,
+	Resource/defaultroot.dvsl:
+	
+	initial port of Dvsl and NAnt DvslTask.
+</PRE>
+                            </blockquote>
+        </p>
+      </td></tr>
+      <tr><td><br/></td></tr>
+    </table>
+                                        </td>
+                </tr>
+
+                <!-- FOOTER -->
+                <tr><td colspan="2">
+                    <hr noshade="" size="1"/>
+                </td></tr>
+                <tr><td colspan="2">
+                    <div align="center"><font color="#525D76" size="-1">
+		    <!-- <em>Copyright &#169; 2002, Cort Schaefer</em> -->
+		    </font>
+		    </div>
+                </td></tr>
+            </table>
+        </body>
+    </html>
+
+<!-- end the processing -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

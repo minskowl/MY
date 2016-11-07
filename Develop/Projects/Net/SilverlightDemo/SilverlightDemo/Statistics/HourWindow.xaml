@@ -1,0 +1,12 @@
+﻿<UserControl xmlns:data="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Data"  x:Class="EffectiveSoft.SilverlightDemo.Statistics.HourWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:chart="clr-namespace:Visifire.Charts;assembly=SLVisifire.Charts"             
+    Width="600" Height="300">
+    <StackPanel x:Name="LayoutRoot" Background="White" Orientation="Horizontal">
+        <chart:Chart x:Name="chart" Width="300" Height="300" BorderThickness="0" Watermark="False" />
+        <data:DataGrid x:Name="grid" Width="300" Height="300" >
+  
+        </data:DataGrid>
+    </StackPanel>
+</UserControl>

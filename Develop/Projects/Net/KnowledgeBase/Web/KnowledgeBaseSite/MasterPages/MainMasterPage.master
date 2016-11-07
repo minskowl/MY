@@ -1,0 +1,86 @@
+<%@ Import Namespace="KnowledgeBase.SiteCore" %>
+
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MainMasterPage.master.cs"
+    Inherits="MainMasterPage" %>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title id="Title1" runat="server"></title>
+    <asp:ContentPlaceHolder ID="Head" runat="server">
+    </asp:ContentPlaceHolder>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+</head>
+<body class="site">
+    <form id="form1" runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server">
+    </asp:ScriptManager>
+    <table runat="server" id="tableMain" border="0" cellpadding="0" cellspacing="0" style="height: 100%;
+        width: 100%;">
+        <tr>
+            <td style="width: 100%; height: 25px;">
+                <table border="0" cellpadding="0" cellspacing="0" style="height: 25px; width: 100%;">
+                    <tr>
+                        <td runat="server" id="headerCell" style="color: White; padding-left: 5px;">
+                            &nbsp;Location:
+                        </td>
+                        <td style="width: 5px;">
+                            <KB:ImageEx ID="ImageEx1" runat="server" ImageUrl="~/App_Themes/images/title_rght.gif"
+                                Width="5px" Height="25px" />
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td class="bg1" style="height: 8px;">
+                <img src="<%=AppSettings.ApplicationUrl  %>/images/s.gif" height="8" width="1" />
+            </td>
+        </tr>
+        <tr>
+            <td valign="top" class="bg1">
+                <table width="100%;" style="height: 100%;" cellpadding="0" cellspacing="0" border="0">
+                    <tr>
+                        <td class="bg1" style="width: 8px;">
+                            <img src="<%=AppSettings.ApplicationUrl  %>/images/s.gif" height="1" width="8" />
+                        </td>
+                        <td valign="top" style="background-color: White;">
+                            <div class="scrollable" id="pageScrollArea" runat="server">
+                                <div id="frame" runat="server">
+                                    <asp:ContentPlaceHolder ID="Content" runat="server">
+                                    </asp:ContentPlaceHolder>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="bg1" style="width: 8px;">
+                            <img src="<%=AppSettings.ApplicationUrl  %>/images/s.gif" height="1" width="8" />
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td class="bg1" style="height: 8px;">
+                <img src="<%=AppSettings.ApplicationUrl  %>/images/s.gif" height="8" width="1" />
+            </td>
+        </tr>
+    </table>
+
+    <script type="text/javascript" language="javascript">
+        document.body.style.overflow = "hidden";
+        document.body.style.margin = "0px 5px 0px 0px";
+
+        var obj = $("<%= pageScrollArea.ClientID %>");
+        if (obj != null) {
+            var newHeight = document.body.clientHeight - 45;
+            if (firefox)
+                obj.style.height = newHeight;
+            //WAMUserSettings.SetPageScrollAreaHeight(newHeight);  
+            //WAMUserSettings.SetPageScrollAreaWidth(document.body.clientWidth);  
+        }
+    </script>
+
+    </form>
+    <!--div id="out" style="position:absolute; left:100px; top:100px; z-index:1001; width:350px; height:300px; background-color: White; display:none;">
+    </div-->
+</body>
+</html>

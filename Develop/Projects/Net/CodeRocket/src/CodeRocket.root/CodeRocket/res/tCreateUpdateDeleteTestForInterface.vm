@@ -1,0 +1,94 @@
+#set( $method = $node.Tag)
+#set( $methodName = $node.Text)
+#set( $len= $methodName.Length - 6)
+#set( $name = $methodName.substring(0,$len))
+#set( $interfaceName = $node.Parent.Text)
+#set( $assembly=$method.DeclaringType.Assembly)
+#set( $assemblyName=$assembly.GetName().Name)
+#set( $interfaceName=$node.Parent.Text)
+
+#set( $interface=$assembly.GetType("${assemblyName}.I${name}"))
+#set( $ent=$assembly.GetType("${assemblyName}.Tbl${name}Entity"))
+
+#set( $postfixUpdate="Update")
+
+[Test]
+public void CreateUpdateDelete()
+{
+			DB.checkDaoStoreCount(dao);
+			Mock.MockI${name} mock = new cmTSATdao.Mock.MockI${name}();
+			
+			//******************Create
+					
+			DateTime n = DateTime.Now;			
+			Tbl${name}Entity ent=DB.puser.${interfaceName}.create${name}(mock);
+			
+			Assert.IsNotNull(ent,"Created entitty is null");
+
+			DB.checkDaoIncreaseOneRecord(dao);
+			
+			Tbl${name}Entity readEnt= (Tbl${name}Entity)dao.SelectById(ent.${name}ID );
+			
+			Assert.IsNotNull(readEnt,"Entity not readed");
+			
+			// compare properties
+#foreach( $prop in $tools.getPropertiesFromInterface($interface ) )
+	#set( $entProp=$ent.GetProperty($prop.Name))
+	#if( $entProp.Name == $prop.Name && $prop.CanRead() && $entProp.CanRead() )
+		  #if(  $prop.Name == "${name}ID")
+Assert.IsTrue(readEnt.${entProp.Name}>0 ,"Incorrect ${entProp.Name}");
+		  #else
+Assert.IsTrue(readEnt.${entProp.Name}== mock.${entProp.Name} ,"Incorrect ${entProp.Name}");
+		  #end
+	#end   
+#end
+		
+
+			DB.checkCreatedObject(readEnt,n);
+			
+			//*******************Update
+			
+	#foreach( $prop in $tools.getPropertiesFromInterface($interface) )
+	  #set( $entProp=$ent.GetProperty($prop.Name))
+	  #if( $entProp.Name == $prop.Name && $prop.CanWrite() && $entProp.CanWrite() )
+	     ${prop.PropertyType.Name} ${name}${prop.Name}${postfixUpdate} = ${tools.getRandomValue($prop.PropertyType)};
+	  #end
+	#end			
+		
+			//set new values
+	#foreach( $prop in $tools.getPropertiesFromInterface($interface) )
+	  #set( $entProp=$ent.GetProperty($prop.Name))
+	  #if( $entProp.Name == $prop.Name && $prop.CanWrite() && $entProp.CanWrite() )
+	  		 mock.${prop.Name}=${name}${prop.Name}${postfixUpdate};
+	  #end
+	#end		
+	
+			Tbl${name}Entity entUpdate=DB.puser.${interfaceName}.${methodName}(ent.${name}ID, mock);
+			
+			DB.checkDaoStay(dao);			
+			Assert.IsNotNull(entUpdate,"Updated entity is null");	
+			
+			readEnt= (Tbl${name}Entity)dao.SelectById(ent.${name}ID );	
+			
+			// compare properties
+#foreach( $prop in $tools.getPropertiesFromInterface($interface ) )
+	#set( $entProp=$ent.GetProperty($prop.Name))
+	#if( $entProp.Name == $prop.Name && $prop.CanRead() && $entProp.CanRead() )
+		  #if(  $prop.Name == "${name}ID")
+Assert.IsTrue(readEnt.${entProp.Name}== ent.${entProp.Name} ,"Incorrect ${entProp.Name}");
+		  #else
+Assert.IsTrue(readEnt.${entProp.Name}== mock.${entProp.Name} ,"Incorrect ${entProp.Name}");
+		  #end
+	#end   
+#end
+						
+			DB.checkModifiedObject(entUpdate,n);	
+			// ******************Delete
+			
+			//Assert.IsTrue(DB.puser.${interfaceName}.${name}Delete(ent.${name}ID),"${name} not Deleted");
+			dao.Delete(ent.${name}ID);
+			DB.checkDaoDecreaseOneRecord(dao);
+
+			Assert.IsNull(dao.SelectById(ent.${name}ID),"Entity exists");
+}
+

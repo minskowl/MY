@@ -1,0 +1,363 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BB0A3D9C-F98F-454F-93D9-CBA1BEF661C7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BotvaSpider</RootNamespace>
+    <AssemblyName>BotvaSpider.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\ThrPartLibs\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Automation\AutomatonBase.cs" />
+    <Compile Include="Automation\ErrorState.cs" />
+    <Compile Include="Automation\Event.cs" />
+    <Compile Include="Automation\IllegalStateException.cs" />
+    <Compile Include="Automation\LoginedStateBase.cs" />
+    <Compile Include="Automation\LogoutedState.cs" />
+    <Compile Include="Automation\SleepState.cs" />
+    <Compile Include="Configuration\AcountSettings.cs" />
+    <Compile Include="Controls\ControllerConsole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\FarmControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\FarmControl.Designer.cs">
+      <DependentUpon>FarmControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FightStatisticsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\FightStatisticsControl.Designer.cs">
+      <DependentUpon>FightStatisticsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FormText.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\FormText.Designer.cs">
+      <DependentUpon>FormText.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\LabelValueGrid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\LabelValueGrid.Designer.cs">
+      <DependentUpon>LabelValueGrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\MainFormBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\RangeFilterControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\RangeFilterControl.Designer.cs">
+      <DependentUpon>RangeFilterControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SearchUserFilter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\SearchUserFilter.Designer.cs">
+      <DependentUpon>SearchUserFilter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TradeSearcherControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TradeSearcherControl.Designer.cs">
+      <DependentUpon>TradeSearcherControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UserListControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UserListControl.Designer.cs">
+      <DependentUpon>UserListControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Commands\ConsoleCommand.cs" />
+    <Compile Include="Core\Commands\ShowFightLogCommand.cs" />
+    <Compile Include="Core\CowsSearcher.cs" />
+    <Compile Include="Core\IControllerSource.cs" />
+    <Compile Include="Core\IModule.cs" />
+    <Compile Include="Core\Integer.cs" />
+    <Compile Include="Fighting\FightResultEventArgs.cs" />
+    <Compile Include="Automation\IEventSink.cs" />
+    <Compile Include="Automation\IFightClub.cs" />
+    <Compile Include="Automation\MachineBase.cs" />
+    <Compile Include="Automation\MachineStateBase.cs" />
+    <Compile Include="Automation\MachineStateEventArgs.cs" />
+    <Compile Include="Automation\StateBase.cs" />
+    <Compile Include="BookKeeping\Accountant.cs" />
+    <Compile Include="BookKeeping\BalanceItem.cs" />
+    <Compile Include="BookKeeping\Coach.cs" />
+    <Compile Include="BookKeeping\ItemMatchedEventArgs.cs" />
+    <Compile Include="BookKeeping\TradeItemController.cs" />
+    <Compile Include="BookKeeping\TradeMaster.cs" />
+    <Compile Include="Configuration\AppSettings.cs" />
+    <Compile Include="Configuration\AttackSettings.cs" />
+    <Compile Include="Configuration\BookKeeping\AccountantSettings.cs" />
+    <Compile Include="Configuration\BookKeeping\InvestmentStrategySettings.cs" />
+    <Compile Include="Configuration\BookKeeping\PriceCondition.cs" />
+    <Compile Include="Configuration\BookKeeping\PriceConditionCollection.cs" />
+    <Compile Include="Configuration\BookKeeping\SearchStrategySettings.cs" />
+    <Compile Include="Configuration\BookKeeping\StuffSearchCondition.cs" />
+    <Compile Include="Configuration\BotvaSettings.cs" />
+    <Compile Include="Configuration\CowInfo.cs" />
+    <Compile Include="Configuration\GameSettings.cs" />
+    <Compile Include="Configuration\ImageCollection.cs" />
+    <Compile Include="Controls\FormContainer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\FormContainer.Designer.cs">
+      <DependentUpon>FormContainer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\AppCore.cs" />
+    <Compile Include="Core\BrowserFactory.cs" />
+    <Compile Include="Core\FilteredPager.cs" />
+    <Compile Include="Core\LoginRequiredException.cs" />
+    <Compile Include="Core\NoMoneyException.cs" />
+    <Compile Include="Core\Pager.cs" />
+    <Compile Include="Core\StartWithMathcer.cs" />
+    <Compile Include="Core\UserImporter.cs" />
+    <Compile Include="Core\WarBuilder.cs" />
+    <Compile Include="Data\CoulombInfo.cs" />
+    <Compile Include="Editors\InvestmentStrategiesChekedList.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Editors\InvestmentStrategiesEditor.cs" />
+    <Compile Include="Editors\InvestmentStrategiesSelector.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Editors\InvestmentStrategiesSelector.Designer.cs">
+      <DependentUpon>InvestmentStrategiesSelector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\MdbFileEditor.cs" />
+    <Compile Include="Configuration\MinerSettings.cs" />
+    <Compile Include="Configuration\RivalSourceSettings.cs" />
+    <Compile Include="Configuration\ServerSettings.cs" />
+    <Compile Include="Configuration\TicketAction.cs" />
+    <Compile Include="Configuration\WardrobeSettings.cs" />
+    <Compile Include="Configuration\WatinSettings.cs" />
+    <Compile Include="Core\BuilderBase.cs" />
+    <Compile Include="Core\Enums.cs" />
+    <Compile Include="Core\GameController.cs" />
+    <Compile Include="Core\GameController.Fighting.cs" />
+    <Compile Include="Core\GameController.TopSearch.cs" />
+    <Compile Include="Core\GameController.Urls.cs" />
+    <Compile Include="Core\GameControlller.Trade.cs" />
+    <Compile Include="Core\LevelFilter.cs" />
+    <Compile Include="Core\Pair.cs" />
+    <Compile Include="Core\Price.cs" />
+    <Compile Include="Core\SpiritType.cs" />
+    <Compile Include="Data\Clan.cs" />
+    <Compile Include="Data\DbHelper.cs" />
+    <Compile Include="Data\ObjectProvider.cs" />
+    <Compile Include="Data\Player.cs" />
+    <Compile Include="Data\Rival.cs" />
+    <Compile Include="Data\Skill.cs" />
+    <Compile Include="Data\SkillCollection.cs" />
+    <Compile Include="Data\User.cs" />
+    <Compile Include="Data\War.cs" />
+    <Compile Include="Farming\Cow.cs" />
+    <Compile Include="Farming\FarmBase.cs" />
+    <Compile Include="Farming\MilkingFarm.cs" />
+    <Compile Include="Farming\WarFarm.cs" />
+    <Compile Include="Fighting\FightMessage.cs" />
+    <Compile Include="Fighting\FightResult.cs" />
+    <Compile Include="Fighting\FightResultBuilder.cs" />
+    <Compile Include="Gears\ItemBuilder.cs" />
+    <Compile Include="Gears\ItemInfo.cs" />
+    <Compile Include="Gears\Items.cs" />
+    <Compile Include="Gears\Wardrobe.cs" />
+    <Compile Include="Gears\WardrobeItem.cs" />
+    <Compile Include="Logging\CompositLogger.cs" />
+    <Compile Include="Logging\ILogger.cs" />
+    <Compile Include="Logging\LogEntry.cs" />
+    <Compile Include="Logging\LogEntryEventArgs.cs" />
+    <Compile Include="Logging\Logger.cs" />
+    <Compile Include="Logging\LoggerType.cs" />
+    <Compile Include="Mail\MailBox.cs" />
+    <Compile Include="Mail\MessageInfo.cs" />
+    <Compile Include="Mail\MessageListBuilder.cs" />
+    <Compile Include="Mining\CristalBenefit.cs" />
+    <Compile Include="Mining\Miner.cs" />
+    <Compile Include="Mining\SearchCristalResult.cs" />
+    <Compile Include="Mining\VisiteGladeResult.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Libs\Savchin.Forms\Savchin.Forms.csproj">
+      <Project>{9405075A-BD64-4B54-9689-2DD716D6F92A}</Project>
+      <Name>Savchin.Forms</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libs\Savchin.Web\Savchin.Web.csproj">
+      <Project>{BFF8B5DA-97CA-401F-8BDC-D9B3B50FD8EB}</Project>
+      <Name>Savchin.Web</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libs\Savchin.WinApi\Savchin.WinApi.csproj">
+      <Project>{DD712413-B47A-4707-A45D-84F786E47BAF}</Project>
+      <Name>Savchin.WinApi</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libs\Tools\Savchin.Tools.csproj">
+      <Project>{2F1807E4-39A2-4F38-ADFC-6310A8443D90}</Project>
+      <Name>Savchin.Tools</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\NUnit\Watin\source\src\Core\WatiN.Core.csproj">
+      <Project>{217E2D34-F6DF-431B-AC5A-B368F481A530}</Project>
+      <Name>WatiN.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Controls\FarmControl.resx">
+      <DependentUpon>FarmControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\FightStatisticsControl.resx">
+      <DependentUpon>FightStatisticsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\FormContainer.resx">
+      <DependentUpon>FormContainer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\FormText.resx">
+      <DependentUpon>FormText.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\LabelValueGrid.resx">
+      <DependentUpon>LabelValueGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\RangeFilterControl.resx">
+      <DependentUpon>RangeFilterControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\SearchUserFilter.resx">
+      <DependentUpon>SearchUserFilter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\TradeSearcherControl.resx">
+      <DependentUpon>TradeSearcherControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UserListControl.resx">
+      <DependentUpon>UserListControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editors\InvestmentStrategiesSelector.resx">
+      <DependentUpon>InvestmentStrategiesSelector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Glossy Sound.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gradient Cancel.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gradient Ok.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Rounded Car.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Rounded Help.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RSS.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Warning.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tada.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,343 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="..\..\..\JavaDoc.css">
+  </head>
+  <body>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td>
+                <a href="namespace-summary.html">Namespace</a> </td>
+              <td class="nav1sel"> Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV TYPE    NEXT TYPE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+      <tr class="nav2">
+        <td>SUMMARY: INNER | <a href="#field-summary">FIELD</a> | <a href="#constructor-summary">CONST</a> | PROP | <a href="#method-summary">METHOD</a> | OP | EVENT</td>
+        <td>DETAIL: <a href="#field-detail">FIELD</a> | <a href="#constructor-detail">CONST</a> | PROP | <a href="#method-detail">METHOD</a> | OP | EVENT</td>
+      </tr>
+    </table>
+    <hr>
+    <h2>
+      <span class="namespaceName">NVelocity.Util.Introspection</span>
+      <br>
+      <span class="className">Class Introspector</span>
+    </h2>
+    <p> This basic function of this class is to return a Method
+            object for a particular class given the name of a method
+            and the parameters to the method in the form of an Object[]
+            
+            The first time the Introspector sees a
+            class it creates a class method map for the
+            class in question. Basically the class method map
+            is a Hastable where Method objects are keyed by a
+            concatenation of the method name and the names of
+            classes that make up the parameters.
+            
+            For example, a method with the following signature:
+            
+            public void method(String a, StringBuffer b)
+            
+            would be mapped by the key:
+            
+            "method" + "java.lang.String" + "java.lang.StringBuffer"
+            
+            This mapping is performed for all the methods in a class
+            and stored for
+            </p>
+    <a name="field-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Field Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="fieldType" valign="top">string</td>
+        <td class="field">
+          <a href="#NVelocity.Util.Introspection.Introspector.CACHEDUMP_MSG">CACHEDUMP_MSG</a>
+          <br>          define a public string so that it can be looked for
+            if interested
+            </td>
+      </tr>
+    </table>
+    <br>
+    <table class="subtable" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Fields inherited from class NVelocity.Util.Introspection.IntrospectorBase</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>
+          <a href="">cachedClassNames</a>, <a href="">classMethodMaps</a></td>
+      </tr>
+    </table>
+    <br>
+    <a name="constructor-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Constructor Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="constructor" valign="top">
+          <a href="#NVelocity.Util.Introspection.Introspector.#ctor(NVelocity.Runtime.RuntimeServices)">Introspector</a>(NVelocity.Runtime.RuntimeServices r)<br>          Recieves our RuntimeServices object
+            </td>
+      </tr>
+    </table>
+    <br>
+    <a name="property-summary">
+    </a>
+    <a name="method-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Method Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.Util.Introspection.Introspector.clearCache">clearCache</a>()<br>         Clears the classmap and classname
+            caches, and logs that we did so
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">System.Reflection.MethodInfo</td>
+        <td class="method">
+          <a href="#NVelocity.Util.Introspection.Introspector.getMethod(System.Type,System.String,System.Object[])">getMethod</a>(System.Type c, string name, object[] params_Renamed)<br>         Gets the method defined by <pre class="code">name</pre> and
+            <pre class="code">params</pre> for the Class <pre class="code">c</pre>.
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">System.Reflection.PropertyInfo</td>
+        <td class="method">
+          <a href="#NVelocity.Util.Introspection.Introspector.getProperty(System.Type,System.String)">getProperty</a>(System.Type c, string name)<br>         Gets the method defined by <pre class="code">name</pre> and
+            <pre class="code">params</pre> for the Class <pre class="code">c</pre>.
+            </td>
+      </tr>
+    </table>
+    <br>
+    <table class="subtable" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Methods inherited from class NVelocity.Util.Introspection.IntrospectorBase</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>
+          <a href="..\..\..\NVelocity/Util/Introspection/Introspector/createClassMap(System.html#Type)">createClassMap</a>
+        </td>
+      </tr>
+    </table>
+    <br>
+    <table class="subtable" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Methods inherited from class System.Object</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>
+          <a href="..\..\..\NVelocity/Util/Introspection/Introspector/Equals(System.html#Object)">Equals</a>, <a href="..\..\..\NVelocity/Util/Introspection/Introspector.html#Finalize">Finalize</a>, <a href="..\..\..\NVelocity/Util/Introspection/Introspector.html#GetHashCode">GetHashCode</a>, <a href="..\..\..\NVelocity/Util/Introspection/Introspector.html#GetType">GetType</a>, <a href="..\..\..\NVelocity/Util/Introspection/Introspector.html#MemberwiseClone">MemberwiseClone</a>, <a href="..\..\..\NVelocity/Util/Introspection/Introspector.html#ToString">ToString</a></td>
+      </tr>
+    </table>
+    <br>
+    <a name="operator-summary">
+    </a>
+    <a name="event-summary">
+    </a>
+    <br>
+    <a name="field-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Field Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.Util.Introspection.Introspector.CACHEDUMP_MSG">
+    </a>
+    <h3>CACHEDUMP_MSG</h3>
+    <pre>public string <b>CACHEDUMP_MSG</b></pre>
+    <dl>
+      <dd>
+        <p>  define a public string so that it can be looked for
+            if interested
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="constructor-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Constructor Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.Util.Introspection.Introspector.#ctor(NVelocity.Runtime.RuntimeServices)">
+    </a>
+    <h3>Introspector</h3>
+    <pre>public Introspector(NVelocity.Runtime.RuntimeServices r)</pre>
+    <dl>
+      <dd>
+        <p>  Recieves our RuntimeServices object
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="property-detail">
+    </a>
+    <a name="method-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Method Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.Util.Introspection.Introspector.clearCache">
+    </a>
+    <h3>clearCache</h3>
+    <pre>protected internal void clearCache()</pre>
+    <dl>
+      <dd>
+        <p> Clears the classmap and classname
+            caches, and logs that we did so
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Util.Introspection.Introspector.getMethod(System.Type,System.String,System.Object[])">
+    </a>
+    <h3>getMethod</h3>
+    <pre>public System.Reflection.MethodInfo getMethod(System.Type c,
+                                              string name,
+                                              object[] params_Renamed)</pre>
+    <dl>
+      <dd>
+        <p> Gets the method defined by <pre class="code">name</pre> and
+            <pre class="code">params</pre> for the Class <pre class="code">c</pre>.
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>c</code> - Class in which the method search is taking place
+            </dd>
+          <dd>
+            <code>name</code> - Name of the method being searched for
+            </dd>
+          <dd>
+            <code>params</code> - An array of Objects (not Classes) that describe the
+            the parameters
+            </dd>
+        </dl>
+        <b>Returns:</b>
+        <dl>
+          <dd>The desired Method object.
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Util.Introspection.Introspector.getProperty(System.Type,System.String)">
+    </a>
+    <h3>getProperty</h3>
+    <pre>public System.Reflection.PropertyInfo getProperty(System.Type c,
+                                                  string name)</pre>
+    <dl>
+      <dd>
+        <p> Gets the method defined by <pre class="code">name</pre> and
+            <pre class="code">params</pre> for the Class <pre class="code">c</pre>.
+            </p>
+        <p>
+        </p>
+        <b>Parameters:</b>
+        <dl>
+          <dd>
+            <code>c</code> - Class in which the method search is taking place
+            </dd>
+          <dd>
+            <code>name</code> - Name of the method being searched for
+            </dd>
+          <dd>
+            <code>params</code> - An array of Objects (not Classes) that describe the
+            the parameters
+            </dd>
+        </dl>
+        <b>Returns:</b>
+        <dl>
+          <dd>The desired Method object.
+            </dd>
+        </dl>
+      </dd>
+    </dl>
+    <a name="operator-detail">
+    </a>
+    <a name="event-detail">
+    </a>
+    <hr>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td>
+                <a href="namespace-summary.html">Namespace</a> </td>
+              <td class="nav1sel"> Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV TYPE    NEXT TYPE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+      <tr class="nav2">
+        <td>SUMMARY: INNER | <a href="#field-summary">FIELD</a> | <a href="#constructor-summary">CONST</a> | PROP | <a href="#method-summary">METHOD</a> | OP | EVENT</td>
+        <td>DETAIL: <a href="#field-detail">FIELD</a> | <a href="#constructor-detail">CONST</a> | PROP | <a href="#method-detail">METHOD</a> | OP | EVENT</td>
+      </tr>
+    </table>
+  </body>
+</html>

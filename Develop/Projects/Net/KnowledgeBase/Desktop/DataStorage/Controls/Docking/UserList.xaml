@@ -1,0 +1,51 @@
+﻿<ad:DockableContent x:Class="KnowledgeBase.Desktop.Controls.Docking.UserList"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:Core="clr-namespace:KnowledgeBase.Desktop.Core" 
+             xmlns:filter="clr-namespace:Savchin.Wpf.Controls.DataGrid.Filtering;assembly=Savchin.Wpf.Controls"
+             xmlns:ad="clr-namespace:AvalonDock;assembly=AvalonDock" mc:Ignorable="d" 
+             Title="Users">
+    <Grid>
+        <DataGrid x:Name="grid" AutoGenerateColumns="False"  SelectionChanged="grid_SelectionChanged"
+                  IsReadOnly="true"
+                  RowStyle="{StaticResource RowStyle}"                        
+                  filter:DataGridExtensions.IsClearButtonVisible="False" 
+                  filter:DataGridExtensions.IsFilterVisible="True"
+                        
+                       ColumnHeaderStyle="{StaticResource {ComponentResourceKey 
+		                       TypeInTargetAssembly={x:Type filter:DataGridHeaderFilterControl}, 
+		                       ResourceId=DataGridHeaderFilterControlStyle}}"                  
+                  
+                  
+                  >
+            <DataGrid.ContextMenu>
+                <ContextMenu >
+                    <MenuItem x:Name="itemAdd" 
+                              Command="{Binding Source={x:Static Core:AppCommands.Add }}"  />
+                    <MenuItem Command="{Binding Source={x:Static Core:AppCommands.Edit }}" 
+                              CommandParameter="{Binding Path=ItemParams}" />
+                    <MenuItem Command="{Binding Source={x:Static Core:AppCommands.Delete }}" 
+                              CommandParameter="{Binding Path=ItemParams}" />
+                    <Separator/>
+                    <MenuItem x:Name="itemRefresh" Header="Refresh" Click="itemRefresh_Click"  />
+                    <MenuItem x:Name="itemClearFilter" Header="Clear Filter" />
+                </ContextMenu>
+            </DataGrid.ContextMenu>
+
+
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Login"  Binding="{Binding Login}" />
+                <DataGridTextColumn Header="First Name"  Binding="{Binding FirstName}" />
+                <DataGridTextColumn Header="Last Name"  Binding="{Binding LastName}" />
+                <DataGridTextColumn Header="Email"  Binding="{Binding Email}" />
+                <DataGridTextColumn Header="Created"  Binding="{Binding Path=CreationDate}" MaxWidth="250"
+                                    filter:DataGridColumnExtensions.IsBetweenFilterControl="True" />
+
+            </DataGrid.Columns>
+
+        </DataGrid>
+    </Grid>
+</ad:DockableContent>

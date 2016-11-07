@@ -1,0 +1,168 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="..\..\..\JavaDoc.css">
+  </head>
+  <body>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td class="nav1sel"> Namespace </td>
+              <td>Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV NAMESPACE    NEXT NAMESPACE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+    </table>
+    <hr>
+    <h2 class="title">NVelocity.Http.Tool Namespace Summary</h2>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Interface Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="name">
+          <a href="IToolboxManager.html">IToolboxManager</a>
+        </td>
+        <td class="type">
+            Common interface for toolbox manager implementations.
+            </td>
+      </tr>
+      <tr>
+        <td class="name">
+          <a href="IViewTool.html">IViewTool</a>
+        </td>
+        <td class="type">
+            Generic view tool interface to assist in tool management.
+            This interface provides the {@link #init(Object initData)} method
+            as a hook for ToolboxManager implementations to pass data in to
+            tools to initialize them.  See
+            {@link org.apache.velocity.tools.view.ViewToolInfo} for more on this.
+            </td>
+      </tr>
+    </table>
+    <br>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Class Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="name">
+          <a href="MultiViewsTool.html">MultiViewsTool</a>
+        </td>
+        <td class="type">Allows for transparent content negotiation in a manner mimicking
+            Apache httpd's MultiViews.Reads the default language out of the ViewContext as
+            org.apache.velocity.tools.view.i18n.defaultLanguage.
+            See {@link #findLocalizedResource(String, String)} and {@link
+            #findLocalizedResource(String, Locale)} for usage.</td>
+      </tr>
+      <tr>
+        <td class="name">
+          <a href="ServletToolboxManager.html">ServletToolboxManager</a>
+        </td>
+        <td class="type"> </td>
+      </tr>
+      <tr>
+        <td class="name">
+          <a href="ServletToolInfo.html">ServletToolInfo</a>
+        </td>
+        <td class="type">
+            ToolInfo implementation that holds scope information for tools
+            used in a servlet environment.
+            </td>
+      </tr>
+      <tr>
+        <td class="name">
+          <a href="ViewToolInfo.html">ViewToolInfo</a>
+        </td>
+        <td class="type">
+            ToolInfo implementation for view tools. New instances
+            are returned for every call to getInstance(obj), and tools
+            that implement (@link ViewTool} are initialized with the
+            given object before being returned.
+            </td>
+      </tr>
+      <tr>
+        <td class="name">
+          <a href="XMLToolboxManager.html">XMLToolboxManager</a>
+        </td>
+        <td class="type">
+            A ToolboxManager for loading a toolbox from xml.
+            
+            A toolbox manager is responsible for automatically filling the Velocity
+            context with a set of view tools. This class provides the following
+            features:configurable through an XML-based configuration fileassembles a set of view tools (the toolbox) on requestsupports any class with a public constructor without parameters
+            to be used as a view toolsupports adding primitive data values to the context(String,Number,Boolean)ConfigurationThe toolbox manager is configured through an XML-based configuration
+            file. The configuration file is passed to the {@link #load(java.io.InputStream input)}
+            method. The required format is shown in the following example:
+            &lt;?xml version="1.0"?&gt;
+            
+            &lt;toolbox&gt;
+            &lt;tool&gt;
+            &lt;key&gt;toolLoader&lt;/key&gt;
+            &lt;class&gt;org.apache.velocity.tools.tools.ToolLoader&lt;/class&gt;
+            &lt;/tool&gt;
+            &lt;tool&gt;
+            &lt;key&gt;math&lt;/key&gt;
+            &lt;class&gt;org.apache.velocity.tools.tools.MathTool&lt;/class&gt;
+            &lt;/tool&gt;
+            &lt;data type="Number"&gt;
+            &lt;key&gt;luckynumber&lt;/key&gt;
+            &lt;value&gt;1.37&lt;/class&gt;
+            &lt;/data&gt;
+            &lt;data type="String"&gt;
+            &lt;key&gt;greeting&lt;/key&gt;
+            &lt;value&gt;Hello World!&lt;/class&gt;
+            &lt;/data&gt;
+            &lt;/toolbox&gt;
+            </td>
+      </tr>
+    </table>
+    <br>
+    <hr>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td class="nav1sel"> Namespace </td>
+              <td>Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV NAMESPACE    NEXT NAMESPACE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+    </table>
+  </body>
+</html>

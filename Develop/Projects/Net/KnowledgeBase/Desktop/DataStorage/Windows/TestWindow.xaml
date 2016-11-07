@@ -1,0 +1,13 @@
+﻿<Window x:Class="KnowledgeBase.Desktop.Windows.TestWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:filter="clr-namespace:Savchin.Wpf.Controls.DataGrid.Filtering;assembly=Savchin.Wpf.Controls" xmlns:Validation="clr-namespace:Savchin.Wpf.Validation;assembly=Savchin.WPF.Tools" xmlns:Core="clr-namespace:KnowledgeBase.Desktop.Core" xmlns:cn="clr-namespace:KnowledgeBase.Desktop.Controls" Title="TestWindow" Height="300" Width="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBox Grid.Row="0" x:Name="boxOut" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" />
+        <cn:KeywordSelector  Grid.Row="1" x:Name="listKeywords" Height="200"/>
+
+    </Grid>
+</Window>

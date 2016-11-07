@@ -1,0 +1,32 @@
+#set( $type=$node.Tag)
+#set( $FullName=$type.Name)
+#set( $name =$tools.getShortname($FullName))
+using System;
+using System.Collections;
+
+#set( $interfaces="")
+#foreach( $innetype in $type.GetInterfaces())
+  #if( $innetype.Name.Substring(0,1)=="I" )
+   #set( $interfaces="$interfaces ${innetype.Name}," )
+  #else
+   #set( $interfaces="$interfaces I${innetype.Name}," )
+  #end 
+#end 
+#set( $interfaces=$tools.CutString($interfaces,1))
+
+
+
+#if( $interfaces.Length > 0 )
+ #set( $interfaces=" : $interfaces")
+#else
+ #set( $interfaces="")
+#end
+namespace $namespace
+{
+    public interface I$FullName $interfaces
+    {
+
+    }
+}
+
+

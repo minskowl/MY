@@ -1,0 +1,344 @@
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="..\..\..\JavaDoc.css">
+  </head>
+  <body>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td>
+                <a href="namespace-summary.html">Namespace</a> </td>
+              <td class="nav1sel"> Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV TYPE    NEXT TYPE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+      <tr class="nav2">
+        <td>SUMMARY: INNER | <a href="#field-summary">FIELD</a> | <a href="#constructor-summary">CONST</a> | <a href="#property-summary">PROP</a> | <a href="#method-summary">METHOD</a> | OP | EVENT</td>
+        <td>DETAIL: <a href="#field-detail">FIELD</a> | <a href="#constructor-detail">CONST</a> | <a href="#property-detail">PROP</a> | <a href="#method-detail">METHOD</a> | OP | EVENT</td>
+      </tr>
+    </table>
+    <hr>
+    <h2>
+      <span class="namespaceName">NVelocity.Runtime.Directive</span>
+      <br>
+      <span class="className">Class Directive</span>
+    </h2>
+    <p> Base class for all directives used in Velocity.
+            *
+            </p>
+    <a name="field-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Field Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="fieldType" valign="top">NVelocity.Runtime.RuntimeServices</td>
+        <td class="field">
+          <a href="#NVelocity.Runtime.Directive.Directive.rsvc">rsvc</a>
+        </td>
+      </tr>
+    </table>
+    <br>
+    <a name="constructor-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Constructor Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="constructor" valign="top">
+          <a href="#NVelocity.Runtime.Directive.Directive.#ctor">Directive</a>()<br>        Initializes a new instance of the Directive class.</td>
+      </tr>
+    </table>
+    <br>
+    <a name="property-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Property Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="propertyType" valign="top">int</td>
+        <td class="property">
+          <a href="#NVelocity.Runtime.Directive.Directive.Column">Column</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="propertyType" valign="top">int</td>
+        <td class="property">
+          <a href="#NVelocity.Runtime.Directive.Directive.Line">Line</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="propertyType" valign="top">string</td>
+        <td class="property">
+          <a href="#NVelocity.Runtime.Directive.Directive.Name">Name</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="propertyType" valign="top">int</td>
+        <td class="property">
+          <a href="#NVelocity.Runtime.Directive.Directive.Type">Type</a>
+        </td>
+      </tr>
+    </table>
+    <br>
+    <a name="method-summary">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Method Summary</th>
+        </tr>
+      </thead>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Directive.Directive.init(NVelocity.Runtime.RuntimeServices,NVelocity.Context.InternalContextAdapter,NVelocity.Runtime.Parser.Node.INode)">init</a>(NVelocity.Runtime.RuntimeServices rs, NVelocity.Context.InternalContextAdapter context, NVelocity.Runtime.Parser.Node.INode node)<br>         How this directive is to be initialized.
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">bool</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Directive.Directive.render(NVelocity.Context.InternalContextAdapter,System.IO.TextWriter,NVelocity.Runtime.Parser.Node.INode)">render</a>(NVelocity.Context.InternalContextAdapter context, System.IO.TextWriter writer, NVelocity.Runtime.Parser.Node.INode node)<br>         How this directive is to be rendered
+            </td>
+      </tr>
+      <tr>
+        <td class="returnType" valign="top">void</td>
+        <td class="method">
+          <a href="#NVelocity.Runtime.Directive.Directive.setLocation(System.Int32,System.Int32)">setLocation</a>(int line, int column)<br>        Allows the template location to be set
+            </td>
+      </tr>
+    </table>
+    <br>
+    <table class="subtable" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Methods inherited from class System.Object</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>
+          <a href="..\..\..\NVelocity/Runtime/Directive/Directive/Equals(System.html#Object)">Equals</a>, <a href="..\..\..\NVelocity/Runtime/Directive/Directive.html#Finalize">Finalize</a>, <a href="..\..\..\NVelocity/Runtime/Directive/Directive.html#GetHashCode">GetHashCode</a>, <a href="..\..\..\NVelocity/Runtime/Directive/Directive.html#GetType">GetType</a>, <a href="..\..\..\NVelocity/Runtime/Directive/Directive.html#MemberwiseClone">MemberwiseClone</a>, <a href="..\..\..\NVelocity/Runtime/Directive/Directive.html#ToString">ToString</a></td>
+      </tr>
+    </table>
+    <br>
+    <a name="operator-summary">
+    </a>
+    <a name="event-summary">
+    </a>
+    <br>
+    <a name="field-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Field Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.Runtime.Directive.Directive.rsvc">
+    </a>
+    <h3>rsvc</h3>
+    <pre>protected internal NVelocity.Runtime.RuntimeServices <b>rsvc</b></pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="constructor-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Constructor Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.Runtime.Directive.Directive.#ctor">
+    </a>
+    <h3>Directive</h3>
+    <pre>protected Directive()</pre>
+    <dl>
+      <dd>
+        <p>Initializes a new instance of the Directive class.</p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="property-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Property Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.Runtime.Directive.Directive.Column">
+    </a>
+    <h3>Column</h3>
+    <pre>public int Column</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Directive.Directive.Line">
+    </a>
+    <h3>Line</h3>
+    <pre>public int Line</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Directive.Directive.Name">
+    </a>
+    <h3>Name</h3>
+    <pre>public string Name</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Directive.Directive.Type">
+    </a>
+    <h3>Type</h3>
+    <pre>public int Type</pre>
+    <dl>
+      <dd>
+        <p>
+        </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="method-detail">
+    </a>
+    <table class="table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Method Detail</th>
+        </tr>
+      </thead>
+    </table>
+    <a name="NVelocity.Runtime.Directive.Directive.init(NVelocity.Runtime.RuntimeServices,NVelocity.Context.InternalContextAdapter,NVelocity.Runtime.Parser.Node.INode)">
+    </a>
+    <h3>init</h3>
+    <pre>public void init(NVelocity.Runtime.RuntimeServices rs,
+                 NVelocity.Context.InternalContextAdapter context,
+                 NVelocity.Runtime.Parser.Node.INode node)</pre>
+    <dl>
+      <dd>
+        <p> How this directive is to be initialized.
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Directive.Directive.render(NVelocity.Context.InternalContextAdapter,System.IO.TextWriter,NVelocity.Runtime.Parser.Node.INode)">
+    </a>
+    <h3>render</h3>
+    <pre>public bool render(NVelocity.Context.InternalContextAdapter context,
+                   System.IO.TextWriter writer,
+                   NVelocity.Runtime.Parser.Node.INode node)</pre>
+    <dl>
+      <dd>
+        <p> How this directive is to be rendered
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <hr>
+    <a name="NVelocity.Runtime.Directive.Directive.setLocation(System.Int32,System.Int32)">
+    </a>
+    <h3>setLocation</h3>
+    <pre>public void setLocation(int line,
+                        int column)</pre>
+    <dl>
+      <dd>
+        <p>Allows the template location to be set
+            </p>
+        <p>
+        </p>
+      </dd>
+    </dl>
+    <a name="operator-detail">
+    </a>
+    <a name="event-detail">
+    </a>
+    <hr>
+    <table class="nav">
+      <tr>
+        <td class="nav1" colspan="2">
+          <table cellspacing="3">
+            <tr>
+              <td>
+                <a href="..\..\..\overview-summary.html"> Overview </a>
+              </td>
+              <td>
+                <a href="namespace-summary.html">Namespace</a> </td>
+              <td class="nav1sel"> Type </td>
+              <td>Use </td>
+              <td>Tree </td>
+              <td>Deprecated </td>
+              <td>Index </td>
+              <td>Help </td>
+            </tr>
+          </table>
+        </td>
+        <td class="logo" rowspan="2">.NET Framework</td>
+      </tr>
+      <tr class="nav2">
+        <td>PREV TYPE    NEXT TYPE</td>
+        <td>FRAMES    NO FRAMES</td>
+      </tr>
+      <tr class="nav2">
+        <td>SUMMARY: INNER | <a href="#field-summary">FIELD</a> | <a href="#constructor-summary">CONST</a> | <a href="#property-summary">PROP</a> | <a href="#method-summary">METHOD</a> | OP | EVENT</td>
+        <td>DETAIL: <a href="#field-detail">FIELD</a> | <a href="#constructor-detail">CONST</a> | <a href="#property-detail">PROP</a> | <a href="#method-detail">METHOD</a> | OP | EVENT</td>
+      </tr>
+    </table>
+  </body>
+</html>

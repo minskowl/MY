@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<model xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" databaseProvider="Sqlite3" connectionString="data source=F:\Develop\Projects\Net\WPF\TVSeriesTracker\data.db" name="" xmlns="http://namespaces.mindscape.co.nz/nhmodel">
+  <entities>
+    <entity name="Movie" tableName="Movies">
+      <entityProperties>
+        <entityProperty name="ImdbId" size="50" columnName="ImdbId">
+          <validations>
+            <notNullValidation />
+            <lengthValidation minimumLength="0" maximumLength="50" />
+          </validations>
+        </entityProperty>
+        <entityProperty name="Title" columnName="Title">
+          <validations>
+            <notNullValidation />
+          </validations>
+        </entityProperty>
+        <entityProperty name="Season" size="50" columnName="Season" isNullable="true">
+          <validations>
+            <lengthValidation minimumLength="0" maximumLength="50" />
+          </validations>
+        </entityProperty>
+        <entityProperty name="Episode" size="50" columnName="Episode" isNullable="true">
+          <validations>
+            <lengthValidation minimumLength="0" maximumLength="50" />
+          </validations>
+        </entityProperty>
+      </entityProperties>
+      <identityProperties>
+        <identityProperty name="MovieId" columnName="MovieId" generator="IdentityColumn" dataType="Int64" />
+      </identityProperties>
+    </entity>
+  </entities>
+</model>

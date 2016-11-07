@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BFTests", "BFTests\BFTests.csproj", "{76E651E9-3015-47F6-A6E7-0805C4DB528B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Resorces", "Resorces\Resorces.csproj", "{F44DAF14-09C2-4777-9B71-D6D80EFB3EBB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLSample", "BLSample\BLSample.csproj", "{27F52AA9-72C4-412B-8B56-A8273F587BC7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{76E651E9-3015-47F6-A6E7-0805C4DB528B}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{76E651E9-3015-47F6-A6E7-0805C4DB528B}.Debug|Any CPU.Build.0 = Release|Any CPU
+		{76E651E9-3015-47F6-A6E7-0805C4DB528B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76E651E9-3015-47F6-A6E7-0805C4DB528B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F44DAF14-09C2-4777-9B71-D6D80EFB3EBB}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{F44DAF14-09C2-4777-9B71-D6D80EFB3EBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27F52AA9-72C4-412B-8B56-A8273F587BC7}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{27F52AA9-72C4-412B-8B56-A8273F587BC7}.Debug|Any CPU.Build.0 = Release|Any CPU
+		{27F52AA9-72C4-412B-8B56-A8273F587BC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27F52AA9-72C4-412B-8B56-A8273F587BC7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
