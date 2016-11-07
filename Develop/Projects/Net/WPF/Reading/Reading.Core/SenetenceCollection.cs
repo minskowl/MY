@@ -40,7 +40,9 @@ namespace Reading.Core
         {
 
             _words = File.ReadAllLines(path)
-                .Where(e => !string.IsNullOrWhiteSpace(e)).ToArray();
+                .Where(e => !string.IsNullOrWhiteSpace(e))
+                .Select(e =>e.Trim())
+                .ToArray();
 
 
         }
