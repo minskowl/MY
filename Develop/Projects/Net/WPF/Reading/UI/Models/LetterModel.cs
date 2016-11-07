@@ -3,14 +3,28 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
+using GalaSoft.MvvmLight.Command;
 using Reading.Core;
 using Savchin.Core;
 using Savchin.Wpf.Controls.Localization;
 
 namespace Reading.Models
 {
-   public sealed class LetterModel : SyllablesModelBase
+    public sealed class LetterModel : SyllablesModelBase
     {
+        public string TipImage
+        {
+            get { return _tipImage; }
+            set
+            {
+                _tipImage = value;
+                OnPropertyChanged(nameof(TipImage));
+            }
+        }
+
+        public ICommand TipCommand { get; private set; }
+
         private SelectionMode _mode;
         /// <summary>
         /// Gets or sets the Operation.
@@ -29,7 +43,7 @@ namespace Reading.Models
         }
 
 
-        private LettersTypes _type= LettersTypes.All;
+        private LettersTypes _type = LettersTypes.All;
         /// <summary>
         /// Gets or sets the Type.
         /// </summary>
@@ -49,21 +63,33 @@ namespace Reading.Models
         public NameValuePair[] Types { get; set; }
 
         private readonly Primer _primer = new Primer();
+        private string _tipImage;
+        private bool _isTipVisible;
 
-        public override string Title {
+        public override string Title
+        {
             get { return "Буквы"; }
         }
 
         public LetterModel()
         {
+
+            TipCommand = new RelayCommand(OnTipCommand);
             Modes = TranslationManager.Instance.Translate<SelectionMode>().ToArray();
             Types = TranslationManager.Instance.Translate<LettersTypes>().ToArray();
             SetSyllable();
         }
 
+        private void OnTipCommand()
+        {
+            TipImage = $"../Resources/Letters/{SelectedItem}/1.jpg";
+       
+        }
+
         protected override void SetSyllable()
         {
-            SelectedItem =new string(_primer.GetLetter( Type,Mode),1).ToUpper(); 
+            SelectedItem = new string(_primer.GetLetter(Type, Mode), 1).ToUpper();
+            TipImage = null;
         }
     }
 }

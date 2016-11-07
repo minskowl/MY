@@ -152,6 +152,24 @@ namespace Reading.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Все.
+        /// </summary>
+        public static string SelectionMode_All {
+            get {
+                return ResourceManager.GetString("SelectionMode_All", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Популярные.
+        /// </summary>
+        public static string SelectionMode_Popular {
+            get {
+                return ResourceManager.GetString("SelectionMode_Popular", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Обе.
         /// </summary>
         public static string SummationMode_All {
@@ -175,24 +193,6 @@ namespace Reading.Properties {
         public static string SummationMode_Summation {
             get {
                 return ResourceManager.GetString("SummationMode_Summation", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Все.
-        /// </summary>
-        public static string SyllablesMode_All {
-            get {
-                return ResourceManager.GetString("SyllablesMode_All", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Популярные.
-        /// </summary>
-        public static string SyllablesMode_Popular {
-            get {
-                return ResourceManager.GetString("SyllablesMode_Popular", resourceCulture);
             }
         }
         

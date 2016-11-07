@@ -66,6 +66,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controls\MemoryField.cs" />
+    <Compile Include="Converters\InversNullToVisibilityConverter.cs" />
     <Compile Include="Models\FindPairModel.cs" />
     <Compile Include="Models\LetterModel.cs" />
     <Compile Include="Models\TaskModelBase.cs" />
@@ -309,6 +310,94 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\card.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Letters\А\1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Letters\Б\1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Letters\В\1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Letters\О\1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Letters\М\1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Letters\Г\1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Letters\Е\1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Letters\Ё\1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Letters\Ж\1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Letters\З\1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Letters\И\1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Letters\Д\1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Letters\К\1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Letters\Л\1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Letters\Н\1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Letters\П\1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Letters\Р\1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Letters\С\1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Letters\Т\1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Letters\У\1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Letters\Ф\1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Letters\Х\1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Letters\Ц\1.jpg" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Resources\Letters\Ч\1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Letters\Ш\1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Letters\Щ\1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Letters\Э\1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Letters\Ю\1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Letters\Я\1.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

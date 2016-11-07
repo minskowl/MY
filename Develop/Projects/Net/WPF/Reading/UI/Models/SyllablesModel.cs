@@ -17,12 +17,12 @@ namespace Reading.Models
         public override string Title => "Слоги";
 
 
-        private SyllablesMode _mode;
+        private SelectionMode _mode;
         /// <summary>
         /// Gets or sets the Operation.
         /// </summary>
         /// <value>The name.</value> 
-        public SyllablesMode Mode
+        public SelectionMode Mode
         {
             get { return _mode; }
             set
@@ -62,7 +62,7 @@ namespace Reading.Models
         public SyllablesModel()
         {
           
-            Modes = TranslationManager.Instance.Translate<SyllablesMode>().ToArray();
+            Modes = TranslationManager.Instance.Translate<SelectionMode>().ToArray();
             Types = TranslationManager.Instance.Translate<SyllablesTypes>().ToArray();
         }
 
@@ -73,7 +73,7 @@ namespace Reading.Models
         protected override void Initialize(Settings settings)
         {
             base.Initialize(settings);
-            Mode = (SyllablesMode)settings.SyllablesMode;
+            Mode = (SelectionMode)settings.SyllablesMode;
             Type = (SyllablesTypes) settings.SyllablesTypes;
             SetSyllable();
         }
