@@ -9,7 +9,7 @@ using Wunderkind.Core;
 
 namespace Reading.Models
 {
-    public class Sample : IDataErrorInfo
+    public class Sample //: IDataErrorInfo
     {
         public int FirstNumber { get; set; }
         public string Sign { get; set; }

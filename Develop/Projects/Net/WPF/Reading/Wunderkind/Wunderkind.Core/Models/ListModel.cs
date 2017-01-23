@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Input;
-using GalaSoft.MvvmLight.Command;
-using Reading.Speach;
+using CITrader.Controls.Commands;
 using Savchin.Core;
-using Savchin.Wpf.Controls;
+using Savchin.UI;
 using Savchin.Wpf.Controls.Localization;
 using Savchin.Wpf.Input;
 
@@ -38,22 +36,19 @@ namespace Reading.Models
         }
 
 
+
+
         private T _selectedItem;
+
         /// <summary>
         /// Gets or sets the SelectedItem.
         /// </summary>
-        /// <value>The name.</value> 
+        /// <value>The SelectedItem.</value>
         public T SelectedItem
         {
             get { return _selectedItem; }
-            set
-            {
-                if (Equals(_selectedItem, value)) return;
-                _selectedItem = value;
-                OnPropertyChanged("SelectedItem");
-            }
+            set { Set(ref _selectedItem, value); }
         }
-
 
         private bool _itemsRepeatable;
         /// <summary>
@@ -121,7 +116,7 @@ namespace Reading.Models
         /// </summary>
         protected ListModel()
         {
-            NextItemCommand = new RelayCommand(OnNextItemCommandExecute);
+            NextItemCommand = new DelegateCommandEx(OnNextItemCommandExecute);
             PlaybackModes = TranslationManager.Instance.Translate<PlaybackMode>().ToArray(); 
         }
 
@@ -161,7 +156,7 @@ namespace Reading.Models
 
             if (ItemList.Count == 0)
             {
-                if (WpfMessageBox.Show(string.Empty, "Список пуст. Заполнить список заново?", MessageButton.YesNo, MessageImage.Question, MessageResult.No) == MessageResult.No)
+                if (MessageBox.Show(string.Empty, "Список пуст. Заполнить список заново?", MessageButton.YesNo, MessageImage.Question, MessageResult.No) == MessageResult.No)
                     return;
                 ResetItemList();
                 goto start;
@@ -171,7 +166,7 @@ namespace Reading.Models
             SelectedItem = GetNewItem();
             ItemsCount = ItemList.Count;
             if (Equals(SelectedItem, default(T)))
-                WpfMessageBox.Show(string.Empty, "Список пуст.");
+                MessageBox.Show(string.Empty, "Список пуст.");
         }
         #endregion
 

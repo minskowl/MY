@@ -1,6 +1,4 @@
-﻿using Reading.Core;
-using Savchin.Logging;
-using Savchin.UI;
+﻿using Savchin.UI;
 using Savchin.Wpf.Controls.Localization;
 using Wunderkind.Core;
 

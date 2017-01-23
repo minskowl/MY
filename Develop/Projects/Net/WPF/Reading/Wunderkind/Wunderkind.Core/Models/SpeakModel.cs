@@ -1,17 +1,13 @@
-﻿using Reading.Core;
-using Reading.Core.Speach;
-using Reading.Speach;
+﻿using Wunderkind.Core;
 
 namespace Reading.Models
 {
     public abstract class SpeakModel : BaseModel
     {
-        protected ISpeaker Speaker
-        {
-            get { return _speaker ?? (_speaker = ReadingContext.Current.Speaker); }
-        }
+        public ISpeaker Speaker { get; set; }
 
-        private ISpeaker _speaker;
+
+
 
         /// <summary>
         /// Speaks the specified text.

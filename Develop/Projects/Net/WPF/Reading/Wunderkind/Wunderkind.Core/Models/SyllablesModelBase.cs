@@ -1,7 +1,5 @@
 using System.Windows.Input;
-using GalaSoft.MvvmLight.Command;
-using Reading.Core;
-using Reading.Speach;
+using CITrader.Controls.Commands;
 using Savchin.Wpf.Input;
 
 namespace Reading.Models
@@ -47,7 +45,7 @@ namespace Reading.Models
 
         protected SyllablesModelBase()
         {
-            NextItemCommand = new RelayCommand(OnRelayCommandExecute);
+            NextItemCommand = new DelegateCommandEx(OnRelayCommandExecute);
         }
     }
 }

@@ -49,16 +49,25 @@
     <Compile Include="Commands\DelegateCommandBase.cs" />
     <Compile Include="Commands\DelegateCommandEx.cs" />
     <Compile Include="Commands\IDelegateCommand.cs" />
+    <Compile Include="Core\OverrideCursor.cs" />
     <Compile Include="Core\WeakEventHandler.cs" />
     <Compile Include="Core\WeakEventHandlerManager.cs" />
     <Compile Include="ILogger.cs" />
     <Compile Include="Interfaces\IModelAdapter.cs" />
     <Compile Include="Localization\ITranslationProvider.cs" />
+    <Compile Include="MessageBox.cs" />
     <Compile Include="ObjectBase.cs" />
     <Compile Include="Interfaces\ICompositeObject.cs" />
     <Compile Include="Interfaces\IDirtyTracker.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Localization\TranslationManager.cs" />
+    <Compile Include="Transformations\ITransformation.cs" />
+    <Compile Include="Transformations\LinearTransformation.cs" />
+    <Compile Include="Shapes\Matrix.cs" />
+    <Compile Include="Transformations\OverallTransformation.cs" />
+    <Compile Include="Shapes\PolyMatrixBuilder.cs" />
+    <Compile Include="Shapes\PolyStar.cs" />
+    <Compile Include="Transformations\RotationalTransformation.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="project.json" />

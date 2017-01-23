@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using System.Windows.Input;
-using GalaSoft.MvvmLight.Command;
-using Reading.Core;
+using CITrader.Controls.Commands;
+using Wunderkind.Core;
 
 namespace Reading.Models
 {
@@ -40,7 +40,7 @@ namespace Reading.Models
 
         public WordListModel()
         {
-            SaveCommand = new RelayCommand(OnSaveCommandExecute);
+            SaveCommand = new DelegateCommandEx(OnSaveCommandExecute);
             Text = File.ReadAllText(ResourceProvider.WordFile);
         }
 

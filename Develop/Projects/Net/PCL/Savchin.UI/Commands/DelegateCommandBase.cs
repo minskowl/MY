@@ -5,6 +5,7 @@ using System.Threading;
 using System.Windows.Input;
 using CI.Common.Logging;
 using CI.UI.Core;
+using Savchin.UI.Core;
 
 
 namespace CITrader.Controls.Commands

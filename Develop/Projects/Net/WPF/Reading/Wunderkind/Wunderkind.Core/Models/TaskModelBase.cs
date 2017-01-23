@@ -1,5 +1,5 @@
 using System.Windows.Input;
-using GalaSoft.MvvmLight.Command;
+using CITrader.Controls.Commands;
 using Savchin.Core;
 using Savchin.Wpf.Input;
 
@@ -14,7 +14,7 @@ namespace Reading.Models
 
         protected TaskModelBase()
         {
-            NextCommand = new RelayCommand(OnNextCommandExecute);
+            NextCommand = new DelegateCommandEx(OnNextCommandExecute);
         }
 
         /// <summary>

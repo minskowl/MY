@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Windows.Input;
-using System.Windows.Media;
-using GalaSoft.MvvmLight.Command;
+using Windows.UI.Xaml.Media;
+using CITrader.Controls.Commands;
 using Reading.Core;
 using Wunderkind.Core;
 
@@ -70,8 +70,8 @@ namespace Reading.Models
             Voices =Speaker.GetVoices() ;
             FontFamilies = Fonts.SystemFontFamilies;
 
-            SaveCommand = new RelayCommand(OnSaveCommandExecute);
-            TestSoundCommand = new RelayCommand(OnTestSoundCommandExecute);
+            SaveCommand = new DelegateCommandEx(OnSaveCommandExecute);
+            TestSoundCommand = new DelegateCommandEx(OnTestSoundCommandExecute);
         }
 
 

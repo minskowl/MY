@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Windows;
 using Windows.UI.Core;
+using Savchin.UI.Core;
 
 
 namespace CI.UI.Core

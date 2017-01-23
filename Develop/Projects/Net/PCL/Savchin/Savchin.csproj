@@ -39,6 +39,13 @@
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Application\AppContext.cs" />
+    <Compile Include="Application\BaseObjectProvider.cs" />
+    <Compile Include="Application\IApplicationObjectsProvider.cs" />
+    <Compile Include="Application\ISession.cs" />
+    <Compile Include="Application\MultiThreadProvider.cs" />
+    <Compile Include="Application\SimpleSession.cs" />
+    <Compile Include="Application\SingleThreadProvider.cs" />
     <Compile Include="Core\IRange.cs" />
     <Compile Include="EnumerableExtensions.cs" />
     <Compile Include="Core\EnumHelper.cs" />

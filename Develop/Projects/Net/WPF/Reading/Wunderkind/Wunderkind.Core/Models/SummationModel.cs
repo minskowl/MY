@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Input;
-using System.Windows.Shapes;
-using GalaSoft.MvvmLight.Command;
+using Windows.UI.Xaml.Shapes;
 using Reading.Core;
 using Reading.Core.Settings;
 using Savchin.Core;

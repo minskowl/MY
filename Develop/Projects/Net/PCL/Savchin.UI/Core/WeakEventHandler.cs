@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Reflection;
 
-namespace CI.UI.Core
+namespace Savchin.UI.Core
 {
     /// <summary>
     /// WeakEventHandler
