@@ -17,6 +17,7 @@
 
 [Dd]ebug/
 [Rr]elease/
+packages/
 x64/
 build/
 [Bb]in/
