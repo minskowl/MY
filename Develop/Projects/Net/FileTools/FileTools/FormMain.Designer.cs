@@ -41,6 +41,7 @@ namespace FileTools
             this.imagesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.resizeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lockFileMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.getFilesStatisticsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gACToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dLLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -50,7 +51,7 @@ namespace FileTools
             this.mathConverterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fbd = new System.Windows.Forms.FolderBrowserDialog();
             this.textBoxLog = new System.Windows.Forms.TextBox();
-            this.getFilesStatisticsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mergeFilesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -72,7 +73,8 @@ namespace FileTools
             // mP3ToolStripMenuItem
             // 
             this.mP3ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.rusCheckToolStripMenuItem});
+            this.rusCheckToolStripMenuItem,
+            this.mergeFilesToolStripMenuItem});
             this.mP3ToolStripMenuItem.Name = "mP3ToolStripMenuItem";
             this.mP3ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.mP3ToolStripMenuItem.Text = "MP3";
@@ -80,7 +82,7 @@ namespace FileTools
             // rusCheckToolStripMenuItem
             // 
             this.rusCheckToolStripMenuItem.Name = "rusCheckToolStripMenuItem";
-            this.rusCheckToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
+            this.rusCheckToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.rusCheckToolStripMenuItem.Text = "Rus Check";
             // 
             // filesToolStripMenuItem
@@ -141,6 +143,12 @@ namespace FileTools
             this.lockFileMenuItem.Size = new System.Drawing.Size(190, 22);
             this.lockFileMenuItem.Text = "Lock File";
             // 
+            // getFilesStatisticsToolStripMenuItem
+            // 
+            this.getFilesStatisticsToolStripMenuItem.Name = "getFilesStatisticsToolStripMenuItem";
+            this.getFilesStatisticsToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.getFilesStatisticsToolStripMenuItem.Text = "Get Files Statistics";
+            // 
             // gACToolStripMenuItem
             // 
             this.gACToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -180,7 +188,7 @@ namespace FileTools
             this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mathConverterToolStripMenuItem});
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
-            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
+            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
             this.toolsToolStripMenuItem.Text = "Tools";
             // 
             // mathConverterToolStripMenuItem
@@ -200,11 +208,11 @@ namespace FileTools
             this.textBoxLog.Size = new System.Drawing.Size(295, 255);
             this.textBoxLog.TabIndex = 1;
             // 
-            // getFilesStatisticsToolStripMenuItem
+            // mergeFilesToolStripMenuItem
             // 
-            this.getFilesStatisticsToolStripMenuItem.Name = "getFilesStatisticsToolStripMenuItem";
-            this.getFilesStatisticsToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
-            this.getFilesStatisticsToolStripMenuItem.Text = "Get Files Statistics";
+            this.mergeFilesToolStripMenuItem.Name = "mergeFilesToolStripMenuItem";
+            this.mergeFilesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.mergeFilesToolStripMenuItem.Text = "Merge Files";
             // 
             // FormMain
             // 
@@ -246,6 +254,7 @@ namespace FileTools
         private System.Windows.Forms.ToolStripMenuItem toolsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mathConverterToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem getFilesStatisticsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mergeFilesToolStripMenuItem;
     }
 }
 

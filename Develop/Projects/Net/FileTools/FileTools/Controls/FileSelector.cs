@@ -29,6 +29,7 @@ namespace FileTools.Controls
                 var text = textBoxFileFilter.Text.Trim();
                 return (string.IsNullOrEmpty(text)) ? "*" : text;
             }
+            set { textBoxFileFilter.Text = value; }
         }
 
         /// <summary>

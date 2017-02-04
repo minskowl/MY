@@ -9,160 +9,6 @@
             Represents a directory containing an ASPX web application.
             </summary>
         </member>
-        <member name="T:MiniHttpd.DriveDirectory">
-            <summary>
-            Represents a physical directory on disk.
-            </summary>
-        </member>
-        <member name="T:MiniHttpd.IDirectory">
-            <summary>
-            Represents a directory which contains files and subdirectories.
-            </summary>
-            <remarks>
-            Root directories should have a name of <c>null</c>.
-            </remarks>
-        </member>
-        <member name="T:MiniHttpd.IResource">
-            <summary>
-            Represents a file, directory or other resource with a name and a parent directory.
-            </summary>
-            <remarks>
-            All objects inheriting this interface should be serializable.
-            </remarks>
-        </member>
-        <member name="P:MiniHttpd.IResource.Name">
-            <summary>
-            Gets the name of the entry.
-            </summary>
-        </member>
-        <member name="P:MiniHttpd.IResource.Parent">
-            <summary>
-            Gets the parent directory of the object.
-            </summary>
-        </member>
-        <member name="M:MiniHttpd.IDirectory.GetDirectory(System.String)">
-            <summary>
-            Returns the specified subdirectory.
-            </summary>
-            <param name="dir">The name of the subdirectory to retrieve.</param>
-            <returns>An <see cref="T:MiniHttpd.IDirectory"/> representing the specified directory, or <c>null</c> if one doesn't exist.</returns>
-        </member>
-        <member name="M:MiniHttpd.IDirectory.GetFile(System.String)">
-            <summary>
-            Returns the specified file.
-            </summary>
-            <param name="filename">The name of the file to retrieve.</param>
-            <returns>An <see cref="T:MiniHttpd.IFile"/> representing the specified file, or <c>null</c> if one doesn't exist.</returns>
-        </member>
-        <member name="M:MiniHttpd.IDirectory.GetDirectories">
-            <summary>
-            Returns a collection of subdirectories available in the directory.
-            </summary>
-            <returns>An <see cref="T:System.Collections.ICollection"/> containing <see cref="T:MiniHttpd.IDirectory"/> objects available in the directory.</returns>
-        </member>
-        <member name="M:MiniHttpd.IDirectory.GetFiles">
-            <summary>
-            Returns a collection of files available in the directory.
-            </summary>
-            <returns>An <see cref="T:System.Collections.ICollection"/> containing <see cref="T:MiniHttpd.IFile"/> objects available in the directory.</returns>
-        </member>
-        <member name="M:MiniHttpd.IDirectory.GetResource(System.String)">
-            <summary>
-            Returns the resource (file or directory) with the specified name.
-            </summary>
-            <param name="name">The name of the resource.</param>
-            <returns>An IFile or IDirectory with the given name.</returns>
-        </member>
-        <member name="T:MiniHttpd.IPhysicalResource">
-            <summary>
-            Represents a resource that has a path that corresponds to a physical file.
-            </summary>
-        </member>
-        <member name="P:MiniHttpd.IPhysicalResource.Path">
-            <summary>
-            Gets the full path of the resource on disk.
-            </summary>
-        </member>
-        <member name="M:MiniHttpd.DriveDirectory.#ctor(System.String,System.String,MiniHttpd.IDirectory)">
-            <summary>
-            Creates a <see cref="T:MiniHttpd.DriveDirectory"/> with the specified alias, path and parent.
-            </summary>
-            <param name="alias">The name of the directory as it should be recognized in the parent directory.</param>
-            <param name="path">The full path of the directory on disk.</param>
-            <param name="parent">An <see cref="T:MiniHttpd.IDirectory"/> specifying the parent directory. This should be set to <c>null</c> to specify that this directory is root.</param>
-        </member>
-        <member name="M:MiniHttpd.DriveDirectory.#ctor(System.String,MiniHttpd.IDirectory)">
-            <summary>
-            Creates a <see cref="T:MiniHttpd.DriveDirectory"/> with the specified path and parent. 
-            </summary>
-            <param name="path">The full path of the directory on disk.</param>
-            <param name="parent">An <see cref="T:MiniHttpd.IDirectory"/> specifying the parent directory. This should be set to <c>null</c> to specify that this directory is root.</param>
-        </member>
-        <member name="M:MiniHttpd.DriveDirectory.#ctor(System.String)">
-            <summary>
-            Creates a root <see cref="T:MiniHttpd.DriveDirectory"/> with the specified path.
-            </summary>
-            <param name="path">The full path of the directory on disk.</param>
-        </member>
-        <member name="M:MiniHttpd.DriveDirectory.GetDirectory(System.String)">
-            <summary>
-            Returns the specified subdirectory.
-            </summary>
-            <param name="dir">The name of the subdirectory to retrieve.</param>
-            <returns>An <see cref="T:MiniHttpd.IDirectory"/> representing the specified directory, or <c>null</c> if one doesn't exist.</returns>
-        </member>
-        <member name="M:MiniHttpd.DriveDirectory.GetFile(System.String)">
-            <summary>
-            Returns the specified file.
-            </summary>
-            <param name="filename">The name of the file to retrieve.</param>
-            <returns>An <see cref="T:MiniHttpd.IFile"/> representing the specified file, or <c>null</c> if one doesn't exist.</returns>
-        </member>
-        <member name="M:MiniHttpd.DriveDirectory.GetDirectories">
-            <summary>
-            Returns a collection of subdirectories available in the directory.
-            </summary>
-            <returns>An <see cref="T:System.Collections.ICollection"/> containing <see cref="T:MiniHttpd.IDirectory"/> objects available in the directory.</returns>
-        </member>
-        <member name="M:MiniHttpd.DriveDirectory.GetFiles">
-            <summary>
-            Returns a collection of files available in the directory.
-            </summary>
-            <returns>An <see cref="T:System.Collections.ICollection"/> containing <see cref="T:MiniHttpd.IFile"/> objects available in the directory.</returns>
-        </member>
-        <member name="M:MiniHttpd.DriveDirectory.GetResource(System.String)">
-            <summary>
-            Returns the resource (file or directory) with the specified name.
-            </summary>
-            <param name="name">The name of the resource.</param>
-            <returns>An IFile or IDirectory with the given name.</returns>
-        </member>
-        <member name="M:MiniHttpd.DriveDirectory.Dispose">
-            <summary>
-            DriveDirectory can only contain <see cref="T:MiniHttpd.DriveDirectory"/> and <see cref="T:MiniHttpd.DriveFile"/> objects, neither of which require disposal logic.
-            </summary>
-        </member>
-        <member name="M:MiniHttpd.DriveDirectory.ToString">
-            <summary>
-            Returns the name of the directory.
-            </summary>
-            <returns>The name of the directory.</returns>
-        </member>
-        <member name="P:MiniHttpd.DriveDirectory.Path">
-            <summary>
-            Gets the full path of the directory on disk.
-            </summary>
-        </member>
-        <member name="P:MiniHttpd.DriveDirectory.Name">
-            <summary>
-            Gets the name of the directory.
-            </summary>
-        </member>
-        <member name="P:MiniHttpd.DriveDirectory.Parent">
-            <summary>
-            Gets the parent directory of the directory.
-            </summary>
-        </member>
         <member name="M:MiniHttpd.Aspx.AspxAppDirectory.#ctor(System.String,MiniHttpd.IDirectory)">
             <summary>
             Creates a new <see cref="T:MiniHttpd.Aspx.AspxAppDirectory"/> with the specified path and parent.
@@ -196,310 +42,6 @@
         <member name="T:MiniHttpd.Aspx.AspxWebServer">
             <summary>
             Represents an ASPX web server.
-            </summary>
-        </member>
-        <member name="T:MiniHttpd.HttpWebServer">
-            <summary>
-            Represents a web server with a tree-file structure.
-            </summary>
-        </member>
-        <member name="T:MiniHttpd.HttpServer">
-            <summary>
-            An HTTP listener.
-            </summary>
-        </member>
-        <member name="M:MiniHttpd.HttpServer.#ctor">
-            <summary>
-            Creates an <see cref="T:MiniHttpd.HttpServer"/> on the default port and address.
-            </summary>
-        </member>
-        <member name="M:MiniHttpd.HttpServer.#ctor(System.Int32)">
-            <summary>
-            Creates an <see cref="T:MiniHttpd.HttpServer"/> on the specified port and default address.
-            </summary>
-            <param name="port">An available port between 1 and 65535. Specify 0 to use any open port.</param>
-        </member>
-        <member name="M:MiniHttpd.HttpServer.#ctor(System.Net.IPAddress,System.Int32)">
-            <summary>
-            Creates an <see cref="T:MiniHttpd.HttpServer"/> on the specified port and address.
-            </summary>
-            <param name="localAddress">An <see cref="T:System.Net.IPAddress"/> on which to listen for HTTP requests.</param>
-            <param name="port">An available port between 1 and 65535. Specify 0 to use any open port.</param>
-        </member>
-        <member name="M:MiniHttpd.HttpServer.Finalize">
-            <summary>
-            Disposes the server if it hasn't already been disposed.
-            </summary>
-        </member>
-        <member name="M:MiniHttpd.HttpServer.Dispose">
-            <summary>
-            Shuts down and disposes the server.
-            </summary>
-        </member>
-        <member name="M:MiniHttpd.HttpServer.Start">
-            <summary>
-            Starts listening for connections.
-            </summary>
-        </member>
-        <member name="M:MiniHttpd.HttpServer.Stop">
-            <summary>
-            Stops listening for connections.
-            </summary>
-        </member>
-        <member name="E:MiniHttpd.HttpServer.Disposed">
-            <summary>
-            Occurs when the server is disposed.
-            </summary>
-        </member>
-        <member name="P:MiniHttpd.HttpServer.Port">
-            <summary>
-            Gets or sets the port on which to listen to HTTP requests. Specify 0 to use any open port.
-            </summary>
-        </member>
-        <member name="P:MiniHttpd.HttpServer.HostName">
-            <summary>
-            Gets or sets the server's host name.
-            </summary>
-        </member>
-        <member name="P:MiniHttpd.HttpServer.LocalAddress">
-            <summary>
-            Gets or sets the IP address on which to listen to HTTP requests.
-            </summary>
-        </member>
-        <member name="P:MiniHttpd.HttpServer.HttpVersion">
-            <summary>
-            Gets the highest HTTP version recognized by the server.
-            </summary>
-        </member>
-        <member name="P:MiniHttpd.HttpServer.ServerName">
-            <summary>
-            Gets or sets the name of the server.
-            </summary>
-        </member>
-        <member name="P:MiniHttpd.HttpServer.ListenerThread">
-            <summary>
-            Gets the thread on which the listener is operating.
-            </summary>
-        </member>
-        <member name="E:MiniHttpd.HttpServer.ServerUriChanged">
-            <summary>
-            Occurs when the server's <see cref="T:System.Uri"/> changes.
-            </summary>
-        </member>
-        <member name="P:MiniHttpd.HttpServer.ServerUri">
-            <summary>
-            Gets or sets the server's <see cref="T:System.Uri"/>.
-            </summary>
-        </member>
-        <member name="P:MiniHttpd.HttpServer.Timeout">
-            <summary>
-            Gets or sets the time, in milliseconds, of the time after which a client is idle for that the client should be disconnected.
-            </summary>
-        </member>
-        <member name="P:MiniHttpd.HttpServer.UriCacheMax">
-            <summary>
-            Gets or sets the maximum size of the URI cache.
-            </summary>
-        </member>
-        <member name="P:MiniHttpd.HttpServer.LogRequests">
-            <summary>
-            Gets or sets a value indicating whether the server should log HTTP requests.
-            </summary>
-        </member>
-        <member name="P:MiniHttpd.HttpServer.LogConnections">
-            <summary>
-            Gets or sets a value indicating whether the server should log client connections and disconnections.
-            </summary>
-        </member>
-        <member name="P:MiniHttpd.HttpServer.RequireAuthentication">
-            <summary>
-            Gets or sets a value indicating whether the server requires authentication for its resources to be accessed.
-            </summary>
-        </member>
-        <member name="P:MiniHttpd.HttpServer.AuthenticateRealm">
-            <summary>
-            Gets or sets a value of the realm presented to the user when authenticating.
-            </summary>
-        </member>
-        <member name="P:MiniHttpd.HttpServer.MaxPostLength">
-            <summary>
-            Gets or sets the maximum length of content that the client can post.
-            </summary>
-        </member>
-        <member name="P:MiniHttpd.HttpServer.IsRunning">
-            <summary>
-            Gets a value indicating whether the server is currently listening for connections.
-            </summary>
-        </member>
-        <member name="E:MiniHttpd.HttpServer.Started">
-            <summary>
-            Occurs when the server is started.
-            </summary>
-        </member>
-        <member name="E:MiniHttpd.HttpServer.Stopping">
-            <summary>
-            Occurs when the server is about to stop.
-            </summary>
-        </member>
-        <member name="E:MiniHttpd.HttpServer.Stopped">
-            <summary>
-            Occurs when the server is stopped.
-            </summary>
-        </member>
-        <member name="E:MiniHttpd.HttpServer.ClientConnected">
-            <summary>
-            Occurs when a client connects to the server.
-            </summary>
-        </member>
-        <member name="E:MiniHttpd.HttpServer.ClientDisconnected">
-            <summary>
-            Occurs when a client is disconnected from the server.
-            </summary>
-        </member>
-        <member name="E:MiniHttpd.HttpServer.RequestReceived">
-            <summary>
-            Occurs when any request is received, valid or invalid.
-            </summary>
-        </member>
-        <member name="E:MiniHttpd.HttpServer.ValidRequestReceived">
-            <summary>
-            Occurs when a valid request to which a response can be made is received.
-            </summary>
-        </member>
-        <member name="E:MiniHttpd.HttpServer.InvalidRequestReceived">
-            <summary>
-            Occurs when an invalid request to which no response other than an error can be made is received.
-            </summary>
-        </member>
-        <member name="P:MiniHttpd.HttpServer.Authenticator">
-            <summary>
-            Gets or sets an <see cref="T:MiniHttpd.IAuthenticator"/> object responsible for authenticating all requests.
-            </summary>
-        </member>
-        <member name="P:MiniHttpd.HttpServer.Log">
-            <summary>
-            Gets or sets the <see cref="T:System.IO.TextWriter"/> to which to write logs.
-            </summary>
-        </member>
-        <member name="T:MiniHttpd.HttpServer.ClientEventHandler">
-            <summary>
-            Represents an event which occurs when the client's state changes.
-            </summary>
-        </member>
-        <member name="T:MiniHttpd.HttpServer.RequestEventHandler">
-            <summary>
-            Represents an event which occurs when an HTTP request is received.
-            </summary>
-        </member>
-        <member name="M:MiniHttpd.HttpWebServer.#ctor">
-            <summary>
-            Creates a web server on the default port, default address and default <see cref="T:MiniHttpd.VirtualDirectory"/> root.
-            </summary>
-        </member>
-        <member name="M:MiniHttpd.HttpWebServer.#ctor(System.Int32)">
-            <summary>
-            Creates a web server on the specified port, default address and default <see cref="T:MiniHttpd.VirtualDirectory"/> root.
-            </summary>
-            <param name="port">An open port of range 1-65535 to listen on. Specify 0 to use any open port.</param>
-        </member>
-        <member name="M:MiniHttpd.HttpWebServer.#ctor(System.Int32,MiniHttpd.IDirectory)">
-            <summary>
-            Creates a web server on the specified port, specified root and default address.
-            </summary>
-            <param name="port">An open port of range 1-65535 to listen on. Specify 0 to use any open port.</param>
-            <param name="root">An <see cref="T:MiniHttpd.IDirectory"/> specifying the root directory. Its <c>Parent</c> must be <c>null</c>.</param>
-        </member>
-        <member name="M:MiniHttpd.HttpWebServer.#ctor(System.Net.IPAddress,System.Int32)">
-            <summary>
-            Creates a web server on the specified address, specified port and default <see cref="T:MiniHttpd.VirtualDirectory"/> root.
-            </summary>
-            <param name="localAddress">The local <see cref="T:System.Net.IPAddress"/> to listen on.</param>
-            <param name="port">An open port of range 1-65535 to listen on. Specify 0 to use any open port.</param>
-        </member>
-        <member name="M:MiniHttpd.HttpWebServer.#ctor(System.Net.IPAddress,System.Int32,MiniHttpd.IDirectory)">
-            <summary>
-            Creates a web server on the specified address, port and root.
-            </summary>
-            <param name="localAddress">The local <see cref="T:System.Net.IPAddress"/> to listen on.</param>
-            <param name="port">An open port of range 1-65535 to listen on. Specify 0 to use any open port.</param>
-            <param name="root">An <see cref="T:MiniHttpd.IDirectory"/> specifying the root directory. Its <c>Parent</c> must be <c>null</c>.</param>
-        </member>
-        <member name="M:MiniHttpd.HttpWebServer.Finalize">
-            <summary>
-            Disposes the server if it hasn't already been disposed.
-            </summary>
-        </member>
-        <member name="M:MiniHttpd.HttpWebServer.NavigateToUrl(System.String)">
-            <summary>
-            Returns the resource at the given relative URL.
-            </summary>
-            <param name="url">A relative URL to the resource to return.</param>
-            <returns>A file corresponding to the given URL. Returns <c>null</c> if the resource is not available.</returns>
-        </member>
-        <member name="M:MiniHttpd.HttpWebServer.NavigateToUrl(System.String,System.Boolean)">
-            <summary>
-            Retursn the resource at the given relative URL.
-            </summary>
-            <param name="url">A relative URL to the resource to return.</param>
-            <param name="throwOnError">A value indicating whether or not the method should throw an <see cref="T:MiniHttpd.HttpRequestException"/> if the resource is not available.</param>
-            <returns></returns>
-        </member>
-        <member name="F:MiniHttpd.HttpWebServer.InvalidFileChars">
-            <summary>
-            Provides a list of characters deemed invalid in Windows NT file strings.
-            </summary>
-        </member>
-        <member name="M:MiniHttpd.HttpWebServer.IsValidFilename(System.String)">
-            <summary>
-            Checks whether a file is a valid filename on the current OS.
-            </summary>
-            <param name="filename">The filename to be examined.</param>
-            <returns>True if the filename is safe, otherwise false.</returns>
-        </member>
-        <member name="M:MiniHttpd.HttpWebServer.SendFileOrIndex(MiniHttpd.HttpRequest,MiniHttpd.IResource)">
-            <summary>
-            Returns the file or index page for the given request and resource.
-            </summary>
-            <param name="request">The request to which to respond.</param>
-            <param name="resource">The requested resource.</param>
-        </member>
-        <member name="M:MiniHttpd.HttpWebServer.GetDirectoryPath(MiniHttpd.IDirectory)">
-            <summary>
-            Returns the full relative path of the specified directory as seen on the server.
-            </summary>
-            <param name="directory">The directory of which to retrieve the full path.</param>
-            <returns>The full path of the specified directory.</returns>
-        </member>
-        <member name="M:MiniHttpd.HttpWebServer.GetUrl(MiniHttpd.IResource)">
-            <summary>
-            Returns the <see cref="T:System.Uri"/> of a specified resource.
-            </summary>
-            <param name="resource">An <see cref="T:MiniHttpd.IResource"/> specifying the file for which to return a <see cref="T:System.Uri"/>.</param>
-            <returns>A <see cref="T:System.Uri"/> to the specified file.</returns>
-        </member>
-        <member name="M:MiniHttpd.HttpWebServer.Dispose">
-            <summary>
-            Dispose root directory.
-            </summary>
-        </member>
-        <member name="E:MiniHttpd.HttpWebServer.RootChanged">
-            <summary>
-            Event that occurs when the root directory is changed.
-            </summary>
-        </member>
-        <member name="P:MiniHttpd.HttpWebServer.Root">
-            <summary>
-            Gets or sets the root directory. The old root is disposed when a new value is assigned.
-            </summary>
-        </member>
-        <member name="P:MiniHttpd.HttpWebServer.DefaultPages">
-            <summary>
-            Gets or sets an <see cref="T:System.Collections.ArrayList"/> of strings representing default page names.
-            </summary>
-        </member>
-        <member name="P:MiniHttpd.HttpWebServer.IndexPage">
-            <summary>
-            Gets or sets the index page to use.
             </summary>
         </member>
         <member name="M:MiniHttpd.Aspx.AspxWebServer.#ctor">
@@ -555,6 +97,26 @@
             Summary description for HttpHandler.
             </summary>
         </member>
+        <member name="P:MiniHttpd.Aspx.HttpHandler.Verb">
+            <summary>
+            Gets the HTTP method handlers that qualify this handler.
+            </summary>
+        </member>
+        <member name="P:MiniHttpd.Aspx.HttpHandler.Path">
+            <summary>
+            Gets the request paths that qualify this handler.
+            </summary>
+        </member>
+        <member name="P:MiniHttpd.Aspx.HttpHandler.Type">
+            <summary>
+            Gets the type of the object to handle the request.
+            </summary>
+        </member>
+        <member name="P:MiniHttpd.Aspx.HttpHandler.Validate">
+            <summary>
+            Gets a value indicating whether the handler should be validated beforehand.
+            </summary>
+        </member>
         <member name="M:MiniHttpd.Aspx.HttpHandler.IsMatch(System.String,System.String)">
             <summary>
             Determines if a method/path pair is a match to this handler.
@@ -576,26 +138,6 @@
             </summary>
             <returns>A hash code value.</returns>
         </member>
-        <member name="P:MiniHttpd.Aspx.HttpHandler.Verb">
-            <summary>
-            Gets the HTTP method handlers that qualify this handler.
-            </summary>
-        </member>
-        <member name="P:MiniHttpd.Aspx.HttpHandler.Path">
-            <summary>
-            Gets the request paths that qualify this handler.
-            </summary>
-        </member>
-        <member name="P:MiniHttpd.Aspx.HttpHandler.Type">
-            <summary>
-            Gets the type of the object to handle the request.
-            </summary>
-        </member>
-        <member name="P:MiniHttpd.Aspx.HttpHandler.Validate">
-            <summary>
-            Gets a value indicating whether the handler should be validated beforehand.
-            </summary>
-        </member>
         <member name="T:MiniHttpd.Aspx.WorkerRequest">
             <summary>
             Summary description for WorkerRequest.
@@ -605,19 +147,6 @@
             <summary>
             A basic authenticator using MD5 hashes.
             </summary>
-        </member>
-        <member name="T:MiniHttpd.IAuthenticator">
-            <summary>
-            Represents an object to authenticate a user.
-            </summary>
-        </member>
-        <member name="M:MiniHttpd.IAuthenticator.Authenticate(System.String,System.String)">
-            <summary>
-            Authenticates a user agaisnt the proscribed implementation.
-            </summary>
-            <param name="username">The username to authenticate.</param>
-            <param name="password">The password to authenticate.</param>
-            <returns>True if the user is authenticated, otherwise false.</returns>
         </member>
         <member name="M:MiniHttpd.BasicAuthenticator.AddUser(System.String,System.String)">
             <summary>
@@ -655,6 +184,11 @@
             <param name="newPassword">The user's new password.</param>
             <exception>System.Security.SecurityException</exception>
         </member>
+        <member name="P:MiniHttpd.BasicAuthenticator.Users">
+            <summary>
+            Gets a collection of string containing the names of the users in the user list.
+            </summary>
+        </member>
         <member name="M:MiniHttpd.BasicAuthenticator.GetPasswordHash(System.String)">
             <summary>
             Retrieves the password hash of a given user.
@@ -676,11 +210,6 @@
             <param name="username">The name of the user to authenticate.</param>
             <param name="password">The user's password.</param>
             <returns>True if the user is successfully authenticated, otherwise false.</returns>
-        </member>
-        <member name="P:MiniHttpd.BasicAuthenticator.Users">
-            <summary>
-            Gets a collection of string containing the names of the users in the user list.
-            </summary>
         </member>
         <member name="T:MiniHttpd.ByteRange">
             <summary>
@@ -773,10 +302,297 @@
             The exception that is thrown when a virtual directory already contains an entry of the specified name.
             </summary>
         </member>
+        <member name="T:MiniHttpd.DriveDirectory">
+            <summary>
+            Represents a physical directory on disk.
+            </summary>
+        </member>
+        <member name="M:MiniHttpd.DriveDirectory.#ctor(System.String,System.String,MiniHttpd.IDirectory)">
+            <summary>
+            Creates a <see cref="T:MiniHttpd.DriveDirectory"/> with the specified alias, path and parent.
+            </summary>
+            <param name="alias">The name of the directory as it should be recognized in the parent directory.</param>
+            <param name="path">The full path of the directory on disk.</param>
+            <param name="parent">An <see cref="T:MiniHttpd.IDirectory"/> specifying the parent directory. This should be set to <c>null</c> to specify that this directory is root.</param>
+        </member>
+        <member name="M:MiniHttpd.DriveDirectory.#ctor(System.String,MiniHttpd.IDirectory)">
+            <summary>
+            Creates a <see cref="T:MiniHttpd.DriveDirectory"/> with the specified path and parent. 
+            </summary>
+            <param name="path">The full path of the directory on disk.</param>
+            <param name="parent">An <see cref="T:MiniHttpd.IDirectory"/> specifying the parent directory. This should be set to <c>null</c> to specify that this directory is root.</param>
+        </member>
+        <member name="M:MiniHttpd.DriveDirectory.#ctor(System.String)">
+            <summary>
+            Creates a root <see cref="T:MiniHttpd.DriveDirectory"/> with the specified path.
+            </summary>
+            <param name="path">The full path of the directory on disk.</param>
+        </member>
+        <member name="P:MiniHttpd.DriveDirectory.Path">
+            <summary>
+            Gets the full path of the directory on disk.
+            </summary>
+        </member>
+        <member name="M:MiniHttpd.DriveDirectory.GetDirectory(System.String)">
+            <summary>
+            Returns the specified subdirectory.
+            </summary>
+            <param name="dir">The name of the subdirectory to retrieve.</param>
+            <returns>An <see cref="T:MiniHttpd.IDirectory"/> representing the specified directory, or <c>null</c> if one doesn't exist.</returns>
+        </member>
+        <member name="M:MiniHttpd.DriveDirectory.GetFile(System.String)">
+            <summary>
+            Returns the specified file.
+            </summary>
+            <param name="filename">The name of the file to retrieve.</param>
+            <returns>An <see cref="T:MiniHttpd.IFile"/> representing the specified file, or <c>null</c> if one doesn't exist.</returns>
+        </member>
+        <member name="M:MiniHttpd.DriveDirectory.GetDirectories">
+            <summary>
+            Returns a collection of subdirectories available in the directory.
+            </summary>
+            <returns>An <see cref="T:System.Collections.ICollection"/> containing <see cref="T:MiniHttpd.IDirectory"/> objects available in the directory.</returns>
+        </member>
+        <member name="M:MiniHttpd.DriveDirectory.GetFiles">
+            <summary>
+            Returns a collection of files available in the directory.
+            </summary>
+            <returns>An <see cref="T:System.Collections.ICollection"/> containing <see cref="T:MiniHttpd.IFile"/> objects available in the directory.</returns>
+        </member>
+        <member name="P:MiniHttpd.DriveDirectory.Name">
+            <summary>
+            Gets the name of the directory.
+            </summary>
+        </member>
+        <member name="P:MiniHttpd.DriveDirectory.Parent">
+            <summary>
+            Gets the parent directory of the directory.
+            </summary>
+        </member>
+        <member name="M:MiniHttpd.DriveDirectory.GetResource(System.String)">
+            <summary>
+            Returns the resource (file or directory) with the specified name.
+            </summary>
+            <param name="name">The name of the resource.</param>
+            <returns>An IFile or IDirectory with the given name.</returns>
+        </member>
+        <member name="M:MiniHttpd.DriveDirectory.Dispose">
+            <summary>
+            DriveDirectory can only contain <see cref="T:MiniHttpd.DriveDirectory"/> and <see cref="T:MiniHttpd.DriveFile"/> objects, neither of which require disposal logic.
+            </summary>
+        </member>
+        <member name="M:MiniHttpd.DriveDirectory.ToString">
+            <summary>
+            Returns the name of the directory.
+            </summary>
+            <returns>The name of the directory.</returns>
+        </member>
         <member name="T:MiniHttpd.DriveFile">
             <summary>
             Represents a physical file on disk.
             </summary>
+        </member>
+        <member name="M:MiniHttpd.DriveFile.#ctor(System.String,MiniHttpd.IDirectory)">
+            <summary>
+            Creates a new <see cref="T:MiniHttpd.DriveFile"/> representing a specified file.
+            </summary>
+            <param name="path">The full path of the file.</param>
+            <param name="parent">The parent directory of the file.</param>
+        </member>
+        <member name="P:MiniHttpd.DriveFile.Path">
+            <summary>
+            Gets the full path of the file on disk.
+            </summary>
+        </member>
+        <member name="M:MiniHttpd.DriveFile.OnFileRequested(MiniHttpd.HttpRequest,MiniHttpd.IDirectory)">
+            <summary>
+            Called when the file is requested by a client.
+            </summary>
+            <param name="request">The <see cref="T:MiniHttpd.HttpRequest"/> requesting the file.</param>
+            <param name="directory">The <see cref="T:MiniHttpd.IDirectory"/> of the parent directory.</param>
+        </member>
+        <member name="P:MiniHttpd.DriveFile.ContentType">
+            <summary>
+            The MIME type of the content.
+            </summary>
+        </member>
+        <member name="P:MiniHttpd.DriveFile.Name">
+            <summary>
+            The name of the entry.
+            </summary>
+        </member>
+        <member name="P:MiniHttpd.DriveFile.Parent">
+            <summary>
+            The parent directory of the object.
+            </summary>
+        </member>
+        <member name="M:MiniHttpd.DriveFile.Dispose">
+            <summary>
+            DriveFile requires no disposal logic.
+            </summary>
+        </member>
+        <member name="M:MiniHttpd.DriveFile.ToString">
+            <summary>
+            Returns the name of the file.
+            </summary>
+            <returns>The name of the file.</returns>
+        </member>
+        <member name="T:MiniHttpd.HttpWebServer">
+            <summary>
+            Represents a web server with a tree-file structure.
+            </summary>
+        </member>
+        <member name="M:MiniHttpd.HttpWebServer.#ctor">
+            <summary>
+            Creates a web server on the default port, default address and default <see cref="T:MiniHttpd.VirtualDirectory"/> root.
+            </summary>
+        </member>
+        <member name="M:MiniHttpd.HttpWebServer.#ctor(System.Int32)">
+            <summary>
+            Creates a web server on the specified port, default address and default <see cref="T:MiniHttpd.VirtualDirectory"/> root.
+            </summary>
+            <param name="port">An open port of range 1-65535 to listen on. Specify 0 to use any open port.</param>
+        </member>
+        <member name="M:MiniHttpd.HttpWebServer.#ctor(System.Int32,MiniHttpd.IDirectory)">
+            <summary>
+            Creates a web server on the specified port, specified root and default address.
+            </summary>
+            <param name="port">An open port of range 1-65535 to listen on. Specify 0 to use any open port.</param>
+            <param name="root">An <see cref="T:MiniHttpd.IDirectory"/> specifying the root directory. Its <c>Parent</c> must be <c>null</c>.</param>
+        </member>
+        <member name="M:MiniHttpd.HttpWebServer.#ctor(System.Net.IPAddress,System.Int32)">
+            <summary>
+            Creates a web server on the specified address, specified port and default <see cref="T:MiniHttpd.VirtualDirectory"/> root.
+            </summary>
+            <param name="localAddress">The local <see cref="T:System.Net.IPAddress"/> to listen on.</param>
+            <param name="port">An open port of range 1-65535 to listen on. Specify 0 to use any open port.</param>
+        </member>
+        <member name="M:MiniHttpd.HttpWebServer.#ctor(System.Net.IPAddress,System.Int32,MiniHttpd.IDirectory)">
+            <summary>
+            Creates a web server on the specified address, port and root.
+            </summary>
+            <param name="localAddress">The local <see cref="T:System.Net.IPAddress"/> to listen on.</param>
+            <param name="port">An open port of range 1-65535 to listen on. Specify 0 to use any open port.</param>
+            <param name="root">An <see cref="T:MiniHttpd.IDirectory"/> specifying the root directory. Its <c>Parent</c> must be <c>null</c>.</param>
+        </member>
+        <member name="M:MiniHttpd.HttpWebServer.Finalize">
+            <summary>
+            Disposes the server if it hasn't already been disposed.
+            </summary>
+        </member>
+        <member name="E:MiniHttpd.HttpWebServer.RootChanged">
+            <summary>
+            Event that occurs when the root directory is changed.
+            </summary>
+        </member>
+        <member name="P:MiniHttpd.HttpWebServer.Root">
+            <summary>
+            Gets or sets the root directory. The old root is disposed when a new value is assigned.
+            </summary>
+        </member>
+        <member name="P:MiniHttpd.HttpWebServer.DefaultPages">
+            <summary>
+            Gets or sets an <see cref="T:System.Collections.ArrayList"/> of strings representing default page names.
+            </summary>
+        </member>
+        <member name="P:MiniHttpd.HttpWebServer.IndexPage">
+            <summary>
+            Gets or sets the index page to use.
+            </summary>
+        </member>
+        <member name="M:MiniHttpd.HttpWebServer.NavigateToUrl(System.String)">
+            <summary>
+            Returns the resource at the given relative URL.
+            </summary>
+            <param name="url">A relative URL to the resource to return.</param>
+            <returns>A file corresponding to the given URL. Returns <c>null</c> if the resource is not available.</returns>
+        </member>
+        <member name="M:MiniHttpd.HttpWebServer.NavigateToUrl(System.String,System.Boolean)">
+            <summary>
+            Retursn the resource at the given relative URL.
+            </summary>
+            <param name="url">A relative URL to the resource to return.</param>
+            <param name="throwOnError">A value indicating whether or not the method should throw an <see cref="T:MiniHttpd.HttpRequestException"/> if the resource is not available.</param>
+            <returns></returns>
+        </member>
+        <member name="F:MiniHttpd.HttpWebServer.InvalidFileChars">
+            <summary>
+            Provides a list of characters deemed invalid in Windows NT file strings.
+            </summary>
+        </member>
+        <member name="M:MiniHttpd.HttpWebServer.IsValidFilename(System.String)">
+            <summary>
+            Checks whether a file is a valid filename on the current OS.
+            </summary>
+            <param name="filename">The filename to be examined.</param>
+            <returns>True if the filename is safe, otherwise false.</returns>
+        </member>
+        <member name="M:MiniHttpd.HttpWebServer.SendFileOrIndex(MiniHttpd.HttpRequest,MiniHttpd.IResource)">
+            <summary>
+            Returns the file or index page for the given request and resource.
+            </summary>
+            <param name="request">The request to which to respond.</param>
+            <param name="resource">The requested resource.</param>
+        </member>
+        <member name="M:MiniHttpd.HttpWebServer.GetDirectoryPath(MiniHttpd.IDirectory)">
+            <summary>
+            Returns the full relative path of the specified directory as seen on the server.
+            </summary>
+            <param name="directory">The directory of which to retrieve the full path.</param>
+            <returns>The full path of the specified directory.</returns>
+        </member>
+        <member name="M:MiniHttpd.HttpWebServer.GetUrl(MiniHttpd.IResource)">
+            <summary>
+            Returns the <see cref="T:System.Uri"/> of a specified resource.
+            </summary>
+            <param name="resource">An <see cref="T:MiniHttpd.IResource"/> specifying the file for which to return a <see cref="T:System.Uri"/>.</param>
+            <returns>A <see cref="T:System.Uri"/> to the specified file.</returns>
+        </member>
+        <member name="M:MiniHttpd.HttpWebServer.Dispose">
+            <summary>
+            Dispose root directory.
+            </summary>
+        </member>
+        <member name="T:MiniHttpd.IDirectory">
+            <summary>
+            Represents a directory which contains files and subdirectories.
+            </summary>
+            <remarks>
+            Root directories should have a name of <c>null</c>.
+            </remarks>
+        </member>
+        <member name="M:MiniHttpd.IDirectory.GetDirectory(System.String)">
+            <summary>
+            Returns the specified subdirectory.
+            </summary>
+            <param name="dir">The name of the subdirectory to retrieve.</param>
+            <returns>An <see cref="T:MiniHttpd.IDirectory"/> representing the specified directory, or <c>null</c> if one doesn't exist.</returns>
+        </member>
+        <member name="M:MiniHttpd.IDirectory.GetFile(System.String)">
+            <summary>
+            Returns the specified file.
+            </summary>
+            <param name="filename">The name of the file to retrieve.</param>
+            <returns>An <see cref="T:MiniHttpd.IFile"/> representing the specified file, or <c>null</c> if one doesn't exist.</returns>
+        </member>
+        <member name="M:MiniHttpd.IDirectory.GetDirectories">
+            <summary>
+            Returns a collection of subdirectories available in the directory.
+            </summary>
+            <returns>An <see cref="T:System.Collections.ICollection"/> containing <see cref="T:MiniHttpd.IDirectory"/> objects available in the directory.</returns>
+        </member>
+        <member name="M:MiniHttpd.IDirectory.GetFiles">
+            <summary>
+            Returns a collection of files available in the directory.
+            </summary>
+            <returns>An <see cref="T:System.Collections.ICollection"/> containing <see cref="T:MiniHttpd.IFile"/> objects available in the directory.</returns>
+        </member>
+        <member name="M:MiniHttpd.IDirectory.GetResource(System.String)">
+            <summary>
+            Returns the resource (file or directory) with the specified name.
+            </summary>
+            <param name="name">The name of the resource.</param>
+            <returns>An IFile or IDirectory with the given name.</returns>
         </member>
         <member name="T:MiniHttpd.IFile">
             <summary>
@@ -795,54 +611,14 @@
             Gets the MIME type of the content.
             </summary>
         </member>
-        <member name="M:MiniHttpd.DriveFile.#ctor(System.String,MiniHttpd.IDirectory)">
-            <summary>
-            Creates a new <see cref="T:MiniHttpd.DriveFile"/> representing a specified file.
-            </summary>
-            <param name="path">The full path of the file.</param>
-            <param name="parent">The parent directory of the file.</param>
-        </member>
-        <member name="M:MiniHttpd.DriveFile.OnFileRequested(MiniHttpd.HttpRequest,MiniHttpd.IDirectory)">
-            <summary>
-            Called when the file is requested by a client.
-            </summary>
-            <param name="request">The <see cref="T:MiniHttpd.HttpRequest"/> requesting the file.</param>
-            <param name="directory">The <see cref="T:MiniHttpd.IDirectory"/> of the parent directory.</param>
-        </member>
-        <member name="M:MiniHttpd.DriveFile.Dispose">
-            <summary>
-            DriveFile requires no disposal logic.
-            </summary>
-        </member>
-        <member name="M:MiniHttpd.DriveFile.ToString">
-            <summary>
-            Returns the name of the file.
-            </summary>
-            <returns>The name of the file.</returns>
-        </member>
-        <member name="P:MiniHttpd.DriveFile.Path">
-            <summary>
-            Gets the full path of the file on disk.
-            </summary>
-        </member>
-        <member name="P:MiniHttpd.DriveFile.ContentType">
-            <summary>
-            The MIME type of the content.
-            </summary>
-        </member>
-        <member name="P:MiniHttpd.DriveFile.Name">
-            <summary>
-            The name of the entry.
-            </summary>
-        </member>
-        <member name="P:MiniHttpd.DriveFile.Parent">
-            <summary>
-            The parent directory of the object.
-            </summary>
-        </member>
         <member name="T:MiniHttpd.IndexPage">
             <summary>
             The default index page used by <see cref="T:MiniHttpd.HttpWebServer"/>.
+            </summary>
+        </member>
+        <member name="P:MiniHttpd.IndexPage.ContentType">
+            <summary>
+            Gets the MIME type of the content.
             </summary>
         </member>
         <member name="M:MiniHttpd.IndexPage.OnFileRequested(MiniHttpd.HttpRequest,MiniHttpd.IDirectory)">
@@ -851,16 +627,6 @@
             </summary>
             <param name="request">The <see cref="T:MiniHttpd.HttpRequest"/> requesting the file.</param>
             <param name="directory">The <see cref="T:MiniHttpd.IDirectory"/> of the parent directory.</param>
-        </member>
-        <member name="M:MiniHttpd.IndexPage.Dispose">
-            <summary>
-            Dispose IndexPage.
-            </summary>
-        </member>
-        <member name="P:MiniHttpd.IndexPage.ContentType">
-            <summary>
-            Gets the MIME type of the content.
-            </summary>
         </member>
         <member name="P:MiniHttpd.IndexPage.Name">
             <summary>
@@ -872,14 +638,14 @@
             Gets the parent directory. This value is always <c>null</c>.
             </summary>
         </member>
+        <member name="M:MiniHttpd.IndexPage.Dispose">
+            <summary>
+            Dispose IndexPage.
+            </summary>
+        </member>
         <member name="T:MiniHttpd.IndexPageEx">
             <summary>
             A slightly fancy index page used by <see cref="T:MiniHttpd.HttpWebServer"/>.
-            </summary>
-        </member>
-        <member name="P:MiniHttpd.IndexPageEx.Columns">
-            <summary>
-            Gets or sets the list of columns to display in the index page.
             </summary>
         </member>
         <member name="T:MiniHttpd.IndexPageEx.ResourceColumn">
@@ -912,55 +678,42 @@
             The name of the resource.
             </summary>
         </member>
+        <member name="P:MiniHttpd.IndexPageEx.Columns">
+            <summary>
+            Gets or sets the list of columns to display in the index page.
+            </summary>
+        </member>
+        <member name="T:MiniHttpd.IPhysicalResource">
+            <summary>
+            Represents a resource that has a path that corresponds to a physical file.
+            </summary>
+        </member>
+        <member name="P:MiniHttpd.IPhysicalResource.Path">
+            <summary>
+            Gets the full path of the resource on disk.
+            </summary>
+        </member>
+        <member name="T:MiniHttpd.IResource">
+            <summary>
+            Represents a file, directory or other resource with a name and a parent directory.
+            </summary>
+            <remarks>
+            All objects inheriting this interface should be serializable.
+            </remarks>
+        </member>
+        <member name="P:MiniHttpd.IResource.Name">
+            <summary>
+            Gets the name of the entry.
+            </summary>
+        </member>
+        <member name="P:MiniHttpd.IResource.Parent">
+            <summary>
+            Gets the parent directory of the object.
+            </summary>
+        </member>
         <member name="T:MiniHttpd.MovedException">
             <summary>
             Exception thrown when a request must be redirected.
-            </summary>
-        </member>
-        <member name="T:MiniHttpd.HttpRequestException">
-            <summary>
-            Excpetion raised to stop processing a request and return an error to the client.
-            </summary>
-            <remarks>
-            This exception is always handled by HttpClient. If you catch this exception earlier for any reason, you must rethrow it for the response to be sent.
-            </remarks>
-        </member>
-        <member name="M:MiniHttpd.HttpRequestException.#ctor(System.String)">
-            <summary>
-            Creates a new <see cref="T:MiniHttpd.HttpRequestException"/> with the given response code.
-            </summary>
-            <param name="responseCode">A response code to return to the client.</param>
-        </member>
-        <member name="M:MiniHttpd.HttpRequestException.#ctor(System.String,System.String)">
-            <summary>
-            Creates a new <see cref="T:MiniHttpd.HttpRequestException"/> with the given response code and message.
-            </summary>
-            <param name="responseCode">A response code to return to the client.</param>
-            <param name="message">An accompanying message to return to the client.</param>
-        </member>
-        <member name="M:MiniHttpd.HttpRequestException.#ctor(System.String,System.Boolean)">
-            <summary>
-            Creates a new <see cref="T:MiniHttpd.HttpRequestException"/> with the given response code and disconnect behavior.
-            </summary>
-            <param name="responseCode">A response code to return to the client.</param>
-            <param name="disconnect">A value indicating whether to disconnect the client immediately after sending the response.</param>
-        </member>
-        <member name="M:MiniHttpd.HttpRequestException.#ctor(System.String,System.String,System.Boolean)">
-            <summary>
-            Creates a new <see cref="T:MiniHttpd.HttpRequestException"/> with the given response code, message and disconnect behavior.
-            </summary>
-            <param name="responseCode">A response code to return to the client.</param>
-            <param name="message">An accompanying message to return to the client.</param>
-            <param name="disconnect">A value indicating whether to disconnect the client immediately after sending the response.</param>
-        </member>
-        <member name="P:MiniHttpd.HttpRequestException.ResponseCode">
-            <summary>
-            Gets the HTTP response code of the error.
-            </summary>
-        </member>
-        <member name="P:MiniHttpd.HttpRequestException.Disconnect">
-            <summary>
-            Gets a value indicating whether or not the client should be disconnected immediately.
             </summary>
         </member>
         <member name="M:MiniHttpd.MovedException.#ctor(System.String)">
@@ -984,7 +737,7 @@
             Creates a new virtual directory.
             </summary>
             <param name="name">The name of the directory as it will be seen in the directory.</param>
-            <param name="parent">An <see cref="T:MiniHttpd.IDirectory"/> specifying the parent directory. This value should be <c>null</c> if this directory is to be the root directory.</param>
+            <param name="parent">An <see cref="T:MiniHttpd.IDirectory" /> specifying the parent directory. This value should be <c>null</c> if this directory is to be the root directory.</param>
         </member>
         <member name="M:MiniHttpd.VirtualDirectory.#ctor">
             <summary>
@@ -995,7 +748,7 @@
             <summary>
             Adds a subdirectory to the directory.
             </summary>
-            <param name="directory">An <see cref="T:MiniHttpd.IDirectory"/> specifying the directory to add. The directory's parent must be the directory to which the directory is added.</param>
+            <param name="directory">An <see cref="T:MiniHttpd.IDirectory" /> specifying the directory to add. The directory's parent must be the directory to which the directory is added.</param>
         </member>
         <member name="M:MiniHttpd.VirtualDirectory.AddDirectory(System.String)">
             <summary>
@@ -1057,6 +810,16 @@
             </summary>
             <returns>An <see cref="T:System.Collections.ICollection"/> containing <see cref="T:MiniHttpd.IFile"/> objects available in the directory.</returns>
         </member>
+        <member name="P:MiniHttpd.VirtualDirectory.Name">
+            <summary>
+            Gets the name of the directory.
+            </summary>
+        </member>
+        <member name="P:MiniHttpd.VirtualDirectory.Parent">
+            <summary>
+            Gets the parent directory of the directory.
+            </summary>
+        </member>
         <member name="M:MiniHttpd.VirtualDirectory.GetResource(System.String)">
             <summary>
             Returns the resource with the given name.
@@ -1074,16 +837,6 @@
             Returns the name of the directory.
             </summary>
             <returns>The name of the directory.</returns>
-        </member>
-        <member name="P:MiniHttpd.VirtualDirectory.Name">
-            <summary>
-            Gets the name of the directory.
-            </summary>
-        </member>
-        <member name="P:MiniHttpd.VirtualDirectory.Parent">
-            <summary>
-            Gets the parent directory of the directory.
-            </summary>
         </member>
         <member name="T:MiniHttpd.HttpClient">
             <summary>
@@ -1108,11 +861,6 @@
             <param name="obj">Another <see>HttpClient</see> to which to compare this object.</param>
             <returns>True if this is the same instance of the <see>HttpClient</see>, otherwise false.</returns>
         </member>
-        <member name="M:MiniHttpd.HttpClient.Dispose">
-            <summary>
-            Disconnects the client.
-            </summary>
-        </member>
         <member name="E:MiniHttpd.HttpClient.Disconnected">
             <summary>
             Occurs when a client is disconnected.
@@ -1133,14 +881,24 @@
             Gets the port through which the client is connected.
             </summary>
         </member>
+        <member name="M:MiniHttpd.HttpClient.Dispose">
+            <summary>
+            Disconnects the client.
+            </summary>
+        </member>
         <member name="T:MiniHttpd.HttpRequest">
             <summary>
             Represents an HTTP request received from a client.
             </summary>
         </member>
-        <member name="M:MiniHttpd.HttpRequest.Dispose">
+        <member name="F:MiniHttpd.HttpRequest.DataMode.Text">
             <summary>
-            Disposes the request.
+            Text mode transmission
+            </summary>
+        </member>
+        <member name="F:MiniHttpd.HttpRequest.DataMode.Binary">
+            <summary>
+            Binary mode transmission
             </summary>
         </member>
         <member name="P:MiniHttpd.HttpRequest.Client">
@@ -1278,14 +1036,9 @@
             Gets the client's password specified in the request.
             </summary>
         </member>
-        <member name="F:MiniHttpd.HttpRequest.DataMode.Text">
+        <member name="M:MiniHttpd.HttpRequest.Dispose">
             <summary>
-            Text mode transmission
-            </summary>
-        </member>
-        <member name="F:MiniHttpd.HttpRequest.DataMode.Binary">
-            <summary>
-            Binary mode transmission
+            Disposes the request.
             </summary>
         </member>
         <member name="T:MiniHttpd.ConnectionMode">
@@ -1318,9 +1071,90 @@
             HTTP with secure extensions.
             </summary>
         </member>
+        <member name="T:MiniHttpd.HttpRequestException">
+            <summary>
+            Excpetion raised to stop processing a request and return an error to the client.
+            </summary>
+            <remarks>
+            This exception is always handled by HttpClient. If you catch this exception earlier for any reason, you must rethrow it for the response to be sent.
+            </remarks>
+        </member>
+        <member name="M:MiniHttpd.HttpRequestException.#ctor(System.String)">
+            <summary>
+            Creates a new <see cref="T:MiniHttpd.HttpRequestException"/> with the given response code.
+            </summary>
+            <param name="responseCode">A response code to return to the client.</param>
+        </member>
+        <member name="M:MiniHttpd.HttpRequestException.#ctor(System.String,System.String)">
+            <summary>
+            Creates a new <see cref="T:MiniHttpd.HttpRequestException"/> with the given response code and message.
+            </summary>
+            <param name="responseCode">A response code to return to the client.</param>
+            <param name="message">An accompanying message to return to the client.</param>
+        </member>
+        <member name="M:MiniHttpd.HttpRequestException.#ctor(System.String,System.Boolean)">
+            <summary>
+            Creates a new <see cref="T:MiniHttpd.HttpRequestException"/> with the given response code and disconnect behavior.
+            </summary>
+            <param name="responseCode">A response code to return to the client.</param>
+            <param name="disconnect">A value indicating whether to disconnect the client immediately after sending the response.</param>
+        </member>
+        <member name="M:MiniHttpd.HttpRequestException.#ctor(System.String,System.String,System.Boolean)">
+            <summary>
+            Creates a new <see cref="T:MiniHttpd.HttpRequestException"/> with the given response code, message and disconnect behavior.
+            </summary>
+            <param name="responseCode">A response code to return to the client.</param>
+            <param name="message">An accompanying message to return to the client.</param>
+            <param name="disconnect">A value indicating whether to disconnect the client immediately after sending the response.</param>
+        </member>
+        <member name="P:MiniHttpd.HttpRequestException.ResponseCode">
+            <summary>
+            Gets the HTTP response code of the error.
+            </summary>
+        </member>
+        <member name="P:MiniHttpd.HttpRequestException.Disconnect">
+            <summary>
+            Gets a value indicating whether or not the client should be disconnected immediately.
+            </summary>
+        </member>
         <member name="T:MiniHttpd.HttpResponse">
             <summary>
             Represents an HTTP response to be sent to the client in response to a request.
+            </summary>
+        </member>
+        <member name="P:MiniHttpd.HttpResponse.ResponseContent">
+            <summary>
+            Gets or sets a stream containing the content to send to the client.
+            </summary>
+        </member>
+        <member name="P:MiniHttpd.HttpResponse.HeadersSent">
+            <summary>
+            Gets a value indicating whether the header has already been sent.
+            </summary>
+        </member>
+        <member name="P:MiniHttpd.HttpResponse.BytesSent">
+            <summary>
+            Gets the number of bytes of the response object have been sent so far.
+            </summary>
+        </member>
+        <member name="P:MiniHttpd.HttpResponse.Request">
+            <summary>
+            Gets the <see>HttpRequest</see> of which this object is a response to.
+            </summary>
+        </member>
+        <member name="T:MiniHttpd.HttpResponse.ResponseEventHandler">
+            <summary>
+            Represents an event that is triggered by an <see>HttpResponse</see> object.
+            </summary>
+        </member>
+        <member name="E:MiniHttpd.HttpResponse.SendingResponse">
+            <summary>
+            Event that is triggered before the response content is sent.
+            </summary>
+        </member>
+        <member name="E:MiniHttpd.HttpResponse.SentResponse">
+            <summary>
+            Event that is triggered after the response content is sent.
             </summary>
         </member>
         <member name="M:MiniHttpd.HttpResponse.BeginImmediateResponse">
@@ -1348,36 +1182,6 @@
             <param name="name">The name of the header to which to assign a value.</param>
             <param name="value">The value to assign to the header.</param>
         </member>
-        <member name="P:MiniHttpd.HttpResponse.ResponseContent">
-            <summary>
-            Gets or sets a stream containing the content to send to the client.
-            </summary>
-        </member>
-        <member name="P:MiniHttpd.HttpResponse.HeadersSent">
-            <summary>
-            Gets a value indicating whether the header has already been sent.
-            </summary>
-        </member>
-        <member name="P:MiniHttpd.HttpResponse.BytesSent">
-            <summary>
-            Gets the number of bytes of the response object have been sent so far.
-            </summary>
-        </member>
-        <member name="P:MiniHttpd.HttpResponse.Request">
-            <summary>
-            Gets the <see>HttpRequest</see> of which this object is a response to.
-            </summary>
-        </member>
-        <member name="E:MiniHttpd.HttpResponse.SendingResponse">
-            <summary>
-            Event that is triggered before the response content is sent.
-            </summary>
-        </member>
-        <member name="E:MiniHttpd.HttpResponse.SentResponse">
-            <summary>
-            Event that is triggered after the response content is sent.
-            </summary>
-        </member>
         <member name="P:MiniHttpd.HttpResponse.ResponseCode">
             <summary>
             Gets or sets the HTTP status code of the response.
@@ -1393,10 +1197,206 @@
             Gets or sets the length of the response content.
             </summary>
         </member>
-        <member name="T:MiniHttpd.HttpResponse.ResponseEventHandler">
+        <member name="T:MiniHttpd.HttpServer">
             <summary>
-            Represents an event that is triggered by an <see>HttpResponse</see> object.
+            An HTTP listener.
             </summary>
+        </member>
+        <member name="M:MiniHttpd.HttpServer.#ctor">
+            <summary>
+            Creates an <see cref="T:MiniHttpd.HttpServer"/> on the default port and address.
+            </summary>
+        </member>
+        <member name="M:MiniHttpd.HttpServer.#ctor(System.Int32)">
+            <summary>
+            Creates an <see cref="T:MiniHttpd.HttpServer"/> on the specified port and default address.
+            </summary>
+            <param name="port">An available port between 1 and 65535. Specify 0 to use any open port.</param>
+        </member>
+        <member name="M:MiniHttpd.HttpServer.#ctor(System.Net.IPAddress,System.Int32)">
+            <summary>
+            Creates an <see cref="T:MiniHttpd.HttpServer"/> on the specified port and address.
+            </summary>
+            <param name="localAddress">An <see cref="T:System.Net.IPAddress"/> on which to listen for HTTP requests.</param>
+            <param name="port">An available port between 1 and 65535. Specify 0 to use any open port.</param>
+        </member>
+        <member name="M:MiniHttpd.HttpServer.Finalize">
+            <summary>
+            Disposes the server if it hasn't already been disposed.
+            </summary>
+        </member>
+        <member name="E:MiniHttpd.HttpServer.Disposed">
+            <summary>
+            Occurs when the server is disposed.
+            </summary>
+        </member>
+        <member name="M:MiniHttpd.HttpServer.Dispose">
+            <summary>
+            Shuts down and disposes the server.
+            </summary>
+        </member>
+        <member name="P:MiniHttpd.HttpServer.Port">
+            <summary>
+            Gets or sets the port on which to listen to HTTP requests. Specify 0 to use any open port.
+            </summary>
+        </member>
+        <member name="P:MiniHttpd.HttpServer.HostName">
+            <summary>
+            Gets or sets the server's host name.
+            </summary>
+        </member>
+        <member name="P:MiniHttpd.HttpServer.LocalAddress">
+            <summary>
+            Gets or sets the IP address on which to listen to HTTP requests.
+            </summary>
+        </member>
+        <member name="P:MiniHttpd.HttpServer.HttpVersion">
+            <summary>
+            Gets the highest HTTP version recognized by the server.
+            </summary>
+        </member>
+        <member name="P:MiniHttpd.HttpServer.ServerName">
+            <summary>
+            Gets or sets the name of the server.
+            </summary>
+        </member>
+        <member name="P:MiniHttpd.HttpServer.ListenerThread">
+            <summary>
+            Gets the thread on which the listener is operating.
+            </summary>
+        </member>
+        <member name="E:MiniHttpd.HttpServer.ServerUriChanged">
+            <summary>
+            Occurs when the server's <see cref="T:System.Uri"/> changes.
+            </summary>
+        </member>
+        <member name="P:MiniHttpd.HttpServer.ServerUri">
+            <summary>
+            Gets or sets the server's <see cref="T:System.Uri"/>.
+            </summary>
+        </member>
+        <member name="P:MiniHttpd.HttpServer.Timeout">
+            <summary>
+            Gets or sets the time, in milliseconds, of the time after which a client is idle for that the client should be disconnected.
+            </summary>
+        </member>
+        <member name="P:MiniHttpd.HttpServer.UriCacheMax">
+            <summary>
+            Gets or sets the maximum size of the URI cache.
+            </summary>
+        </member>
+        <member name="P:MiniHttpd.HttpServer.LogRequests">
+            <summary>
+            Gets or sets a value indicating whether the server should log HTTP requests.
+            </summary>
+        </member>
+        <member name="P:MiniHttpd.HttpServer.LogConnections">
+            <summary>
+            Gets or sets a value indicating whether the server should log client connections and disconnections.
+            </summary>
+        </member>
+        <member name="P:MiniHttpd.HttpServer.RequireAuthentication">
+            <summary>
+            Gets or sets a value indicating whether the server requires authentication for its resources to be accessed.
+            </summary>
+        </member>
+        <member name="P:MiniHttpd.HttpServer.AuthenticateRealm">
+            <summary>
+            Gets or sets a value of the realm presented to the user when authenticating.
+            </summary>
+        </member>
+        <member name="P:MiniHttpd.HttpServer.MaxPostLength">
+            <summary>
+            Gets or sets the maximum length of content that the client can post.
+            </summary>
+        </member>
+        <member name="P:MiniHttpd.HttpServer.IsRunning">
+            <summary>
+            Gets a value indicating whether the server is currently listening for connections.
+            </summary>
+        </member>
+        <member name="E:MiniHttpd.HttpServer.Started">
+            <summary>
+            Occurs when the server is started.
+            </summary>
+        </member>
+        <member name="E:MiniHttpd.HttpServer.Stopping">
+            <summary>
+            Occurs when the server is about to stop.
+            </summary>
+        </member>
+        <member name="E:MiniHttpd.HttpServer.Stopped">
+            <summary>
+            Occurs when the server is stopped.
+            </summary>
+        </member>
+        <member name="M:MiniHttpd.HttpServer.Start">
+            <summary>
+            Starts listening for connections.
+            </summary>
+        </member>
+        <member name="M:MiniHttpd.HttpServer.Stop">
+            <summary>
+            Stops listening for connections.
+            </summary>
+        </member>
+        <member name="T:MiniHttpd.HttpServer.ClientEventHandler">
+            <summary>
+            Represents an event which occurs when the client's state changes.
+            </summary>
+        </member>
+        <member name="E:MiniHttpd.HttpServer.ClientConnected">
+            <summary>
+            Occurs when a client connects to the server.
+            </summary>
+        </member>
+        <member name="E:MiniHttpd.HttpServer.ClientDisconnected">
+            <summary>
+            Occurs when a client is disconnected from the server.
+            </summary>
+        </member>
+        <member name="T:MiniHttpd.HttpServer.RequestEventHandler">
+            <summary>
+            Represents an event which occurs when an HTTP request is received.
+            </summary>
+        </member>
+        <member name="E:MiniHttpd.HttpServer.RequestReceived">
+            <summary>
+            Occurs when any request is received, valid or invalid.
+            </summary>
+        </member>
+        <member name="E:MiniHttpd.HttpServer.ValidRequestReceived">
+            <summary>
+            Occurs when a valid request to which a response can be made is received.
+            </summary>
+        </member>
+        <member name="E:MiniHttpd.HttpServer.InvalidRequestReceived">
+            <summary>
+            Occurs when an invalid request to which no response other than an error can be made is received.
+            </summary>
+        </member>
+        <member name="P:MiniHttpd.HttpServer.Authenticator">
+            <summary>
+            Gets or sets an <see cref="T:MiniHttpd.IAuthenticator"/> object responsible for authenticating all requests.
+            </summary>
+        </member>
+        <member name="P:MiniHttpd.HttpServer.Log">
+            <summary>
+            Gets or sets the <see cref="T:System.IO.TextWriter"/> to which to write logs.
+            </summary>
+        </member>
+        <member name="T:MiniHttpd.IAuthenticator">
+            <summary>
+            Represents an object to authenticate a user.
+            </summary>
+        </member>
+        <member name="M:MiniHttpd.IAuthenticator.Authenticate(System.String,System.String)">
+            <summary>
+            Authenticates a user agaisnt the proscribed implementation.
+            </summary>
+            <param name="username">The username to authenticate.</param>
+            <param name="password">The password to authenticate.</param>
+            <returns>True if the user is authenticated, otherwise false.</returns>
         </member>
         <member name="T:MiniHttpd.LdapAuthenticator">
             <summary>
@@ -1405,9 +1405,14 @@
         </member>
         <member name="M:MiniHttpd.LdapAuthenticator.#ctor(System.String)">
             <summary>
-            Creates a new <see cref="T:MiniHttpd.LdapAuthenticator"/> based on the given base path.
+            Creates a new <see cref="T:MiniHttpd.LdapAuthenticator" /> based on the given base path.
             </summary>
             <param name="basePath">Base path to search users for in Active Directory.</param>
+        </member>
+        <member name="P:MiniHttpd.LdapAuthenticator.BasePath">
+            <summary>
+            Gets the base path to search users for in Active Directory.
+            </summary>
         </member>
         <member name="M:MiniHttpd.LdapAuthenticator.ResetCache">
             <summary>
@@ -1421,11 +1426,6 @@
             <param name="username">The username to authenticate.</param>
             <param name="password">The password of the given user.</param>
             <returns>True if the user is successfully authenticated, otherwise false.</returns>
-        </member>
-        <member name="P:MiniHttpd.LdapAuthenticator.BasePath">
-            <summary>
-            Gets the base path to search users for in Active Directory.
-            </summary>
         </member>
         <member name="T:MiniHttpd.ReadableDataLength">
             <summary>

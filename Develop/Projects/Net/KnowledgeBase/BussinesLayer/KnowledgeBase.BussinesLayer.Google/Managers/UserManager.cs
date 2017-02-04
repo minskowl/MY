@@ -1,12 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using Google.GData.Client;
 using Google.GData.Documents;
-using KnowledgeBase.BussinesLayer.Core;
 using KnowledgeBase.BussinesLayer.Security;
-using KnowledgeBase.DAL;
 
 namespace KnowledgeBase.BussinesLayer.Google.Managers
 {
@@ -25,7 +21,7 @@ namespace KnowledgeBase.BussinesLayer.Google.Managers
             throw new NotImplementedException();
         }
 
-        public User GetByID(int UserID)
+        public User GetByID(int userId)
         {
             return _user;
         }
@@ -53,7 +49,7 @@ namespace KnowledgeBase.BussinesLayer.Google.Managers
                 return _user;
 
             }
-            catch (AuthenticationException e)
+            catch (AuthenticationException )
             {
                 return null;
             }

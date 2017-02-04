@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace FileTools.Controls
@@ -14,6 +8,11 @@ namespace FileTools.Controls
     {
         private FileInfo[] files;
 
+        public string FileFilter
+        {
+            get { return fileSelector1.FileFilter; }
+            set { fileSelector1.FileFilter = value; }
+        }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="FormFileSelector"/> class.
@@ -50,6 +49,6 @@ namespace FileTools.Controls
 
         }
 
-    
+
     }
 }

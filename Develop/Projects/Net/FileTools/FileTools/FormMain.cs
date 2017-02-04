@@ -37,7 +37,8 @@ namespace FileTools
             findNameDuplicatesToolStripMenuItem.BindCommand(new FindNameDuplicatesCommand(this));
             checkExistsToolStripMenuItem.BindCommand(new DllCheckExistenceCommand(this));
             resizeToolStripMenuItem.BindCommand(new ResizeImageCommand(this));
-           lockFileMenuItem.BindCommand(new LockFileCommand(this));
+            lockFileMenuItem.BindCommand(new LockFileCommand(this));
+            mergeFilesToolStripMenuItem.BindCommand(new Mp3MergeCommand(this));
         }
 
 
@@ -58,7 +59,7 @@ namespace FileTools
 
         private void mathConverterToolStripMenuItem_Click(object sender, EventArgs e)
         {
-             new FormMathConvertor().Show();
+            new FormMathConvertor().Show();
         }
 
 
