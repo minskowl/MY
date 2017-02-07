@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
@@ -15,16 +12,16 @@ namespace Reading.Controls
 {
     public class MemoryField : Grid
     {
-        private DispatcherTimer _timer = new DispatcherTimer();
+        private readonly DispatcherTimer _timer = new DispatcherTimer();
 
 
         public MemoryField()
         {
             _timer.Interval = new TimeSpan(0, 0, 1);
-            _timer.Tick += new EventHandler(_timer_Tick);
+            _timer.Tick += OnTimerTick;
         }
 
-        void _timer_Tick(object sender, EventArgs e)
+        private void OnTimerTick(object sender, EventArgs e)
         {
             _timer.Stop();
             ValidateOpened();
@@ -85,14 +82,14 @@ namespace Reading.Controls
 
         private void CreateGrid(int columns, int rows)
         {
-            for (int i = 0; i < rows; i++)
+            for (var i = 0; i < rows; i++)
             {
                 RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
             }
 
             RowDefinitions.Add(new RowDefinition());
 
-            for (int i = 0; i < columns; i++)
+            for (var i = 0; i < columns; i++)
             {
                 ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Auto });
             }
@@ -101,21 +98,18 @@ namespace Reading.Controls
         private void ValidateOpened()
         {
             var opened = GetOpened();
-            if (opened.Length > 1)
+            if (opened.Length <= 1) return;
+
+            if (opened[0].Number == opened[1].Number)
             {
-                if (opened[0].Number == opened[1].Number)
-                {
-
-
-                    opened[0].MouseLeftButtonDown -= image_MouseLeftButtonDown;
-                    opened[1].MouseLeftButtonDown -= image_MouseLeftButtonDown;
-                    opened[0].Visibility = Visibility.Hidden;
-                    opened[1].Visibility = Visibility.Hidden;
-                }
-                else
-                {
-                    opened.Foreach(e => e.IsOpen = false);
-                }
+                opened[0].MouseLeftButtonDown -= image_MouseLeftButtonDown;
+                opened[1].MouseLeftButtonDown -= image_MouseLeftButtonDown;
+                opened[0].Visibility = Visibility.Hidden;
+                opened[1].Visibility = Visibility.Hidden;
+            }
+            else
+            {
+                opened.Foreach(e => e.IsOpen = false);
             }
         }
 

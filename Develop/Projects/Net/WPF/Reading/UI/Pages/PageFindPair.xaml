@@ -20,20 +20,11 @@
         <TextBlock Text="{Binding Title}" Style="{DynamicResource Title}"
                   VerticalAlignment="Top"  />
 
-        <Controls:MemoryField DataContext="{Binding Cards}"  Grid.Row="1" >
-
-
-        </Controls:MemoryField>
+        <Controls:MemoryField DataContext="{Binding Cards}"  Grid.Row="1" />
 
 
         <Expander Header="Настройки" Grid.Row="2">
             <WrapPanel  Orientation="Horizontal" >
-                <StackPanel Orientation="Horizontal" >
-                    <Label Content="Операция"/>
-                    <ComboBox ItemsSource="{Binding Operations}" 
-                      SelectedValue="{Binding SummationMode, Mode=TwoWay}" 
-                      SelectedValuePath="Value" DisplayMemberPath="Name"    />
-                </StackPanel>
                 <StackPanel Orientation="Horizontal" >
                     <Label Content="Кол-во картинок"/>
                     <ComboBox ItemsSource="{Binding ImagesModes}" 
@@ -42,8 +33,7 @@
 
                 <StackPanel Orientation="Horizontal" >
                     <Label Content="Ширина поля"/>
-                    <ComboBox ItemsSource="{Binding ColumnsModes}" 
-                      SelectedValue="{Binding Columns, Mode=TwoWay}" 
+                    <ComboBox ItemsSource="{Binding ColumnsModes}" SelectedValue="{Binding Columns, Mode=TwoWay}" 
                          />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" >
@@ -52,6 +42,7 @@
                       SelectedValue="{Binding Rows, Mode=TwoWay}" 
                         />
                 </StackPanel>
+                <Button Content="Заполнить" Command="{Binding FillCommand}"/>
             </WrapPanel >
         </Expander>
 

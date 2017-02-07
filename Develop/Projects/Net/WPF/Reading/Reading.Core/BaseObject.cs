@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
+﻿using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
 namespace Reading.Core
 {
@@ -13,14 +10,18 @@ namespace Reading.Core
         /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
 
+        protected  void OnProperty([CallerMemberName] string propertyName = "")
+        {
+            OnPropertyChanged(propertyName);
+        }
+
         /// <summary>
         /// Called when [property changed].
         /// </summary>
         /// <param name="propertyName">Name of the property.</param>
         protected virtual void OnPropertyChanged(string propertyName)
         {
-            PropertyChangedEventHandler handler = PropertyChanged;
-            if (handler != null) handler(this, new PropertyChangedEventArgs(propertyName));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

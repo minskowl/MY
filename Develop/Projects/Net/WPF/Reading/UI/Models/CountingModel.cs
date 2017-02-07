@@ -8,10 +8,7 @@ namespace Reading.Models
     public class CountingModel : ListModel<int?>
     {
    
-        public override string Title
-        {
-            get { return "Счёт"; }
-        }
+        public override string Title => "Счёт";
 
 
         private int _numberFrom;
@@ -26,7 +23,7 @@ namespace Reading.Models
             {
                 if (_numberFrom == value) return;
                 _numberFrom = value;
-                OnSettingChanged("NumberFrom");
+                OnSettingChanging();
             }
         }
 
@@ -43,7 +40,7 @@ namespace Reading.Models
             {
                 if (_numberTo == value) return;
                 _numberTo = value;
-                OnSettingChanged("NumberTo");
+                OnSettingChanging();
             }
         }
 

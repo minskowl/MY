@@ -38,7 +38,7 @@ namespace Reading.Models
             {
                 if (_wordSyllablesCountFrom == value) return;
                 _wordSyllablesCountFrom = value;
-                OnSettingChanged("WordSyllablesCountFrom");
+                OnSettingChanging();
             }
         }
 
@@ -55,7 +55,7 @@ namespace Reading.Models
             {
                 if (_wordSyllablesCountTo == value) return;
                 _wordSyllablesCountTo = value;
-                OnSettingChanged("WordSyllablesCountTo");
+                OnSettingChanging();
             }
         }
 
@@ -72,7 +72,7 @@ namespace Reading.Models
             {
                 if (_wordWidthFrom == value) return;
                 _wordWidthFrom = value;
-                OnSettingChanged("WordWidthFrom");
+                OnSettingChanging();
             }
         }
 
@@ -89,7 +89,7 @@ namespace Reading.Models
             {
                 if (_wordWidthTo == value) return;
                 _wordWidthTo = value;
-                OnSettingChanged("WordWidthTo");
+                OnSettingChanging();
             }
         }
 
@@ -106,7 +106,7 @@ namespace Reading.Models
             {
                 if (_syllablesView == value) return;
                 _syllablesView = value;
-                OnSettingChanged("SyllablesView");
+                OnSettingChanging();
             }
         }
 

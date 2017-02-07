@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq;
 using System.Windows.Input;
 using GalaSoft.MvvmLight.Command;
 using Reading.Core;
@@ -38,7 +34,7 @@ namespace Reading.Models
                 if (_mode == value) return;
                 _mode = value;
 
-                OnSettingChanged("Operation");
+                OnSettingChanging("Operation");
             }
         }
 
@@ -64,7 +60,7 @@ namespace Reading.Models
 
         private readonly Primer _primer = new Primer();
         private string _tipImage;
-        private bool _isTipVisible;
+       
 
         public override string Title
         {

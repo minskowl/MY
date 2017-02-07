@@ -30,7 +30,7 @@ namespace Reading.Models
                 if (_mode == value) return;
                 _mode = value;
 
-                OnSettingChanged("Operation");
+                OnSettingChanging("Operation");
             }
         }
 
@@ -62,8 +62,8 @@ namespace Reading.Models
         public SyllablesModel()
         {
           
-            Modes = TranslationManager.Instance.Translate<SelectionMode>().ToArray();
-            Types = TranslationManager.Instance.Translate<SyllablesTypes>().ToArray();
+            Modes = Translation.Translate<SelectionMode>().ToArray();
+            Types = Translation.Translate<SyllablesTypes>().ToArray();
         }
 
         /// <summary>
@@ -91,7 +91,7 @@ namespace Reading.Models
 
         protected override void SetSyllable()
         {
-            SelectedItem = _primer.GetSyllable(Mode,Type);
+            SelectedItem = _primer.GetSyllable(Mode,Type).ToUpper();
         }
     }
 }

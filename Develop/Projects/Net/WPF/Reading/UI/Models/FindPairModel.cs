@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
+﻿using System.Linq;
 using System.Windows.Input;
 using Reading.Core.Settings;
 using Savchin.Core;
@@ -21,7 +19,7 @@ namespace Reading.Models
             {
                 if (_rows == value) return;
                 _rows = value;
-                OnPropertyChanged("Rows");
+                OnSettingChanging();
             }
         }
         private int _columns;
@@ -32,7 +30,7 @@ namespace Reading.Models
             {
                 if (_columns == value) return;
                 _columns = value;
-                OnPropertyChanged("Columns");
+                OnSettingChanging();
             }
         }
 
@@ -44,7 +42,7 @@ namespace Reading.Models
             {
                 if (_images == value) return;
                 _images = value;
-                OnPropertyChanged("Images");
+                OnSettingChanging();
             }
         }
 
@@ -53,20 +51,18 @@ namespace Reading.Models
         public int[] ImagesModes { get; private set; }
         public int?[,] Cards { get; private set; }
 
-        public override string Title
-        {
-            get { return "Найти пару"; }
-        }
+        public override string Title => "Найти пару";
 
+        public ICommand FillCommand { get; }
 
         #endregion
 
         public FindPairModel()
         {
-
             ColumnsModes = new[] { 2, 4, 6, 8, 10 };
             RowsModes = new[] { 2, 3, 4, 5, 6, 7, 8, 9, 10 };
             ImagesModes = new[] { 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            FillCommand= new DelegateCommand(FillSamples);
         }
 
 
@@ -79,7 +75,6 @@ namespace Reading.Models
             if (settings.FindPairSettings == null)
                 settings.FindPairSettings = new FindPairSettings();
             var s = settings.FindPairSettings;
-
 
             _rows = s.Rows;
             _columns = s.Columns;
@@ -127,7 +122,7 @@ namespace Reading.Models
 
         private void SetCard(int pos, int card)
         {
-            Cards[pos / Rows, pos % Rows] = card;
+            Cards[pos / Columns, pos % Columns] = card;
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Windows.Input;
 using GalaSoft.MvvmLight.Command;
 using Reading.Speach;
@@ -67,7 +68,7 @@ namespace Reading.Models
             {
                 if (_itemsRepeatable == value) return;
                 _itemsRepeatable = value;
-                OnSettingChanged("ItemsRepetable");
+                OnSettingChanged();
             }
         }
 
@@ -83,7 +84,8 @@ namespace Reading.Models
             {
                 if (_playbackMode == value) return;
                 _playbackMode = value;
-                OnPlaybackModeChanged();
+                _index = (PlaybackMode == PlaybackMode.Backward) ? ItemList.Count - 1 : 0;
+                OnSettingChanging();
             }
         }
 
@@ -135,13 +137,9 @@ namespace Reading.Models
 
         protected abstract List<T> BuildList();
 
-        /// <summary>
-        /// Called when [setting changed].
-        /// </summary>
-        /// <param name="name">The name.</param>
-        protected override void OnSettingChanged(string name)
+        protected override void OnSettingChanged()
         {
-            base.OnSettingChanged(name);
+            base.OnSettingChanged();
 
             ResetItemList();
         }
@@ -194,11 +192,6 @@ namespace Reading.Models
         }
 
         private int _index;
-        private void OnPlaybackModeChanged()
-        {
-            _index = (PlaybackMode == PlaybackMode.Backward) ? ItemList.Count - 1 : 0;
-            OnSettingChanged("PlaybackMode");
-        }
 
         private T GetNextItem()
         {

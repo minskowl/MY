@@ -6,7 +6,7 @@ namespace Reading.Pages
     /// <summary>
     /// Логика взаимодействия для LetterPage.xaml
     /// </summary>
-    public partial class LetterPage : Page
+    public partial class LetterPage 
     {
         public LetterPage()
         {

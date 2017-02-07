@@ -62,7 +62,7 @@ namespace Reading.Models
             {
                 if (_secondNumberFrom == value) return;
                 _secondNumberFrom = value;
-                OnSettingChanged("SecondNumberFrom");
+                OnSettingChanging("SecondNumberFrom");
             }
         }
 
@@ -78,7 +78,7 @@ namespace Reading.Models
             {
                 if (_secondNumberTo == value) return;
                 _secondNumberTo = value;
-                OnSettingChanged("SecondNumberTo");
+                OnSettingChanging("SecondNumberTo");
             }
         }
 
@@ -96,7 +96,7 @@ namespace Reading.Models
             {
                 if (_firstNumberFrom == value) return;
                 _firstNumberFrom = value;
-                OnSettingChanged("FirstNumberFrom");
+                OnSettingChanging("FirstNumberFrom");
             }
         }
 
@@ -112,7 +112,7 @@ namespace Reading.Models
             {
                 if (_firstNumberTo == value) return;
                 _firstNumberTo = value;
-                OnSettingChanged("FirstNumberTo");
+                OnSettingChanging("FirstNumberTo");
             }
         }
 
@@ -129,7 +129,7 @@ namespace Reading.Models
             {
                 if (_summationMode == value) return;
                 _summationMode = value;
-                OnSettingChanged("SummationMode");
+                OnSettingChanging("SummationMode");
             }
         }
 
@@ -146,7 +146,7 @@ namespace Reading.Models
             {
                 if (_mode == value) return;
                 _mode = value;
-                OnSettingChanged("Mode");
+                OnSettingChanging("Mode");
             }
         }
 

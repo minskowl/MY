@@ -52,7 +52,7 @@ public     class CompareModel : TaskModel<int?>
             {
                 if (_numberFrom == value) return;
                 _numberFrom = value;
-                OnSettingChanged("NumberFrom");
+                OnSettingChanging("NumberFrom");
             }
         }
 

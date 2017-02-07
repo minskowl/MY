@@ -6,12 +6,7 @@ namespace Reading.Models
 {
     internal class CompositionModel : SyllablesModelBase
     {
-
-
-        public override string Title
-        {
-            get { return "Наборы"; }
-        }
+        public override string Title => "Наборы";
 
         protected override void SetSyllable()
         {
@@ -23,7 +18,7 @@ namespace Reading.Models
             }
             var last = Primer.GetVowel(SelectionMode.Popular);
 
-            SelectedItem = string.Format("{0}{1}{2}", first, second, last);
+            SelectedItem = $"{first}{second}{last}";
         }
 
         /// <summary>

@@ -10,12 +10,12 @@
         <ItemsPanelTemplate x:Key="VirtPanel">
             <VirtualizingStackPanel/>
         </ItemsPanelTemplate>
-        
+
         <Style TargetType="{x:Type Control}" x:Key="baseStyle">
             <Setter Property="Margin" Value="5,0,5,5"/>
             <Setter Property="FontSize" Value="16"/>
         </Style>
-        
+
         <Style TargetType="{x:Type Button}" BasedOn="{StaticResource baseStyle}"/>
         <Style TargetType="{x:Type CheckBox}" BasedOn="{StaticResource baseStyle}"/>
         <Style TargetType="{x:Type ComboBox}" BasedOn="{StaticResource baseStyle}"/>
@@ -24,7 +24,7 @@
         <Style TargetType="{x:Type TextBox}" BasedOn="{StaticResource baseStyle}"/>
         <Style TargetType="{x:Type ListView}" BasedOn="{StaticResource baseStyle}"/>
         <Style TargetType="{x:Type Controls:IntegerTextBox}" BasedOn="{StaticResource baseStyle}"/>
-        
+
         <Style x:Key="Title" TargetType="TextBlock">
             <Setter Property="FontSize" Value="40"/>
             <Setter Property="Foreground" Value="Blue"/>
@@ -43,7 +43,7 @@
             <Setter Property="FontSize" Value="24"/>
             <Setter Property="Background" Value="#FFFFFFAD"/>
         </Style>
-        
+
         <FontFamily x:Key="SyllableFontFamily" />
         <System:Double  x:Key="SyllableFontSize" >30</System:Double>
 
@@ -53,9 +53,31 @@
         </Style>
         <Style x:Key="SyllableComboBox" TargetType="ComboBox" BasedOn="{StaticResource Syllable}"/>
         <Style x:Key="SyllableTextBox" TargetType="TextBox" BasedOn="{StaticResource Syllable}"/>
-        <Style x:Key="SyllableButton" TargetType="Button" BasedOn="{StaticResource Syllable}">
-            <Setter Property="Background" Value="Orange"/>
-        </Style>
         <Style x:Key="SyllableLabel" TargetType="Label" BasedOn="{StaticResource Syllable}"/>
+        <Style x:Key="SyllableButton" TargetType="Button"  BasedOn="{StaticResource Syllable}">
+            <Setter Property="OverridesDefaultStyle" Value="True"/>
+            <Setter Property="Background" Value="Orange"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Name="border" 
+                            BorderThickness="1"
+                            Padding="4,2" 
+                            BorderBrush="DarkGray" 
+                            CornerRadius="3" 
+                            Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="BorderBrush" Value="Black" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
     </Application.Resources>
 </Application>
