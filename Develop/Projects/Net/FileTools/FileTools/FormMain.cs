@@ -48,7 +48,10 @@ namespace FileTools
         /// <param name="measage">The measage.</param>
         public void AddLog(string measage)
         {
-            textBoxLog.AppendText(measage + Environment.NewLine);
+            if (textBoxLog.InvokeRequired)
+                textBoxLog.Invoke((Action<string>)AddLog, measage);
+            else
+                textBoxLog.AppendText(measage + Environment.NewLine);
         }
 
         private void manageToolStripMenuItem_Click(object sender, EventArgs e)

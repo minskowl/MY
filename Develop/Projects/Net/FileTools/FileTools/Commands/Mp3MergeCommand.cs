@@ -3,6 +3,7 @@ using System.Windows.Forms;
 using FileTools.Controls;
 using FileTools.Core;
 using NAudio.Wave;
+using System.Threading.Tasks;
 
 namespace FileTools.Commands
 {
@@ -23,45 +24,41 @@ namespace FileTools.Commands
         /// <param name="target">The target.</param>
         public override void Execute(object parameter, object target)
         {
-            AddLog("Start merge");
-            FileInfo[] files;
-            using (var form = new FormFileSelector())
+            using (var form = new FormFileSelectorWithResult())
             {
                 form.FileFilter = "*.mp3";
-                form.Text = "Print file list";
-                if (form.ShowDialog() != DialogResult.OK)
-                    return;
-                files = form.GetFiles();
+                form.Text = "Merge mp3 file";
+                form.FileResult = ".mp3";
 
+                if (form.ShowDialog() == DialogResult.OK)
+                    Task.Run(() => Merge(form.GetFiles(), form.FileResult));
             }
+        }
 
-            using (var writer = File.OpenWrite(@"1.mp3"))
+        private void Merge(FileInfo[] files, string resultFile)
+        {
+            AddLog("Start merge");
+            using (var writer = File.OpenWrite(resultFile))
                 foreach (var file in files)
-                {
                     MergeFile(file, writer);
-                    AddLog("Finish write " + file.Name);
-                }
-
-
             AddLog("End merge");
         }
 
-        private static void MergeFile(FileInfo file, FileStream writer)
+        private void MergeFile(FileInfo file, FileStream writer)
         {
             using (var reader = new Mp3FileReader(file.FullName))
             {
                 if ((writer.Position == 0) && (reader.Id3v2Tag != null))
-                {
                     writer.Write(reader.Id3v2Tag.RawData, 0, reader.Id3v2Tag.RawData.Length);
-                }
-                Mp3Frame frame;
 
+                Mp3Frame frame;
                 while ((frame = reader.ReadNextFrame()) != null)
                 {
                     writer.Write(frame.RawData, 0, frame.RawData.Length);
                 }
-            
+
             }
+            AddLog("Finish write " + file.Name);
         }
     }
 }

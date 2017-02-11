@@ -96,6 +96,12 @@
     <Compile Include="Controls\FileSelector.Designer.cs">
       <DependentUpon>FileSelector.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\FormFileSelectorWithResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\FormFileSelectorWithResult.Designer.cs">
+      <DependentUpon>FormFileSelectorWithResult.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\FormFileSelector.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,6 +159,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\FileSelector.resx">
       <DependentUpon>FileSelector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\FormFileSelectorWithResult.resx">
+      <DependentUpon>FormFileSelectorWithResult.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\FormFileSelector.resx">
       <DependentUpon>FormFileSelector.cs</DependentUpon>
