@@ -21,9 +21,7 @@ namespace Reading.Models
             get { return _numberFrom; }
             set
             {
-                if (_numberFrom == value) return;
-                _numberFrom = value;
-                OnSettingChanging();
+                OnSettingChanging(ref _numberFrom,value);
             }
         }
 
@@ -38,9 +36,7 @@ namespace Reading.Models
             get { return _numberTo; }
             set
             {
-                if (_numberTo == value) return;
-                _numberTo = value;
-                OnSettingChanging();
+                OnSettingChanging(ref _numberTo, value);
             }
         }
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using System.Windows;
 using CI.Common.Interfaces;
 using Savchin.Collection.Generic;
@@ -14,14 +15,17 @@ namespace Savchin.Wpf.Core
         #region Properties
 
 
+
+
         public IEnumerable<IViewModelBase> ChildModels
         {
             get { return GetChild<IViewModelBase>(); }
         }
 
+
+
         #endregion
 
-   
 
 
 
@@ -33,7 +37,8 @@ namespace Savchin.Wpf.Core
         /// <param name="newValue">The new value.</param>
         /// <param name="propertyName">Name of the property.</param>
         /// <returns></returns>
-        protected bool SetModel<T>(ref T field, T newValue, params string[] propertyName)
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1045:DoNotPassTypesByReference", MessageId = "0#")]
+        protected bool SetModel<T>(ref T field, T newValue, [CallerMemberName]string propertyName = null)
             where T : ViewModelBase
         {
             return SetModel(ref field, newValue, null, propertyName);
@@ -48,14 +53,15 @@ namespace Savchin.Wpf.Core
         /// <param name="onValueChanged">The on value changed.</param>
         /// <param name="propertyName">Name of the property.</param>
         /// <returns></returns>
-        protected bool SetModel<T>(ref T field, T newValue, Action onValueChanged, params string[] propertyName)
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1045:DoNotPassTypesByReference", MessageId = "0#")]
+        protected bool SetModel<T>(ref T field, T newValue, Action onValueChanged, string propertyName)
                 where T : ViewModelBase
         {
             if (field != null)
                 RemoveModel(field);
             if (newValue != null)
                 AddModel(newValue);
-            return Set(ref field, newValue, onValueChanged, propertyName);
+            return SetProperty(ref field, newValue, onValueChanged, propertyName);
 
         }
 
@@ -96,6 +102,7 @@ namespace Savchin.Wpf.Core
         public virtual void OnClose()
         {
 
+
             ChildModels.Foreach(e => e.OnClose());
             ClearChild();
         }
@@ -117,10 +124,9 @@ namespace Savchin.Wpf.Core
         /// <param name="e">The <see cref="System.Windows.RoutedEventArgs"/> instance containing the event data.</param>
         void IViewModelBase.OnLoaded(object sender, RoutedEventArgs e)
         {
-            ((FrameworkElement)sender).Loaded -= ((IViewModelBase)this).OnLoaded;
-
             OnLoad();
         }
+
 
     }
 }

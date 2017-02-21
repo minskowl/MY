@@ -13,7 +13,7 @@ namespace Savchin.Wpf.Converters
         [DebuggerHidden]
         public static void AssertNotNull<T>(T arg, string argName) where T : class
         {
-            if ((object)arg == null)
+            if (arg == null)
                 throw new ArgumentNullException(argName);
         }
 

@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.CompilerServices;
 using System.Windows.Input;
 using GalaSoft.MvvmLight.Command;
-using Reading.Speach;
 using Savchin.Core;
 using Savchin.Wpf.Controls;
 using Savchin.Wpf.Controls.Localization;
@@ -32,9 +29,7 @@ namespace Reading.Models
             get { return _itemsCount; }
             set
             {
-                if (_itemsCount == value) return;
-                _itemsCount = value;
-                OnPropertyChanged("ItemsCount");
+                Set(ref _itemsCount, value);
             }
         }
 
@@ -49,9 +44,7 @@ namespace Reading.Models
             get { return _selectedItem; }
             set
             {
-                if (Equals(_selectedItem, value)) return;
-                _selectedItem = value;
-                OnPropertyChanged("SelectedItem");
+                Set(ref _selectedItem, value);
             }
         }
 
@@ -64,12 +57,7 @@ namespace Reading.Models
         public bool ItemsRepetable
         {
             get { return _itemsRepeatable; }
-            set
-            {
-                if (_itemsRepeatable == value) return;
-                _itemsRepeatable = value;
-                OnSettingChanged();
-            }
+            set { OnSettingChanging(ref _itemsRepeatable, value); }
         }
 
         private PlaybackMode _playbackMode;
@@ -82,10 +70,9 @@ namespace Reading.Models
             get { return _playbackMode; }
             set
             {
-                if (_playbackMode == value) return;
-                _playbackMode = value;
-                _index = (PlaybackMode == PlaybackMode.Backward) ? ItemList.Count - 1 : 0;
-                OnSettingChanging();
+                OnSettingChanging(ref _playbackMode, value);
+                _index = (_playbackMode == PlaybackMode.Backward) ? ItemList.Count - 1 : 0;
+
             }
         }
 
@@ -124,7 +111,7 @@ namespace Reading.Models
         protected ListModel()
         {
             NextItemCommand = new RelayCommand(OnNextItemCommandExecute);
-            PlaybackModes = TranslationManager.Instance.Translate<PlaybackMode>().ToArray(); 
+            PlaybackModes = TranslationManager.Instance.Translate<PlaybackMode>().ToArray();
         }
 
 

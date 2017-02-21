@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Runtime.CompilerServices;
 using System.Xml.Serialization;
 using Savchin.Collection.Generic;
 using Savchin.Core;
@@ -88,10 +89,8 @@ namespace Savchin.Wpf.Core
         protected void ForEachChild<T>(Action<T> action) where T : class
         {
             if (_child == null || action == null) return;
-            foreach (var o in GetChildRecursive<T>())
-            {
-                action(o);
-            }
+            var objects = GetChildRecursive<T>();
+            objects.Foreach(action);
         }
         /// <summary>
         /// Gets the child recursive.
@@ -119,13 +118,20 @@ namespace Savchin.Wpf.Core
             if (obj == null) return;
 
             var o = obj as T;
-            if (o != null)
+            if (o != null && !result.Contains(o))
                 result.Add(o);
-
 
             var enumerable = obj as IEnumerable<T>;
             if (enumerable != null)
-                result.AddRange(enumerable);
+                foreach (var subChild in enumerable.Where(e => !result.Contains(e)))
+                {
+                    result.Add(subChild);
+                }
+
+            var enumerableObjectBase = obj as IEnumerable<ObjectBase>;
+            if (enumerableObjectBase != null)
+                foreach (var subChild in enumerableObjectBase)
+                    GetSubChildRecursive(result, subChild);
 
             var objectBase = obj as ObjectBase;
             if (objectBase != null && objectBase._child != null)
@@ -133,6 +139,17 @@ namespace Savchin.Wpf.Core
                     GetSubChildRecursive(result, subChild);
         }
 
+        /// <summary>
+        /// Adds the child.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="child">The child.</param>
+        /// <returns></returns>
+        public T AddChild<T>(T child)
+        {
+            AddChild((object)child);
+            return child;
+        }
         /// <summary>
         /// Adds the child.
         /// </summary>
@@ -147,6 +164,7 @@ namespace Savchin.Wpf.Core
             _child.Add(children);
 
         }
+
         /// <summary>
         /// Removes the child.
         /// </summary>
@@ -155,8 +173,8 @@ namespace Savchin.Wpf.Core
         {
             if (_child == null) return;
             GetChild<IModelAdapter>().Foreach(x => x.Remove(children));
-            children.OfType<IDirtyTracker>().Do(e => e.DirtyChanged += OnChildDirtyChanged);
-            _child.Do(e => e.Remove(children));
+            children.OfType<IDirtyTracker>().Do(e => e.DirtyChanged -= OnChildDirtyChanged);
+            _child?.Remove(children);
         }
 
         /// <summary>
@@ -176,6 +194,7 @@ namespace Savchin.Wpf.Core
         /// <typeparam name="TObject">The type of the object.</typeparam>
         /// <param name="expression">The expression.</param>
         /// <returns></returns>
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures")]
         protected static string GetPropertyName<TObject>(Expression<Func<TObject, object>> expression)
         {
             return PropertyName.For(expression);
@@ -188,9 +207,10 @@ namespace Savchin.Wpf.Core
         /// <param name="field">The field.</param>
         /// <param name="newValue">The new value.</param>
         /// <param name="propertyName">Name of the property.</param>
-        protected bool Set<T>(ref T field, T newValue, params string[] propertyName)
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1045:DoNotPassTypesByReference")]
+        protected bool Set<T>(ref T field, T newValue, [CallerMemberName] string propertyName = null)
         {
-            return Set(ref field, newValue, () => { }, propertyName);
+            return SetProperty(ref field, newValue, (Action)null, propertyName);
         }
 
         /// <summary>
@@ -201,7 +221,8 @@ namespace Savchin.Wpf.Core
         /// <param name="newValue">The new value.</param>
         /// <param name="onValueChanged">The on value changed.</param>
         /// <param name="propertyName">Name of the property.</param>
-        protected bool Set<T>(ref T field, T newValue, Action onValueChanged, params string[] propertyName)
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1045:DoNotPassTypesByReference")]
+        protected bool SetProperty<T>(ref T field, T newValue, Action onValueChanged, string propertyName)
         {
             if (EqualityComparer<T>.Default.Equals(field, newValue))
                 return false;
@@ -213,6 +234,10 @@ namespace Savchin.Wpf.Core
             OnPropertyChanged(propertyName);
             return true;
         }
+        protected bool Set<T>(ref T field, T newValue, Action onValueChanged, [CallerMemberName] string propertyName = null)
+        {
+            return SetProperty(ref field, newValue, onValueChanged, propertyName);
+        }
 
         /// <summary>
         /// Sets the specified field.
@@ -223,6 +248,7 @@ namespace Savchin.Wpf.Core
         /// <param name="onValueChanged">The on value changed.</param>
         /// <param name="propertyName">Name of the property.</param>
         /// <returns></returns>
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1045:DoNotPassTypesByReference")]
         protected bool Set<T>(ref T field, T newValue, Action<T, T> onValueChanged, params string[] propertyName)
         {
             if (EqualityComparer<T>.Default.Equals(field, newValue))
@@ -245,7 +271,8 @@ namespace Savchin.Wpf.Core
         /// <param name="newValue">The new value.</param>
         /// <param name="propertyName">Name of the property.</param>
         /// <returns></returns>
-        protected bool SetChild<T>(ref T field, T newValue, params string[] propertyName)
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1045:DoNotPassTypesByReference")]
+        protected bool SetChild<T>(ref T field, T newValue, string propertyName)
             where T : class
         {
             return SetChild(ref field, newValue, null, propertyName);
@@ -260,14 +287,15 @@ namespace Savchin.Wpf.Core
         /// <param name="onValueChanged">The on value changed.</param>
         /// <param name="propertyName">Name of the property.</param>
         /// <returns></returns>
-        protected bool SetChild<T>(ref T field, T newValue, Action onValueChanged, params string[] propertyName)
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1045:DoNotPassTypesByReference")]
+        private bool SetChild<T>(ref T field, T newValue, Action onValueChanged, string propertyName)
                 where T : class
         {
             if (field != null)
                 RemoveChild(field);
             if (newValue != null)
                 AddChild(newValue);
-            return Set(ref field, newValue, onValueChanged, propertyName);
+            return SetProperty(ref field, newValue, onValueChanged, propertyName);
 
         }
         /// <summary>
@@ -311,4 +339,6 @@ namespace Savchin.Wpf.Core
                 handler(this, EventArgs.Empty);
         }
     }
+
+
 }

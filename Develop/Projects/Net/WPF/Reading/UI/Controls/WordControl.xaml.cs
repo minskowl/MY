@@ -13,8 +13,8 @@ namespace Reading.Controls
     public partial class WordControl
     {
         #region Properties
-        private Style labelStyle;
-        private Style buttonStyle;
+        private readonly Style labelStyle;
+        private readonly Style buttonStyle;
 
         public bool SyllableView
         {
@@ -72,7 +72,7 @@ namespace Reading.Controls
             if (word == null) return;
             if(SyllableView)
             {
-                ShowSyllabled(word.Syllabled.Split(new[] {'-'}));
+                ShowSyllabled(word.Syllabled.Split('-'));
             }
             else
             {
@@ -104,7 +104,7 @@ namespace Reading.Controls
         {
             var button = new SpeakButton
                              {
-                                 Content = text,
+                                 Content = text.ToUpper(),
                                  Style = buttonStyle
                              };
             root.Children.Add(button);

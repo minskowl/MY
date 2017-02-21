@@ -1,11 +1,11 @@
 ﻿namespace Reading.Models
 {
-    
-public     class CompareModel : TaskModel<int?>
+
+    public class CompareModel : TaskModel<int?>
     {
         private int _firstNumber;
 
-    
+
 
         /// <summary>
         /// Gets or sets the FirstNumber.
@@ -33,9 +33,7 @@ public     class CompareModel : TaskModel<int?>
             get { return _secondNumber; }
             private set
             {
-                if (_secondNumber == value) return;
-                _secondNumber = value;
-                OnPropertyChanged("SecondNumber");
+                Set(ref _secondNumber, value);
             }
         }
 
@@ -50,9 +48,7 @@ public     class CompareModel : TaskModel<int?>
             get { return _numberFrom; }
             set
             {
-                if (_numberFrom == value) return;
-                _numberFrom = value;
-                OnSettingChanging("NumberFrom");
+                OnSettingChanging(ref _numberFrom, value);
             }
         }
 
@@ -66,22 +62,14 @@ public     class CompareModel : TaskModel<int?>
             get { return _numberTo; }
             set
             {
-                if (_numberTo == value) return;
-                _numberTo = value;
-                OnPropertyChanged("NumberTo");
+                OnSettingChanging(ref _numberTo, value);
             }
         }
 
 
-        public override string Title
-        {
-            get { return "Сравнение"; }
-        }
+        public override string Title => "Сравнение";
 
-        protected override bool IsResultEmpty
-        {
-            get { return Result == null; }
-        }
+        protected override bool IsResultEmpty => Result == null;
 
         protected override void Initialize(Properties.Settings settings)
         {

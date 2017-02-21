@@ -45,9 +45,7 @@ namespace Reading.Models
             get { return _secondNumberFrom; }
             set
             {
-                if (_secondNumberFrom == value) return;
-                _secondNumberFrom = value;
-                OnSettingChanging("SecondNumberFrom");
+                OnSettingChanging(ref _secondNumberFrom,value);
             }
         }
 
@@ -61,9 +59,7 @@ namespace Reading.Models
             get { return _secondNumberTo; }
             set
             {
-                if (_secondNumberTo == value) return;
-                _secondNumberTo = value;
-                OnSettingChanging("SecondNumberTo");
+                OnSettingChanging(ref _secondNumberTo, value);
             }
         }
 
@@ -78,9 +74,7 @@ namespace Reading.Models
             get { return _digitViewMode; }
             set
             {
-                if (_digitViewMode == value) return;
-                _digitViewMode = value;
-                OnPropertyChanged("DigitViewMode");
+                OnSettingChanging(ref _digitViewMode, value);
             }
         }
 
@@ -95,9 +89,7 @@ namespace Reading.Models
             get { return _firstNumberFrom; }
             set
             {
-                if (_firstNumberFrom == value) return;
-                _firstNumberFrom = value;
-                OnSettingChanging("FirstNumberFrom");
+                OnSettingChanging(ref _firstNumberFrom, value);
             }
         }
 
@@ -111,9 +103,7 @@ namespace Reading.Models
             get { return _firstNumberTo; }
             set
             {
-                if (_firstNumberTo == value) return;
-                _firstNumberTo = value;
-                OnSettingChanging("FirstNumberTo");
+                OnSettingChanging(ref _firstNumberTo, value);
             }
         }
 
@@ -128,9 +118,7 @@ namespace Reading.Models
             get { return _summationMode; }
             set
             {
-                if (_summationMode == value) return;
-                _summationMode = value;
-                OnSettingChanging("SummationMode");
+                OnSettingChanging(ref _summationMode, value);
             }
         }
 
@@ -145,9 +133,7 @@ namespace Reading.Models
             get { return _firstNumber; }
             private set
             {
-                if (_firstNumber == value) return;
-                _firstNumber = value;
-                OnPropertyChanged("FirstNumber");
+                Set(ref _firstNumber, value);
             }
         }
 
@@ -162,9 +148,7 @@ namespace Reading.Models
             get { return _secondNumber; }
             private set
             {
-                if (_secondNumber == value) return;
-                _secondNumber = value;
-                OnPropertyChanged("SecondNumber");
+                Set(ref _secondNumber, value);
             }
         }
 
@@ -180,9 +164,7 @@ namespace Reading.Models
             get { return _shape; }
             set
             {
-                if (_shape == value) return;
-                _shape = value;
-                OnPropertyChanged("Shape");
+                Set(ref _shape, value);
             }
         }
 
@@ -197,17 +179,12 @@ namespace Reading.Models
             get { return _sign; }
             private set
             {
-                if (_sign == value) return;
-                _sign = value;
-                OnPropertyChanged("Sign");
+                Set(ref _sign, value);
             }
         }
 
 
-        protected override bool IsResultEmpty
-        {
-            get { return Result == null; }
-        }
+        protected override bool IsResultEmpty => Result == null;
 
 
         public NameValuePair[] Modes { get; set; }

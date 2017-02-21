@@ -27,10 +27,7 @@ namespace Reading.Models
             get { return _mode; }
             set
             {
-                if (_mode == value) return;
-                _mode = value;
-
-                OnSettingChanging("Operation");
+                OnSettingChanging(ref _mode, value);
             }
         }
 
@@ -45,9 +42,7 @@ namespace Reading.Models
             get { return _type; }
             set
             {
-                if (_type == value) return;
-                _type = value;
-                OnPropertyChanged("Type");
+                Set(ref _type, value);
             }
         }
 

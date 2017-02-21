@@ -1,15 +1,15 @@
 ﻿using System.Runtime.CompilerServices;
 using Reading.Core;
 using Reading.Properties;
-using Savchin.Logging;
 using Savchin.Wpf.Controls.Localization;
+using Savchin.Wpf.Core;
 
 namespace Reading.Models
 {
-    public abstract class BaseModel : BaseObject
+    public abstract class BaseModel : ObjectBase
     {
         private readonly bool _ingoreChanges;
- 
+
         /// <summary>
         /// Gets the title.
         /// </summary>
@@ -19,12 +19,7 @@ namespace Reading.Models
         public string Status
         {
             get { return _status; }
-            set
-            {
-                if (_status == value) return;
-                _status = value;
-                OnPropertyChanged("Status");
-            }
+            set { Set(ref _status, value); }
         }
 
         protected TranslationManager Translation => TranslationManager.Instance;
@@ -46,20 +41,19 @@ namespace Reading.Models
         /// <param name="settings">The settings.</param>
         protected virtual void Initialize(Settings settings)
         {
-            
+
         }
 
         /// <summary>
         /// Called when [setting changed].
         /// </summary>
         /// <param name="name">The name.</param>
-        protected  void OnSettingChanging([CallerMemberName] string name="")
+        protected void OnSettingChanging<T>(ref T field, T newValue, [CallerMemberName] string name = "")
         {
             if (_ingoreChanges) return;
-
+            Set(ref field, newValue, name);
             SaveSettings(Settings.Default);
             Settings.Default.Save();
-            OnPropertyChanged(name);
             OnSettingChanged();
         }
 

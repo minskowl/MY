@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using Reading.Core;
 using Reading.Properties;
@@ -14,13 +13,7 @@ namespace Reading.Models
 
         private readonly WordsCollection _words = new WordsCollection();
 
-        public override string Title
-        {
-            get { return "Слова"; }
-        }
-
-
-
+        public override string Title => "Слова";
 
         #region Settings
 
@@ -36,9 +29,7 @@ namespace Reading.Models
             get { return _wordSyllablesCountFrom; }
             set
             {
-                if (_wordSyllablesCountFrom == value) return;
-                _wordSyllablesCountFrom = value;
-                OnSettingChanging();
+                OnSettingChanging(ref _wordSyllablesCountFrom, value);
             }
         }
 
@@ -53,9 +44,7 @@ namespace Reading.Models
             get { return _wordSyllablesCountTo; }
             set
             {
-                if (_wordSyllablesCountTo == value) return;
-                _wordSyllablesCountTo = value;
-                OnSettingChanging();
+                OnSettingChanging(ref _wordSyllablesCountTo, value);
             }
         }
 
@@ -70,9 +59,7 @@ namespace Reading.Models
             get { return _wordWidthFrom; }
             set
             {
-                if (_wordWidthFrom == value) return;
-                _wordWidthFrom = value;
-                OnSettingChanging();
+                OnSettingChanging(ref _wordWidthFrom, value);
             }
         }
 
@@ -87,9 +74,7 @@ namespace Reading.Models
             get { return _wordWidthTo; }
             set
             {
-                if (_wordWidthTo == value) return;
-                _wordWidthTo = value;
-                OnSettingChanging();
+                OnSettingChanging(ref _wordWidthTo, value);
             }
         }
 
@@ -104,9 +89,7 @@ namespace Reading.Models
             get { return _syllablesView; }
             set
             {
-                if (_syllablesView == value) return;
-                _syllablesView = value;
-                OnSettingChanging();
+                OnSettingChanging(ref _syllablesView, value);
             }
         }
 
@@ -160,8 +143,7 @@ namespace Reading.Models
 
         protected override string GetSpeakText()
         {
-            return SelectedItem==null ?
-                null : SelectedItem.Text;
+            return SelectedItem?.Text;
         }
 
 

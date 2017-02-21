@@ -12,11 +12,7 @@ namespace Reading.Models
         public string TipImage
         {
             get { return _tipImage; }
-            set
-            {
-                _tipImage = value;
-                OnPropertyChanged(nameof(TipImage));
-            }
+            set { Set(ref _tipImage, value); }
         }
 
         public ICommand TipCommand { get; private set; }
@@ -31,10 +27,7 @@ namespace Reading.Models
             get { return _mode; }
             set
             {
-                if (_mode == value) return;
-                _mode = value;
-
-                OnSettingChanging("Operation");
+                OnSettingChanging(ref _mode, value);
             }
         }
 
@@ -49,9 +42,7 @@ namespace Reading.Models
             get { return _type; }
             set
             {
-                if (_type == value) return;
-                _type = value;
-                OnPropertyChanged("Type");
+                Set(ref _type, value);
             }
         }
 

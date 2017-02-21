@@ -17,9 +17,7 @@ namespace Reading.Models
             get { return _rows; }
             set
             {
-                if (_rows == value) return;
-                _rows = value;
-                OnSettingChanging();
+                OnSettingChanging(ref _rows, value);
             }
         }
         private int _columns;
@@ -28,9 +26,7 @@ namespace Reading.Models
             get { return _columns; }
             set
             {
-                if (_columns == value) return;
-                _columns = value;
-                OnSettingChanging();
+                OnSettingChanging(ref _columns, value); 
             }
         }
 
@@ -40,9 +36,7 @@ namespace Reading.Models
             get { return _images; }
             set
             {
-                if (_images == value) return;
-                _images = value;
-                OnSettingChanging();
+                OnSettingChanging(ref _images, value);
             }
         }
 

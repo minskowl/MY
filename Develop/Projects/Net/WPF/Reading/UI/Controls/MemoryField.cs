@@ -20,7 +20,7 @@ namespace Reading.Controls
             _timer.Interval = new TimeSpan(0, 0, 1);
             _timer.Tick += OnTimerTick;
         }
-
+        
         private void OnTimerTick(object sender, EventArgs e)
         {
             _timer.Stop();

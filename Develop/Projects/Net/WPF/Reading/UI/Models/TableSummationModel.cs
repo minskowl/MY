@@ -60,9 +60,7 @@ namespace Reading.Models
             get { return _secondNumberFrom; }
             set
             {
-                if (_secondNumberFrom == value) return;
-                _secondNumberFrom = value;
-                OnSettingChanging("SecondNumberFrom");
+                OnSettingChanging(ref _secondNumberFrom, value);
             }
         }
 
@@ -76,9 +74,7 @@ namespace Reading.Models
             get { return _secondNumberTo; }
             set
             {
-                if (_secondNumberTo == value) return;
-                _secondNumberTo = value;
-                OnSettingChanging("SecondNumberTo");
+                OnSettingChanging(ref _secondNumberTo, value);
             }
         }
 
@@ -94,9 +90,7 @@ namespace Reading.Models
             get { return _firstNumberFrom; }
             set
             {
-                if (_firstNumberFrom == value) return;
-                _firstNumberFrom = value;
-                OnSettingChanging("FirstNumberFrom");
+                OnSettingChanging(ref _firstNumberFrom, value);
             }
         }
 
@@ -110,9 +104,7 @@ namespace Reading.Models
             get { return _firstNumberTo; }
             set
             {
-                if (_firstNumberTo == value) return;
-                _firstNumberTo = value;
-                OnSettingChanging("FirstNumberTo");
+                OnSettingChanging(ref _firstNumberTo, value);
             }
         }
 
@@ -127,9 +119,7 @@ namespace Reading.Models
             get { return _summationMode; }
             set
             {
-                if (_summationMode == value) return;
-                _summationMode = value;
-                OnSettingChanging("SummationMode");
+                OnSettingChanging(ref _summationMode, value);
             }
         }
 
@@ -144,13 +134,11 @@ namespace Reading.Models
             get { return _mode; }
             set
             {
-                if (_mode == value) return;
-                _mode = value;
-                OnSettingChanging("Mode");
+                OnSettingChanging(ref _mode, value);
             }
         }
 
-        public bool ShowAnswers { get { return _mode == TableSummationMode.Text; } }
+        public bool ShowAnswers => _mode == TableSummationMode.Text;
 
         public List<Sample> Samples { get; set; }
 

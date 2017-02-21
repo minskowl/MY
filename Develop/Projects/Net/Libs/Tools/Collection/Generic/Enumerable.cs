@@ -41,6 +41,8 @@ namespace Savchin.Collection.Generic
         /// <param name="action">The action.</param>
         public static void Foreach<T>(this IEnumerable<T> enumerable, Action<T> action)
         {
+            if (enumerable == null || action == null) return;
+
             foreach (var e in enumerable)
             {
                 action(e);
