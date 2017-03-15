@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using Prodigy.Models.Core;
+using Prodigy.Properties;
 using Reading.Core;
-using Reading.Properties;
 using Savchin.Core;
 
-namespace Reading.Models
+namespace Prodigy.Models.Reading
 {
     public class WordsModel : ListModel<Word>
     {
@@ -14,13 +14,7 @@ namespace Reading.Models
 
         private readonly WordsCollection _words = new WordsCollection();
 
-        public override string Title
-        {
-            get { return "Слова"; }
-        }
-
-
-
+        public override string Title => "Слова";
 
         #region Settings
 
@@ -160,8 +154,7 @@ namespace Reading.Models
 
         protected override string GetSpeakText()
         {
-            return SelectedItem==null ?
-                null : SelectedItem.Text;
+            return SelectedItem?.Text;
         }
 
 

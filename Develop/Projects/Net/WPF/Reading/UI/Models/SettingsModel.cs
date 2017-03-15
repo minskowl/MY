@@ -2,11 +2,10 @@
 using System.Windows.Input;
 using System.Windows.Media;
 using GalaSoft.MvvmLight.Command;
-using Reading.Core;
-using Reading.Properties;
+using Prodigy.Models.Core;
+using Prodigy.Properties;
 
-
-namespace Reading.Models
+namespace Prodigy.Models
 {
    public  class SettingsModel : SpeakModel
     {
@@ -56,11 +55,7 @@ namespace Reading.Models
 
         public ICollection<FontFamily> FontFamilies { get; private set; }
 
-        public override string Title
-        {
-            get { return "Настройки"; }
-        }
-
+        public override string Title => "Настройки";
 
         #endregion
 

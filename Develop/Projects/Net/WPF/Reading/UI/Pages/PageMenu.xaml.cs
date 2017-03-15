@@ -1,13 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Windows;
 using System.Windows.Controls;
+using Prodigy.Models;
 using Reading.Core;
-using Reading.Models;
 
-namespace Reading.Pages
+namespace Prodigy.Pages
 {
     /// <summary>
     /// Interaction logic for PageMenu.xaml

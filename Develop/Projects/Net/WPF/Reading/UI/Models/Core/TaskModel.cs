@@ -1,7 +1,6 @@
-﻿using System;
-using Savchin.Core;
+﻿using Savchin.Core;
 
-namespace Reading.Models
+namespace Prodigy.Models.Core
 {
     public abstract class TaskModel<T> : TaskModelBase
     {
@@ -27,8 +26,7 @@ namespace Reading.Models
 
         #endregion
 
-
-
+        
         protected override void BuildNewTask()
         {
             Result = default(T);
@@ -47,7 +45,7 @@ namespace Reading.Models
         {
             if (from == to) return from;
             var newValue = Randomizer.GetIntegerBetween(from, to);
-            while (previous == newValue && Math.Abs(to - from) > 1)
+            while (previous == newValue && System.Math.Abs(to - from) > 1)
             {
                 newValue = Randomizer.GetIntegerBetween(from, to);
             }

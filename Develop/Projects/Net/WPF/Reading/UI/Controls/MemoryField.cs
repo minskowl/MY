@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
@@ -11,7 +8,7 @@ using Reading.Core;
 using Savchin.Collection.Generic;
 using Savchin.Wpf.Imaging;
 
-namespace Reading.Controls
+namespace Prodigy.Controls
 {
     public class MemoryField : Grid
     {

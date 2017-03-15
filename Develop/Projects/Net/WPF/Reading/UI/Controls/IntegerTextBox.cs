@@ -1,6 +1,6 @@
 ﻿using System.Windows.Controls;
 
-namespace Reading.Controls
+namespace Prodigy.Controls
 {
     public class IntegerTextBox : TextBox
     {

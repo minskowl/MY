@@ -1,7 +1,8 @@
-﻿using Reading.Models;
+﻿using Prodigy.Models;
+using Prodigy.Models.Math;
 using Savchin.Wpf.Core;
 
-namespace Reading.Pages
+namespace Prodigy.Pages
 {
     /// <summary>
     /// Interaction logic for PageCounting.xaml

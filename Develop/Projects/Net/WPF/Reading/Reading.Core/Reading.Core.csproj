@@ -77,7 +77,7 @@
     </ProjectReference>
     <ProjectReference Include="..\..\Controls\Savchin.Wpf.Controls.csproj">
       <Project>{94FAF521-458A-4A1B-BEE6-42A5A738F6AB}</Project>
-      <Name>WPF.Controls</Name>
+      <Name>Savchin.Wpf.Controls</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\WPF.Tools\WPF.Tools.csproj">
       <Project>{DF7E8E9F-5B87-4561-AD02-38AE103C3DE6}</Project>

@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq;
 using System.Windows.Input;
 using GalaSoft.MvvmLight.Command;
 using Reading.Core;
 using Savchin.Core;
 using Savchin.Wpf.Controls.Localization;
 
-namespace Reading.Models
+namespace Prodigy.Models.Reading
 {
     public sealed class LetterModel : SyllablesModelBase
     {

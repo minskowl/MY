@@ -1,10 +1,10 @@
 ﻿using System.Linq;
+using Prodigy.Properties;
 using Reading.Core;
-using Reading.Properties;
 using Savchin.Core;
 using Savchin.Wpf.Controls.Localization;
 
-namespace Reading.Models
+namespace Prodigy.Models.Reading
 {
     public class SyllablesModel : SyllablesModelBase
     {

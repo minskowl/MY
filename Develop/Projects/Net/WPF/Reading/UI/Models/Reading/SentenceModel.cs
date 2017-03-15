@@ -1,8 +1,9 @@
 ﻿using System.Collections.Generic;
+using Prodigy.Models.Core;
+using Prodigy.Properties;
 using Reading.Core;
-using Reading.Properties;
 
-namespace Reading.Models
+namespace Prodigy.Models.Reading
 {
     public class SentenceModel : ListModel<string>
     {

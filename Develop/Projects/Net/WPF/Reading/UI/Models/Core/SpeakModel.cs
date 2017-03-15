@@ -1,8 +1,7 @@
 ﻿using Reading.Core;
 using Reading.Core.Speach;
-using Reading.Speach;
 
-namespace Reading.Models
+namespace Prodigy.Models.Core
 {
     public abstract class SpeakModel : BaseModel
     {

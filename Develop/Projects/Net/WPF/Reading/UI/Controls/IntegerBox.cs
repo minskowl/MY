@@ -3,7 +3,7 @@ using System.Windows.Controls;
 using Savchin.Core;
 using Savchin.Wpf.Core;
 
-namespace Reading.Controls
+namespace Prodigy.Controls
 {
     public class IntegerBox : Canvas
     {

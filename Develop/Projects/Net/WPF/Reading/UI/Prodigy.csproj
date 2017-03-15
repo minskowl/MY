@@ -8,7 +8,7 @@
     <ProjectGuid>{7AC9A695-9EC3-4240-B830-1A293D470335}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Reading</RootNamespace>
+    <RootNamespace>Prodigy</RootNamespace>
     <AssemblyName>Prodigy</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>
@@ -42,7 +42,7 @@
     <ApplicationIcon>logo.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Reading.Program</StartupObject>
+    <StartupObject>Prodigy.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="GalaSoft.MvvmLight.WPF4">
@@ -68,8 +68,8 @@
     <Compile Include="Controls\MemoryField.cs" />
     <Compile Include="Converters\InversNullToVisibilityConverter.cs" />
     <Compile Include="Models\FindPairModel.cs" />
-    <Compile Include="Models\LetterModel.cs" />
-    <Compile Include="Models\TaskModelBase.cs" />
+    <Compile Include="Models\Reading\LetterModel.cs" />
+    <Compile Include="Models\Core\TaskModelBase.cs" />
     <Compile Include="Pages\LetterPage.xaml.cs">
       <DependentUpon>LetterPage.xaml</DependentUpon>
     </Compile>
@@ -89,23 +89,23 @@
     <Compile Include="Controls\SentenceControl.xaml.cs">
       <DependentUpon>SentenceControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Models\BaseModel.cs" />
-    <Compile Include="Models\CompareModel.cs" />
-    <Compile Include="Models\CompositionListModel.cs" />
-    <Compile Include="Models\CompositionModel.cs" />
-    <Compile Include="Models\CountingModel.cs" />
-    <Compile Include="Models\ListModel.cs" />
+    <Compile Include="Models\Core\BaseModel.cs" />
+    <Compile Include="Models\Math\CompareModel.cs" />
+    <Compile Include="Models\Reading\CompositionListModel.cs" />
+    <Compile Include="Models\Reading\CompositionModel.cs" />
+    <Compile Include="Models\Math\CountingModel.cs" />
+    <Compile Include="Models\Core\ListModel.cs" />
     <Compile Include="Models\MenuModel.cs" />
-    <Compile Include="Models\SentenceModel.cs" />
+    <Compile Include="Models\Reading\SentenceModel.cs" />
     <Compile Include="Models\SettingsModel.cs" />
-    <Compile Include="Models\SpeakModel.cs" />
-    <Compile Include="Models\SummationModel.cs" />
-    <Compile Include="Models\SyllablesModel.cs" />
-    <Compile Include="Models\SyllablesModelBase.cs" />
-    <Compile Include="Models\TableSummationModel.cs" />
-    <Compile Include="Models\TaskModel.cs" />
-    <Compile Include="Models\WordListModel.cs" />
-    <Compile Include="Models\WordsModel.cs" />
+    <Compile Include="Models\Core\SpeakModel.cs" />
+    <Compile Include="Models\Math\SummationModel.cs" />
+    <Compile Include="Models\Reading\SyllablesModel.cs" />
+    <Compile Include="Models\Reading\SyllablesModelBase.cs" />
+    <Compile Include="Models\Math\TableSummationModel.cs" />
+    <Compile Include="Models\Core\TaskModel.cs" />
+    <Compile Include="Models\Reading\WordListModel.cs" />
+    <Compile Include="Models\Reading\WordsModel.cs" />
     <Compile Include="Pages\PageTableSummation.xaml.cs">
       <DependentUpon>PageTableSummation.xaml</DependentUpon>
     </Compile>
@@ -250,7 +250,7 @@
     </ProjectReference>
     <ProjectReference Include="..\..\Controls\Savchin.Wpf.Controls.csproj">
       <Project>{94FAF521-458A-4A1B-BEE6-42A5A738F6AB}</Project>
-      <Name>WPF.Controls</Name>
+      <Name>Savchin.Wpf.Controls</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\WPF.Tools\WPF.Tools.csproj">
       <Project>{DF7E8E9F-5B87-4561-AD02-38AE103C3DE6}</Project>

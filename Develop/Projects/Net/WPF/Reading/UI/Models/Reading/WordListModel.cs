@@ -1,19 +1,17 @@
 ﻿using System.IO;
 using System.Windows.Input;
 using GalaSoft.MvvmLight.Command;
+using Prodigy.Models.Core;
 using Reading.Core;
 
-namespace Reading.Models
+namespace Prodigy.Models.Reading
 {
     public class WordListModel : BaseModel
     {
         #region Properties
 
 
-        public override string Title
-        {
-            get { return "Список слов"; }
-        }
+        public override string Title => "Список слов";
 
         public ICommand SaveCommand { get; private set; }
 

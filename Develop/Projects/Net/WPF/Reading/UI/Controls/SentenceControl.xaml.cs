@@ -2,7 +2,7 @@
 using System.Windows.Controls;
 using Savchin.Wpf.Core;
 
-namespace Reading.Controls
+namespace Prodigy.Controls
 {
     /// <summary>
     /// Interaction logic for SentenceControl.xaml

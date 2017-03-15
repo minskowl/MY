@@ -2,11 +2,11 @@
 using System.ComponentModel;
 using System.Linq;
 using System.Windows.Input;
+using Prodigy.Models.Core;
 using Reading.Core.Settings;
 using Savchin.Core;
-using Savchin.Wpf.Input;
 
-namespace Reading.Models
+namespace Prodigy.Models.Math
 {
     public class Sample : IDataErrorInfo
     {

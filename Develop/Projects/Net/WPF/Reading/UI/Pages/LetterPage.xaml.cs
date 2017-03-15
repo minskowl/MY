@@ -1,7 +1,7 @@
 ﻿using System.Windows.Controls;
-using Reading.Models;
+using Prodigy.Models.Reading;
 
-namespace Reading.Pages
+namespace Prodigy.Pages
 {
     /// <summary>
     /// Логика взаимодействия для LetterPage.xaml

@@ -1,11 +1,13 @@
-﻿namespace Reading.Models
+﻿using Prodigy.Models.Core;
+
+namespace Prodigy.Models.Math
 {
-    
-public     class CompareModel : TaskModel<int?>
+
+    public class CompareModel : TaskModel<int?>
     {
         private int _firstNumber;
 
-    
+
 
         /// <summary>
         /// Gets or sets the FirstNumber.
@@ -73,15 +75,9 @@ public     class CompareModel : TaskModel<int?>
         }
 
 
-        public override string Title
-        {
-            get { return "Сравнение"; }
-        }
+        public override string Title => "Сравнение";
 
-        protected override bool IsResultEmpty
-        {
-            get { return Result == null; }
-        }
+        protected override bool IsResultEmpty => Result == null;
 
         protected override void Initialize(Properties.Settings settings)
         {

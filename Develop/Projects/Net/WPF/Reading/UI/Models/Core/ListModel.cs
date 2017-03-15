@@ -1,15 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Input;
 using GalaSoft.MvvmLight.Command;
-using Reading.Speach;
 using Savchin.Core;
 using Savchin.Wpf.Controls;
 using Savchin.Wpf.Controls.Localization;
 using Savchin.Wpf.Input;
 
-namespace Reading.Models
+namespace Prodigy.Models.Core
 {
     public enum PlaybackMode
     {

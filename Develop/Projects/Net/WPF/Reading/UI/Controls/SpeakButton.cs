@@ -1,9 +1,8 @@
 ﻿using System.Windows.Controls;
 using Reading.Core;
 using Reading.Core.Speach;
-using Reading.Speach;
 
-namespace Reading.Controls
+namespace Prodigy.Controls
 {
     public class SpeakButton : Button
     {

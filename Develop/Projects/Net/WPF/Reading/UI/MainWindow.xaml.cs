@@ -1,7 +1,7 @@
 ﻿using System.Windows;
 using Savchin.Wpf.Imaging;
 
-namespace Reading
+namespace Prodigy
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml

@@ -1,4 +1,4 @@
-﻿<Window x:Class="Reading.MainWindow"
+﻿<Window x:Class="Prodigy.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Title="Вундеркинд" Height="600" Width="700"
                   MinHeight="550"

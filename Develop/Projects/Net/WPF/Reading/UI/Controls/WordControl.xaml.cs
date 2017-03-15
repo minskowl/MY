@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
 using Reading.Core;
 using Savchin.Wpf.Core;
 
-namespace Reading.Controls
+namespace Prodigy.Controls
 {
     /// <summary>
     /// Interaction logic for WordControl.xaml

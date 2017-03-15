@@ -1,9 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using Reading.Properties;
+using Prodigy.Models.Core;
+using Prodigy.Properties;
 
-namespace Reading.Models
+namespace Prodigy.Models.Math
 {
     public class CountingModel : ListModel<int?>
     {
@@ -54,8 +54,8 @@ namespace Reading.Models
         /// <returns></returns>
         protected override List<int?> BuildList()
         {
-            var from = Math.Min(NumberFrom, NumberTo);
-            var to = Math.Max(NumberFrom, NumberTo);
+            var from = System.Math.Min(NumberFrom, NumberTo);
+            var to = System.Math.Max(NumberFrom, NumberTo);
             return Enumerable.Range(from, to-from+1).Cast<int?>().ToList();
         }
 

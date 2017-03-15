@@ -1,15 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Windows.Input;
 using System.Windows.Shapes;
-using GalaSoft.MvvmLight.Command;
+using Prodigy.Models.Core;
 using Reading.Core;
 using Reading.Core.Settings;
 using Savchin.Core;
 using Savchin.Wpf.Controls.Localization;
 
-namespace Reading.Models
+namespace Prodigy.Models.Math
 {
 
     [Flags]

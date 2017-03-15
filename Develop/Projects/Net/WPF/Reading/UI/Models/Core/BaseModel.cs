@@ -1,9 +1,8 @@
-﻿using Reading.Core;
-using Reading.Properties;
-using Savchin.Logging;
+﻿using Prodigy.Properties;
+using Reading.Core;
 using Savchin.Wpf.Controls.Localization;
 
-namespace Reading.Models
+namespace Prodigy.Models.Core
 {
     public abstract class BaseModel : BaseObject
     {

@@ -1,19 +1,17 @@
 ﻿using System;
 using System.Configuration;
-using System.Reflection;
-using System.Runtime.InteropServices;
 using System.Windows;
 using System.Windows.Media;
+using Prodigy.Properties;
 using Reading.Core;
 using Reading.Core.Speach;
-using Reading.Properties;
 using Reading.Speach;
 using Savchin.Development;
 using Savchin.Logging;
 using Savchin.Wpf.Controls.Core;
 using Savchin.Wpf.Controls.Localization;
 
-namespace Reading
+namespace Prodigy
 {
     /// <summary>
     /// Interaction logic for App.xaml
@@ -27,11 +25,7 @@ namespace Reading
         internal ILogger Logger { get; private set; }
         internal ISpeaker Speaker { get; private set; }
 
-        public static App CurrentApp
-        {
-            get { return (App)Current; }
-        }
-
+        public static App CurrentApp => (App)Current;
 
         #endregion
 
@@ -43,21 +37,6 @@ namespace Reading
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
-
-    //        string appProgID = "sapi.spvoice";
-    //        // object excel1= Marshal.GetActiveObject(appProgID); 
-    //        // Получаем ссылку на интерфейс IDispatch
-    //        Type excelType = Type.GetTypeFromProgID(appProgID);
-    //        // Запускаем Excel
-    //        object excel = Activator.CreateInstance(excelType);
-    //        //var pr = excelType.GetProperties();
-    //        //var met = excelType.GetMethods();
-
-    //        object workbook = excel.GetType().InvokeMember(
-    //"GetVoices", BindingFlags.InvokeMethod, null, excel, null); 
-
-
-
 
 
 
@@ -87,16 +66,14 @@ namespace Reading
         {
             try
             {
-                if (Logger != null)
-                    Logger.AddMessage(Severity.FatalError, "Unhadled Exception", e.Exception);
+                Logger?.AddMessage(Severity.FatalError, "Unhadled Exception", e.Exception);
 
                 ErrorForm.Show(e, "Сбой приложения");
 
             }
             catch (Exception)
             {
-                if (Logger != null)
-                    Logger.AddMessage(Severity.FatalError, "Fail handle exception", e.Exception);
+                Logger?.AddMessage(Severity.FatalError, "Fail handle exception", e.Exception);
             }
 
         }

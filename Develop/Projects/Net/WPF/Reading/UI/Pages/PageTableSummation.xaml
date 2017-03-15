@@ -1,10 +1,11 @@
-﻿<Page x:Class="Reading.Pages.PageTableSummation"
+﻿<Page x:Class="Prodigy.Pages.PageTableSummation"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:Controls="clr-namespace:Reading.Controls" 
-      xmlns:Data="clr-namespace:Savchin.Wpf.Data;assembly=Savchin.WPF.Tools" mc:Ignorable="d" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:Data="clr-namespace:Savchin.Wpf.Data;assembly=Savchin.WPF.Tools"
+      xmlns:controls="clr-namespace:Prodigy.Controls"
+      mc:Ignorable="d" 
       d:DesignHeight="300" d:DesignWidth="300"
 	Title="PageSummation">
 
@@ -46,7 +47,7 @@
                             <Label  Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{DynamicResource SyllableLabel}" Content="{Binding Sign}"/>
                             <Label   Grid.Column="2" Content="{Binding SecondNumber}"  Style="{DynamicResource SyllableLabel}" />
                             <Label  Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{DynamicResource SyllableLabel}" Content="="/>
-                            <Controls:IntegerTextBox Grid.Column="4" x:Name="boxResult"
+                            <controls:IntegerTextBox Grid.Column="4" x:Name="boxResult"
                                      Style="{DynamicResource SyllableTextBox}"
                                      VerticalContentAlignment="Center"
                                      MinWidth="100" Width="30"
@@ -84,19 +85,19 @@
 
                 <StackPanel Orientation="Horizontal" >
                     <Label Content="Первое число от"/>
-                    <Controls:IntegerTextBox 
+                    <controls:IntegerTextBox 
                  
                       Text="{Binding FirstNumberFrom, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource IntegerConverter}}" Width="40"/>
                     <Label Content="до"/>
-                    <Controls:IntegerTextBox  
+                    <controls:IntegerTextBox  
                       Text="{Binding FirstNumberTo, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource IntegerConverter}}" Width="40"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" >
                     <Label Content="Второе число от"/>
-                    <Controls:IntegerTextBox 
+                    <controls:IntegerTextBox 
                       Text="{Binding SecondNumberFrom, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource IntegerConverter}}" Width="40"/>
                     <Label Content="до"/>
-                    <Controls:IntegerTextBox  
+                    <controls:IntegerTextBox  
                       Text="{Binding SecondNumberTo, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource IntegerConverter}}" Width="40"/>
                 </StackPanel>
             </WrapPanel >

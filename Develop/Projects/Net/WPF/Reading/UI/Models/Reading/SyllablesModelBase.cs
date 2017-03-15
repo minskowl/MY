@@ -1,10 +1,9 @@
 using System.Windows.Input;
 using GalaSoft.MvvmLight.Command;
-using Reading.Core;
-using Reading.Speach;
+using Prodigy.Models.Core;
 using Savchin.Wpf.Input;
 
-namespace Reading.Models
+namespace Prodigy.Models.Reading
 {
     public abstract class SyllablesModelBase : SpeakModel
     {

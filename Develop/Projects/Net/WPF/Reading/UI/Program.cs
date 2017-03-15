@@ -3,15 +3,14 @@ using System.Runtime.InteropServices;
 using System.Windows;
 using Savchin.SystemEnvironment;
 
-
-namespace Reading
+namespace Prodigy
 {
     static class Program
     {
         /// <summary>
         /// Application Entry Point.
         /// </summary>
-        [STAThreadAttribute]
+        [STAThread]
         [System.Diagnostics.DebuggerNonUserCodeAttribute()]
         public static void Main()
         {

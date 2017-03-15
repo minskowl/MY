@@ -1,14 +1,15 @@
-using System.Windows.Input;
+п»їusing System.Windows.Input;
 using GalaSoft.MvvmLight.Command;
 using Savchin.Core;
 using Savchin.Wpf.Input;
 
-namespace Reading.Models
+namespace Prodigy.Models.Core
 {
     public abstract class TaskModelBase : SpeakModel
     {
-        private static readonly string[] _correct = new[] { "Правильно", "Совершенно верно", "Молодец!!! Правильно.", "Верно.", "Отлично.", "Умничка!!" };
-        private static readonly string[] _incorrect = new[] { "Неправильно", "Нужно ещё подумать.", "Ошибочка", "Ответ не подходит.", "Неверно." };
+        private static readonly string[] Correct = { "РџСЂР°РІРёР»СЊРЅРѕ", "РЎРѕРІРµСЂС€РµРЅРЅРѕ РІРµСЂРЅРѕ", "РњРѕР»РѕРґРµС†!!! РџСЂР°РІРёР»СЊРЅРѕ.", "Р’РµСЂРЅРѕ.", "РћС‚Р»РёС‡РЅРѕ.", "РЈРјРЅРёС‡РєР°!!" };
+        private static readonly string[] Incorrect = { "РќРµРїСЂР°РІРёР»СЊРЅРѕ", "РќСѓР¶РЅРѕ РµС‰С‘ РїРѕРґСѓРјР°С‚СЊ.", "РћС€РёР±РѕС‡РєР°", "РћС‚РІРµС‚ РЅРµ РїРѕРґС…РѕРґРёС‚.", "РќРµРІРµСЂРЅРѕ." };
+
         public ICommand NextCommand { get; private set; }
         protected abstract bool IsResultEmpty { get; }
 
@@ -33,19 +34,19 @@ namespace Reading.Models
             {
                 if (IsResultEmpty)
                 {
-                    Speak("Введите ответ, Пожалуйста.");
+                    Speak("Р’РІРµРґРёС‚Рµ РѕС‚РІРµС‚, РџРѕР¶Р°Р»СѓР№СЃС‚Р°.");
                     return;
                 }
 
                 if (ValidateResult())
                 {
-                    Speak(Randomizer.GetFromArray(_correct));
+                    Speak(Randomizer.GetFromArray(Correct));
                     BuildNewTask();
          
                 }
                 else
                 {
-                    Speak(Randomizer.GetFromArray(_incorrect));
+                    Speak(Randomizer.GetFromArray(Incorrect));
                 }
             }
 
