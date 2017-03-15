@@ -27,12 +27,7 @@ namespace Prodigy.Models.Core
         public int ItemsCount
         {
             get { return _itemsCount; }
-            set
-            {
-                if (_itemsCount == value) return;
-                _itemsCount = value;
-                OnPropertyChanged("ItemsCount");
-            }
+            set { Set(ref _itemsCount, value); }
         }
 
 
@@ -44,12 +39,7 @@ namespace Prodigy.Models.Core
         public T SelectedItem
         {
             get { return _selectedItem; }
-            set
-            {
-                if (Equals(_selectedItem, value)) return;
-                _selectedItem = value;
-                OnPropertyChanged("SelectedItem");
-            }
+            set { Set(ref _selectedItem, value); }
         }
 
 
@@ -61,12 +51,7 @@ namespace Prodigy.Models.Core
         public bool ItemsRepetable
         {
             get { return _itemsRepeatable; }
-            set
-            {
-                if (_itemsRepeatable == value) return;
-                _itemsRepeatable = value;
-                OnSettingChanged("ItemsRepetable");
-            }
+            set { Set(ref _itemsRepeatable, value); }
         }
 
         private PlaybackMode _playbackMode;
@@ -120,7 +105,7 @@ namespace Prodigy.Models.Core
         protected ListModel()
         {
             NextItemCommand = new RelayCommand(OnNextItemCommandExecute);
-            PlaybackModes = TranslationManager.Instance.Translate<PlaybackMode>().ToArray(); 
+            PlaybackModes = TranslationManager.Instance.Translate<PlaybackMode>().ToArray();
         }
 
 
@@ -155,7 +140,7 @@ namespace Prodigy.Models.Core
 
         protected void SetNewItem()
         {
-        start:
+            start:
 
             if (ItemList.Count == 0)
             {

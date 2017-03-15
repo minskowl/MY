@@ -5,10 +5,7 @@ namespace Prodigy.Models.Core
 {
     public abstract class SpeakModel : BaseModel
     {
-        protected ISpeaker Speaker
-        {
-            get { return _speaker ?? (_speaker = ReadingContext.Current.Speaker); }
-        }
+        protected ISpeaker Speaker => _speaker ?? (_speaker = ReadingContext.Current.Speaker);
 
         private ISpeaker _speaker;
 
@@ -18,8 +15,8 @@ namespace Prodigy.Models.Core
         /// <param name="text">The text.</param>
         protected void Speak(string text)
         {
-            if (!string.IsNullOrWhiteSpace(text) && Speaker != null)
-                Speaker.Speak(text);
+            if (!string.IsNullOrWhiteSpace(text))
+                Speaker?.Speak(text);
 
             Status = text;
         }

@@ -1,8 +1,7 @@
 ﻿using System.Linq;
 using System.Speech.Synthesis;
-using Reading.Core.Speach;
 
-namespace Reading.Speach
+namespace Reading.Core.Speach
 {
     public sealed class FrameworkSpeaker : ISpeaker
     {
@@ -29,7 +28,7 @@ namespace Reading.Speach
 
         public string Voice
         {
-            get { return _synthesizer.Voice == null ? null : _synthesizer.Voice.Name; }
+            get { return _synthesizer.Voice?.Name; }
             set
             {
                 if (Voice != value)

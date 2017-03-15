@@ -5,7 +5,6 @@ using System.Windows.Media;
 using Prodigy.Properties;
 using Reading.Core;
 using Reading.Core.Speach;
-using Reading.Speach;
 using Savchin.Development;
 using Savchin.Logging;
 using Savchin.Wpf.Controls.Core;
@@ -50,7 +49,7 @@ namespace Prodigy
             ReadingContext.Current.Logger = Logger;
             ReadingContext.Current.Speaker = Speaker;
 
-            TranslationManager.Instance.TranslationProvider = new ResxTranslationProvider("Reading.Properties.Resources", GetType().Assembly);
+            TranslationManager.Instance.TranslationProvider = new ResxTranslationProvider("Prodigy.Properties.Resources", GetType().Assembly);
             try
             {
                 ApplySettings();
