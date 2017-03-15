@@ -21,6 +21,7 @@ namespace Prodigy.Models.Core
     {
 
         #region Properties
+
         private int _itemsCount;
         /// <summary>
         /// Gets or sets the ItemsCount.
@@ -72,7 +73,6 @@ namespace Prodigy.Models.Core
         }
 
 
-
         private List<T> _itemList;
         private List<T> ItemList
         {
@@ -93,12 +93,12 @@ namespace Prodigy.Models.Core
         /// </summary>
         public NameValuePair[] PlaybackModes { get; private set; }
 
-
         /// <summary>
         /// Gets the next item command.
         /// </summary>
         public ICommand NextItemCommand { get; private set; }
         public ICommand ResetItemCommand { get; private set; }
+
         #endregion
 
         /// <summary>
@@ -135,19 +135,29 @@ namespace Prodigy.Models.Core
             Reset();
         }
 
+        #endregion
+
+        private void OnNextItemCommandExecute()
+        {
+            using (OverrideCursor.CreateWait())
+                Speak(GetSpeakText());
+
+            SetNewItem();
+
+        }
+
         /// <summary>
         /// Resets the item list.
         /// </summary>
-        protected void Reset()
+        private void Reset()
         {
             _itemList = null;
             SetIndex();
             SetNewItem();
         }
+        
 
-
-
-        protected void SetNewItem()
+        private void SetNewItem()
         {
             start:
 
@@ -172,16 +182,7 @@ namespace Prodigy.Models.Core
 
 
         }
-        #endregion
 
-        private void OnNextItemCommandExecute()
-        {
-            using (OverrideCursor.CreateWait())
-                Speak(GetSpeakText());
-
-            SetNewItem();
-
-        }
         private T GetNewItem()
         {
             var newValue = GetNextItem();
@@ -193,8 +194,7 @@ namespace Prodigy.Models.Core
         }
 
         private int _index;
-
-
+        
         private void SetIndex()
         {
             _index = PlaybackMode == PlaybackMode.Backward ? ItemList.Count - 1 : 0;

@@ -7,14 +7,10 @@ namespace Prodigy.Models.Reading
 {
     public class SentenceModel : ListModel<string>
     {
-        private SenetenceCollection _sentences=new SenetenceCollection();
+        private readonly SenetenceCollection _sentences = new SenetenceCollection();
 
-   
 
-        public override string Title
-        {
-            get { return "Предложения"; }
-        }
+        public override string Title => "Предложения";
 
         protected override List<string> BuildList()
         {
@@ -25,10 +21,7 @@ namespace Prodigy.Models.Reading
         {
             base.Initialize(settings);
 
-          
             ItemsRepetable = settings.WordRepeatable;
-
-            SetNewItem();
         }
     }
 }

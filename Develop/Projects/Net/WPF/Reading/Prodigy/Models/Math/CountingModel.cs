@@ -68,7 +68,6 @@ namespace Prodigy.Models.Math
             NumberTo = settings.CountingNumberTo;
             ItemsRepetable = settings.CountingRepeatable;
 
-            SetNewItem();
         }
 
         /// <summary>

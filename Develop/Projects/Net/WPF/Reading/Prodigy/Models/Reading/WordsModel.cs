@@ -136,8 +136,6 @@ namespace Prodigy.Models.Reading
             _wordSyllablesCountTo = settings.WordSyllablesCountTo;
             _syllablesView = settings.WordSyllablesView;
             ItemsRepetable = settings.WordRepeatable;
-
-            SetNewItem();
         }
 
         protected override void SaveSettings(Settings settings)
