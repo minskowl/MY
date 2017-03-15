@@ -70,6 +70,7 @@
     <Compile Include="Converters\InversNullToVisibilityConverter.cs" />
     <Compile Include="Models\FindPairModel.cs" />
     <Compile Include="Models\Math\DigitsModel.cs" />
+    <Compile Include="Models\Reading\FindLetterModel.cs" />
     <Compile Include="Models\Reading\LetterModel.cs" />
     <Compile Include="Models\Core\TaskModelBase.cs" />
     <Compile Include="Pages\LetterPage.xaml.cs">
@@ -322,92 +323,92 @@
     <Resource Include="Resources\card.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Letters\А\1.jpg" />
+    <Resource Include="Resources\Letters\А.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Letters\Б\1.jpg" />
+    <Resource Include="Resources\Letters\Б.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Letters\В\1.jpg" />
+    <Resource Include="Resources\Letters\В.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Letters\О\1.jpg" />
+    <Resource Include="Resources\Letters\О.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Letters\М\1.jpg" />
+    <Resource Include="Resources\Letters\М.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Letters\Г\1.jpg" />
+    <Resource Include="Resources\Letters\Г.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Letters\Е\1.jpg" />
+    <Resource Include="Resources\Letters\Е.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Letters\Ё\1.jpg" />
+    <Resource Include="Resources\Letters\Ё.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Letters\Ж\1.jpg" />
+    <Resource Include="Resources\Letters\Ж.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Letters\З\1.jpg" />
+    <Resource Include="Resources\Letters\З.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Letters\И\1.jpg" />
+    <Resource Include="Resources\Letters\И.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Letters\Д\1.jpg" />
+    <Resource Include="Resources\Letters\Д.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Letters\К\1.jpg" />
+    <Resource Include="Resources\Letters\К.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Letters\Л\1.jpg" />
+    <Resource Include="Resources\Letters\Л.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Letters\Н\1.jpg" />
+    <Resource Include="Resources\Letters\Н.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Letters\П\1.jpg" />
+    <Resource Include="Resources\Letters\П.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\Letters\Р\1.jpg" />
+    <Resource Include="Resources\Letters\Р.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Letters\С\1.jpg" />
+    <Resource Include="Resources\Letters\С.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Letters\Т\1.jpg" />
+    <Resource Include="Resources\Letters\Т.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Letters\У\1.jpg" />
+    <Resource Include="Resources\Letters\У.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Letters\Ф\1.jpg" />
+    <Resource Include="Resources\Letters\Ф.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Letters\Х\1.jpg" />
+    <Resource Include="Resources\Letters\Х.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Letters\Ц\1.jpg" />
+    <Resource Include="Resources\Letters\Ц.jpg" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Resource Include="Resources\Letters\Ч\1.jpg" />
+    <Resource Include="Resources\Letters\Ч.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Letters\Ш\1.jpg" />
+    <Resource Include="Resources\Letters\Ш.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Letters\Щ\1.jpg" />
+    <Resource Include="Resources\Letters\Щ.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Letters\Э\1.jpg" />
+    <Resource Include="Resources\Letters\Э.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Letters\Ю\1.jpg" />
+    <Resource Include="Resources\Letters\Ю.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Letters\Я\1.jpg" />
+    <Resource Include="Resources\Letters\Я.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

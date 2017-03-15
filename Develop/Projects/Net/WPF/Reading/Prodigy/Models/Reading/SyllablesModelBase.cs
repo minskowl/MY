@@ -32,8 +32,15 @@ namespace Prodigy.Models.Reading
         /// Gets the read command.
         /// </summary>
         public ICommand NextItemCommand { get; private set; }
+        
+       
 
-        protected void OnRelayCommandExecute()
+        protected SyllablesModelBase()
+        {
+            NextItemCommand = new DelegateCommand(OnNextItemCommand);
+        }
+
+        private void OnNextItemCommand()
         {
             using (OverrideCursor.CreateWait())
             {
@@ -43,10 +50,5 @@ namespace Prodigy.Models.Reading
         }
 
         protected abstract void SetSyllable();
-
-        protected SyllablesModelBase()
-        {
-            NextItemCommand = new RelayCommand(OnRelayCommandExecute);
-        }
     }
 }

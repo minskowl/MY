@@ -12,11 +12,7 @@ namespace Prodigy.Models.Reading
         public string TipImage
         {
             get { return _tipImage; }
-            set
-            {
-                _tipImage = value;
-                OnPropertyChanged(nameof(TipImage));
-            }
+            set { Set(ref _tipImage, value); }
         }
 
         public ICommand TipCommand { get; private set; }
@@ -60,12 +56,9 @@ namespace Prodigy.Models.Reading
 
         private readonly Primer _primer = new Primer();
         private string _tipImage;
-        private bool _isTipVisible;
 
-        public override string Title
-        {
-            get { return "Буквы"; }
-        }
+
+        public override string Title => "Буквы";
 
         public LetterModel()
         {
@@ -78,8 +71,8 @@ namespace Prodigy.Models.Reading
 
         private void OnTipCommand()
         {
-            TipImage = $"../Resources/Letters/{SelectedItem}/1.jpg";
-       
+            TipImage = $"../Resources/Letters/{SelectedItem}.jpg";
+
         }
 
         protected override void SetSyllable()
