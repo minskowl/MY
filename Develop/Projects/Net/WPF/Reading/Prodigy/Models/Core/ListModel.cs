@@ -155,7 +155,7 @@ namespace Prodigy.Models.Core
             SetIndex();
             SetNewItem();
         }
-        
+
 
         private void SetNewItem()
         {
@@ -194,7 +194,7 @@ namespace Prodigy.Models.Core
         }
 
         private int _index;
-        
+
         private void SetIndex()
         {
             _index = PlaybackMode == PlaybackMode.Backward ? ItemList.Count - 1 : 0;
@@ -208,13 +208,9 @@ namespace Prodigy.Models.Core
                     if (_index == ItemList.Count)
                     {
                         if (ItemsRepetable)
-                        {
                             _index = 0;
-                        }
                         else
-                        {
                             throw new InvalidOperationException("Список пуст");
-                        }
                     }
 
                     return ItemList[_index++];
@@ -222,19 +218,14 @@ namespace Prodigy.Models.Core
                     if (_index == 0)
                     {
                         if (ItemsRepetable)
-                        {
                             _index = ItemList.Count - 1;
-                        }
                         else
-                        {
                             throw new InvalidOperationException("Список пуст");
-                        }
                     }
 
                     return ItemList[_index--];
                 case PlaybackMode.Random:
-                    return ItemsRepetable ? Randomizer.GetFromArray<T>(ItemList) :
-                Randomizer.ExctractFromArray(ItemList);
+                    return ItemsRepetable ? Randomizer.GetFromArray<T>(ItemList) : Randomizer.ExctractFromArray(ItemList);
 
             }
             return default(T);
