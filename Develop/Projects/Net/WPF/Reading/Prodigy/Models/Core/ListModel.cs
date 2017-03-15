@@ -1,7 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Input;
 using GalaSoft.MvvmLight.Command;
+using Prodigy.Properties;
 using Savchin.Core;
 using Savchin.Wpf.Controls;
 using Savchin.Wpf.Controls.Localization;
@@ -64,9 +66,8 @@ namespace Prodigy.Models.Core
             get { return _playbackMode; }
             set
             {
-                if (_playbackMode == value) return;
-                _playbackMode = value;
-                OnPlaybackModeChanged();
+                if (SetSetting(ref _playbackMode, value))
+                    SetIndex();
             }
         }
 
@@ -97,6 +98,7 @@ namespace Prodigy.Models.Core
         /// Gets the next item command.
         /// </summary>
         public ICommand NextItemCommand { get; private set; }
+        public ICommand ResetItemCommand { get; private set; }
         #endregion
 
         /// <summary>
@@ -104,9 +106,13 @@ namespace Prodigy.Models.Core
         /// </summary>
         protected ListModel()
         {
-            NextItemCommand = new RelayCommand(OnNextItemCommandExecute);
+            NextItemCommand = new DelegateCommand(OnNextItemCommandExecute);
+            ResetItemCommand = new DelegateCommand(Reset);
             PlaybackModes = TranslationManager.Instance.Translate<PlaybackMode>().ToArray();
+
+            SetNewItem();
         }
+
 
 
         #region Protected
@@ -126,16 +132,19 @@ namespace Prodigy.Models.Core
         {
             base.OnSettingChanged(name);
 
-            ResetItemList();
+            Reset();
         }
 
         /// <summary>
         /// Resets the item list.
         /// </summary>
-        protected void ResetItemList()
+        protected void Reset()
         {
             _itemList = null;
+            SetIndex();
+            SetNewItem();
         }
+
 
 
         protected void SetNewItem()
@@ -146,15 +155,22 @@ namespace Prodigy.Models.Core
             {
                 if (WpfMessageBox.Show(string.Empty, "Список пуст. Заполнить список заново?", MessageButton.YesNo, MessageImage.Question, MessageResult.No) == MessageResult.No)
                     return;
-                ResetItemList();
+                Reset();
                 goto start;
+            }
+            try
+            {
+                SelectedItem = GetNewItem();
+                ItemsCount = ItemList.Count;
+                if (Equals(SelectedItem, default(T)))
+                    WpfMessageBox.Show(string.Empty, "Список пуст.");
+            }
+            catch (InvalidOperationException e)
+            {
+                WpfMessageBox.Show(string.Empty, e.Message);
             }
 
 
-            SelectedItem = GetNewItem();
-            ItemsCount = ItemList.Count;
-            if (Equals(SelectedItem, default(T)))
-                WpfMessageBox.Show(string.Empty, "Список пуст.");
         }
         #endregion
 
@@ -177,10 +193,11 @@ namespace Prodigy.Models.Core
         }
 
         private int _index;
-        private void OnPlaybackModeChanged()
+
+
+        private void SetIndex()
         {
-            _index = (PlaybackMode == PlaybackMode.Backward) ? ItemList.Count - 1 : 0;
-            OnSettingChanged("PlaybackMode");
+            _index = PlaybackMode == PlaybackMode.Backward ? ItemList.Count - 1 : 0;
         }
 
         private T GetNextItem()
@@ -196,7 +213,7 @@ namespace Prodigy.Models.Core
                         }
                         else
                         {
-                            return default(T);
+                            throw new InvalidOperationException("Список пуст");
                         }
                     }
 
@@ -210,7 +227,7 @@ namespace Prodigy.Models.Core
                         }
                         else
                         {
-                            return default(T);
+                            throw new InvalidOperationException("Список пуст");
                         }
                     }
 

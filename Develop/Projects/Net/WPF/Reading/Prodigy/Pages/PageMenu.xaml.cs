@@ -13,57 +13,29 @@ namespace Prodigy.Pages
     /// </summary>
     public partial class PageMenu : Page
     {
+
         public PageMenu()
         {
             InitializeComponent();
-
-            DataContext = new MenuModel();
-
-
+           
         }
 
-        private void button1_Click(object sender, RoutedEventArgs e)
+        private void PageMenu_OnLoaded(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new PageSyllables());
+            DataContext = new MenuModel {NavigationService = NavigationService };
         }
 
-        private void buttonWords_Click(object sender, RoutedEventArgs e)
-        {
-            NavigationService.Navigate(new PageWords());
-        }
 
-        private void button2_Click(object sender, RoutedEventArgs e)
-        {
-            NavigationService.Navigate(new PageSettings());
-        }
-        private void buttonWordList_Click(object sender, RoutedEventArgs e)
-        {
-            NavigationService.Navigate(new PageWordList());
-        }
 
-        private void buttonCounting_Click(object sender, RoutedEventArgs e)
+
+
+
+
+
+        private void Open<T>()
+            where T: new()
         {
-            NavigationService.Navigate(new PageCounting());
-        }
-        private void buttonSummation_Click(object sender, RoutedEventArgs e)
-        {
-            NavigationService.Navigate(new PageSummation());
-        }
-        private void buttonSummationTable_Click(object sender, RoutedEventArgs e)
-        {
-            NavigationService.Navigate(new PageTableSummation());
-        }
-        private void buttonCompare_Click(object sender, RoutedEventArgs e)
-        {
-            NavigationService.Navigate(new PageCompare());
-        }
-        private void buttonSentences_Click(object sender, RoutedEventArgs e)
-        {
-            NavigationService.Navigate(new PageSentence());
-        }
-        private void buttonFindPair_Click(object sender, RoutedEventArgs e)
-        {
-            NavigationService.Navigate(new PageFindPair());
+            NavigationService.Navigate(new T());
         }
 
         private static void GetSeq(string dictionary = "REVERSE.TXT")
@@ -128,15 +100,6 @@ namespace Prodigy.Pages
         }
 
 
-        private void button3_Click(object sender, RoutedEventArgs e)
-        {
-            NavigationService.Navigate(new PageComposition());
-        }
-
-
-        private void buttonLetters_Click(object sender, RoutedEventArgs e)
-        {
-            NavigationService.Navigate(new LetterPage());
-        }
+        
     }
 }

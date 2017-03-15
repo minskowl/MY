@@ -8,10 +8,7 @@ namespace Prodigy.Models.Math
     public class CountingModel : ListModel<int?>
     {
    
-        public override string Title
-        {
-            get { return "Счёт"; }
-        }
+        public override string Title => "Счёт";
 
 
         private int _numberFrom;

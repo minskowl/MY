@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using System.Windows.Navigation;
 using Savchin.Wpf.Imaging;
 
 namespace Prodigy
@@ -8,6 +9,8 @@ namespace Prodigy
     /// </summary>
     public partial class MainWindow
     {
+
+
         public MainWindow()
         {
             InitializeComponent();

@@ -178,4 +178,7 @@
   <data name="LettersTypes_Vowels" xml:space="preserve">
     <value>Гласные</value>
   </data>
+  <data name="OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
 </root>

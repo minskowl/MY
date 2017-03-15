@@ -344,5 +344,16 @@ namespace Prodigy.Properties {
                 this["VoiceEnabled"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public int[] Digits {
+            get {
+                return ((int[])(this["Digits"]));
+            }
+            set {
+                this["Digits"] = value;
+            }
+        }
     }
 }

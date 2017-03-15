@@ -1,4 +1,5 @@
-﻿using Prodigy.Properties;
+﻿using System.Runtime.CompilerServices;
+using Prodigy.Properties;
 using Reading.Core;
 using Savchin.Wpf.Controls.Localization;
 
@@ -7,7 +8,7 @@ namespace Prodigy.Models.Core
     public abstract class BaseModel : BaseObject
     {
         private readonly bool _ingoreChanges;
- 
+
         /// <summary>
         /// Gets the title.
         /// </summary>
@@ -46,7 +47,12 @@ namespace Prodigy.Models.Core
         /// <param name="settings">The settings.</param>
         protected virtual void Initialize(Settings settings)
         {
-            
+
+        }
+
+        protected bool SetSetting<T>(ref T field, T newValue, [CallerMemberName] string propertyName = null)
+        {
+            return SetProperty(ref field, newValue, () => OnSettingChanged(propertyName), propertyName);
         }
 
         /// <summary>

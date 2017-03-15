@@ -1,0 +1,68 @@
+﻿<Page x:Class="Prodigy.Pages.PageMenu"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:pages="clr-namespace:Prodigy.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="500" d:DesignWidth="300"
+	Title="PageMenu" Loaded="PageMenu_OnLoaded">
+
+    <Grid>
+        <FrameworkElement.Resources>
+            <Style  TargetType="Button" BasedOn="{StaticResource Menu}">
+                <Setter Property="Command" Value="{Binding NavigateCommand}"/>
+            </Style>
+        </FrameworkElement.Resources>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        
+        <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding Title}" Style="{DynamicResource Title}"/>
+
+        <Image Grid.Row="1" Grid.Column="1" Grid.RowSpan="2" Source="{Binding Logo}"/>
+        
+        <TabControl  Grid.Row="1" Background="#FFFFFFAD" >
+
+            <TabItem Header="Чтение" Style="{DynamicResource MenuTab}">
+                <StackPanel>
+                    <Button Content="Буквы"  CommandParameter="{x:Type pages:LetterPage}"  />
+                    <Button Content="Слоги"  CommandParameter="{x:Type pages:PageSyllables}"     />
+                    <Button Content="Наборы" CommandParameter="{x:Type pages:PageComposition}"    />
+                    <Button Content="Слова" CommandParameter="{x:Type pages:PageWords}"   />
+                    <Button Content="Предложения" CommandParameter="{x:Type pages:PageSentence}"/>
+
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="Арифметика" Style="{DynamicResource MenuTab}">
+                <StackPanel>
+                    <Button Content="Цифры"  CommandParameter="{x:Type pages:PageDigits}"/>
+                    <Button Content="Счёт"  CommandParameter="{x:Type pages:PageCounting}"/>
+                    <Button Content="Сложение" CommandParameter="{x:Type pages:PageSummation}"  />
+                    <Button Content="Таблица Сложения" CommandParameter="{x:Type pages:PageTableSummation}" />
+                    <Button Content="Сравнение"  CommandParameter="{x:Type pages:PageCompare}"/>
+                </StackPanel>
+            </TabItem>
+
+            <TabItem Header="Игры" Style="{DynamicResource MenuTab}">
+                <StackPanel>
+                    <Button Content="Найди пару"  CommandParameter="{x:Type pages:PageFindPair}" />
+                </StackPanel>
+            </TabItem>
+        </TabControl>
+
+        <StackPanel  Grid.Row="2" VerticalAlignment="Bottom">
+            <Button Content="Настройки" CommandParameter="{x:Type pages:PageSettings}" />
+            <Button Content="Список слов" CommandParameter="{x:Type pages:PageWordList}"    />
+            <Button  Content="Test" Visibility="Collapsed"   Style="{StaticResource Menu}" Click="buttonTest_Click" />
+        </StackPanel>
+
+    </Grid>
+
+</Page>

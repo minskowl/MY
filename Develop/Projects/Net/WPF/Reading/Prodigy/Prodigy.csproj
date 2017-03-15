@@ -66,12 +66,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controls\MemoryField.cs" />
+    <Compile Include="Converters\IntArrayToStringConverter.cs" />
     <Compile Include="Converters\InversNullToVisibilityConverter.cs" />
     <Compile Include="Models\FindPairModel.cs" />
+    <Compile Include="Models\Math\DigitsModel.cs" />
     <Compile Include="Models\Reading\LetterModel.cs" />
     <Compile Include="Models\Core\TaskModelBase.cs" />
     <Compile Include="Pages\LetterPage.xaml.cs">
       <DependentUpon>LetterPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageDigits.xaml.cs">
+      <DependentUpon>PageDigits.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\PageFindPair.xaml.cs">
       <DependentUpon>PageFindPair.xaml</DependentUpon>
@@ -81,6 +86,7 @@
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Settings.cs" />
     <Page Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -142,6 +148,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Pages\LetterPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PageDigits.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

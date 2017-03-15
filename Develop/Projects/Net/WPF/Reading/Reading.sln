@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prodigy", "UI\Prodigy.csproj", "{7AC9A695-9EC3-4240-B830-1A293D470335}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prodigy", "Prodigy\Prodigy.csproj", "{7AC9A695-9EC3-4240-B830-1A293D470335}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Savchin.Tools", "..\..\Libs\Tools\Savchin.Tools.csproj", "{2F1807E4-39A2-4F38-ADFC-6310A8443D90}"
 EndProject
