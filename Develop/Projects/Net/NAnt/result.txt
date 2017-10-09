@@ -1,0 +1,98 @@
+NAnt 0.91 (Build 0.91.4312.0; release; 22.10.2011)
+Copyright (C) 2001-2011 Gerry Shaw
+http://nant.sourceforge.net
+
+Buildfile: file:///D:/MY/Develop/Projects/Net/NAnt/default.build
+Target framework: Microsoft .NET Framework 4.0
+Target(s) specified: BuildRelease 
+
+
+BuildRelease:
+
+     [echo] Building default target 
+
+buildProject:
+
+     [echo] build project: D:\MY\Develop\Projects\Net\NAnt\NAnt.sln
+  [msbuild] Building the projects in this solution one at a time. To enable parallel build, please add the "/m" switch.
+  [msbuild] Build started 09.10.2017 10:28:19.
+  [msbuild] Project "D:\MY\Develop\Projects\Net\NAnt\NAnt.sln" on node 1 (Rebuild target(s)).
+  [msbuild] ValidateSolutionConfiguration:
+  [msbuild]   Building solution configuration "Release|Any CPU".
+  [msbuild] The target "_ConvertPdbFiles" listed in a BeforeTargets attribute at "C:\Program Files (x86)\MSBuild\4.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,37)" does not exist in the project, and will be ignored.
+  [msbuild] The target "_CollectPdbFiles" listed in an AfterTargets attribute at "C:\Program Files (x86)\MSBuild\4.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,70)" does not exist in the project, and will be ignored.
+  [msbuild] The target "_CollectMdbFiles" listed in a BeforeTargets attribute at "C:\Program Files (x86)\MSBuild\4.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,38)" does not exist in the project, and will be ignored.
+  [msbuild] The target "_CopyMdbFiles" listed in an AfterTargets attribute at "C:\Program Files (x86)\MSBuild\4.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,71)" does not exist in the project, and will be ignored.
+  [msbuild] Project "D:\MY\Develop\Projects\Net\NAnt\NAnt.sln" (1) is building "D:\MY\Develop\Projects\Net\NAnt\NUnitTests\NUnitTests.csproj" (2) on node 1 (Rebuild target(s)).
+  [msbuild] CoreClean:
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\NAnt\NUnitTests\bin\Release\NUnitTests.dll".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\NAnt\NUnitTests\bin\Release\NUnitTests.pdb".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\NAnt\NUnitTests\bin\Release\NAnt.Core.dll".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\NAnt\NUnitTests\bin\Release\NAnt.Savchin.Tasks.dll".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\NAnt\NUnitTests\bin\Release\nunit.framework.dll".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\NAnt\NUnitTests\bin\Release\NAnt.Savchin.Tasks.pdb".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\NAnt\NUnitTests\obj\Release\NUnitTests.csprojResolveAssemblyReference.cache".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\NAnt\NUnitTests\obj\Release\NUnitTests.dll".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\NAnt\NUnitTests\obj\Release\NUnitTests.pdb".
+  [msbuild] The target "_ConvertPdbFiles" listed in a BeforeTargets attribute at "C:\Program Files (x86)\MSBuild\4.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,37)" does not exist in the project, and will be ignored.
+  [msbuild] The target "_CollectPdbFiles" listed in an AfterTargets attribute at "C:\Program Files (x86)\MSBuild\4.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,70)" does not exist in the project, and will be ignored.
+  [msbuild] The target "_CollectMdbFiles" listed in a BeforeTargets attribute at "C:\Program Files (x86)\MSBuild\4.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,38)" does not exist in the project, and will be ignored.
+  [msbuild] The target "_CopyMdbFiles" listed in an AfterTargets attribute at "C:\Program Files (x86)\MSBuild\4.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,71)" does not exist in the project, and will be ignored.
+  [msbuild] Project "D:\MY\Develop\Projects\Net\NAnt\NUnitTests\NUnitTests.csproj" (2) is building "D:\MY\Develop\Projects\Net\NAnt\Tasks\Tasks.csproj" (3) on node 1 (Clean target(s)).
+  [msbuild] CoreClean:
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\NAnt\Tasks\bin\Release\NAnt.Savchin.Tasks.dll".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\NAnt\Tasks\bin\Release\NAnt.Savchin.Tasks.pdb".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\NAnt\Tasks\bin\Release\NAnt.Core.dll".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\NAnt\Tasks\obj\Release\NAnt.Savchin.Tasks.dll".
+  [msbuild]   Deleting file "D:\MY\Develop\Projects\Net\NAnt\Tasks\obj\Release\NAnt.Savchin.Tasks.pdb".
+  [msbuild] Done Building Project "D:\MY\Develop\Projects\Net\NAnt\Tasks\Tasks.csproj" (Clean target(s)).
+  [msbuild] Project "D:\MY\Develop\Projects\Net\NAnt\NUnitTests\NUnitTests.csproj" (2) is building "D:\MY\Develop\Projects\Net\NAnt\Tasks\Tasks.csproj" (3:2) on node 1 (default targets).
+  [msbuild] CoreCompile:
+  [msbuild]   C:\Windows\Microsoft.NET\Framework\v4.0.30319\Csc.exe /noconfig /nowarn:1701,1702 /nostdlib+ /errorreport:prompt /warn:4 /define:TRACE /highentropyva- /reference:C:\Windows\Microsoft.NET\Framework\v2.0.50727\mscorlib.dll /reference:D:\MY\Develop\Projects\Net\ThrPartLibs\NAnt_0.9.1\NAnt.Core.dll /reference:C:\Windows\Microsoft.NET\Framework\v2.0.50727\System.dll /reference:C:\Windows\Microsoft.NET\Framework\v2.0.50727\System.Xml.dll /debug:pdbonly /optimize+ /out:obj\Release\NAnt.Savchin.Tasks.dll /target:library /utf8output Tasks\Core\Impersonator.cs Tasks\EchoPropertiesTask.cs Tasks\FTP\FTPTask.cs Tasks\FTP\FtpClient.cs Tasks\FTP\GetFile.cs Tasks\FTP\GetFiles.cs Properties\AssemblyInfo.cs Tasks\Http\HttpPropertyTask.cs Tasks\ImpersonateTask.cs Tasks\IO\FilePropertyTask.cs Tasks\IO\PermissionSetTask.cs Tasks\IO\ReplaceInFileTask.cs Tasks\Core\ProcessRunner.cs Tasks\StartProcessTask.cs Tasks\XML\XmlStrip.cs
+  [msbuild] Tasks\StartProcessTask.cs(172,30): warning CS0672: Member 'NAnt.Savchin.Tasks.StartProcessTask.UseRuntimeEngine' overrides obsolete member 'NAnt.Core.Tasks.ExternalProgramBase.UseRuntimeEngine'. Add the Obsolete attribute to 'NAnt.Savchin.Tasks.StartProcessTask.UseRuntimeEngine'. [D:\MY\Develop\Projects\Net\NAnt\Tasks\Tasks.csproj]
+  [msbuild] Tasks\StartProcessTask.cs(217,33): warning CS0672: Member 'NAnt.Savchin.Tasks.StartProcessTask.InitializeTask(System.Xml.XmlNode)' overrides obsolete member 'NAnt.Core.Task.InitializeTask(System.Xml.XmlNode)'. Add the Obsolete attribute to 'NAnt.Savchin.Tasks.StartProcessTask.InitializeTask(System.Xml.XmlNode)'. [D:\MY\Develop\Projects\Net\NAnt\Tasks\Tasks.csproj]
+  [msbuild] CSC : warning CS1607: Assembly generation -- The version '1.0.*' specified for the 'file version' is not in the normal 'major.minor.build.revision' format [D:\MY\Develop\Projects\Net\NAnt\Tasks\Tasks.csproj]
+  [msbuild] Tasks\StartProcessTask.cs(234,13): warning CS0618: 'NAnt.Core.Task.InitializeTask(System.Xml.XmlNode)' is obsolete: 'Deprecated. Use Initialize() instead' [D:\MY\Develop\Projects\Net\NAnt\Tasks\Tasks.csproj]
+  [msbuild] Tasks\StartProcessTask.cs(345,39): warning CS0618: 'NAnt.Core.Types.EnvironmentSet.Options' is obsolete: 'Use <variable> element instead.' [D:\MY\Develop\Projects\Net\NAnt\Tasks\Tasks.csproj]
+  [msbuild] _CopyFilesMarkedCopyLocal:
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\ThrPartLibs\NAnt_0.9.1\NAnt.Core.dll" to "bin\Release\NAnt.Core.dll".
+  [msbuild] CopyFilesToOutputDirectory:
+  [msbuild]   Copying file from "obj\Release\NAnt.Savchin.Tasks.dll" to "bin\Release\NAnt.Savchin.Tasks.dll".
+  [msbuild]   Tasks -> D:\MY\Develop\Projects\Net\NAnt\Tasks\bin\Release\NAnt.Savchin.Tasks.dll
+  [msbuild]   Copying file from "obj\Release\NAnt.Savchin.Tasks.pdb" to "bin\Release\NAnt.Savchin.Tasks.pdb".
+  [msbuild] Done Building Project "D:\MY\Develop\Projects\Net\NAnt\Tasks\Tasks.csproj" (default targets).
+  [msbuild] CoreCompile:
+  [msbuild]   C:\Windows\Microsoft.NET\Framework\v4.0.30319\Csc.exe /noconfig /nowarn:1701,1702 /nostdlib+ /errorreport:prompt /warn:4 /define:TRACE /highentropyva- /reference:C:\Windows\Microsoft.NET\Framework\v2.0.50727\mscorlib.dll /reference:D:\MY\Develop\Projects\Net\ThrPartLibs\NAnt_0.8.5\NAnt.Core.dll /reference:D:\MY\Develop\Projects\Net\NAnt\Tasks\bin\Release\NAnt.Savchin.Tasks.dll /reference:D:\MY\Develop\Projects\Net\ThrPartLibs\nunit.framework.dll /reference:C:\Windows\Microsoft.NET\Framework\v2.0.50727\System.Data.dll /reference:C:\Windows\Microsoft.NET\Framework\v2.0.50727\System.dll /reference:C:\Windows\Microsoft.NET\Framework\v2.0.50727\System.Xml.dll /debug:pdbonly /optimize+ /out:obj\Release\NUnitTests.dll /target:library /utf8output Class1.cs PermissionSetTaskTests.cs Properties\AssemblyInfo.cs
+  [msbuild] _CopyFilesMarkedCopyLocal:
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\ThrPartLibs\NAnt_0.8.5\NAnt.Core.dll" to "bin\Release\NAnt.Core.dll".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\NAnt\Tasks\bin\Release\NAnt.Savchin.Tasks.dll" to "bin\Release\NAnt.Savchin.Tasks.dll".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\ThrPartLibs\nunit.framework.dll" to "bin\Release\nunit.framework.dll".
+  [msbuild]   Copying file from "D:\MY\Develop\Projects\Net\NAnt\Tasks\bin\Release\NAnt.Savchin.Tasks.pdb" to "bin\Release\NAnt.Savchin.Tasks.pdb".
+  [msbuild] CopyFilesToOutputDirectory:
+  [msbuild]   Copying file from "obj\Release\NUnitTests.dll" to "bin\Release\NUnitTests.dll".
+  [msbuild]   NUnitTests -> D:\MY\Develop\Projects\Net\NAnt\NUnitTests\bin\Release\NUnitTests.dll
+  [msbuild]   Copying file from "obj\Release\NUnitTests.pdb" to "bin\Release\NUnitTests.pdb".
+  [msbuild] Done Building Project "D:\MY\Develop\Projects\Net\NAnt\NUnitTests\NUnitTests.csproj" (Rebuild target(s)).
+  [msbuild] Done Building Project "D:\MY\Develop\Projects\Net\NAnt\NAnt.sln" (Rebuild target(s)).
+  [msbuild] 
+  [msbuild] Build succeeded.
+  [msbuild] 
+  [msbuild] "D:\MY\Develop\Projects\Net\NAnt\NAnt.sln" (Rebuild target) (1) ->
+  [msbuild] "D:\MY\Develop\Projects\Net\NAnt\NUnitTests\NUnitTests.csproj" (Rebuild target) (2) ->
+  [msbuild] "D:\MY\Develop\Projects\Net\NAnt\Tasks\Tasks.csproj" (default target) (3:2) ->
+  [msbuild] (CoreCompile target) -> 
+  [msbuild]   Tasks\StartProcessTask.cs(172,30): warning CS0672: Member 'NAnt.Savchin.Tasks.StartProcessTask.UseRuntimeEngine' overrides obsolete member 'NAnt.Core.Tasks.ExternalProgramBase.UseRuntimeEngine'. Add the Obsolete attribute to 'NAnt.Savchin.Tasks.StartProcessTask.UseRuntimeEngine'. [D:\MY\Develop\Projects\Net\NAnt\Tasks\Tasks.csproj]
+  [msbuild]   Tasks\StartProcessTask.cs(217,33): warning CS0672: Member 'NAnt.Savchin.Tasks.StartProcessTask.InitializeTask(System.Xml.XmlNode)' overrides obsolete member 'NAnt.Core.Task.InitializeTask(System.Xml.XmlNode)'. Add the Obsolete attribute to 'NAnt.Savchin.Tasks.StartProcessTask.InitializeTask(System.Xml.XmlNode)'. [D:\MY\Develop\Projects\Net\NAnt\Tasks\Tasks.csproj]
+  [msbuild]   CSC : warning CS1607: Assembly generation -- The version '1.0.*' specified for the 'file version' is not in the normal 'major.minor.build.revision' format [D:\MY\Develop\Projects\Net\NAnt\Tasks\Tasks.csproj]
+  [msbuild]   Tasks\StartProcessTask.cs(234,13): warning CS0618: 'NAnt.Core.Task.InitializeTask(System.Xml.XmlNode)' is obsolete: 'Deprecated. Use Initialize() instead' [D:\MY\Develop\Projects\Net\NAnt\Tasks\Tasks.csproj]
+  [msbuild]   Tasks\StartProcessTask.cs(345,39): warning CS0618: 'NAnt.Core.Types.EnvironmentSet.Options' is obsolete: 'Use <variable> element instead.' [D:\MY\Develop\Projects\Net\NAnt\Tasks\Tasks.csproj]
+  [msbuild] 
+  [msbuild]     5 Warning(s)
+  [msbuild]     0 Error(s)
+  [msbuild] 
+  [msbuild] Time Elapsed 00:00:00.81
+
+BUILD SUCCEEDED
+
+Total time: 1.1 seconds.
+

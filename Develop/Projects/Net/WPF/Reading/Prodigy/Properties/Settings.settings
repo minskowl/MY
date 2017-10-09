@@ -86,5 +86,8 @@
     <Setting Name="Digits" Type="System.Int32[]" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
+    <Setting Name="FindLetterSettings" Type="Reading.Core.Settings.FindLetterSettings" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
   </Settings>
 </SettingsFile>

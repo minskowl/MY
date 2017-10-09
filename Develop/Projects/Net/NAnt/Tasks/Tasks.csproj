@@ -61,6 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Tasks\Core\Impersonator.cs" />
+    <Compile Include="Tasks\EchoPropertiesTask.cs" />
     <Compile Include="Tasks\FTP\FTPTask.cs" />
     <Compile Include="Tasks\FTP\FtpClient.cs" />
     <Compile Include="Tasks\FTP\GetFile.cs" />

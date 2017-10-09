@@ -4,6 +4,8 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:pages="clr-namespace:Prodigy.Pages"
+      xmlns:reading="clr-namespace:Prodigy.Pages.Reading"
+      xmlns:math="clr-namespace:Prodigy.Pages.Math"
       mc:Ignorable="d" 
       d:DesignHeight="500" d:DesignWidth="300"
 	Title="PageMenu" Loaded="PageMenu_OnLoaded">
@@ -32,21 +34,22 @@
 
             <TabItem Header="Чтение" Style="{DynamicResource MenuTab}">
                 <StackPanel>
-                    <Button Content="Буквы"  CommandParameter="{x:Type pages:LetterPage}"  />
-                    <Button Content="Слоги"  CommandParameter="{x:Type pages:PageSyllables}"     />
+                    <Button Content="Буквы"  CommandParameter="{x:Type reading:LetterPage}"  />
+                    <Button Content="Найди букву"  CommandParameter="{x:Type reading:PageFindLetter}"  />                    
+                    <Button Content="Слоги"  CommandParameter="{x:Type reading:PageSyllables}"     />
                     <Button Content="Наборы" CommandParameter="{x:Type pages:PageComposition}"    />
-                    <Button Content="Слова" CommandParameter="{x:Type pages:PageWords}"   />
+                    <Button Content="Слова" CommandParameter="{x:Type reading:PageWords}"   />
                     <Button Content="Предложения" CommandParameter="{x:Type pages:PageSentence}"/>
 
                 </StackPanel>
             </TabItem>
             <TabItem Header="Арифметика" Style="{DynamicResource MenuTab}">
                 <StackPanel>
-                    <Button Content="Цифры"  CommandParameter="{x:Type pages:PageDigits}"/>
-                    <Button Content="Счёт"  CommandParameter="{x:Type pages:PageCounting}"/>
-                    <Button Content="Сложение" CommandParameter="{x:Type pages:PageSummation}"  />
+                    <Button Content="Цифры"  CommandParameter="{x:Type math:PageDigits}"/>
+                    <Button Content="Счёт"  CommandParameter="{x:Type math:PageCounting}"/>
+                    <Button Content="Сложение" CommandParameter="{x:Type math:PageSummation}"  />
                     <Button Content="Таблица Сложения" CommandParameter="{x:Type pages:PageTableSummation}" />
-                    <Button Content="Сравнение"  CommandParameter="{x:Type pages:PageCompare}"/>
+                    <Button Content="Сравнение"  CommandParameter="{x:Type math:PageCompare}"/>
                 </StackPanel>
             </TabItem>
 

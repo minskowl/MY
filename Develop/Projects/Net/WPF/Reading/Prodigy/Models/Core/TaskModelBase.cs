@@ -1,5 +1,4 @@
 ﻿using System.Windows.Input;
-using GalaSoft.MvvmLight.Command;
 using Savchin.Core;
 using Savchin.Wpf.Input;
 
@@ -15,7 +14,7 @@ namespace Prodigy.Models.Core
 
         protected TaskModelBase()
         {
-            NextCommand = new RelayCommand(OnNextCommandExecute);
+            NextCommand = new DelegateCommand(OnNextCommandExecute);
         }
 
         /// <summary>

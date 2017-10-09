@@ -1,8 +1,8 @@
 ﻿using System.IO;
 using System.Windows.Input;
-using GalaSoft.MvvmLight.Command;
 using Prodigy.Models.Core;
 using Reading.Core;
+using Savchin.Wpf.Input;
 
 namespace Prodigy.Models.Reading
 {
@@ -38,7 +38,7 @@ namespace Prodigy.Models.Reading
 
         public WordListModel()
         {
-            SaveCommand = new RelayCommand(OnSaveCommandExecute);
+            SaveCommand = new DelegateCommand(OnSaveCommandExecute);
             Text = File.ReadAllText(ResourceProvider.WordFile);
         }
 

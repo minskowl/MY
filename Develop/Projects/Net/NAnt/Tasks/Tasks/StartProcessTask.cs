@@ -72,7 +72,6 @@ namespace NAnt.Savchin.Tasks
         private FileInfo _output;
         private EnvironmentSet _environmentSet = new EnvironmentSet();
         private bool _useRuntimeEngine;
-        private string _resultProperty;
 
         #endregion Private Instance Fields
 
@@ -152,11 +151,7 @@ namespace NAnt.Savchin.Tasks
         /// </summary>
         [TaskAttribute("resultproperty")]
         [StringValidator(AllowEmpty = false)]
-        public string ResultProperty
-        {
-            get { return _resultProperty; }
-            set { _resultProperty = value; }
-        }
+        public string ResultProperty { get; set; }
 
 
         /// <summary>
@@ -209,13 +204,14 @@ namespace NAnt.Savchin.Tasks
             }
         }
 
+
         /// <summary>
-        /// Performs additional checks after the task has been initialized.
+        /// Initializes this instance.
         /// </summary>
-        /// <param name="taskNode">The <see cref="XmlNode" /> used to initialize the task.</param>
-        /// <exception cref="BuildException"><see cref="FileName" /> does not hold a valid file name.</exception>
-        protected override void InitializeTask(XmlNode taskNode)
+        /// <exception cref="BuildException"></exception>
+        protected override void Initialize()
         {
+
             try
             {
                 // just check if program file to execute is a valid file name
@@ -227,11 +223,11 @@ namespace NAnt.Savchin.Tasks
             catch (Exception ex)
             {
                 throw new BuildException(string.Format(CultureInfo.InvariantCulture,
-                                                       ResourceUtils.GetString("NA1117"),
-                                                       FileName, Name), Location, ex);
+                    ResourceUtils.GetString("NA1117"),
+                    FileName, Name), Location, ex);
             }
 
-            base.InitializeTask(taskNode);
+            base.Initialize();
         }
 
         /// <summary>
@@ -342,11 +338,11 @@ namespace NAnt.Savchin.Tasks
             info.WorkingDirectory = WorkingDirectory.FullName;
 
             // set environment variables
-            foreach (Option option in EnvironmentSet.Options)
+            foreach (var variable in EnvironmentSet.EnvironmentVariables)
             {
-                if (option.IfDefined && !option.UnlessDefined)
+                if (variable.IfDefined && !variable.UnlessDefined)
                 {
-                    info.EnvironmentVariables[option.OptionName] = option.Value ?? string.Empty;
+                    info.EnvironmentVariables[variable.VariableName] = variable.Value ?? string.Empty;
                 }
             }
 

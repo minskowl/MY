@@ -1,4 +1,4 @@
-﻿<Page x:Class="Prodigy.Pages.PageCompare"
+﻿<Page x:Class="Prodigy.Pages.Math.PageCompare"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 

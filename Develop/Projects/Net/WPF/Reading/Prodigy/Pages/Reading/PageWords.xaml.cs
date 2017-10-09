@@ -1,7 +1,6 @@
-﻿using Prodigy.Models;
-using Prodigy.Models.Reading;
+﻿using Prodigy.Models.Reading;
 
-namespace Prodigy.Pages
+namespace Prodigy.Pages.Reading
 {
     /// <summary>
     /// Interaction logic for PageWords.xaml

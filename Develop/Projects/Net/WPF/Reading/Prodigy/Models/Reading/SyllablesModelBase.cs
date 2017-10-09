@@ -1,5 +1,4 @@
 using System.Windows.Input;
-using GalaSoft.MvvmLight.Command;
 using Prodigy.Models.Core;
 using Savchin.Wpf.Input;
 

@@ -45,9 +45,6 @@
     <StartupObject>Prodigy.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="GalaSoft.MvvmLight.WPF4">
-      <HintPath>..\..\..\ThrPartLibs\GalaSpoft\GalaSoft.MvvmLight.WPF4.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Data" />
@@ -73,14 +70,18 @@
     <Compile Include="Models\Reading\FindLetterModel.cs" />
     <Compile Include="Models\Reading\LetterModel.cs" />
     <Compile Include="Models\Core\TaskModelBase.cs" />
-    <Compile Include="Pages\LetterPage.xaml.cs">
+    <Compile Include="Models\Reading\LetterModelBase.cs" />
+    <Compile Include="Pages\Reading\LetterPage.xaml.cs">
       <DependentUpon>LetterPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\PageDigits.xaml.cs">
+    <Compile Include="Pages\Math\PageDigits.xaml.cs">
       <DependentUpon>PageDigits.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\PageFindPair.xaml.cs">
       <DependentUpon>PageFindPair.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Reading\PageFindLetter.xaml.cs">
+      <DependentUpon>PageFindLetter.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <DependentUpon>Settings.settings</DependentUpon>
@@ -113,10 +114,10 @@
     <Compile Include="Models\Core\TaskModel.cs" />
     <Compile Include="Models\Reading\WordListModel.cs" />
     <Compile Include="Models\Reading\WordsModel.cs" />
-    <Compile Include="Pages\PageTableSummation.xaml.cs">
+    <Compile Include="Pages\Math\PageTableSummation.xaml.cs">
       <DependentUpon>PageTableSummation.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\PageComposition.xaml.cs">
+    <Compile Include="Pages\Reading\PageComposition.xaml.cs">
       <DependentUpon>PageComposition.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\PageSentence.xaml.cs">
@@ -148,11 +149,11 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Pages\LetterPage.xaml">
+    <Page Include="Pages\Reading\LetterPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\PageDigits.xaml">
+    <Page Include="Pages\Math\PageDigits.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -160,19 +161,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Pages\PageTableSummation.xaml">
+    <Page Include="Pages\Math\PageTableSummation.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Pages\PageComposition.xaml">
+    <Page Include="Pages\Reading\PageComposition.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Pages\PageCompare.xaml">
+    <Page Include="Pages\Math\PageCompare.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\PageCounting.xaml">
+    <Page Include="Pages\Math\PageCounting.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -188,11 +189,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\PageSummation.xaml">
+    <Page Include="Pages\Math\PageSummation.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\PageSyllables.xaml">
+    <Page Include="Pages\Reading\PageFindLetter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Reading\PageSyllables.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -204,16 +209,16 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\PageWords.xaml">
+    <Page Include="Pages\Reading\PageWords.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Pages\PageCompare.xaml.cs">
+    <Compile Include="Pages\Math\PageCompare.xaml.cs">
       <DependentUpon>PageCompare.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\PageCounting.xaml.cs">
+    <Compile Include="Pages\Math\PageCounting.xaml.cs">
       <DependentUpon>PageCounting.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\PageMenu.xaml.cs">
@@ -222,10 +227,10 @@
     <Compile Include="Pages\PageSettings.xaml.cs">
       <DependentUpon>PageSettings.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\PageSummation.xaml.cs">
+    <Compile Include="Pages\Math\PageSummation.xaml.cs">
       <DependentUpon>PageSummation.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\PageSyllables.xaml.cs">
+    <Compile Include="Pages\Reading\PageSyllables.xaml.cs">
       <DependentUpon>PageSyllables.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\PageTest.xaml.cs">
@@ -234,7 +239,7 @@
     <Compile Include="Pages\PageWordList.xaml.cs">
       <DependentUpon>PageWordList.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\PageWords.xaml.cs">
+    <Compile Include="Pages\Reading\PageWords.xaml.cs">
       <DependentUpon>PageWords.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">

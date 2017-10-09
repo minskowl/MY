@@ -2,7 +2,7 @@
 using Prodigy.Models.Math;
 using Savchin.Wpf.Core;
 
-namespace Prodigy.Pages
+namespace Prodigy.Pages.Math
 {
     /// <summary>
     /// Interaction logic for PageDigits.xaml

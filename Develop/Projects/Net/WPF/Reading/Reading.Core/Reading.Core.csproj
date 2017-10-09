@@ -34,9 +34,6 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="GalaSoft.MvvmLight.WPF4">
-      <HintPath>..\..\..\ThrPartLibs\GalaSpoft\GalaSoft.MvvmLight.WPF4.dll</HintPath>
-    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="Svg">
@@ -47,10 +44,7 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Speech" />
     <Reference Include="System.Xaml" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="WindowsBase" />
   </ItemGroup>
@@ -61,6 +55,7 @@
     <Compile Include="ReadingContext.cs" />
     <Compile Include="ResourceProvider.cs" />
     <Compile Include="SenetenceCollection.cs" />
+    <Compile Include="Settings\FindLetterSettings.cs" />
     <Compile Include="Settings\FindPairSettings.cs" />
     <Compile Include="Settings\TableSummationModelSettings.cs" />
     <Compile Include="ShapeCollections.cs" />

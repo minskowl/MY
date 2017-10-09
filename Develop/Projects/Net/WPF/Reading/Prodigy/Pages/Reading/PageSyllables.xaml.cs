@@ -1,6 +1,7 @@
 ﻿using Prodigy.Models.Reading;
+using Savchin.Wpf.Core;
 
-namespace Prodigy.Pages
+namespace Prodigy.Pages.Reading
 {
     /// <summary>
     /// Interaction logic for PageSyllables.xaml
@@ -10,8 +11,8 @@ namespace Prodigy.Pages
         public PageSyllables()
         {
             InitializeComponent();
-
-            DataContext = new SyllablesModel();
+            if (!this.IsDesignMode())
+                DataContext = new SyllablesModel();
         }
     }
 }

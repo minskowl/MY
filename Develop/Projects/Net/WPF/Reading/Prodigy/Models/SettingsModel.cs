@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Windows.Input;
 using System.Windows.Media;
-using GalaSoft.MvvmLight.Command;
 using Prodigy.Models.Core;
 using Prodigy.Properties;
+using Savchin.Wpf.Input;
 
 namespace Prodigy.Models
 {
@@ -65,8 +65,8 @@ namespace Prodigy.Models
             Voices =Speaker.GetVoices() ;
             FontFamilies = Fonts.SystemFontFamilies;
 
-            SaveCommand = new RelayCommand(OnSaveCommandExecute);
-            TestSoundCommand = new RelayCommand(OnTestSoundCommandExecute);
+            SaveCommand = new DelegateCommand(OnSaveCommandExecute);
+            TestSoundCommand = new DelegateCommand(OnTestSoundCommandExecute);
         }
 
 

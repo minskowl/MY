@@ -355,5 +355,16 @@ namespace Prodigy.Properties {
                 this["Digits"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::Reading.Core.Settings.FindLetterSettings FindLetterSettings {
+            get {
+                return ((global::Reading.Core.Settings.FindLetterSettings)(this["FindLetterSettings"]));
+            }
+            set {
+                this["FindLetterSettings"] = value;
+            }
+        }
     }
 }

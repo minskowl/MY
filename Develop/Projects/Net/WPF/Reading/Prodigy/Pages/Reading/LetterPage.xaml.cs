@@ -1,7 +1,8 @@
 ﻿using System.Windows.Controls;
 using Prodigy.Models.Reading;
+using Savchin.Wpf.Core;
 
-namespace Prodigy.Pages
+namespace Prodigy.Pages.Reading
 {
     /// <summary>
     /// Логика взаимодействия для LetterPage.xaml
@@ -11,8 +12,8 @@ namespace Prodigy.Pages
         public LetterPage()
         {
             InitializeComponent();
-
-            DataContext = new LetterModel();
+            if (!this.IsDesignMode())
+                DataContext = new LetterModel();
         }
     }
 }
