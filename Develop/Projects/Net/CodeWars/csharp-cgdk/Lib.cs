@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,9 +8,104 @@ using Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk.Model;
 
 namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
 {
-    public class VehileCollection
+    public abstract class Action
     {
-        private Dictionary<long, Vec> _storage;
+        public abstract void Do(World world, Move move, VehileCollection collection);
+
+        public Action Next { get; set; }
+
+        public bool CanAct(VehileCollection collection)
+        {
+            return true;
+        }
+    }
+
+    public abstract class TypeAction : Action
+    {
+        protected readonly VehicleType Type;
+
+        protected TypeAction(VehicleType type)
+        {
+            Type = type;
+        }
+    }
+
+    public class ScaleGroup : TypeAction
+    {
+        public ScaleGroup(VehicleType type) : base(type)
+        {
+        }
+
+        public override void Do(World world, Move move, VehileCollection collection)
+        {
+            move.Action = ActionType.Scale;
+            move.Group = (int)Type;
+            move.X = world.Width / 2;
+            move.Y = world.Height / 2;
+            move.Factor = 3;
+        }
+    }
+
+    public class AssingGroup : TypeAction
+    {
+        public AssingGroup(VehicleType type) : base(type)
+        {
+        }
+
+        public override void Do(World world, Move move, VehileCollection collection)
+        {
+           
+                move.Action = ActionType.Assign;
+                move.Group = (int)Type;
+           
+        }
+    }
+    public class MoveGroup : TypeAction
+    {
+   
+
+
+        public MoveGroup(VehicleType type) : base(type)
+        {
+        }
+
+        public override void Do(World world, Move move, VehileCollection collection)
+        {
+
+            move.Action = ActionType.Move;
+            move.Group = (int)Type;
+            move.X = world.Width / 2;
+            move.Y = world.Height / 2;
+
+        }
+    }
+    public class SelectUnit : TypeAction
+    {
+   
+
+
+        public SelectUnit(VehicleType type) : base(type)
+        {
+        }
+
+        public override void Do(World world, Move move, VehileCollection collection)
+        {
+
+            var rect = collection.Where(e => e.Type == Type).GetRect();
+
+            move.Action = ActionType.ClearAndSelect;
+            move.VehicleType = Type;
+            move.X = rect.X;
+            move.Y = rect.Y;
+            move.Right = rect.Right;
+            move.Bottom = rect.Bottom;
+
+        }
+    }
+
+    public class VehileCollection : IEnumerable<Vec>
+    {
+        private readonly Dictionary<long, Vec> _storage;
 
         public VehileCollection(IEnumerable<Vehicle> vehicles)
         {
@@ -23,7 +119,49 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
 
         public void Update(VehicleUpdate[] updates)
         {
-            updates.ForEach(e => _storage[e.Id].Update(e));
+            foreach (var update in updates)
+            {
+                Vec v;
+                if (_storage.TryGetValue(update.Id, out v))
+                {
+                    v.Update(update);
+                }
+            }
+        }
+
+
+
+        public IEnumerator<Vec> GetEnumerator()
+        {
+            return _storage.Values.GetEnumerator();
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
+    }
+
+    public static class VecEx
+    {
+        public static Rectangle GetRect(this IEnumerable<Vec> vehicles)
+        {
+            if (!vehicles.Any())
+                return Rectangle.Empty;
+
+            double maxX = int.MinValue;
+            double minX = int.MaxValue;
+            double maxY = int.MinValue;
+            double minY = int.MaxValue;
+            vehicles.ForEach(e =>
+            {
+                maxX = Math.Max(maxX, e.X);
+                minX = Math.Min(minX, e.X);
+                maxY = Math.Max(maxY, e.Y);
+                minY = Math.Min(minY, e.Y);
+            });
+
+            return new Rectangle((int)minX, (int)minY, (int)(maxX - minX), (int)(maxY - minY));
         }
     }
 
@@ -31,7 +169,7 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
     {
 
         public long Id { get; private set; }
-        public  double X { get; private set; }
+        public double X { get; private set; }
         public double Y { get; private set; }
         public int[] Groups { get; private set; }
         public VehicleType Type { get; private set; }
@@ -59,7 +197,7 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
         private int width;
         private int height;
 
-       public bool IsEmpty
+        public bool IsEmpty
         {
             get
             {
@@ -189,7 +327,7 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
         private int x;
         private int y;
 
-    
+
         public bool IsEmpty
         {
             get
@@ -327,7 +465,7 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
 
         public override string ToString()
         {
-            return "{X=" + this.X + ",Y=" + this.Y+ "}";
+            return "{X=" + this.X + ",Y=" + this.Y + "}";
         }
 
         private static int HIWORD(int n)
@@ -350,7 +488,7 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
         private int width;
         private int height;
 
-  
+
         public Point Location
         {
             get
@@ -364,7 +502,7 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
             }
         }
 
-  
+
         public Size Size
         {
             get
@@ -426,7 +564,7 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
             }
         }
 
-     
+
         public int Left
         {
             get
@@ -435,7 +573,7 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
             }
         }
 
-   
+
         public int Top
         {
             get
@@ -444,7 +582,7 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
             }
         }
 
-   
+
         public int Right
         {
             get
@@ -453,7 +591,7 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
             }
         }
 
-     
+
         public int Bottom
         {
             get
@@ -462,7 +600,7 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
             }
         }
 
-     
+
         public bool IsEmpty
         {
             get
@@ -624,7 +762,7 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
 
         public override string ToString()
         {
-            return "{X=" + this.X+ ",Y=" + this.Y + ",Width=" + this.Width + ",Height=" + this.Height + "}";
+            return "{X=" + this.X + ",Y=" + this.Y + ",Width=" + this.Width + ",Height=" + this.Height + "}";
         }
     }
 
