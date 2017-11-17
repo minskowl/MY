@@ -15,14 +15,17 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
     
 
 
-    public abstract class Action
+    public abstract class Command
     {
         private ISituation _situation;
         protected Move Move => _situation.Move;
         protected World World => _situation.World;
-        protected VehileCollection Vechiles => _situation.Vehiles;
+        protected VehileCollection Vehiles => _situation.Vehiles;
 
-        public Action Next { get; set; }
+        protected MyStrategy Strategy {
+            get { return (MyStrategy) _situation; }
+        }
+        public Command Next { get; set; }
 
         public void Do(ISituation situation)
         {
@@ -44,26 +47,31 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
         }
     }
 
-    public abstract class TypeAction : Action
+    public abstract class TypeCommand : Command
     {
-        protected readonly VehicleType Type;
+        public VehicleType Type;
 
-        protected TypeAction(VehicleType type)
+        protected TypeCommand()
+        {
+
+        }
+
+        protected TypeCommand(VehicleType type)
         {
             Type = type;
         }
 
         protected RectangleF GetVehileRect()
         {
-            return Vechiles.Where(e => e.Type == Type).GetRect();
+            return Vehiles.Where(e => e.Type == Type).GetRect();
         }
         protected RectangleF GetGroupRect()
         {
-            return Vechiles.Where(e => e.IsInGroup((int)Type)).GetRect();
+            return Vehiles.Where(e => e.IsInGroup((int)Type)).GetRect();
         }
     }
 
-    public class ScaleGroup : TypeAction
+    public class ScaleGroup : TypeCommand
     {
         public ScaleGroup(VehicleType type) : base(type)
         {
@@ -77,8 +85,10 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
         }
     }
 
-    public class AssingGroup : TypeAction
+    public class AssingGroup : TypeCommand
     {
+        public AssingGroup(){}
+
         public AssingGroup(VehicleType type) : base(type)
         {
         }
@@ -90,7 +100,7 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
         }
     }
 
-    public class MoveGroup : TypeAction
+    public class MoveGroup : TypeCommand
     {
         public MoveGroup(VehicleType type) : base(type)
         {
@@ -104,9 +114,10 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
         }
     }
 
-    public class SelectUnit : TypeAction
+    public class SelectUnitCommand : TypeCommand
     {
-        public SelectUnit(VehicleType type) : base(type)
+        public SelectUnitCommand() { }
+        public SelectUnitCommand(VehicleType type) : base(type)
         {
         }
 
@@ -1288,7 +1299,7 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
 
         public override string ToString()
         {
-            return "{X=" + this.X.ToString((IFormatProvider)CultureInfo.CurrentCulture) + ",Y=" + this.Y.ToString((IFormatProvider)CultureInfo.CurrentCulture) + ",Width=" + this.Width.ToString((IFormatProvider)CultureInfo.CurrentCulture) + ",Height=" + this.Height.ToString((IFormatProvider)CultureInfo.CurrentCulture) + "}";
+            return "{X=" + this.X + ",Y=" + this.Y.ToString((IFormatProvider)CultureInfo.CurrentCulture) + ",Right=" + this.Right + ",Bottom=" + this.Bottom.ToString((IFormatProvider)CultureInfo.CurrentCulture) + "}";
         }
         #endregion
     }
