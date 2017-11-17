@@ -12,7 +12,67 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
 {
     #region Actions
 
-    
+
+
+    public class FirstCommand : DeployCommand
+    {
+        protected override void DoImpl()
+        {
+            Strategy.StartMatrix.BuilMatrix(Vehiles);
+            
+         
+            base.DoImpl();
+        }
+
+    }
+
+    public class DeployCommand : SelectUnitCommand
+    {
+        protected override void DoImpl()
+        {
+            var gr =Strategy.StartMatrix.GetFreeGroup();
+
+            if (gr == null)
+                return;
+
+            Type = gr.Type;
+            base.DoImpl();
+
+            var assCommand = new AssingGroup(Type);
+            assCommand.Next = new MoveGroup(Type)
+            {
+                Act = s =>
+                {
+                    var rect = Vehiles.GetGroupRect(Type);
+
+                    s.Move.X = (s.World.Width / 2) - rect.Right;
+                    s.Move.Y = (s.World.Height / 2) - rect.Bottom;
+
+                    var scale = new ScaleGroup(VehicleType.Fighter)
+                    {
+                        Can = e =>
+                        {
+                            var r = Vehiles.GetGroupRect(Type);
+                            var minY = World.Height / 3;
+                            e.Log.Log("Type {0} {1} minY {2}", Type, r, minY);
+                            return r.Y >= minY ;
+
+                        }
+                    };
+                    s.Commands.Add(scale);
+                    s.Commands.Add(new DeployCommand());
+                }
+            };
+            Next = assCommand;
+
+
+        }
+
+
+     
+
+    }
+
 
 
     public abstract class Command
@@ -135,6 +195,54 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
     }
 
     #endregion
+
+    public class StartMatrix
+    {
+        private VecGroup[,] storage = new VecGroup[3, 3];
+
+        public VecGroup GetFreeGroup()
+        {
+            for (int i = 2; i >= 0; i--)
+            {
+                for (int j = 2; j >= 0; j--)
+                {
+                    var gr = storage[i, j];
+                    if (gr != null)
+                    {
+                        storage[i, j] = null;
+                        return gr;
+                    }
+
+                }
+            }
+            return null;
+        }
+
+        public void BuilMatrix(VehileCollection Vehiles)
+        {
+            var groups = Vehiles.GroupBy(e => e.Type).Select(e => new VecGroup(e.GetRect(), e.Key)).ToArray();
+            var maxY = groups.Max(e => e.Rect.Bottom);
+            var maxX = groups.Max(e => e.Rect.Right);
+
+            var minY = groups.Min(e => e.Rect.Bottom);
+            var minX = groups.Min(e => e.Rect.Right);
+            foreach (var vecGroup in groups)
+            {
+                int x = GetIndex(vecGroup.Rect.Right, minX, maxX);
+                int y = GetIndex(vecGroup.Rect.Bottom, minY, maxY);
+                storage[y, x] = vecGroup;
+            }
+        }
+        private int GetIndex(float cur, float min, float max)
+        {
+            if (cur == min)
+                return 0;
+            if (cur == max)
+                return 2;
+
+            return 1;
+        }
+    }
 
     public class VehileCollection : IEnumerable<Vec>
     {
