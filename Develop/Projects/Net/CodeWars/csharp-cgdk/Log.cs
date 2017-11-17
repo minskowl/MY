@@ -24,13 +24,13 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
 
         public void Log(string text)
         {
-            Console.WriteLine(text);
+          //  Console.WriteLine(text);
             _stream.WriteLine(text);
         }
 
         public void Log(string text, params object[] args)
         {
-            Console.WriteLine(text, args);
+            //Console.WriteLine(text, args);
             _stream.WriteLine(text, args);
         }
 

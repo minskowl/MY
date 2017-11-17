@@ -2,21 +2,34 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk.Model;
 
 namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
 {
+
     public abstract class Action
     {
-        public abstract void Do(World world, Move move, VehileCollection collection);
+        private ISituation _situation;
+        protected Move Move => _situation.Move;
+        protected World World => _situation.World;
+        protected VehileCollection Vechiles => _situation.Vehiles;
 
         public Action Next { get; set; }
 
-        public bool CanAct(VehileCollection collection)
+        public void Do(ISituation situation)
         {
-            return true;
+            _situation = situation;
+            DoImpl();
+        }
+
+        protected abstract void DoImpl();
+
+        public Predicate<ISituation> Can { get; set; }
+
+        public virtual bool CanAct(ISituation situation)
+        {
+            _situation = situation;
+            return Can?.Invoke(_situation) ?? true;
         }
     }
 
@@ -36,13 +49,13 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
         {
         }
 
-        public override void Do(World world, Move move, VehileCollection collection)
+        protected override void DoImpl()
         {
-            move.Action = ActionType.Scale;
-            move.Group = (int)Type;
-            move.X = world.Width / 2;
-            move.Y = world.Height / 2;
-            move.Factor = 3;
+            Move.Action = ActionType.Scale;
+            Move.Group = (int)Type;
+            Move.X = World.Width / 2;
+            Move.Y = World.Height / 2;
+            Move.Factor = 3;
         }
     }
 
@@ -52,54 +65,44 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
         {
         }
 
-        public override void Do(World world, Move move, VehileCollection collection)
+        protected override void DoImpl()
         {
-           
-                move.Action = ActionType.Assign;
-                move.Group = (int)Type;
-           
+            Move.Action = ActionType.Assign;
+            Move.Group = (int)Type;
         }
     }
+
     public class MoveGroup : TypeAction
     {
-   
-
-
         public MoveGroup(VehicleType type) : base(type)
         {
         }
 
-        public override void Do(World world, Move move, VehileCollection collection)
+        protected override void DoImpl()
         {
-
-            move.Action = ActionType.Move;
-            move.Group = (int)Type;
-            move.X = world.Width / 2;
-            move.Y = world.Height / 2;
-
+            Move.Action = ActionType.Move;
+            Move.Group = (int)Type;
+            Move.X = World.Width / 2;
+            Move.Y = World.Height / 2;
         }
     }
+
     public class SelectUnit : TypeAction
     {
-   
-
-
         public SelectUnit(VehicleType type) : base(type)
         {
         }
 
-        public override void Do(World world, Move move, VehileCollection collection)
+        protected override void DoImpl()
         {
+            var rect = Vechiles.Where(e => e.Type == Type).GetRect();
 
-            var rect = collection.Where(e => e.Type == Type).GetRect();
-
-            move.Action = ActionType.ClearAndSelect;
-            move.VehicleType = Type;
-            move.X = rect.X;
-            move.Y = rect.Y;
-            move.Right = rect.Right;
-            move.Bottom = rect.Bottom;
-
+            Move.Action = ActionType.ClearAndSelect;
+            Move.VehicleType = Type;
+            Move.X = rect.X;
+            Move.Y = rect.Y;
+            Move.Right = rect.Right;
+            Move.Bottom = rect.Bottom;
         }
     }
 
@@ -107,28 +110,15 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
     {
         private readonly Dictionary<long, Vec> _storage;
 
+        public VehileCollection()
+        {
+            _storage = new Dictionary<long, Vec>();
+        }
+
         public VehileCollection(IEnumerable<Vehicle> vehicles)
         {
             _storage = vehicles.ToDictionary(e => e.Id, e => new Vec(e));
         }
-
-        public void Add(IEnumerable<Vehicle> vehicles)
-        {
-            vehicles.ForEach(e => _storage[e.Id] = new Vec(e));
-        }
-
-        public void Update(VehicleUpdate[] updates)
-        {
-            foreach (var update in updates)
-            {
-                Vec v;
-                if (_storage.TryGetValue(update.Id, out v))
-                {
-                    v.Update(update);
-                }
-            }
-        }
-
 
 
         public IEnumerator<Vec> GetEnumerator()
@@ -139,6 +129,22 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
         IEnumerator IEnumerable.GetEnumerator()
         {
             return GetEnumerator();
+        }
+
+        public void Add(IEnumerable<Vehicle> vehicles)
+        {
+            vehicles.ForEach(e => _storage[e.Id] = new Vec(e));
+        }
+
+        public void Update(VehicleUpdate[] updates)
+        {
+            if (updates.IsNotEmpty())
+                foreach (var update in updates)
+                {
+                    Vec v;
+                    if (_storage.TryGetValue(update.Id, out v))
+                        v.Update(update);
+                }
         }
     }
 
@@ -167,12 +173,6 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
 
     public class Vec
     {
-
-        public long Id { get; private set; }
-        public double X { get; private set; }
-        public double Y { get; private set; }
-        public int[] Groups { get; private set; }
-        public VehicleType Type { get; private set; }
         public Vec(Vehicle v)
         {
             Id = v.Id;
@@ -181,6 +181,12 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
             Type = v.Type;
             Groups = v.Groups;
         }
+
+        public long Id { get; }
+        public double X { get; private set; }
+        public double Y { get; private set; }
+        public int[] Groups { get; private set; }
+        public VehicleType Type { get; }
 
         public Vec Update(VehicleUpdate u)
         {
@@ -194,53 +200,31 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
     public struct Size
     {
         public static readonly Size Empty;
-        private int width;
-        private int height;
 
         public bool IsEmpty
         {
             get
             {
-                if (this.width == 0)
-                    return this.height == 0;
+                if (Width == 0)
+                    return Height == 0;
                 return false;
             }
         }
 
-        public int Width
-        {
-            get
-            {
-                return this.width;
-            }
-            set
-            {
-                this.width = value;
-            }
-        }
+        public int Width { get; set; }
 
-        public int Height
-        {
-            get
-            {
-                return this.height;
-            }
-            set
-            {
-                this.height = value;
-            }
-        }
+        public int Height { get; set; }
 
         public Size(Point pt)
         {
-            this.width = pt.X;
-            this.height = pt.Y;
+            Width = pt.X;
+            Height = pt.Y;
         }
 
         public Size(int width, int height)
         {
-            this.width = width;
-            this.height = height;
+            Width = width;
+            Height = height;
         }
 
         //public static implicit operator SizeF(Size p)
@@ -255,12 +239,12 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
 
         public static Size operator +(Size sz1, Size sz2)
         {
-            return Size.Add(sz1, sz2);
+            return Add(sz1, sz2);
         }
 
         public static Size operator -(Size sz1, Size sz2)
         {
-            return Size.Subtract(sz1, sz2);
+            return Subtract(sz1, sz2);
         }
 
         public static bool operator ==(Size sz1, Size sz2)
@@ -304,80 +288,58 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
         {
             if (!(obj is Size))
                 return false;
-            Size size = (Size)obj;
-            if (size.width == this.width)
-                return size.height == this.height;
+            var size = (Size)obj;
+            if (size.Width == Width)
+                return size.Height == Height;
             return false;
         }
 
         public override int GetHashCode()
         {
-            return this.width ^ this.height;
+            return Width ^ Height;
         }
 
         public override string ToString()
         {
-            return "{Width=" + this.width + ", Height=" + this.height + "}";
+            return "{Width=" + Width + ", Height=" + Height + "}";
         }
     }
 
     public struct Point
     {
         public static readonly Point Empty;
-        private int x;
-        private int y;
 
 
         public bool IsEmpty
         {
             get
             {
-                if (this.x == 0)
-                    return this.y == 0;
+                if (X == 0)
+                    return Y == 0;
                 return false;
             }
         }
 
-        public int X
-        {
-            get
-            {
-                return this.x;
-            }
-            set
-            {
-                this.x = value;
-            }
-        }
+        public int X { get; set; }
 
-        public int Y
-        {
-            get
-            {
-                return this.y;
-            }
-            set
-            {
-                this.y = value;
-            }
-        }
+        public int Y { get; set; }
 
         public Point(int x, int y)
         {
-            this.x = x;
-            this.y = y;
+            X = x;
+            Y = y;
         }
 
         public Point(Size sz)
         {
-            this.x = sz.Width;
-            this.y = sz.Height;
+            X = sz.Width;
+            Y = sz.Height;
         }
 
         public Point(int dw)
         {
-            this.x = (int)(short)Point.LOWORD(dw);
-            this.y = (int)(short)Point.HIWORD(dw);
+            X = (short)LOWORD(dw);
+            Y = (short)HIWORD(dw);
         }
 
         //public static implicit operator PointF(Point p)
@@ -392,12 +354,12 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
 
         public static Point operator +(Point pt, Size sz)
         {
-            return Point.Add(pt, sz);
+            return Add(pt, sz);
         }
 
         public static Point operator -(Point pt, Size sz)
         {
-            return Point.Subtract(pt, sz);
+            return Subtract(pt, sz);
         }
 
         public static bool operator ==(Point left, Point right)
@@ -441,41 +403,41 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
         {
             if (!(obj is Point))
                 return false;
-            Point point = (Point)obj;
-            if (point.X == this.X)
-                return point.Y == this.Y;
+            var point = (Point)obj;
+            if (point.X == X)
+                return point.Y == Y;
             return false;
         }
 
         public override int GetHashCode()
         {
-            return this.x ^ this.y;
+            return X ^ Y;
         }
 
         public void Offset(int dx, int dy)
         {
-            this.X = this.X + dx;
-            this.Y = this.Y + dy;
+            X = X + dx;
+            Y = Y + dy;
         }
 
         public void Offset(Point p)
         {
-            this.Offset(p.X, p.Y);
+            Offset(p.X, p.Y);
         }
 
         public override string ToString()
         {
-            return "{X=" + this.X + ",Y=" + this.Y + "}";
+            return "{X=" + X + ",Y=" + Y + "}";
         }
 
         private static int HIWORD(int n)
         {
-            return n >> 16 & (int)ushort.MaxValue;
+            return (n >> 16) & ushort.MaxValue;
         }
 
         private static int LOWORD(int n)
         {
-            return n & (int)ushort.MaxValue;
+            return n & ushort.MaxValue;
         }
     }
 
@@ -491,122 +453,68 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
 
         public Point Location
         {
-            get
-            {
-                return new Point(this.X, this.Y);
-            }
+            get => new Point(X, Y);
             set
             {
-                this.X = value.X;
-                this.Y = value.Y;
+                X = value.X;
+                Y = value.Y;
             }
         }
 
 
         public Size Size
         {
-            get
-            {
-                return new Size(this.Width, this.Height);
-            }
+            get => new Size(Width, Height);
             set
             {
-                this.Width = value.Width;
-                this.Height = value.Height;
+                Width = value.Width;
+                Height = value.Height;
             }
         }
 
         public int X
         {
-            get
-            {
-                return this.x;
-            }
-            set
-            {
-                this.x = value;
-            }
+            get => x;
+            set => x = value;
         }
 
         public int Y
         {
-            get
-            {
-                return this.y;
-            }
-            set
-            {
-                this.y = value;
-            }
+            get => y;
+            set => y = value;
         }
 
         public int Width
         {
-            get
-            {
-                return this.width;
-            }
-            set
-            {
-                this.width = value;
-            }
+            get => width;
+            set => width = value;
         }
 
         public int Height
         {
-            get
-            {
-                return this.height;
-            }
-            set
-            {
-                this.height = value;
-            }
+            get => height;
+            set => height = value;
         }
 
 
-        public int Left
-        {
-            get
-            {
-                return this.X;
-            }
-        }
+        public int Left => X;
 
 
-        public int Top
-        {
-            get
-            {
-                return this.Y;
-            }
-        }
+        public int Top => Y;
 
 
-        public int Right
-        {
-            get
-            {
-                return this.X + this.Width;
-            }
-        }
+        public int Right => X + Width;
 
 
-        public int Bottom
-        {
-            get
-            {
-                return this.Y + this.Height;
-            }
-        }
+        public int Bottom => Y + Height;
 
 
         public bool IsEmpty
         {
             get
             {
-                if (this.height == 0 && this.width == 0 && this.x == 0)
-                    return this.y == 0;
+                if (height == 0 && width == 0 && x == 0)
+                    return y == 0;
                 return false;
             }
         }
@@ -621,10 +529,10 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
 
         public Rectangle(Point location, Size size)
         {
-            this.x = location.X;
-            this.y = location.Y;
-            this.width = size.Width;
-            this.height = size.Height;
+            x = location.X;
+            y = location.Y;
+            width = size.Width;
+            height = size.Height;
         }
 
         public static bool operator ==(Rectangle left, Rectangle right)
@@ -648,9 +556,9 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
         {
             if (!(obj is Rectangle))
                 return false;
-            Rectangle rectangle = (Rectangle)obj;
-            if (rectangle.X == this.X && rectangle.Y == this.Y && rectangle.Width == this.Width)
-                return rectangle.Height == this.Height;
+            var rectangle = (Rectangle)obj;
+            if (rectangle.X == X && rectangle.Y == Y && rectangle.Width == Width)
+                return rectangle.Height == Height;
             return false;
         }
 
@@ -671,99 +579,99 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
 
         public bool Contains(int x, int y)
         {
-            if (this.X <= x && x < this.X + this.Width && this.Y <= y)
-                return y < this.Y + this.Height;
+            if (X <= x && x < X + Width && Y <= y)
+                return y < Y + Height;
             return false;
         }
 
         public bool Contains(Point pt)
         {
-            return this.Contains(pt.X, pt.Y);
+            return Contains(pt.X, pt.Y);
         }
 
         public bool Contains(Rectangle rect)
         {
-            if (this.X <= rect.X && rect.X + rect.Width <= this.X + this.Width && this.Y <= rect.Y)
-                return rect.Y + rect.Height <= this.Y + this.Height;
+            if (X <= rect.X && rect.X + rect.Width <= X + Width && Y <= rect.Y)
+                return rect.Y + rect.Height <= Y + Height;
             return false;
         }
 
         public override int GetHashCode()
         {
-            return this.X ^ (this.Y << 13 | (int)((uint)this.Y >> 19)) ^ (this.Width << 26 | (int)((uint)this.Width >> 6)) ^ (this.Height << 7 | (int)((uint)this.Height >> 25));
+            return X ^ ((Y << 13) | (int)((uint)Y >> 19)) ^ ((Width << 26) | (int)((uint)Width >> 6)) ^
+                   ((Height << 7) | (int)((uint)Height >> 25));
         }
 
         public void Inflate(int width, int height)
         {
-            this.X = this.X - width;
-            this.Y = this.Y - height;
-            this.Width = this.Width + 2 * width;
-            this.Height = this.Height + 2 * height;
+            X = X - width;
+            Y = Y - height;
+            Width = Width + 2 * width;
+            Height = Height + 2 * height;
         }
 
         public void Inflate(Size size)
         {
-            this.Inflate(size.Width, size.Height);
+            Inflate(size.Width, size.Height);
         }
 
         public static Rectangle Inflate(Rectangle rect, int x, int y)
         {
-            Rectangle rectangle = rect;
+            var rectangle = rect;
             rectangle.Inflate(x, y);
             return rectangle;
         }
 
         public void Intersect(Rectangle rect)
         {
-            Rectangle rectangle = Rectangle.Intersect(rect, this);
-            this.X = rectangle.X;
-            this.Y = rectangle.Y;
-            this.Width = rectangle.Width;
-            this.Height = rectangle.Height;
+            var rectangle = Intersect(rect, this);
+            X = rectangle.X;
+            Y = rectangle.Y;
+            Width = rectangle.Width;
+            Height = rectangle.Height;
         }
 
         public static Rectangle Intersect(Rectangle a, Rectangle b)
         {
-            int x = Math.Max(a.X, b.X);
-            int num1 = Math.Min(a.X + a.Width, b.X + b.Width);
-            int y = Math.Max(a.Y, b.Y);
-            int num2 = Math.Min(a.Y + a.Height, b.Y + b.Height);
+            var x = Math.Max(a.X, b.X);
+            var num1 = Math.Min(a.X + a.Width, b.X + b.Width);
+            var y = Math.Max(a.Y, b.Y);
+            var num2 = Math.Min(a.Y + a.Height, b.Y + b.Height);
             if (num1 >= x && num2 >= y)
                 return new Rectangle(x, y, num1 - x, num2 - y);
-            return Rectangle.Empty;
+            return Empty;
         }
 
         public bool IntersectsWith(Rectangle rect)
         {
-            if (rect.X < this.X + this.Width && this.X < rect.X + rect.Width && rect.Y < this.Y + this.Height)
-                return this.Y < rect.Y + rect.Height;
+            if (rect.X < X + Width && X < rect.X + rect.Width && rect.Y < Y + Height)
+                return Y < rect.Y + rect.Height;
             return false;
         }
 
         public static Rectangle Union(Rectangle a, Rectangle b)
         {
-            int x = Math.Min(a.X, b.X);
-            int num1 = Math.Max(a.X + a.Width, b.X + b.Width);
-            int y = Math.Min(a.Y, b.Y);
-            int num2 = Math.Max(a.Y + a.Height, b.Y + b.Height);
+            var x = Math.Min(a.X, b.X);
+            var num1 = Math.Max(a.X + a.Width, b.X + b.Width);
+            var y = Math.Min(a.Y, b.Y);
+            var num2 = Math.Max(a.Y + a.Height, b.Y + b.Height);
             return new Rectangle(x, y, num1 - x, num2 - y);
         }
 
         public void Offset(Point pos)
         {
-            this.Offset(pos.X, pos.Y);
+            Offset(pos.X, pos.Y);
         }
 
         public void Offset(int x, int y)
         {
-            this.X = this.X + x;
-            this.Y = this.Y + y;
+            X = X + x;
+            Y = Y + y;
         }
 
         public override string ToString()
         {
-            return "{X=" + this.X + ",Y=" + this.Y + ",Width=" + this.Width + ",Height=" + this.Height + "}";
+            return "{X=" + X + ",Y=" + Y + ",Width=" + Width + ",Height=" + Height + "}";
         }
     }
-
 }
