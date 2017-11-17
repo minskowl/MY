@@ -53,10 +53,17 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
                         Can = e =>
                         {
                             var r = Vehiles.GetGroupRect(Type);
-                            var minY = World.Height / 3;
-                            e.Log.Log("Type {0} {1} minY {2}", Type, r, minY);
+                            var minY = World.Height / 4;
+                            e.Log.Log("Wait Scale Type {0} {1} minY {2}", Type, r, minY);
                             return r.Y >= minY ;
 
+                        },
+                        Act =(s1)=>
+                        {
+                            s1.Move.Factor = 4;
+                            var r = Vehiles.GetGroupRect(Type);
+                            s1.Move.X = r.X;
+                            s1.Move.Y = r.Y;
                         }
                     };
                     s.Commands.Add(scale);

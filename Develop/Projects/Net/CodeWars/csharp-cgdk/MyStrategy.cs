@@ -1,6 +1,4 @@
-using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Linq;
 using Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk.Model;
 
@@ -42,29 +40,35 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
 
 
         }
-        
 
+        private int _availibleActionCount;
 
         void IStrategy.Move(Player me, World world, Game game, Move move)
         {
+            if (world.TickIndex % game.ActionDetectionInterval == 0)
+                _availibleActionCount = game.BaseActionCount;
+
             Move = move;
             Me = me;
             World = world;
             Game = game;
 
-            Trace($"********************************** TickIndex = {world.TickIndex}");
+            Trace($"********************************** TickIndex = {world.TickIndex} AvailibleActionCount={_availibleActionCount}");
 
             Vehiles.Add(world.NewVehicles.Where(e => e.PlayerId == me.Id));
             Vehiles.Update(world.VehicleUpdates);
 
-
-            PrepareCommand();
-            if (Command != null)
+            if (_availibleActionCount > 0)
             {
-                Command.Do(this);
-                Commands.Remove(Command);
+                PrepareCommand();
+                if (Command != null)
+                {
+                    Command.Do(this);
+                    Commands.Remove(Command);
 
-                Command = Command.Next;
+                    Command = Command.Next;
+                    _availibleActionCount--;
+                }
             }
 
             Trace();
@@ -79,10 +83,11 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
 
         }
 
-        
+
         private void Trace()
         {
-            Log?.Log("{0} Group {1} ({2},{3})-({4},{5}) ", Move.Action, Move.Group, Move.X, Move.Y, Move.Right, Move.Bottom);
+            if (Move.Action.HasValue)
+                Log?.Log("{0} Group {1} {6} ({2},{3})-({4},{5}) ", Move.Action, Move.Group, Move.X, Move.Y, Move.Right, Move.Bottom, Move.VehicleType);
         }
 
         private void Trace(object text)
