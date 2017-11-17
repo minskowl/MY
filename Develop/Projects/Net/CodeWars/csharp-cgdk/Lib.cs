@@ -1,11 +1,19 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Globalization;
+using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk.Model;
 
 namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
 {
+    #region Actions
+
+    
+
 
     public abstract class Action
     {
@@ -20,11 +28,14 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
         {
             _situation = situation;
             DoImpl();
+            Act?.Invoke(_situation);
         }
 
         protected abstract void DoImpl();
 
         public Predicate<ISituation> Can { get; set; }
+
+        public Action<ISituation> Act { get; set; }
 
         public virtual bool CanAct(ISituation situation)
         {
@@ -41,6 +52,15 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
         {
             Type = type;
         }
+
+        protected RectangleF GetVehileRect()
+        {
+            return Vechiles.Where(e => e.Type == Type).GetRect();
+        }
+        protected RectangleF GetGroupRect()
+        {
+            return Vechiles.Where(e => e.IsInGroup((int)Type)).GetRect();
+        }
     }
 
     public class ScaleGroup : TypeAction
@@ -53,9 +73,7 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
         {
             Move.Action = ActionType.Scale;
             Move.Group = (int)Type;
-            Move.X = World.Width / 2;
-            Move.Y = World.Height / 2;
-            Move.Factor = 3;
+ 
         }
     }
 
@@ -82,8 +100,7 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
         {
             Move.Action = ActionType.Move;
             Move.Group = (int)Type;
-            Move.X = World.Width / 2;
-            Move.Y = World.Height / 2;
+  
         }
     }
 
@@ -95,7 +112,7 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
 
         protected override void DoImpl()
         {
-            var rect = Vechiles.Where(e => e.Type == Type).GetRect();
+            var rect = GetVehileRect();
 
             Move.Action = ActionType.ClearAndSelect;
             Move.VehicleType = Type;
@@ -106,19 +123,12 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
         }
     }
 
+    #endregion
+
     public class VehileCollection : IEnumerable<Vec>
     {
-        private readonly Dictionary<long, Vec> _storage;
-
-        public VehileCollection()
-        {
-            _storage = new Dictionary<long, Vec>();
-        }
-
-        public VehileCollection(IEnumerable<Vehicle> vehicles)
-        {
-            _storage = vehicles.ToDictionary(e => e.Id, e => new Vec(e));
-        }
+        private readonly Dictionary<long, Vec> _storage= new Dictionary<long, Vec>();
+        
 
 
         public IEnumerator<Vec> GetEnumerator()
@@ -146,11 +156,24 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
                         v.Update(update);
                 }
         }
+
+        public RectangleF GetVehileRect(VehicleType type)
+        {
+            return this.Where(e => e.Type == type).GetRect();
+        }
+        public RectangleF GetGroupRect(VehicleType group)
+        {
+            return GetGroupRect((int)group);
+        }
+        public RectangleF GetGroupRect(int group)
+        {
+            return this.Where(e => e.IsInGroup(group)).GetRect();
+        }
     }
 
     public static class VecEx
     {
-        public static Rectangle GetRect(this IEnumerable<Vec> vehicles)
+        public static RectangleF GetRect(this IEnumerable<Vec> vehicles)
         {
             if (!vehicles.Any())
                 return Rectangle.Empty;
@@ -167,7 +190,7 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
                 minY = Math.Min(minY, e.Y);
             });
 
-            return new Rectangle((int)minX, (int)minY, (int)(maxX - minX), (int)(maxY - minY));
+            return new RectangleF((float)minX, (float)minY, (float)(maxX - minX), (float)(maxY - minY));
         }
     }
 
@@ -188,6 +211,11 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
         public int[] Groups { get; private set; }
         public VehicleType Type { get; }
 
+        public bool IsInGroup(int group)
+        {
+            return Groups.IsNotEmpty() && Groups.Contains(group);
+        }
+
         public Vec Update(VehicleUpdate u)
         {
             X = u.X;
@@ -196,6 +224,60 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
             return this;
         }
     }
+
+    public interface ILog : IDisposable
+    {
+        void Log(string text);
+        void Log(string text, params object[] args);
+    }
+
+    public class NullLogger : ILog
+    {
+        public void Dispose()
+        {}
+
+        public void Log(string text)
+        {}
+
+        public void Log(string text, params object[] args)
+        {}
+    }
+
+    class FileLogger : ILog
+    {
+        private const string FileName = "Log.txt";
+
+        private readonly StreamWriter _stream;
+        public FileLogger()
+        {
+            if (File.Exists(FileName))
+                File.Delete(FileName);
+            _stream = new StreamWriter(FileName);
+
+        }
+
+        public void Log(string text)
+        {
+            //  Console.WriteLine(text);
+            _stream.WriteLine(text);
+        }
+
+        public void Log(string text, params object[] args)
+        {
+            //Console.WriteLine(text, args);
+            _stream.WriteLine(text, args);
+        }
+
+        public void Dispose()
+        {
+            _stream.Dispose();
+        }
+    }
+
+    #region Geometry
+
+
+
 
     public struct Size
     {
@@ -227,10 +309,10 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
             Height = height;
         }
 
-        //public static implicit operator SizeF(Size p)
-        //{
-        //    return new SizeF((float)p.Width, (float)p.Height);
-        //}
+        public static implicit operator SizeF(Size p)
+        {
+            return new SizeF((float)p.Width, (float)p.Height);
+        }
 
         public static explicit operator Point(Size size)
         {
@@ -264,25 +346,25 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
             return new Size(sz1.Width + sz2.Width, sz1.Height + sz2.Height);
         }
 
-        //public static Size Ceiling(SizeF value)
-        //{
-        //    return new Size((int)Math.Ceiling((double)value.Width), (int)Math.Ceiling((double)value.Height));
-        //}
+        public static Size Ceiling(SizeF value)
+        {
+            return new Size((int)Math.Ceiling((double)value.Width), (int)Math.Ceiling((double)value.Height));
+        }
 
         public static Size Subtract(Size sz1, Size sz2)
         {
             return new Size(sz1.Width - sz2.Width, sz1.Height - sz2.Height);
         }
 
-        //public static Size Truncate(SizeF value)
-        //{
-        //    return new Size((int)value.Width, (int)value.Height);
-        //}
+        public static Size Truncate(SizeF value)
+        {
+            return new Size((int)value.Width, (int)value.Height);
+        }
 
-        //public static Size Round(SizeF value)
-        //{
-        //    return new Size((int)Math.Round((double)value.Width), (int)Math.Round((double)value.Height));
-        //}
+        public static Size Round(SizeF value)
+        {
+            return new Size((int)Math.Round((double)value.Width), (int)Math.Round((double)value.Height));
+        }
 
         public override bool Equals(object obj)
         {
@@ -673,5 +755,541 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
         {
             return "{X=" + X + ",Y=" + Y + ",Width=" + Width + ",Height=" + Height + "}";
         }
+    }
+
+    [ComVisible(true)]
+    [Serializable]
+    public struct SizeF
+    {
+        public static readonly SizeF Empty;
+        private float width;
+        private float height;
+
+        [Browsable(false)]
+        public bool IsEmpty
+        {
+            get
+            {
+                if ((double)this.width == 0.0)
+                    return (double)this.height == 0.0;
+                return false;
+            }
+        }
+
+        public float Width
+        {
+            get
+            {
+                return this.width;
+            }
+            set
+            {
+                this.width = value;
+            }
+        }
+
+        public float Height
+        {
+            get
+            {
+                return this.height;
+            }
+            set
+            {
+                this.height = value;
+            }
+        }
+
+        public SizeF(SizeF size)
+        {
+            this.width = size.width;
+            this.height = size.height;
+        }
+
+        public SizeF(PointF pt)
+        {
+            this.width = pt.X;
+            this.height = pt.Y;
+        }
+
+        public SizeF(float width, float height)
+        {
+            this.width = width;
+            this.height = height;
+        }
+
+        public static explicit operator PointF(SizeF size)
+        {
+            return new PointF(size.Width, size.Height);
+        }
+
+        public static SizeF operator +(SizeF sz1, SizeF sz2)
+        {
+            return SizeF.Add(sz1, sz2);
+        }
+
+        public static SizeF operator -(SizeF sz1, SizeF sz2)
+        {
+            return SizeF.Subtract(sz1, sz2);
+        }
+
+        public static bool operator ==(SizeF sz1, SizeF sz2)
+        {
+            if ((double)sz1.Width == (double)sz2.Width)
+                return (double)sz1.Height == (double)sz2.Height;
+            return false;
+        }
+
+        public static bool operator !=(SizeF sz1, SizeF sz2)
+        {
+            return !(sz1 == sz2);
+        }
+
+        public static SizeF Add(SizeF sz1, SizeF sz2)
+        {
+            return new SizeF(sz1.Width + sz2.Width, sz1.Height + sz2.Height);
+        }
+
+        public static SizeF Subtract(SizeF sz1, SizeF sz2)
+        {
+            return new SizeF(sz1.Width - sz2.Width, sz1.Height - sz2.Height);
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (!(obj is SizeF))
+                return false;
+            SizeF sizeF = (SizeF)obj;
+            if ((double)sizeF.Width == (double)this.Width && (double)sizeF.Height == (double)this.Height)
+                return sizeF.GetType().Equals(this.GetType());
+            return false;
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
+
+        public PointF ToPointF()
+        {
+            return (PointF)this;
+        }
+
+        public Size ToSize()
+        {
+            return Size.Truncate(this);
+        }
+
+        public override string ToString()
+        {
+            return "{Width=" + this.width.ToString((IFormatProvider)CultureInfo.CurrentCulture) + ", Height=" + this.height.ToString((IFormatProvider)CultureInfo.CurrentCulture) + "}";
+        }
+    }
+
+    [ComVisible(true)]
+    [Serializable]
+    public struct PointF
+    {
+        public static readonly PointF Empty;
+        private float x;
+        private float y;
+
+        [Browsable(false)]
+        public bool IsEmpty
+        {
+            get
+            {
+                if ((double)this.x == 0.0)
+                    return (double)this.y == 0.0;
+                return false;
+            }
+        }
+
+        public float X
+        {
+            get
+            {
+                return this.x;
+            }
+            set
+            {
+                this.x = value;
+            }
+        }
+
+        public float Y
+        {
+            get
+            {
+                return this.y;
+            }
+            set
+            {
+                this.y = value;
+            }
+        }
+
+        public PointF(float x, float y)
+        {
+            this.x = x;
+            this.y = y;
+        }
+
+        public static PointF operator +(PointF pt, Size sz)
+        {
+            return PointF.Add(pt, sz);
+        }
+
+        public static PointF operator -(PointF pt, Size sz)
+        {
+            return PointF.Subtract(pt, sz);
+        }
+
+        public static PointF operator +(PointF pt, SizeF sz)
+        {
+            return PointF.Add(pt, sz);
+        }
+
+        public static PointF operator -(PointF pt, SizeF sz)
+        {
+            return PointF.Subtract(pt, sz);
+        }
+
+        public static bool operator ==(PointF left, PointF right)
+        {
+            if ((double)left.X == (double)right.X)
+                return (double)left.Y == (double)right.Y;
+            return false;
+        }
+
+        public static bool operator !=(PointF left, PointF right)
+        {
+            return !(left == right);
+        }
+
+        public static PointF Add(PointF pt, Size sz)
+        {
+            return new PointF(pt.X + (float)sz.Width, pt.Y + (float)sz.Height);
+        }
+
+        public static PointF Subtract(PointF pt, Size sz)
+        {
+            return new PointF(pt.X - (float)sz.Width, pt.Y - (float)sz.Height);
+        }
+
+        public static PointF Add(PointF pt, SizeF sz)
+        {
+            return new PointF(pt.X + sz.Width, pt.Y + sz.Height);
+        }
+
+        public static PointF Subtract(PointF pt, SizeF sz)
+        {
+            return new PointF(pt.X - sz.Width, pt.Y - sz.Height);
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (!(obj is PointF))
+                return false;
+            PointF pointF = (PointF)obj;
+            if ((double)pointF.X == (double)this.X && (double)pointF.Y == (double)this.Y)
+                return pointF.GetType().Equals(this.GetType());
+            return false;
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
+
+        public override string ToString()
+        {
+            return string.Format((IFormatProvider)CultureInfo.CurrentCulture, "{{X={0}, Y={1}}}", new object[2]
+            {
+                (object) this.x,
+                (object) this.y
+            });
+        }
+
+    }
+
+    [Serializable]
+    public struct RectangleF
+    {
+        public static readonly RectangleF Empty;
+        private float x;
+        private float y;
+        private float width;
+        private float height;
+
+        [Browsable(false)]
+        public PointF Location
+        {
+            get
+            {
+                return new PointF(this.X, this.Y);
+            }
+            set
+            {
+                this.X = value.X;
+                this.Y = value.Y;
+            }
+        }
+
+        [Browsable(false)]
+        public SizeF Size
+        {
+            get
+            {
+                return new SizeF(this.Width, this.Height);
+            }
+            set
+            {
+                this.Width = value.Width;
+                this.Height = value.Height;
+            }
+        }
+
+        public float X
+        {
+            get
+            {
+                return this.x;
+            }
+            set
+            {
+                this.x = value;
+            }
+        }
+
+        public float Y
+        {
+            get
+            {
+                return this.y;
+            }
+            set
+            {
+                this.y = value;
+            }
+        }
+
+        public float Width
+        {
+            get
+            {
+                return this.width;
+            }
+            set
+            {
+                this.width = value;
+            }
+        }
+
+        public float Height
+        {
+            get
+            {
+                return this.height;
+            }
+            set
+            {
+                this.height = value;
+            }
+        }
+
+        [Browsable(false)]
+        public float Left
+        {
+            get
+            {
+                return this.X;
+            }
+        }
+
+        [Browsable(false)]
+        public float Top
+        {
+            get
+            {
+                return this.Y;
+            }
+        }
+
+        [Browsable(false)]
+        public float Right
+        {
+            get
+            {
+                return this.X + this.Width;
+            }
+        }
+
+        [Browsable(false)]
+        public float Bottom
+        {
+            get
+            {
+                return this.Y + this.Height;
+            }
+        }
+
+        [Browsable(false)]
+        public bool IsEmpty
+        {
+            get
+            {
+                if ((double)this.Width > 0.0)
+                    return (double)this.Height <= 0.0;
+                return true;
+            }
+        }
+
+        public RectangleF(float x, float y, float width, float height)
+        {
+            this.x = x;
+            this.y = y;
+            this.width = width;
+            this.height = height;
+        }
+
+        public RectangleF(PointF location, SizeF size)
+        {
+            this.x = location.X;
+            this.y = location.Y;
+            this.width = size.Width;
+            this.height = size.Height;
+        }
+
+        public static implicit operator RectangleF(Rectangle r)
+        {
+            return new RectangleF((float)r.X, (float)r.Y, (float)r.Width, (float)r.Height);
+        }
+
+        public static bool operator ==(RectangleF left, RectangleF right)
+        {
+            if ((double)left.X == (double)right.X && (double)left.Y == (double)right.Y && (double)left.Width == (double)right.Width)
+                return (double)left.Height == (double)right.Height;
+            return false;
+        }
+
+        public static bool operator !=(RectangleF left, RectangleF right)
+        {
+            return !(left == right);
+        }
+
+        public static RectangleF FromLTRB(float left, float top, float right, float bottom)
+        {
+            return new RectangleF(left, top, right - left, bottom - top);
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (!(obj is RectangleF))
+                return false;
+            RectangleF rectangleF = (RectangleF)obj;
+            if ((double)rectangleF.X == (double)this.X && (double)rectangleF.Y == (double)this.Y && (double)rectangleF.Width == (double)this.Width)
+                return (double)rectangleF.Height == (double)this.Height;
+            return false;
+        }
+
+        public bool Contains(float x, float y)
+        {
+            if ((double)this.X <= (double)x && (double)x < (double)this.X + (double)this.Width && (double)this.Y <= (double)y)
+                return (double)y < (double)this.Y + (double)this.Height;
+            return false;
+        }
+
+        public bool Contains(PointF pt)
+        {
+            return this.Contains(pt.X, pt.Y);
+        }
+
+        public bool Contains(RectangleF rect)
+        {
+            if ((double)this.X <= (double)rect.X && (double)rect.X + (double)rect.Width <= (double)this.X + (double)this.Width && (double)this.Y <= (double)rect.Y)
+                return (double)rect.Y + (double)rect.Height <= (double)this.Y + (double)this.Height;
+            return false;
+        }
+
+        public override int GetHashCode()
+        {
+            return (int)(uint)this.X ^ ((int)(uint)this.Y << 13 | (int)((uint)this.Y >> 19)) ^ ((int)(uint)this.Width << 26 | (int)((uint)this.Width >> 6)) ^ ((int)(uint)this.Height << 7 | (int)((uint)this.Height >> 25));
+        }
+
+        public void Inflate(float x, float y)
+        {
+            this.X = this.X - x;
+            this.Y = this.Y - y;
+            this.Width = this.Width + 2f * x;
+            this.Height = this.Height + 2f * y;
+        }
+
+        public void Inflate(SizeF size)
+        {
+            this.Inflate(size.Width, size.Height);
+        }
+
+        public static RectangleF Inflate(RectangleF rect, float x, float y)
+        {
+            RectangleF rectangleF = rect;
+            rectangleF.Inflate(x, y);
+            return rectangleF;
+        }
+
+        public void Intersect(RectangleF rect)
+        {
+            RectangleF rectangleF = RectangleF.Intersect(rect, this);
+            this.X = rectangleF.X;
+            this.Y = rectangleF.Y;
+            this.Width = rectangleF.Width;
+            this.Height = rectangleF.Height;
+        }
+
+        public static RectangleF Intersect(RectangleF a, RectangleF b)
+        {
+            float x = Math.Max(a.X, b.X);
+            float num1 = Math.Min(a.X + a.Width, b.X + b.Width);
+            float y = Math.Max(a.Y, b.Y);
+            float num2 = Math.Min(a.Y + a.Height, b.Y + b.Height);
+            if ((double)num1 >= (double)x && (double)num2 >= (double)y)
+                return new RectangleF(x, y, num1 - x, num2 - y);
+            return RectangleF.Empty;
+        }
+
+        public bool IntersectsWith(RectangleF rect)
+        {
+            if ((double)rect.X < (double)this.X + (double)this.Width && (double)this.X < (double)rect.X + (double)rect.Width && (double)rect.Y < (double)this.Y + (double)this.Height)
+                return (double)this.Y < (double)rect.Y + (double)rect.Height;
+            return false;
+        }
+
+        public static RectangleF Union(RectangleF a, RectangleF b)
+        {
+            float x = Math.Min(a.X, b.X);
+            float num1 = Math.Max(a.X + a.Width, b.X + b.Width);
+            float y = Math.Min(a.Y, b.Y);
+            float num2 = Math.Max(a.Y + a.Height, b.Y + b.Height);
+            return new RectangleF(x, y, num1 - x, num2 - y);
+        }
+
+        public void Offset(PointF pos)
+        {
+            this.Offset(pos.X, pos.Y);
+        }
+
+        public void Offset(float x, float y)
+        {
+            this.X = this.X + x;
+            this.Y = this.Y + y;
+        }
+
+
+
+        public override string ToString()
+        {
+            return "{X=" + this.X.ToString((IFormatProvider)CultureInfo.CurrentCulture) + ",Y=" + this.Y.ToString((IFormatProvider)CultureInfo.CurrentCulture) + ",Width=" + this.Width.ToString((IFormatProvider)CultureInfo.CurrentCulture) + ",Height=" + this.Height.ToString((IFormatProvider)CultureInfo.CurrentCulture) + "}";
+        }
+        #endregion
     }
 }

@@ -19,14 +19,14 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
     public sealed class MyStrategy : IStrategy, ISituation
     {
         private ILog _log;
-        private Move _move;
+
 
         public VehileCollection Vehiles { get; }
         public Player Me { get; private set; }
         public World World { get; private set; }
         public Game Game { get; private set; }
-        Move ISituation.Move => _move;
-
+        public Move Move { get; private set; }
+        private RectangleF rect;
         public MyStrategy()
         {
             Vehiles = new VehileCollection();
@@ -38,20 +38,43 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
                 {
                     Next = new MoveGroup(VehicleType.Fighter)
                     {
-                        //  Next = new ScaleGroup(VehicleType.Fighter)
+                        Act = s =>
+                        {
+                            var rect = Vehiles.GetGroupRect(VehicleType.Fighter);
+
+                            Move.X = (World.Width / 2) - rect.Right;
+                            Move.Y = (World.Height / 2) - rect.Bottom;
+                        },
+                        Next = new ScaleGroup(VehicleType.Fighter)
+                        {
+                            Can = s =>
+                             {
+                                 rect = Vehiles.GetGroupRect((int)VehicleType.Fighter);
+                                 var minY = World.Height / 2;
+                                 Console.WriteLine(rect);
+                                 return rect.Y > minY && rect.Bottom > minY;
+
+                             },
+                            Act = (s) =>
+                            {
+                                Move.X = rect.X ;
+                                Move.Y = rect.Y;
+                                Move.Factor = 3;
+                            }
+                        }
                     }
                 }
             });
 
         }
 
-        
+
         private readonly List<Action> _actions = new List<Action>();
 
 
-        public void Move(Player me, World world, Game game, Move move)
+        void IStrategy.Move(Player me, World world, Game game, Move move)
         {
-            _move = move;
+            Move = move;
             Me = me;
             World = world;
             Game = game;
@@ -59,7 +82,7 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
             Log($"********************************** TickIndex = {world.TickIndex}");
             Vehiles.Add(world.NewVehicles.Where(e => e.PlayerId == me.Id));
             Vehiles.Update(world.VehicleUpdates);
-            
+
             if (_actions.Count > 0)
             {
                 var action = _actions.FirstOrDefault(e => e.CanAct(this));
@@ -80,7 +103,7 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
 
         private void Log()
         {
-            _log?.Log("{0} Group {1} ({2},{3})-({4},{5}) ", _move.Action, _move.Group, _move.X, _move.Y, _move.Right, _move.Bottom);
+            _log?.Log("{0} Group {1} ({2},{3})-({4},{5}) ", Move.Action, Move.Group, Move.X, Move.Y, Move.Right, Move.Bottom);
             foreach (var vehile in Vehiles.Where(e => e.Type == VehicleType.Fighter).Take(10))
             {
                 _log?.Log("{0} Id {1} ({2},{3}) Group {4}", vehile.Type, vehile.Id, vehile.X, vehile.Y, vehile.Groups?.FirstOrDefault());
@@ -96,26 +119,7 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
             _log?.Log(text);
         }
 
-        private Rectangle GetRect(IEnumerable<Vec> vehicles)
-        {
-            if (!vehicles.Any())
-                return Rectangle.Empty;
-
-            double maxX = int.MinValue;
-            double minX = int.MaxValue;
-            double maxY = int.MinValue;
-            double minY = int.MaxValue;
-            vehicles.ForEach(e =>
-            {
-                maxX = Math.Max(maxX, e.X);
-                minX = Math.Min(minX, e.X);
-                maxY = Math.Max(maxY, e.Y);
-                minY = Math.Min(minY, e.Y);
-            });
-
-            return new Rectangle((int)minX, (int)minY, (int)(maxX - minX), (int)(maxY - minY));
-        }
-
+       
 
     }
 }
