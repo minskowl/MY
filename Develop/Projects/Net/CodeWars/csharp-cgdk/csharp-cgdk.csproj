@@ -72,7 +72,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EnumerableExtensions.cs" />
     <Compile Include="Lib.cs" />
     <Compile Include="Model\ActionType.cs" />
     <Compile Include="Model\CircularUnit.cs" />

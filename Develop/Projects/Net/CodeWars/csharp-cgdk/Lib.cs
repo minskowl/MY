@@ -11,76 +11,126 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
 {
     #region Actions
 
-
-
     public class FirstCommand : DeployCommand
     {
-        protected override void DoImpl()
+        protected override void Do()
         {
-            Strategy.StartMatrix.BuilMatrix(Vehiles);
+            Strategy.StartMatrix.BuilMatrix(S.Vehiles);
 
-            base.DoImpl();
+            base.Do();
         }
 
     }
 
+
+    public class NuclearStriceCommand : Command
+    {
+        protected override ActionType ActionType => ActionType.TacticalNuclearStrike;
+        private Veh[] seeVehiles;
+        private Veh _vehicle;
+        public override bool CanAct(ISituation situation)
+        {
+            base.CanAct(situation);
+
+            if (!S.CanNuclearStrike)
+                return false;
+
+            var rect = S.EnemyVehiles.GetRect();
+
+            seeVehiles = S.Vehiles.Where(e => e.Durability > 50 && rect.Contains(e.X, e.Y)).ToArray();
+            if (seeVehiles.IsEmpty()) return false;
+
+            var maxStrice = 0;
+            foreach (var seeVehile in seeVehiles)
+            {
+                var el = new Ellipse(seeVehile.X, seeVehile.Y, 150, 150);
+                var inStriceEnemies = S.EnemyVehiles.Count(e => el.InBound(e.X, e.Y));
+
+                var inStriceOurs = S.Vehiles.Count(e => el.InBound(e.X, e.Y));
+
+                if (inStriceOurs < inStriceEnemies && inStriceOurs < 20 && inStriceEnemies > maxStrice)
+                {
+                    maxStrice = inStriceEnemies;
+                    _vehicle = seeVehile;
+                }
+                if (maxStrice > 200)
+                    break;
+            }
+
+
+            return seeVehiles.IsNotEmpty() && maxStrice > 50;
+        }
+
+        protected override void Do()
+        {
+            base.Do();
+
+            S.Move.X = _vehicle.X;
+            S.Move.Y = _vehicle.Y;
+            S.Move.VehicleId = _vehicle.Id;
+
+            S.Commands.Add(new NuclearStriceCommand());
+        }
+    }
+
     public class DeployCommand : SelectUnitCommand
     {
-        protected override void DoImpl()
+        public static int Count { get; private set; }
+
+        protected override void Do()
         {
             var gr = Strategy.StartMatrix.GetFreeGroup();
 
             if (gr == null)
                 return;
-
+            Count++;
             Type = gr.Type;
-            base.DoImpl();
+            base.Do();
 
-    
-
-            Next = new AssingGroup(Type);
+            Next = new AssingGroup(Type)
             {
-                Act = (s3) =>
-                {
-                    var c = new MoveGroup(Type)
-                    {
-                        Act = s =>
-                        {
-                            var rect = Vehiles.GetGroupRect(Type);
-
-                            s.Move.X = (s.World.Width / 2) - rect.Right;
-                            s.Move.Y = (s.World.Height / 2) - rect.Bottom;
-
-                            var scale = new ScaleGroup(VehicleType.Fighter)
-                            {
-                                Can = e =>
-                                {
-                                    var r = Vehiles.GetGroupRect(Type);
-                                    var minY = World.Height / 5;
-                                    e.Log.Log("Wait Scale Type {0} {1} minY {2}", Type, r, minY);
-                                    return r.Y >= minY;
-
-                                },
-                                Act = (s1) =>
-                                {
-                                    s1.Move.Factor = 5;
-                                    var r = Vehiles.GetGroupRect(Type);
-                                    s1.Move.X = r.X;
-                                    s1.Move.Y = r.Y;
-                                }
-                            };
-                            s.Commands.Add(scale);
-                            s.Commands.Add(new DeployCommand());
-                        }
-                    };
-                    s3.Commands.Add(c);
-                };
-            }; 
-
-
+                Next = new MoveToCenterCommand(Type)
+            };
         }
 
+        public class MoveToCenterCommand : MoveGroup
+        {
+            public MoveToCenterCommand(VehicleType type) : base(type)
+            {
+            }
 
+            protected override void Do()
+            {
+                S.Move.X = (S.World.Width / 2);
+                S.Move.Y = (S.World.Height / 2);
+
+                base.Do();
+
+                var scale = new ScaleGroup(Type)
+                {
+                    Can = e =>
+                    {
+                        var r = S.Vehiles.GetGroupRect(Type);
+                        var minY = S.World.Height / 4;
+                        e.Log.Log("Wait Scale Type {0} {1} minY {2}", Type, r, minY);
+                        return r.Y >= minY;
+
+                    },
+                    Act = s1 =>
+                    {
+                        s1.Move.Factor = 6;
+                        var p = S.Vehiles.GetGroupRect(Type).Center;
+                        s1.Move.X = p.X;
+                        s1.Move.Y = p.Y;
+                    }
+                };
+                S.Commands.Add(scale);
+
+                if (DeployCommand.Count < 5)
+                    S.Commands.Add(new DeployCommand());
+
+            }
+        }
 
 
     }
@@ -89,28 +139,25 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
 
     public abstract class Command
     {
-        private ISituation _situation;
-        protected Move Move => _situation.Move;
-        protected World World => _situation.World;
-        protected VehileCollection Vehiles => _situation.Vehiles;
+        protected ISituation S;
 
-        protected MyStrategy Strategy
-        {
-            get { return (MyStrategy)_situation; }
-        }
+        protected MyStrategy Strategy => (MyStrategy)S;
+
         public Command Next { get; set; }
 
         protected abstract ActionType ActionType { get; }
 
         public void Do(ISituation situation)
         {
-            _situation = situation;
-            Move.Action = ActionType;
-            DoImpl();
-            Act?.Invoke(_situation);
+            S = situation;
+            Do();
+            Act?.Invoke(S);
         }
 
-        protected abstract void DoImpl();
+        protected virtual void Do()
+        {
+            S.Move.Action = ActionType;
+        }
 
         public Predicate<ISituation> Can { get; set; }
 
@@ -118,41 +165,52 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
 
         public virtual bool CanAct(ISituation situation)
         {
-            _situation = situation;
-            return Can?.Invoke(_situation) ?? true;
+            S = situation;
+            return Can?.Invoke(S) ?? true;
         }
+
+
     }
 
-    public abstract class TypeCommand : Command
+    public abstract class GroupCommand : Command
     {
-        public VehicleType Type;
+        public VehicleType Type { get; private set; }
 
-        protected TypeCommand()
-        {
 
-        }
-
-        protected TypeCommand(VehicleType type)
+        protected GroupCommand(VehicleType type)
         {
             Type = type;
         }
 
-        protected override void DoImpl()
+        private Command _prevNext;
+        protected override void Do()
         {
-            Move.Group = (int)Type + 1;
+            if (S.Vehiles.Any(e => e.IsSelected && e.IsInGroup(Type)))
+            {
+                if (Next == this)
+                    Next = _prevNext;
+                base.Do();
+            }
+            else
+            {
+                S.Move.Action = ActionType.ClearAndSelect;
+                S.Move.Group = Type.ToInt();
+                _prevNext = Next;
+                Next = this;
+            }
         }
 
-        protected RectangleF GetVehileRect()
-        {
-            return Vehiles.Where(e => e.Type == Type).GetRect();
-        }
         protected RectangleF GetGroupRect()
         {
-            return Vehiles.Where(e => e.IsInGroup((int)Type)).GetRect();
+            return S.Vehiles.Where(e => e.IsInGroup(Type)).GetRect();
+        }
+        protected RectangleF GetVehileRect()
+        {
+            return S.Vehiles.Where(e => e.Type == Type).GetRect();
         }
     }
 
-    public class ScaleGroup : TypeCommand
+    public class ScaleGroup : GroupCommand
     {
         protected override ActionType ActionType => ActionType.Scale;
 
@@ -163,18 +221,26 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
 
     }
 
-    public class AssingGroup : TypeCommand
+    public class AssingGroup : Command
     {
         protected override ActionType ActionType => ActionType.Assign;
-        public AssingGroup() { }
+        private readonly VehicleType _type;
 
-        public AssingGroup(VehicleType type) : base(type)
+
+
+        public AssingGroup(VehicleType type)
         {
+            _type = type;
         }
 
+        protected override void Do()
+        {
+            S.Move.Group = _type.ToInt();
+            base.Do();
+        }
     }
 
-    public class MoveGroup : TypeCommand
+    public class MoveGroup : GroupCommand
     {
         protected override ActionType ActionType => ActionType.Move;
         public MoveGroup(VehicleType type) : base(type)
@@ -183,22 +249,25 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
 
     }
 
-    public class SelectUnitCommand : TypeCommand
+    public class SelectUnitCommand : Command
     {
+        public VehicleType Type { get; protected set; }
         protected override ActionType ActionType => ActionType.ClearAndSelect;
         public SelectUnitCommand() { }
-        public SelectUnitCommand(VehicleType type) : base(type)
+        public SelectUnitCommand(VehicleType type)
         {
+            Type = type;
         }
 
-        protected override void DoImpl()
+        protected override void Do()
         {
-            var rect = GetVehileRect();
-            Move.VehicleType = Type;
-            Move.X = rect.X;
-            Move.Y = rect.Y;
-            Move.Right = rect.Right;
-            Move.Bottom = rect.Bottom;
+            var rect = S.Vehiles.GetVehileRect(Type);
+            S.Move.VehicleType = Type;
+            S.Move.X = rect.X;
+            S.Move.Y = rect.Y;
+            S.Move.Right = rect.Right;
+            S.Move.Bottom = rect.Bottom;
+            base.Do();
         }
     }
 
@@ -241,7 +310,7 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
                 _storage[y, x] = vecGroup;
             }
         }
-        private int GetIndex(float cur, float min, float max)
+        private int GetIndex(double cur, double min, double max)
         {
             if (cur == min)
                 return 0;
@@ -252,13 +321,31 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
         }
     }
 
-    public class VehileCollection : IEnumerable<Vec>
+    public class VecGroup
     {
-        private readonly Dictionary<long, Vec> _storage = new Dictionary<long, Vec>();
+        public VecGroup(RectangleF rect, VehicleType type)
+        {
+            Rect = rect;
+            Type = type;
+        }
+
+        public RectangleF Rect { get; set; }
+        public VehicleType Type { get; set; }
+        public override string ToString()
+        {
+            return $"{Type} {Rect}";
+        }
+    }
 
 
+    public class VehileCollection : IEnumerable<Veh>
+    {
+        private readonly Dictionary<long, Veh> _storage = new Dictionary<long, Veh>();
+        private int playerId;
 
-        public IEnumerator<Vec> GetEnumerator()
+        public int Count => _storage.Count;
+
+        public IEnumerator<Veh> GetEnumerator()
         {
             return _storage.Values.GetEnumerator();
         }
@@ -268,21 +355,35 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
             return GetEnumerator();
         }
 
-        public void Add(IEnumerable<Vehicle> vehicles)
+        public void Initialize(Player player, World world)
         {
-            vehicles.ForEach(e => _storage[e.Id] = new Vec(e));
+            if (world.VehicleUpdates.IsNotEmpty())
+            {
+
+
+                foreach (var update in world.VehicleUpdates)
+                {
+                    Veh v;
+                    if (_storage.TryGetValue(update.Id, out v))
+                    {
+                        if (v.Durability == 0)
+                            _storage.Remove(update.Id);
+                        else
+                            v.Update(update);
+                    }
+                }
+
+
+            }
+
+            if (world.NewVehicles.IsNotEmpty())
+            {
+                world.NewVehicles.Where(e => e.PlayerId == player.Id).ForEach(e => _storage[e.Id] = new Veh(e));
+            }
+
         }
 
-        public void Update(VehicleUpdate[] updates)
-        {
-            if (updates.IsNotEmpty())
-                foreach (var update in updates)
-                {
-                    Vec v;
-                    if (_storage.TryGetValue(update.Id, out v))
-                        v.Update(update);
-                }
-        }
+
 
         public RectangleF GetVehileRect(VehicleType type)
         {
@@ -305,10 +406,10 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
             return (int)type + 1;
         }
 
-        public static RectangleF GetRect(this IEnumerable<Vec> vehicles)
+        public static RectangleF GetRect(this IEnumerable<Veh> vehicles)
         {
-            if (!vehicles.Any())
-                return Rectangle.Empty;
+            if (vehicles == null)
+                return RectangleF.Empty;
 
             double maxX = int.MinValue;
             double minX = int.MaxValue;
@@ -322,24 +423,31 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
                 minY = Math.Min(minY, e.Y);
             });
 
-            return new RectangleF((float)minX, (float)minY, (float)(maxX - minX), (float)(maxY - minY));
+            return maxX == int.MinValue && minX == int.MaxValue ? RectangleF.Empty : new RectangleF(minX, minY, (maxX - minX), (maxY - minY));
         }
     }
 
-    public class Vec
+    public class Veh
     {
-        public Vec(Vehicle v)
+        public Veh(Vehicle v)
         {
             Id = v.Id;
             X = v.X;
             Y = v.Y;
             Type = v.Type;
             Groups = v.Groups;
+            IsSelected = v.IsSelected;
+            Durability = v.Durability;
         }
 
+
         public long Id { get; }
+
+        public int Durability { get; private set; }
+        public bool IsSelected { get; private set; }
         public double X { get; private set; }
         public double Y { get; private set; }
+
         public int[] Groups { get; private set; }
         public VehicleType Type { get; }
 
@@ -353,14 +461,22 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
             return Groups.IsNotEmpty() && Groups.Contains(group);
         }
 
-        public Vec Update(VehicleUpdate u)
+        public Veh Update(VehicleUpdate u)
         {
             X = u.X;
             Y = u.Y;
             Groups = u.Groups;
+            IsSelected = u.IsSelected;
+            Durability = u.Durability;
             return this;
         }
+
+        public override string ToString()
+        {
+            return $"{Type} ({X},{Y})";
+        }
     }
+
 
     public interface ILog : IDisposable
     {
@@ -413,9 +529,19 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
         public void Log(Move move)
         {
             if (move.Action == null) return;
+            var action = move.Action.Value;
             var vt = move.VehicleType ?? (VehicleType)(move.Group - 1);
 
-            Log("Action {0} Group {1} ({2},{3})-({4},{5}) ", move.Action, vt, move.X, move.Y, move.Right, move.Bottom);
+            if (action == ActionType.Scale)
+                Log("Action {0}  ({1},{2})-{3} ", action, move.X, move.Y, move.Factor);
+            else if (action == ActionType.ClearAndSelect)
+                Log("Action {0} Group {1} ({2},{3})-({4},{5}) ", action, vt, move.X, move.Y, move.Right, move.Bottom);
+            else if (action == ActionType.Move)
+                Log("Action {0} ({1},{2}) ", action, move.X, move.Y);
+            else
+                Log("Action {0} Group {1} ({2},{3})-({4},{5}) ", action, vt, move.X, move.Y, move.Right, move.Bottom);
+
+            _stream.Flush();
         }
 
         public void Dispose()
@@ -429,504 +555,25 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
 
 
 
-    public struct Size
-    {
-        public static readonly Size Empty;
-
-        public bool IsEmpty
-        {
-            get
-            {
-                if (Width == 0)
-                    return Height == 0;
-                return false;
-            }
-        }
-
-        public int Width { get; set; }
-
-        public int Height { get; set; }
-
-        public Size(Point pt)
-        {
-            Width = pt.X;
-            Height = pt.Y;
-        }
-
-        public Size(int width, int height)
-        {
-            Width = width;
-            Height = height;
-        }
-
-        public static implicit operator SizeF(Size p)
-        {
-            return new SizeF((float)p.Width, (float)p.Height);
-        }
-
-        public static explicit operator Point(Size size)
-        {
-            return new Point(size.Width, size.Height);
-        }
-
-        public static Size operator +(Size sz1, Size sz2)
-        {
-            return Add(sz1, sz2);
-        }
-
-        public static Size operator -(Size sz1, Size sz2)
-        {
-            return Subtract(sz1, sz2);
-        }
-
-        public static bool operator ==(Size sz1, Size sz2)
-        {
-            if (sz1.Width == sz2.Width)
-                return sz1.Height == sz2.Height;
-            return false;
-        }
-
-        public static bool operator !=(Size sz1, Size sz2)
-        {
-            return !(sz1 == sz2);
-        }
-
-        public static Size Add(Size sz1, Size sz2)
-        {
-            return new Size(sz1.Width + sz2.Width, sz1.Height + sz2.Height);
-        }
-
-        public static Size Ceiling(SizeF value)
-        {
-            return new Size((int)Math.Ceiling((double)value.Width), (int)Math.Ceiling((double)value.Height));
-        }
-
-        public static Size Subtract(Size sz1, Size sz2)
-        {
-            return new Size(sz1.Width - sz2.Width, sz1.Height - sz2.Height);
-        }
-
-        public static Size Truncate(SizeF value)
-        {
-            return new Size((int)value.Width, (int)value.Height);
-        }
-
-        public static Size Round(SizeF value)
-        {
-            return new Size((int)Math.Round((double)value.Width), (int)Math.Round((double)value.Height));
-        }
-
-        public override bool Equals(object obj)
-        {
-            if (!(obj is Size))
-                return false;
-            var size = (Size)obj;
-            if (size.Width == Width)
-                return size.Height == Height;
-            return false;
-        }
-
-        public override int GetHashCode()
-        {
-            return Width ^ Height;
-        }
-
-        public override string ToString()
-        {
-            return "{Width=" + Width + ", Height=" + Height + "}";
-        }
-    }
-
-    public struct Point
-    {
-        public static readonly Point Empty;
-
-
-        public bool IsEmpty
-        {
-            get
-            {
-                if (X == 0)
-                    return Y == 0;
-                return false;
-            }
-        }
-
-        public int X { get; set; }
-
-        public int Y { get; set; }
-
-        public Point(int x, int y)
-        {
-            X = x;
-            Y = y;
-        }
-
-        public Point(Size sz)
-        {
-            X = sz.Width;
-            Y = sz.Height;
-        }
-
-        public Point(int dw)
-        {
-            X = (short)LOWORD(dw);
-            Y = (short)HIWORD(dw);
-        }
-
-        //public static implicit operator PointF(Point p)
-        //{
-        //    return new PointF((float)p.X, (float)p.Y);
-        //}
-
-        public static explicit operator Size(Point p)
-        {
-            return new Size(p.X, p.Y);
-        }
-
-        public static Point operator +(Point pt, Size sz)
-        {
-            return Add(pt, sz);
-        }
-
-        public static Point operator -(Point pt, Size sz)
-        {
-            return Subtract(pt, sz);
-        }
-
-        public static bool operator ==(Point left, Point right)
-        {
-            if (left.X == right.X)
-                return left.Y == right.Y;
-            return false;
-        }
-
-        public static bool operator !=(Point left, Point right)
-        {
-            return !(left == right);
-        }
-
-        public static Point Add(Point pt, Size sz)
-        {
-            return new Point(pt.X + sz.Width, pt.Y + sz.Height);
-        }
-
-        public static Point Subtract(Point pt, Size sz)
-        {
-            return new Point(pt.X - sz.Width, pt.Y - sz.Height);
-        }
-
-        //public static Point Ceiling(PointF value)
-        //{
-        //    return new Point((int)Math.Ceiling((double)value.X), (int)Math.Ceiling((double)value.Y));
-        //}
-
-        //public static Point Truncate(PointF value)
-        //{
-        //    return new Point((int)value.X, (int)value.Y);
-        //}
-
-        //public static Point Round(PointF value)
-        //{
-        //    return new Point((int)Math.Round((double)value.X), (int)Math.Round((double)value.Y));
-        //}
-
-        public override bool Equals(object obj)
-        {
-            if (!(obj is Point))
-                return false;
-            var point = (Point)obj;
-            if (point.X == X)
-                return point.Y == Y;
-            return false;
-        }
-
-        public override int GetHashCode()
-        {
-            return X ^ Y;
-        }
-
-        public void Offset(int dx, int dy)
-        {
-            X = X + dx;
-            Y = Y + dy;
-        }
-
-        public void Offset(Point p)
-        {
-            Offset(p.X, p.Y);
-        }
-
-        public override string ToString()
-        {
-            return "{X=" + X + ",Y=" + Y + "}";
-        }
-
-        private static int HIWORD(int n)
-        {
-            return (n >> 16) & ushort.MaxValue;
-        }
-
-        private static int LOWORD(int n)
-        {
-            return n & ushort.MaxValue;
-        }
-    }
-
-    [Serializable]
-    public struct Rectangle
-    {
-        public static readonly Rectangle Empty;
-        private int x;
-        private int y;
-        private int width;
-        private int height;
-
-
-        public Point Location
-        {
-            get => new Point(X, Y);
-            set
-            {
-                X = value.X;
-                Y = value.Y;
-            }
-        }
-
-
-        public Size Size
-        {
-            get => new Size(Width, Height);
-            set
-            {
-                Width = value.Width;
-                Height = value.Height;
-            }
-        }
-
-        public int X
-        {
-            get => x;
-            set => x = value;
-        }
-
-        public int Y
-        {
-            get => y;
-            set => y = value;
-        }
-
-        public int Width
-        {
-            get => width;
-            set => width = value;
-        }
-
-        public int Height
-        {
-            get => height;
-            set => height = value;
-        }
-
-
-        public int Left => X;
-
-
-        public int Top => Y;
-
-
-        public int Right => X + Width;
-
-
-        public int Bottom => Y + Height;
-
-
-        public bool IsEmpty
-        {
-            get
-            {
-                if (height == 0 && width == 0 && x == 0)
-                    return y == 0;
-                return false;
-            }
-        }
-
-        public Rectangle(int x, int y, int width, int height)
-        {
-            this.x = x;
-            this.y = y;
-            this.width = width;
-            this.height = height;
-        }
-
-        public Rectangle(Point location, Size size)
-        {
-            x = location.X;
-            y = location.Y;
-            width = size.Width;
-            height = size.Height;
-        }
-
-        public static bool operator ==(Rectangle left, Rectangle right)
-        {
-            if (left.X == right.X && left.Y == right.Y && left.Width == right.Width)
-                return left.Height == right.Height;
-            return false;
-        }
-
-        public static bool operator !=(Rectangle left, Rectangle right)
-        {
-            return !(left == right);
-        }
-
-        public static Rectangle FromLTRB(int left, int top, int right, int bottom)
-        {
-            return new Rectangle(left, top, right - left, bottom - top);
-        }
-
-        public override bool Equals(object obj)
-        {
-            if (!(obj is Rectangle))
-                return false;
-            var rectangle = (Rectangle)obj;
-            if (rectangle.X == X && rectangle.Y == Y && rectangle.Width == Width)
-                return rectangle.Height == Height;
-            return false;
-        }
-
-        //public static Rectangle Ceiling(RectangleF value)
-        //{
-        //    return new Rectangle((int)Math.Ceiling((double)value.X), (int)Math.Ceiling((double)value.Y), (int)Math.Ceiling((double)value.Width), (int)Math.Ceiling((double)value.Height));
-        //}
-
-        //public static Rectangle Truncate(RectangleF value)
-        //{
-        //    return new Rectangle((int)value.X, (int)value.Y, (int)value.Width, (int)value.Height);
-        //}
-
-        //public static Rectangle Round(RectangleF value)
-        //{
-        //    return new Rectangle((int)Math.Round((double)value.X), (int)Math.Round((double)value.Y), (int)Math.Round((double)value.Width), (int)Math.Round((double)value.Height));
-        //}
-
-        public bool Contains(int x, int y)
-        {
-            if (X <= x && x < X + Width && Y <= y)
-                return y < Y + Height;
-            return false;
-        }
-
-        public bool Contains(Point pt)
-        {
-            return Contains(pt.X, pt.Y);
-        }
-
-        public bool Contains(Rectangle rect)
-        {
-            if (X <= rect.X && rect.X + rect.Width <= X + Width && Y <= rect.Y)
-                return rect.Y + rect.Height <= Y + Height;
-            return false;
-        }
-
-        public override int GetHashCode()
-        {
-            return X ^ ((Y << 13) | (int)((uint)Y >> 19)) ^ ((Width << 26) | (int)((uint)Width >> 6)) ^
-                   ((Height << 7) | (int)((uint)Height >> 25));
-        }
-
-        public void Inflate(int width, int height)
-        {
-            X = X - width;
-            Y = Y - height;
-            Width = Width + 2 * width;
-            Height = Height + 2 * height;
-        }
-
-        public void Inflate(Size size)
-        {
-            Inflate(size.Width, size.Height);
-        }
-
-        public static Rectangle Inflate(Rectangle rect, int x, int y)
-        {
-            var rectangle = rect;
-            rectangle.Inflate(x, y);
-            return rectangle;
-        }
-
-        public void Intersect(Rectangle rect)
-        {
-            var rectangle = Intersect(rect, this);
-            X = rectangle.X;
-            Y = rectangle.Y;
-            Width = rectangle.Width;
-            Height = rectangle.Height;
-        }
-
-        public static Rectangle Intersect(Rectangle a, Rectangle b)
-        {
-            var x = Math.Max(a.X, b.X);
-            var num1 = Math.Min(a.X + a.Width, b.X + b.Width);
-            var y = Math.Max(a.Y, b.Y);
-            var num2 = Math.Min(a.Y + a.Height, b.Y + b.Height);
-            if (num1 >= x && num2 >= y)
-                return new Rectangle(x, y, num1 - x, num2 - y);
-            return Empty;
-        }
-
-        public bool IntersectsWith(Rectangle rect)
-        {
-            if (rect.X < X + Width && X < rect.X + rect.Width && rect.Y < Y + Height)
-                return Y < rect.Y + rect.Height;
-            return false;
-        }
-
-        public static Rectangle Union(Rectangle a, Rectangle b)
-        {
-            var x = Math.Min(a.X, b.X);
-            var num1 = Math.Max(a.X + a.Width, b.X + b.Width);
-            var y = Math.Min(a.Y, b.Y);
-            var num2 = Math.Max(a.Y + a.Height, b.Y + b.Height);
-            return new Rectangle(x, y, num1 - x, num2 - y);
-        }
-
-        public void Offset(Point pos)
-        {
-            Offset(pos.X, pos.Y);
-        }
-
-        public void Offset(int x, int y)
-        {
-            X = X + x;
-            Y = Y + y;
-        }
-
-        public override string ToString()
-        {
-            return "{X=" + X + ",Y=" + Y + ",Width=" + Width + ",Height=" + Height + "}";
-        }
-    }
-
-    [ComVisible(true)]
     [Serializable]
     public struct SizeF
     {
         public static readonly SizeF Empty;
-        private float width;
-        private float height;
+        private double width;
+        private double height;
 
 
         public bool IsEmpty
         {
             get
             {
-                if ((double)this.width == 0.0)
-                    return (double)this.height == 0.0;
+                if (width == 0.0)
+                    return this.height == 0.0;
                 return false;
             }
         }
 
-        public float Width
+        public double Width
         {
             get
             {
@@ -938,7 +585,7 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
             }
         }
 
-        public float Height
+        public double Height
         {
             get
             {
@@ -962,7 +609,7 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
             this.height = pt.Y;
         }
 
-        public SizeF(float width, float height)
+        public SizeF(double width, double height)
         {
             this.width = width;
             this.height = height;
@@ -1025,10 +672,10 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
             return (PointF)this;
         }
 
-        public Size ToSize()
-        {
-            return Size.Truncate(this);
-        }
+        //public Size ToSize()
+        //{
+        //    return Size.Truncate(this);
+        //}
 
         public override string ToString()
         {
@@ -1041,8 +688,8 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
     public struct PointF
     {
         public static readonly PointF Empty;
-        private float x;
-        private float y;
+        private double x;
+        private double y;
 
 
         public bool IsEmpty
@@ -1055,7 +702,7 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
             }
         }
 
-        public float X
+        public double X
         {
             get
             {
@@ -1067,7 +714,7 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
             }
         }
 
-        public float Y
+        public double Y
         {
             get
             {
@@ -1079,21 +726,21 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
             }
         }
 
-        public PointF(float x, float y)
+        public PointF(double x, double y)
         {
             this.x = x;
             this.y = y;
         }
 
-        public static PointF operator +(PointF pt, Size sz)
-        {
-            return PointF.Add(pt, sz);
-        }
+        //public static PointF operator +(PointF pt, Size sz)
+        //{
+        //    return PointF.Add(pt, sz);
+        //}
 
-        public static PointF operator -(PointF pt, Size sz)
-        {
-            return PointF.Subtract(pt, sz);
-        }
+        //public static PointF operator -(PointF pt, Size sz)
+        //{
+        //    return PointF.Subtract(pt, sz);
+        //}
 
         public static PointF operator +(PointF pt, SizeF sz)
         {
@@ -1117,15 +764,15 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
             return !(left == right);
         }
 
-        public static PointF Add(PointF pt, Size sz)
-        {
-            return new PointF(pt.X + (float)sz.Width, pt.Y + (float)sz.Height);
-        }
+        //public static PointF Add(PointF pt, Size sz)
+        //{
+        //    return new PointF(pt.X + (double)sz.Width, pt.Y + (double)sz.Height);
+        //}
 
-        public static PointF Subtract(PointF pt, Size sz)
-        {
-            return new PointF(pt.X - (float)sz.Width, pt.Y - (float)sz.Height);
-        }
+        //public static PointF Subtract(PointF pt, Size sz)
+        //{
+        //    return new PointF(pt.X - (double)sz.Width, pt.Y - (double)sz.Height);
+        //}
 
         public static PointF Add(PointF pt, SizeF sz)
         {
@@ -1167,10 +814,10 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
     public struct RectangleF
     {
         public static readonly RectangleF Empty;
-        private float x;
-        private float y;
-        private float width;
-        private float height;
+        private double x;
+        private double y;
+        private double width;
+        private double height;
 
 
         public PointF Location
@@ -1200,7 +847,7 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
             }
         }
 
-        public float X
+        public double X
         {
             get
             {
@@ -1212,7 +859,7 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
             }
         }
 
-        public float Y
+        public double Y
         {
             get
             {
@@ -1224,7 +871,7 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
             }
         }
 
-        public float Width
+        public double Width
         {
             get
             {
@@ -1236,7 +883,7 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
             }
         }
 
-        public float Height
+        public double Height
         {
             get
             {
@@ -1249,7 +896,7 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
         }
 
 
-        public float Left
+        public double Left
         {
             get
             {
@@ -1258,7 +905,7 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
         }
 
 
-        public float Top
+        public double Top
         {
             get
             {
@@ -1266,16 +913,16 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
             }
         }
 
-        public float Right
+        public double Right
         {
             get
             {
-                return this.X + this.Width;
+                return X + Width;
             }
         }
 
 
-        public float Bottom
+        public double Bottom
         {
             get
             {
@@ -1294,7 +941,7 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
             }
         }
 
-        public RectangleF(float x, float y, float width, float height)
+        public RectangleF(double x, double y, double width, double height)
         {
             this.x = x;
             this.y = y;
@@ -1310,10 +957,10 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
             this.height = size.Height;
         }
 
-        public static implicit operator RectangleF(Rectangle r)
-        {
-            return new RectangleF((float)r.X, (float)r.Y, (float)r.Width, (float)r.Height);
-        }
+        //public static implicit operator RectangleF(Rectangle r)
+        //{
+        //    return new RectangleF((double)r.X, (double)r.Y, (double)r.Width, (double)r.Height);
+        //}
 
         public static bool operator ==(RectangleF left, RectangleF right)
         {
@@ -1327,7 +974,7 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
             return !(left == right);
         }
 
-        public static RectangleF FromLTRB(float left, float top, float right, float bottom)
+        public static RectangleF FromLTRB(double left, double top, double right, double bottom)
         {
             return new RectangleF(left, top, right - left, bottom - top);
         }
@@ -1342,7 +989,7 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
             return false;
         }
 
-        public bool Contains(float x, float y)
+        public bool Contains(double x, double y)
         {
             if ((double)this.X <= (double)x && (double)x < (double)this.X + (double)this.Width && (double)this.Y <= (double)y)
                 return (double)y < (double)this.Y + (double)this.Height;
@@ -1366,7 +1013,7 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
             return (int)(uint)this.X ^ ((int)(uint)this.Y << 13 | (int)((uint)this.Y >> 19)) ^ ((int)(uint)this.Width << 26 | (int)((uint)this.Width >> 6)) ^ ((int)(uint)this.Height << 7 | (int)((uint)this.Height >> 25));
         }
 
-        public void Inflate(float x, float y)
+        public void Inflate(double x, double y)
         {
             this.X = this.X - x;
             this.Y = this.Y - y;
@@ -1379,7 +1026,7 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
             this.Inflate(size.Width, size.Height);
         }
 
-        public static RectangleF Inflate(RectangleF rect, float x, float y)
+        public static RectangleF Inflate(RectangleF rect, double x, double y)
         {
             RectangleF rectangleF = rect;
             rectangleF.Inflate(x, y);
@@ -1397,14 +1044,17 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
 
         public static RectangleF Intersect(RectangleF a, RectangleF b)
         {
-            float x = Math.Max(a.X, b.X);
-            float num1 = Math.Min(a.X + a.Width, b.X + b.Width);
-            float y = Math.Max(a.Y, b.Y);
-            float num2 = Math.Min(a.Y + a.Height, b.Y + b.Height);
+            double x = Math.Max(a.X, b.X);
+            double num1 = Math.Min(a.X + a.Width, b.X + b.Width);
+            double y = Math.Max(a.Y, b.Y);
+            double num2 = Math.Min(a.Y + a.Height, b.Y + b.Height);
             if ((double)num1 >= (double)x && (double)num2 >= (double)y)
                 return new RectangleF(x, y, num1 - x, num2 - y);
             return RectangleF.Empty;
         }
+
+        public PointF Center => new PointF(Left + Width / 2,
+            Top + Height / 2);
 
         public bool IntersectsWith(RectangleF rect)
         {
@@ -1415,10 +1065,10 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
 
         public static RectangleF Union(RectangleF a, RectangleF b)
         {
-            float x = Math.Min(a.X, b.X);
-            float num1 = Math.Max(a.X + a.Width, b.X + b.Width);
-            float y = Math.Min(a.Y, b.Y);
-            float num2 = Math.Max(a.Y + a.Height, b.Y + b.Height);
+            double x = Math.Min(a.X, b.X);
+            double num1 = Math.Max(a.X + a.Width, b.X + b.Width);
+            double y = Math.Min(a.Y, b.Y);
+            double num2 = Math.Max(a.Y + a.Height, b.Y + b.Height);
             return new RectangleF(x, y, num1 - x, num2 - y);
         }
 
@@ -1427,7 +1077,7 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
             this.Offset(pos.X, pos.Y);
         }
 
-        public void Offset(float x, float y)
+        public void Offset(double x, double y)
         {
             this.X = this.X + x;
             this.Y = this.Y + y;
@@ -1439,7 +1089,347 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
         {
             return "{X=" + this.X + ",Y=" + this.Y.ToString((IFormatProvider)CultureInfo.CurrentCulture) + ",Right=" + this.Right + ",Bottom=" + this.Bottom.ToString((IFormatProvider)CultureInfo.CurrentCulture) + "}";
         }
-        #endregion
+
+
+
 
     }
+    public abstract class DrawingPrimitive
+    {
+        protected const int InBoundOffset = 3;
+
+        public abstract bool InBound(PointF point);
+        public abstract bool InHorizontalRange(PointF point, bool considerOffset = true);
+        protected static int GetOffset(bool considerOffset)
+        {
+            return considerOffset ? 3 : 0;
+        }
+    }
+
+    public abstract class PointSizePrimitive : DrawingPrimitive
+    {
+        public PointF Point
+        {
+            get;
+            set;
+        }
+        public SizeF Size
+        {
+            get;
+            set;
+        }
+        protected PointSizePrimitive(PointF point, SizeF size)
+        {
+            Point = point;
+            Size = size;
+        }
+    }
+    public class Ellipse : PointSizePrimitive
+    {
+        private PointF _center = PointF.Empty;
+        protected PointF Center
+        {
+            get
+            {
+                if (_center.IsEmpty)
+                    _center = new PointF(Point.X + Size.Width / 2, Point.Y + Size.Height / 2);
+                return _center;
+            }
+        }
+
+        public Ellipse(PointF point, SizeF size) : base(point, size)
+        {
+        }
+        public Ellipse(double x, double y, double width, float height) : this(new PointF(x, y), new SizeF(width, height))
+        {
+        }
+
+        public bool InBound(double x, double y)
+        {
+
+            double xRadius = Size.Width / 2;
+            double yRadius = Size.Height / 2;
+
+            if (xRadius <= 0.0 || yRadius <= 0.0)
+                return false;
+            /* This is a more general form of the circle equation
+             *
+             * X^2/a^2 + Y^2/b^2 <= 1
+             */
+            var normalized = new PointF(x - Center.X, y - Center.Y);
+
+            return ((normalized.X * normalized.X)
+                    / (xRadius * xRadius)) + ((normalized.Y * normalized.Y) / (yRadius * yRadius))
+                   <= 1.0;
+        }
+
+        public override bool InBound(PointF point)
+        {
+            return InBound(point.X, point.Y);
+        }
+        public override bool InHorizontalRange(PointF point, bool considerOffset = true)
+        {
+            return (base.Point.X - GetOffset(considerOffset)) <= point.X && (base.Point.X + base.Size.Width + GetOffset(considerOffset)) >= point.X;
+        }
+    }
+    #endregion
+
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1708:IdentifiersShouldDifferByMoreThanCase")]
+    public static class EnumerableExtensions
+    {
+        /// <summary>
+        /// Ins the specified array.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="value">The value.</param>
+        /// <param name="array">The array.</param>
+        /// <returns></returns>
+        public static bool In<T>(this T value, params T[] array)
+        {
+            return array.Contains(value);
+        }
+
+
+        /// <summary>
+        /// Concats the specified second.
+        /// </summary>
+        /// <typeparam name="TSource">The type of the source.</typeparam>
+        /// <param name="first">The first.</param>
+        /// <param name="second">The second.</param>
+        /// <returns></returns>
+        public static IEnumerable<TSource> Concat<TSource>(this IEnumerable<TSource> first, TSource second)
+        {
+            if (first != null)
+                foreach (var element in first) yield return element;
+            if (second != null)
+                yield return second;
+        }
+
+        public static IEnumerable<TSource> Concat<TSource>(this IEnumerable<TSource> first, TSource second, IEnumerable<TSource> third)
+        {
+            if (first != null)
+                foreach (var element in first) yield return element;
+            if (second != null)
+                yield return second;
+            if (third != null)
+                foreach (var element in third) yield return element;
+        }
+        /// <summary>
+        /// Concats the specified second.
+        /// </summary>
+        /// <typeparam name="TSource">The type of the source.</typeparam>
+        /// <param name="first">The first.</param>
+        /// <param name="second">The second.</param>
+        /// <returns></returns>
+        public static IEnumerable<TSource> Concat<TSource>(this TSource first, IEnumerable<TSource> second)
+        {
+            if (first != null)
+                yield return first;
+
+            if (second != null)
+                foreach (var element in second) yield return element;
+
+        }
+        /// <summary>
+        /// Concats the specified arrays.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="arrays">The arrays.</param>
+        /// <returns></returns>
+        public static IEnumerable<T> Concat<T>(params IEnumerable<T>[] arrays)
+        {
+            return arrays.Where(array => array != null).SelectMany(array => array);
+        }
+        public static IEnumerable<T> Concat<T>(params T[][] arrays)
+        {
+            return arrays.Where(array => array != null).SelectMany(array => array);
+        }
+        /// <summary>
+        /// Concats the specified items.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="items">The items.</param>
+        /// <param name="arrays">The arrays.</param>
+        /// <returns></returns>
+        public static IEnumerable<T> Concat<T>(this IEnumerable<T> items, params IEnumerable<T>[] arrays)
+        {
+            return Enumerable.Concat(items, Concat(arrays));
+        }
+        public static IEnumerable<T> Concat<T>(this IEnumerable<T> first, params T[] args)
+        {
+            foreach (T element in first) yield return element;
+            foreach (T element in args) yield return element;
+        }
+
+        public static IEnumerable<T> ConcatNotNull<T>(this IEnumerable<T> first, params T[] args)
+        {
+            foreach (T element in first) yield return element;
+            foreach (T element in args)
+                if (element != null)
+                    yield return element;
+        }
+        /// <summary>
+        /// Equalses the specified array1.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="array1">The array1.</param>
+        /// <param name="array2">The array2.</param>
+        /// <returns></returns>
+        public static bool ArrayEquals<T>(this T[] array1, T[] array2)
+        {
+            if (ReferenceEquals(array1, array2))
+                return true;
+
+            if (array1 == null || array2 == null)
+                return false;
+
+            if (array1.Length != array2.Length)
+                return false;
+
+            EqualityComparer<T> comparer = EqualityComparer<T>.Default;
+            for (int i = 0; i < array1.Length; i++)
+            {
+                if (!comparer.Equals(array1[i], array2[i])) return false;
+            }
+            return true;
+        }
+
+        /// <summary>
+        /// Adds the range.
+        /// </summary>
+        /// <param name="list">The list.</param>
+        /// <param name="items">The items.</param>
+        public static void AddRange(this IList list, IEnumerable items)
+        {
+            if (items != null && list != null)
+                foreach (var item in items)
+                    list.Add(item);
+        }
+        /// <summary>
+        /// Removes the range.
+        /// </summary>
+        /// <param name="list">The list.</param>
+        /// <param name="items">The items.</param>
+        public static void RemoveRange(this IList list, IEnumerable items)
+        {
+            if (items != null && list != null)
+                foreach (var item in items)
+                    list.Remove(item);
+        }
+
+        /// <summary>
+        /// Determines whether the specified ar is empty.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="items">The ar.</param>
+        /// <returns>
+        ///   <c>true</c> if the specified ar is empty; otherwise, <c>false</c>.
+        /// </returns>
+        public static bool IsEmpty<T>(this IEnumerable<T> items)
+        {
+            return items == null || !items.Any();
+        }
+
+        /// <summary>
+        /// Determines whether the specified ar is empty.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="array">The items.</param>
+        /// <returns></returns>
+        public static bool IsEmpty<T>(this T[] array)
+        {
+            return array == null || array.Length == 0;
+        }
+
+        /// <summary>
+        /// Determines whether [is not empty] [the specified ar].
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="items">The items.</param>
+        /// <returns></returns>
+        public static bool IsNotEmpty<T>(this IEnumerable<T> items)
+        {
+            return items != null && items.Any();
+        }
+
+        /// <summary>
+        /// Excepts the specified except.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="enumerable">The enumerable.</param>
+        /// <param name="filter">The except.</param>
+        /// <returns></returns>
+        public static IEnumerable<T> Except<T>(this IEnumerable<T> enumerable, params T[] filter)
+        {
+            return enumerable.Except((IEnumerable<T>)filter);
+        }
+
+        /// <summary>
+        /// Fors the each.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="enumerable">The enumerable.</param>
+        /// <param name="action">The action.</param>
+        public static IEnumerable<T> Foreach<T>(this IEnumerable<T> enumerable, Action<T> action)
+        {
+            if (enumerable != null && action != null)
+                foreach (var e in enumerable)
+                    action(e);
+            return enumerable;
+        }
+
+        /// <summary>
+        /// Fors the each.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="enumerable">The enumerable.</param>
+        /// <param name="action">The action.</param>
+        /// <returns></returns>
+        public static IEnumerable<T> ForEach<T>(this IEnumerable<T> enumerable, Action<T> action)
+        {
+            if (enumerable != null && action != null)
+                foreach (var e in enumerable)
+                    action(e);
+            return enumerable;
+        }
+
+
+        /// <summary>
+        /// Fills the specified list.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="list">The list.</param>
+        /// <param name="data">The data.</param>
+        /// <param name="count">The count.</param>
+        public static void Fill<T>(this IList<T> list, T data, int count)
+        {
+            if (list != null)
+                for (var i = 0; i < count; i++)
+                    list.Add(data);
+        }
+
+        //<summary>Finds the index of the first item matching an expression in an enumerable.</summary>
+        ///<param name="items">The enumerable to search.</param>
+        ///<param name="predicate">The expression to test the items against.</param>
+        ///<returns>The index of the first matching item, or -1 if no items match.</returns>
+        public static int FindIndex<T>(this IEnumerable<T> items, Func<T, bool> predicate)
+        {
+            if (items == null) throw new ArgumentNullException("items");
+            if (predicate == null) throw new ArgumentNullException("predicate");
+
+            int retVal = 0;
+            foreach (var item in items)
+            {
+                if (predicate(item)) return retVal;
+                retVal++;
+            }
+            return -1;
+        }
+        ///<summary>Finds the index of the first occurence of an item in an enumerable.</summary>
+        ///<param name="items">The enumerable to search.</param>
+        ///<param name="item">The item to find.</param>
+        ///<returns>The index of the first matching item, or -1 if the item was not found.</returns>
+        public static int IndexOf<T>(this IEnumerable<T> items, T item) { return items.FindIndex(i => EqualityComparer<T>.Default.Equals(item, i)); }
+    }
+
 }

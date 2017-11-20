@@ -7,6 +7,8 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
     public interface ISituation
     {
         VehileCollection Vehiles { get; }
+        VehileCollection EnemyVehiles { get; }
+
         Player Me { get; }
         World World { get; }
         Game Game { get; }
@@ -14,15 +16,19 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
 
         IList<Command> Commands { get; }
 
+        bool CanNuclearStrike { get; }
         ILog Log { get; }
     }
 
     public sealed class MyStrategy : IStrategy, ISituation
     {
-        private VehicleType[] _types = { VehicleType.Arrv, VehicleType.Fighter, VehicleType.Helicopter, VehicleType.Ifv, VehicleType.Tank, };
+        private VehicleType[] _types = { VehicleType.Arrv, VehicleType.Fighter, VehicleType.Helicopter, VehicleType.Ifv, VehicleType.Tank };
+        public bool CanNuclearStrike { get; private set; }
         public ILog Log { get; }
 
         public VehileCollection Vehiles { get; }
+        public VehileCollection EnemyVehiles { get; }
+
         public Player Me { get; private set; }
         public World World { get; private set; }
         public Game Game { get; private set; }
@@ -30,15 +36,21 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
         public IList<Command> Commands { get; }
         Command Command { get; set; }
 
-        public StartMatrix StartMatrix = new StartMatrix();
+        public readonly StartMatrix StartMatrix = new StartMatrix();
 
         public MyStrategy()
         {
-            Commands = new List<Command>();
             Vehiles = new VehileCollection();
-            Log = new FileLogger();
-            Commands.Add(new FirstCommand());
-            
+            EnemyVehiles = new VehileCollection();
+
+            Commands = new List<Command>
+            {
+                new FirstCommand(),
+                new NuclearStriceCommand()
+            };
+
+            Log = new NullLogger();
+
         }
 
         private int _availibleActionCount;
@@ -48,19 +60,31 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
             if (world.TickIndex % game.ActionDetectionInterval == 0)
                 _availibleActionCount = game.BaseActionCount;
 
+            CanNuclearStrike = me.RemainingNuclearStrikeCooldownTicks <= 0;
+
+
             Move = move;
             Me = me;
             World = world;
             Game = game;
 
-            Trace($"********************************** TickIndex = {world.TickIndex} AvailibleActionCount={_availibleActionCount}");
+            Trace($"********************************** TickIndex = {world.TickIndex} AvailibleActionCount={_availibleActionCount} NextNuclearStrikeTickIndex={me.NextNuclearStrikeTickIndex}");
 
-            Vehiles.Add(world.NewVehicles.Where(e => e.PlayerId == me.Id));
-            Vehiles.Update(world.VehicleUpdates);
+            Vehiles.Initialize(me, world);
+            EnemyVehiles.Initialize(world.GetOpponentPlayer(), world);
+
 
             foreach (var type in _types)
             {
                 Trace("{0} {1}", type, Vehiles.GetVehileRect(type));
+            }
+            if (EnemyVehiles.Count > 0)
+            {
+                Trace("##### ENEMIES #######");
+                foreach (var type in _types)
+                {
+                    Trace("{0} {1}", type, Vehiles.GetVehileRect(type));
+                }
             }
 
             if (_availibleActionCount > 0)
@@ -110,21 +134,6 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
 
     }
 
-    public class VecGroup
-    {
-        public VecGroup(RectangleF rect, VehicleType type)
-        {
-            Rect = rect;
-            Type = type;
-        }
-
-        public RectangleF Rect { get; set; }
-        public VehicleType Type { get; set; }
-        public override string ToString()
-        {
-            return $"{Type} {Rect}";
-        }
-    }
 
 
 
