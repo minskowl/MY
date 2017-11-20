@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -19,8 +18,7 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
         protected override void DoImpl()
         {
             Strategy.StartMatrix.BuilMatrix(Vehiles);
-            
-         
+
             base.DoImpl();
         }
 
@@ -30,7 +28,7 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
     {
         protected override void DoImpl()
         {
-            var gr =Strategy.StartMatrix.GetFreeGroup();
+            var gr = Strategy.StartMatrix.GetFreeGroup();
 
             if (gr == null)
                 return;
@@ -38,45 +36,52 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
             Type = gr.Type;
             base.DoImpl();
 
-            var assCommand = new AssingGroup(Type);
-            assCommand.Next = new MoveGroup(Type)
+    
+
+            Next = new AssingGroup(Type);
             {
-                Act = s =>
+                Act = (s3) =>
                 {
-                    var rect = Vehiles.GetGroupRect(Type);
-
-                    s.Move.X = (s.World.Width / 2) - rect.Right;
-                    s.Move.Y = (s.World.Height / 2) - rect.Bottom;
-
-                    var scale = new ScaleGroup(VehicleType.Fighter)
+                    var c = new MoveGroup(Type)
                     {
-                        Can = e =>
+                        Act = s =>
                         {
-                            var r = Vehiles.GetGroupRect(Type);
-                            var minY = World.Height / 4;
-                            e.Log.Log("Wait Scale Type {0} {1} minY {2}", Type, r, minY);
-                            return r.Y >= minY ;
+                            var rect = Vehiles.GetGroupRect(Type);
 
-                        },
-                        Act =(s1)=>
-                        {
-                            s1.Move.Factor = 4;
-                            var r = Vehiles.GetGroupRect(Type);
-                            s1.Move.X = r.X;
-                            s1.Move.Y = r.Y;
+                            s.Move.X = (s.World.Width / 2) - rect.Right;
+                            s.Move.Y = (s.World.Height / 2) - rect.Bottom;
+
+                            var scale = new ScaleGroup(VehicleType.Fighter)
+                            {
+                                Can = e =>
+                                {
+                                    var r = Vehiles.GetGroupRect(Type);
+                                    var minY = World.Height / 5;
+                                    e.Log.Log("Wait Scale Type {0} {1} minY {2}", Type, r, minY);
+                                    return r.Y >= minY;
+
+                                },
+                                Act = (s1) =>
+                                {
+                                    s1.Move.Factor = 5;
+                                    var r = Vehiles.GetGroupRect(Type);
+                                    s1.Move.X = r.X;
+                                    s1.Move.Y = r.Y;
+                                }
+                            };
+                            s.Commands.Add(scale);
+                            s.Commands.Add(new DeployCommand());
                         }
                     };
-                    s.Commands.Add(scale);
-                    s.Commands.Add(new DeployCommand());
-                }
-            };
-            Next = assCommand;
+                    s3.Commands.Add(c);
+                };
+            }; 
 
 
         }
 
 
-     
+
 
     }
 
@@ -89,14 +94,18 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
         protected World World => _situation.World;
         protected VehileCollection Vehiles => _situation.Vehiles;
 
-        protected MyStrategy Strategy {
-            get { return (MyStrategy) _situation; }
+        protected MyStrategy Strategy
+        {
+            get { return (MyStrategy)_situation; }
         }
         public Command Next { get; set; }
+
+        protected abstract ActionType ActionType { get; }
 
         public void Do(ISituation situation)
         {
             _situation = situation;
+            Move.Action = ActionType;
             DoImpl();
             Act?.Invoke(_situation);
         }
@@ -128,6 +137,11 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
             Type = type;
         }
 
+        protected override void DoImpl()
+        {
+            Move.Group = (int)Type + 1;
+        }
+
         protected RectangleF GetVehileRect()
         {
             return Vehiles.Where(e => e.Type == Type).GetRect();
@@ -140,49 +154,38 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
 
     public class ScaleGroup : TypeCommand
     {
+        protected override ActionType ActionType => ActionType.Scale;
+
         public ScaleGroup(VehicleType type) : base(type)
         {
         }
 
-        protected override void DoImpl()
-        {
-            Move.Action = ActionType.Scale;
-            Move.Group = (int)Type;
- 
-        }
+
     }
 
     public class AssingGroup : TypeCommand
     {
-        public AssingGroup(){}
+        protected override ActionType ActionType => ActionType.Assign;
+        public AssingGroup() { }
 
         public AssingGroup(VehicleType type) : base(type)
         {
         }
 
-        protected override void DoImpl()
-        {
-            Move.Action = ActionType.Assign;
-            Move.Group = (int)Type;
-        }
     }
 
     public class MoveGroup : TypeCommand
     {
+        protected override ActionType ActionType => ActionType.Move;
         public MoveGroup(VehicleType type) : base(type)
         {
         }
 
-        protected override void DoImpl()
-        {
-            Move.Action = ActionType.Move;
-            Move.Group = (int)Type;
-  
-        }
     }
 
     public class SelectUnitCommand : TypeCommand
     {
+        protected override ActionType ActionType => ActionType.ClearAndSelect;
         public SelectUnitCommand() { }
         public SelectUnitCommand(VehicleType type) : base(type)
         {
@@ -191,8 +194,6 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
         protected override void DoImpl()
         {
             var rect = GetVehileRect();
-
-            Move.Action = ActionType.ClearAndSelect;
             Move.VehicleType = Type;
             Move.X = rect.X;
             Move.Y = rect.Y;
@@ -205,7 +206,7 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
 
     public class StartMatrix
     {
-        private VecGroup[,] storage = new VecGroup[3, 3];
+        private readonly VecGroup[,] _storage = new VecGroup[3, 3];
 
         public VecGroup GetFreeGroup()
         {
@@ -213,10 +214,10 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
             {
                 for (int j = 2; j >= 0; j--)
                 {
-                    var gr = storage[i, j];
+                    var gr = _storage[i, j];
                     if (gr != null)
                     {
-                        storage[i, j] = null;
+                        _storage[i, j] = null;
                         return gr;
                     }
 
@@ -237,7 +238,7 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
             {
                 int x = GetIndex(vecGroup.Rect.Right, minX, maxX);
                 int y = GetIndex(vecGroup.Rect.Bottom, minY, maxY);
-                storage[y, x] = vecGroup;
+                _storage[y, x] = vecGroup;
             }
         }
         private int GetIndex(float cur, float min, float max)
@@ -253,8 +254,8 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
 
     public class VehileCollection : IEnumerable<Vec>
     {
-        private readonly Dictionary<long, Vec> _storage= new Dictionary<long, Vec>();
-        
+        private readonly Dictionary<long, Vec> _storage = new Dictionary<long, Vec>();
+
 
 
         public IEnumerator<Vec> GetEnumerator()
@@ -289,7 +290,7 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
         }
         public RectangleF GetGroupRect(VehicleType group)
         {
-            return GetGroupRect((int)group);
+            return GetGroupRect(group.ToInt());
         }
         public RectangleF GetGroupRect(int group)
         {
@@ -299,6 +300,11 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
 
     public static class VecEx
     {
+        public static int ToInt(this VehicleType type)
+        {
+            return (int)type + 1;
+        }
+
         public static RectangleF GetRect(this IEnumerable<Vec> vehicles)
         {
             if (!vehicles.Any())
@@ -337,6 +343,11 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
         public int[] Groups { get; private set; }
         public VehicleType Type { get; }
 
+        public bool IsInGroup(VehicleType type)
+        {
+            return IsInGroup(type.ToInt());
+        }
+
         public bool IsInGroup(int group)
         {
             return Groups.IsNotEmpty() && Groups.Contains(group);
@@ -355,18 +366,23 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
     {
         void Log(string text);
         void Log(string text, params object[] args);
+
+        void Log(Move move);
     }
 
     public class NullLogger : ILog
     {
         public void Dispose()
-        {}
+        { }
 
         public void Log(string text)
-        {}
+        { }
 
         public void Log(string text, params object[] args)
-        {}
+        { }
+
+        public void Log(Move move)
+        { }
     }
 
     class FileLogger : ILog
@@ -392,6 +408,14 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
         {
             //Console.WriteLine(text, args);
             _stream.WriteLine(text, args);
+        }
+
+        public void Log(Move move)
+        {
+            if (move.Action == null) return;
+            var vt = move.VehicleType ?? (VehicleType)(move.Group - 1);
+
+            Log("Action {0} Group {1} ({2},{3})-({4},{5}) ", move.Action, vt, move.X, move.Y, move.Right, move.Bottom);
         }
 
         public void Dispose()
@@ -891,7 +915,7 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
         private float width;
         private float height;
 
-        [Browsable(false)]
+
         public bool IsEmpty
         {
             get
@@ -1020,7 +1044,7 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
         private float x;
         private float y;
 
-        [Browsable(false)]
+
         public bool IsEmpty
         {
             get
@@ -1148,7 +1172,7 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
         private float width;
         private float height;
 
-        [Browsable(false)]
+
         public PointF Location
         {
             get
@@ -1162,7 +1186,7 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
             }
         }
 
-        [Browsable(false)]
+
         public SizeF Size
         {
             get
@@ -1224,7 +1248,7 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
             }
         }
 
-        [Browsable(false)]
+
         public float Left
         {
             get
@@ -1233,7 +1257,7 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
             }
         }
 
-        [Browsable(false)]
+
         public float Top
         {
             get
@@ -1242,7 +1266,6 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
             }
         }
 
-        [Browsable(false)]
         public float Right
         {
             get
@@ -1251,7 +1274,7 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
             }
         }
 
-        [Browsable(false)]
+
         public float Bottom
         {
             get
@@ -1260,7 +1283,7 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
             }
         }
 
-        [Browsable(false)]
+
         public bool IsEmpty
         {
             get
@@ -1417,5 +1440,6 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
             return "{X=" + this.X + ",Y=" + this.Y.ToString((IFormatProvider)CultureInfo.CurrentCulture) + ",Right=" + this.Right + ",Bottom=" + this.Bottom.ToString((IFormatProvider)CultureInfo.CurrentCulture) + "}";
         }
         #endregion
+
     }
 }

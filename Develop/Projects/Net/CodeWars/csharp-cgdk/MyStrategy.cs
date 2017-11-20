@@ -19,6 +19,7 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
 
     public sealed class MyStrategy : IStrategy, ISituation
     {
+        private VehicleType[] _types = { VehicleType.Arrv, VehicleType.Fighter, VehicleType.Helicopter, VehicleType.Ifv, VehicleType.Tank, };
         public ILog Log { get; }
 
         public VehileCollection Vehiles { get; }
@@ -37,8 +38,7 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
             Vehiles = new VehileCollection();
             Log = new FileLogger();
             Commands.Add(new FirstCommand());
-
-
+            
         }
 
         private int _availibleActionCount;
@@ -57,6 +57,11 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
 
             Vehiles.Add(world.NewVehicles.Where(e => e.PlayerId == me.Id));
             Vehiles.Update(world.VehicleUpdates);
+
+            foreach (var type in _types)
+            {
+                Trace("{0} {1}", type, Vehiles.GetVehileRect(type));
+            }
 
             if (_availibleActionCount > 0)
             {
@@ -86,8 +91,7 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
 
         private void Trace()
         {
-            if (Move.Action.HasValue)
-                Log?.Log("{0} Group {1} {6} ({2},{3})-({4},{5}) ", Move.Action, Move.Group, Move.X, Move.Y, Move.Right, Move.Bottom, Move.VehicleType);
+            Log?.Log(Move);
         }
 
         private void Trace(object text)
