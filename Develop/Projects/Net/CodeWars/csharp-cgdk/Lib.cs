@@ -11,166 +11,50 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
 {
     #region Actions
 
-    public class FirstCommand : DeployCommand
-    {
-        protected override void Do()
-        {
-            Strategy.StartMatrix.BuilMatrix(S.Vehiles);
-
-            base.Do();
-        }
-
-    }
-
-
-    public class NuclearStriceCommand : Command
-    {
-        protected override ActionType ActionType => ActionType.TacticalNuclearStrike;
-        private Veh[] seeVehiles;
-        private Veh _vehicle;
-        public override bool CanAct(ISituation situation)
-        {
-            base.CanAct(situation);
-
-            if (!S.CanNuclearStrike)
-                return false;
-
-            var rect = S.EnemyVehiles.GetRect();
-
-            seeVehiles = S.Vehiles.Where(e => e.Durability > 50 && rect.Contains(e.X, e.Y)).ToArray();
-            if (seeVehiles.IsEmpty()) return false;
-
-            var maxStrice = 0;
-            foreach (var seeVehile in seeVehiles)
-            {
-                var el = new Ellipse(seeVehile.X, seeVehile.Y, 150, 150);
-                var inStriceEnemies = S.EnemyVehiles.Count(e => el.InBound(e.X, e.Y));
-
-                var inStriceOurs = S.Vehiles.Count(e => el.InBound(e.X, e.Y));
-
-                if (inStriceOurs < inStriceEnemies && inStriceOurs < 20 && inStriceEnemies > maxStrice)
-                {
-                    maxStrice = inStriceEnemies;
-                    _vehicle = seeVehile;
-                }
-                if (maxStrice > 200)
-                    break;
-            }
-
-
-            return seeVehiles.IsNotEmpty() && maxStrice > 50;
-        }
-
-        protected override void Do()
-        {
-            base.Do();
-
-            S.Move.X = _vehicle.X;
-            S.Move.Y = _vehicle.Y;
-            S.Move.VehicleId = _vehicle.Id;
-
-            S.Commands.Add(new NuclearStriceCommand());
-        }
-    }
-
-    public class DeployCommand : SelectUnitCommand
-    {
-        public static int Count { get; private set; }
-
-        protected override void Do()
-        {
-            var gr = Strategy.StartMatrix.GetFreeGroup();
-
-            if (gr == null)
-                return;
-            Count++;
-            Type = gr.Type;
-            base.Do();
-
-            Next = new AssingGroup(Type)
-            {
-                Next = new MoveToCenterCommand(Type)
-            };
-        }
-
-        public class MoveToCenterCommand : MoveGroup
-        {
-            public MoveToCenterCommand(VehicleType type) : base(type)
-            {
-            }
-
-            protected override void Do()
-            {
-                S.Move.X = (S.World.Width / 2);
-                S.Move.Y = (S.World.Height / 2);
-
-                base.Do();
-
-                var scale = new ScaleGroup(Type)
-                {
-                    Can = e =>
-                    {
-                        var r = S.Vehiles.GetGroupRect(Type);
-                        var minY = S.World.Height / 4;
-                        e.Log.Log("Wait Scale Type {0} {1} minY {2}", Type, r, minY);
-                        return r.Y >= minY;
-
-                    },
-                    Act = s1 =>
-                    {
-                        s1.Move.Factor = 6;
-                        var p = S.Vehiles.GetGroupRect(Type).Center;
-                        s1.Move.X = p.X;
-                        s1.Move.Y = p.Y;
-                    }
-                };
-                S.Commands.Add(scale);
-
-                if (DeployCommand.Count < 5)
-                    S.Commands.Add(new DeployCommand());
-
-            }
-        }
-
-
-    }
 
 
 
     public abstract class Command
     {
-        protected ISituation S;
+        public ISituation Situation { protected get; set; }
 
-        protected MyStrategy Strategy => (MyStrategy)S;
+        protected Move Move => Situation.Move;
+        protected VehileCollection Vehiles => Situation.Vehiles;
+        protected VehileCollection EnemyVehiles => Situation.EnemyVehiles;
+        protected ICommandCollection Commands => Situation.Commands;
+        protected ILog Log => Situation.Log;
+        protected World World => Situation.World;
+
+        protected MyStrategy Strategy => (MyStrategy)Situation;
 
         public Command Next { get; set; }
 
         protected abstract ActionType ActionType { get; }
 
-        public void Do(ISituation situation)
+        public void Do()
         {
-            S = situation;
-            Do();
-            Act?.Invoke(S);
+            DoImpl();
+            Act?.Invoke(Situation);
         }
 
-        protected virtual void Do()
+        protected virtual void DoImpl()
         {
-            S.Move.Action = ActionType;
+            Situation.Move.Action = ActionType;
         }
 
         public Predicate<ISituation> Can { get; set; }
 
         public Action<ISituation> Act { get; set; }
 
-        public virtual bool CanAct(ISituation situation)
+        public virtual bool CanAct()
         {
-            S = situation;
-            return Can?.Invoke(S) ?? true;
+            return Can?.Invoke(Situation) ?? true;
         }
 
 
     }
+
+
 
     public abstract class GroupCommand : Command
     {
@@ -183,18 +67,18 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
         }
 
         private Command _prevNext;
-        protected override void Do()
+        protected override void DoImpl()
         {
-            if (S.Vehiles.Any(e => e.IsSelected && e.IsInGroup(Type)))
+            if (Vehiles.Any(e => e.IsSelected && e.IsInGroup(Type)))
             {
                 if (Next == this)
                     Next = _prevNext;
-                base.Do();
+                base.DoImpl();
             }
             else
             {
-                S.Move.Action = ActionType.ClearAndSelect;
-                S.Move.Group = Type.ToInt();
+                Move.Action = ActionType.ClearAndSelect;
+                Move.Group = Type.ToInt();
                 _prevNext = Next;
                 Next = this;
             }
@@ -202,11 +86,11 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
 
         protected RectangleF GetGroupRect()
         {
-            return S.Vehiles.Where(e => e.IsInGroup(Type)).GetRect();
+            return Vehiles.Where(e => e.IsInGroup(Type)).GetRect();
         }
         protected RectangleF GetVehileRect()
         {
-            return S.Vehiles.Where(e => e.Type == Type).GetRect();
+            return Vehiles.Where(e => e.Type == Type).GetRect();
         }
     }
 
@@ -221,32 +105,47 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
 
     }
 
-    public class AssingGroup : Command
+    public class AssingGroupCommand : Command
     {
         protected override ActionType ActionType => ActionType.Assign;
         private readonly VehicleType _type;
 
 
 
-        public AssingGroup(VehicleType type)
+        public AssingGroupCommand(VehicleType type)
         {
             _type = type;
         }
 
-        protected override void Do()
+        protected override void DoImpl()
         {
-            S.Move.Group = _type.ToInt();
-            base.Do();
+            Move.Group = _type.ToInt();
+            base.DoImpl();
         }
     }
 
-    public class MoveGroup : GroupCommand
+    public class MoveCommand : GroupCommand
     {
         protected override ActionType ActionType => ActionType.Move;
-        public MoveGroup(VehicleType type) : base(type)
+        public MoveCommand(VehicleType type) : base(type)
         {
         }
 
+    }
+
+    public class MoveToCenterCommand : MoveCommand
+    {
+        public MoveToCenterCommand(VehicleType type) : base(type)
+        {
+        }
+
+        protected override void DoImpl()
+        {
+            base.DoImpl();
+
+            Move.X = World.Width / 2;
+            Move.Y = World.Height / 2;
+        }
     }
 
     public class SelectUnitCommand : Command
@@ -259,15 +158,52 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
             Type = type;
         }
 
-        protected override void Do()
+        protected override void DoImpl()
         {
-            var rect = S.Vehiles.GetVehileRect(Type);
-            S.Move.VehicleType = Type;
-            S.Move.X = rect.X;
-            S.Move.Y = rect.Y;
-            S.Move.Right = rect.Right;
-            S.Move.Bottom = rect.Bottom;
-            base.Do();
+            var rect = Vehiles.GetVehileRect(Type);
+            Move.VehicleType = Type;
+            Move.X = rect.X;
+            Move.Y = rect.Y;
+            Move.Right = rect.Right;
+            Move.Bottom = rect.Bottom;
+            base.DoImpl();
+        }
+    }
+
+    public interface ICommandCollection
+    {
+        void Add(Command command);
+        void Remove(Command command);
+
+        Command GetToPropcess();
+    }
+
+    public class CommandCollection : ICommandCollection
+    {
+        private readonly ISituation _situation;
+        private readonly List<Command> _storage = new List<Command>();
+
+        public CommandCollection(ISituation situation)
+        {
+            _situation = situation;
+        }
+
+        public void Add(Command command)
+        {
+            command.Situation = _situation;
+            _storage.Add(command);
+        }
+
+        public void Remove(Command command)
+        {
+            command.Situation = null;
+            _storage.Remove(command);
+        }
+
+        public Command GetToPropcess()
+        {
+
+            return _storage.Count > 0 ? _storage.FirstOrDefault(e => e.CanAct()) : null;
         }
     }
 
@@ -1172,6 +1108,7 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
             return (base.Point.X - GetOffset(considerOffset)) <= point.X && (base.Point.X + base.Size.Width + GetOffset(considerOffset)) >= point.X;
         }
     }
+
     #endregion
 
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1708:IdentifiersShouldDifferByMoreThanCase")]
