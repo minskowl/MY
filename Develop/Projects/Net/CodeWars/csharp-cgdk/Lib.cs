@@ -12,6 +12,16 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
     #region Actions
 
 
+    public class FirstCommand : DeployCommand
+    {
+        protected override void DoImpl()
+        {
+            Strategy.StartMatrix.BuilMatrix(Vehiles);
+
+            base.DoImpl();
+        }
+
+    }
 
 
     public abstract class Command
@@ -55,10 +65,9 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
     }
 
 
-
     public abstract class GroupCommand : Command
     {
-        public VehicleType Type { get; private set; }
+        public VehicleType Type { get; }
 
 
         protected GroupCommand(VehicleType type)
@@ -84,14 +93,6 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
             }
         }
 
-        protected RectangleF GetGroupRect()
-        {
-            return Vehiles.Where(e => e.IsInGroup(Type)).GetRect();
-        }
-        protected RectangleF GetVehileRect()
-        {
-            return Vehiles.Where(e => e.Type == Type).GetRect();
-        }
     }
 
     public class ScaleGroup : GroupCommand
@@ -145,6 +146,28 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
 
             Move.X = World.Width / 2;
             Move.Y = World.Height / 2;
+        }
+    }
+
+    public class MoveByTypeCommand : MoveCommand
+    {
+        private Dictionary<VehicleType,PointF> _map=new Dictionary<VehicleType, PointF>{
+            { VehicleType.Fighter, new PointF(700,700)},
+            { VehicleType.Helicopter, new PointF(200, 700) },
+            { VehicleType.Ifv, new PointF(700, 200) },
+            { VehicleType.Tank, new PointF(200, 700) },
+            { VehicleType.Arrv, new PointF(700, 700) },
+        };
+        public MoveByTypeCommand(VehicleType type) : base(type)
+        {
+        }
+
+        protected override void DoImpl()
+        {
+            base.DoImpl();
+            var p = _map[Type];
+            Move.X = p.X;
+            Move.Y = p.Y;
         }
     }
 
@@ -212,28 +235,16 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
     public class StartMatrix
     {
         private readonly VecGroup[,] _storage = new VecGroup[3, 3];
-
+        private readonly VehicleType[] _typesPriority = { VehicleType.Fighter, VehicleType.Helicopter, VehicleType.Ifv, VehicleType.Tank, VehicleType.Arrv };
+        private int _count = 0;
         public VecGroup GetFreeGroup()
         {
-            for (int i = 2; i >= 0; i--)
-            {
-                for (int j = 2; j >= 0; j--)
-                {
-                    var gr = _storage[i, j];
-                    if (gr != null)
-                    {
-                        _storage[i, j] = null;
-                        return gr;
-                    }
-
-                }
-            }
-            return null;
+            return _count < 2 ? (GetLastRowFree() ?? GetFirstFree()) : GetFirstFree();
         }
 
-        public void BuilMatrix(VehileCollection Vehiles)
+        public void BuilMatrix(VehileCollection vehiles)
         {
-            var groups = Vehiles.GroupBy(e => e.Type).Select(e => new VecGroup(e.GetRect(), e.Key)).ToArray();
+            var groups = vehiles.GroupBy(e => e.Type).Select(e => new VecGroup(e.GetRect(), e.Key)).ToArray();
             var maxY = groups.Max(e => e.Rect.Bottom);
             var maxX = groups.Max(e => e.Rect.Right);
 
@@ -245,6 +256,42 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
                 int y = GetIndex(vecGroup.Rect.Bottom, minY, maxY);
                 _storage[y, x] = vecGroup;
             }
+        }
+        private VecGroup GetLastRowFree()
+        {
+
+            for (int j = 2; j >= 0; j--)
+            {
+                var gr = _storage[2, j];
+                if (gr != null && (gr.Type == VehicleType.Fighter || gr.Type == VehicleType.Helicopter))
+                {
+                    _storage[2, j] = null;
+                    _count++;
+                    return gr;
+                }
+
+            }
+
+            return null;
+        }
+
+        private VecGroup GetFirstFree()
+        {
+            for (int i = 2; i >= 0; i--)
+            {
+                for (int j = 2; j >= 0; j--)
+                {
+                    var gr = _storage[i, j];
+                    if (gr != null)
+                    {
+                        _storage[i, j] = null;
+                        _count++;
+                        return gr;
+                    }
+
+                }
+            }
+            return null;
         }
         private int GetIndex(double cur, double min, double max)
         {
@@ -305,7 +352,7 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
                         if (v.Durability == 0)
                             _storage.Remove(update.Id);
                         else
-                            v.Update(update);
+                            v.Update(player, world, update);
                     }
                 }
 
@@ -314,7 +361,7 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
 
             if (world.NewVehicles.IsNotEmpty())
             {
-                world.NewVehicles.Where(e => e.PlayerId == player.Id).ForEach(e => _storage[e.Id] = new Veh(e));
+                world.NewVehicles.Where(e => e.PlayerId == player.Id).ForEach(e => _storage[e.Id] = new Veh(player, world, e));
             }
 
         }
@@ -365,17 +412,31 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
 
     public class Veh
     {
-        public Veh(Vehicle v)
+        public Veh(Player player, World world, Vehicle v)
         {
             Id = v.Id;
-            X = v.X;
-            Y = v.Y;
             Type = v.Type;
             Groups = v.Groups;
             IsSelected = v.IsSelected;
             Durability = v.Durability;
+            SetPosition(v.X, v.Y, player, world);
         }
 
+        private void SetPosition(double x, double y, Player player, World world)
+        {
+            X = x;
+            Y = y;
+            //if (player.IsMe)
+            //{
+            //    X = x;
+            //    Y = y;
+            //}
+            //else
+            //{
+            //    X = world.Width - x;
+            //    Y = world.Height - y;
+            //}
+        }
 
         public long Id { get; }
 
@@ -397,10 +458,10 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
             return Groups.IsNotEmpty() && Groups.Contains(group);
         }
 
-        public Veh Update(VehicleUpdate u)
+        public Veh Update(Player player, World world, VehicleUpdate u)
         {
-            X = u.X;
-            Y = u.Y;
+            SetPosition(u.X, u.Y, player, world);
+
             Groups = u.Groups;
             IsSelected = u.IsSelected;
             Durability = u.Durability;
@@ -474,6 +535,10 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
                 Log("Action {0} Group {1} ({2},{3})-({4},{5}) ", action, vt, move.X, move.Y, move.Right, move.Bottom);
             else if (action == ActionType.Move)
                 Log("Action {0} ({1},{2}) ", action, move.X, move.Y);
+            else if (action == ActionType.Move)
+                Log("Action {0} ({1},{2}) ", action, move.X, move.Y);
+            else if (action == ActionType.TacticalNuclearStrike)
+                Log("Action {0} ({1},{2}) square ({3},{4})  ", action, move.X, move.Y, move.X / 32, move.Y / 32);
             else
                 Log("Action {0} Group {1} ({2},{3})-({4},{5}) ", action, vt, move.X, move.Y, move.Right, move.Bottom);
 
@@ -1060,6 +1125,36 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
             Size = size;
         }
     }
+
+    public class Circle
+    {
+        private const int Radiuse = 50;
+        private const int RadiuseQuad = Radiuse * Radiuse;
+
+        private double centerX;
+        private double centerY;
+
+        public void Init(double X, double Y)
+        {
+            centerX = X + Radiuse;
+            centerY = Y + Radiuse;
+        }
+
+        public bool InBound(Veh v)
+        {
+
+            /* This is a more general form of the circle equation
+             *
+             * X^2/a^2 + Y^2/b^2 <= 1
+             */
+            var normalizedX = v.X - centerX;
+            var normalizedY = v.Y - centerY;
+
+            return (normalizedX * normalizedX / RadiuseQuad) + ((normalizedY * normalizedY) / RadiuseQuad)
+                   <= 1.0;
+        }
+    }
+
     public class Ellipse : PointSizePrimitive
     {
         private PointF _center = PointF.Empty;
@@ -1092,10 +1187,12 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
              *
              * X^2/a^2 + Y^2/b^2 <= 1
              */
-            var normalized = new PointF(x - Center.X, y - Center.Y);
+            var normalizedX = x - Center.X;
+            var normalizedY = y - Center.Y;
 
-            return ((normalized.X * normalized.X)
-                    / (xRadius * xRadius)) + ((normalized.Y * normalized.Y) / (yRadius * yRadius))
+
+            return (normalizedX * normalizedX
+                    / (xRadius * xRadius)) + ((normalizedY * normalizedY) / (yRadius * yRadius))
                    <= 1.0;
         }
 

@@ -8,20 +8,19 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
     {
         VehileCollection Vehiles { get; }
         VehileCollection EnemyVehiles { get; }
-
         Player Me { get; }
         World World { get; }
         Game Game { get; }
         Move Move { get; }
         ICommandCollection Commands { get; }
-
         bool CanNuclearStrike { get; }
         ILog Log { get; }
     }
 
     public sealed class MyStrategy : IStrategy, ISituation
     {
-        private VehicleType[] _types = { VehicleType.Arrv, VehicleType.Fighter, VehicleType.Helicopter, VehicleType.Ifv, VehicleType.Tank };
+        public const int GroupCount =5;
+        private readonly VehicleType[] _types = { VehicleType.Arrv, VehicleType.Fighter, VehicleType.Helicopter, VehicleType.Ifv, VehicleType.Tank };
         public bool CanNuclearStrike { get; private set; }
         public ILog Log { get; }
 
@@ -59,7 +58,6 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
                 _availibleActionCount = game.BaseActionCount;
 
             CanNuclearStrike = me.RemainingNuclearStrikeCooldownTicks <= 0;
-
 
             Move = move;
             Me = me;
@@ -126,21 +124,9 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
 
     }
 
-
-    public class FirstCommand : DeployCommand
-    {
-        protected override void DoImpl()
-        {
-            Strategy.StartMatrix.BuilMatrix(Vehiles);
-
-            base.DoImpl();
-        }
-
-    }
-
     public class DeployCommand : SelectUnitCommand
     {
-        public static int Count { get; private set; }
+        private static int _count;
 
         protected override void DoImpl()
         {
@@ -149,19 +135,19 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
             if (gr == null)
                 return;
 
-            Count++;
+            _count++;
             Type = gr.Type;
             base.DoImpl();
 
             Next = new AssingGroupCommand(Type)
             {
-                Next = new MoveToCenterCommand(Type)
+                Next = new MoveByTypeCommand(Type)
                 {
                     Act = s =>
                     {
                         s.Commands.Add(new DeployScaleCommand(Type));
 
-                        if (DeployCommand.Count < 5)
+                        if (_count < MyStrategy.GroupCount)
                             s.Commands.Add(new DeployCommand());
                     }
                 }
@@ -174,6 +160,9 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
         protected override ActionType ActionType => ActionType.TacticalNuclearStrike;
         private Veh[] seeVehiles;
         private Veh _vehicle;
+
+        private static Circle circle = new Circle();
+
         public override bool CanAct()
         {
             base.CanAct();
@@ -187,12 +176,13 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
             if (seeVehiles.IsEmpty()) return false;
 
             var maxStrice = 0;
+      
             foreach (var seeVehile in seeVehiles)
             {
-                var el = new Ellipse(seeVehile.X, seeVehile.Y, 150, 150);
-                var inStriceEnemies = EnemyVehiles.Count(e => el.InBound(e.X, e.Y));
+                circle.Init(seeVehile.X, seeVehile.Y);
+                var inStriceEnemies = EnemyVehiles.Count(e => circle.InBound(e));
 
-                var inStriceOurs = Vehiles.Count(e => el.InBound(e.X, e.Y));
+                var inStriceOurs = Vehiles.Count(e => circle.InBound(e));
 
                 if (inStriceOurs < inStriceEnemies && inStriceOurs < 20 && inStriceEnemies > maxStrice)
                 {
@@ -218,10 +208,6 @@ namespace Com.CodeGame.CodeWars2017.DevKit.CSharpCgdk
             Commands.Add(new NuclearStriceCommand());
         }
     }
-
-
-
-
 
 
     public class DeployScaleCommand : ScaleGroup
