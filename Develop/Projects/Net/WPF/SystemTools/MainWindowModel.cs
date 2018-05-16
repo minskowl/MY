@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -17,17 +18,49 @@ namespace Savchin.WPF.SystemTools
         public Screen[] Screens { get; set; }
         public DelegateCommand<Process> SetBorderCommand { get; set; }
         public DelegateCommand<Screen> MoveToCommand { get; set; }
+
+        static MainWindowModel()
+        {
+           // Process.EnterDebugMode();
+        }
+
         public MainWindowModel()
         {
             Screens = Screen.AllScreens;
-            Processes = Process.GetProcesses().Where(e => e.MainWindowHandle != IntPtr.Zero).OrderBy(e => e.ProcessName).ToArray();
+            Processes = GetProcess();
             SetBorderCommand = new DelegateCommand<Process>(OnSetBorderCommand);
             MoveToCommand = new DelegateCommand<Screen>(OnMoveToCommand);
         }
 
+        private Process[] GetProcess()
+        {
+            var result = new List<Process>();
+            foreach (var process in Process.GetProcesses())
+            {
+               
+                try
+                {
+                    foreach (ProcessModule module in process.Modules)
+                    {
+                        if (module.FileName.StartsWith(@"C:\Program Files (x86)\Trend Micro"))
+                        {
+                            result.Add(process);
+                            break;
+                        }
+                    }
+                }
+                catch (Win32Exception e)
+                {
+                    Console.WriteLine($"{process.ProcessName} {process.Id} {e.Message}");
+                }
+      
+            }
+            return result.OrderBy(e => e.ProcessName).ToArray();
+        }
+
         private void OnMoveToCommand(Screen obj)
         {
-            if(SelectedItem==null)return;
+            if (SelectedItem == null || SelectedItem.MainWindowHandle != IntPtr.Zero) return;
             var b = obj.Bounds;
             User32.SetWindowPos(SelectedItem.MainWindowHandle, IntPtr.Zero, b.X, b.Y, b.Width, b.Height, SWP.SWP_SHOWWINDOW);
         }

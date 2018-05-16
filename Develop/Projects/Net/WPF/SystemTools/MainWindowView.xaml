@@ -18,7 +18,15 @@
                 <Core:ListBoxSystemColor IsSelectable="True"/>
             </TabItem>
             <TabItem Header="Process">
-                <ListBox SelectedItem="{Binding SelectedItem}" ItemsSource="{Binding Processes}" DisplayMemberPath="ProcessName">
+                <ListBox SelectedItem="{Binding SelectedItem}" ItemsSource="{Binding Processes}" >
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding ProcessName}"/>
+                                <TextBlock Text="{Binding Id}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
                     <ListBox.ContextMenu>
                         <ContextMenu >
                             <MenuItem Header="Set border" Command="{Binding SetBorderCommand}"
