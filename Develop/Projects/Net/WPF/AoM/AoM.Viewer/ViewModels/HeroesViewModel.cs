@@ -1,23 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using AoM.Viewer.Data;
-using Newtonsoft.Json;
 using Savchin.Wpf.Core;
 using Savchin.Wpf.Input;
 
 namespace AoM.Viewer.ViewModels
 {
-    public class MainWindowViewModel : ViewModelBase
+    public class HeroesViewModel : ViewModelBase
     {
         #region Data
 
-        Dictionary<string, List<Craft>> _crafts;
+        private readonly Dictionary<string, List<Craft>> _crafts;
         public int[] Levels { get; }
         public Hero[] Heroes { get; }
 
@@ -57,11 +52,11 @@ namespace AoM.Viewer.ViewModels
 
         private Craft[] _items;
 
-     
+
         public Craft[] Items
         {
-            get { return _items; }
-            set { Set(ref _items, value); }
+            get => _items;
+            set { Set(ref _items, value, nameof(Items)); }
         }
 
 
@@ -71,9 +66,21 @@ namespace AoM.Viewer.ViewModels
 
         public Craft SelectedItem
         {
-            get { return _selectedItem; }
-            set { Set(ref _selectedItem, value); }
+            get => _selectedItem;
+            set { Set(ref _selectedItem, value, OnSelectedItemChanged,nameof(SelectedItem)); }
         }
+
+
+
+        private Craft[] _subItems;
+
+
+        public Craft[] SubItems
+        {
+            get { return _subItems; }
+            set { Set(ref _subItems, value, nameof(SubItems)); }
+        }
+
         private string _result;
 
 
@@ -86,14 +93,15 @@ namespace AoM.Viewer.ViewModels
 
         #endregion
 
-        public MainWindowViewModel()
+        public HeroesViewModel()
         {
-            Heroes = JsonConvert.DeserializeObject<Hero[]>(File.ReadAllText(@"Data\\heroes.json")).OrderBy(e => e.Name).ToArray();
-            _crafts = JsonConvert.DeserializeObject<Dictionary<string, List<Craft>>>(File.ReadAllText(@"Data\\craft.json"));
+            Heroes = SourceData.Heroes.OrderBy(e => e.Name).ToArray();
+            _crafts = SourceData.Crafts;
             Levels = Enumerable.Range(1, 10).ToArray();
             ComputeCommand = new DelegateCommand(OnComputeCommand);
-            _levelFrom = 1;
-            _levelTo = 2;
+            _levelFrom = 3;
+            _levelTo = 4;
+            _selectedHero = Heroes.FirstOrDefault();
         }
 
         private void OnComputeCommand()
@@ -104,8 +112,7 @@ namespace AoM.Viewer.ViewModels
                 return;
             }
 
-
-            Items = SelectedHero.Gears
+            var tmp = SelectedHero.Gears
                 .Where(e => e.Level >= LevelFrom && e.Level <= LevelTo)
                 .GroupBy(e => e.Name)
                 .OrderBy(e => e.Key)
@@ -114,9 +121,25 @@ namespace AoM.Viewer.ViewModels
                     Count = e.Count(),
                     Name = e.Key
                 }).ToArray();
+            Items = tmp;
 
 
-            OnPropertyChanged(nameof(Items));
+
+        }
+        private void OnSelectedItemChanged()
+        {
+            if (SelectedItem == null)
+            {
+                SubItems = null;
+                return;
+            }
+
+            List<Craft> res;
+
+            _crafts.TryGetValue(SelectedItem.Name, out res);
+
+            SubItems = res.ToArray();
+            OnPropertyChanged(nameof(SubItems));
 
         }
     }

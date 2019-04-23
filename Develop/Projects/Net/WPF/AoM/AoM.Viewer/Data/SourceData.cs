@@ -14,6 +14,36 @@ namespace AoM.Viewer.Data
 {
     class SourceData
     {
+        public static readonly Dictionary<string, List<Craft>> Crafts;
+        public static readonly Hero[] Heroes;
+        public static readonly List<Location> Locations;
+        public static readonly string[] Resources;
+        public static readonly int[] Parts;
+        static SourceData()
+        {
+            Heroes = ReadData<Hero[]>(@"Data\\heroes.json");
+            Crafts = ReadData<Dictionary<string, List<Craft>>>(@"Data\\craft.json") ?? new Dictionary<string, List<Craft>>();
+            Locations = ReadData<List<Location>>(@"Data\\locations.json") ?? new List<Location>();
+            Resources = Heroes.SelectMany(e => e.Gears).Select(e => e.Name)
+                .Distinct()
+                .Concat(GetParts())
+                .OrderBy(e => e).ToArray();
+            Parts = Enumerable.Range(1, 30).ToArray();
+        }
+
+        private static IEnumerable<string> GetParts()
+        {
+            foreach (var craft in Crafts)
+                if (craft.Value.Any(e => e.Name.StartsWith("Pieces") || e.Name.StartsWith("Parts")))
+                    yield return craft.Key + " - Part";
+
+        }
+
+        private static T ReadData<T>(string fileName)
+        {
+            return !File.Exists(fileName) ? default(T) : JsonConvert.DeserializeObject<T>(File.ReadAllText(fileName));
+        }
+
         // If modifying these scopes, delete your previously saved credentials
         // at ~/.credentials/sheets.googleapis.com-dotnet-quickstart.json
         static string[] Scopes = { SheetsService.Scope.SpreadsheetsReadonly };
@@ -48,7 +78,7 @@ namespace AoM.Viewer.Data
                     for (int i = 1; i < row.Count; i++)
                     {
                         var craft = CreateCraft(((string)row[i]).Trim());
-                        if (craft==null) continue;
+                        if (craft == null) continue;
 
                         var key = part + levels[i];
                         if (result.ContainsKey(key))
@@ -75,9 +105,9 @@ namespace AoM.Viewer.Data
                 return null;
 
             var index = text.IndexOf(" ");
-            var result=new Craft
+            var result = new Craft
             {
-                Count = int.Parse(text.Substring(1,index-1)),
+                Count = int.Parse(text.Substring(1, index - 1)),
                 Name = text.Substring(index).Trim()
             };
             return result;
@@ -158,20 +188,7 @@ namespace AoM.Viewer.Data
             return result;
         }
 
-        private static void GetData1(SheetsService service, string spreadsheetId)
-        {
-            var request = service.Spreadsheets.Values.BatchGet(spreadsheetId);
 
-
-            var response = request.Execute();
-            var values = response.ValueRanges;
-
-
-            foreach (var v in values)
-            {
-
-            }
-        }
         private static SheetsService CreateService()
         {
             UserCredential credential;
@@ -198,6 +215,11 @@ namespace AoM.Viewer.Data
                 ApplicationName = "Google Sheets API .NET Quickstart",
             });
             return service;
+        }
+
+        public static void SaveLocations()
+        {
+            File.WriteAllText(@"Data\\locations.json", JsonConvert.SerializeObject(Locations));
         }
     }
 }

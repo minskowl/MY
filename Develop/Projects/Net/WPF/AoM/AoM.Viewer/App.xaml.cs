@@ -12,7 +12,7 @@ namespace AoM.Viewer
         {
             base.OnStartup(e);
 
-            SourceData.ReadCraft();
+         // SourceData.ReadCraft();
         }
     }
 }

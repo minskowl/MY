@@ -4,15 +4,15 @@ using AoM.Viewer.ViewModels;
 namespace AoM.Viewer
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for HeroesWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class HeroesWindow : Window
     {
-        public MainWindow()
+        public HeroesWindow()
         {
             InitializeComponent();
 
-            DataContext = new MainWindowViewModel();
+            DataContext = new HeroesViewModel();
         }
     }
 }

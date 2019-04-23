@@ -56,9 +56,24 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Controls\LocationControl.xaml.cs">
+      <DependentUpon>LocationControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Data\Craft.cs" />
-    <Compile Include="ViewModels\MainWindowViewModel.cs" />
-    <Page Include="MainWindow.xaml">
+    <Compile Include="Data\Location.cs" />
+    <Compile Include="ViewModels\HeroesViewModel.cs" />
+    <Compile Include="ViewModels\LocationsViewModel.cs" />
+    <Compile Include="Views\LocationsWindow.xaml.cs">
+      <DependentUpon>LocationsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PartsWindow.xaml.cs">
+      <DependentUpon>PartsWindow.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Controls\LocationControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\HeroesWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -69,10 +84,18 @@
     <Compile Include="Data\Gear.cs" />
     <Compile Include="Data\Hero.cs" />
     <Compile Include="Data\SourceData.cs" />
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
+    <Compile Include="Views\HeroesWindow.xaml.cs">
+      <DependentUpon>HeroesWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\LocationsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PartsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -118,6 +141,10 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Libs\Tools\Savchin.Tools.csproj">
+      <Project>{2f1807e4-39a2-4f38-adfc-6310a8443d90}</Project>
+      <Name>Savchin.Tools</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\WPF.Tools\WPF.Tools.csproj">
       <Project>{df7e8e9f-5b87-4561-ad02-38ae103c3de6}</Project>
       <Name>WPF.Tools</Name>
