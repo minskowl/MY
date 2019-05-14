@@ -32,8 +32,11 @@
                             <MenuItem Header="Set border" Command="{Binding SetBorderCommand}"
                                       CommandParameter="{Binding Path=PlacementTarget.SelectedItem, RelativeSource={RelativeSource AncestorType={x:Type ContextMenu}}}"/>
 
-                            <MenuItem Header="Move to screen" ItemsSource="{Binding Screens}" ItemTemplate="{StaticResource MoveMenu}"
-                                      />
+                            <MenuItem Header="Move to screen" ItemsSource="{Binding Screens}" ItemTemplate="{StaticResource MoveMenu}"/>
+
+                            <MenuItem Header="Send cd JWFUtils_Debug" Command="{Binding SendCdJwfUtilsDebugCommand}"
+                                      CommandParameter="{Binding Path=PlacementTarget.SelectedItem, RelativeSource={RelativeSource AncestorType={x:Type ContextMenu}}}"/>
+
                         </ContextMenu>
                     </ListBox.ContextMenu>
                 </ListBox>

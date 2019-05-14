@@ -6,6 +6,7 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
+using WindowsInput;
 using Savchin.WinApi;
 using Savchin.Wpf.Input;
 
@@ -19,9 +20,10 @@ namespace Savchin.WPF.SystemTools
         public DelegateCommand<Process> SetBorderCommand { get; set; }
         public DelegateCommand<Screen> MoveToCommand { get; set; }
 
+        public DelegateCommand<Process> SendCdJwfUtilsDebugCommand { get; set; }
         static MainWindowModel()
         {
-           // Process.EnterDebugMode();
+            // Process.EnterDebugMode();
         }
 
         public MainWindowModel()
@@ -29,11 +31,19 @@ namespace Savchin.WPF.SystemTools
             Screens = Screen.AllScreens;
             Processes = GetProcess();
             SetBorderCommand = new DelegateCommand<Process>(OnSetBorderCommand);
+            SendCdJwfUtilsDebugCommand = new DelegateCommand<Process>(OnSendCdJwfUtilsDebugCommand);
             MoveToCommand = new DelegateCommand<Screen>(OnMoveToCommand);
+        }
+
+        private void OnSendCdJwfUtilsDebugCommand(Process obj)
+        {
+            SendText(obj, @"cd JWFUtils_Debug
+");
         }
 
         private Process[] GetProcess()
         {
+            /*
             var result = new List<Process>();
             foreach (var process in Process.GetProcesses())
             {
@@ -55,7 +65,8 @@ namespace Savchin.WPF.SystemTools
                 }
       
             }
-            return result.OrderBy(e => e.ProcessName).ToArray();
+            return result.OrderBy(e => e.ProcessName).ToArray();*/
+            return Process.GetProcesses().OrderBy(e => e.ProcessName).ToArray();
         }
 
         private void OnMoveToCommand(Screen obj)
@@ -75,6 +86,15 @@ namespace Savchin.WPF.SystemTools
             //var res2 = User32.SetWindowLongPtr(obj.MainWindowHandle, (int)SetWindowLongIndex.GWL_EXSTYLE, new IntPtr((int)style));
             //var res3 = Marshal.GetLastWin32Error();
             User32.SetWindowPos(obj.MainWindowHandle, IntPtr.Zero, 2000, 10, 500, 500, SWP.SWP_NOSIZE);
+        }
+
+        private InputSimulator _inputSimulator = new InputSimulator();
+        private void SendText(Process obj, string text)
+        {
+            User32.SetForegroundWindow(obj.MainWindowHandle);
+            //User32.SendMessage(obj.MainWindowHandle, (uint)WM.WM_SETTEXT, 0, text);
+            User32.SendMessage(obj.MainWindowHandle, (uint)WM.WM_KEYDOWN, User32.VkKeyScan('c'), 0);
+
         }
     }
 }

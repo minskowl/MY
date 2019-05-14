@@ -8,21 +8,23 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-           <Grid.RowDefinitions>
+        <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
-               <RowDefinition/>
-        </Grid.RowDefinitions> 
-        <StackPanel Orientation="Horizontal">
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" >
+
+
             <ComboBox x:Name="listLocationType" SelectedItem="{Binding Type}"/>
             <ComboBox x:Name="listAct" SelectedItem="{Binding Act, Mode=TwoWay}"/>
             <ComboBox x:Name="listPart" SelectedItem="{Binding Part, Mode=TwoWay}"/>
-            <Button Content="Add Resource" Click="ButtonBase_OnClick"/>
+
+            <Button Content="Add Resource" Command="{Binding AddCraftCommand}"/>
         </StackPanel>
         <ListBox x:Name="ListBoxCrafts" Grid.Row="1" ItemsSource="{Binding Crafts}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Margin="5" Orientation="Horizontal">
-
                         <ComboBox ItemsSource="{x:Static data:SourceData.Resources}" SelectedItem="{Binding Name}" />
                         <ComboBox  ItemsSource="{x:Static data:SourceData.Parts}" SelectedItem="{Binding Count}" />
                     </StackPanel>

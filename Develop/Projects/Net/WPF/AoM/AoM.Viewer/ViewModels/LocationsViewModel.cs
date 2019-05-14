@@ -14,13 +14,13 @@ namespace AoM.Viewer.ViewModels
 {
     public class LocationsViewModel : ViewModelBase
     {
-        public ObservableCollection<Location> Locations { get; set; }
+        public ObservableCollection<LocationViewModel> Locations { get; set; }
 
 
 
-        private Location _selectedLocation;
+        private LocationViewModel _selectedLocation;
 
-        public Location SelectedLocation
+        public LocationViewModel SelectedLocation
         {
             get => _selectedLocation;
             set => Set(ref _selectedLocation, value, nameof(SelectedLocation));
@@ -30,7 +30,7 @@ namespace AoM.Viewer.ViewModels
         public ICommand SaveCommand { get; }
         public LocationsViewModel()
         {
-            Locations = new ObservableCollection<Location>(SourceData.Locations);
+            Locations = new ObservableCollection<LocationViewModel>(SourceData.Locations.Select(e=> new LocationViewModel(e)));
             AddCommand=new DelegateCommand(OnAddCommand);
             SaveCommand=new DelegateCommand(OnSaveCommand);
         }
@@ -41,13 +41,13 @@ namespace AoM.Viewer.ViewModels
                 return;
 
             SourceData.Locations.Clear();
-            SourceData.Locations.AddRange( Locations.ToList());
+            SourceData.Locations.AddRange( Locations.Select(e=>e.GetData()).ToArray());
             SourceData.SaveLocations();
         }
 
         private void OnAddCommand()
         {
-            var location= new Location();
+            var location=new LocationViewModel( new Location());
             Locations.Add(location);
             SelectedLocation = location;
 

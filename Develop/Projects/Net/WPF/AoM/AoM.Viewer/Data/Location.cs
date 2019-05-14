@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Savchin.Wpf.Core;
 
 namespace AoM.Viewer.Data
 {
@@ -12,12 +13,14 @@ namespace AoM.Viewer.Data
         Ligth
     }
 
-    public class Location
+    public class Location 
     {
         public LocationType Type { get; set; }
         public int Act { get; set; }
         public int Part { get; set; }
         public List<Craft> Crafts { get; set; }
+
+        public string Name => ToString();
 
         public override string ToString()
         {

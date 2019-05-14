@@ -144,6 +144,10 @@
       <Project>{dd712413-b47a-4707-a45d-84f786e47baf}</Project>
       <Name>Savchin.WinApi</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Libs\WindowsInput\WindowsInput.csproj">
+      <Project>{3549cd6f-80f8-450f-b99e-cf0a736b1f2a}</Project>
+      <Name>WindowsInput</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Controls\Savchin.Wpf.Controls.csproj">
       <Project>{94faf521-458a-4a1b-bee6-42a5a738f6ab}</Project>
       <Name>Savchin.Wpf.Controls</Name>

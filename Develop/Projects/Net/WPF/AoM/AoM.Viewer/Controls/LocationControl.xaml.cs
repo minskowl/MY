@@ -22,24 +22,5 @@ namespace AoM.Viewer.Controls
 
         }
 
-        private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
-        {
-            var location = DataContext as Location;
-            if (location == null) return;
-            var craft = new Craft();
-
-            if (location.Crafts == null)
-            {
-                location.Crafts = new List<Craft> { craft };
-
-            }
-            else
-            {
-                location.Crafts.Add(craft);
-                ListBoxCrafts.Items.Add(craft);
-            }
-           
-
-        }
     }
 }
