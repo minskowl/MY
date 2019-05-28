@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.fileSelector1 = new FileTools.Controls.FileSelector();
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.labelSearch = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -36,27 +35,23 @@
             this.buttonCancel = new System.Windows.Forms.Button();
             this.buttonOK = new System.Windows.Forms.Button();
             this.checkBoxUseRegExp = new System.Windows.Forms.CheckBox();
+            this.fileSelector1 = new FileTools.Controls.FileSelector();
             this.SuspendLayout();
-            // 
-            // fileSelector1
-            // 
-            this.fileSelector1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.fileSelector1.Location = new System.Drawing.Point(0, 0);
-            this.fileSelector1.Name = "fileSelector1";
-            this.fileSelector1.Size = new System.Drawing.Size(440, 96);
-            this.fileSelector1.TabIndex = 0;
             // 
             // textBoxSearch
             // 
-            this.textBoxSearch.Location = new System.Drawing.Point(124, 92);
+            this.textBoxSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxSearch.Location = new System.Drawing.Point(124, 158);
             this.textBoxSearch.Name = "textBoxSearch";
-            this.textBoxSearch.Size = new System.Drawing.Size(304, 20);
+            this.textBoxSearch.Size = new System.Drawing.Size(261, 20);
             this.textBoxSearch.TabIndex = 1;
             // 
             // labelSearch
             // 
+            this.labelSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.labelSearch.AutoSize = true;
-            this.labelSearch.Location = new System.Drawing.Point(13, 98);
+            this.labelSearch.Location = new System.Drawing.Point(13, 164);
             this.labelSearch.Name = "labelSearch";
             this.labelSearch.Size = new System.Drawing.Size(41, 13);
             this.labelSearch.TabIndex = 2;
@@ -64,8 +59,9 @@
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 126);
+            this.label2.Location = new System.Drawing.Point(13, 192);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(47, 13);
             this.label2.TabIndex = 3;
@@ -73,16 +69,18 @@
             // 
             // textBoxReplace
             // 
-            this.textBoxReplace.Location = new System.Drawing.Point(124, 118);
+            this.textBoxReplace.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxReplace.Location = new System.Drawing.Point(124, 184);
             this.textBoxReplace.Name = "textBoxReplace";
-            this.textBoxReplace.Size = new System.Drawing.Size(304, 20);
+            this.textBoxReplace.Size = new System.Drawing.Size(261, 20);
             this.textBoxReplace.TabIndex = 1;
             // 
             // buttonCancel
             // 
             this.buttonCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.buttonCancel.Location = new System.Drawing.Point(355, 158);
+            this.buttonCancel.Location = new System.Drawing.Point(312, 230);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(75, 23);
             this.buttonCancel.TabIndex = 5;
@@ -92,7 +90,7 @@
             // buttonOK
             // 
             this.buttonOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonOK.Location = new System.Drawing.Point(274, 158);
+            this.buttonOK.Location = new System.Drawing.Point(231, 230);
             this.buttonOK.Name = "buttonOK";
             this.buttonOK.Size = new System.Drawing.Size(75, 23);
             this.buttonOK.TabIndex = 4;
@@ -102,14 +100,26 @@
             // 
             // checkBoxUseRegExp
             // 
+            this.checkBoxUseRegExp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.checkBoxUseRegExp.AutoSize = true;
             this.checkBoxUseRegExp.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.checkBoxUseRegExp.Location = new System.Drawing.Point(16, 143);
+            this.checkBoxUseRegExp.Location = new System.Drawing.Point(12, 210);
             this.checkBoxUseRegExp.Name = "checkBoxUseRegExp";
             this.checkBoxUseRegExp.Size = new System.Drawing.Size(144, 17);
             this.checkBoxUseRegExp.TabIndex = 6;
             this.checkBoxUseRegExp.Text = "Use Regular Expressions";
             this.checkBoxUseRegExp.UseVisualStyleBackColor = true;
+            // 
+            // fileSelector1
+            // 
+            this.fileSelector1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.fileSelector1.Location = new System.Drawing.Point(0, 0);
+            this.fileSelector1.MinimumSize = new System.Drawing.Size(343, 152);
+            this.fileSelector1.Name = "fileSelector1";
+            this.fileSelector1.Size = new System.Drawing.Size(387, 152);
+            this.fileSelector1.TabIndex = 0;
             // 
             // FormReplaceInFiles
             // 
@@ -117,7 +127,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.buttonCancel;
-            this.ClientSize = new System.Drawing.Size(440, 193);
+            this.ClientSize = new System.Drawing.Size(397, 265);
             this.Controls.Add(this.checkBoxUseRegExp);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonOK);

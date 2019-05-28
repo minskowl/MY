@@ -38,7 +38,7 @@
             // 
             this.buttonCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.buttonCancel.Location = new System.Drawing.Point(433, 169);
+            this.buttonCancel.Location = new System.Drawing.Point(433, 188);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(75, 23);
             this.buttonCancel.TabIndex = 1;
@@ -48,7 +48,7 @@
             // buttonOK
             // 
             this.buttonOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonOK.Location = new System.Drawing.Point(352, 169);
+            this.buttonOK.Location = new System.Drawing.Point(352, 188);
             this.buttonOK.Name = "buttonOK";
             this.buttonOK.Size = new System.Drawing.Size(75, 23);
             this.buttonOK.TabIndex = 0;
@@ -58,12 +58,13 @@
             // 
             // fileSelector1
             // 
-            this.fileSelector1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.fileSelector1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.fileSelector1.Location = new System.Drawing.Point(0, 0);
+            this.fileSelector1.MinimumSize = new System.Drawing.Size(343, 152);
             this.fileSelector1.Name = "fileSelector1";
-            this.fileSelector1.Size = new System.Drawing.Size(524, 163);
+            this.fileSelector1.Size = new System.Drawing.Size(508, 182);
             this.fileSelector1.TabIndex = 2;
             // 
             // FormFileSelector
@@ -72,7 +73,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.buttonCancel;
-            this.ClientSize = new System.Drawing.Size(520, 204);
+            this.ClientSize = new System.Drawing.Size(520, 223);
             this.Controls.Add(this.fileSelector1);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonOK);

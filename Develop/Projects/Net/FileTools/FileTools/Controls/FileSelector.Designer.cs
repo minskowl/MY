@@ -46,7 +46,7 @@
             this.checkBoxIncludeSubDir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.checkBoxIncludeSubDir.AutoSize = true;
             this.checkBoxIncludeSubDir.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.checkBoxIncludeSubDir.Location = new System.Drawing.Point(13, 161);
+            this.checkBoxIncludeSubDir.Location = new System.Drawing.Point(10, 241);
             this.checkBoxIncludeSubDir.Name = "checkBoxIncludeSubDir";
             this.checkBoxIncludeSubDir.Size = new System.Drawing.Size(128, 17);
             this.checkBoxIncludeSubDir.TabIndex = 13;
@@ -55,18 +55,18 @@
             // 
             // textBoxFileFilter
             // 
-            this.textBoxFileFilter.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxFileFilter.Location = new System.Drawing.Point(122, 116);
+            this.textBoxFileFilter.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxFileFilter.Location = new System.Drawing.Point(122, 189);
             this.textBoxFileFilter.Name = "textBoxFileFilter";
-            this.textBoxFileFilter.Size = new System.Drawing.Size(362, 20);
+            this.textBoxFileFilter.Size = new System.Drawing.Size(331, 20);
             this.textBoxFileFilter.TabIndex = 12;
             // 
             // label2
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(10, 116);
+            this.label2.Location = new System.Drawing.Point(10, 189);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(51, 13);
             this.label2.TabIndex = 11;
@@ -75,9 +75,9 @@
             // buttonBrowse
             // 
             this.buttonBrowse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonBrowse.Location = new System.Drawing.Point(365, 6);
+            this.buttonBrowse.Location = new System.Drawing.Point(334, 5);
             this.buttonBrowse.Name = "buttonBrowse";
-            this.buttonBrowse.Size = new System.Drawing.Size(75, 23);
+            this.buttonBrowse.Size = new System.Drawing.Size(61, 23);
             this.buttonBrowse.TabIndex = 10;
             this.buttonBrowse.Text = "Browse...";
             this.buttonBrowse.UseVisualStyleBackColor = true;
@@ -85,17 +85,17 @@
             // 
             // textBoxFolder
             // 
-            this.textBoxFolder.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxFolder.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxFolder.Location = new System.Drawing.Point(122, 6);
             this.textBoxFolder.Name = "textBoxFolder";
-            this.textBoxFolder.Size = new System.Drawing.Size(237, 20);
+            this.textBoxFolder.Size = new System.Drawing.Size(206, 20);
             this.textBoxFolder.TabIndex = 9;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(10, 14);
+            this.label1.Location = new System.Drawing.Point(10, 11);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(36, 13);
             this.label1.TabIndex = 8;
@@ -104,9 +104,9 @@
             // buttonAdd
             // 
             this.buttonAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonAdd.Location = new System.Drawing.Point(447, 6);
+            this.buttonAdd.Location = new System.Drawing.Point(401, 5);
             this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(37, 23);
+            this.buttonAdd.Size = new System.Drawing.Size(52, 23);
             this.buttonAdd.TabIndex = 14;
             this.buttonAdd.Text = "Add";
             this.buttonAdd.UseVisualStyleBackColor = true;
@@ -114,20 +114,22 @@
             // 
             // listFolders
             // 
-            this.listFolders.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.listFolders.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.listFolders.FormattingEnabled = true;
+            this.listFolders.IntegralHeight = false;
             this.listFolders.Location = new System.Drawing.Point(122, 29);
             this.listFolders.Name = "listFolders";
-            this.listFolders.Size = new System.Drawing.Size(362, 82);
+            this.listFolders.ScrollAlwaysVisible = true;
+            this.listFolders.Size = new System.Drawing.Size(331, 151);
             this.listFolders.TabIndex = 15;
             // 
             // label3
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(10, 142);
+            this.label3.Location = new System.Drawing.Point(10, 218);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(89, 13);
             this.label3.TabIndex = 11;
@@ -135,11 +137,11 @@
             // 
             // textBoxExcludeFilter
             // 
-            this.textBoxExcludeFilter.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxExcludeFilter.Location = new System.Drawing.Point(122, 142);
+            this.textBoxExcludeFilter.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxExcludeFilter.Location = new System.Drawing.Point(122, 215);
             this.textBoxExcludeFilter.Name = "textBoxExcludeFilter";
-            this.textBoxExcludeFilter.Size = new System.Drawing.Size(362, 20);
+            this.textBoxExcludeFilter.Size = new System.Drawing.Size(331, 20);
             this.textBoxExcludeFilter.TabIndex = 12;
             // 
             // FileSelector
@@ -156,8 +158,9 @@
             this.Controls.Add(this.buttonBrowse);
             this.Controls.Add(this.textBoxFolder);
             this.Controls.Add(this.label1);
+            this.MinimumSize = new System.Drawing.Size(343, 152);
             this.Name = "FileSelector";
-            this.Size = new System.Drawing.Size(487, 181);
+            this.Size = new System.Drawing.Size(456, 267);
             this.ResumeLayout(false);
             this.PerformLayout();
 
