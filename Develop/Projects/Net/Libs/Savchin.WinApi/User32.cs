@@ -143,6 +143,10 @@ namespace Savchin.WinApi
         public static extern short VkKeyScanEx(char ch, IntPtr dwhkl);
 
         [DllImport("user32.dll")]
+        public static extern byte VkKeyScan(char ch);
+
+
+        [DllImport("user32.dll")]
         public static extern IntPtr GetKeyboardLayout(uint idThread);
 
         /// <summary>
@@ -313,7 +317,7 @@ namespace Savchin.WinApi
 
         [DllImport("user32.dll")]
         [return: MarshalAs(UnmanagedType.Bool)]
-        internal static extern bool SetForegroundWindow(IntPtr hWnd);
+        public static extern bool SetForegroundWindow(IntPtr hWnd);
 
         [DllImport("user32.dll")]
         public static extern IntPtr FindWindow(String lpClassName, String lpWindowName);

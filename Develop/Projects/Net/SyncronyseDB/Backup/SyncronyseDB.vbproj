@@ -1,0 +1,228 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5C76726E-FA2C-4167-9266-E45063E36BF7}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>SyncronyseDB</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyMode>None</AssemblyOriginatorKeyMode>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>WinExe</OutputType>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionStrict>Off</OptionStrict>
+    <RootNamespace>SyncronyseDB</RootNamespace>
+    <StartupObject>SyncronyseDB.DBSync</StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <MyType>WindowsFormsWithCustomSubMain</MyType>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>SyncronyseDB.xml</DocumentationFile>
+    <BaseAddress>285212672</BaseAddress>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>
+    </DefineConstants>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <DebugSymbols>true</DebugSymbols>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>1</WarningLevel>
+    <NoWarn>42016,42017,42018,42019,42032</NoWarn>
+    <DebugType>full</DebugType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>SyncronyseDB.xml</DocumentationFile>
+    <BaseAddress>285212672</BaseAddress>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>
+    </DefineConstants>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>1</WarningLevel>
+    <NoWarn>42016,42017,42018,42019,42032</NoWarn>
+    <DebugType>none</DebugType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug With Param|AnyCPU' ">
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>SyncronyseDB.xml</DocumentationFile>
+    <BaseAddress>285212672</BaseAddress>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>
+    </DefineConstants>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <DebugSymbols>true</DebugSymbols>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>1</WarningLevel>
+    <NoWarn>42016,42017,42018,42019,42032</NoWarn>
+    <DebugType>full</DebugType>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="C1.Common">
+      <Name>C1.Common</Name>
+      <HintPath>..\..\..\..\..\..\Program Files\ComponentOne Studio.NET\bin\C1.Common.dll</HintPath>
+      <AssemblyFolderKey>hklm\dn\c1studio</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="C1.Win.C1FlexGrid">
+      <Name>C1.Win.C1FlexGrid</Name>
+      <HintPath>..\..\..\..\..\..\Program Files\ComponentOne Studio.NET\bin\C1.Win.C1FlexGrid.dll</HintPath>
+      <AssemblyFolderKey>hklm\dn\c1studio</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Design">
+      <Name>System.Design</Name>
+    </Reference>
+    <Reference Include="System.DirectoryServices">
+      <Name>System.DirectoryServices</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+    <COMReference Include="SQLDMO">
+      <Guid>{10010001-E260-11CF-AE68-00AA004A34D5}</Guid>
+      <VersionMajor>8</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ClearControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CompareControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CompareDataControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DataSet1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataTransfer.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DBSync.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Comp_Act.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_IgnoreList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SynTree.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <EmbeddedResource Include="ClearControl.resx">
+      <DependentUpon>ClearControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CompareControl.resx">
+      <DependentUpon>CompareControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CompareDataControl.resx">
+      <DependentUpon>CompareDataControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DBSync.resx">
+      <DependentUpon>DBSync.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Comp_Act.resx">
+      <DependentUpon>frm_Comp_Act.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_IgnoreList.resx">
+      <DependentUpon>frm_IgnoreList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="licenses.licx" />
+    <EmbeddedResource Include="SynTree.resx">
+      <DependentUpon>SynTree.vb</DependentUpon>
+    </EmbeddedResource>
+    <Content Include="DataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.vb</LastGenOutput>
+    </Content>
+    <Content Include="res\column.gif" />
+    <Content Include="res\column1.gif" />
+    <Content Include="res\column2.gif" />
+    <Content Include="res\empty.gif" />
+    <Content Include="res\er.gif" />
+    <Content Include="res\folder.gif" />
+    <Content Include="res\folder_1.gif" />
+    <Content Include="res\index.gif" />
+    <Content Include="res\key.gif" />
+    <Content Include="res\key1.gif" />
+    <Content Include="res\key2.gif" />
+    <Content Include="res\key3.gif" />
+    <Content Include="res\key4.gif" />
+    <Content Include="res\key5.gif" />
+    <Content Include="res\ok.gif" />
+    <Content Include="res\storproc.gif" />
+    <Content Include="res\table.gif" />
+    <Content Include="res\table1.gif" />
+    <Content Include="res\table2.gif" />
+    <Content Include="res\triger.gif" />
+    <Content Include="res\UDF.gif" />
+    <Content Include="res\view.gif" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>
