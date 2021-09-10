@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
 using System.Windows.Forms;
-using WindowsInput;
 using Savchin.WinApi;
 using Savchin.Wpf.Input;
 
@@ -37,8 +32,8 @@ namespace Savchin.WPF.SystemTools
 
         private void OnSendCdJwfUtilsDebugCommand(Process obj)
         {
-            SendText(obj, @"cd JWFUtils_Debug
-");
+//            SendText(obj, @"cd JWFUtils_Debug
+//");
         }
 
         private Process[] GetProcess()
@@ -88,13 +83,13 @@ namespace Savchin.WPF.SystemTools
             User32.SetWindowPos(obj.MainWindowHandle, IntPtr.Zero, 2000, 10, 500, 500, SWP.SWP_NOSIZE);
         }
 
-        private InputSimulator _inputSimulator = new InputSimulator();
-        private void SendText(Process obj, string text)
-        {
-            User32.SetForegroundWindow(obj.MainWindowHandle);
-            //User32.SendMessage(obj.MainWindowHandle, (uint)WM.WM_SETTEXT, 0, text);
-            User32.SendMessage(obj.MainWindowHandle, (uint)WM.WM_KEYDOWN, User32.VkKeyScan('c'), 0);
+        //private InputSimulator _inputSimulator = new InputSimulator();
+        //private void SendText(Process obj, string text)
+        //{
+        //    User32.SetForegroundWindow(obj.MainWindowHandle);
+        //    //User32.SendMessage(obj.MainWindowHandle, (uint)WM.WM_SETTEXT, 0, text);
+        //    User32.SendMessage(obj.MainWindowHandle, (uint)WM.WM_KEYDOWN, User32.VkKeyScan('c'), 0);
 
-        }
+        //}
     }
 }

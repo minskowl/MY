@@ -200,10 +200,6 @@
       <Project>{9405075A-BD64-4B54-9689-2DD716D6F92A}</Project>
       <Name>Savchin.Forms</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Libs\Savchin.WinApi\Savchin.WinApi.csproj">
-      <Project>{DD712413-B47A-4707-A45D-84F786E47BAF}</Project>
-      <Name>Savchin.WinApi</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\Libs\Tools\Savchin.Tools.csproj">
       <Project>{2F1807E4-39A2-4F38-ADFC-6310A8443D90}</Project>
       <Name>Savchin.Tools</Name>

@@ -22,7 +22,7 @@ namespace TVSeriesTracker.Imdb
 
     class ImdbManager : IImdbManager
     {
-        HttpClient client = new HttpClient { BaseAddress = new Uri("http://imdbapi.org/") };
+        HttpClient client = new HttpClient { BaseAddress = new Uri("http://www.omdbapi.com/") };
         JsonSerializer ser = new JsonSerializer();
         public ImdbManager()
         {
@@ -54,7 +54,7 @@ namespace TVSeriesTracker.Imdb
 
         public Task<ImdbResult> GetByIdsAsync(string[] ids)
         {
-            return ProcessQuery("?type=json&ids=" + ids.Join(","));
+            return ProcessQuery("?apikey=5e88beee&ids=" + ids.Join(","));
         }
 
         private Task<ImdbResult> ProcessQuery(string query)
